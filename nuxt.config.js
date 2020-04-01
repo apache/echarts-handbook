@@ -1,3 +1,5 @@
+import enPosts from './contents/en/enPosts';
+import zhPosts from './contents/zh/zhPosts';
 
 export default {
   mode: 'universal',
@@ -45,7 +47,25 @@ export default {
   */
   modules: [
     // Doc: https://bootstrap-vue.js.org
-    'bootstrap-vue/nuxt'
+    'bootstrap-vue/nuxt',
+    [
+      'nuxt-i18n',
+      {
+        locales: ['en', 'zh'],
+        defaultLocale: 'en',
+        vueI18n: {
+          fallbackLocale: 'en',
+          messages: {
+            en: {
+              greeting: 'Hello world!'
+            },
+            zh: {
+              greeting: '你好！'
+            }
+          }
+        }
+      }
+    ]
   ],
   /*
   ** Build configuration
@@ -55,10 +75,24 @@ export default {
     ** You can extend webpack config here
     */
     extend (config, ctx) {
+      config.module.rules.push({
+        test: /\.md$/,
+        use: ['raw-loader']
+      });
     },
 
     filenames: {
       chunk: 'js/[contenthash].js'
     }
+  },
+  generate: {
+    routes: [
+      '/zh/line'
+    ]
+    // routes: [
+
+    // ]
+    // .concat(zhPosts.map(post => `/zh/${post}`))
+    // .concat(enPosts.map(post => `/en/${post}`))
   }
 }
