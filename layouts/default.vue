@@ -4,50 +4,9 @@
 
     <div class="container-fluid">
       <div class="row flex-xl-nowrap2">
-        <div class="bd-sidebar border-bottom-0 col-md-3 col-xl-2 col-12">
-          <div class="bd-docs-nav">
-            <div class="bd-toc-item">
-              <a href="#" class="bd-toc-link">开始</a>
-              <ul class="nav bd-sidenav">
-                <li class="nav-item">
-                  <a href="#" class="nav-link">第一个 ECharts 图表</a>
-                </li>
-                <li class="nav-item">
-                  <a href="#" class="nav-link">定制主题样式</a>
-                </li>
-                <li class="nav-item">
-                  <a href="#" class="nav-link">基本概念</a>
-                </li>
-              </ul>
-            </div>
-            <div class="bd-toc-item">
-              <a href="#" class="bd-toc-link nuxt-link-exact-active">图表类型</a>
-              <ul class="nav bd-sidenav">
-                <li class="nav-item">
-                  <a href="#" class="nav-link">折线图</a>
-                </li>
-                <li class="nav-item">
-                  <a href="#" class="nav-link">柱状图</a>
-                </li>
-                <li class="nav-item">
-                  <a href="#" class="nav-link">饼图</a>
-                </li>
-                <li class="nav-item">
-                  <a href="#" class="nav-link">散点图</a>
-                </li>
-                <li class="nav-item">
-                  <a href="#" class="nav-link">涟漪散点图</a>
-                </li>
-                <li class="nav-item">
-                  <a href="#" class="nav-link">雷达图</a>
-                </li>
-                <li class="nav-item">
-                  <a href="#" class="nav-link">树图</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+        {{aaaa}}
+        <!-- <sidebar :posts="posts" active="bar" /> -->
+
         <div class="bd-content col-md-9 col-xl-8 col-12 pb-md-3 pl-md-5">
           <div class="post-content content">
             <nuxt />
@@ -61,47 +20,21 @@
 <script lang="ts">
 import Vue from 'vue';
 import Navigator from '~/components/partials/Navigator.vue';
+import Sidebar from '~/components/partials/Sidebar.vue';
 
-export default Vue.extend({
+export default {
   components: {
-    Navigator
-  }
-})
+    Navigator,
+    Sidebar
+  },
+
+  asyncData: ({ req }) => ({
+    aaaa: (req ? req.headers['user-agent'] : (typeof navigator !== 'undefined' ? navigator.userAgent : 'No user agent (generated)'))
+  })
+}
 </script>
 
 <style>
-.bd-sidebar {
-  padding: 20px;
-}
-
-.bd-toc-item {
-  margin-bottom: 20px;
-}
-
-.bd-sidenav {
-  margin-top: 10px;
-  display: none;
-}
-
-.nav {
-  display: block;
-}
-
-.bd-toc-link {
-  font-weight: bold;
-  color: #444;
-}
-
-.nav-link {
-  color: #555;
-}
-
-  .nav-link:hover {
-    text-decoration: underline;
-  }
-
-
-
 .post-content {
   margin: 20px 0;
 }

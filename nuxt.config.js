@@ -1,5 +1,5 @@
-import enPosts from './contents/en/enPosts';
-import zhPosts from './contents/zh/zhPosts';
+import enPosts from './contents/en/posts';
+import zhPosts from './contents/zh/posts';
 
 export default {
   mode: 'universal',
@@ -86,13 +86,32 @@ export default {
     }
   },
   generate: {
-    routes: [
-      '/zh/line'
-    ]
-    // routes: [
-
-    // ]
-    // .concat(zhPosts.map(post => `/zh/${post}`))
-    // .concat(enPosts.map(post => `/en/${post}`))
+    routes: []
+      .concat(generateRoutes(zhPosts, '/zh/'))
+      // .concat(enPosts.map(post => `/en/${post}`))
   }
+}
+
+console.log(generateRoutes(zhPosts, '/zh/'));
+
+/**
+ * Generate routes based info from 'contents/xx/xxPosts.js'
+ */
+function generateRoutes(postTree, dir, routes) {
+  if (routes == null) {
+    routes = [];
+  }
+
+  postTree.forEach(info => {
+    if (!info) {
+      return;
+    }
+    else if (typeof info === 'string') {
+      routes.push(dir + info);
+    }
+    else if (typeof info === 'object' && info.children) {
+      generateRoutes(info.children, dir + info.dir + '_', routes);
+    }
+  });
+  return routes;
 }

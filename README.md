@@ -1,6 +1,4 @@
-# echarts-booklet
-
-> ECharts booklet
+# echarts-handbook
 
 ## Build Setup
 

@@ -1,7 +1,7 @@
 {
-  "name": "echarts-booklet",
+  "name": "echarts-handbook",
   "version": "1.0.0",
-  "description": "ECharts booklet",
+  "description": "ECharts Handbook",
   "author": "Ovilia",
   "private": true,
   "scripts": {
