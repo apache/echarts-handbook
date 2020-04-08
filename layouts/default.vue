@@ -4,8 +4,7 @@
 
     <div class="container-fluid">
       <div class="row flex-xl-nowrap2">
-        {{aaaa}}
-        <!-- <sidebar :posts="posts" active="bar" /> -->
+        <sidebar />
 
         <div class="bd-content col-md-9 col-xl-8 col-12 pb-md-3 pl-md-5">
           <div class="post-content content">
@@ -22,16 +21,22 @@ import Vue from 'vue';
 import Navigator from '~/components/partials/Navigator.vue';
 import Sidebar from '~/components/partials/Sidebar.vue';
 
-export default {
+export default Vue.extend({
   components: {
     Navigator,
     Sidebar
   },
 
-  asyncData: ({ req }) => ({
-    aaaa: (req ? req.headers['user-agent'] : (typeof navigator !== 'undefined' ? navigator.userAgent : 'No user agent (generated)'))
-  })
-}
+  computed: {
+    // posts(): string {
+    //   return this.$store.state.posts.zh;
+    // }
+  },
+
+  methods: {
+
+  }
+});
 </script>
 
 <style>

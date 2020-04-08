@@ -1,3 +1,0 @@
-# bar
-
-this is bar.

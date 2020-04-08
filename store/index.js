@@ -1,14 +1,21 @@
+import zhPosts from '~/contents/zh/posts.js';
+import config from '~/configs/config';
+
 export const state = () => ({
   filled: false,
   docVersion: '',
   ghVersion: '',
   visibleAffix: false,
-  locale: 'en',
+  locale: 'zh',
   lang: {},
   menu: {},
   homepage: {},
   adBlocked: false,
-  focusMode: false
+  focusMode: false,
+  posts: {
+    zh: zhPosts
+  },
+  config: config
 })
 
 export const mutations = {

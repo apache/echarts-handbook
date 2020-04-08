@@ -1,11 +1,12 @@
 import enPosts from './contents/en/posts';
 import zhPosts from './contents/zh/posts';
+import config from './configs/config';
 
 export default {
   mode: 'universal',
 
   router: {
-    base: '/echarts-booklet/dist'
+    base: config.rootPath
   },
 
   /*
@@ -103,14 +104,14 @@ function generateRoutes(postTree, dir, routes) {
   }
 
   postTree.forEach(info => {
-    if (!info) {
+    if (!info || typeof info !== 'object') {
       return;
     }
-    else if (typeof info === 'string') {
-      routes.push(dir + info);
-    }
-    else if (typeof info === 'object' && info.children) {
+    if (info.children) {
       generateRoutes(info.children, dir + info.dir + '_', routes);
+    }
+    else {
+      routes.push(dir + info.dir);
     }
   });
   return routes;

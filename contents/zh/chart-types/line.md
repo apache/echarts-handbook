@@ -18,3 +18,7 @@ option = {
     }]
 };
 ```
+
+引用图片的方法：（这个图片实际存放地址在 `static/images/demo.png`）
+
+![图片说明](${rootPath}/images/demo.png)

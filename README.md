@@ -1,20 +1,23 @@
 # echarts-handbook
 
-## Build Setup
+## Init
 
 ```bash
-# install dependencies
-$ npm install
-
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
+npm install
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+## Dev
+
+```bash
+npm run dev
+```
+
+## Release
+
+```bash
+npm run generate
+```
+
+## Writing
+
+Add `.md` files under `contents/zh/` or `contents/en/`, and fill in the info in `contents/zh/posts.js` and `contents/en/posts.js`.

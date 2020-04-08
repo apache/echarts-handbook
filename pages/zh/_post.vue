@@ -6,6 +6,7 @@
 import fm from 'front-matter';
 import MarkdownIt from 'markdown-it';
 import Vue from 'vue';
+import config from '../../configs/config';
 
 const md = new MarkdownIt();
 
@@ -13,12 +14,9 @@ export default Vue.extend({
   components: {
   },
   async asyncData({params}) {
-    // const posts = await import('~/contents/zh/posts.js');
-    // console.log('===================', posts)
-
     params.post = params.post.split('_').join('/');
     const fileContent = await import(`~/contents/zh/${params.post}.md`);
-    const res = fm(fileContent.default);
+    const res = fm(fileContent.default.split('${rootPath}').join(config.rootPath));
     return {
       attributes: res.attributes,
       content: md.render(res.body)
