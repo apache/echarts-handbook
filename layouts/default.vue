@@ -69,4 +69,15 @@ h5 {
 h6 {
   font-size: 14px;
 }
+
+blockquote {
+  margin: 15px 0;
+  padding: 15px;
+  border-left: 4px solid #ccc;
+  background-color: #f3f3f3;
+}
+
+blockquote :last-child {
+  margin-bottom: 0;
+}
 </style>

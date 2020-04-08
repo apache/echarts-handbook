@@ -3,14 +3,19 @@
     <!-- active: {{ active }}. {{ posts }} -->
     <div class="bd-docs-nav">
       <div class="bd-toc-item level0" v-for="level0Post in $store.state.posts.zh">
-        <a class="bd-toc-link">{{ level0Post.title }}</a>
-        <ul class="nav bd-sidenav level1" v-if="level0Post.children">
+        <a :href="level0Post.children ? 'javascript:;' : rootPath + level0Post.dir"
+          v-if="!level0Post.draft"
+          class="bd-toc-link">{{ level0Post.title }}</a>
+        <ul class="nav bd-sidenav level1" v-if="!level0Post.draft && level0Post.children">
           <li class="nav-item" v-for="level1Post in level0Post.children">
             <a :href="level1Post.children ? 'javascript:;' : rootPath + level0Post.dir + '_' + level1Post.dir" 
+              v-if="!level1Post.draft"
               class="nav-link">{{ level1Post.title }}</a>
-            <ul class="nav bd-sidenav level2" v-if="level1Post.children">
+            <ul class="nav bd-sidenav level2" v-if="!level1Post.draft && level1Post.children">
               <li class="nav-item" v-for="level2Post in level1Post.children">
-                <a :href="rootPath + level0Post.dir + '_' + level1Post.dir + '_' + level2Post.dir" class="nav-link">{{ level2Post.title }}</a>
+                <a :href="rootPath + level0Post.dir + '_' + level1Post.dir + '_' + level2Post.dir" 
+                  v-if="!level2Post.draft"
+                  class="nav-link">{{ level2Post.title }}</a>
               </li>
             </ul>
           </li>

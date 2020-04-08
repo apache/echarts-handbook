@@ -8,7 +8,9 @@ import MarkdownIt from 'markdown-it';
 import Vue from 'vue';
 import config from '../../configs/config';
 
-const md = new MarkdownIt();
+const md = new MarkdownIt({
+  html: true
+});
 
 export default Vue.extend({
   components: {
