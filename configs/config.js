@@ -1,3 +1,4 @@
 export default {
-  rootPath: '/echarts-handbook/dist'
+  rootPath: '/echarts-handbook/dist',
+  galleryViewPath: 'https://echarts.apache.org/examples/zh/view.html?c='
 };

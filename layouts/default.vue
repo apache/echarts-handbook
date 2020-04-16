@@ -13,6 +13,8 @@
         </div>
       </div>
     </div>
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css">
   </div>
 </template>
 
@@ -79,5 +81,16 @@ blockquote {
 
 blockquote :last-child {
   margin-bottom: 0;
+}
+
+pre code {
+  padding: 10px 15px !important;
+  border-radius: 5px;
+  border: 1px solid #eee;
+}
+
+iframe {
+  border: 1px solid #ddd;
+  margin: 10px 0;
 }
 </style>

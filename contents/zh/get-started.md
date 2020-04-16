@@ -86,6 +86,6 @@
 
 这样你的第一个图表就诞生了！
 
-~[600x300](${galleryViewPath}doc-example/getting-started&reset=1&edit=1)
+<iframe width="600" height="300" src="${galleryViewPath}doc-example/getting-started&reset=1&edit=1"></iframe>
 
 你也可以直接进入 [ECharts Gallery](${galleryEditorPath}doc-example/getting-started) 中查看编辑示例

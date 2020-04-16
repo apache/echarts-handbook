@@ -12,6 +12,8 @@ npm install
 npm run dev
 ```
 
+Open in browser: http://localhost:3000/echarts-handbook/dist/
+
 ## Release
 
 ```bash

@@ -10,7 +10,7 @@ export default Vue.extend({
   components: {
   },
   async asyncData({params}) {
-    return await getPostData(params.post, 'zh');
+    return await getPostData(params.post, 'en');
   }
 });
 
