@@ -49,27 +49,39 @@ export default Vue.extend({
 h1 {
   margin-bottom: 20px;
   font-size: 36px;
+  color: #222;
 }
 
 h2 {
-  margin: 40px 0 20px 0;
+  margin: 70px 0 20px 0;
   font-size: 26px;
+  color: #666;
+}
+
+h1+h2 {
+  margin-top: 30px;
 }
 
 h3 {
+  margin: 30px 0 20px 0;
   font-size: 22px;
+  color: #444;
 }
 
 h4 {
+  margin: 25px 0 20px 0;
   font-size: 18px;
+  color: #222;
 }
 
 h5 {
   font-size: 16px;
+  color: #222;
 }
 
 h6 {
   font-size: 14px;
+  color: #222;
 }
 
 blockquote {

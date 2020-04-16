@@ -1,44 +1,42 @@
-# 5 分钟上手 ECharts
+# 快速上手
 
 ## 获取 ECharts
 
-你可以通过以下几种方式获取 ECharts。
+ECharts 支持多种下载方式，可以在下一篇教程[安装](zh/basics_installation)中查看所有方式。这里，我们以从 [jsDelivr](https://www.jsdelivr.com/package/npm/echarts) CDN 上获取为例，介绍如何快速安装。
 
-* 从 [Apache ECharts (incubating) 官网下载界面](https://echarts.apache.org/download.html) 获取官方源码包后构建。
+在 [https://www.jsdelivr.com/package/npm/echarts](https://www.jsdelivr.com/package/npm/echarts) 选择 `dist/echarts.js`，点击并保存为 `echarts.js` 文件。
 
-* 在 ECharts 的 [GitHub](https://github.com/apache/incubator-echarts/releases) 获取。
-
-*  通过 npm 获取 echarts，`npm install echarts --save`，详见“[在 webpack 中使用 echarts](https://echarts.apache.org/tutorial.html#%E5%9C%A8%20webpack%20%E4%B8%AD%E4%BD%BF%E7%94%A8%20ECharts)”
-
-* 通过 [jsDelivr](https://www.jsdelivr.com/package/npm/echarts) 等 CDN 引入
+> 关于这些文件的介绍，可以在下一篇教程[安装](zh/basics_installation)中了解更多信息。
 
 ## 引入 ECharts
 
-通过标签方式直接引入构建好的 echarts 文件
+在刚才保存 `echarts.js` 的目录新建一个 `index.html` 文件，内容如下：
 
 ```html
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
-    <!-- 引入 ECharts 文件 -->
-    <script src="echarts.min.js"></script>
+    <!-- 引入刚刚下载的 ECharts 文件 -->
+    <script src="echarts.js"></script>
 </head>
 </html>
 ```
 
+打开这个 `index.html`，你会看到一片空白。但是不要担心，打开控制台看到没有报错信息，就可以进行下一步。
+
 ## 绘制一个简单的图表
 
-在绘图前我们需要为 ECharts 准备一个具备高宽的 DOM 容器。
+在绘图前我们需要为 ECharts 准备一个定义了高宽的 DOM 容器。在刚才的例子 `</head>` 之后，添加：
 
 ```
 <body>
-    <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+    <!-- 为 ECharts 准备一个定义了宽高的 DOM -->
     <div id="main" style="width: 600px;height:400px;"></div>
 </body>
 ```
 
-然后就可以通过 [echarts.init](api.html#echarts.init) 方法初始化一个 echarts 实例并通过 [setOption](api.html#echartsInstance.setOption) 方法生成一个简单的柱状图，下面是完整代码。
+然后就可以通过 [echarts.init](${mainSitePath}/api.html#echarts.init) 方法初始化一个 echarts 实例并通过 [setOption](${mainSitePath}/api.html#echartsInstance.setOption) 方法生成一个简单的柱状图，下面是完整代码。
 
 
 ```html
@@ -47,11 +45,11 @@
 <head>
     <meta charset="utf-8">
     <title>ECharts</title>
-    <!-- 引入 echarts.js -->
+    <!-- 引入刚刚下载的 ECharts 文件 -->
     <script src="echarts.min.js"></script>
 </head>
 <body>
-    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <!-- 为 ECharts 准备一个定义了宽高的 DOM -->
     <div id="main" style="width: 600px;height:400px;"></div>
     <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
@@ -86,6 +84,6 @@
 
 这样你的第一个图表就诞生了！
 
-<iframe width="600" height="300" src="${galleryViewPath}doc-example/getting-started&reset=1&edit=1"></iframe>
+<iframe width="600" height="400" src="${galleryViewPath}doc-example/getting-started&reset=1&edit=1"></iframe>
 
 你也可以直接进入 [ECharts Gallery](${galleryEditorPath}doc-example/getting-started) 中查看编辑示例
