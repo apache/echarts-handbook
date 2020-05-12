@@ -9,7 +9,7 @@ export default [{
         title: '项目结构说明',
         dir: 'get-started'
     }, {
-        title: '写作风格规范', 
+        title: '写作风格规范',
         dir: 'writing'
     }]
 }, {
@@ -19,11 +19,8 @@ export default [{
     title: '入门篇',
     dir: 'basics',
     children: [{
-        title: '安装',
-        dir: 'installation'
-    }, {
-        title: '初始化',
-        dir: 'configuration'
+        title: '下载',
+        dir: 'download'
     }, {
         title: '资源列表',
         dir: 'resource'
@@ -36,8 +33,11 @@ export default [{
     }]
 }, {
     title: '概念篇',
-    dir: 'basics',
+    dir: 'concepts',
     children: [{
+        title: '图表容器及大小',
+        dir: 'chart-size'
+    }, {
         title: '配置项基本概念',
         dir: 'options'
     }, {

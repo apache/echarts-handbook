@@ -43,7 +43,7 @@ export default Vue.extend({
 
 <style>
 .post-content {
-  margin: 20px 0;
+  margin: 20px 0 80px 0;
 }
 
 h1 {
@@ -104,5 +104,9 @@ pre code {
 iframe {
   border: 1px solid #ddd;
   margin: 10px 0;
+}
+
+p {
+  line-height: 1.8em;
 }
 </style>

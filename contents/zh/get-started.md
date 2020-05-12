@@ -29,7 +29,7 @@ ECharts 支持多种下载方式，可以在下一篇教程[安装](zh/basics_in
 
 在绘图前我们需要为 ECharts 准备一个定义了高宽的 DOM 容器。在刚才的例子 `</head>` 之后，添加：
 
-```
+```html
 <body>
     <!-- 为 ECharts 准备一个定义了宽高的 DOM -->
     <div id="main" style="width: 600px;height:400px;"></div>
