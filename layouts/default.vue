@@ -42,8 +42,45 @@ export default Vue.extend({
 </script>
 
 <style>
-.post-content {
+.post-inner {
   margin: 20px 0 80px 0;
+}
+
+.post-content {
+  margin-bottom: 80px;
+}
+
+.post-contributors {
+  border-top: 1px solid #ddd;
+}
+
+.post-contributor {
+  display: inline-block;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  color: #777;
+}
+
+.post-contributor:hover {
+  text-decoration: none;
+}
+
+.post-contributor img {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.post-contributor span {
+  display: inline-block;
+  margin: 0 8px 0 5px;
+  position: relative;
+  top: 2px;
+}
+
+.post-edit {
+  margin: 10px 0;
 }
 
 h1 {
