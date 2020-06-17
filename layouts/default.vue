@@ -56,6 +56,7 @@ export default Vue.extend({
 
 .post-contributor {
   display: inline-block;
+  margin-right: 15px;
   border: 1px solid #eee;
   border-radius: 5px;
   color: #777;
