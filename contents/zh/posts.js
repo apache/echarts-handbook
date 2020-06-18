@@ -95,11 +95,14 @@ export default [{
         title: '柱状图',
         dir: 'bar',
         children: [{
-            title: '最简单的柱状图',
+            title: '基本柱状图',
             dir: 'simple-bar'
         }, {
             title: '堆叠柱状图',
             dir: 'stacked-bar'
+        }, {
+            title: '动态排序柱状图',
+            dir: 'bar-racing'
         }, {
             title: '极坐标系柱状图',
             dir: 'polar-bar'
