@@ -61,8 +61,53 @@ export default [{
     }]
 }, {
     title: '应用篇',
-    dir: 'cookbook',
+    dir: 'application',
     children: [{
+        title: '常用图表类型',
+        dir: 'chart-types',
+        children: [{
+            title: '柱状图',
+            dir: 'bar',
+            children: [{
+                title: '基础折线图',
+                dir: 'basic-bar'
+            }, {
+                title: '堆叠柱状图',
+                dir: 'stacked-bar'
+            }, {
+                title: '动态排序柱状图',
+                dir: 'bar-race'
+            }, {
+                title: '极坐标系柱状图',
+                dir: 'polar-bar'
+            }, {
+                title: '瀑布图',
+                dir: 'waterfall'
+            }, {
+                title: '视觉映射的柱状图',
+                dir: 'visual-map'
+            }]
+        }, {
+            title: '折线图',
+            dir: 'line',
+            children: [{
+                title: '基础折线图',
+                dir: 'basic-line'
+            }, {
+                title: '堆叠折线图',
+                dir: 'stacked-line'
+            }, {
+                title: '区域面积折线图',
+                dir: 'area-line'
+            }, {
+                title: '平滑曲线图',
+                dir: 'smooth-line'
+            }, {
+                title: '阶梯线图',
+                dir: 'step-line'
+            }]
+        }]
+    }, {
         title: '移动端优化',
         dir: 'mobile'
     }, {
@@ -87,37 +132,5 @@ export default [{
     }, {
         title: '可视化设计原则',
         dir: 'design'
-    }]
-}, {
-    title: '常用图表类型',
-    dir: 'chart-types',
-    children: [{
-        title: '柱状图',
-        dir: 'bar',
-        children: [{
-            title: '基本柱状图',
-            dir: 'simple-bar'
-        }, {
-            title: '堆叠柱状图',
-            dir: 'stacked-bar'
-        }, {
-            title: '动态排序柱状图',
-            dir: 'bar-racing'
-        }, {
-            title: '极坐标系柱状图',
-            dir: 'polar-bar'
-        }, {
-            title: '瀑布图',
-            dir: 'waterfall'
-        }, {
-            title: '视觉映射的柱状图',
-            dir: 'visual-map'
-        }]
-    }, {
-        title: '折线图',
-        dir: 'line'
-    }, {
-        title: '……',
-        dir: 'xxx'
     }]
 }];
