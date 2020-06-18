@@ -106,6 +106,26 @@ export default [{
                 title: '阶梯线图',
                 dir: 'step-line'
             }]
+        }, {
+            title: '饼图',
+            dir: 'pie',
+            children: [{
+                title: '基础饼图',
+                dir: 'basic-pie'
+            }, {
+                title: '环形图',
+                dir: 'ring'
+            }, {
+                title: '南丁格尔图（玫瑰图）',
+                dir: 'rose'
+            }]
+        }, {
+            title: '散点图',
+            dir: 'scatter',
+            children: [{
+                title: '基础散点图',
+                dir: 'basic-scatter'
+            }]
         }]
     }, {
         title: '移动端优化',
@@ -113,6 +133,9 @@ export default [{
     }, {
         title: '跨平台方案',
         dir: 'cross-platform'
+    }, {
+        title: '自定义构建',
+        dir: 'custom-build'
     }, {
         title: '无障碍访问',
         dir: 'aria'
