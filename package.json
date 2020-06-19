@@ -31,7 +31,9 @@
     "frontmatter-markdown-loader": "^3.3.0",
     "markdown-image-loader": "^2.0.0",
     "markdown-it": "^10.0.0",
+    "node-sass": "^4.14.1",
     "raw-loader": "^4.0.0",
+    "sass-loader": "^8.0.2",
     "webpack": "^4.42.1"
   }
 }

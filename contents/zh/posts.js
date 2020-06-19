@@ -1,3 +1,4 @@
+/* eslint-disable */
 /**
  * 这个文件决定了导航栏的数据，顺序即为以下元素定义的顺序。
  * title 是导航栏中显示的标题，md 文件中的一级标题是正文标题，两者可以不同。
@@ -147,14 +148,21 @@ export default [{
             dir: 'server'
         }]
     }, {
+        title: '数据处理',
+        dir: 'data',
+        children: [{
+            title: '动态的异步数据',
+            dir: 'dynamic-data'
+        }, {
+            title: '数据下钻',
+            dir: 'drilldown'
+        }]
+    }, {
         title: '自定义构建',
         dir: 'custom-build'
     }, {
         title: '无障碍访问',
         dir: 'aria'
-    }, {
-        title: '数据下钻',
-        dir: 'downplay'
     }, {
         title: '多图联动',
         dir: 'connect'
