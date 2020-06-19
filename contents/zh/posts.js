@@ -58,6 +58,9 @@ export default [{
     }, {
         title: '提示框',
         dir: 'tooltip'
+    }, {
+        title: '事件与行为',
+        dir: 'event'
     }]
 }, {
     title: '应用篇',
@@ -132,7 +135,17 @@ export default [{
         dir: 'mobile'
     }, {
         title: '跨平台方案',
-        dir: 'cross-platform'
+        dir: 'cross-platform',
+        children: [{
+            title: '百度智能小程序',
+            dir: 'baidu-app'
+        }, {
+            title: '微信小程序',
+            dir: 'wechat-app'
+        }, {
+            title: '服务端渲染',
+            dir: 'server'
+        }]
     }, {
         title: '自定义构建',
         dir: 'custom-build'
@@ -152,6 +165,12 @@ export default [{
     children: [{
         title: '移动端优化',
         dir: 'mobile'
+    }, {
+        title: 'Canvas vs. SVG',
+        dir: 'canvas-vs-svg'
+    }, {
+        title: '无障碍访问',
+        dir: 'aria'
     }, {
         title: '可视化设计原则',
         dir: 'design'
