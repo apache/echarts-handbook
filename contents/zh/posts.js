@@ -215,9 +215,6 @@ export default [{
                 dir: 'basic-pie'
             }]
         }, {
-            title: '雷达图',
-            dir: 'radar',
-        }, {
             title: '散点图',
             dir: 'scatter',
             children: [{
@@ -227,6 +224,12 @@ export default [{
                 title: '气泡图',
                 dir: 'bubble'
             }]
-        }]
+        },{
+            title: '雷达图',
+            dir: 'radar',
+        }, {
+            title: '漏斗图',
+            dir: 'funnel',
+        },]
     }]
 }];
