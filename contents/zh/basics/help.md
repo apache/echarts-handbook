@@ -1,1 +1,41 @@
 # 寻求帮助
+
+## 技术问题
+
+### 1. 确保现有文档等资料无法解决你的问题
+
+ECharts 有非常大量的用户，所以你遇到过的问题，很可能别人在此之前也遇到并解决了。通过查看文档以及使用搜索引擎搜索关键字，可以帮助你自助地在第一时间解决问题，而不需要依赖社区的帮助。
+
+因此，在做其他操作前，请确保现有文档等资料无法解决你的问题。可以尝试查看或搜索的资料包括：
+
+- [API](${mainSitePath}/api.html)
+- [配置项手册](${mainSitePath}/option.html)：可以尝试使用搜索功能
+- 本手册的文章
+- [常见问题](${mainSitePath}/faq.html)
+- 在 [GitHub issue](https://github.com/apache/incubator-echarts/issues) 中搜索关键字
+- 使用搜索引擎搜索关键字
+
+
+### 2. 创建一个最简单可复现的例子
+
+使用 [Codepen](https://codepen.io/Ovilia/pen/dyYWXWM) 或者 [ECharts Gallery](https://gallery.echartsjs.com/editor.html) 创建一个例子，这将使得他人更方便地复现你的问题。
+
+例子应尽可能以最简单的方式复现你的问题，去除不必要的配置项和数据，可以让帮助你的人更快速地定位问题，从而让你的问题更快得到解决。更详细的介绍请参见 [How to create a Minimal, Reproducible Example](https://stackoverflow.com/help/minimal-reproducible-example)。
+
+
+### 3. 判断是否是 bug
+
+#### 报告 bug 或请求新功能
+
+如果不符合文档描述或你的预期效果，这很有可能是 bug。如果是 bug，或者你有一个想请求事项的功能，请使用 [issue 模板](https://ecomfe.github.io/echarts-issue-helper/) 中新建一个 issue 并按照提示详细描述。
+
+#### 咨询类问题
+
+如果不是 bug，而是不知道如何实现某种效果，可以尝试在 <a href="https://stackoverflow.com">stackoverflow.com</a>、<a href="https://www.oschina.net/question/tag/echarts">开源中国</a> 或 <a href="https://segmentfault.com/t/echarts">segmentfault.com</a> 等问答平台上提问。
+
+如果没能得到答复，也可以发送邮件至邮件组 [dev@echarts.apache.org](mailto:dev@echarts.apache.org)。为了让更多人理解你的问题，并且在将来搜索的时候得到帮助，强烈建议使用英文发送邮件。
+
+
+## 非技术类问题
+
+其他问题可以发送英文邮件至邮件组 [dev@echarts.apache.org](mailto:dev@echarts.apache.org)。
