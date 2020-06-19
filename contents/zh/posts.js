@@ -214,6 +214,9 @@ export default [{
                 title: '基础饼图',
                 dir: 'basic-pie'
             }]
+        }, {
+            title: '雷达图',
+            dir: 'radar',
         }]
     }]
 }];
