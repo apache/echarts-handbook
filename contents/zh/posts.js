@@ -217,6 +217,16 @@ export default [{
         }, {
             title: '雷达图',
             dir: 'radar',
+        }, {
+            title: '散点图',
+            dir: 'scatter',
+            children: [{
+                title: '散点图',
+                dir: 'scatter'
+            },{
+                title: '气泡图',
+                dir: 'bubble'
+            }]
         }]
     }]
 }];
