@@ -174,7 +174,11 @@ export default [{
         dir: 'aria'
     }, {
         title: '可视化设计原则',
-        dir: 'design'
+        dir: 'design',
+        children: [{
+            title: '用颜色增强可视化效果',
+            dir: 'color-enhance',
+            }]
     }, {
         title: '可视化规范',
         dir: 'chart-specificatio',
