@@ -230,6 +230,9 @@ export default [{
         }, {
             title: '漏斗图',
             dir: 'funnel',
+        },{
+            title: '仪表盘',
+            dir: 'gauger',
         },]
     }]
 }];
