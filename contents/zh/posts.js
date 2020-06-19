@@ -1,3 +1,4 @@
+/* eslint-disable */
 /**
  * 这个文件决定了导航栏的数据，顺序即为以下元素定义的顺序。
  * title 是导航栏中显示的标题，md 文件中的一级标题是正文标题，两者可以不同。
@@ -205,6 +206,13 @@ export default [{
             }, {
                 title: '分组柱状图',
                 dir: 'grouped-bar'
+            }]
+        }, {
+            title: '饼图',
+            dir: 'pie',
+            children: [{
+                title: '基础饼图',
+                dir: 'basic-pie'
             }]
         }]
     }]
