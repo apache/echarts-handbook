@@ -72,7 +72,28 @@ export default {
         "Ovilia"
     ],
     "contents/zh/best-practice/design.md": [
-        "Ovilia"
+        "Wdingding"
+    ],
+    "contents/zh/best-practice/chart-specificatio/line/basic-line.md": [
+        "Wdingding"
+    ],
+    "contents/zh/best-practice/chart-specificatio/line/area.md": [
+        "Wdingding"
+    ],
+    "contents/zh/best-practice/chart-specificatio/line/stacked-area.md": [
+        "Wdingding"
+    ],
+    "contents/zh/best-practice/chart-specificatio/bar/basic-bar.md": [
+        "Wdingding"
+    ],
+    "contents/zh/best-practice/chart-specificatio/bar/stacked-bar.md": [
+        "Wdingding"
+    ],
+    "contents/zh/best-practice/chart-specificatio/bar/bi-directiona-bar.md": [
+        "Wdingding"
+    ],
+    "contents/zh/best-practice/chart-specificatio/bar/grouped-bar.md": [
+        "Wdingding"
     ],
     "contents/zh/basics/resource.md": [
         "Ovilia"
