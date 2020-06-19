@@ -181,7 +181,11 @@ export default [{
         dir: 'aria'
     }, {
         title: '可视化设计原则',
-        dir: 'design'
+        dir: 'design',
+        children: [{
+            title: '用颜色增强可视化效果',
+            dir: 'color-enhance',
+            }]
     }, {
         title: '可视化规范',
         dir: 'chart-specificatio',
@@ -214,6 +218,32 @@ export default [{
                 title: '分组柱状图',
                 dir: 'grouped-bar'
             }]
-        }]
+        }, {
+            title: '饼图',
+            dir: 'pie',
+            children: [{
+                title: '基础饼图',
+                dir: 'basic-pie'
+            }]
+        }, {
+            title: '散点图',
+            dir: 'scatter',
+            children: [{
+                title: '散点图',
+                dir: 'scatter'
+            },{
+                title: '气泡图',
+                dir: 'bubble'
+            }]
+        },{
+            title: '雷达图',
+            dir: 'radar',
+        }, {
+            title: '漏斗图',
+            dir: 'funnel',
+        },{
+            title: '仪表盘',
+            dir: 'gauger',
+        },]
     }]
 }];
