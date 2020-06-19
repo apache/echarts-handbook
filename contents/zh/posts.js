@@ -127,10 +127,44 @@ export default [{
     title: '最佳实践',
     dir: 'best-practice',
     children: [{
-        title: '移动端优化',
-        dir: 'mobile'
-    }, {
+            title: '移动端优化',
+            dir: 'mobile'
+        },{
         title: '可视化设计原则',
         dir: 'design'
+        }, {
+        title: '可视化规范',
+        dir: 'chart-specificatio',
+        children: [{
+            title: '折线图',
+                dir: 'line',
+                children: [{
+                    title: '基础折线图',
+                    dir: 'basic-line'
+                }, {
+                    title: '面积图',
+                    dir: 'area'
+                }, {
+                    title: '堆叠面积图',
+                    dir: 'stacked-area'
+                }]
+            },  
+            {
+                title: '柱状图',
+                dir: 'bar',
+                children: [{
+                    title: '基础柱状图',
+                    dir: 'basic-bar'
+                }, {
+                title: '堆叠柱状图',
+                dir: 'stacked-bar'
+                }, {
+                title: '双向柱状图',
+                dir: 'bi-directiona-bar'
+                }, {
+                title: '分组柱状图',
+                dir: 'grouped-bar'
+            }]
+        },]
     }]
-}];
+}]
