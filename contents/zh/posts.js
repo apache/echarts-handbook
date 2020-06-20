@@ -73,7 +73,7 @@ export default [{
             title: '柱状图',
             dir: 'bar',
             children: [{
-                title: '基础折线图',
+                title: '基础柱状图',
                 dir: 'basic-bar'
             }, {
                 title: '堆叠柱状图',
