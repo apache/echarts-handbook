@@ -45,6 +45,9 @@ export default [{
         title: '系列',
         dir: 'series'
     }, {
+        title: '数据集',
+        dir: 'dataset'
+    }, {
         title: '坐标系',
         dir: 'coordinate'
     }, {
