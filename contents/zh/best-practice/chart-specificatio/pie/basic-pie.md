@@ -1,8 +1,8 @@
-# 基础折线图
+# 饼图
 
 饼图主要用于展现不同类别数值相对于总数的占比情况。图中每个分块（扇区）的弧长表示该类别的占比大小，所有分块数据总和为 100%。
 
-<iframe max-width="830" width="100%" height="400" 
+<iframe max-width="830" width="100%" height="400"
 src="https://gallery.echartsjs.com/view-lite.html?cid=xHySlBkIEM&v=1">
 </iframe>
 
@@ -15,14 +15,14 @@ src="https://gallery.echartsjs.com/view-lite.html?cid=xHySlBkIEM&v=1">
 
 2、我们很难比较一个分块过多的饼图的数据，建议尽量将饼图分块数量控制在五个以内。当数据类别较多时，可以把较小或不重要的数据合并成第五个分块，并命名为"其它"。如果各类别都必须全部展示，此时选择柱状图或堆积柱状图或许更合适。
 
-<img max-width="830" width="100%" height="100%" 
+<img max-width="830" width="100%" height="100%"
 src="${rootPath}/images/design/pie/pie02.jpg">
 </img>
 
 
 3、饼图不适合被用于精确数据的比较，因此当各类别数据占比较接近时（如下左图），我们很难对比出每个类别占比的大小。此时建议选用柱状图或南丁格尔玫瑰图（如下右图）来获取更好的展示效果。
 
-<img max-width="830" width="100%" height="100%" 
+<img max-width="830" width="100%" height="100%"
 src="${rootPath}/images/design/pie/pie03.jpg">
 </img>
 
@@ -30,7 +30,7 @@ src="${rootPath}/images/design/pie/pie03.jpg">
 
 其余的数据分块有两种建议，一种是按照数据大小依次顺时针排列，另一种是在 12 点钟的左边绘制第二大的分块，其余的分块按照逆时针排列，最小的分块放在底部。如下图所示。
 
-<img max-width="830" width="100%" height="100%" 
+<img max-width="830" width="100%" height="100%"
 src="${rootPath}/images/design/pie/pie01.jpg">
 </img>
 
@@ -39,13 +39,13 @@ src="${rootPath}/images/design/pie/pie01.jpg">
 
 5、可以添加一些装饰来强调饼图中的某一个数据。颜色、动效、样式、位置等元素都可以被用来突出显示一个扇区。请注意适度，有时太多的装饰会让用户理解数据时分心。
 
-<iframe max-width="830" width="100%" height="400" 
+<iframe max-width="830" width="100%" height="400"
  src="https://gallery.echartsjs.com/view-lite.html?cid=xHySlBkIEM&v=1">
 </iframe>
 
 
 6、三维的饼图歪曲了各分块相对于整体的比例关系，会造成错误及理解上的困扰。因此不建议使用 3D 饼图。
 
-<img max-width="830" width="100%" height="100%" 
+<img max-width="830" width="100%" height="100%"
 src="${rootPath}/images/design/pie/pie04.jpg">
 </img>
