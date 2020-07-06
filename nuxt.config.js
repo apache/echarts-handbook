@@ -83,7 +83,7 @@ export default {
     },
 
     filenames: {
-      chunk: (isDev) => isDev ? '[name].js' : 'js/[contenthash].js'
+      chunk: ({ isDev }) => isDev ? '[name].js' : 'js/[contenthash].js'
     }
   },
   generate: {
