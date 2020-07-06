@@ -43,6 +43,7 @@ export default {
 
   h2 {
     margin: 70px 0 20px 0;
+    padding-bottom: 10px;
     font-size: 26px;
     color: #666;
     border-bottom: 1px solid #ddd;
@@ -101,6 +102,7 @@ export default {
 }
 
 .post-contributors {
+  padding-top: 10px;
   border-top: 1px solid #ddd;
 
   .post-contributor {
