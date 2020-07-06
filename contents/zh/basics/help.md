@@ -27,7 +27,7 @@ ECharts 有非常大量的用户，所以你遇到过的问题，很可能别人
 
 #### 报告 bug 或请求新功能
 
-如果不符合文档描述或你的预期效果，这很有可能是 bug。如果是 bug，或者你有一个想请求事项的功能，请使用 [issue 模板](https://ecomfe.github.io/echarts-issue-helper/) 中新建一个 issue 并按照提示详细描述。
+如果不符合文档描述或你的预期效果，这很有可能是 bug。如果是 bug，或者你有一个想请求实现的功能，请使用 [issue 模板](https://ecomfe.github.io/echarts-issue-helper/) 中新建一个 issue 并按照提示详细描述。
 
 #### 咨询类问题
 
