@@ -2,7 +2,7 @@
 
 Bar Chart(Bar graph), is a chart that presents the comparisons among discrete data. The length of the bars is proportional related to the categorical data.
 
-To set the bar chart, you need to set the 'name' of 'series' as 'bar'.
+To set the bar chart, you need to set the `name` of `series` as `'bar'`.
 
 [[CI Handbook]](${optionPath}series-bar)
 
@@ -24,12 +24,12 @@ option = {
 };
 ```
 
-In this case, the x-axis is under the category type. Therefore, you should enter the tick labels into 'xAxis'. Meanwhile, the data type of the y-axis is numerical. The range of the y-axis will be generated automatically.
+In this case, the x-axis is under the category type. Therefore, you should enter the tick labels into `xAxis`. Meanwhile, the data type of the y-axis is numerical. The range of the y-axis will be generated automatically by the `data` in `series`.
 
 
 ## Multi-series Bar Chart
 
-You may use 'series' to represent a group of related data. To show multiple series in the same chart, you need to add one more array under the 'series'.
+You may use a series to represent a group of related data. To show multiple series in the same chart, you need to add one more array under the `series`.
 
 <!-- embed -->
 ```js
@@ -82,11 +82,11 @@ option = {
 };
 ```
 
-In this case, we defined the style of the bar chart by 'itemStyle' of corresponding 'series'. For complete configuration items and their usage, please check the configuration item manual: [`series.itemStyle`](${optionPath}series-bar.itemStyle)。
+In this case, we defined the style of the bar chart by `itemStyle` of corresponding `series`. For complete configuration items and their usage, please check the configuration item manual: [`series.itemStyle`](${optionPath}series-bar.itemStyle)。
 
 ### Width and Height of Column
 
-You can use [`barWidth`](${optionPath}#series-bar.barWidth) to change the width of the bar. For instance, the 'barWidth' in the following case was set to '20%'. It indicates that width of each bar is 20% of the category width. As there are 5 data in every series, 20% 'barWidth' means 4% for the entire x-axis.
+You can use [`barWidth`](${optionPath}#series-bar.barWidth) to change the width of the bar. For instance, the `barWidth` in the following case was set to `'20%'`. It indicates that width of each bar is 20% of the category width. As there are 5 data in every series, 20% 'barWidth' means 4% for the entire x-axis.
 
 <!-- embed -->
 ```js
@@ -132,9 +132,9 @@ option = {
 };
 ```
 
-In this case, the 'barGap' is '20%'. That means the distance between bars under the same category is 20% of the bar width. For instance, if we set the 'barCategoryGap' to '40%', the gap on each side of the bar will take 40% place in categories (compared with the width of the column).
+In this case, the `barGap` is `'20%'`. That means the distance between bars under the same category is 20% of the bar width. For instance, if we set the `barCategoryGap` to `'40%'`, the gap on each side of the bar will take 40% place in categories (compared with the width of the column).
 
-Usually, 'barWidth' is not necessary to be clarified after 'barGap' and 'barCategoryGap' was set. If you need to make sure the bar is not too wide while the graph is large, try to us 'barMaxWidth' to limit the maximum width of bars.
+Usually, `barWidth` is not necessary to be clarified if `'barGap'` and `barCategoryGap` was set. If you need to make sure the bar is not too wide while the graph is large, try to us `barMaxWidth` to limit the maximum width of bars.
 
 >In the same cartesian coordinate system, the property will be shared by several column series. To make sure it takes effect on the graph, please set the property on the last bar chart series of the system.
 
