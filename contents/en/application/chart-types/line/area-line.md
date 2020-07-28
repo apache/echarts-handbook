@@ -24,4 +24,4 @@ option = {
 };
 ```
 
-If you want to change the area style of the line chart, try to use [`areaStyle`](${optionPath}series-line.areaStyle). Set `areaStyle` to `{}` to use the default type: use the color of series to fill the area in translucent. If you want to change the type, try to override the configuration items in `areaStyle`. For example, the color of the second series was changed to yellow with 50% opacity.
+If you want to change the area style of the line chart, try to use [`areaStyle`](${optionPath}series-line.areaStyle). Set `'areaStyle'` to `{}` to use the default type: use the color of series to fill the area in translucent. If you want to change the style, try to override the configuration items in `'areaStyle'`. For example, the color of the second series was changed to yellow with 50% opacity.
