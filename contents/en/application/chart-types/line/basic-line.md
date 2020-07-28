@@ -2,7 +2,7 @@
 
 柱状图（或称条形图）是一种通过柱形的长度来表现数据大小的一种常用图表类型。
 
-## Simple Example of Line Chart
+## Simple Example
 
 We can use the following code to build a line chart which has x-axis as `category`, y-axis as `value`: 
 
