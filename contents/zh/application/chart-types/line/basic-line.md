@@ -76,7 +76,7 @@ option = {
 
 ### 数据点的样式
 
-数据点的样式可以通过 [`series.itemStyle`](${optionPath}series-line.itemStyle) 指定填充颜色（color）、描边颜色（borderWidth）、描边宽度（borderWidth）、描边颜色（borderColor）、阴影（shadowColor）、不透明度（opacity）等。与折线样式的设置十分相似，这里不再展开说明。
+数据点的样式可以通过 [`series.itemStyle`](${optionPath}series-line.itemStyle) 指定填充颜色（color）、描边颜色（borderColor）、描边宽度（borderWidth）、描边类型（borderType）、阴影（shadowColor）、不透明度（opacity）等。与折线样式的设置十分相似，这里不再展开说明。
 
 
 ## 在数据点处显示数值
