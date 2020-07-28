@@ -1,6 +1,6 @@
 # Basic Bar Chart
 
-Bar Chart(Bar graph), is a chart that presents the comparisons among discrete data. The length of the bars is proportional related to the categorical data.
+Bar Chart, is a chart that presents the comparisons among discrete data. The length of the bars is proportional related to the categorical data.
 
 To set the bar chart, you need to set the `name` of `series` as `'bar'`.
 
@@ -8,7 +8,7 @@ To set the bar chart, you need to set the `name` of `series` as `'bar'`.
 
 ## Simple Example
 
-Let's begin with a very easy bar chart:
+Let's begin with a basic bar chart:
 
 <!-- embed -->
 ```js
@@ -24,7 +24,7 @@ option = {
 };
 ```
 
-In this case, the x-axis is under the category type. Therefore, you should enter the tick labels into `xAxis`. Meanwhile, the data type of the y-axis is numerical. The range of the y-axis will be generated automatically by the `data` in `series`.
+In this case, the x-axis is under the category type. Therefore, you should define some corresponding values for `'xAxis'`. Meanwhile, the data type of the y-axis is numerical. The range of the y-axis will be generated automatically by the `data` in `'series'`.
 
 
 ## Multi-series Bar Chart
@@ -49,17 +49,17 @@ option = {
 ```
 
 
-## Personalize Bar Chart
+## Customized Bar Chart
 
 ### Styles
 
 It's good idea to install the style of Bar Chart by using ['series.itemStyle'](${optionPath}series-bar.itemStyle). Description of the SCI:
 
-- Color of column('color');
-- Outline color('borderColor'), width('borderWidth'), type('borderType') of column;
-- Border radius of column('barBorderRadius');
-- Transparency('opacity');
-- Shadow type('shadowBlur','shadowColor','shadowOffsetX','shadowOffsetY')
+- Color of column(`'color'`);
+- Outline color(`'borderColor'`), width(`'borderWidth'`), type(`'borderType'`) of column;
+- Border radius of column(`'barBorderRadius'`);
+- Transparency(`'opacity'`);
+- Shadow type(`'shadowBlur'`, `'shadowColor'`, `'shadowOffsetX'`, `'shadowOffsetY'`)
 
 Here is a example:
 
@@ -82,11 +82,11 @@ option = {
 };
 ```
 
-In this case, we defined the style of the bar chart by `itemStyle` of corresponding `series`. For complete configuration items and their usage, please check the configuration item manual: [`series.itemStyle`](${optionPath}series-bar.itemStyle)。
+In this case, we defined the style of the bar chart by `'itemStyle'` of corresponding `series`. For complete configuration items and their usage, please check the configuration item manual: [`series.itemStyle`](${optionPath}series-bar.itemStyle)。
 
 ### Width and Height of Column
 
-You can use [`barWidth`](${optionPath}#series-bar.barWidth) to change the width of the bar. For instance, the `barWidth` in the following case was set to `'20%'`. It indicates that width of each bar is 20% of the category width. As there are 5 data in every series, 20% 'barWidth' means 4% for the entire x-axis.
+You can use [`barWidth`](${optionPath}#series-bar.barWidth) to change the width of the bar. For instance, the `'barWidth'` in the following case was set to `'20%'`. It indicates that width of each bar is 20% of the category width. As there are 5 data in every series, 20% `'barWidth'` means 4% for the entire x-axis.
 
 <!-- embed -->
 ```js
@@ -107,7 +107,7 @@ option = {
 };
 ```
 
-In addition, [`barMaxWidth`](${optionPath}series-bar.barMaxWidth) has limited the maximum width of the bar. For some small value, you can declare a minimum height for the bar: [`barMinHeight`](${optionPath}series-bar.barMinHeight). When the corresponding height of data is smaller than the limit, the system will take 'barMinHeight' as the replaced height.
+In addition, [`barMaxWidth`](${optionPath}series-bar.barMaxWidth) has limited the maximum width of the bar. For some small value, you can declare a minimum height for the bar: [`barMinHeight`](${optionPath}series-bar.barMinHeight). When the corresponding height of data is smaller than the limit, ECharts will take 'barMinHeight' as the replaced height.
 
 ### Column Spacing
 
@@ -141,7 +141,7 @@ Usually, `barWidth` is not necessary to be clarified if `'barGap'` and `barCateg
 
 ### Add Background Color for Bars
 
-You might want to change the background color of bars sometimes. After ECharts v4.7.0, this function can be activated by ['showBackground'](${optionPath}series-bar.showBackground) and configured by ['backgroundStyle'](${optionPath}series-bar.backgroundStyle).
+You might want to change the background color of bars sometimes. After ECharts v4.7.0, this function can be enabled by ['showBackground'](${optionPath}series-bar.showBackground) and configured by ['backgroundStyle'](${optionPath}series-bar.backgroundStyle).
 
 <!-- embed -->
 ```js
