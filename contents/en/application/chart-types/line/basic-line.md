@@ -45,7 +45,7 @@ option = {
 ```
 
 
-## Line Chart Style Setting
+## Customized Line Chart
 
 ### Line Style
 
