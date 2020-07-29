@@ -42,10 +42,6 @@ option = {
 <!-- embed -->
 ```js
 option = {
-    tooltip: {
-        trigger: 'item',
-        formatter: "{a} <br/>{b}: {c} ({d}%)"
-    },
     legend: {
         orient: 'vertical',
         x: 'left',
@@ -60,6 +56,7 @@ option = {
                 show: false,
                 position: 'center',
                 emphasis: {
+                    show: true
                 }
             },
             labelLine: {
