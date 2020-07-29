@@ -16,7 +16,7 @@ option = {
             name: 'Direct Visit'
         }, {
             value: 234,
-            name: 'AD Networks'
+            name: 'Union Ad'
         }, {
             value: 1548,
             name: 'Search Engine'
@@ -44,7 +44,7 @@ option = {
             name: 'Direct Visit'
         }, {
             value: 234,
-            name: 'AD Networks'
+            name: 'Union Ad'
         }, {
             value: 1548,
             name: 'Search Engine'
@@ -70,7 +70,7 @@ option = {
             name: 'Direct Visit'
         }, {
             value: 0,
-            name: 'AD Networks'
+            name: 'Union Ad'
         }, {
             value: 0,
             name: 'Search Engine'
@@ -95,7 +95,7 @@ option = {
             name: 'Direct Visit'
         }, {
             value: 0,
-            name: 'AD Networks'
+            name: 'Union Ad'
         }, {
             value: 0,
             name: 'Search Engine'
