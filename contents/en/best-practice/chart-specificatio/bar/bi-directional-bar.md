@@ -12,7 +12,7 @@ The bi-directional bar can be classified into the vertical chart (above)  and ho
 </iframe>
 
 
-## Recommendation for using the bi-directional bar chart
+## Suggestion Using Bi-directional Bar Chart
 
 1. The data on both sides in the bi-directional bar chart are comparative.
 
