@@ -54,7 +54,7 @@ The built-in shape in ECharts included: `'circle'`, `'rect'`(rectangle), `'round
 
 If you want to define the shape as any image, try to use `'image'` following by the path, eg. `'image://http://example.com/xxx.png'` or `'image://./xxx.png'`.
 
-EChart `symbol` also supports SVG vector graphics. You can define `symbol` as an SVG file path that starts with `'path://'` to locate the vector graphics. The advantages of vector graphics are smaller size and no jagged or blurred. 
+ECharts `symbol` also supports SVG vector graphics. You can define `symbol` as an SVG file path that starts with `'path://'` to locate the vector graphics. The advantages of vector graphics are smaller size and no jagged or blurred. 
 
 Method to find the SVG path: Open an `SVG` path; Find the path similar as `<path d="M… L…"></path>`; Add `d`'s value after `'path://'`. Let's check how to define an item to vector shape of heart.
 

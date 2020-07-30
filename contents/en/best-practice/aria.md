@@ -56,6 +56,6 @@ The basic process to generate a description: If [aria.show](${optionPath}aria.sh
 
 While using the template to generate, firstly make sure whether the title [title.text](${optionPath}title.text) exist to decide to use [aria.general.withTitle](${optionPath}aria.general.withTitle) or [aria.general.withoutTitle](${optionPath}aria.general.withoutTitle) as the overall description. Configuration item `aria.general.withTitle` and `'{title}'` will be replaced by the chart title. In another word, if `aria.general.withTitle` was defined as `This is a chart about "{title}"`, and the title is `'Prize Distribution Chart'`, the description of this part will be `'This is a chart about "Prize Distribution Chart"'`.
 
-After generating the title, EChart will splice the description of the series and data after the title part. Every part of the template can include template variables, to be replaced by the actual value in the chart.
+After generating the title, ECharts will splice the description of the series and data after the title part. Every part of the template can include template variables, to be replaced by the actual value in the chart.
 
 The complete process of generating description, please check: [ARIA Document](${optionPath}aria).

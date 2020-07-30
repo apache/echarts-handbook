@@ -2,7 +2,7 @@
 
 Sometimes, we hope to not only figure series separately but also the trend of the sum. It's a good choice to implement it by using the stacked bar chart. As the name suggests, in the stacked bar chart, data in the same category will be stacked up in one column. The overall height of the bar explained the change of total.
 
-There is a simple way to implement a stacked bar chart by the EChart. You need to set the same string type value for a group of series in `stack`. The series with the same `stack` value will be in the same category.
+There is a simple way to implement a stacked bar chart by the ECharts. You need to set the same string type value for a group of series in `stack`. The series with the same `stack` value will be in the same category.
 
 <!-- embed -->
 ```js
