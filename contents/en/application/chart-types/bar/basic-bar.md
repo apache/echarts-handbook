@@ -1,6 +1,6 @@
 # Basic Bar Chart
 
-Bar Chart, is a chart that presents the comparisons among discrete data. The length of the bars is proportional related to the categorical data.
+Bar Chart, is a chart that presents the comparisons among discrete data. The length of the bars is proportionally related to the categorical data.
 
 To set the bar chart, you need to set the `name` of `series` as `'bar'`.
 
@@ -53,7 +53,7 @@ option = {
 
 ### Styles
 
-It's good idea to install the style of Bar Chart by using ['series.itemStyle'](${optionPath}series-bar.itemStyle). Description of the SCI:
+It is a good idea to install the style of Bar Chart by using ['series.itemStyle'](${optionPath}series-bar.itemStyle). Description of the SCI:
 
 - Color of column(`'color'`);
 - Outline color(`'borderColor'`), width(`'borderWidth'`), type(`'borderType'`) of column;
@@ -134,7 +134,7 @@ option = {
 
 In this case, the `barGap` is `'20%'`. That means the distance between bars under the same category is 20% of the bar width. For instance, if we set the `barCategoryGap` to `'40%'`, the gap on each side of the bar will take 40% place in categories (compared with the width of the column).
 
-Usually, `barWidth` is not necessary to be clarified if `'barGap'` and `barCategoryGap` was set. If you need to make sure the bar is not too wide while the graph is large, try to us `barMaxWidth` to limit the maximum width of bars.
+Usually, `barWidth` is not necessary to be clarified if `'barGap'` and `barCategoryGap` was set. If you need to make sure the bar is not too wide while the graph is large, try to use `barMaxWidth` to limit the maximum width of bars.
 
 >In the same cartesian coordinate system, the property will be shared by several column series. To make sure it takes effect on the graph, please set the property on the last bar chart series of the system.
 

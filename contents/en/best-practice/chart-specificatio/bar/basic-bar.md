@@ -12,7 +12,7 @@ While the label of the series is long, or there are more than 10 categories in o
 src="https://gallery.echartsjs.com/view-lite.html?cid=xByXtUE7Vz">
 </iframe>
 
-## Suggestions Using Bar Chart
+## Suggestions for Using Bar Chart
 
 1. Avoid using too many colors. One bar chart represents one set of metrics in general so that we suggest to use the same color or at least different shades of the same color. You can use a contrasting color to highlight meaningful data points.
 

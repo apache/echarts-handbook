@@ -14,7 +14,7 @@ Except for displaying the trend of developing things, the line chart can be used
 
 A line chart is drawn by connecting data points with lines. For the beauty of special effects, you can also connect points with curves as shown in the chart above. This chart is also called a curve chart or spline chart. The usage of the spline chart is the same as the line chart. The only difference is that the connection between data points is a curve but not a straight line.
 
-## Suggestion Using Line Chart
+## Suggestion for Using Line Chart
 
 1. To make sure the data readability, use solid lines in charts if you can separate the data line and axis.
 

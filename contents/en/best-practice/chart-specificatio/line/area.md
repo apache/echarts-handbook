@@ -5,7 +5,7 @@
 src="https://gallery.echartsjs.com/view-lite.html?cid=area-simple"></iframe>
 
 
-## Suggestion Using Area Line Chart
+## Suggestion for Using Area Line Chart
 
 1. The area line chart uses the filling is to represent the data. While there are several layers in one chart, try to make sure that the data are not overlapping. If the overlapping is not avoidable, you define the color and opacity to an appropriate value to make the chart readable. 
 

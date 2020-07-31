@@ -1,6 +1,5 @@
 # Basic Line Chart
 
-柱状图（或称条形图）是一种通过柱形的长度来表现数据大小的一种常用图表类型。
 
 ## Simple Example
 
@@ -51,7 +50,7 @@ option = {
 
 Line style can be changed by `lineStyle` setting. You can specify color, line width, polyline type and opacity etc.. For details, please see the handbook [`series.lineStyle`](${optionPath}series-line.lineStyle) to figure out.
 
-Here is an example of setting color, line width, and type.
+Here is an example of setting color, line width and type.
 
 
 <!-- embed -->

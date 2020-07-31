@@ -16,7 +16,7 @@ Here are two different kinds of stacked area chart:
 src="https://gallery.echartsjs.com/view-lite.html?cid=xSyBN2i7Vf">
 </iframe>
 
-## Suggestion Using Stacked Area Chart
+## Suggestion for Using Stacked Area Chart
 
 1. The area chart can't display data in many series that are closed to each others. It will make the chart hard to read: 
 

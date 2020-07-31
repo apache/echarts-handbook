@@ -9,7 +9,7 @@ src="https://gallery.echartsjs.com/view-lite.html?cid=xrJIQEN5NM">
 </iframe>
 
 
-## Suggestion Using Funnel Chart
+## Suggestion for Using Funnel Chart
 
 1. Represented by an e-commerce website, the funnel chart can easily show the entire process from the website to placing order. It not only shows the final conversion rate but also the conversion rate of each step, which leads to the problem directly. You can improve the design for some specific steps.
 

@@ -8,7 +8,7 @@ Compared with the pie chart, a stacked bar chart can display several groups of "
  src="https://gallery.echartsjs.com/view-lite.html?cid=xBk7oUNwEz">
 </iframe>
 
-## Suggestion Using Stacked Bar Chart
+## Suggestion for Using Stacked Bar Chart
 
 1. Follow the basic rule of bar charts. Please avoid using too many colors so that the chart can be easily understood. Don't deliberately display partly data to mislead the user.
 

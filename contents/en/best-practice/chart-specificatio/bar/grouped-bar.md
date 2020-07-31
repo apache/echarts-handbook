@@ -13,7 +13,7 @@ A grouped bar chart usually used to compare several groups of data that included
 </iframe>
 
 
-## Suggestion Using Grouped Bar Chart
+## Suggestion for Using Grouped Bar Chart
 
 1. The difficulty of chart reading will be tremendous if there are many series in one group. Therefore, we suggest you use a stacked bar chart rather than a grouped bar chart in this situation.
 

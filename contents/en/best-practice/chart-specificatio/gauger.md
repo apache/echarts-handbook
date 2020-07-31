@@ -6,7 +6,7 @@ The Gauger Chart was also called a dial graph or speedometer graph. It is a form
 src="https://gallery.echartsjs.com/view-lite.html?cid=xH1vxib94f">
 </iframe>
 
-## Suggestion Using Gauger Chart
+## Suggestion for Using Gauger Chart
 
 1. The gauger chart is suitable for displaying single progress or measurement standard under quantitative conditions while it is not suitable for carpeting different variables or trends.
 

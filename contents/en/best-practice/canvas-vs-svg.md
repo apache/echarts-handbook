@@ -25,7 +25,7 @@ We strongly welcome developers to give us a [feedback](https://github.com/apache
 
 Note: except some specific charts rely on Canvas (eg. [series lines effect](option.html#series-lines.effect), [heatmap bmap](examples/editor.html?c=heatmap-bmap), etc.), most of the remaining render are supported by SVG. SVG can not support rich text, texture, and shadow right now.
 
-## How to use renderers?
+## Suggestion for Using Renderer
 
 ECharts uses Canvas by default. You must include the SVG renderer module if you intend to try SVG.
 

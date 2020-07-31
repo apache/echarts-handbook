@@ -2,7 +2,7 @@
 
 Sometimes, we hope to not only figure series separately but also the trend of the sum. It's a good choice to implement it by using the stacked bar chart. As the name suggests, in the stacked bar chart, data in the same category will be stacked up in one column. The overall height of the bar explained the change of total.
 
-There is a simple way to implement a stacked bar chart by the ECharts. You need to set the same string type value for a group of series in `stack`. The series with the same `stack` value will be in the same category.
+There is a simple way to implement a stacked bar chart by ECharts. You need to set the same string type value for a group of series in `stack`. The series with the same `stack` value will be in the same category.
 
 <!-- embed -->
 ```js
@@ -27,4 +27,4 @@ In this case, the position of the second series is based on the position of the 
 
 >The value of `stack` explained what series will be stacked up together. Theoretically, the specific value of 'stack' is meaningless. However, we prefer some suggestive strings for the convenience of reading.
 >
->For instance, here is statics with 4 series that is about the amount of male and female. "adult male" and "boy" need to be stacked while "adult female" and "girl" need to be stacked. In this case, the suggestive value of `stack` is `'male'` and `'female'`. Although meaningless string like `'a'` and `'b'` can achieve the same effect but has worse code readability.
+>For instance, here is a chart with 4 series that counted the amount of male and female. "adult male" and "boy" need to be stacked while "adult female" and "girl" need to be stacked. In this case, the suggestive value of `stack` is `'male'` and `'female'`. Although meaningless strings like `'a'` and `'b'` can achieve the same effect but the code will have worse readability.
