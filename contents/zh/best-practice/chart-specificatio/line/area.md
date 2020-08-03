@@ -13,7 +13,7 @@ src="https://gallery.echartsjs.com/view-lite.html?cid=area-simple"></iframe>
 src="https://gallery.echartsjs.com/view-lite.html?cid=xHJ-4tL84M"></iframe>
 
 
-2、面积图适合用来展示二到三组数据，建议最多不要展示超过四组数据系列，否则就如下方错误示例，数据系列过多而导致无法数据辨识，因此要避免在需要比较多个类别和确切的数据值的情况下使用面积图。超过三个系列的非堆叠面积图表是很难阅读的。
+2、面积图适合用来展示二到三组数据，建议最多不要展示超过四组数据系列，否则就如下方错误示例，数据系列过多而导致无法辨识数据，因此要避免在需要比较多个类别和确切的数据值的情况下使用面积图。超过三个系列的非堆叠面积图表是很难阅读的。
 
 <iframe max-width="830" width="100%" height="400" 
 src="https://gallery.echartsjs.com/view-lite.html?cid=xHyNDxOo4M"></iframe>

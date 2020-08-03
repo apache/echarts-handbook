@@ -78,7 +78,7 @@ option = {
 };
 ```
 
-如果希望扇形对应的标签也不现实，可以将 [`series.label.show`](${optionPath}series-pie.label.show) 设为 `false`。
+如果希望扇形对应的标签也不显示，可以将 [`series.label.show`](${optionPath}series-pie.label.show) 设为 `false`。
 
 <!-- embed -->
 ```js

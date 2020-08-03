@@ -15,7 +15,7 @@ src="https://gallery.echartsjs.com/view-lite.html?cid=xH1-fnLcVG&v=1">
 src="https://gallery.echartsjs.com/view-lite.html?cid=xHJH93GqVf&v=1">
 </iframe>
 
-如下图，某幼儿园上周资金流统计的示例中比较的“东西”是预算、开销。参与比较的六个方面是食品、玩具、绘本、医疗、门票、服饰。每个变量都是通过 0 到 500 之间的金额来比较的。只有玩具一项的支出超出了预算。而服饰花费低于远预算，使用雷达图，哪些方面超出或不足变得一目了然了。
+如下图，某幼儿园上周资金流统计的示例中比较了预算和开销。参与比较的六个方面是食品、玩具、绘本、医疗、门票、服饰。每个变量都是通过 0 到 500 之间的金额来比较的。只有玩具一项的支出超出了预算，而服饰花费远低于预算，使用雷达图，哪些方面超出或不足变得一目了然了。
 
 <iframe max-width="830" width="100%" height="400" 
 src="https://gallery.echartsjs.com/view-lite.html?cid=xrk6EfmqVf">

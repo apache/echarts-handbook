@@ -76,12 +76,12 @@ option = {
 
 ### 数据点的样式
 
-数据点的样式可以通过 [`series.itemStyle`](${optionPath}series-line.itemStyle) 指定填充颜色（color）、描边颜色（borderWidth）、描边宽度（borderWidth）、描边颜色（borderColor）、阴影（shadowColor）、不透明度（opacity）等。与折线样式的设置十分相似，这里不再展开说明。
+数据点的样式可以通过 [`series.itemStyle`](${optionPath}series-line.itemStyle) 指定填充颜色（color）、描边颜色（borderColor）、描边宽度（borderWidth）、描边类型（borderType）、阴影（shadowColor）、不透明度（opacity）等。与折线样式的设置十分相似，这里不再展开说明。
 
 
 ## 在数据点处显示数值
 
-在系列中，这数据点的通过 [`series.label`](${optionPath}series-line.label) 属性指定。如果将 `label` 下的 `show` 指定为`true`，则表示该数值默认时就显示；如果为 `false`，而 [`series.emphasis.label.show`](${optionPath}series-line.emphasis.label.show) 为 `true`，则表示只有在鼠标移动到该数据时，才显示数值。
+在系列中，这数据点的标签通过 [`series.label`](${optionPath}series-line.label) 属性指定。如果将 `label` 下的 `show` 指定为`true`，则表示该数值默认时就显示；如果为 `false`，而 [`series.emphasis.label.show`](${optionPath}series-line.emphasis.label.show) 为 `true`，则表示只有在鼠标移动到该数据时，才显示数值。
 
 <!-- embed -->
 ```js
