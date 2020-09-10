@@ -165,7 +165,7 @@ option = {
 ```
 
 ## 示例
-图左侧的y轴代表东京月平均气温，右图的y轴表示东京降水量，x轴表示时间。两组y轴在一起，反映了平均气味和降水量间的趋势关系。
+图左侧的y轴代表东京月平均气温，右侧的y轴表示东京降水量，x轴表示时间。两组y轴在一起，反映了平均气温和降水量间的趋势关系。
 <!-- src 需要替换 -->
 <iframe max-width="830" width="100%" height="400" 
  src="https://gallery.echartsjs.com/view-lite.html?cid=xrJYBh__4z">
