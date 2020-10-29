@@ -15,7 +15,9 @@
   "dependencies": {
     "bootstrap": "^4.1.3",
     "bootstrap-vue": "^2.0.0",
+    "markdown-it-anchor": "^6.0.0",
     "markdown-it-highlightjs": "^3.1.0",
+    "markdown-it-toc-done-right": "git+ssh://git@github.com/Ovilia/markdown-it-toc-done-right.git",
     "nuxt": "^2.0.0",
     "nuxt-i18n": "^6.7.2"
   },

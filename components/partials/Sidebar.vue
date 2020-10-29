@@ -1,5 +1,5 @@
 <template>
-  <div class="bd-sidebar border-bottom-0 col-md-3 col-xl-2 col-12">
+  <div class="bd-sidebar border-bottom-0 col-sm-2 col-12">
     <!-- active: {{ active }}. {{ posts }} -->
     <div class="bd-docs-nav">
       <div class="bd-toc-item level0"
