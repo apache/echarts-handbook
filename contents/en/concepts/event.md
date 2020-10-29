@@ -1,8 +1,8 @@
 # Event and Behavior
 
-Users can trigger corresponding events by their operation. The developer can handle the callback function by mentoring these events, such as jump to a new website, pop-up a dialog box, or drill down the data. 
+Users can trigger corresponding events by their operation. The developer can handle the callback function by mentoring these events, such as jump to a new website, pop-up a dialog box, or drill down the data.
 
-In ECharts 3, you should use [on](${mainSitePath}api.html#EChartsInstance.on) method to bond events as same as in ECharts 2. However, the event name is simpler than in ECharts 2. The name of the event and the DOM event is both non-capitalized string. Here is an example of bonding `Click` function. 
+In ECharts 3, you should use [on](${mainSitePath}api.html#EChartsInstance.on) method to bond events as same as in ECharts 2. However, the event name is simpler than in ECharts 2. The name of the event and the DOM event is both non-capitalized string. Here is an example of bonding `Click` function.
 
 ```js
 myChart.on('click', function (params) {
@@ -11,7 +11,7 @@ myChart.on('click', function (params) {
 });
 ```
 
-There are two kinds of event in ECharts, one happened when the user clicks the mouse or hover the shape in charts, the other happened while the user triggered some interactive language. Such as ['legendselectchanged'](${mainSitePath}api.html#events.legendselectchanged) triggered while changing the legend selected (please notice that ['legendselectchanged'](${mainSitePath}api.html#events.legendselectchanged in this situation), ['datazoom'](${mainSitePath}api.html#events.legendselectchanged) triggered while zooming the data area. 
+There are two kinds of event in ECharts, one happened when the user clicks the mouse or hover the shape in charts, the other happened while the user triggered some interactive language. Such as ['legendselectchanged'](${mainSitePath}api.html#events.legendselectchanged) triggered while changing the legend selected (please notice that ['legendselectchanged'](${mainSitePath}api.html#events.legendselectchanged in this situation), ['datazoom'](${mainSitePath}api.html#events.legendselectchanged) triggered while zooming the data area.
 
 
 ## Handling the Mouse Events
@@ -47,7 +47,7 @@ All mouse events included `params` which contained the data of the object.
 Format:
 ```js
 {
-    // The component name clicked, 
+    // The component name clicked,
 	// component type, could be 'series'、'markLine'、'markPoint'、'timeLine', etc..
     componentType: string,
     // series type, could be 'line'、'bar'、'pie', etc.. Works when componentType is 'series'.
@@ -68,7 +68,7 @@ Format:
     dataType: string,
     // incoming data value
     value: number|Array,
-	// color of the shape, works when componentType is 'series'. 
+	// color of the shape, works when componentType is 'series'.
     color: string
 }
 ```
@@ -80,7 +80,7 @@ myChart.on('click', function (params) {
     if (params.componentType === 'markPoint') {
         // Clicked on the markPoint
         if (params.seriesIndex === 5) {
-            // clicked on the markPoint of the series with index = 5 
+            // clicked on the markPoint of the series with index = 5
         }
     }
     else if (params.componentType === 'series') {
@@ -96,7 +96,7 @@ myChart.on('click', function (params) {
 });
 ```
 
-Use `query` to trigger callback for shapes of the specified component: 
+Use `query` to trigger callback for shapes of the specified component:
 
 ```js
 chart.on(eventName, query, handler);
@@ -126,7 +126,7 @@ If it is `Object`, `query` can include more than one attribute:
 }
 ```
 
-Such as: 
+Such as:
 
 ```js
 chart.setOption({
@@ -157,11 +157,11 @@ chart.setOption({
     }]
 });
 chart.on('mouseover', {seriesIndex: 1, name: 'xx'}, function () {
-    // when el named 'xx' in series index 1 triggered 'mouseover', callback this method. 
+    // when el named 'xx' in series index 1 triggered 'mouseover', callback this method.
 });
 ```
 
-For example: 
+For example:
 
 ```js
 chart.setOption({
@@ -173,14 +173,14 @@ chart.setOption({
     }]
 });
 chart.on('click', {dataType: 'node'}, function () {
-    // callback this method while the node of charts was clicked. 
+    // callback this method while the node of charts was clicked.
 });
 chart.on('click', {dataType: 'edge'}, function () {
-    // callback this method while the edge of charts was clicked. 
+    // callback this method while the edge of charts was clicked.
 });
 ```
 
-For example: 
+For example:
 
 ```js
 chart.setOption({
@@ -204,11 +204,11 @@ chart.setOption({
     }
 })
 chart.on('mouseup', {element: 'my_el'}, function () {
-    // when element named 'my_el' triggered 'mouseup', callback this function. 
+    // when element named 'my_el' triggered 'mouseup', callback this function.
 });
 ```
 
-You can display the floating layer, update the charts using the information found in your database by the data name or series name in the callback function. Here is an example: 
+You can display the floating layer, update the charts using the information found in your database by the data name or series name in the callback function. Here is an example:
 
 ```js
 myChart.on('click', function (parmas) {
@@ -226,9 +226,9 @@ myChart.on('click', function (parmas) {
 
 ## Behavioral Events of Component Interaction
 
-All Component Interaction in ECharts will trigger a corresponding event. Normal events and parameters listed in [events](${mainSitePath}/api.html#events) document. 
+All Component Interaction in ECharts will trigger a corresponding event. Normal events and parameters listed in [events](${mainSitePath}/api.html#events) document.
 
-Here is an example of monitoring a legend: 
+Here is an example of monitoring a legend:
 
 ```js
 // Show/hide the legend only trigger legendselectchanged event
@@ -244,12 +244,12 @@ myChart.on('legendselectchanged', function (params) {
 
 ## Use Code to Trigger Component Behavior
 
-You can trigger events such as `'legendselectchanged'` not only by the user but also by the program itself. It can be used to display the tooltip, select the legend. 
+You can trigger events such as `'legendselectchanged'` not only by the user but also by the program itself. It can be used to display the tooltip, select the legend.
 
-In ECharts 2, we use the method of `myChart.component.tooltip.showTip` to trigger the chart behavior. It is not good because the entry is deep, and involved many internal components. In ECharts 3, it changed to `myChart.dispatchAction({ type: '' })` to trigger the behavior. The new method manage all actions uniformly and can record the behavior path conveniently. 
+In ECharts 2, we use the method of `myChart.component.tooltip.showTip` to trigger the chart behavior. It is not good because the entry is deep, and involved many internal components. In ECharts 3, it changed to `myChart.dispatchAction({ type: '' })` to trigger the behavior. The new method manage all actions uniformly and can record the behavior path conveniently.
 
 Commonly used behavior and corresponding parameters were listed in [action](${mainSitePath}/api.html#action).
 
 The following example shows how to highlight each sector one by one in the pie chart using `dispatchAction`.
 
-<iframe width="600" height="400" src="${galleryViewPath}doc-example/pie-highlight&reset=1&edit=1"></iframe>
+<iframe width="600" height="400" src="${exampleViewPath}doc-example/pie-highlight&reset=1&edit=1"></iframe>

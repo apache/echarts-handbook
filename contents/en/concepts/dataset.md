@@ -4,7 +4,7 @@
 
 ## Define `data` under `series`
 
-If data is defined under `series`, for example: 
+If data is defined under `series`, for example:
 
 ```js
 option = {
@@ -29,15 +29,15 @@ option = {
 }
 ```
 
-Define `data` under `series` is suitable for customization for some special data structures such as "tree", "graph" and large data. 
-However, it is not conducive to the data sharing for multiple series as well as mapping arrangement of chart types and series based on the original data. The other disadvantage is that programmers always need to divide the data in separate series (and categories) first. 
+Define `data` under `series` is suitable for customization for some special data structures such as "tree", "graph" and large data.
+However, it is not conducive to the data sharing for multiple series as well as mapping arrangement of chart types and series based on the original data. The other disadvantage is that programmers always need to divide the data in separate series (and categories) first.
 
 ## Define `data` in `dataset`
 
-Here are the advantages if you define `data` in `dataset`: 
+Here are the advantages if you define `data` in `dataset`:
 + Follow the ideas of data visualization: (I) Provide the data, (II)Mapping from data to visual to become a chart.
-+ Divide data from other configurations. The data often change but others not. It is 
-Easy to manage separately. 
++ Divide data from other configurations. The data often change but others not. It is
+Easy to manage separately.
 + Data can be reused by several series or component, you don't need to create copies of a large amount of data for every series.
 + Support more common data format, such as a 2D array, array of classes, etc., to avoid users from converting for data format to a certain extent.
 
@@ -57,12 +57,12 @@ option = {
             ['Walnut Brownie', 72.4, 53.9, 39.1]
         ]
     },
-    // Declare an x-axis (category axis). 
-	// The category map the first row in the dataset by default. 
+    // Declare an x-axis (category axis).
+	// The category map the first row in the dataset by default.
     xAxis: {type: 'category'},
-    // Declare a y-axis (value axis). 
+    // Declare a y-axis (value axis).
     yAxis: {},
-    // Declare several 'bar' series, 
+    // Declare several 'bar' series,
 	// every series will auto-map to each rows by default.
     series: [
         {type: 'bar'},
@@ -74,19 +74,19 @@ option = {
 
 The effect is as follows:
 
-<iframe width="600" height="300" src="${galleryViewPath}dataset-simple0&edit=1&reset=1"></iframe>
+<iframe width="600" height="300" src="${exampleViewPath}dataset-simple0&edit=1&reset=1"></iframe>
 
-Or try to use the "array of classes" format: 
+Or try to use the "array of classes" format:
 
 ```js
 option = {
     legend: {},
     tooltip: {},
     dataset: {
-		// Define the dimension of array. In cartesian coordinate system, 
-		// if the type of x-axis is category, map the first dimension to 
+		// Define the dimension of array. In cartesian coordinate system,
+		// if the type of x-axis is category, map the first dimension to
 		// x-axis by default, the second dimension to y-axis.
-		// You can also specify 'series.encode' to complete the map 
+		// You can also specify 'series.encode' to complete the map
 		// without specify dimensions. Please see below.
 
         dimensions: ['product', '2015', '2016', '2017'],
@@ -114,23 +114,23 @@ The ideas of data visualization: (I) Provide the data, (II)Mapping from data to 
 
 In short, you can set these configs of mapping:
 
-+ Specify 'column' or 'row' of `dataset` to map the `series`. You can use [series.seriesLayoutBy](${optionPath}#series.seriesLayoutBy) to configure it. The default is to map according to the column. 
++ Specify 'column' or 'row' of `dataset` to map the `series`. You can use [series.seriesLayoutBy](${optionPath}#series.seriesLayoutBy) to configure it. The default is to map according to the column.
 + Rule of specifying dimension mapping: how to mapping from dimensions of 'dataset' to `axis`, `tooltip`, `label` and `visualMap`. To configure the mapping, please use [series.encode](${optionPath}#series.encode) and [visualMap](${optionPath}#visualMap). The previous case did not give the mapping configuration so that ECharts will follow the default: if x-axis is category, mapping to the first row in `dataset.source`; three-column chart mapping with each row in `dataset.source` one by one.
 
 
-The details of the configuration are shown below: 
+The details of the configuration are shown below:
 
 
 ## Map Row or Column of `dataset` to `series`
 
-After having the dataset, you can configure flexibly: how the data map to the axis and graph series. 
+After having the dataset, you can configure flexibly: how the data map to the axis and graph series.
 
-You can use `seriesLayoutBy` to change the understanding of row and column of the chart. `seriesLayoutBy` can be: 
+You can use `seriesLayoutBy` to change the understanding of row and column of the chart. `seriesLayoutBy` can be:
 + 'column': Default, the series are placed above the column of `dataset`.
 + 'row': The series is placed above the row of `dataset`.
 
 
-Check this case: 
+Check this case:
 
 ```js
 option = {
@@ -170,7 +170,7 @@ option = {
 }
 ```
 
-The effect of configuration is shown in [this case](${galleryViewPath}dataset-series-layout-by&edit=1&reset=1). 
+The effect of configuration is shown in [this case](${exampleViewPath}dataset-series-layout-by&edit=1&reset=1).
 
 ## Dimension
 
@@ -212,9 +212,9 @@ var option2 = {
 };
 ```
 
-In most cases, you don't need to define the dimension type because the ECharts will automatically judge it. If the judgment is inaccurate, you can define it manually. 
+In most cases, you don't need to define the dimension type because the ECharts will automatically judge it. If the judgment is inaccurate, you can define it manually.
 
-Dimension type can be the following values: 
+Dimension type can be the following values:
 + `'number'`: Default, normal data.
 + `'ordinal'`: String types data like categories, text can be used on the axis only with the dimension type 'ordinal'. ECharts will try to judge this type automatically but might be inaccurate, so you can specify manually.
 + `'time'`: To represent time data, ECharts can automatically analyze data as timestamp if the dimension type is defined as `'time'`. For instance, ECharts will auto-analyze if the data of this dimension is '2017-05-10'`. If the dimension is used as time axis ([axis.type](${optionPath}#xAxis.type) = `'time'`), the dimension type will also be `'time'`. See [data](${optionPath}#series.data) for more time type support.
@@ -224,7 +224,7 @@ Dimension type can be the following values:
 
 ## Map from Data to Charts (series.encode)
 
-After understand the concept of dimension, you can use [series.encode](${optionPath}#series.encode) to make a mapping: 
+After understand the concept of dimension, you can use [series.encode](${optionPath}#series.encode) to make a mapping:
 
 ```js
 var option = {
@@ -258,10 +258,10 @@ var option = {
 };
 ```
 
-[Here](${galleryViewPath}dataset-encode-simple0&edit=1&reset=1) shows the effect of this example.
+[Here](${exampleViewPath}dataset-encode-simple0&edit=1&reset=1) shows the effect of this example.
 
-The basic structure of `series.encode` declaration: 
-+ To the left of the colon: Specific name of axis or label. 
+The basic structure of `series.encode` declaration:
++ To the left of the colon: Specific name of axis or label.
 + To the right of the colon: Dimension name (string) or number(int, count from 0), to specify one or several dimensions (using array).
 
 Generally, the following info is not necessary to be defined. Fill in as needed.
@@ -270,13 +270,13 @@ Attribute suggested by `series.encode`
 
 
 ```js
-// Supported in every coordinate and series: 
+// Supported in every coordinate and series:
 encode: {
     // Display the value of dimension named "product" and "score" in tooltip.
     tooltip: ['product', 'score']
     // Connect dimension name of "Dimension 1" and "Dimension 3" as the series name. (Avoid to repeat longer names in series.name)
     seriesName: [1, 3],
-    // Means to use the value in "Dimension 2" as the id. It makes the new and old data correspond by id 
+    // Means to use the value in "Dimension 2" as the id. It makes the new and old data correspond by id
 	// when using setOption to update data, so that it can show animation properly.
     itemId: 2,
     // The itemName will show in the legend of Pie Charts.
@@ -314,27 +314,27 @@ encode: {
 }
 ```
 
-This is a richer [example](${galleryViewPath}dataset-encode1&edit=1&reset=1) of `series.encode`.
+This is a richer [example](${exampleViewPath}dataset-encode1&edit=1&reset=1) of `series.encode`.
 
 
 
 ## Default series.encode
 
-It is worth mentioning that ECharts will use some default mapping rules for some general charts (line, bar, scatter, candlestick, etc.) if `series.encode` is not specified. The default rule is: 
+It is worth mentioning that ECharts will use some default mapping rules for some general charts (line, bar, scatter, candlestick, etc.) if `series.encode` is not specified. The default rule is:
 + In coordinate system (eg. Cartesian, Polar):
 	+ If there is category axis (axis.type = 'category'), map the first column(row) to the axis and each subsequent column(row) to each series.
 	+ If both axes is not the category, then map every two columns in one series to two axes.
 + Without axis (such as Pie Chart):
 	+ Use the first column(row) as the name, second column(row) as value. ECharts will not set the name if there is only one column(row).
 
-While the default rule cannot fulfill the requirements, you can configure `encode` by yourself, which is not complicate. Here is an [example](${galleryViewPath}dataset-default&edit=1&reset=1).
+While the default rule cannot fulfill the requirements, you can configure `encode` by yourself, which is not complicate. Here is an [example](${exampleViewPath}dataset-default&edit=1&reset=1).
 
 
 ## Some Normal Settings of series.encode
 
 Q: How to set the 3rd column as x-axis, 5th column as y-axis?
 
-A: 
+A:
 ```js
 series: {
     // dimensionIndex count from 0, so the 3rd line is dimensions[2].
@@ -356,7 +356,7 @@ series: {
 
 Q: How to set the 2nd column as a label?
 
-A: 
+A:
 We now support to trace value from specific dimension for [label.formatter](${optionPath}#series.label.formatter):
 ```js
 series: {
@@ -383,7 +383,7 @@ series: {
 
 Q: How to define the dimension name if is not included in the dataset?
 
-A: 
+A:
 ```js
 dataset: {
     dimensions: ['score', 'amount'],
@@ -398,7 +398,7 @@ dataset: {
 
 Q: How to map the 3rd column to the size of the scatter chart?
 
-A: 
+A:
 ```js
 var option = {
     dataset: {
@@ -435,7 +435,7 @@ A: Check your spelling, such as misspell the dimension name `'Life Expectancy'` 
 
 ## Visual Channel Mapping
 
-We can map visual channel by using [visualMap](${optionPath}#visualMap). Check details in the [visualMap](${optionPath}#visualMap) document. Here is an [example](${galleryViewPath}dataset-encode0&edit=1&reset=1).
+We can map visual channel by using [visualMap](${optionPath}#visualMap). Check details in the [visualMap](${optionPath}#visualMap) document. Here is an [example](${exampleViewPath}dataset-encode0&edit=1&reset=1).
 
 
 ## Formats of Charts
@@ -525,12 +525,12 @@ ECharts 4 still support the data declaration way in ECharts 3. If the series has
 }
 ```
 
-In fact, [series.data](${optionPath}#series.data) is an important setting method which will always exist. Some special non-table format chart like [treemap](${optionPath}#series-treemap), [graph](${optionPath}#series-graph) and [lines](${optionPath}#series-lines) still cannot be edit in dataset, you still need to use [series.data](${optionPath}#series.data). In another way, for render huge amount of data (over a million), you need to use [appendData](api.html#echartsInstance.appendData) which is not supported by `dataset`. 
+In fact, [series.data](${optionPath}#series.data) is an important setting method which will always exist. Some special non-table format chart like [treemap](${optionPath}#series-treemap), [graph](${optionPath}#series-graph) and [lines](${optionPath}#series-lines) still cannot be edit in dataset, you still need to use [series.data](${optionPath}#series.data). In another way, for render huge amount of data (over a million), you need to use [appendData](api.html#echartsInstance.appendData) which is not supported by `dataset`.
 
 ## Others
 
-The following charts now support dataset: 
+The following charts now support dataset:
 `line`, `bar`, `pie`, `scatter`, `effectScatter`, `parallel`, `candlestick`, `map`, `funnel`, `custom`.
 ECharts will support more charts in the future.
 
-In the end, here is an [example](${galleryViewPath}dataset-link&edit=1&reset=1) of several charts shared one `dataset` with linkage interaction. 
+In the end, here is an [example](${exampleViewPath}dataset-link&edit=1&reset=1) of several charts shared one `dataset` with linkage interaction.

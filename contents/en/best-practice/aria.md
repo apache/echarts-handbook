@@ -4,7 +4,7 @@
 
 The Accessibility function was turn off by default, turn it on by define the value of [aria.show](${optionPath}aria.show) as `true`. ECharts will automatically generate a description of the chart according to the title, chart, data, etc.. Users can also change the description through the configuration item.
 
-About the configuration item: 
+About the configuration item:
 
 ```js
 option = {
@@ -31,10 +31,10 @@ option = {
 };
 ```
 
-<iframe width="700" height="300" src="${galleryViewPath}doc-example/aria-pie&reset=1&edit=1"></iframe>
+<iframe width="700" height="300" src="${exampleViewPath}doc-example/aria-pie&reset=1&edit=1"></iframe>
 
 
-There will be an `area-label` attribute on the Chart DOM. With the help of the reading device, blind people can understand by hearing the following message: 
+There will be an `area-label` attribute on the Chart DOM. With the help of the reading device, blind people can understand by hearing the following message:
 
 ```
 This is a chart about "Referrer of a User" with type Pie chart named Referrer. The data is as follows: the data of Direct Visit is 335,the data of Mail Marketing is 310,the data of Union Ad is 234,the data of Video Ad is 135,the data of Search Engine is 1548.

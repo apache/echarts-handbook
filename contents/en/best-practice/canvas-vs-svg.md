@@ -8,9 +8,9 @@ Canvas has been used as the renderer (VML for IE8-) of ECharts from the beginnin
 
 ## How to Choose a Renderer?
 
-Generally, Canvas is more suitable for charts with a large number of elements (heat map, large-scale line or scatter plot in geo or parallel coordinates, etc.), and with visual [effect](examples/editor.html?c=lines-bmap-effect). However, SVG has an important advantage: It has less memory usage (which is important for mobile devices), higher rendering performance, no blur when using the browser zoom. For instance, we used Canvas and SVG renderer in some hardware environment to draw the chart with medium data volume and recorded the frame rate during the initial animation performing: 
+Generally, Canvas is more suitable for charts with a large number of elements (heat map, large-scale line or scatter plot in geo or parallel coordinates, etc.), and with visual [effect](examples/editor.html?c=lines-bmap-effect). However, SVG has an important advantage: It has less memory usage (which is important for mobile devices), higher rendering performance, no blur when using the browser zoom. For instance, we used Canvas and SVG renderer in some hardware environment to draw the chart with medium data volume and recorded the frame rate during the initial animation performing:
 
-<iframe width="600" height="400" src="${galleryViewPath}doc-example/canvas-vs-svg&reset=1&edit=1"></iframe>
+<iframe width="600" height="400" src="${exampleViewPath}doc-example/canvas-vs-svg&reset=1&edit=1"></iframe>
 
 In those scenarios, SVG renderer has better overall performance than Canvas in mobile devices. This is not a comprehensive evaluation for sure, in other scenarios of huge data volume, the performance of Canvas is still better than SVG. We keep both renderers to provide a wider space for developers to optimize their program.
 
@@ -19,7 +19,7 @@ When choosing renderer, try to consider hardware and software environment, data 
 + In some harsh environment, try to consider these points:
 
 	+ To create a huge amount of instance in a crash-prone browser (It perhaps because the number of Canvas exceeded the capacity of the phone.), Try to use SVG renderer to improve. Generally, if the chart is running on a low-end Android phone, or you are using some specific chart like [liquidfill](https://ecomfe.github.io/echarts-liquidfill/example/), the SVG render will perform better.
-	+ Use Canvas while visualizing a large amount of data. 
+	+ Use Canvas while visualizing a large amount of data.
 
 We strongly welcome developers to give us a [feedback](https://github.com/apache/incubator-echarts/issues/new). It will be very helpful for us to optimize ECharts. Thank you!
 

@@ -31,7 +31,7 @@ option = {
 };
 ```
 
-<iframe width="700" height="300" src="${galleryViewPath}doc-example/aria-pie&reset=1&edit=1"></iframe>
+<iframe width="700" height="300" src="${exampleViewPath}doc-example/aria-pie&reset=1&edit=1"></iframe>
 
 生成的图表 DOM 上，会有一个 `aria-label` 属性，在朗读设备的帮助下，盲人能够了解图表的内容。其值为：
 

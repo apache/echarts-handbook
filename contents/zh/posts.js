@@ -4,16 +4,6 @@
  * title 是导航栏中显示的标题，md 文件中的一级标题是正文标题，两者可以不同。
  */
 export default [{
-    title: '关于本项目（临时）',
-    dir: 'meta',
-    children: [{
-        title: '项目结构说明',
-        dir: 'get-started'
-    }, {
-        title: '写作风格规范',
-        dir: 'writing'
-    }]
-}, {
     title: '快速上手',
     dir: 'get-started'
 }, {

@@ -48,7 +48,12 @@ export default {
   */
   modules: [
     // Doc: https://bootstrap-vue.js.org
-    'bootstrap-vue/nuxt',
+    [
+      'bootstrap-vue/nuxt',
+      {
+        icons: true
+      }
+    ],
     [
       'nuxt-i18n',
       {

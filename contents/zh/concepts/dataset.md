@@ -74,7 +74,7 @@ option = {
 
 效果如下：
 
-<iframe width="600" height="300" src="${galleryViewPath}dataset-simple0&edit=1&reset=1"></iframe>
+<iframe width="600" height="300" src="${exampleViewPath}dataset-simple0&edit=1&reset=1"></iframe>
 
 或者也可以使用常见的“对象数组”的格式：
 ```js
@@ -168,7 +168,7 @@ option = {
 }
 ```
 
-[这个例子](${galleryViewPath}dataset-series-layout-by&edit=1&reset=1) 里给出了设置的效果。
+[这个例子](${exampleViewPath}dataset-series-layout-by&edit=1&reset=1) 里给出了设置的效果。
 
 
 ## 维度（ dimension ）
@@ -257,7 +257,7 @@ var option = {
 };
 ```
 
-[这个例子](${galleryViewPath}dataset-encode-simple0&edit=1&reset=1) 里是上面设置的效果。
+[这个例子](${exampleViewPath}dataset-encode-simple0&edit=1&reset=1) 里是上面设置的效果。
 
 
 `series.encode` 声明的基本结构如下。其中冒号左边是坐标系、标签等特定名称，如 `'x'`, `'y'`, `'tooltip'` 等，冒号右边是数据中的维度名（string 格式）或者维度的序号（number 格式，从 0 开始计数），可以指定一个或多个维度（使用数组）。通常情况下，下面各种信息不需要所有的都写，按需写即可。
@@ -308,7 +308,7 @@ encode: {
 }
 ```
 
-这是个更丰富的 `series.encode` 的 [示例](${galleryViewPath}dataset-encode1&edit=1&reset=1) 。
+这是个更丰富的 `series.encode` 的 [示例](${exampleViewPath}dataset-encode1&edit=1&reset=1) 。
 
 
 
@@ -321,7 +321,7 @@ encode: {
 + 如果没有坐标系（如饼图）
     + 取第一列（行）为名字，第二列（行）为数值（如果只有一列，则取第一列为数值）。
 
-默认的规则不能满足要求时，就可以自己来配置 `encode`，也并不复杂。这是一个 [例子](${galleryViewPath}dataset-default&edit=1&reset=1)。
+默认的规则不能满足要求时，就可以自己来配置 `encode`，也并不复杂。这是一个 [例子](${exampleViewPath}dataset-default&edit=1&reset=1)。
 
 
 
@@ -431,7 +431,7 @@ var option = {
 
 ## 视觉通道（颜色、尺寸等）的映射
 
-我们可以使用 [visualMap](${optionPath}#visualMap) 组件进行视觉通道的映射。详见 [visualMap](${optionPath}#visualMap) 文档的介绍。这是一个 [示例](${galleryViewPath}dataset-encode0&edit=1&reset=1)。
+我们可以使用 [visualMap](${optionPath}#visualMap) 组件进行视觉通道的映射。详见 [visualMap](${optionPath}#visualMap) 文档的介绍。这是一个 [示例](${exampleViewPath}dataset-encode0&edit=1&reset=1)。
 
 
 
@@ -531,5 +531,5 @@ ECharts 4 之前一直以来的数据声明方式仍然被正常支持，如果�
 后续会有更多的图表进行支持。
 
 
-最后，给出这个 [示例](${galleryViewPath}dataset-link&edit=1&reset=1)，多个图表共享一个 `dataset`，并带有联动交互。
+最后，给出这个 [示例](${exampleViewPath}dataset-link&edit=1&reset=1)，多个图表共享一个 `dataset`，并带有联动交互。
 

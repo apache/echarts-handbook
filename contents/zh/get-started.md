@@ -84,6 +84,6 @@ ECharts 支持多种下载方式，可以在下一篇教程[安装](zh/basics_in
 
 这样你的第一个图表就诞生了！
 
-<iframe width="600" height="400" src="${galleryViewPath}doc-example/getting-started&reset=1&edit=1"></iframe>
+<iframe width="600" height="400" src="${exampleViewPath}doc-example/getting-started&reset=1&edit=1"></iframe>
 
 你也可以直接进入 [ECharts Gallery](${galleryEditorPath}doc-example/getting-started) 中查看编辑示例

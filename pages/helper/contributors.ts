@@ -1,26 +1,5 @@
 export default {
-    "contents/zh/meta/get-started.md": [
-        "Ovilia"
-    ],
     "contents/zh/get-started.md": [
-        "Ovilia"
-    ],
-    "contents/zh/cookbook/mobile.md": [
-        "Ovilia"
-    ],
-    "contents/zh/cookbook/downplay.md": [
-        "Ovilia"
-    ],
-    "contents/zh/cookbook/down-play.md": [
-        "Ovilia"
-    ],
-    "contents/zh/cookbook/cross-platform.md": [
-        "Ovilia"
-    ],
-    "contents/zh/cookbook/connect.md": [
-        "Ovilia"
-    ],
-    "contents/zh/cookbook/aria.md": [
         "Ovilia"
     ],
     "contents/zh/concepts/visual-map.md": [
@@ -36,7 +15,16 @@ export default {
         "Ovilia"
     ],
     "contents/zh/concepts/legend.md": [
-        "Ovilia"
+        "Ovilia",
+        "yufeng04"
+    ],
+    "contents/zh/concepts/event.md": [
+        "Ovilia",
+        "huanghan01\t\nplainheart"
+    ],
+    "contents/zh/concepts/dataset.md": [
+        "100pah",
+        "huanghan01"
     ],
     "contents/zh/concepts/coordinate.md": [
         "Ovilia"
@@ -45,55 +33,68 @@ export default {
         "Ovilia"
     ],
     "contents/zh/concepts/axis.md": [
-        "Ovilia"
-    ],
-    "contents/zh/chart-types/xxx.md": [
-        "Ovilia"
-    ],
-    "contents/zh/chart-types/line.md": [
-        "Ovilia"
-    ],
-    "contents/zh/chart-types/bar/waterfall.md": [
-        "Ovilia"
-    ],
-    "contents/zh/chart-types/bar/visual-map.md": [
-        "Ovilia"
-    ],
-    "contents/zh/chart-types/bar/stacked-bar.md": [
-        "Ovilia"
-    ],
-    "contents/zh/chart-types/bar/simple-bar.md": [
-        "Ovilia"
-    ],
-    "contents/zh/chart-types/bar/polar-bar.md": [
-        "Ovilia"
+        "Ovilia",
+        "huanghan01\t\nplainheart\t\nyufeng04"
     ],
     "contents/zh/best-practice/mobile.md": [
         "Ovilia"
     ],
-    "contents/zh/best-practice/design.md": [
+    "contents/zh/best-practice/design/color-enhance.md": [
+        "Hansz00",
         "Wdingding"
     ],
-    "contents/zh/best-practice/chart-specificatio/line/basic-line.md": [
+    "contents/zh/best-practice/chart-specificatio/scatter/scatter.md": [
+        "Hansz00",
         "Wdingding"
     ],
-    "contents/zh/best-practice/chart-specificatio/line/area.md": [
+    "contents/zh/best-practice/chart-specificatio/scatter/bubble.md": [
+        "Wdingding"
+    ],
+    "contents/zh/best-practice/chart-specificatio/radar.md": [
+        "Hansz00",
+        "Wdingding"
+    ],
+    "contents/zh/best-practice/chart-specificatio/pie/basic-pie.md": [
+        "100pah",
         "Wdingding"
     ],
     "contents/zh/best-practice/chart-specificatio/line/stacked-area.md": [
         "Wdingding"
     ],
-    "contents/zh/best-practice/chart-specificatio/bar/basic-bar.md": [
+    "contents/zh/best-practice/chart-specificatio/line/basic-line.md": [
+        "Hansz00",
+        "Wdingding"
+    ],
+    "contents/zh/best-practice/chart-specificatio/line/area.md": [
+        "Hansz00",
+        "Wdingding"
+    ],
+    "contents/zh/best-practice/chart-specificatio/gauger.md": [
+        "Hansz00",
+        "Wdingding"
+    ],
+    "contents/zh/best-practice/chart-specificatio/funnel.md": [
         "Wdingding"
     ],
     "contents/zh/best-practice/chart-specificatio/bar/stacked-bar.md": [
         "Wdingding"
     ],
-    "contents/zh/best-practice/chart-specificatio/bar/bi-directiona-bar.md": [
+    "contents/zh/best-practice/chart-specificatio/bar/grouped-bar.md": [
+        "Hansz00",
         "Wdingding"
     ],
-    "contents/zh/best-practice/chart-specificatio/bar/grouped-bar.md": [
+    "contents/zh/best-practice/chart-specificatio/bar/bi-directional-bar.md": [
         "Wdingding"
+    ],
+    "contents/zh/best-practice/chart-specificatio/bar/basic-bar.md": [
+        "Hansz00",
+        "Wdingding"
+    ],
+    "contents/zh/best-practice/canvas-vs-svg.md": [
+        "Ovilia"
+    ],
+    "contents/zh/best-practice/aria.md": [
+        "Ovilia"
     ],
     "contents/zh/basics/resource.md": [
         "Ovilia"
@@ -102,21 +103,227 @@ export default {
         "Ovilia"
     ],
     "contents/zh/basics/help.md": [
-        "Ovilia"
+        "Ovilia",
+        "plainheart"
     ],
     "contents/zh/basics/download.md": [
+        "Ovilia"
+    ],
+    "contents/zh/application/mobile.md": [
+        "Ovilia"
+    ],
+    "contents/zh/application/data/dynamic-data.md": [
+        "pissang"
+    ],
+    "contents/zh/application/data/drilldown.md": [
+        "pissang"
+    ],
+    "contents/zh/application/custom-build.md": [
+        "Ovilia"
+    ],
+    "contents/zh/application/cross-platform/wechat-app.md": [
+        "Ovilia"
+    ],
+    "contents/zh/application/cross-platform/server.md": [
+        "Ovilia"
+    ],
+    "contents/zh/application/cross-platform/baidu-app.md": [
+        "Ovilia"
+    ],
+    "contents/zh/application/connect.md": [
+        "Ovilia"
+    ],
+    "contents/zh/application/chart-types/scatter/basic-scatter.md": [
+        "Ovilia",
+        "Wdingding"
+    ],
+    "contents/zh/application/chart-types/pie/rose.md": [
+        "Ovilia"
+    ],
+    "contents/zh/application/chart-types/pie/ring.md": [
+        "Hansz00",
+        "Ovilia"
+    ],
+    "contents/zh/application/chart-types/pie/basic-pie.md": [
+        "Hansz00",
+        "Ovilia"
+    ],
+    "contents/zh/application/chart-types/line/step-line.md": [
+        "Ovilia"
+    ],
+    "contents/zh/application/chart-types/line/stacked-line.md": [
+        "Ovilia"
+    ],
+    "contents/zh/application/chart-types/line/smooth-line.md": [
+        "Ovilia"
+    ],
+    "contents/zh/application/chart-types/line/basic-line.md": [
+        "Hansz00",
+        "Ovilia"
+    ],
+    "contents/zh/application/chart-types/line/area-line.md": [
+        "Ovilia"
+    ],
+    "contents/zh/application/chart-types/bar/waterfall.md": [
+        "Ovilia"
+    ],
+    "contents/zh/application/chart-types/bar/visual-map.md": [
+        "Ovilia"
+    ],
+    "contents/zh/application/chart-types/bar/stacked-bar.md": [
+        "Ovilia"
+    ],
+    "contents/zh/application/chart-types/bar/polar-bar.md": [
+        "Ovilia"
+    ],
+    "contents/zh/application/chart-types/bar/basic-bar.md": [
+        "Ovilia"
+    ],
+    "contents/zh/application/chart-types/bar/bar-race.md": [
+        "Ovilia"
+    ],
+    "contents/zh/application/aria.md": [
         "Ovilia"
     ],
     "contents/en/posts.js": [
         "Ovilia"
     ],
+    "contents/en/concepts/tooltip.md": [
+        "huanghan01"
+    ],
+    "contents/en/concepts/series.md": [
+        "huanghan01"
+    ],
+    "contents/en/concepts/options.md": [
+        "huanghan01"
+    ],
+    "contents/en/concepts/legend.md": [
+        "huanghan01"
+    ],
+    "contents/en/concepts/event.md": [
+        "huanghan01"
+    ],
+    "contents/en/concepts/dataset.md": [
+        "huanghan01"
+    ],
+    "contents/en/concepts/coordinate.md": [
+        "huanghan01"
+    ],
+    "contents/en/concepts/chart-size.md": [
+        "huanghan01"
+    ],
+    "contents/en/concepts/axis.md": [
+        "huanghan01"
+    ],
+    "contents/en/best-practice/mobile.md": [
+        "Hansz00"
+    ],
+    "contents/en/best-practice/design/color-enhance.md": [
+        "Hansz00"
+    ],
+    "contents/en/best-practice/chart-specificatio/scatter/scatter.md": [
+        "Hansz00"
+    ],
+    "contents/en/best-practice/chart-specificatio/scatter/bubble.md": [
+        "Hansz00"
+    ],
+    "contents/en/best-practice/chart-specificatio/radar.md": [
+        "Hansz00"
+    ],
+    "contents/en/best-practice/chart-specificatio/pie/basic-pie.md": [
+        "Hansz00"
+    ],
+    "contents/en/best-practice/chart-specificatio/line/stacked-area.md": [
+        "Hansz00"
+    ],
+    "contents/en/best-practice/chart-specificatio/line/basic-line.md": [
+        "Hansz00"
+    ],
+    "contents/en/best-practice/chart-specificatio/line/area.md": [
+        "Hansz00"
+    ],
+    "contents/en/best-practice/chart-specificatio/gauger.md": [
+        "Hansz00"
+    ],
+    "contents/en/best-practice/chart-specificatio/funnel.md": [
+        "Hansz00"
+    ],
+    "contents/en/best-practice/chart-specificatio/bar/stacked-bar.md": [
+        "Hansz00"
+    ],
+    "contents/en/best-practice/chart-specificatio/bar/grouped-bar.md": [
+        "Hansz00"
+    ],
+    "contents/en/best-practice/chart-specificatio/bar/bi-directional-bar.md": [
+        "Hansz00"
+    ],
+    "contents/en/best-practice/chart-specificatio/bar/basic-bar.md": [
+        "Hansz00"
+    ],
+    "contents/en/best-practice/canvas-vs-svg.md": [
+        "Hansz00"
+    ],
+    "contents/en/best-practice/aria.md": [
+        "Hansz00"
+    ],
     "contents/en/bar.md": [
         "Ovilia"
     ],
-    "contents/zh/meta/writing.md": [
-        "Ovilia"
+    "contents/en/application/data/dynamic-data.md": [
+        "Hansz00"
+    ],
+    "contents/en/application/data/drilldown.md": [
+        "Hansz00"
+    ],
+    "contents/en/application/chart-types/scatter/basic-scatter.md": [
+        "Hansz00"
+    ],
+    "contents/en/application/chart-types/pie/rose.md": [
+        "Hansz00"
+    ],
+    "contents/en/application/chart-types/pie/ring.md": [
+        "Hansz00"
+    ],
+    "contents/en/application/chart-types/pie/basic-pie.md": [
+        "Hansz00"
+    ],
+    "contents/en/application/chart-types/line/step-line.md": [
+        "Hansz00"
+    ],
+    "contents/en/application/chart-types/line/stacked-line.md": [
+        "Hansz00"
+    ],
+    "contents/en/application/chart-types/line/smooth-line.md": [
+        "Hansz00"
+    ],
+    "contents/en/application/chart-types/line/basic-line.md": [
+        "Hansz00"
+    ],
+    "contents/en/application/chart-types/line/area-line.md": [
+        "Hank",
+        "Hansz00"
+    ],
+    "contents/en/application/chart-types/bar/waterfall.md": [
+        "Hansz00"
+    ],
+    "contents/en/application/chart-types/bar/visual-map.md": [
+        "Hansz00"
+    ],
+    "contents/en/application/chart-types/bar/stacked-bar.md": [
+        "Hansz00"
+    ],
+    "contents/en/application/chart-types/bar/polar-bar.md": [
+        "Hansz00"
+    ],
+    "contents/en/application/chart-types/bar/basic-bar.md": [
+        "Hank",
+        "Hansz00"
+    ],
+    "contents/en/application/chart-types/bar/bar-race.md": [
+        "Hansz00"
     ],
     "contents/zh/posts.js": [
-        "Ovilia"
+        "100pah",
+        "Ovilia\t\nWdingding\t\npissang"
     ]
 };

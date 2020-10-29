@@ -1,7 +1,7 @@
-export default {
-  rootPath: '/echarts-handbook/dist',
-  galleryViewPath: 'https://echarts.apache.org/examples/zh/view.html?c=',
-  mainSitePath: 'https://echarts.apache.org/',
-  optionPath: 'https://echarts.apache.org/option.html#',
-  gitRepo: 'Ovilia/incubator-echarts-handbook'
-};
+import configAsf from './config.asf';
+import configDev from './config.dev';
+
+const isProduction = process.env.NODE_ENV === 'production';
+const config = isProduction ? configAsf : configDev;
+
+export default config;

@@ -2,27 +2,64 @@
   <div class="bd-sidebar border-bottom-0 col-md-3 col-xl-2 col-12">
     <!-- active: {{ active }}. {{ posts }} -->
     <div class="bd-docs-nav">
-      <div class="bd-toc-item level0" v-for="level0Post in $store.state.posts.zh">
-        <a :href="level0Post.children ? 'javascript:;' : rootPath + level0Post.dir"
+      <div class="bd-toc-item level0"
+        v-for="level0Post in $store.state.posts.zh"
+        :key="level0Post.dir"
+      >
+        <a class="bd-toc-link"
+          :href="level0Post.children ? 'javascript:;' : rootPath + level0Post.dir"
           v-if="!level0Post.draft"
-          class="bd-toc-link">{{ level0Post.title }}</a>
-        <ul class="nav bd-sidenav level1" v-if="!level0Post.draft && level0Post.children">
-          <li class="nav-item" v-for="level1Post in level0Post.children">
+        >
+          {{ level0Post.title }}
+        </a>
+        <ul class="nav bd-sidenav level1"
+          v-if="!level0Post.draft && level0Post.children"
+        >
+          <li class="nav-item"
+            v-for="level1Post in level0Post.children"
+            :key="level1Post.dir"
+          >
             <a :href="level1Post.children ? 'javascript:;' : rootPath + level0Post.dir + '_' + level1Post.dir"
               v-if="!level1Post.draft"
               class="nav-link">{{ level1Post.title }}</a>
-            <ul class="nav bd-sidenav level2" v-if="!level1Post.draft && level1Post.children">
-              <li class="nav-item" v-for="level2Post in level1Post.children">
-                <a :href="rootPath + level0Post.dir + '_' + level1Post.dir + '_' + level2Post.dir"
-                  v-if="!level2Post.draft"
-                  class="nav-link">{{ level2Post.title }}</a>
-                <ul class="nav bd-sidenav level3" v-if="!level2Post.draft && level2Post.children">
-                  <li class="nav-item" v-for="level3Post in level2Post.children">
-                    <a :href="rootPath + level0Post.dir + '_' + level1Post.dir + '_' + level2Post.dir + '_' + level3Post.dir"
-                      v-if="!level3Post.draft"
-                      class="nav-link">{{ level3Post.title }}</a>
-                  </li>
-                </ul>
+            <ul class="nav bd-sidenav level2"
+              v-if="!level1Post.draft && level1Post.children"
+            >
+              <li class="nav-item"
+                v-for="level2Post in level1Post.children"
+                :key="level2Post.dir"
+              >
+                <div v-if="!level2Post.draft">
+                  <a class="nav-link"
+                    v-if="!level2Post.children"
+                    :href="rootPath + level0Post.dir + '_' + level1Post.dir + '_' + level2Post.dir"
+                  >
+                    {{ level2Post.title }}
+                  </a>
+                  <a class="nav-link"
+                    v-if="level2Post.children"
+                    @click="toggleChildren($event)"
+                  >
+                    {{ level2Post.title }}
+                    <b-icon icon="chevron-down"></b-icon>
+                    <b-icon icon="chevron-up"></b-icon>
+                  </a>
+                  <ul class="nav bd-sidenav level3"
+                    v-if="!level2Post.draft && level2Post.children"
+                  >
+                    <li class="nav-item"
+                      v-for="level3Post in level2Post.children"
+                      :key="level3Post.dir"
+                    >
+                      <a class="nav-link"
+                        :href="rootPath + level0Post.dir + '_' + level1Post.dir + '_' + level2Post.dir + '_' + level3Post.dir"
+                        v-if="!level3Post.draft"
+                      >
+                        {{ level3Post.title }}
+                      </a>
+                    </li>
+                  </ul>
+                </div>
               </li>
             </ul>
           </li>
@@ -39,6 +76,26 @@ export default Vue.extend({
   computed: {
     rootPath(): string {
       return this.$store.state.config.rootPath + '/' + this.$store.state.locale + '/';
+    }
+  },
+  methods: {
+    toggleChildren(event: MouseEvent) {
+      let el = event.target as any;
+      while (el.nodeName !== 'LI' && el.parentNode) {
+        el = el.parentNode;
+      }
+      if (el === document) {
+        return;
+      }
+      if (!el.className) {
+        el.className = ' active';
+      }
+      else if (el.className.indexOf(' active') > -1) {
+        el.className = el.className.replace(' active', '');
+      }
+      else {
+        el.className += ' active';
+      }
     }
   }
 });
@@ -69,10 +126,30 @@ export default Vue.extend({
       display: block;
     }
 
+      .nav .b-icon.bi {
+        font-size: 90%;
+        opacity: 0.6;
+        position: relative;
+        top: -2px;
+      }
+
       .nav-link {
         padding: 5px;
         color: #444;
+        cursor: pointer;
       }
+
+        .nav-link .bi-chevron-up {
+          display: none;
+        }
+
+        .active .nav-link .bi-chevron-up {
+          display: inline-block;
+        }
+
+        .active .nav-link .bi-chevron-down {
+          display: none;
+        }
 
         .level1 .nav-link {
           padding: 5px 0;
@@ -90,6 +167,11 @@ export default Vue.extend({
           border-left: 1px solid #eee;
           padding-left: 10px;
           margin-left: 0;
+          display: none;
+        }
+
+        .level2 .active .level3 {
+          display: block;
         }
 
         .level3 .nav-link {

@@ -10,7 +10,7 @@ ECharts 从初始一直使用 Canvas 绘制图表（除了对 IE8- 使用 VML）
 
 一般来说，Canvas 更适合绘制图形元素数量非常大（这一般是由数据量大导致）的图表（如热力图、地理坐标系或平行坐标系上的大规模线图或散点图等），也利于实现某些视觉 [特效](examples/editor.html?c=lines-bmap-effect)。但是，在不少场景中，SVG 具有重要的优势：它的内存占用更低（这对移动端尤其重要）、渲染性能略高、并且用户使用浏览器内置的缩放功能时不会模糊。例如，我们在一些硬件环境中分别使用 Canvas 渲染器和 SVG 渲染器绘制中等数据量的折、柱、饼，统计初始动画阶段的帧率，得到了一个性能对比图：
 
-<iframe width="600" height="400" src="${galleryViewPath}doc-example/canvas-vs-svg&reset=1&edit=1"></iframe>
+<iframe width="600" height="400" src="${exampleViewPath}doc-example/canvas-vs-svg&reset=1&edit=1"></iframe>
 
 上图显示出，在这些场景中，SVG 渲染器相比 Canvas 渲染器在移动端的总体表现更好。当然，这个实验并非是全面的评测，在另一些数据量较大或者有图表交互动画的场景中，目前的 SVG 渲染器的性能还比不过 Canvas 渲染器。但是同时有这两个选项，为开发者们根据自己的情况优化性能提供了更广阔的空间。
 

@@ -250,4 +250,4 @@ myChart.on('legendselectchanged', function (params) {
 
 下面示例演示了如何通过 `dispatchAction` 去轮流高亮饼图的每个扇形。
 
-<iframe width="600" height="400" src="${galleryViewPath}doc-example/pie-highlight&reset=1&edit=1"></iframe>
+<iframe width="600" height="400" src="${exampleViewPath}doc-example/pie-highlight&reset=1&edit=1"></iframe>
