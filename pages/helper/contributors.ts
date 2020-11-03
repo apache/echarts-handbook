@@ -24,7 +24,7 @@ export default {
     ],
     "contents/zh/concepts/dataset.md": [
         "100pah",
-        "huanghan01"
+        "Ovilia\t\nhuanghan01"
     ],
     "contents/zh/concepts/coordinate.md": [
         "Ovilia"
@@ -113,6 +113,7 @@ export default {
         "Ovilia"
     ],
     "contents/zh/application/data/dynamic-data.md": [
+        "Ovilia",
         "pissang"
     ],
     "contents/zh/application/data/drilldown.md": [
@@ -201,9 +202,11 @@ export default {
         "huanghan01"
     ],
     "contents/en/concepts/event.md": [
+        "Ovilia",
         "huanghan01"
     ],
     "contents/en/concepts/dataset.md": [
+        "Ovilia",
         "huanghan01"
     ],
     "contents/en/concepts/coordinate.md": [
@@ -261,16 +264,19 @@ export default {
         "Hansz00"
     ],
     "contents/en/best-practice/canvas-vs-svg.md": [
-        "Hansz00"
+        "Hansz00",
+        "Ovilia"
     ],
     "contents/en/best-practice/aria.md": [
-        "Hansz00"
+        "Hansz00",
+        "Ovilia"
     ],
     "contents/en/bar.md": [
         "Ovilia"
     ],
     "contents/en/application/data/dynamic-data.md": [
-        "Hansz00"
+        "Hansz00",
+        "Ovilia"
     ],
     "contents/en/application/data/drilldown.md": [
         "Hansz00"
