@@ -17,13 +17,10 @@ export async function getPostData (path: string, lang: string) {
     html: true
   }).use(highlightjs, {})
     .use(anchor, {
-      permalink: true,
+      permalink: false,
       permalinkAfter: true,
       permalinkSymbol: '#',
-      permalinkClass: 'permalink',
-      permalinkHref: slug => {
-        return url + '#' + slug;
-      }
+      permalinkClass: 'permalink'
     })
     .use(toc, {
       containerId: 'toc',
@@ -32,7 +29,7 @@ export async function getPostData (path: string, lang: string) {
         const hash = slug.split('#');
         if (hash.length > 0) {
           // Replace all spaces with '-' and encodeURI
-          return url + '#' + encodeURI(hash[0].trim().replace(new RegExp(' ', 'g'), '-'));
+          return encodeURI(hash[0].trim().toLowerCase().replace(new RegExp(' ', 'g'), '-'));
         }
         else {
           return url;

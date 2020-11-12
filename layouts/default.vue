@@ -28,6 +28,13 @@ export default {
     Navbar
   },
 
+  mounted: function () {
+    // This help scroll to the hash
+    const hash = location.hash;
+    location.hash = '';
+    location.hash = hash;
+  },
+
   computed: {
     // posts(): string {
     //   return this.$store.state.posts.zh;

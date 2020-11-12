@@ -120,6 +120,18 @@ export default Vue.extend({
     .bd-toc-link {
       font-weight: bold;
       color: #222;
+
+      &[href="javascript:;"] {
+        cursor: default;
+
+        &:focus, &:hover {
+          text-decoration: none;
+        }
+      }
+
+      &:focus, &:hover {
+        color: #222;
+      }
     }
 
     .page-content {
@@ -163,8 +175,15 @@ export default Vue.extend({
           display: none;
         }
 
-        .level1 .nav-link {
-          padding: 5px 0;
+        .level1 {
+          .nav-link {
+            padding: 5px 0;
+            color: #444;
+
+            &:hover {
+              color: #444;
+            }
+          }
         }
 
         .level2, .level3 {
@@ -175,7 +194,7 @@ export default Vue.extend({
           color: #666;
         }
 
-        .level3 {
+        .nav.level3 {
           border-left: 1px solid #eee;
           padding-left: 10px;
           margin-left: 0;
