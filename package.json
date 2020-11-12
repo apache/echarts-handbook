@@ -8,8 +8,7 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "prepare": "node build/generate-contributors.js",
-    "generate": "nuxt generate",
+    "generate": "node build/generate-contributors.js && node build/generate && nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
   },
   "dependencies": {
@@ -17,7 +16,7 @@
     "bootstrap-vue": "^2.0.0",
     "markdown-it-anchor": "^6.0.0",
     "markdown-it-highlightjs": "^3.1.0",
-    "markdown-it-toc-done-right": "git+ssh://git@github.com/Ovilia/markdown-it-toc-done-right.git",
+    "markdown-it-toc-done-right": "git+https://github.com/Ovilia/markdown-it-toc-done-right.git",
     "nuxt": "^2.0.0",
     "nuxt-i18n": "^6.7.2"
   },

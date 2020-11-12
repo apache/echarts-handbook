@@ -6,7 +6,7 @@ export default {
   mode: 'universal',
 
   router: {
-    base: config.rootPath
+    base: config.base
   },
 
   /*
@@ -48,12 +48,12 @@ export default {
   */
   modules: [
     // Doc: https://bootstrap-vue.js.org
-    [
-      'bootstrap-vue/nuxt',
-      {
-        icons: true
-      }
-    ],
+    // [
+    //   'bootstrap-vue/nuxt',
+    //   {
+    //     icons: true
+    //   }
+    // ],
     [
       'nuxt-i18n',
       {
@@ -78,7 +78,7 @@ export default {
   */
   build: {
     extractCSS: {
-      allChunks: true
+      // allChunks: true
     },
     /*
     ** You can extend webpack config here

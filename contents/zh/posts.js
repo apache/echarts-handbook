@@ -206,7 +206,7 @@ export default [{
                 dir: 'stacked-bar'
             }, {
                 title: '双向柱状图',
-                dir: 'bi-directiona-bar'
+                dir: 'bi-directional-bar'
             }, {
                 title: '分组柱状图',
                 dir: 'grouped-bar'

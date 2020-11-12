@@ -3,7 +3,7 @@
     <!-- active: {{ active }}. {{ posts }} -->
     <div class="bd-docs-nav">
       <div class="bd-toc-item level0"
-        v-for="level0Post in $store.state.posts.zh"
+        v-for="level0Post in $store.state.posts[this.$store.state.locale]"
         :key="level0Post.dir"
       >
         <a class="bd-toc-link"
@@ -41,8 +41,8 @@
                     @click="toggleChildren($event)"
                   >
                     {{ level2Post.title }}
-                    <b-icon icon="chevron-down"></b-icon>
-                    <b-icon icon="chevron-up"></b-icon>
+                    <span class="glyphicon glyphicon-menu-down"></span>
+                    <span class="glyphicon glyphicon-menu-up"></span>
                   </a>
                   <ul class="nav bd-sidenav level3"
                     v-if="!level2Post.draft && level2Post.children"
@@ -102,7 +102,7 @@ export default Vue.extend({
 
 </script>
 
-<style>
+<style lang="scss">
 .bd-sidebar {
   padding: 20px;
 }
@@ -122,9 +122,18 @@ export default Vue.extend({
       color: #222;
     }
 
-    .nav {
-      display: block;
-    }
+    .page-content {
+      .nav {
+        display: block;
+      }
+
+      ul.nav {
+        padding-left: 0;
+      }
+
+      .nav>li>a:focus, .nav>li>a:hover {
+        background-color: transparent;
+      }
 
       .nav .b-icon.bi {
         font-size: 90%;
@@ -133,21 +142,24 @@ export default Vue.extend({
         top: -2px;
       }
 
-      .nav-link {
+      .glyphicon {
         padding: 5px;
-        color: #444;
+        color: #ccc;
         cursor: pointer;
+        transform: scale(0.8);
+        top: 2px;
+        left: -5px;
       }
 
-        .nav-link .bi-chevron-up {
+        .nav-link .glyphicon-menu-up {
           display: none;
         }
 
-        .active .nav-link .bi-chevron-up {
+        .active .nav-link .glyphicon-menu-up {
           display: inline-block;
         }
 
-        .active .nav-link .bi-chevron-down {
+        .active .nav-link .glyphicon-menu-down {
           display: none;
         }
 
@@ -182,4 +194,6 @@ export default Vue.extend({
         .nav-link:hover {
           text-decoration: underline;
         }
+    }
+
 </style>

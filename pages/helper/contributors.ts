@@ -1,4 +1,7 @@
 export default {
+    "contents/zh/meta/get-started.md": [
+        "Ovilia"
+    ],
     "contents/zh/get-started.md": [
         "Ovilia"
     ],

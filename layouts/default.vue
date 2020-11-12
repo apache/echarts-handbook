@@ -1,9 +1,9 @@
 <template>
   <div>
-    <navigator />
+    <navbar />
 
-    <div class="container-fluid">
-      <div class="row flex-xl-nowrap2">
+    <div class="page-main">
+      <div class="page-content single-page">
         <sidebar />
 
         <div class="bd-content col-sm-7 pl-sm-2 col-12">
@@ -12,20 +12,20 @@
           </div>
         </div>
       </div>
-    </div>
 
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css">
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css">
+    </div>
   </div>
 </template>
 
 <script lang="ts">
-import Navigator from '~/components/partials/Navigator.vue'
 import Sidebar from '~/components/partials/Sidebar.vue'
+import Navbar from '~/components/partials/Navbar.vue'
 
 export default {
   components: {
-    Navigator,
-    Sidebar
+    Sidebar,
+    Navbar
   },
 
   computed: {
@@ -41,6 +41,10 @@ export default {
 </script>
 
 <style lang="scss">
+.handbook-content {
+  margin-top: 50px;
+}
+
 .post-content {
   margin-bottom: 80px;
 }

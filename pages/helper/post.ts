@@ -12,7 +12,6 @@ export async function getPostData (path: string, lang: string) {
   let content = fileContent.default;
 
   const url = `${config.rootPath}/${lang}/${path}`;
-  console.log(url);
 
   const md = new MarkdownIt({
     html: true
@@ -29,10 +28,11 @@ export async function getPostData (path: string, lang: string) {
     .use(toc, {
       containerId: 'toc',
       level: 2,
-      href: slug => {
+      hash: slug => {
         const hash = slug.split('#');
         if (hash.length > 0) {
-          return url + '#' + hash[0];
+          // Replace all spaces with '-' and encodeURI
+          return url + '#' + encodeURI(hash[0].trim().replace(new RegExp(' ', 'g'), '-'));
         }
         else {
           return url;
