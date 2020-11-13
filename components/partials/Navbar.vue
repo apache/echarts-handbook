@@ -5,6 +5,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import zhNav from './Navbar/zh';
+import enNav from './Navbar/zh';
 
 export default Vue.extend({
   components: {
@@ -14,7 +15,7 @@ export default Vue.extend({
     navContent() {
       return this.$store.state.locale === 'zh'
         ? zhNav
-        : '';
+        : enNav;
     }
   }
 });
