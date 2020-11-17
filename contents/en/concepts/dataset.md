@@ -170,7 +170,7 @@ option = {
 }
 ```
 
-The effect of configuration is shown in [this case](${exampleViewPath}dataset-series-layout-by&edit=1&reset=1).
+The effect of configuration is shown in [this case](${exampleEditorPath}dataset-series-layout-by&edit=1&reset=1).
 
 ## Dimension
 
@@ -258,7 +258,7 @@ var option = {
 };
 ```
 
-[Here](${exampleViewPath}dataset-encode-simple0&edit=1&reset=1) shows the effect of this example.
+[Here](${exampleEditorPath}dataset-encode-simple0&edit=1&reset=1) shows the effect of this example.
 
 The basic structure of `series.encode` declaration:
 + To the left of the colon: Specific name of axis or label.
@@ -314,7 +314,7 @@ encode: {
 }
 ```
 
-This is a richer [example](${exampleViewPath}dataset-encode1&edit=1&reset=1) of `series.encode`.
+This is a richer [example](${exampleEditorPath}dataset-encode1&edit=1&reset=1) of `series.encode`.
 
 
 
@@ -327,7 +327,7 @@ It is worth mentioning that ECharts will use some default mapping rules for some
 + Without axis (such as Pie Chart):
 	+ Use the first column(row) as the name, second column(row) as value. ECharts will not set the name if there is only one column(row).
 
-While the default rule cannot fulfill the requirements, you can configure `encode` by yourself, which is not complicate. Here is an [example](${exampleViewPath}dataset-default&edit=1&reset=1).
+While the default rule cannot fulfill the requirements, you can configure `encode` by yourself, which is not complicate. Here is an [example](${exampleEditorPath}dataset-default&edit=1&reset=1).
 
 
 ## Some Normal Settings of series.encode
@@ -435,7 +435,7 @@ A: Check your spelling, such as misspell the dimension name `'Life Expectancy'` 
 
 ## Visual Channel Mapping
 
-We can map visual channel by using [visualMap](${optionPath}#visualMap). Check details in the [visualMap](${optionPath}#visualMap) document. Here is an [example](${exampleViewPath}dataset-encode0&edit=1&reset=1).
+We can map visual channel by using [visualMap](${optionPath}#visualMap). Check details in the [visualMap](${optionPath}#visualMap) document. Here is an [example](${exampleEditorPath}dataset-encode0&edit=1&reset=1).
 
 
 ## Formats of Charts
@@ -533,4 +533,4 @@ The following charts now support dataset:
 `line`, `bar`, `pie`, `scatter`, `effectScatter`, `parallel`, `candlestick`, `map`, `funnel`, `custom`.
 ECharts will support more charts in the future.
 
-In the end, here is an [example](${exampleViewPath}dataset-link&edit=1&reset=1) of several charts shared one `dataset` with linkage interaction.
+In the end, here is an [example](${exampleEditorPath}dataset-link&edit=1&reset=1) of several charts shared one `dataset` with linkage interaction.
