@@ -253,3 +253,30 @@ Commonly used behavior and corresponding parameters were listed in [action](${ma
 The following example shows how to highlight each sector one by one in the pie chart using `dispatchAction`.
 
 <iframe width="600" height="400" src="${exampleViewPath}doc-example/pie-highlight&reset=1&edit=1"></iframe>
+
+
+## Listen to events from the blank
+
+Sometimes developers need to listen to the events that are triggered from the blank of the canvas. For example, need to reset the chart when users click on the blank.
+
+Before we talk about this feature, we need to clarify two kinds of events: `zrender events` and `echarts events`.
+```js
+myChart.getZr().on('click', function (event) {
+    // This listener is listening to a `zrender event`.
+});
+myChart.on('click', function (event) {
+    // This listener is listening to a `echarts event`.
+});
+```
+`zrender events` are different from `echarts events`. The former one are triggered when mouse/pointer is at everywhere, while the latter one can only be triggered when mouse/pointer is at the graphic elements. In fact, `echarts events` are implemented based on `zrender events`, that is, when a `zrender events` is triggered at a graphic element, `echarts` will trigger a `echarts event`.
+
+Having `zrender events`, we can implement "listen to events from the blank" as follows:
+```js
+myChart.getZr().on('click', function (event) {
+    // No "target" means that mouse/pointer is not on
+    // any of the graphic elements, which is "blank".
+    if (!event.target) {
+        // Click on blank. Do something.
+    }
+});
+```
