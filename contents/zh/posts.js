@@ -38,6 +38,9 @@ export default [{
         title: '数据集',
         dir: 'dataset'
     }, {
+        title: '数据转换',
+        dir: 'data-transform'
+    }, {
         title: '坐标系',
         dir: 'coordinate'
     }, {
