@@ -574,6 +574,7 @@ option = {
 
 Examples with echarts-stat:
 
++ [Aggregate](${exampleEditorPath}data-transform-aggregate&edit=1&reset=1)
 + [Bar histogram](${exampleEditorPath}bar-histogram&edit=1&reset=1)
 + [Scatter clustering](${exampleEditorPath}scatter-clustering&edit=1&reset=1)
 + [Scatter linear regression](${exampleEditorPath}scatter-linear-regression&edit=1&reset=1)

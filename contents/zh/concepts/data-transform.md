@@ -1,6 +1,6 @@
 # 使用 transform 进行数据转换
 
-Apache ECharts (incubating)<sup>TM</sup> 5 开始支持了“数据转换”（ data transform ）功能。在 echarts 中，“数据转换” 这个词指的是，给定一个已有的“数据集”（[dataset](${optionPath}#dataset)）和一个“转换方法”（[transform](${optionPath}#dataset.transform），echarts 能生成一个新的“数据集”，然后可以使用这个新的“数据集”绘制图表。这些工作都可以声明式地完成。
+Apache ECharts (incubating)<sup>TM</sup> 5 开始支持了“数据转换”（ data transform ）功能。在 echarts 中，“数据转换” 这个词指的是，给定一个已有的“数据集”（[dataset](${optionPath}#dataset)）和一个“转换方法”（[transform](${optionPath}#dataset.transform)），echarts 能生成一个新的“数据集”，然后可以使用这个新的“数据集”绘制图表。这些工作都可以声明式地完成。
 
 抽象地来说，数据转换是这样一种公式：`outData = f(inputData)`。`f` 是转换方法，例如：`filter`、`sort`、`regression`、`boxplot`、`cluster`、`aggregate`(todo) 等等。有了数据转换能力后，我们就至少可以做到这些事情：
 + 把数据分成多份用不同的饼图展现。
@@ -563,10 +563,11 @@ option = {
 
 一些使用 echarts-stat 的例子：
 
-+ [直方图](${exampleEditorPath}bar-histogram&edit=1&reset=1)
-+ [简单聚类](${exampleEditorPath}scatter-clustering&edit=1&reset=1)
-+ [线性回归线](${exampleEditorPath}scatter-linear-regression&edit=1&reset=1)
-+ [指数回归线](${exampleEditorPath}scatter-exponential-regression&edit=1&reset=1)
-+ [对数回归线](${exampleEditorPath}scatter-logarithmic-regression&edit=1&reset=1)
-+ [多项式回归线](${exampleEditorPath}scatter-polynomial-regression&edit=1&reset=1)
++ [聚集 (Aggregate)](${exampleEditorPath}data-transform-aggregate&edit=1&reset=1)
++ [直方图 (Histogram)](${exampleEditorPath}bar-histogram&edit=1&reset=1)
++ [简单聚类 (Clustering)](${exampleEditorPath}scatter-clustering&edit=1&reset=1)
++ [线性回归线 (Linear Regression)](${exampleEditorPath}scatter-linear-regression&edit=1&reset=1)
++ [指数回归线 (Exponential Regression)](${exampleEditorPath}scatter-exponential-regression&edit=1&reset=1)
++ [对数回归线 (Logarithmic Regression)](${exampleEditorPath}scatter-logarithmic-regression&edit=1&reset=1)
++ [多项式回归线 (Polynomial Regression)](${exampleEditorPath}scatter-polynomial-regression&edit=1&reset=1)
 
