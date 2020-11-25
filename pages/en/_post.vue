@@ -3,16 +3,15 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
 import {getPostData} from '../helper/post';
 
-export default Vue.extend({
+export default {
   components: {
   },
   async asyncData({params}) {
     return await getPostData(params.post, 'en');
   }
-});
+};
 
 </script>
 

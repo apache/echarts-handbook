@@ -7,7 +7,7 @@
         :key="level0Post.dir"
       >
         <a class="bd-toc-link"
-          :href="level0Post.children ? 'javascript:;' : rootPath + level0Post.dir"
+          :href="level0Post.children ? 'javascript:;' : level0Post.dir"
           v-if="!level0Post.draft"
         >
           {{ level0Post.title }}
@@ -15,54 +15,14 @@
         <ul class="nav bd-sidenav level1"
           v-if="!level0Post.draft && level0Post.children"
         >
-          <li class="nav-item"
+          <SidebarNavItem
             v-for="level1Post in level0Post.children"
             :key="level1Post.dir"
+            :item="level1Post"
+            :parentPath="level0Post.dir"
+            :level="1"
           >
-            <a :href="level1Post.children ? 'javascript:;' : rootPath + level0Post.dir + '_' + level1Post.dir"
-              v-if="!level1Post.draft"
-              class="nav-link">{{ level1Post.title }}</a>
-            <ul class="nav bd-sidenav level2"
-              v-if="!level1Post.draft && level1Post.children"
-            >
-              <li class="nav-item"
-                v-for="level2Post in level1Post.children"
-                :key="level2Post.dir"
-              >
-                <div v-if="!level2Post.draft">
-                  <a class="nav-link"
-                    v-if="!level2Post.children"
-                    :href="rootPath + level0Post.dir + '_' + level1Post.dir + '_' + level2Post.dir"
-                  >
-                    {{ level2Post.title }}
-                  </a>
-                  <a class="nav-link"
-                    v-if="level2Post.children"
-                    @click="toggleChildren($event)"
-                  >
-                    {{ level2Post.title }}
-                    <span class="glyphicon glyphicon-menu-down"></span>
-                    <span class="glyphicon glyphicon-menu-up"></span>
-                  </a>
-                  <ul class="nav bd-sidenav level3"
-                    v-if="!level2Post.draft && level2Post.children"
-                  >
-                    <li class="nav-item"
-                      v-for="level3Post in level2Post.children"
-                      :key="level3Post.dir"
-                    >
-                      <a class="nav-link"
-                        :href="rootPath + level0Post.dir + '_' + level1Post.dir + '_' + level2Post.dir + '_' + level3Post.dir"
-                        v-if="!level3Post.draft"
-                      >
-                        {{ level3Post.title }}
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-            </ul>
-          </li>
+          </SidebarNavItem>
         </ul>
       </div>
     </div>
@@ -70,41 +30,48 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
 
-export default Vue.extend({
-  computed: {
-    rootPath(): string {
-      return this.$store.state.config.rootPath + '/' + this.$store.state.locale + '/';
-    }
+import SidebarNavItem from './SidebarNavItem';
+import scrollIntoView from 'scroll-into-view';
+
+export default {
+
+  components: {
+    SidebarNavItem
   },
-  methods: {
-    toggleChildren(event: MouseEvent) {
-      let el = event.target as any;
-      while (el.nodeName !== 'LI' && el.parentNode) {
-        el = el.parentNode;
+
+  mounted() {
+
+    setTimeout(() => {
+      const $actived = this.$el.querySelector('.actived');
+      if ($actived) {
+        scrollIntoView($actived, {
+          time: 200,
+          align: {
+            top: 0,
+            topOffset: 300
+          },
+          isScrollable: function(target, defaultIsScrollable){
+            return target.className && target.className.indexOf('bd-sidebar') >= 0;
+          }
+
+        });
       }
-      if (el === document) {
-        return;
-      }
-      if (!el.className) {
-        el.className = ' active';
-      }
-      else if (el.className.indexOf(' active') > -1) {
-        el.className = el.className.replace(' active', '');
-      }
-      else {
-        el.className += ' active';
-      }
-    }
+    }, 0);
   }
-});
+};
 
 </script>
 
 <style lang="scss">
 .bd-sidebar {
   padding: 20px;
+  position: sticky;
+  z-index: 1000;
+  top: 0;
+  height: calc(100vh - 50px);
+  overflow-y: auto;
+  border-right: 1px solid #eee;
 }
 
   .bd-toc-item {
@@ -135,6 +102,8 @@ export default Vue.extend({
     }
 
     .page-content {
+      padding-bottom: 0;
+
       .nav {
         display: block;
       }
@@ -154,26 +123,6 @@ export default Vue.extend({
         top: -2px;
       }
 
-      .glyphicon {
-        padding: 5px;
-        color: #ccc;
-        cursor: pointer;
-        transform: scale(0.8);
-        top: 2px;
-        left: -5px;
-      }
-
-        .nav-link .glyphicon-menu-up {
-          display: none;
-        }
-
-        .active .nav-link .glyphicon-menu-up {
-          display: inline-block;
-        }
-
-        .active .nav-link .glyphicon-menu-down {
-          display: none;
-        }
 
         .level1 {
           .nav-link {
@@ -186,26 +135,21 @@ export default Vue.extend({
           }
         }
 
-        .level2, .level3 {
+        .level1, .level2 {
           margin-top: 0;
         }
 
-        .level2 .nav-link {
-          color: #666;
+        .level1 .nav-link {
+          color: #444;
         }
 
-        .nav.level3 {
+        .nav.level2 {
           border-left: 1px solid #eee;
           padding-left: 10px;
           margin-left: 0;
-          display: none;
         }
 
-        .level2 .active .level3 {
-          display: block;
-        }
-
-        .level3 .nav-link {
+        .level2 .nav-link {
           margin: 2px 0;
           color: #888;
         }
