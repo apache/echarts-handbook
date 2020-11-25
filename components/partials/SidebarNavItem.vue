@@ -71,7 +71,7 @@ export default Vue.extend({
 
   data() {
     const path = this.parentPath + '_' + this.item.dir;
-    const isSelfOrChildActived = this.$route.params.post.startsWith(path);
+    const isSelfOrChildActived = (this.$route.params.post + '').startsWith(path);
     return {
       get path(): string {
         return path;
