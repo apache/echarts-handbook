@@ -31,10 +31,11 @@
 
 <script lang="ts">
 
-import SidebarNavItem from './SidebarNavItem';
+import Vue from 'vue';
+import SidebarNavItem from './SidebarNavItem.vue';
 import scrollIntoView from 'scroll-into-view';
 
-export default {
+export default Vue.extend({
 
   components: {
     SidebarNavItem
@@ -59,7 +60,7 @@ export default {
       }
     }, 0);
   }
-};
+});
 
 </script>
 

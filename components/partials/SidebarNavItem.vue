@@ -27,6 +27,7 @@
       :parentPath="path"
       :item="child"
       :level="level + 1"
+      :key="child.dir"
     ></SidebarNavItem>
   </ul>
 </li>
@@ -34,19 +35,36 @@
 
 
 <script lang="ts">
-export default {
+
+import Vue from 'vue';
+
+interface NavItem {
+  dir: string
+}
+
+export default Vue.extend({
 
   name: 'SidebarNavItem',
 
-  props: ['item', 'parentPath', 'level'],
+  props: {
+    item: {
+      type: Object as () => NavItem
+    },
+    parentPath: {
+      type: String as () => string
+    },
+    level: {
+      type: Number as () => number
+    }
+  },
 
   computed: {
-    link() {
+    link(): string {
       return this.$store.state.config.rootPath + '/' + this.$store.state.locale
         + '/' + this.path;
     },
 
-    isActived() {
+    isActived(): boolean {
       return this.$route.params.post === this.path;
     }
   },
@@ -55,11 +73,11 @@ export default {
     const path = this.parentPath + '_' + this.item.dir;
     const isSelfOrChildActived = this.$route.params.post.startsWith(path);
     return {
-      get path() {
+      get path(): string {
         return path;
       },
-      collapsed: this.level >= 2 && !isSelfOrChildActived
-    }
+      collapsed: (this.level >= 2 && !isSelfOrChildActived) as boolean
+    };
   },
 
   methods: {
@@ -67,7 +85,7 @@ export default {
       this.collapsed = !this.collapsed
     }
   }
-}
+});
 </script>
 
 <style lang="scss">

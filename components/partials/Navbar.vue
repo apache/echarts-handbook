@@ -5,8 +5,9 @@
 <script lang="ts">
 import zhNav from './Navbar/zh';
 import enNav from './Navbar/zh';
+import Vue from 'vue';
 
-export default {
+export default Vue.extend({
   components: {
 
   },
@@ -17,6 +18,6 @@ export default {
         : enNav;
     }
   }
-};
+});
 
 </script>
