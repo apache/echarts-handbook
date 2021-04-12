@@ -112,14 +112,14 @@ export default Vue.extend({
   }
 
     .bd-sidenav {
-      margin-top: 5px;
+      margin-top: 4px;
       margin-left: 10px;
       display: none;
     }
 
     .bd-toc-link {
       font-weight: bold;
-      color: #222;
+      color: #333;
 
       &[href="javascript:;"] {
         cursor: default;
@@ -130,7 +130,7 @@ export default Vue.extend({
       }
 
       &:focus, &:hover {
-        color: #222;
+        color: #151515;
       }
     }
 
@@ -160,7 +160,7 @@ export default Vue.extend({
         cursor: pointer;
         transform: scale(0.8);
         top: 2px;
-        left: -5px;
+        left: -4px;
       }
 
         .nav-link .glyphicon-menu-up {
@@ -176,29 +176,41 @@ export default Vue.extend({
         }
 
         .level1 {
+          margin-top: 4px;
+
           .nav-link {
-            padding: 5px 0;
-            color: #444;
+            padding: 10px 0;
+            color: #707070;
 
             &:hover {
-              color: #444;
+              color: #151515;
             }
           }
         }
 
-        .level2, .level3 {
-          margin-top: 0;
-        }
+        .level2 {
+          margin-top: 1px;
 
-        .level2 .nav-link {
-          color: #666;
+          .level3 {
+            margin-top: 0;
+          }
+
+          .nav-link {
+            color: #666;
+            padding: 0;
+          }
         }
 
         .nav.level3 {
-          border-left: 1px solid #eee;
+          font-size: 12px;
           padding-left: 10px;
           margin-left: 0;
           display: none;
+
+          li {
+            display: list-item;
+            list-style: disc;
+          }
         }
 
         .level2 .active .level3 {
@@ -208,10 +220,6 @@ export default Vue.extend({
         .level3 .nav-link {
           margin: 2px 0;
           color: #888;
-        }
-
-        .nav-link:hover {
-          text-decoration: underline;
         }
     }
 
