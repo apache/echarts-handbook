@@ -5,5 +5,5 @@ export default {
   exampleEditorPath: 'https://echarts.apache.org/examples/zh/editor.html?c=',
   mainSitePath: 'https://echarts.apache.org/',
   optionPath: 'https://echarts.apache.org/option.html#',
-  gitRepo: 'apache/incubator-echarts-handbook'
+  gitRepo: 'apache/echarts-handbook'
 };

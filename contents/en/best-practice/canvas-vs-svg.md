@@ -2,7 +2,7 @@
 
 Most of the browser-side chart libraries are using SVG or Canvas as their underlying render because they are interchangeable. However, they show notable differences in some specific scenarios and cases. As a result, it is hard to find a standard choice between them.
 
-Canvas has been used as the renderer (VML for IE8-) of ECharts from the beginning. Since [ECharts v4.0](https://github.com/apache/incubator-echarts/releases) was released, ECharts provided the SVG render as an additional option. You can specify the [renderer parameter](http://echarts.baidu.com/api.html#echarts.init) as `'canvas'` or `'svg'` while initializing a chart.
+Canvas has been used as the renderer (VML for IE8-) of ECharts from the beginning. Since [ECharts v4.0](https://github.com/apache/echarts/releases) was released, ECharts provided the SVG render as an additional option. You can specify the [renderer parameter](http://echarts.baidu.com/api.html#echarts.init) as `'canvas'` or `'svg'` while initializing a chart.
 
 > SVG and Canvas have a significant difference in use. The simultaneous transparent support in ECharts between SVG and Canvas is because of the abstraction and implementation of the underlying library [ZRender](https://github.com/ecomfe/zrender). It formed an interchangeable SVG renderer and Canvas renderer.
 
@@ -21,7 +21,7 @@ When choosing renderer, try to consider hardware and software environment, data 
 	+ To create a huge amount of instance in a crash-prone browser (It perhaps because the number of Canvas exceeded the capacity of the phone.), Try to use SVG renderer to improve. Generally, if the chart is running on a low-end Android phone, or you are using some specific chart like [liquidfill](https://ecomfe.github.io/echarts-liquidfill/example/), the SVG render will perform better.
 	+ Use Canvas while visualizing a large amount of data.
 
-We strongly welcome developers to give us a [feedback](https://github.com/apache/incubator-echarts/issues/new). It will be very helpful for us to optimize ECharts. Thank you!
+We strongly welcome developers to give us a [feedback](https://github.com/apache/echarts/issues/new). It will be very helpful for us to optimize ECharts. Thank you!
 
 Note: except some specific charts rely on Canvas (eg. [series lines effect](option.html#series-lines.effect), [heatmap bmap](examples/editor.html?c=heatmap-bmap), etc.), most of the remaining render are supported by SVG. SVG can not support rich text, texture, and shadow right now.
 

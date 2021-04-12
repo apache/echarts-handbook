@@ -3,7 +3,7 @@
     <navbar />
 
     <div class="page-main">
-      <div class="page-content single-page">
+      <div class="page-content single-page container-fluid row flex-xl-nowrap">
         <sidebar />
 
         <div class="bd-content col-sm-7 pl-sm-2 col-12">

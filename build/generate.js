@@ -6,7 +6,7 @@ const config = {
       bootstrapCSS: 'https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css',
       bootstrapJS: 'https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js'
   },
-  cdnPayRootMap: 'https://cdn.jsdelivr.net/gh/apache/incubator-echarts-website@asf-site'
+  cdnPayRootMap: 'https://cdn.jsdelivr.net/gh/apache/echarts-website@asf-site'
 };
 
 let template = `<!DOCTYPE html>
@@ -36,7 +36,7 @@ updateNav('zh');
 updateNav('en');
 
 function updateNav(locale) {
-    let navContent = fs.readFileSync(`../incubator-echarts-website/${locale}/nav.html`, 'utf-8');
+    let navContent = fs.readFileSync(`../echarts-website/${locale}/nav.html`, 'utf-8');
     navContent = `module.exports = \`${navContent}\`\n`;
     fs.writeFileSync(`./components/partials/Navbar/${locale}.js`, navContent, 'utf-8');
 }

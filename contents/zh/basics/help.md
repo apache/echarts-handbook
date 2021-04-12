@@ -12,7 +12,7 @@ ECharts 有非常大量的用户，所以你遇到过的问题，很可能别人
 - [配置项手册](${mainSitePath}/option.html)：可以尝试使用搜索功能
 - 本手册的文章
 - [常见问题](${mainSitePath}/faq.html)
-- 在 [GitHub issue](https://github.com/apache/incubator-echarts/issues) 中搜索关键字
+- 在 [GitHub issue](https://github.com/apache/echarts/issues) 中搜索关键字
 - 使用搜索引擎搜索关键字
 
 

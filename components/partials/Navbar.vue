@@ -3,9 +3,9 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
 import zhNav from './Navbar/zh';
 import enNav from './Navbar/zh';
+import Vue from 'vue';
 
 export default Vue.extend({
   components: {
