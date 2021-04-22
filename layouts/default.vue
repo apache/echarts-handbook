@@ -65,6 +65,7 @@ export default {
   border-left: 1px solid #e3e3e3;
   padding: 10px;
   color: #888;
+  background-color: #fff;
   height: auto;
 
   @media (max-width: 768px) {

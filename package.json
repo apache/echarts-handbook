@@ -25,6 +25,7 @@
     "@nuxt/typescript-build": "^0.6.0",
     "@nuxtjs/eslint-config-typescript": "^1.0.0",
     "@nuxtjs/eslint-module": "^1.0.0",
+    "@types/scroll-into-view": "^1.13.0",
     "babel-eslint": "^10.0.1",
     "child_process": "^1.0.2",
     "eslint": "^6.1.0",

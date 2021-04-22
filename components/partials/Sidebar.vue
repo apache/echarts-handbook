@@ -1,5 +1,5 @@
 <template>
-  <div class="bd-sidebar border-bottom-0 col-sm-2 col-12">
+  <div class="bd-sidebar border-bottom-0 col-sm-3 col-sm-9 col-md-2 col-md-10">
     <!-- active: {{ active }}. {{ posts }} -->
     <div class="bd-docs-nav">
       <div class="bd-toc-item level0"
@@ -44,7 +44,7 @@ export default Vue.extend({
   mounted() {
 
     setTimeout(() => {
-      const $actived = this.$el.querySelector('.actived');
+      const $actived = this.$el.querySelector('.actived') as HTMLElement;
       if ($actived) {
         scrollIntoView($actived, {
           time: 200,
@@ -52,10 +52,9 @@ export default Vue.extend({
             top: 0,
             topOffset: 300
           },
-          isScrollable: function(target, defaultIsScrollable){
-            return target.className && target.className.indexOf('bd-sidebar') >= 0;
+          isScrollable: function(target){
+            return !!target.className && target.className.indexOf('bd-sidebar') >= 0;
           }
-
         });
       }
     }, 0);
@@ -76,7 +75,7 @@ export default Vue.extend({
 }
 
   .bd-toc-item {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 
     .bd-sidenav {
@@ -147,9 +146,10 @@ export default Vue.extend({
 
         .level1 {
           margin-top: 4px;
+          font-size: 14px;
 
           .nav-link {
-            padding: 10px 0;
+            padding: 5px 0;
             color: #707070;
 
             &:hover {
@@ -181,9 +181,6 @@ export default Vue.extend({
             display: list-item;
             list-style: disc;
           }
-
-        .level1, .level2 {
-          margin-top: 0;
         }
 
         .level1 .nav-link {
