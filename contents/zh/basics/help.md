@@ -18,7 +18,7 @@ ECharts 有非常大量的用户，所以你遇到过的问题，很可能别人
 
 ### 创建一个最简单可复现的例子
 
-使用 [Codepen](https://codepen.io/Ovilia/pen/dyYWXWM) 或者 [ECharts Gallery](https://gallery.echartsjs.com/editor.html) 创建一个例子，这将使得他人更方便地复现你的问题。
+使用 [Codepen](https://codepen.io/Ovilia/pen/dyYWXWM)、[Codesandbox](https://codesandbox.io/s/mystifying-bash-2uthz) 或者 [makeapie.com](https://www.makeapie.com/) 创建一个例子，这将使得他人更方便地复现你的问题。
 
 例子应尽可能以最简单的方式复现你的问题，去除不必要的配置项和数据，可以让帮助你的人更快速地定位问题，从而让你的问题更快得到解决。更详细的介绍请参见 [How to create a Minimal, Reproducible Example](https://stackoverflow.com/help/minimal-reproducible-example)。
 

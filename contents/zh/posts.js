@@ -29,11 +29,13 @@ export default [{
         title: '图表容器及大小',
         dir: 'chart-size'
     }, {
-        title: '配置项基本概念',
-        dir: 'options'
+        title: '配置项',
+        dir: 'options',
+        draft: true
     }, {
         title: '系列',
-        dir: 'series'
+        dir: 'series',
+        draft: true
     }, {
         title: '数据集',
         dir: 'dataset'
@@ -42,7 +44,8 @@ export default [{
         dir: 'data-transform'
     }, {
         title: '坐标系',
-        dir: 'coordinate'
+        dir: 'coordinate',
+        draft: true
     }, {
         title: '坐标轴',
         dir: 'axis'
@@ -54,7 +57,8 @@ export default [{
         dir: 'legend'
     }, {
         title: '提示框',
-        dir: 'tooltip'
+        dir: 'tooltip',
+        draft: true
     }, {
         title: '事件与行为',
         dir: 'event'
@@ -76,16 +80,20 @@ export default [{
                 dir: 'stacked-bar'
             }, {
                 title: '动态排序柱状图',
-                dir: 'bar-race'
+                dir: 'bar-race',
+                draft: true
             }, {
                 title: '极坐标系柱状图',
-                dir: 'polar-bar'
+                dir: 'polar-bar',
+                draft: true
             }, {
                 title: '瀑布图',
-                dir: 'waterfall'
+                dir: 'waterfall',
+                draft: true
             }, {
                 title: '视觉映射的柱状图',
-                dir: 'visual-map'
+                dir: 'visual-map',
+                draft: true
             }]
         }, {
             title: '折线图',
@@ -129,7 +137,8 @@ export default [{
         }]
     }, {
         title: '移动端优化',
-        dir: 'mobile'
+        dir: 'mobile',
+        draft: true
     }, {
         title: '跨平台方案',
         dir: 'cross-platform',
@@ -151,24 +160,28 @@ export default [{
             dir: 'dynamic-data'
         }, {
             title: '数据下钻',
-            dir: 'drilldown'
+            dir: 'drilldown',
+            draft: true
         }]
     }, {
         title: '自定义构建',
         dir: 'custom-build'
     }, {
         title: '无障碍访问',
-        dir: 'aria'
+        dir: 'aria',
+        draft: true
     }, {
         title: '多图联动',
-        dir: 'connect'
+        dir: 'connect',
+        draft: true
     }]
 }, {
     title: '最佳实践',
     dir: 'best-practice',
     children: [{
         title: '移动端优化',
-        dir: 'mobile'
+        dir: 'mobile',
+        draft: true
     }, {
         title: 'Canvas vs. SVG',
         dir: 'canvas-vs-svg'

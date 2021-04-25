@@ -48,12 +48,16 @@ export default {
 </script>
 
 <style lang="scss">
+.page-main {
+  overflow-x: hidden;
+}
+
 .handbook-content {
   margin-top: 50px;
 }
 
 .post-content {
-  margin-bottom: 80px;
+  margin: 30px 20px;
 }
 
 #toc {

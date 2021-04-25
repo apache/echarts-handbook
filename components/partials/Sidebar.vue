@@ -130,6 +130,7 @@ export default Vue.extend({
         transform: scale(0.8);
         top: 2px;
         left: -4px;
+        margin: -5px 0;
       }
 
         .nav-link .glyphicon-menu-up {

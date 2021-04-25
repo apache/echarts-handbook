@@ -68,7 +68,7 @@ ECharts 内置形状包括：圆形、矩形、圆角矩形、三角形、菱形
 </svg>
 ```
 
-在 ECharts 的 `symbol` 配置项中，我们使用d的值作为路径。
+在 ECharts 的 `symbol` 配置项中，我们使用 `d` 的值作为路径。
 
 <!-- embed -->
 ```js
