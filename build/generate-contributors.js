@@ -27,7 +27,8 @@ for (let i = 0; i < paths.length; ++i) {
             }
             else {
                 const key = paths[i].slice(2);
-                entries[key] = stdout.trim().replace('\t\n', ',').split(',');
+                entries[key] = stdout.trim().split('\n')
+                    .map(name => name.trim());
             }
             if (i === paths.length - 1) {
                 const text = 'export default ' + JSON.stringify(entries, null, '    ') + ';';

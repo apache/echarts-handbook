@@ -1,4 +1,7 @@
 export default {
+    "contents/zh/meta/writing.md": [
+        "Ovilia"
+    ],
     "contents/zh/meta/get-started.md": [
         "Ovilia"
     ],
@@ -22,12 +25,18 @@ export default {
         "yufeng04"
     ],
     "contents/zh/concepts/event.md": [
+        "100pah",
         "Ovilia",
-        "huanghan01\t\nplainheart"
+        "huanghan01",
+        "plainheart"
     ],
     "contents/zh/concepts/dataset.md": [
         "100pah",
-        "Ovilia\t\nhuanghan01"
+        "Ovilia",
+        "huanghan01"
+    ],
+    "contents/zh/concepts/data-transform.md": [
+        "100pah"
     ],
     "contents/zh/concepts/coordinate.md": [
         "Ovilia"
@@ -37,7 +46,9 @@ export default {
     ],
     "contents/zh/concepts/axis.md": [
         "Ovilia",
-        "huanghan01\t\nplainheart\t\nyufeng04"
+        "huanghan01",
+        "plainheart",
+        "yufeng04"
     ],
     "contents/zh/best-practice/mobile.md": [
         "Ovilia"
@@ -87,6 +98,7 @@ export default {
         "Wdingding"
     ],
     "contents/zh/best-practice/chart-specificatio/bar/bi-directional-bar.md": [
+        "Ovilia",
         "Wdingding"
     ],
     "contents/zh/best-practice/chart-specificatio/bar/basic-bar.md": [
@@ -94,6 +106,7 @@ export default {
         "Wdingding"
     ],
     "contents/zh/best-practice/canvas-vs-svg.md": [
+        "100pah",
         "Ovilia"
     ],
     "contents/zh/best-practice/aria.md": [
@@ -106,10 +119,12 @@ export default {
         "Ovilia"
     ],
     "contents/zh/basics/help.md": [
+        "100pah",
         "Ovilia",
         "plainheart"
     ],
     "contents/zh/basics/download.md": [
+        "100pah",
         "Ovilia"
     ],
     "contents/zh/application/mobile.md": [
@@ -123,6 +138,7 @@ export default {
         "pissang"
     ],
     "contents/zh/application/custom-build.md": [
+        "100pah",
         "Ovilia"
     ],
     "contents/zh/application/cross-platform/wechat-app.md": [
@@ -205,12 +221,17 @@ export default {
         "huanghan01"
     ],
     "contents/en/concepts/event.md": [
+        "100pah",
         "Ovilia",
         "huanghan01"
     ],
     "contents/en/concepts/dataset.md": [
+        "100pah",
         "Ovilia",
         "huanghan01"
+    ],
+    "contents/en/concepts/data-transform.md": [
+        "100pah"
     ],
     "contents/en/concepts/coordinate.md": [
         "huanghan01"
@@ -267,6 +288,7 @@ export default {
         "Hansz00"
     ],
     "contents/en/best-practice/canvas-vs-svg.md": [
+        "100pah",
         "Hansz00",
         "Ovilia"
     ],
@@ -333,6 +355,8 @@ export default {
     ],
     "contents/zh/posts.js": [
         "100pah",
-        "Ovilia\t\nWdingding\t\npissang"
+        "Ovilia",
+        "Wdingding",
+        "pissang"
     ]
 };
