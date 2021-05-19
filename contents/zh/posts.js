@@ -164,9 +164,6 @@ export default [{
             draft: true
         }]
     }, {
-        title: '自定义构建',
-        dir: 'custom-build'
-    }, {
         title: '无障碍访问',
         dir: 'aria',
         draft: true

@@ -13,7 +13,7 @@
         </div>
       </div>
 
-      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css">
+      <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/github-gist.min.css">
     </div>
   </div>
 </template>
@@ -28,7 +28,7 @@ export default {
     Navbar
   },
 
-  mounted: function () {
+  mounted () {
     // This help scroll to the hash
     const hash = location.hash;
     location.hash = '';
@@ -115,11 +115,11 @@ export default {
 
 .post-inner {
   margin: 20px 0 80px 0;
+  color: #4d555e;
 
   h1 {
     margin-bottom: 20px;
     font-size: 36px;
-    color: #222;
   }
 
   h2 {
@@ -177,18 +177,35 @@ export default {
     margin-bottom: 0;
   }
 
-  pre code {
-    padding: 10px 15px !important;
+  pre {
+    margin: 10px 0;
     border-radius: 5px;
+    background-color: #f5f7fa;
+    border: none;
+    padding: 10px;
+    font-size: 13px;
+
+    code.hljs {
+      background: none;
+    }
+  }
+
+  code {
+    padding: 3px 5px;
+    font-size: 13px;
+    background-color: #eaeeef;
+    border-radius: 4px;
+    color: #000;
   }
 
   iframe {
-    border: 1px solid #ddd;
+    border: none;
     margin: 10px 0;
   }
 
-  p {
+  p, li {
     line-height: 1.8em;
+    font-size: 14px;
   }
 }
 
