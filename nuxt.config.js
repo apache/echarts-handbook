@@ -1,6 +1,6 @@
-import enPosts from './contents/en/posts';
-import zhPosts from './contents/zh/posts';
-import config from './configs/config';
+// import enPosts from './contents/en/posts'
+import zhPosts from './contents/zh/posts'
+import config from './configs/config'
 
 export default {
   mode: 'universal',
@@ -10,42 +10,40 @@ export default {
   },
 
   /*
-  ** Headers of the page
-  */
+   ** Headers of the page
+   */
   head: {
     title: process.env.npm_package_name || '',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      {
+        hid: 'description',
+        name: 'description',
+        content: process.env.npm_package_description || ''
+      }
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
   /*
-  ** Customize the progress-bar color
-  */
+   ** Customize the progress-bar color
+   */
   loading: { color: '#fff' },
   /*
-  ** Global CSS
-  */
-  css: [
-  ],
+   ** Global CSS
+   */
+  css: [],
   /*
-  ** Plugins to load before mounting the App
-  */
-  plugins: [
-  ],
+   ** Plugins to load before mounting the App
+   */
+  plugins: [],
   /*
-  ** Nuxt.js dev-modules
-  */
-  buildModules: [
-    '@nuxt/typescript-build'
-  ],
+   ** Nuxt.js dev-modules
+   */
+  buildModules: ['@nuxt/typescript-build'],
   /*
-  ** Nuxt.js modules
-  */
+   ** Nuxt.js modules
+   */
   modules: [
     // Doc: https://bootstrap-vue.js.org
     // [
@@ -74,53 +72,51 @@ export default {
     ]
   ],
   /*
-  ** Build configuration
-  */
+   ** Build configuration
+   */
   build: {
     extractCSS: {
       // allChunks: true
     },
     /*
-    ** You can extend webpack config here
-    */
-    extend (config, ctx) {
+     ** You can extend webpack config here
+     */
+    extend(config, ctx) {
       config.module.rules.push({
         test: /\.md$/,
         use: ['raw-loader']
-      });
+      })
     },
 
     filenames: {
-      chunk: ({ isDev }) => isDev ? '[name].js' : 'js/[contenthash].js'
+      chunk: ({ isDev }) => (isDev ? '[name].js' : 'js/[contenthash].js')
     }
   },
   generate: {
-    routes: []
-      .concat(generateRoutes(zhPosts, '/zh/'))
-      // .concat(enPosts.map(post => `/en/${post}`))
+    routes: [].concat(generateRoutes(zhPosts, '/zh/'))
+    // .concat(enPosts.map(post => `/en/${post}`))
   }
 }
 
-console.log(generateRoutes(zhPosts, '/zh/'));
+console.log(generateRoutes(zhPosts, '/zh/'))
 
 /**
  * Generate routes based info from 'contents/xx/xxPosts.js'
  */
 function generateRoutes(postTree, dir, routes) {
   if (routes == null) {
-    routes = [];
+    routes = []
   }
 
   postTree.forEach(info => {
     if (!info || typeof info !== 'object') {
-      return;
+      return
     }
     if (info.children) {
-      generateRoutes(info.children, dir + info.dir + '_', routes);
+      generateRoutes(info.children, dir + info.dir + '_', routes)
+    } else {
+      routes.push(dir + info.dir)
     }
-    else {
-      routes.push(dir + info.dir);
-    }
-  });
-  return routes;
+  })
+  return routes
 }

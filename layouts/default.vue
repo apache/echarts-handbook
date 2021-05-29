@@ -57,7 +57,8 @@ export default {
 }
 
 .post-content {
-  margin: 30px 20px;
+  margin: 0 auto;
+  max-width: 960px;
 }
 
 #toc {
@@ -118,7 +119,7 @@ export default {
   color: #4d555e;
 
   h1 {
-    margin-bottom: 20px;
+    margin: 50px 0;
     font-size: 36px;
   }
 
@@ -168,17 +169,21 @@ export default {
 
   blockquote {
     margin: 15px 0;
-    padding: 15px;
+    padding: 20px 15px;
     border-left: 4px solid #ccc;
     background-color: #f3f3f3;
-  }
 
-  blockquote :last-child {
-    margin-bottom: 0;
+    :first-child {
+      margin-top: 0;
+    }
+
+    :last-child {
+      margin-bottom: 0;
+    }
   }
 
   pre {
-    margin: 10px 0;
+    margin: 20px 0;
     border-radius: 5px;
     background-color: #f5f7fa;
     border: none;
@@ -203,15 +208,28 @@ export default {
     margin: 10px 0;
   }
 
+  ol, ul {
+    padding-left: 15px;
+  }
+
   p, li {
     line-height: 1.8em;
     font-size: 14px;
   }
+
+  p {
+    margin: 20px 0;
+  }
 }
 
 .post-contributors {
+  margin-bottom: 50px;
   padding-top: 10px;
   border-top: 1px solid #ddd;
+
+  a {
+    color: #777;
+  }
 
   .post-contributor {
     display: inline-block;

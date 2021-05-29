@@ -2,87 +2,87 @@
 直角坐标系中的 x/y 轴。
 
 ## x轴、y轴
-1. x轴和y轴都由轴线、刻度、刻度标签、轴标题四个部分组成。部分图表中还会有网格线来帮助查看和计算数据
+x轴和y轴都由轴线、刻度、刻度标签、轴标题四个部分组成。部分图表中还会有网格线来帮助查看和计算数据
 
-<img max-width="830" width="100%" height="100%" 
+<img max-width="830" width="100%" height="100%"
 src="${rootPath}/images/design/axis/charts_axis_img02.jpg">
 </img>
 
-2. 普通的二维数据坐标系都有x轴和y轴，通常情况下，x轴显示在图表的底部，y轴显示在左侧，一般配置如下：
+普通的二维数据坐标系都有x轴和y轴，通常情况下，x轴显示在图表的底部，y轴显示在左侧，一般配置如下：
 
-    ```js
-    option = {
-        xAxis: {
-            ...
-        },
-        yAxis: {
-            ...
-        }
+```js
+option = {
+    xAxis: {
         ...
-    };
-    ```
+    },
+    yAxis: {
+        ...
+    }
+    ...
+};
+```
 
-3. x轴常用来标示数据的维度，维度一般用来指数据的类别，是观察数据的角度，例如“销售时间” “销售地点” “产品名称”等。y轴常常用来标示数据的数值，数值是用来具体考察某一类数据的数量值，也是我们需要分析的指标，例如“销售数量”和“销售金额”等。
-    
-    ```js
-    option = {
-        xAxis: {
-            type: 'time',
-            name: '销售时间'
-            ...
-        },
-        yAxis: {
+x轴常用来标示数据的维度，维度一般用来指数据的类别，是观察数据的角度，例如“销售时间” “销售地点” “产品名称”等。y轴常常用来标示数据的数值，数值是用来具体考察某一类数据的数量值，也是我们需要分析的指标，例如“销售数量”和“销售金额”等。
+
+```js
+option = {
+    xAxis: {
+        type: 'time',
+        name: '销售时间'
+        ...
+    },
+    yAxis: {
+        type: 'value',
+        name: '销售数量'
+        ...
+    }
+    ...
+};
+```
+
+当x轴（水平坐标轴）跨度很大，可以采用才区域缩放方式灵活显示数据内容。
+
+```js
+option = {
+    xAxis: {
+        type: 'time',
+        name: '销售时间'
+        ...
+    },
+    yAxis: {
+        type: 'value',
+        name: '销售数量'
+        ...
+    },
+    dataZoom: [...]
+    ...
+};
+```
+
+在二维数据中，轴也可以有多个。ECharts 中一般情况下单个 grid 组件最多只能放两个 x/y 轴，多于两个 x/y 轴需要通过配置 [offset](${optionPath}xAxis.offset) 属性防止同个位置多个轴的重叠。两个x轴显示在上下，两个y轴显示在左右两侧。
+
+```js
+option = {
+    xAxis: {
+        type: 'time',
+        name: '销售时间'
+        ...
+    },
+    yAxis: [
+        {
             type: 'value',
             name: '销售数量'
             ...
-        }
-        ...
-    };
-    ```
-
-4. 当x轴（水平坐标轴）跨度很大，可以采用才区域缩放方式灵活显示数据内容。
-
-    ```js
-    option = {
-        xAxis: {
-            type: 'time',
-            name: '销售时间'
-            ...
         },
-        yAxis: {
+        {
             type: 'value',
-            name: '销售数量'
+            name: '销售金额'
             ...
-        },
-        dataZoom: [...]
-        ...
-    };
-    ```
-
-5. 在二维数据中，轴也可以有多个。ECharts 中一般情况下单个 grid 组件最多只能放两个 x/y 轴，多于两个 x/y 轴需要通过配置 [offset](${optionPath}xAxis.offset) 属性防止同个位置多个轴的重叠。两个x轴显示在上下，两个y轴显示在左右两侧。
-
-    ```js
-    option = {
-        xAxis: {
-            type: 'time',
-            name: '销售时间'
-            ...
-        },
-        yAxis: [
-            {
-                type: 'value',
-                name: '销售数量'
-                ...
-            },
-            {
-                type: 'value',
-                name: '销售金额'
-                ...
-            }
-        ]
-        ...
-    };
-    ```
+        }
+    ]
+    ...
+};
+```
 
 ## 轴线
 ECharts 提供了轴线 [axisLine](${optionPath}xAxis.axisLine) 相关的配置，我们可以根据实际情况调整，例如轴线两端的箭头，轴线的样式等。
@@ -167,7 +167,7 @@ option = {
 ## 示例
 图左侧的y轴代表东京月平均气温，右侧的y轴表示东京降水量，x轴表示时间。两组y轴在一起，反映了平均气温和降水量间的趋势关系。
 <!-- src 需要替换 -->
-<iframe max-width="830" width="100%" height="400" 
+<iframe max-width="830" width="100%" height="400"
  src="https://gallery.echartsjs.com/view-lite.html?cid=xrJYBh__4z">
 </iframe>
 

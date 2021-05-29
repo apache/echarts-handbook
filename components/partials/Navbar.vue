@@ -3,9 +3,9 @@
 </template>
 
 <script lang="ts">
-import zhNav from './Navbar/zh';
-import enNav from './Navbar/zh';
-import Vue from 'vue';
+import Vue from 'vue'
+import zhNav from './Navbar/zh'
+import enNav from './Navbar/en'
 
 export default Vue.extend({
   components: {
@@ -15,9 +15,9 @@ export default Vue.extend({
     navContent() {
       return this.$store.state.locale === 'zh'
         ? zhNav
-        : enNav;
+        : enNav
     }
   }
-});
+})
 
 </script>
