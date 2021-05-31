@@ -43,23 +43,21 @@ export default Vue.extend({
   },
 
   mounted() {
-    setTimeout(() => {
-      const $actived = this.$el.querySelector('.actived') as HTMLElement
-      if ($actived) {
-        scrollIntoView($actived, {
-          time: 200,
-          align: {
-            top: 0,
-            topOffset: 300
-          },
-          isScrollable(target) {
-            return (
-              !!target.className && target.className.indexOf('bd-sidebar') >= 0
-            )
-          }
-        })
-      }
-    }, 0)
+    const $actived = this.$el.querySelector('.actived') as HTMLElement
+    if ($actived) {
+      scrollIntoView($actived, {
+        time: 0,
+        align: {
+          top: 0,
+          topOffset: 300
+        },
+        isScrollable(target) {
+          return (
+            !!target.className && target.className.indexOf('bd-sidebar') >= 0
+          )
+        }
+      })
+    }
   }
 })
 </script>

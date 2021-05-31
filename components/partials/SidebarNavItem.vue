@@ -1,49 +1,42 @@
 <template>
-<li
-  :class="['nav-item', isActived ? 'actived' : '']"
-  v-if="!item.draft"
->
-  <a class="nav-link"
-    v-if="!item.children"
-    :href="link"
-  >
-    {{ item.title }}
-  </a>
+  <li :class="['nav-item', isActived ? 'actived' : '']" v-if="!item.draft">
+    <nuxt-link class="nav-link" v-if="!item.children" :to="link">
+      {{ item.title }}
+    </nuxt-link>
 
-  <a
-    class="nav-link"
-    v-else
-    @click="toggleCollapsed"
-  >
-    {{ item.title }}
-    <span :class="['glyphicon', collapsed ? 'glyphicon-menu-down' : 'glyphicon-menu-up']"></span>
-  </a>
+    <a class="nav-link" v-else @click="toggleCollapsed">
+      {{ item.title }}
+      <span
+        :class="[
+          'glyphicon',
+          collapsed ? 'glyphicon-menu-down' : 'glyphicon-menu-up'
+        ]"
+      ></span>
+    </a>
 
-  <ul :class="['nav', 'bd-sidenav', 'level' + level]"
-    v-if="!item.draft && item.children && !collapsed"
-  >
-    <SidebarNavItem
-      v-for="child in item.children"
-      :parentPath="path"
-      :item="child"
-      :level="level + 1"
-      :key="child.dir"
-    ></SidebarNavItem>
-  </ul>
-</li>
+    <ul
+      :class="['nav', 'bd-sidenav', 'level' + level]"
+      v-if="!item.draft && item.children && !collapsed"
+    >
+      <SidebarNavItem
+        v-for="child in item.children"
+        :parentPath="path"
+        :item="child"
+        :level="level + 1"
+        :key="child.dir"
+      ></SidebarNavItem>
+    </ul>
+  </li>
 </template>
 
-
 <script lang="ts">
-
-import Vue from 'vue';
+import Vue from 'vue'
 
 interface NavItem {
   dir: string
 }
 
 export default Vue.extend({
-
   name: 'SidebarNavItem',
 
   props: {
@@ -60,24 +53,23 @@ export default Vue.extend({
 
   computed: {
     link(): string {
-      return this.$store.state.config.rootPath + '/' + this.$store.state.locale
-        + '/' + this.path;
+      return '/' + this.$store.state.locale + '/' + this.path
     },
 
     isActived(): boolean {
-      return this.$route.params.post === this.path;
+      return this.$route.params.post === this.path
     }
   },
 
   data() {
-    const path = this.parentPath + '_' + this.item.dir;
-    const isSelfOrChildActived = (this.$route.params.post + '').startsWith(path);
+    const path = this.parentPath + '_' + this.item.dir
+    const isSelfOrChildActived = (this.$route.params.post + '').startsWith(path)
     return {
       get path(): string {
-        return path;
+        return path
       },
       collapsed: (this.level >= 2 && !isSelfOrChildActived) as boolean
-    };
+    }
   },
 
   methods: {
@@ -85,7 +77,7 @@ export default Vue.extend({
       this.collapsed = !this.collapsed
     }
   }
-});
+})
 </script>
 
 <style lang="scss">
@@ -95,7 +87,7 @@ export default Vue.extend({
 
     &.actived {
       .nav-link {
-        color: #5470c6
+        color: #5470c6;
       }
     }
 

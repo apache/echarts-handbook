@@ -13,7 +13,10 @@
         </div>
       </div>
 
-      <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/github-gist.min.css">
+      <link
+        rel="stylesheet"
+        href="//cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/github-gist.min.css"
+      />
     </div>
   </div>
 </template>
@@ -28,11 +31,11 @@ export default {
     Navbar
   },
 
-  mounted () {
+  mounted() {
     // This help scroll to the hash
-    const hash = location.hash;
-    location.hash = '';
-    location.hash = hash;
+    const hash = location.hash
+    location.hash = ''
+    location.hash = hash
   },
 
   computed: {
@@ -41,9 +44,7 @@ export default {
     // }
   },
 
-  methods: {
-
-  }
+  methods: {}
 }
 </script>
 
@@ -131,7 +132,7 @@ export default {
     border-bottom: 1px solid #ddd;
   }
 
-  h1+h2 {
+  h1 + h2 {
     margin-top: 30px;
   }
 
@@ -161,7 +162,12 @@ export default {
     display: none;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     &:hover .permalink {
       display: inline-block;
     }
@@ -208,13 +214,15 @@ export default {
     margin: 10px 0;
   }
 
-  ol, ul {
+  ol,
+  ul {
     padding-left: 15px;
   }
 
-  p, li {
+  p,
+  li {
     line-height: 1.8em;
-    font-size: 14px;
+    font-size: 16px;
   }
 
   p {

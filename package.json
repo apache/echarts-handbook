@@ -6,23 +6,22 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "node build/generate-contributors.js && node build/generate && nuxt generate",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
+    "release": "node build/generate-contributors.js && node build/generate && nuxt generate"
   },
   "dependencies": {
+    "@nuxt/types": "^2.15.6",
     "bootstrap": "^4.1.3",
     "bootstrap-vue": "^2.0.0",
     "markdown-it-anchor": "^6.0.0",
     "markdown-it-highlightjs": "^3.1.0",
     "markdown-it-toc-done-right": "git+https://github.com/Ovilia/markdown-it-toc-done-right.git",
-    "nuxt": "^2.0.0",
-    "nuxt-i18n": "^6.7.2",
+    "nuxt": "^2.15.6",
+    "nuxt-i18n": "^6.27.0",
     "scroll-into-view": "^1.15.0"
   },
   "devDependencies": {
-    "@nuxt/typescript-build": "^0.6.0",
+    "@nuxt/typescript-build": "^2.1.0",
     "@nuxtjs/eslint-config-typescript": "^1.0.0",
     "@nuxtjs/eslint-module": "^1.0.0",
     "@types/scroll-into-view": "^1.13.0",

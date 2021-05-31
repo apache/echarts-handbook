@@ -1,34 +1,6 @@
 export default {
-    "contents/zh/meta/writing.md": [
-        "Ovilia"
-    ],
-    "contents/zh/meta/get-started.md": [
-        "Ovilia"
-    ],
-    "contents/zh/get-started.md": [
-        "Ovilia"
-    ],
-    "contents/zh/concepts/visual-map.md": [
-        "Ovilia"
-    ],
-    "contents/zh/concepts/tooltip.md": [
-        "Ovilia"
-    ],
     "contents/zh/concepts/series.md": [
         "Ovilia"
-    ],
-    "contents/zh/concepts/options.md": [
-        "Ovilia"
-    ],
-    "contents/zh/concepts/legend.md": [
-        "Ovilia",
-        "yufeng04"
-    ],
-    "contents/zh/concepts/event.md": [
-        "100pah",
-        "Ovilia",
-        "huanghan01",
-        "plainheart"
     ],
     "contents/zh/concepts/dataset.md": [
         "100pah",
@@ -36,10 +8,8 @@ export default {
         "huanghan01"
     ],
     "contents/zh/concepts/data-transform.md": [
-        "100pah"
-    ],
-    "contents/zh/concepts/coordinate.md": [
-        "Ovilia"
+        "100pah",
+        "pissang"
     ],
     "contents/zh/concepts/chart-size.md": [
         "Ovilia"
@@ -47,6 +17,7 @@ export default {
     "contents/zh/concepts/axis.md": [
         "Ovilia",
         "huanghan01",
+        "pissang",
         "plainheart",
         "yufeng04"
     ],
@@ -107,7 +78,8 @@ export default {
     ],
     "contents/zh/best-practice/canvas-vs-svg.md": [
         "100pah",
-        "Ovilia"
+        "Ovilia",
+        "pissang"
     ],
     "contents/zh/best-practice/aria.md": [
         "Ovilia"
@@ -136,10 +108,6 @@ export default {
     ],
     "contents/zh/application/data/drilldown.md": [
         "pissang"
-    ],
-    "contents/zh/application/custom-build.md": [
-        "100pah",
-        "Ovilia"
     ],
     "contents/zh/application/cross-platform/wechat-app.md": [
         "Ovilia"
@@ -352,6 +320,38 @@ export default {
     ],
     "contents/en/application/chart-types/bar/bar-race.md": [
         "Hansz00"
+    ],
+    "contents/zh/concepts/options.md": [
+        "Ovilia"
+    ],
+    "contents/zh/concepts/legend.md": [
+        "Ovilia",
+        "pissang",
+        "yufeng04"
+    ],
+    "contents/zh/concepts/tooltip.md": [
+        "Ovilia"
+    ],
+    "contents/zh/concepts/visual-map.md": [
+        "Ovilia"
+    ],
+    "contents/zh/meta/get-started.md": [
+        "Ovilia"
+    ],
+    "contents/zh/get-started.md": [
+        "Ovilia"
+    ],
+    "contents/zh/concepts/coordinate.md": [
+        "Ovilia"
+    ],
+    "contents/zh/meta/writing.md": [
+        "Ovilia"
+    ],
+    "contents/zh/concepts/event.md": [
+        "100pah",
+        "Ovilia",
+        "huanghan01",
+        "plainheart"
     ],
     "contents/zh/posts.js": [
         "100pah",
