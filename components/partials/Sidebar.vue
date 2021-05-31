@@ -2,17 +2,20 @@
   <div class="bd-sidebar border-bottom-0 col-sm-3 col-sm-9 col-md-2 col-md-10">
     <!-- active: {{ active }}. {{ posts }} -->
     <div class="bd-docs-nav">
-      <div class="bd-toc-item level0"
+      <div
+        class="bd-toc-item level0"
         v-for="level0Post in $store.state.posts[this.$store.state.locale]"
         :key="level0Post.dir"
       >
-        <a class="bd-toc-link"
+        <a
+          class="bd-toc-link"
           :href="level0Post.children ? 'javascript:;' : level0Post.dir"
           v-if="!level0Post.draft"
         >
           {{ level0Post.title }}
         </a>
-        <ul class="nav bd-sidenav level1"
+        <ul
+          class="nav bd-sidenav level1"
           v-if="!level0Post.draft && level0Post.children"
         >
           <SidebarNavItem
@@ -30,21 +33,18 @@
 </template>
 
 <script lang="ts">
-
-import Vue from 'vue';
-import SidebarNavItem from './SidebarNavItem.vue';
-import scrollIntoView from 'scroll-into-view';
+import Vue from 'vue'
+import scrollIntoView from 'scroll-into-view'
+import SidebarNavItem from './SidebarNavItem.vue'
 
 export default Vue.extend({
-
   components: {
     SidebarNavItem
   },
 
   mounted() {
-
     setTimeout(() => {
-      const $actived = this.$el.querySelector('.actived') as HTMLElement;
+      const $actived = this.$el.querySelector('.actived') as HTMLElement
       if ($actived) {
         scrollIntoView($actived, {
           time: 200,
@@ -52,15 +52,16 @@ export default Vue.extend({
             top: 0,
             topOffset: 300
           },
-          isScrollable: function(target){
-            return !!target.className && target.className.indexOf('bd-sidebar') >= 0;
+          isScrollable(target) {
+            return (
+              !!target.className && target.className.indexOf('bd-sidebar') >= 0
+            )
           }
-        });
+        })
       }
-    }, 0);
+    }, 0)
   }
-});
-
+})
 </script>
 
 <style lang="scss">
@@ -74,130 +75,132 @@ export default Vue.extend({
   border-right: 1px solid #eee;
 }
 
-  .bd-toc-item {
-    margin-bottom: 10px;
+.bd-toc-item {
+  margin-bottom: 10px;
+}
+
+.bd-sidenav {
+  margin-top: 4px;
+  margin-left: 10px;
+  display: none;
+}
+
+.bd-toc-link {
+  font-weight: bold;
+  color: #333;
+
+  &[href='javascript:;'] {
+    cursor: default;
+
+    &:focus,
+    &:hover {
+      text-decoration: none;
+    }
   }
 
-    .bd-sidenav {
-      margin-top: 4px;
-      margin-left: 10px;
-      display: none;
-    }
+  &:focus,
+  &:hover {
+    color: #151515;
+  }
+}
 
-    .bd-toc-link {
-      font-weight: bold;
-      color: #333;
+.page-content {
+  padding-bottom: 0;
 
-      &[href="javascript:;"] {
-        cursor: default;
+  .nav {
+    display: block;
+  }
 
-        &:focus, &:hover {
-          text-decoration: none;
-        }
-      }
+  ul.nav {
+    padding-left: 0;
+  }
 
-      &:focus, &:hover {
+  .nav > li > a:focus,
+  .nav > li > a:hover {
+    background-color: transparent;
+  }
+
+  .nav .b-icon.bi {
+    font-size: 90%;
+    opacity: 0.6;
+    position: relative;
+    top: -2px;
+  }
+
+  .glyphicon {
+    padding: 5px;
+    color: #ccc;
+    cursor: pointer;
+    transform: scale(0.8);
+    top: 2px;
+    left: -4px;
+    margin: -5px 0;
+  }
+
+  .nav-link .glyphicon-menu-up {
+    display: none;
+  }
+
+  .active .nav-link .glyphicon-menu-up {
+    display: inline-block;
+  }
+
+  .active .nav-link .glyphicon-menu-down {
+    display: none;
+  }
+
+  .level1 {
+    margin-top: 4px;
+    font-size: 14px;
+
+    .nav-link {
+      padding: 5px 0;
+      color: #707070;
+
+      &:hover {
         color: #151515;
       }
     }
+  }
 
-    .page-content {
-      padding-bottom: 0;
+  .level2 {
+    margin-top: 1px;
 
-      .nav {
-        display: block;
-      }
-
-      ul.nav {
-        padding-left: 0;
-      }
-
-      .nav>li>a:focus, .nav>li>a:hover {
-        background-color: transparent;
-      }
-
-      .nav .b-icon.bi {
-        font-size: 90%;
-        opacity: 0.6;
-        position: relative;
-        top: -2px;
-      }
-
-      .glyphicon {
-        padding: 5px;
-        color: #ccc;
-        cursor: pointer;
-        transform: scale(0.8);
-        top: 2px;
-        left: -4px;
-        margin: -5px 0;
-      }
-
-        .nav-link .glyphicon-menu-up {
-          display: none;
-        }
-
-        .active .nav-link .glyphicon-menu-up {
-          display: inline-block;
-        }
-
-        .active .nav-link .glyphicon-menu-down {
-          display: none;
-        }
-
-        .level1 {
-          margin-top: 4px;
-          font-size: 14px;
-
-          .nav-link {
-            padding: 5px 0;
-            color: #707070;
-
-            &:hover {
-              color: #151515;
-            }
-          }
-        }
-
-        .level2 {
-          margin-top: 1px;
-
-          .level3 {
-            margin-top: 0;
-          }
-
-          .nav-link {
-            color: #666;
-            padding: 0;
-          }
-        }
-
-        .nav.level3 {
-          font-size: 12px;
-          padding-left: 10px;
-          margin-left: 0;
-          display: none;
-
-          li {
-            display: list-item;
-            list-style: disc;
-          }
-        }
-
-        .level1 .nav-link {
-          color: #444;
-        }
-
-        .nav.level2 {
-          border-left: 1px solid #eee;
-          padding-left: 10px;
-          margin-left: 0;
-        }
-
-        .level2 .nav-link {
-          margin: 2px 0;
-          color: #888;
-        }
+    .level3 {
+      margin-top: 0;
     }
 
+    .nav-link {
+      color: #666;
+      padding: 0;
+    }
+  }
+
+  .nav.level3 {
+    font-size: 12px;
+    padding-left: 10px;
+    margin-left: 0;
+    display: none;
+
+    li {
+      display: list-item;
+      list-style: disc;
+    }
+  }
+
+  .level1 .nav-link {
+    color: #444;
+  }
+
+  .nav.level2 {
+    border-left: 1px solid #eee;
+    padding-left: 10px;
+    margin-left: 0;
+  }
+
+  .level2 .nav-link {
+    margin: 2px 0;
+    color: #888;
+  }
+}
 </style>

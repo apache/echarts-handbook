@@ -8,16 +8,11 @@ import zhNav from './Navbar/zh'
 import enNav from './Navbar/en'
 
 export default Vue.extend({
-  components: {
-
-  },
+  components: {},
   computed: {
     navContent() {
-      return this.$store.state.locale === 'zh'
-        ? zhNav
-        : enNav
+      return this.$store.state.locale === 'zh' ? zhNav : enNav
     }
   }
 })
-
 </script>
