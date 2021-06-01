@@ -2,7 +2,7 @@ import fm from 'front-matter'
 import MarkdownIt from 'markdown-it'
 import highlightjs from 'markdown-it-highlightjs'
 import anchor from 'markdown-it-anchor'
-import toc from 'markdown-it-toc-done-right'
+import toc from 'markdown-it-table-of-contents'
 import config from '../../configs/config'
 import contributors from './contributors'
 
@@ -24,21 +24,12 @@ export async function getPostData(path: string, lang: string) {
       permalinkClass: 'permalink'
     })
     .use(toc, {
-      containerId: 'toc',
-      level: 2,
-      hash: slug => {
-        const hash = slug.split('#')
-        if (hash.length > 0) {
-          // Replace all spaces with '-' and encodeURI
-          return encodeURI(
-            hash[0]
-              .trim()
-              .toLowerCase()
-              .replace(new RegExp(' ', 'g'), '-')
-          )
-        } else {
-          return url
-        }
+      includeLevel: '2',
+      containerHeaderHtml: `<h4 class="toc-container-header">${
+        lang === 'zh' ? '本页目录' : 'On this Page'
+      }</h4>`,
+      transformLink: link => {
+        return lang + '/' + path + link
       }
     })
 

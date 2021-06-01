@@ -1,11 +1,11 @@
 <template>
   <li :class="['nav-item', isActived ? 'actived' : '']" v-if="!item.draft">
     <nuxt-link class="nav-link" v-if="!item.children" :to="link">
-      {{ item.title }}
+      <span class="title">{{ item.title }}</span>
     </nuxt-link>
 
     <a class="nav-link" v-else @click="toggleCollapsed">
-      {{ item.title }}
+      <span class="title">{{ item.title }}</span>
       <span
         :class="[
           'glyphicon',
@@ -85,10 +85,20 @@ export default Vue.extend({
   .nav-item {
     cursor: pointer;
 
+    .title {
+      padding: 2px 6px;
+    }
+
     &.actived {
       .nav-link {
         color: #5470c6;
       }
+    }
+
+    .nav-link:hover > .title {
+      // color: #5470c6;
+      background: #efefef;
+      border-radius: 3px;
     }
 
     .glyphicon {

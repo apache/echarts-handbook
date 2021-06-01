@@ -154,10 +154,6 @@ export default Vue.extend({
     .nav-link {
       padding: 5px 0;
       color: #707070;
-
-      &:hover {
-        color: #151515;
-      }
     }
   }
 
