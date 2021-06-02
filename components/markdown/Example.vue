@@ -3,9 +3,10 @@
 </template>
 
 <script lang="ts">
-import Vue, { PropType } from 'vue'
+import { computed, defineComponent, ref } from '@vue/composition-api'
 import config from '~/configs/config'
-export default Vue.extend({
+
+export default defineComponent({
   props: {
     width: {
       type: String,
@@ -17,9 +18,13 @@ export default Vue.extend({
     },
     src: String
   },
-  computed: {
-    fullSrc() {
-      return config.exampleViewPath + this.src
+
+  setup(props) {
+    const fullSrc = computed(() => {
+      return config.exampleViewPath + props.src
+    })
+    return {
+      fullSrc
     }
   }
 })

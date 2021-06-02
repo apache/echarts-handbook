@@ -5,12 +5,11 @@
       </prism-editor>
       <div class="md-live-tag">live</div>
     </div>
-    <div class="md-live-preview"></div>
+    <div ref="previewContainer" class="md-live-preview"></div>
   </div>
 </template>
 
 <script lang="ts">
-import Vue, { PropType } from 'vue'
 import { PrismEditor } from 'vue-prism-editor'
 import 'vue-prism-editor/dist/prismeditor.min.css'
 import { highlight, languages } from 'prismjs/components/prism-core'
@@ -18,6 +17,16 @@ import 'prismjs/components/prism-clike'
 import 'prismjs/components/prism-javascript'
 import 'prism-themes/themes/prism-material-oceanic.css'
 import { loadScriptsAsync } from '../helper/loadScripts'
+import {
+  defineComponent,
+  watch,
+  ref,
+  unref,
+  onMounted,
+  getCurrentInstance
+} from '@vue/composition-api'
+
+declare const echarts: any
 
 function ensureECharts() {
   if (typeof echarts === 'undefined') {
@@ -28,7 +37,7 @@ function ensureECharts() {
   return Promise.resolve()
 }
 
-export default Vue.extend({
+export default defineComponent({
   components: {
     PrismEditor
   },
@@ -38,38 +47,45 @@ export default Vue.extend({
       default: 'js'
     }
   },
-  data() {
-    return {
-      innerCode: ''
-    }
-  },
-  computed: {},
-  mounted() {
-    this.innerCode = (
-      (this.$slots.default && this.$slots.default[0].text) ||
-      ''
-    ).trim()
-  },
-  methods: {
-    highlighter(code) {
-      return highlight(code, languages[this.lang] || languages.js)
-    }
-  },
-  watch: {
-    innerCode() {
+
+  setup(props, context) {
+    const innerCode = ref('')
+    const previewContainer = ref(null)
+
+    let chartInstance
+
+    function update() {
       ensureECharts().then(() => {
-        // TODO type, resize, throttle
-        if (!this._chartInstance) {
-          this._chartInstance = echarts.init(
-            this.$el.querySelector('.md-live-preview')
-          )
+        if (!chartInstance) {
+          // TODO Better way to get ref?
+          chartInstance = echarts.init(unref(previewContainer))
         }
-        const func = new Function(this.innerCode + '\n return option;')
+        const func = new Function(unref(innerCode) + '\n return option;')
+        // TODO refresh, throttle.
         try {
           const option = func()
-          this._chartInstance.setOption(option)
+          chartInstance.setOption(option, true)
         } catch (e) {}
       })
+    }
+
+    watch(innerCode, () => {
+      update()
+    })
+    // Update first time.
+    onMounted(() => {
+      const defaultSlot = context.slots.default && context.slots.default()
+      innerCode.value = ((defaultSlot && defaultSlot[0].text) || '').trim()
+    })
+
+    return {
+      innerCode,
+
+      previewContainer,
+
+      highlighter(code) {
+        return highlight(code, languages[props.lang] || languages.js)
+      }
     }
   }
 })
