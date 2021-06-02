@@ -1,7 +1,11 @@
 <template>
   <div class="md-live" v-if="innerCode">
     <div class="md-live-editor">
-      <prism-editor v-model="innerCode" :highlight="highlighter">
+      <prism-editor
+        :style="{ height: editorHeight }"
+        v-model="innerCode"
+        :highlight="highlighter"
+      >
       </prism-editor>
       <div class="md-live-tag">live</div>
     </div>
@@ -17,13 +21,16 @@ import 'prismjs/components/prism-clike'
 import 'prismjs/components/prism-javascript'
 import 'prism-themes/themes/prism-material-oceanic.css'
 import { loadScriptsAsync } from '../helper/loadScripts'
+import { addListener, removeListener } from 'resize-detector'
+import debounce from 'lodash/debounce'
 import {
   defineComponent,
   watch,
   ref,
   unref,
   onMounted,
-  getCurrentInstance
+  getCurrentInstance,
+  onUnmounted
 } from '@vue/composition-api'
 
 declare const echarts: any
@@ -45,23 +52,28 @@ export default defineComponent({
     lang: {
       type: String,
       default: 'js'
+    },
+    editorHeight: {
+      type: String,
+      default: 'auto'
     }
   },
 
   setup(props, context) {
     const innerCode = ref('')
-    const previewContainer = ref(null)
+    const previewContainer = ref<HTMLElement | null>(null)
 
     let chartInstance
 
     function update() {
       ensureECharts().then(() => {
         if (!chartInstance) {
+          addListener(unref(previewContainer)!, resize)
           // TODO Better way to get ref?
           chartInstance = echarts.init(unref(previewContainer))
         }
         const func = new Function(unref(innerCode) + '\n return option;')
-        // TODO refresh, throttle.
+        // TODO refresh.
         try {
           const option = func()
           chartInstance.setOption(option, true)
@@ -69,8 +81,18 @@ export default defineComponent({
       })
     }
 
+    function resize() {
+      if (chartInstance) {
+        chartInstance.resize()
+      }
+    }
+
+    const debouncedUpdate = debounce(update, 500, {
+      trailing: true
+    })
+
     watch(innerCode, () => {
-      update()
+      debouncedUpdate()
     })
     // Update first time.
     onMounted(() => {
@@ -78,11 +100,13 @@ export default defineComponent({
       innerCode.value = ((defaultSlot && defaultSlot[0].text) || '').trim()
     })
 
+    onUnmounted(() => {
+      removeListener(unref(previewContainer)!, resize)
+    })
+
     return {
       innerCode,
-
       previewContainer,
-
       highlighter(code) {
         return highlight(code, languages[props.lang] || languages.js)
       }
@@ -105,6 +129,11 @@ export default defineComponent({
   font-size: 13px;
   padding: 10px;
 
+  overflow-y: auto;
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3) !important;
+  }
+
   pre {
     color: #c3cee3;
   }
@@ -123,6 +152,7 @@ export default defineComponent({
 
 .md-live-preview {
   height: 300px;
+  overflow: hidden;
   @apply rounded-b-lg;
 }
 
