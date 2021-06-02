@@ -93,7 +93,7 @@ option = {
 
 除此之外，它还可以是一个回调函数，其参数格式为：
 
-```
+```ts
 (value: Array|number, params: Object) => number|Array
 ```
 

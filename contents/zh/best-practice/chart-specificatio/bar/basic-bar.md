@@ -2,14 +2,14 @@
 
 柱状图是最常见的图表类型，通过使用水平或垂直方向柱子的高度来显示不同类别的数值，其中柱状图的一个轴显示比较的类别，而另一个轴代表对应的数值。
 
-<iframe max-width="830" width="100%" height="400" 
+<iframe max-width="830" width="100%" height="400"
 src="https://gallery.echartsjs.com/view-lite.html?cid=xS18jqmX4f">
 </iframe>
 
 纵向柱状图的柱是垂直方向的，横向柱状图的柱是水平方向的，又称条形图。条形图与横向柱状图表达数据的形式是一样的，不过，当图表的数据标签很长或者有超过10个项目进行比较时，横向柱状图会无法完全显示完标签，或者只能倾斜展示，影响美观。因此当数据标签过长时，选择用条形图可以获得更好的展示效果。
 
 
-<iframe max-width="830" width="100%" height="400" 
+<iframe max-width="830" width="100%" height="400"
 src="https://gallery.echartsjs.com/view-lite.html?cid=xByXtUE7Vz">
 </iframe>
 
@@ -17,7 +17,7 @@ src="https://gallery.echartsjs.com/view-lite.html?cid=xByXtUE7Vz">
 
 1、避免使用太多颜色，一般情况一个柱状图（条形图）表示一组相同的度量，所以建议使用相同的颜色或同一颜色的不同色调。如果需要强调某个数据时，可以使用对比色或者变化色调来突出显示有意义的数据点。
 
-<iframe max-width="830" width="100%" height="400" 
+<iframe max-width="830" width="100%" height="400"
 src="https://gallery.echartsjs.com/view-lite.html?cid=xByYRlN7Ef">
 </iframe>
 
@@ -26,20 +26,20 @@ src="https://gallery.echartsjs.com/view-lite.html?cid=xByYRlN7Ef">
 
 3、Y轴数据应该从 0 基线开始，以恰当地反映数值。如果展示的是被截断的数据，那很可能会误导观众做出错误的判断。例如左侧图表显示出的数据结果是 2017 年收入是 2014 年收入的五倍，而实际上如右侧图表完整显示的数据表明 2017 年收入相对于 2014 年其实只提升了 25%。
 
-<img max-width="830" width="100%" height="100%" 
-src="${rootPath}/images/design/bar/bar03.jpg">
+<img max-width="830" width="100%" height="100%"
+src="/images/design/bar/bar03.jpg">
 </img>
 
 
 4、对多个数据系列排序时，如果不涉及到日期等特定数据，最好能符合一定的逻辑用直观的方式引导用户更好地查看数据。可以通过升序或降序排布，例如按照数量从多到少来对数据进行排序，也可以按照字母顺序等来排布。总之，按照逻辑排序可以一定程度上引导人们更好地阅读数据。
 
-<iframe max-width="830" width="100%" height="400" 
+<iframe max-width="830" width="100%" height="400"
 src="https://gallery.echartsjs.com/view-lite.html?cid=xHJhWhGm4M">
 </iframe>
 
 
 5、一般情况下不建议使用三维柱状图，与三维饼图一样，对于数据传达不太精准，甚至还不得不猜测哪个才是数据的顶端。
 
-<img max-width="830" width="100%" height="100%" 
-src="${rootPath}/images/design/bar/bar04.jpg">
+<img max-width="830" width="100%" height="100%"
+src="/images/design/bar/bar04.jpg">
 </img>

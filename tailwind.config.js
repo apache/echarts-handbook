@@ -9,7 +9,11 @@ module.exports = {
     extend: {
       colors: {
         orange: colors.orange,
-        'blue-gray': colors.blueGray
+        'blue-gray': colors.blueGray,
+        emerald: colors.emerald,
+        lime: colors.lime,
+        teal: colors.teal,
+        'light-blue': colors.lightBlue
       }
     }
   }

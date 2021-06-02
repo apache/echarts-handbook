@@ -23,6 +23,9 @@ export default Vue.extend({
 </script>
 
 <style lang="postcss" scoped>
+.alert {
+  @apply rounded-lg;
+}
 /* Info */
 .alert-info {
   @apply bg-blue-100 border-blue-400;

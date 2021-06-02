@@ -10,33 +10,27 @@
 
 例如某个甜品店各类甜品的销售占比，数据如下：
 
-<img max-width="830" width="50%" height="100%" 
-src="${rootPath}/images/design/color/color01.png">
-</img>
+<img max-width="830" width="50%" height="100%" src="images/design/color/color01.png" />
 
 针对这份数据，下面两个相同样式的图表，我们采用了两种不同配色方案，对比来看很明显，右图的配色更适合用来展示甜品数据。
 
-<img max-width="830" width="100%" height="100%" 
-src="${rootPath}/images/design/color/color02.png">
-</img>
+<img max-width="830" width="100%" height="100%" src="images/design/color/color02.png" />
 
 因为相较于蓝色、紫色而言，橙色、黄色、粉色、绿色都是有利于提升食欲的颜色，而且更容易使人们产生温暖、幸福的情感，而这种情感与吃甜品时人们产生的感觉是一致的。另一方面，甜品本身的面向用户大多数是儿童和女性，针对这部分用户，比较明快、可爱的图表颜色也是更好的选择。而左侧的图表的配色更适合用于展示某种商务、男性群体的数据，因为左图的配色更容易使人产生理性和冷静的情感。
 
 ## 颜色的语义共鸣
-	
+
 不同的颜色可以帮助我们识别和区分不同的类别。我们已经习惯将颜色和各种事物或概念绑定在一起。当提到某些事物时我们经常会迅速的在心中匹配其对应的颜色，例如提到“云朵”会想到白色，“爱情”会想到粉红色。这些自然的、与语义一致的颜色被称为"语义共鸣色"。
 
 研究表明，对于有固定颜色的词，匹配其具有语义共鸣的颜色，能有效的加速认知过程，反之则会阻碍认知，这种有趣的现象称为"斯特鲁普效应"。我们可以做个的对比试验，分别在上图两行文字中找到“黄”字。这个过程中，第一行的“黄”可以被快速定位到，因为对应使用了黄色。而在第二行寻找的时候，可能有人最早定位到的会是“紫”字，因为此处“紫”字使用了黄色，这就阻碍了我们寻找的速度和准确性。
 
-<img max-width="830" width="100%" height="100%" 
-src="${rootPath}/images/design/color/color03.png">
-</img>
+<img max-width="830" width="100%" height="100%" src="images/design/color/color03.png" />
 
 有效地利用语义共鸣色，即采用与数据本身意义一致的颜色，也可以提高可视化的认知效率。例如可以使用蓝色的来显示"海洋"的数据、使用黄色来显示“沙漠”的数据。
 
 视觉效果应该尽可能容易地解释，因此请尝试找到与观众的先入为主和文化联想相匹配的配色方案。如下示例中展示了猕猴桃、香蕉、橙子、草莓四种水果的销售数据，分别选择了与水果本身一致的颜色绿色、黄色、橙色、红色。这样，我们在辨别和记忆每个柱状所对应的水果时就轻而易举了。
 
-<iframe max-width="830" width="100%" height="400" 
+<iframe max-width="830" width="100%" height="400"
 src="https://gallery.echartsjs.com/view-lite.html?cid=xry8WsXdOW">
 </iframe>
 
@@ -44,13 +38,13 @@ src="https://gallery.echartsjs.com/view-lite.html?cid=xry8WsXdOW">
 
 在数据可视化的过程中，颜色的使用与图表的数据、展示环境、受众人群、社会背景等因素直接相关，我们不可以把颜色作为独立的因素去设计。在开始选择可视化作品的颜色时，请先克制住自由创作的热情，查看一下这是否是一份特殊的数据，再去选择对的颜色。例如一个股票数据的图表中，红色和绿色都有独特的含义。所以可视化图表颜色的选择吻合认知的常识，可以帮助我们更好地理解和区分数据。
 
-<iframe max-width="830" width="100%" height="400" 
+<iframe max-width="830" width="100%" height="400"
 src="https://gallery.echartsjs.com/view-lite.html?cid=xp1oqJoQqG">
 </iframe>
 
 再例如查看天气温度。蓝色和红色易于理解，无需任何解释，并且易于区分。
 
-<iframe max-width="830" width="100%" height="400" 
+<iframe max-width="830" width="100%" height="400"
 src="https://gallery.echartsjs.com/view-lite.html?cid=xIVoX5gZcT&v=1">
 </iframe>
 
@@ -61,6 +55,4 @@ src="https://gallery.echartsjs.com/view-lite.html?cid=xIVoX5gZcT&v=1">
 
 所以，颜色可以被用来作为提高图表的可阅读性和有效工具。
 
-<img max-width="830" width="80%" height="100%" 
-src="${rootPath}/images/design/color/color04.png">
-</img>
+<img max-width="830" width="80%" height="100%" src="images/design/color/color04.png" />

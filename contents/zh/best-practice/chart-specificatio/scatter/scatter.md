@@ -2,7 +2,7 @@
 
 散点图在直角坐标系显示数据的两个变量（X和Y轴）之间的关系，数据显示为点的集合，适合用于在不考虑时间的情况下比较大量的数据点。散点图通常用来识别两个变量之间的相关性或用来观察他们的关系，从而发现某种趋势，对于查找异常值或理解数据分布也很有效。如下图某个班级学生身高和体重的分布状况。
 
-<iframe max-width="830" width="100%" height="400" 
+<iframe max-width="830" width="100%" height="400"
 src="https://gallery.echartsjs.com/view-lite.html?cid=xSkCyUwKNG&v=1">
 </iframe>
 
@@ -15,8 +15,8 @@ src="https://gallery.echartsjs.com/view-lite.html?cid=xSkCyUwKNG&v=1">
 
 + 不相关：数据没有明显的方向性，一个变量变化对另一个没有影响。
 
-<img max-width="830" width="100%" height="100%" 
-src="${rootPath}/images/design/scatter/scatter5.jpg">
+<img max-width="830" width="100%" height="100%"
+src="/images/design/scatter/scatter5.jpg">
 </img>
 
 
@@ -28,7 +28,7 @@ src="${rootPath}/images/design/scatter/scatter5.jpg">
 
 2、如果数据包含不同系列，可以给不同系列使用不同的颜色，例如蓝色代表男性，红色代表女性，并增加图例标注出蓝色代表的含义。可以区分了解男女不同性别身高和体重的分布状况。还可以分别添加每个系列平均值的辅助线，可以更好的理解数据的分布情况，如图中女生体重高于平均值的比低于平均值的少。
 
-<iframe max-width="830" width="100%" height="400" 
+<iframe max-width="830" width="100%" height="400"
 src="https://gallery.echartsjs.com/view-lite.html?cid=xBy9E2oufM">
 </iframe>
 

@@ -1,14 +1,14 @@
 # Axis
-The x/y-axis in the Cartesian coordinate system. 
+The x/y-axis in the Cartesian coordinate system.
 
 ## x-axis, y-axis
 1. Both x-axis and y-axis included axis line, tick, label and title. Some chart will use the grid to assist the data viewing and calculating.
 
-<img max-width="830" width="100%" height="100%" 
-src="${rootPath}/images/design/axis/charts_axis_img02.jpg">
+<img max-width="830" width="100%" height="100%"
+src="/images/design/axis/charts_axis_img02.jpg">
 </img>
 
-2. A normal 2D coordinate system has x-axis and y-axis. X-axis located at the bottom while y-axis at the left side in common. The Config is shown below: 
+2. A normal 2D coordinate system has x-axis and y-axis. X-axis located at the bottom while y-axis at the left side in common. The Config is shown below:
 
     ```js
     option = {
@@ -23,7 +23,7 @@ src="${rootPath}/images/design/axis/charts_axis_img02.jpg">
     ```
 
 3. The x-axis is usually used to declare the number of categories which was also called the aspects of observing the data: "Sales Time", "Sales Location" and "product name", etc.. The y-axis usually used to indicate the numerical value of categories. These data are used to examine the quantitative value of a certain type of data or some indicator you need to analyze, such as "Sales Quantity" and "Sales Price".
-    
+
     ```js
     option = {
         xAxis: {
@@ -85,7 +85,7 @@ src="${rootPath}/images/design/axis/charts_axis_img02.jpg">
     ```
 
 ## Axis Line
-ECharts provide the config of [axisLine](${optionPath}xAxis.axisLine). You can change the setting according to the demand, such as the arrow on two sides and the style of axes. 
+ECharts provide the config of [axisLine](${optionPath}xAxis.axisLine). You can change the setting according to the demand, such as the arrow on two sides and the style of axes.
 
 ```js
 option = {
@@ -141,7 +141,7 @@ option = {
 ```
 
 ## Label
-ECharts provide the config [axisLabel](${optionPath}xAxis.axisLabel). You can change the setting according to the demand, such as the text alignment and the customized label content. 
+ECharts provide the config [axisLabel](${optionPath}xAxis.axisLabel). You can change the setting according to the demand, such as the text alignment and the customized label content.
 
 ```js
 option = {
@@ -165,12 +165,12 @@ option = {
 ```
 
 ## Example
-The y-axis on the left side represents the monthly average temperature in Tokyo, the y-axis on the right side represents the precipitation of Tokyo. The x-axis represents the time. It reflects the trend and relation between the average temperature and precipitation. 
+The y-axis on the left side represents the monthly average temperature in Tokyo, the y-axis on the right side represents the precipitation of Tokyo. The x-axis represents the time. It reflects the trend and relation between the average temperature and precipitation.
 
 <!-- src need to be replaced -->
-<iframe max-width="830" width="100%" height="400" 
+<iframe max-width="830" width="100%" height="400"
  src="https://gallery.echartsjs.com/view-lite.html?cid=xrJYBh__4z">
 </iframe>
 
 
-These are the concise intro of the usage of axis config. Check more details at: [Official Website](${optionPath}xAxis). 
+These are the concise intro of the usage of axis config. Check more details at: [Official Website](${optionPath}xAxis).

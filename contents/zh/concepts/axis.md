@@ -6,8 +6,7 @@
 
 x 轴和 y 轴都由轴线、刻度、刻度标签、轴标题四个部分组成。部分图表中还会有网格线来帮助查看和计算数据
 
-<img max-width="830" width="100%" height="100%"
-src="${rootPath}/images/design/axis/charts_axis_img02.jpg">
+<img max-width="830" width="100%" height="100%" src="images/design/axis/charts_axis_img02.jpg">
 </img>
 
 普通的二维数据坐标系都有 x 轴和 y 轴，通常情况下，x 轴显示在图表的底部，y 轴显示在左侧，一般配置如下：

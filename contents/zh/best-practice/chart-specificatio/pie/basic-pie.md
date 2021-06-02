@@ -15,24 +15,18 @@ src="https://gallery.echartsjs.com/view-lite.html?cid=xHySlBkIEM&v=1">
 
 2、我们很难比较一个分块过多的饼图的数据，建议尽量将饼图分块数量控制在五个以内。当数据类别较多时，可以把较小或不重要的数据合并成第五个分块，并命名为"其它"。如果各类别都必须全部展示，此时选择柱状图或堆积柱状图或许更合适。
 
-<img max-width="830" width="100%" height="100%"
-src="${rootPath}/images/design/pie/pie02.jpg">
-</img>
+<img max-width="830" width="100%" height="100%" src="images/design/pie/pie02.jpg" />
 
 
 3、饼图不适合被用于精确数据的比较，因此当各类别数据占比较接近时（如下左图），我们很难对比出每个类别占比的大小。此时建议选用柱状图或南丁格尔玫瑰图（如下右图）来获取更好的展示效果。
 
-<img max-width="830" width="100%" height="100%"
-src="${rootPath}/images/design/pie/pie03.jpg">
-</img>
+<img max-width="830" width="100%" height="100%" src="images/design/pie/pie03.jpg" />
 
 4、大多数人视觉习惯是按照顺时针和自上而下的顺序去观察。因此在绘制饼图时，建议从 12 点钟开始沿顺时针右边第一个分块绘制饼图最大的数据分块，有效的强调其重要性。
 
 其余的数据分块有两种建议，一种是按照数据大小依次顺时针排列，另一种是在 12 点钟的左边绘制第二大的分块，其余的分块按照逆时针排列，最小的分块放在底部。如下图所示。
 
-<img max-width="830" width="100%" height="100%"
-src="${rootPath}/images/design/pie/pie01.jpg">
-</img>
+<img max-width="830" width="100%" height="100%" src="images/design/pie/pie01.jpg" />
 
 按照数据大小区别顺序，不仅符合用户的视觉习惯，也更易于数据的识别和比较。当然基于这个原理，我们也可以把需要强调的最重要的部分（不一定是最大的部分）放在最突出重要的位置。
 
@@ -46,6 +40,4 @@ src="${rootPath}/images/design/pie/pie01.jpg">
 
 6、三维的饼图歪曲了各分块相对于整体的比例关系，会造成错误及理解上的困扰。因此不建议使用 3D 饼图。
 
-<img max-width="830" width="100%" height="100%"
-src="${rootPath}/images/design/pie/pie04.jpg">
-</img>
+<img max-width="830" width="100%" height="100%" src="images/design/pie/pie04.jpg" />

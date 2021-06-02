@@ -4,12 +4,8 @@
 ## 布局
 图例一般放在图表的右上角、也可以放在图表的底部、同一页面中的所有图例位置保持一致，可以横排对齐也可以纵排对齐。还要综合考虑整体的图表空间是适合哪种摆放方式。当图表纵向空间紧张或者内容区量过大的时候、建议摆放在图表的下方。下面是几种图例的摆放方式：
 
-<img max-width="830" width="80%" height="80%"
-src="${rootPath}/images/design/legend/charts_sign_img01.png">
-</img>
-<img max-width="830" width="80%" height="80%"
-src="${rootPath}/images/design/legend/charts_sign_img02.png">
-</img>
+<img max-width="830" width="80%" height="80%" src="images/design/legend/charts_sign_img01.png" />
+<img max-width="830" width="80%" height="80%" src="images/design/legend/charts_sign_img02.png" />
 
 ```js
 option = {
@@ -61,8 +57,7 @@ option = {
 
 图例的颜色标签有很多种设计方式、针对不同的图表、图例样式也会有所不同。
 
-<img max-width="830" width="80%" height="80%"
-src="${rootPath}/images/design/legend/charts_sign_img04.png">
+<img max-width="830" width="80%" height="80%" src="images/design/legend/charts_sign_img04.png">
 </img>
 
 ```js

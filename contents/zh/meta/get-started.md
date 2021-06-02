@@ -1,4 +1,4 @@
-# 项目结构说明
+# 文档编写说明
 
 ## 新增一个 markdown 文件
 
@@ -71,8 +71,6 @@ option = {
 <img src="images/demo.png" style="width: 50px" />
 ```
 
-对于多个页面可以共享的样式，修改相关的 `.vue` 文件。
-
 
 ## 添加示例 iframe
 
@@ -81,3 +79,39 @@ option = {
 ```
 
 <md-example src="doc-example/tutorial-async" width="100%" height="300"></md-example>
+
+
+## 更多组件使用
+
+文档支持使用全局注册的`markdown`组件，除了刚才介绍的`md-example`组件，还有下面几种组件
+
+
+### md-alert
+
+```markdown
+<md-alert type="info">
+This is an info alert.
+</md-alert>
+<md-alert type="success">
+This is an success alert.
+</md-alert>
+<md-alert type="warning">
+This is an warning alert.
+</md-alert>
+<md-alert type="warning">
+This is an danger alert.
+</md-alert>
+```
+
+<md-alert type="info">
+This is an info alert.
+</md-alert>
+<md-alert type="success">
+This is an success alert.
+</md-alert>
+<md-alert type="warning">
+This is an warning alert.
+</md-alert>
+<md-alert type="danger">
+This is an danger alert.
+</md-alert>

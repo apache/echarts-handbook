@@ -126,8 +126,8 @@ export default {
   blockquote {
     margin: 15px 0;
     padding: 20px 15px;
-    border-left: 4px solid #ccc;
-    background-color: #f3f3f3;
+
+    @apply bg-blue-100 border-blue-400 rounded-lg;
 
     :first-child {
       margin-top: 0;
@@ -148,10 +148,12 @@ export default {
 
     code {
       background: none;
+      font-size: 13px;
     }
   }
 
   code {
+    font-size: 14px;
   }
 
   .nuxt-content-highlight {
@@ -201,13 +203,21 @@ export default {
   p {
     margin: 20px 0;
   }
+
+  img {
+    @apply shadow-lg rounded-lg;
+  }
+
+  a {
+    @apply text-light-blue-500;
+  }
 }
 
 .post-inner .table-of-contents {
   position: fixed;
   left: 77%;
   width: 21%;
-  top: 80px;
+  top: 50px;
   background-color: transparent;
   padding: 10px;
   height: auto;
@@ -244,7 +254,7 @@ export default {
   }
 
   a {
-    color: #888;
+    @apply text-blue-gray-500;
     transition: 0.5s;
 
     &:hover {
