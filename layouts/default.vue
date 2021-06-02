@@ -40,7 +40,7 @@ export default {
 
   computed: {
     // posts(): string {
-    //   return this.$store.state.posts.zh;
+    //   return this.$store.state.posts.zh
     // }
   },
 
@@ -48,7 +48,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="postcss">
 .page-main {
   overflow-x: hidden;
 }
@@ -64,18 +64,21 @@ export default {
 
 .post-inner {
   margin: 20px 0 80px 0;
-  color: #4d555e;
+
+  @apply text-blue-gray-500;
 
   h1 {
     margin: 50px 0;
     font-size: 36px;
+    @apply text-blue-gray-800;
+    font-weight: 500;
   }
 
   h2 {
     margin: 70px 0 20px 0;
     padding-bottom: 10px;
     font-size: 26px;
-    color: #666;
+    @apply text-blue-gray-900;
     border-bottom: 1px solid #ddd;
   }
 
@@ -85,19 +88,19 @@ export default {
 
   h3 {
     margin: 30px 0 20px 0;
-    font-size: 22px;
-    color: #444;
+    font-size: 20px;
+    @apply text-blue-gray-900;
   }
 
   h4 {
     margin: 25px 0 20px 0;
     font-size: 18px;
-    color: #222;
+    color: #666;
   }
 
   h5 {
     font-size: 16px;
-    color: #222;
+    color: #666;
   }
 
   h6 {
@@ -138,23 +141,46 @@ export default {
   pre {
     margin: 20px 0;
     border-radius: 5px;
-    background-color: #f5f7fa;
+    /* background-color: #f5f7fa; */
     border: none;
     padding: 10px;
     font-size: 13px;
 
-    code.hljs {
+    code {
       background: none;
     }
   }
 
   code {
+  }
+
+  .nuxt-content-highlight {
+    position: relative;
+    line-height: 1em;
+    .filename {
+      position: absolute;
+      right: 0;
+      top: 0;
+      color: #f7fafc;
+      z-index: 10;
+      font-family: DM Mono, Menlo, Monaco, Consolas, 'Liberation Mono',
+        'Courier New', monospace;
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+      letter-spacing: -0.025em;
+      line-height: 1;
+      margin-right: 1rem;
+      margin-top: 0.75rem;
+    }
+  }
+
+  /* code {
     padding: 3px 5px;
     font-size: 13px;
     background-color: #eaeeef;
     border-radius: 4px;
     color: #000;
-  }
+  } */
 
   iframe {
     border: none;
@@ -163,7 +189,7 @@ export default {
 
   ol,
   ul {
-    padding-left: 15px;
+    padding-left: 20px;
   }
 
   p,
@@ -211,13 +237,9 @@ export default {
       font-size: 14px;
     }
 
-    ul {
+    li.toc3 {
       padding-left: 10px;
-      margin-bottom: 10px;
-
-      li {
-        font-size: 12px;
-      }
+      font-size: 12px;
     }
   }
 

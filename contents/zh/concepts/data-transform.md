@@ -107,7 +107,7 @@ var option = {
 
 下面是上述例子的效果，三个饼图分别显示了 2011、2012、2013 年的数据。
 
-<iframe width="800" height="300" src="${exampleViewPath}data-transform-multiple-pie&reset=1&edit=1"></iframe>
+<md-example src="data-transform-multiple-pie&reset=1&edit=1"></md-example>
 
 现在我们简单总结下，使用 transform 时的几个要点：
 
@@ -143,7 +143,9 @@ option: {
 }
 ```
 
-> 注意：理论上，任何 transform 都可能有多个输入或多个输出。但是，如果一个 transform 被链式声明，它只能获取前一个 transform 的第一个输出作为输入（第一个 transform 除外），以及它只能把自己的第一个输出给到后一个 transform （最后一个 transform 除外）。
+<md-alert>
+注意：理论上，任何 transform 都可能有多个输入或多个输出。但是，如果一个 transform 被链式声明，它只能获取前一个 transform 的第一个输出作为输入（第一个 transform 除外），以及它只能把自己的第一个输出给到后一个 transform （最后一个 transform 除外）。
+</md-alert>
 
 #### 一个 transform 输出多个 data
 
@@ -283,7 +285,7 @@ option = {
 <br>
 这是 filter 的另一个例子的效果：<br>
 
-<iframe width="600" height="350" src="${exampleViewPath}data-transform-filter&reset=1&edit=1"></iframe>
+<md-example src="data-transform-filter&reset=1&edit=1"></md-example>
 
 在 "filter" transform 中，有这些要素：
 
@@ -472,7 +474,7 @@ option = {
 };
 ```
 
-<iframe width="600" height="350" src="${exampleViewPath}data-transform-sort-bar&reset=1&edit=1"></iframe>
+<md-example src="data-transform-sort-bar&reset=1&edit=1"></md-example>
 
 数据转换器 "sort" 还有一些额外的功能：
 
@@ -520,7 +522,7 @@ option = {
 };
 ```
 
-<iframe width="600" height="350" src="${exampleViewPath}doc-example/data-transform-multiple-sort-bar&reset=1&edit=1"></iframe>
+<md-example src="doc-example/data-transform-multiple-sort-bar&reset=1&edit=1"></md-example>
 
 最后，我们给出数据转换器 "sort" 的 config 的形式化定义。
 

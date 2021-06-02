@@ -1,5 +1,5 @@
-import zhPosts from '~/contents/zh/posts.js';
-import config from '~/configs/config';
+import zhPosts from '~/contents/zh/posts.js'
+import config from '~/configs/config'
 
 export const state = () => ({
   filled: false,
@@ -19,34 +19,34 @@ export const state = () => ({
 })
 
 export const mutations = {
-  toggle (state, key) {
+  toggle(state, key) {
     state[key] = !state[key]
   },
-  setDocVersion (state, docVersion) {
+  setDocVersion(state, docVersion) {
     state.docVersion = docVersion
   },
-  setGhVersion (state, ghVersion) {
+  setGhVersion(state, ghVersion) {
     state.ghVersion = ghVersion
   },
-  setLocale (state, locale) {
+  setLocale(state, locale) {
     state.locale = locale
   },
-  setLang (state, lang) {
+  setLang(state, lang) {
     state.lang = lang
   },
-  setMenu (state, menu) {
+  setMenu(state, menu) {
     state.menu = menu
   },
-  setHomepage (state, homepage) {
+  setHomepage(state, homepage) {
     state.homepage = homepage
   },
-  setFilled (state) {
+  setFilled(state) {
     state.filled = true
   },
-  setAdBlocked (state, value) {
+  setAdBlocked(state, value) {
     state.adBlocked = value
   },
-  setFocusMode (state, value) {
+  setFocusMode(state, value) {
     state.focusMode = value
   }
 }
@@ -54,7 +54,7 @@ export const mutations = {
 let _focusTimeout = null
 
 export const actions = {
-  async getLangData ({ commit }, locale) {
+  async getLangData({ commit }, locale) {
     const lang = await this.$docs.get('/lang/' + locale)
     commit('setLang', lang)
     commit('setDocVersion', lang.docVersion)
@@ -63,13 +63,13 @@ export const actions = {
     const homepage = await this.$docs.get('/homepage/' + locale)
     commit('setHomepage', homepage)
   },
-  focusMode ({ commit }) {
+  focusMode({ commit }) {
     if (_focusTimeout) {
       return
     }
     _focusTimeout = setTimeout(() => commit('setFocusMode', true), 1300)
   },
-  clearFocusMode ({ commit }) {
+  clearFocusMode({ commit }) {
     if (_focusTimeout) {
       clearTimeout(_focusTimeout)
       _focusTimeout = null

@@ -3,16 +3,15 @@ import { Store } from 'vuex'
 
 // ComponentOptions is declared in types/options.d.ts
 declare module 'vue/types/options' {
-
   interface NuxtContext<V extends Vue> {
-    app: V,
-    isClient: boolean,
-    isServer: boolean,
-    isStatic: boolean,
-    isDev: boolean,
-    store: Store<any>, // Consider vuex-typex in future
-    env: object,
-    params: object,
+    app: V
+    isClient: boolean
+    isServer: boolean
+    isStatic: boolean
+    isDev: boolean
+    store: Store<any> // Consider vuex-typex in future
+    env: object
+    params: object
     query: object
   }
 

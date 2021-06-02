@@ -74,7 +74,7 @@ option = {
 
 效果如下：
 
-<iframe width="600" height="300" src="${exampleViewPath}dataset-simple0&edit=1&reset=1"></iframe>
+<md-example src="dataset-simple0&edit=1&reset=1"></md-example>
 
 或者也可以使用常见的“对象数组”的格式：
 ```js

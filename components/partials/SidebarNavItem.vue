@@ -80,10 +80,14 @@ export default Vue.extend({
 })
 </script>
 
-<style lang="scss">
+<style lang="postcss">
 .page-content {
   .nav-item {
     cursor: pointer;
+
+    .nav-link {
+      @apply text-blue-gray-500;
+    }
 
     .title {
       padding: 2px 6px;
@@ -96,7 +100,7 @@ export default Vue.extend({
     }
 
     .nav-link:hover > .title {
-      // color: #5470c6;
+      /* color: #5470c6; */
       background: #efefef;
       border-radius: 3px;
     }

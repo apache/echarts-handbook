@@ -75,7 +75,7 @@ $.get('data.json').done(function (data) {
 
 如下：
 
-<iframe src="${exampleViewPath}doc-example/tutorial-async&edit=1&reset=1" width="400" height="300"></iframe>
+<md-example src="doc-example/tutorial-async&edit=1"></md-example>
 
 ECharts 中在更新数据的时候需要通过`name`属性对应到相应的系列，上面示例中如果`name`不存在也可以根据系列的顺序正常更新，但是更多时候推荐更新数据的时候加上系列的`name`数据。
 
@@ -95,7 +95,7 @@ $.get('data.json').done(function (data) {
 
 效果如下：
 
-<iframe src="${exampleViewPath}doc-example/tutorial-loading&edit=1&reset=1" width="400" height="300"></iframe>
+<md-example src="doc-example/tutorial-loading&edit=1"></md-example>
 
 ## 数据的动态更新
 
@@ -105,4 +105,4 @@ ECharts 由数据驱动，数据的改变驱动图表展现的改变，因此动
 
 具体可以看下面示例：
 
-<iframe src="${exampleViewPath}doc-example/tutorial-dynamic-data&edit=1&reset=1" width="400" height="300"></iframe>
+<md-example src="doc-example/tutorial-dynamic-data&edit=1"></md-example>

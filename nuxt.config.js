@@ -26,6 +26,18 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
+  content: {
+    dir: 'contents',
+    markdown: {
+      tocDepth: 2,
+      prism: {
+        theme: 'prism-themes/themes/prism-material-oceanic.css'
+      },
+      remarkPlugins: []
+    },
+    liveEdit: false
+  },
+  tailwindcss: {},
   /*
    ** Customize the progress-bar color
    */
@@ -41,7 +53,11 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: ['@nuxt/typescript-build'],
+  buildModules: [
+    '@nuxt/typescript-build',
+    '@nuxt/content',
+    '@nuxtjs/tailwindcss'
+  ],
   /*
    ** Nuxt.js modules
    */
@@ -76,6 +92,13 @@ export default {
    ** Build configuration
    */
   build: {
+    postcss: {
+      plugins: {
+        'postcss-nested': {},
+        'postcss-import': {}
+      }
+    },
+
     extractCSS: {
       // allChunks: true
     },
@@ -94,7 +117,7 @@ export default {
     }
   },
   generate: {
-    routes: [].concat(generateRoutes(zhPosts, '/zh/'))
+    // routes: [].concat(generateRoutes(zhPosts, '/zh/'))
     // .concat(enPosts.map(post => `/en/${post}`))
   }
 }

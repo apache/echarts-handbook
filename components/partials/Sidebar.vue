@@ -62,7 +62,7 @@ export default Vue.extend({
 })
 </script>
 
-<style lang="scss">
+<style lang="postcss">
 .bd-sidebar {
   padding: 20px;
   position: sticky;
@@ -153,7 +153,6 @@ export default Vue.extend({
 
     .nav-link {
       padding: 5px 0;
-      color: #707070;
     }
   }
 
@@ -165,7 +164,6 @@ export default Vue.extend({
     }
 
     .nav-link {
-      color: #666;
       padding: 0;
     }
   }
@@ -183,7 +181,7 @@ export default Vue.extend({
   }
 
   .level1 .nav-link {
-    color: #444;
+    /* color: #444; */
   }
 
   .nav.level2 {
@@ -194,7 +192,6 @@ export default Vue.extend({
 
   .level2 .nav-link {
     margin: 2px 0;
-    color: #888;
   }
 }
 </style>
