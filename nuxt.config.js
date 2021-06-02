@@ -2,6 +2,15 @@
 import zhPosts from './contents/zh/posts'
 import config from './configs/config'
 
+function escapeHtml(unsafe) {
+  return unsafe
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;')
+}
+
 export default {
   ssr: false,
 
@@ -34,6 +43,17 @@ export default {
       tocDepth: 2,
       prism: {
         theme: 'prism-themes/themes/prism-material-oceanic.css'
+      },
+      highlighter(rawCode, lang, attrs) {
+        if (attrs.fileName === 'live') {
+          return `<md-live lang="${lang}">${escapeHtml(rawCode)}</md-live>`
+        } else {
+          return `<md-code-block lang="${lang}" lineNumbers="${
+            attrs.lineNumbers
+          }" fileName="${attrs.fileName}" >${escapeHtml(
+            rawCode
+          )}</md-code-block>`
+        }
       },
       remarkPlugins: []
     },

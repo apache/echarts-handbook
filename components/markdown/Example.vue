@@ -9,11 +9,11 @@ import config from '~/configs/config'
 export default defineComponent({
   props: {
     width: {
-      type: String,
+      type: [String, Number],
       default: '100%'
     },
     height: {
-      type: String,
+      type: [String, Number],
       default: '350'
     },
     src: String

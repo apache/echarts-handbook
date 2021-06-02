@@ -159,26 +159,6 @@ export default {
     font-size: 14px;
   }
 
-  .nuxt-content-highlight {
-    position: relative;
-    line-height: 1em;
-    .filename {
-      position: absolute;
-      right: 0;
-      top: 0;
-      color: #f7fafc;
-      z-index: 10;
-      font-family: DM Mono, Menlo, Monaco, Consolas, 'Liberation Mono',
-        'Courier New', monospace;
-      font-size: 0.875rem;
-      line-height: 1.25rem;
-      letter-spacing: -0.025em;
-      line-height: 1;
-      margin-right: 1rem;
-      margin-top: 0.75rem;
-    }
-  }
-
   /* code {
     padding: 3px 5px;
     font-size: 13px;

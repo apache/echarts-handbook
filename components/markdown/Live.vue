@@ -1,11 +1,7 @@
 <template>
   <div class="md-live" v-if="innerCode">
     <div class="md-live-editor">
-      <prism-editor
-        :style="{ height: editorHeight }"
-        v-model="innerCode"
-        :highlight="highlighter"
-      >
+      <prism-editor v-model="innerCode" :highlight="highlighter">
       </prism-editor>
       <div class="md-live-tag">live</div>
     </div>
@@ -29,7 +25,6 @@ import {
   ref,
   unref,
   onMounted,
-  getCurrentInstance,
   onUnmounted
 } from '@vue/composition-api'
 
@@ -52,10 +47,6 @@ export default defineComponent({
     lang: {
       type: String,
       default: 'js'
-    },
-    editorHeight: {
-      type: String,
-      default: 'auto'
     }
   },
 
@@ -126,10 +117,12 @@ export default defineComponent({
   /* we dont use `language-` classes anymore so thats why we need to add background and text color manually */
   background: #263238;
 
+  max-height: 400px;
+  overflow-y: auto;
+
   font-size: 13px;
   padding: 10px;
 
-  overflow-y: auto;
   ::-webkit-scrollbar-thumb {
     background: rgba(255, 255, 255, 0.3) !important;
   }

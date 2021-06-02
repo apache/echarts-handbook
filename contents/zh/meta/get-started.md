@@ -30,6 +30,36 @@ option = {
 };
 ```
 
+### 实时预览和编辑
+
+```markdown
+```js [live]
+option = {
+    xAxis: {
+        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+    },
+    yAxis: {},
+    series: [{
+        type: 'bar',
+        data: [23, 24, 18, 25, 27, 28, 25]
+    }]
+};
+\```
+```
+
+```js [live]
+option = {
+    xAxis: {
+        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+    },
+    yAxis: {},
+    series: [{
+        type: 'bar',
+        data: [23, 24, 18, 25, 27, 28, 25]
+    }]
+};
+```
+
 
 ### 高亮代码行以及添加文件名
 
@@ -52,7 +82,6 @@ option = {
     }]
 };
 ```
-
 
 
 ## 引用图片的方式
@@ -122,6 +151,9 @@ This is an danger alert.
 ### md-live
 
 实时代码预览组件
+
+> 不推荐直接使用该组件，应该尽可能使用前面的代码语法
+
 ```markdown
 <md-live>
 option = {
