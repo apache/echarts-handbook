@@ -129,6 +129,9 @@ export default {
 
     @apply bg-blue-100 border-blue-400 rounded-lg;
 
+    code {
+      @apply bg-blue-200 shadow-none border-0 text-current;
+    }
     :first-child {
       margin-top: 0;
     }

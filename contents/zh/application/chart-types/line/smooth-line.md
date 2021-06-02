@@ -2,8 +2,7 @@
 
 平滑曲线图也是折线图的一种变形，这种更柔和的样式也是一种不错的视觉选择。使用时，只需要将折线图系列的 `smooth` 属性设置为 `true` 即可。
 
-<!-- embed -->
-```js
+<md-live>
 option = {
     xAxis: {
         data: ['A', 'B', 'C', 'D', 'E']
@@ -15,4 +14,4 @@ option = {
         smooth: true
     }]
 };
-```
+</md-live>

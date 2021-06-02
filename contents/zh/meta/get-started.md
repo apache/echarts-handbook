@@ -88,6 +88,8 @@ option = {
 
 ### md-alert
 
+提示组件
+
 ```markdown
 <md-alert type="info">
 This is an info alert.
@@ -115,3 +117,35 @@ This is an warning alert.
 <md-alert type="danger">
 This is an danger alert.
 </md-alert>
+
+
+### md-live
+
+实时代码预览组件
+```markdown
+<md-live>
+option = {
+    xAxis: {
+        data: ['A', 'B', 'C', 'D', 'E']
+    },
+    yAxis: {},
+    series: [{
+        data: [0, 22, '-', 23, 19],
+        type: 'line'
+    }]
+};
+</md-live>
+```
+
+<md-live>
+option = {
+    xAxis: {
+        data: ['A', 'B', 'C', 'D', 'E']
+    },
+    yAxis: {},
+    series: [{
+        data: [0, 22, '-', 23, 19],
+        type: 'line'
+    }]
+};
+</md-live>

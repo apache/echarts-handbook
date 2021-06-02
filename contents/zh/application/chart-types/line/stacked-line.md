@@ -3,7 +3,7 @@
 与[堆叠柱状图](./zh/application_chart-types_bar_stacked-bar)类似，堆叠折线图也是用系列的 `stack` 设置哪些系列堆叠在一起。
 
 <!-- embed -->
-```js
+<md-live>
 option = {
     xAxis: {
         data: ['A', 'B', 'C', 'D', 'E']
@@ -19,12 +19,12 @@ option = {
         stack: 'x'
     }]
 };
-```
+</md-live>
 
 但是不同的是，如果不加说明的话，我们很难判断出这是一个堆叠折线图，还是一个普通的折线图。所以，对于堆叠折线图而言，一般建议使用区域填充色以表明堆叠的情况。
 
 <!-- embed -->
-```js
+<md-live>
 option = {
     xAxis: {
         data: ['A', 'B', 'C', 'D', 'E']
@@ -42,4 +42,4 @@ option = {
         areaStyle: {}
     }]
 };
-```
+</md-live>

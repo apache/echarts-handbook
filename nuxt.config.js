@@ -3,6 +3,8 @@ import zhPosts from './contents/zh/posts'
 import config from './configs/config'
 
 export default {
+  ssr: false,
+
   target: 'static',
 
   router: {

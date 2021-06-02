@@ -18,7 +18,8 @@
     "markdown-it-table-of-contents": "^0.5.2",
     "nuxt": "^2.15.6",
     "nuxt-i18n": "^6.27.0",
-    "scroll-into-view": "^1.15.0"
+    "scroll-into-view": "^1.15.0",
+    "vue-prism-editor": "^1.2.2"
   },
   "devDependencies": {
     "@nuxt/content": "^1.14.0",
