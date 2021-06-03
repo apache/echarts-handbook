@@ -16,7 +16,22 @@ export default {
 
   router: {
     mode: 'history',
-    base: config.routerBase
+    base: config.routerBase,
+    scrollBehavior(to) {
+      if (to.hash) {
+        const id = to.hash.substr(1)
+        const el =
+          document.getElementById(decodeURIComponent(id)) ||
+          document.getElementById(id)
+
+        if (el) {
+          el.scrollIntoView &&
+            el.scrollIntoView({
+              behavior: 'smooth'
+            })
+        }
+      }
+    }
   },
 
   /*
@@ -49,8 +64,10 @@ export default {
         if (attrs.lineHighlights === 'null') {
           attrs.lineHighlights = ''
         }
-        if (attrs.fileName === 'live') {
-          return `<md-live lang="${lang}">${escapeHtml(rawCode)}</md-live>`
+        const liveMatch = /^live(-(lr|tb|bt|rl))?$/.exec(attrs.fileName || '')
+        if (liveMatch) {
+          return `<md-live lang="${lang}" layout="${liveMatch[2] ||
+            'tb'}">${escapeHtml(rawCode)}</md-live>`
         } else {
           return `<md-code-block lang="${lang}" line-highlights="${attrs.lineHighlights ||
             ''}" file-name="${attrs.fileName || ''}" >${escapeHtml(

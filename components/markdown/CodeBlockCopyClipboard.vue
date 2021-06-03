@@ -42,12 +42,7 @@
 </template>
 
 <script lang="ts">
-import {
-  defineComponent,
-  onMounted,
-  onUnmounted,
-  ref
-} from '@vue/composition-api'
+import { defineComponent, onMounted, ref } from '@vue/composition-api'
 import Clipboard from 'clipboard'
 
 export default defineComponent({
@@ -95,7 +90,7 @@ export default defineComponent({
 
   @apply text-blue-gray-400;
 
-  @apply mr-4 mb-3;
+  @apply mr-7 mb-3;
   @apply rounded-lg border-blue-gray-400 border;
   @apply p-2;
   @apply cursor-pointer;

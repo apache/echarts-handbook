@@ -8,7 +8,6 @@
 
 <script lang="ts">
 import Vue, { PropType } from 'vue'
-import config from '~/configs/config'
 export default Vue.extend({
   props: {
     type: {

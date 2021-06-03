@@ -1,8 +1,10 @@
 <template>
-  <div class="md-live" v-if="innerCode">
+  <div :class="`md-live layout-${layout}`" v-if="innerCode">
     <div class="md-live-editor">
-      <prism-editor v-model="innerCode" :highlight="highlighter">
-      </prism-editor>
+      <div class="md-live-editor-container">
+        <prism-editor v-model="innerCode" :highlight="highlighter">
+        </prism-editor>
+      </div>
       <div class="md-live-tag">live</div>
       <code-block-copy-clipboard
         :source="innerCode"
@@ -53,6 +55,14 @@ export default defineComponent({
     lang: {
       type: String,
       default: 'js'
+    },
+
+    layout: {
+      type: String,
+      default: 'tb',
+      validator(value: string) {
+        return ['lr', 'tb', 'rl', 'bt'].includes(value)
+      }
     }
   },
 
@@ -69,12 +79,14 @@ export default defineComponent({
           // TODO Better way to get ref?
           chartInstance = echarts.init(unref(previewContainer))
         }
-        const func = new Function(unref(innerCode) + '\n return option;')
         // TODO refresh.
         try {
+          const func = new Function(unref(innerCode) + '\n return option;')
           const option = func()
           chartInstance.setOption(option, true)
-        } catch (e) {}
+        } catch (e) {
+          console.error(e)
+        }
       })
     }
 
@@ -114,23 +126,55 @@ export default defineComponent({
 
 <style lang="postcss">
 .md-live {
+  @apply overflow-hidden;
   @apply shadow-lg rounded-lg mt-10 mb-20;
+  @apply flex;
+
+  &.layout-lr {
+    @apply flex-row;
+  }
+  &.layout-rl {
+    @apply flex-row-reverse;
+  }
+  &.layout-tb {
+    @apply flex-col;
+  }
+  &.layout-bt {
+    @apply flex-col-reverse;
+  }
+  &.layout-lr,
+  &.layout-rl {
+    @apply items-stretch;
+
+    .md-live-editor-container {
+      height: 100%;
+    }
+    .md-live-editor {
+      @apply flex-1;
+    }
+    .md-live-preview {
+      @apply flex-1;
+    }
+  }
 }
+
 /* required class */
 .md-live-editor {
-  @apply rounded-t-lg;
   position: relative;
-  /* we dont use `language-` classes anymore so thats why we need to add background and text color manually */
-  background: #263238;
-
-  max-height: 400px;
-  overflow-y: auto;
-
-  font-size: 13px;
-  padding: 10px;
 
   ::-webkit-scrollbar-thumb {
     background: rgba(255, 255, 255, 0.3) !important;
+  }
+
+  .md-live-editor-container {
+    /* we dont use `language-` classes anymore so thats why we need to add background and text color manually */
+    background: #263238;
+
+    max-height: 500px;
+    overflow-y: auto;
+
+    font-size: 13px;
+    padding: 10px;
   }
 
   pre {
@@ -142,8 +186,7 @@ export default defineComponent({
     right: 0;
     top: 0;
     text-transform: uppercase;
-    margin-right: 1rem;
-    margin-top: 0.75rem;
+    @apply mr-7 mt-3;
     color: #f7fafc;
     z-index: 10;
   }
@@ -162,7 +205,6 @@ export default defineComponent({
 .md-live-preview {
   height: 300px;
   overflow: hidden;
-  @apply rounded-b-lg;
 }
 
 .prism-editor-wrapper .prism-editor__editor,

@@ -62,6 +62,74 @@ option = {
 };
 ```
 
+### 更多预览布局
+#### 左右
+
+```markdown
+```js [live-lr]
+option = {
+    ...
+};
+\```
+```
+
+```js [live-lr]
+option = {
+    xAxis: {
+        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+    },
+    yAxis: {},
+    series: [{
+        type: 'bar',
+        data: [23, 24, 18, 25, 27, 28, 25]
+    }]
+};
+```
+#### 右左
+
+```markdown
+```js [live-rl]
+option = {
+    ...
+};
+\```
+```
+
+```js [live-rl]
+option = {
+    xAxis: {
+        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+    },
+    yAxis: {},
+    series: [{
+        type: 'bar',
+        data: [23, 24, 18, 25, 27, 28, 25]
+    }]
+};
+```
+
+#### 下上
+
+```markdown
+```js [live-bt]
+option = {
+    ...
+};
+\```
+```
+
+```js [live-bt]
+option = {
+    xAxis: {
+        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+    },
+    yAxis: {},
+    series: [{
+        type: 'bar',
+        data: [23, 24, 18, 25, 27, 28, 25]
+    }]
+};
+```
 
 ### 高亮代码行以及添加文件名
 
