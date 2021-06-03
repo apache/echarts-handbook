@@ -184,7 +184,7 @@ export default {
   }
 
   a {
-    @apply text-light-blue-500;
+    @apply text-purple-600;
   }
 }
 

@@ -2,7 +2,7 @@
 
 在 ECharts 的图表中用户的操作将会触发相应的事件。开发者可以监听这些事件，然后通过回调函数做相应的处理，比如跳转到一个地址，或者弹出对话框，或者做数据下钻等等。
 
-从 ECharts 3 开始，绑定事件跟 2 一样都是通过 [on](${mainSitePath}api.html#EChartsInstance.on) 方法，但是事件名称比 2 更加简单了。从 ECharts 3 开始，事件名称对应 DOM 事件名称，均为小写的字符串，如下是一个绑定点击操作的示例。
+从 ECharts 3 开始，事件名称对应 DOM 事件名称，均为小写的字符串，如下是一个绑定点击操作的示例。
 
 ```js
 myChart.on('click', function (params) {
@@ -17,9 +17,9 @@ myChart.on('click', function (params) {
 
 ECharts 支持常规的鼠标事件类型，包括 `'click'`、 `'dblclick'`、 `'mousedown'`、 `'mousemove'`、 `'mouseup'`、 `'mouseover'`、 `'mouseout'`、 `'globalout'`、 `'contextmenu'` 事件。下面先来看一个简单的点击柱状图后打开相应的百度搜索页面的示例。
 
-```js
+```js [live]
 // 基于准备好的dom，初始化ECharts实例
-var myChart = echarts.init(document.getElementById('main'));
+// var myChart = echarts.init(document.getElementById('main'));
 
 // 指定图表的配置项和数据
 var option = {
@@ -250,7 +250,70 @@ myChart.on('legendselectchanged', function (params) {
 
 下面示例演示了如何通过 `dispatchAction` 去轮流高亮饼图的每个扇形。
 
-<iframe width="600" height="400" src="${exampleViewPath}doc-example/pie-highlight&reset=1&edit=1"></iframe>
+```js [live]
+option = {
+    title: {
+        text: '饼图程序调用高亮示例',
+        left: 'center'
+    },
+    tooltip: {
+        trigger: 'item',
+        formatter: '{a} <br/>{b} : {c} ({d}%)'
+    },
+    legend: {
+        orient: 'vertical',
+        left: 'left',
+        data: ['直接访问', '邮件营销', '联盟广告', '视频广告', '搜索引擎']
+    },
+    series: [
+        {
+            name: '访问来源',
+            type: 'pie',
+            radius: '55%',
+            center: ['50%', '60%'],
+            data: [
+                {value: 335, name: '直接访问'},
+                {value: 310, name: '邮件营销'},
+                {value: 234, name: '联盟广告'},
+                {value: 135, name: '视频广告'},
+                {value: 1548, name: '搜索引擎'}
+            ],
+            emphasis: {
+                itemStyle: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 0,
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                }
+            }
+        }
+    ]
+};
+
+let currentIndex = -1;
+
+setInterval(function () {
+    var dataLen = option.series[0].data.length;
+    // 取消之前高亮的图形
+    myChart.dispatchAction({
+        type: 'downplay',
+        seriesIndex: 0,
+        dataIndex: currentIndex
+    });
+    currentIndex = (currentIndex + 1) % dataLen;
+    // 高亮当前图形
+    myChart.dispatchAction({
+        type: 'highlight',
+        seriesIndex: 0,
+        dataIndex: currentIndex
+    });
+    // 显示 tooltip
+    myChart.dispatchAction({
+        type: 'showTip',
+        seriesIndex: 0,
+        dataIndex: currentIndex
+    });
+}, 1000);
+```
 
 
 ## 监听“空白处”的事件

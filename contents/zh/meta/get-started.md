@@ -207,31 +207,31 @@ This is an info alert.
 
 ```markdown
 <md-alert type="success">
-This is an success alert.
+This is a success alert.
 </md-alert>
 ```
 <md-alert type="success">
-This is an success alert.
+This is a success alert.
 </md-alert>
 
 ```markdown
 <md-alert type="warning">
-This is an warning alert.
+This is a warning alert.
 </md-alert>
 ```
 
 <md-alert type="warning">
-This is an warning alert.
+This is a warning alert.
 </md-alert>
 
 ```markdown
 <md-alert type="warning">
-This is an danger alert.
+This is a danger alert.
 </md-alert>
 ```
 
 <md-alert type="danger">
-This is an danger alert.
+This is a danger alert.
 </md-alert>
 
 

@@ -33,6 +33,7 @@ import {
   onUnmounted
 } from '@vue/composition-api'
 
+import { createSandbox } from '../helper/sandbox'
 import CodeBlockCopyClipboard from './CodeBlockCopyClipboard.vue'
 
 declare const echarts: any
@@ -70,20 +71,18 @@ export default defineComponent({
     const innerCode = ref('')
     const previewContainer = ref<HTMLElement | null>(null)
 
-    let chartInstance
+    let sandbox: ReturnType<typeof createSandbox>
 
     function update() {
       ensureECharts().then(() => {
-        if (!chartInstance) {
+        if (!sandbox) {
           addListener(unref(previewContainer)!, resize)
-          // TODO Better way to get ref?
-          chartInstance = echarts.init(unref(previewContainer))
+          sandbox = createSandbox()
         }
         // TODO refresh.
         try {
-          const func = new Function(unref(innerCode) + '\n return option;')
-          const option = func()
-          chartInstance.setOption(option, true)
+          unref(previewContainer) &&
+            sandbox.run(unref(previewContainer)!, unref(innerCode))
         } catch (e) {
           console.error(e)
         }
@@ -91,8 +90,8 @@ export default defineComponent({
     }
 
     function resize() {
-      if (chartInstance) {
-        chartInstance.resize()
+      if (sandbox) {
+        sandbox.resize()
       }
     }
 
