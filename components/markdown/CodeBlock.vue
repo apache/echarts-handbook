@@ -1,10 +1,13 @@
 <template>
   <div class="md-code-block">
     <div class="nuxt-content-highlight">
+      <!--
+        NOTE!!!: don't indent code tag inside the pre tag
+        https://github.com/PrismJS/prism/issues/554
+       -->
       <pre
         :class="`language-${highlightResult.lang} line-numbers`"
-        v-html="highlightResult.code"
-      ></pre>
+      ><code v-html="highlightResult.code"></code></pre>
     </div>
     <span v-if="fileName"></span>
   </div>
@@ -101,6 +104,20 @@ export default defineComponent({
   position: relative;
   line-height: 1em;
   font-size: 13px;
+
+  pre[class*='language-'],
+  code[class*='language-'] {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+      'Liberation Mono', 'Courier New', monospace;
+
+    color: #c3cee3;
+    background: #263238;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    text-align: left;
+  }
 
   .filename {
     position: absolute;

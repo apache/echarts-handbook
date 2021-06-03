@@ -48,8 +48,8 @@ export default {
         if (attrs.fileName === 'live') {
           return `<md-live lang="${lang}">${escapeHtml(rawCode)}</md-live>`
         } else {
-          return `<md-code-block lang="${lang}" lineNumbers="${
-            attrs.lineNumbers
+          return `<md-code-block lang="${lang}" lineHighlights="${
+            attrs.lineHighlights
           }" fileName="${attrs.fileName}" >${escapeHtml(
             rawCode
           )}</md-code-block>`
