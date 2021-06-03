@@ -4,6 +4,9 @@
       <prism-editor v-model="innerCode" :highlight="highlighter">
       </prism-editor>
       <div class="md-live-tag">live</div>
+      <code-block-copy-clipboard
+        :source="innerCode"
+      ></code-block-copy-clipboard>
     </div>
     <div ref="previewContainer" class="md-live-preview"></div>
   </div>
@@ -28,6 +31,8 @@ import {
   onUnmounted
 } from '@vue/composition-api'
 
+import CodeBlockCopyClipboard from './CodeBlockCopyClipboard.vue'
+
 declare const echarts: any
 
 function ensureECharts() {
@@ -41,7 +46,8 @@ function ensureECharts() {
 
 export default defineComponent({
   components: {
-    PrismEditor
+    PrismEditor,
+    CodeBlockCopyClipboard
   },
   props: {
     lang: {
@@ -140,6 +146,16 @@ export default defineComponent({
     margin-top: 0.75rem;
     color: #f7fafc;
     z-index: 10;
+  }
+
+  .clipboard {
+    display: none;
+  }
+
+  &:hover {
+    .clipboard {
+      display: block;
+    }
   }
 }
 

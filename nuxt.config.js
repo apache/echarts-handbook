@@ -45,12 +45,17 @@ export default {
         theme: 'prism-themes/themes/prism-material-oceanic.css'
       },
       highlighter(rawCode, lang, attrs) {
+        if (attrs.fileName === 'null') {
+          attrs.fileName = ''
+        }
+        if (attrs.lineHighlights === 'null') {
+          attrs.lineHighlights = ''
+        }
         if (attrs.fileName === 'live') {
           return `<md-live lang="${lang}">${escapeHtml(rawCode)}</md-live>`
         } else {
-          return `<md-code-block lang="${lang}" lineHighlights="${
-            attrs.lineHighlights
-          }" fileName="${attrs.fileName}" >${escapeHtml(
+          return `<md-code-block lang="${lang}" line-highlights="${attrs.lineHighlights ||
+            ''}" file-name="${attrs.fileName || ''}" >${escapeHtml(
             rawCode
           )}</md-code-block>`
         }
