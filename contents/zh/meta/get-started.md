@@ -1,4 +1,4 @@
-# 文档编写说明
+# 文档编辑指南
 
 ## 新增一个 markdown 文件
 
@@ -32,6 +32,8 @@ option = {
 
 ### 实时预览和编辑
 
+> 目前只支持对 Option 代码的预览
+
 ```markdown
 ```js [live]
 option = {
@@ -63,6 +65,7 @@ option = {
 
 ### 高亮代码行以及添加文件名
 
+使用：
 ```markdown
 ```js{1,3-5}[option.js]
 option = {
@@ -74,6 +77,7 @@ option = {
 \```
 ```
 
+效果：
 ```js{1,3-5}[option.js]
 option = {
     series: [{
@@ -84,7 +88,7 @@ option = {
 ```
 
 
-## 引用图片的方式
+## 引用图片
 
 图片实际存放地址在 `static/images/` 下。
 
@@ -103,10 +107,14 @@ option = {
 
 ## 添加示例 iframe
 
+`src`为 https://echarts.apache.org/examples/zh/editor.html?c=line-simple 地址中`?c=`后面这一串
+
+使用：
 ```markdown
 <md-example src="doc-example/tutorial-async" width="100%" height="300"></md-example>
 ```
 
+效果：
 <md-example src="doc-example/tutorial-async" width="100%" height="300"></md-example>
 
 
@@ -123,26 +131,37 @@ option = {
 <md-alert type="info">
 This is an info alert.
 </md-alert>
-<md-alert type="success">
-This is an success alert.
-</md-alert>
-<md-alert type="warning">
-This is an warning alert.
-</md-alert>
-<md-alert type="warning">
-This is an danger alert.
-</md-alert>
 ```
 
 <md-alert type="info">
 This is an info alert.
 </md-alert>
+
+```markdown
 <md-alert type="success">
 This is an success alert.
 </md-alert>
+```
+<md-alert type="success">
+This is an success alert.
+</md-alert>
+
+```markdown
 <md-alert type="warning">
 This is an warning alert.
 </md-alert>
+```
+
+<md-alert type="warning">
+This is an warning alert.
+</md-alert>
+
+```markdown
+<md-alert type="warning">
+This is an danger alert.
+</md-alert>
+```
+
 <md-alert type="danger">
 This is an danger alert.
 </md-alert>
@@ -152,7 +171,12 @@ This is an danger alert.
 
 实时代码预览组件
 
-> 不推荐直接使用该组件，应该尽可能使用前面的代码语法
+<md-alert type="danger">
+不推荐直接使用该组件，应该尽可能使用前面的代码语法
+直接使用该组件在 VSCode 中没法进行代码高亮，而且额外的空格可能会破坏 markdown 语法
+</md-alert>
+
+使用：
 
 ```markdown
 <md-live>
@@ -168,6 +192,8 @@ option = {
 };
 </md-live>
 ```
+
+效果：
 
 <md-live>
 option = {

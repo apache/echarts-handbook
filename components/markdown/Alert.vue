@@ -1,5 +1,5 @@
 <template>
-  <blockquote :class="` alert alert-${type}`">
+  <blockquote :class="`md-alert md-alert-${type}`">
     <p>
       <slot />
     </p>
@@ -23,59 +23,60 @@ export default Vue.extend({
 </script>
 
 <style lang="postcss" scoped>
-.alert {
+.md-alert {
   @apply rounded-lg;
+  @apply border-l-4;
 }
 /* Info */
-.alert-info {
+.md-alert-info {
   @apply bg-blue-100 border-blue-400;
 }
-.alert-info code {
+.md-alert-info code {
   @apply bg-blue-200 shadow-none border-0 text-current;
 }
-.alert-info .alert-icon {
+.md-alert-info .md-alert-icon {
   @apply text-blue-400;
 }
-.alert-info .alert-content {
+.md-alert-info .md-alert-content {
   @apply text-blue-700;
 }
 /* Success */
-.alert-success {
+.md-alert-success {
   @apply bg-green-100 border-green-400;
 }
-.alert-success code {
+.md-alert-success code {
   @apply bg-green-200 shadow-none border-0 text-current;
 }
-.alert-success .alert-icon {
+.md-alert-success .md-alert-icon {
   @apply text-green-400;
 }
-.alert-success .alert-content {
+.md-alert-success .md-alert-content {
   @apply text-green-700;
 }
 /* Warning */
-.alert-warning {
+.md-alert-warning {
   @apply bg-orange-100 border-orange-400;
 }
-.alert-warning code {
+.md-alert-warning code {
   @apply bg-orange-200 shadow-none border-0 text-current;
 }
-.alert-warning .alert-icon {
+.md-alert-warning .md-alert-icon {
   @apply text-orange-400;
 }
-.alert-warning .alert-content {
+.md-alert-warning .md-alert-content {
   @apply text-orange-700;
 }
 /* Danger */
-.alert-danger {
+.md-alert-danger {
   @apply bg-red-100 border-red-400;
 }
-.alert-danger code {
+.md-alert-danger code {
   @apply bg-red-200 shadow-none border-0 text-current;
 }
-.alert-danger .alert-icon {
+.md-alert-danger .md-alert-icon {
   @apply text-red-400;
 }
-.alert-danger .alert-content {
+.md-alert-danger .md-alert-content {
   @apply text-red-700;
 }
 </style>

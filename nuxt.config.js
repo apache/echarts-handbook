@@ -1,5 +1,3 @@
-// import enPosts from './contents/en/posts'
-import zhPosts from './contents/zh/posts'
 import config from './configs/config'
 
 function escapeHtml(unsafe) {
@@ -40,7 +38,7 @@ export default {
   content: {
     dir: 'contents',
     markdown: {
-      tocDepth: 2,
+      tocDepth: 3,
       prism: {
         theme: 'prism-themes/themes/prism-material-oceanic.css'
       },

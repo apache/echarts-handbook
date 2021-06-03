@@ -342,5 +342,15 @@ export default [
         ]
       }
     ]
+  },
+  {
+    title: '编辑本文档',
+    dir: 'meta',
+    children: [
+      {
+        title: '文档编辑指南',
+        dir: 'get-started'
+      }
+    ]
   }
 ]

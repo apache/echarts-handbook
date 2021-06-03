@@ -135,7 +135,6 @@ export default defineComponent({
     position: absolute;
     right: 0;
     top: 0;
-    color: #f7fafc;
     z-index: 10;
     font-family: DM Mono, Menlo, Monaco, Consolas, 'Liberation Mono',
       'Courier New', monospace;
@@ -144,7 +143,7 @@ export default defineComponent({
     letter-spacing: -0.025em;
     line-height: 1;
 
-    @apply mr-4 mb-3;
+    @apply text-blue-gray-400 mr-4 mt-3;
   }
 
   .clipboard {

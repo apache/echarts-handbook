@@ -88,7 +88,7 @@ export default {
 
   h3 {
     margin: 30px 0 20px 0;
-    font-size: 20px;
+    font-size: 22px;
     @apply text-blue-gray-900;
   }
 
@@ -127,7 +127,7 @@ export default {
     margin: 15px 0;
     padding: 20px 15px;
 
-    @apply bg-blue-100 border-blue-400 rounded-lg;
+    @apply bg-blue-100 border-blue-400 border-l-4 rounded-lg;
 
     code {
       @apply bg-blue-200 shadow-none border-0 text-current;
@@ -158,14 +158,6 @@ export default {
   code {
     font-size: 14px;
   }
-
-  /* code {
-    padding: 3px 5px;
-    font-size: 13px;
-    background-color: #eaeeef;
-    border-radius: 4px;
-    color: #000;
-  } */
 
   iframe {
     border: none;
