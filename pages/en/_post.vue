@@ -28,6 +28,7 @@ export default {
   components: {
     Contributors
   },
+
   async asyncData({ $content, params }) {
     const postPath = `en/${params.post.replace(/_/g, '/')}`
     const article = await $content(postPath).fetch()

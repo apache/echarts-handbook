@@ -1,6 +1,30 @@
 <template>
   <div class="post-contributors">
-    <h3>本文贡献者</h3>
+    <h3>
+      <span class="inline-block align-middle">本文贡献者</span>
+      <a
+        target="_blank"
+        :href="sourcePath"
+        title="编辑本文"
+        class="inline-block align-middle text-sm"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-8 w-8 inline-block align-middle"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+          />
+        </svg>
+        <span class="inline-block align-middle">在 GitHub 上编辑本页</span>
+      </a>
+    </h3>
     <div
       v-if="contributors && contributors.length"
       class="post-contributors-list"
@@ -19,16 +43,13 @@
         <span>{{ contributor }}</span>
       </a>
     </div>
-    <div class="post-edit">
-      <a target="_blank" :href="sourcePath">编辑本文</a>
-    </div>
   </div>
 </template>
 
 <script lang="ts">
 import { computed, defineComponent } from '@vue/composition-api'
-import config from '~/configs/config'
 import allContributors from '../helper/contributors'
+import { getSourcePath } from '../helper/post'
 
 export default defineComponent({
   props: {
@@ -36,11 +57,10 @@ export default defineComponent({
   },
   setup(props) {
     const contributors = computed(() => {
-      console.log(`contents/${props.path || ''}`)
       return allContributors[`contents/${props.path || ''}.md`]
     })
     const sourcePath = computed(() => {
-      return `https://github.com/${config.gitRepo}/tree/master/contents/${props.path}.md`
+      return getSourcePath(props.path!)
     })
     return {
       contributors,
@@ -73,7 +93,7 @@ export default defineComponent({
     &:hover {
       text-decoration: none;
 
-      @apply shadow-lg;
+      @apply shadow-lg transition-shadow;
     }
 
     img {
