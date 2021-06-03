@@ -237,43 +237,4 @@ export default {
     }
   }
 }
-
-.post-contributors {
-  margin-bottom: 50px;
-  padding-top: 10px;
-  border-top: 1px solid #ddd;
-
-  a {
-    color: #777;
-  }
-
-  .post-contributor {
-    display: inline-block;
-    margin-right: 15px;
-    border: 1px solid #eee;
-    border-radius: 5px;
-    color: #777;
-
-    &:hover {
-      text-decoration: none;
-    }
-
-    img {
-      width: 30px;
-      height: 30px;
-      border-radius: 5px;
-      display: inline-block;
-    }
-    span {
-      display: inline-block;
-      margin: 0 8px 0 5px;
-      position: relative;
-      top: 2px;
-    }
-  }
-}
-
-.post-edit {
-  margin: 10px 0;
-}
 </style>

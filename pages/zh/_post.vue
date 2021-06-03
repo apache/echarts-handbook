@@ -15,19 +15,26 @@
         </ul>
       </div>
     </div>
+    <contributors :path="postPath"></contributors>
   </div>
 </template>
 
 <script lang="ts">
 import '~/components/markdown/global'
 
+import Contributors from '~/components/partials/Contributors.vue'
+
 export default {
-  components: {},
+  components: {
+    Contributors
+  },
   async asyncData({ $content, params }) {
-    const article = await $content(
-      `zh/${params.post.replace(/_/g, '/')}`
-    ).fetch()
-    return { article }
+    const postPath = `zh/${params.post.replace(/_/g, '/')}`
+    const article = await $content(postPath).fetch()
+    return {
+      article,
+      postPath
+    }
   }
 }
 </script>

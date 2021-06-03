@@ -36,7 +36,7 @@ for (let i = 0; i < paths.length; ++i) {
       if (i === paths.length - 1) {
         const text =
           'export default ' + JSON.stringify(entries, null, '    ') + ';'
-        fs.writeFileSync('pages/helper/contributors.ts', text)
+        fs.writeFileSync('components/helper/contributors.ts', text)
       }
     })
   })(i)
