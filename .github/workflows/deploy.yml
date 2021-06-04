@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v2
+        with:
+          submodules: recursive
 
       - name: Install and Build 🔧
         run: |
