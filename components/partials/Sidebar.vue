@@ -2,32 +2,16 @@
   <div class="bd-sidebar border-bottom-0 col-sm-3 col-sm-9 col-md-2 col-md-10">
     <!-- active: {{ active }}. {{ posts }} -->
     <div class="bd-docs-nav">
-      <div
-        class="bd-toc-item level0"
-        v-for="level0Post in $store.state.posts[this.$store.state.locale]"
-        :key="level0Post.dir"
-      >
-        <a
-          class="bd-toc-link"
-          :href="level0Post.children ? 'javascript:;' : level0Post.dir"
-          v-if="!level0Post.draft"
+      <ul class="nav bd-sidenav nav-root level0">
+        <SidebarNavItem
+          v-for="level0Post in $store.state.posts[this.$store.state.locale]"
+          :key="level0Post.dir"
+          :item="level0Post"
+          :parentPath="''"
+          :level="1"
         >
-          {{ level0Post.title }}
-        </a>
-        <ul
-          class="nav bd-sidenav level1"
-          v-if="!level0Post.draft && level0Post.children"
-        >
-          <SidebarNavItem
-            v-for="level1Post in level0Post.children"
-            :key="level1Post.dir"
-            :item="level1Post"
-            :parentPath="level0Post.dir"
-            :level="1"
-          >
-          </SidebarNavItem>
-        </ul>
-      </div>
+        </SidebarNavItem>
+      </ul>
     </div>
   </div>
 </template>
@@ -64,7 +48,7 @@ export default Vue.extend({
 
 <style lang="postcss">
 .bd-sidebar {
-  padding: 20px;
+  padding: 10px;
   position: sticky;
   z-index: 1000;
   top: 0;
@@ -73,33 +57,10 @@ export default Vue.extend({
   border-right: 1px solid #eee;
 }
 
-.bd-toc-item {
-  margin-bottom: 10px;
-}
-
 .bd-sidenav {
   margin-top: 4px;
   margin-left: 10px;
   display: none;
-}
-
-.bd-toc-link {
-  font-weight: bold;
-  color: #333;
-
-  &[href='javascript:;'] {
-    cursor: default;
-
-    &:focus,
-    &:hover {
-      text-decoration: none;
-    }
-  }
-
-  &:focus,
-  &:hover {
-    color: #151515;
-  }
 }
 
 .page-content {
@@ -135,18 +96,10 @@ export default Vue.extend({
     margin: -5px 0;
   }
 
-  .nav-link .glyphicon-menu-up {
-    display: none;
+  .level0 > li > .nav-link {
+    padding: 10px 0;
+    @apply text-blue-gray-800;
   }
-
-  .active .nav-link .glyphicon-menu-up {
-    display: inline-block;
-  }
-
-  .active .nav-link .glyphicon-menu-down {
-    display: none;
-  }
-
   .level1 {
     margin-top: 4px;
     font-size: 14px;
@@ -156,41 +109,20 @@ export default Vue.extend({
     }
   }
 
-  .level2 {
+  .level3 {
     margin-top: 1px;
-
-    .level3 {
-      margin-top: 0;
-    }
 
     .nav-link {
       padding: 0;
     }
   }
-
   .nav.level3 {
-    font-size: 12px;
-    padding-left: 10px;
-    margin-left: 0;
-    display: none;
-
-    li {
-      display: list-item;
-      list-style: disc;
-    }
+    padding-left: 5px;
+    margin-left: 5px;
+    @apply border-blue-gray-300 border-l;
   }
 
-  .level1 .nav-link {
-    /* color: #444; */
-  }
-
-  .nav.level2 {
-    border-left: 1px solid #eee;
-    padding-left: 10px;
-    margin-left: 0;
-  }
-
-  .level2 .nav-link {
+  .level3 .nav-link {
     margin: 2px 0;
   }
 }

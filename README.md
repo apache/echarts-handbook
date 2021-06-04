@@ -23,19 +23,23 @@ Open in browser: http://localhost:3000/echarts-handbook/dist/
 ## Deploy
 
 ### Deploy to local dist folder
+
 ```bash
 npm run build:local
 ```
 
 ### Deploy to local echarts website
+
 ```bash
 npm run build:localsite
 ```
 
 ### Deploy to asf
+
 ```bash
 npm run build:asf
 ```
 
 ## Writing
-https://apache.github.io/echarts-handbook/dist/zh/meta_get-started/
+
+https://apache.github.io/echarts-handbook/dist/zh/meta/get-started/

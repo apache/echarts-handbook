@@ -4,7 +4,7 @@
       <span class="title">{{ item.title }}</span>
     </nuxt-link>
 
-    <a class="nav-link" v-else @click="toggleCollapsed">
+    <a class="nav-link" v-else-if="level > 1" @click="toggleCollapsed">
       <span class="title">{{ item.title }}</span>
       <span
         :class="[
@@ -13,6 +13,10 @@
         ]"
       ></span>
     </a>
+
+    <div class="nav-link" v-else>
+      <span class="title">{{ item.title }}</span>
+    </div>
 
     <ul
       :class="['nav', 'bd-sidenav', 'level' + level]"
@@ -62,7 +66,9 @@ export default Vue.extend({
   },
 
   data() {
-    const path = this.parentPath + '_' + this.item.dir
+    const path = this.parentPath
+      ? this.parentPath + '/' + this.item.dir
+      : this.item.dir
     const isSelfOrChildActived = (this.$route.params.post + '').startsWith(path)
     return {
       get path(): string {

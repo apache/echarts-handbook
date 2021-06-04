@@ -183,7 +183,7 @@ function generateRoutes(postTree, dir, routes) {
       return
     }
     if (info.children) {
-      generateRoutes(info.children, dir + info.dir + '_', routes)
+      generateRoutes(info.children, dir + info.dir + '/', routes)
     } else {
       routes.push(dir + info.dir)
     }

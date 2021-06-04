@@ -1,10 +1,4 @@
 export default {
-    "contents/zh/concepts/tooltip.md": [
-        "Ovilia"
-    ],
-    "contents/zh/concepts/series.md": [
-        "Ovilia"
-    ],
     "contents/zh/concepts/options.md": [
         "Ovilia"
     ],
@@ -12,13 +6,6 @@ export default {
         "Ovilia",
         "pissang",
         "yufeng04"
-    ],
-    "contents/zh/concepts/event.md": [
-        "100pah",
-        "Ovilia",
-        "huanghan01",
-        "pissang",
-        "plainheart"
     ],
     "contents/zh/concepts/dataset.md": [
         "100pah",
@@ -34,7 +21,8 @@ export default {
         "Ovilia"
     ],
     "contents/zh/concepts/chart-size.md": [
-        "Ovilia"
+        "Ovilia",
+        "pissang"
     ],
     "contents/zh/concepts/axis.md": [
         "Ovilia",
@@ -57,7 +45,8 @@ export default {
         "pissang"
     ],
     "contents/zh/best-practice/chart-specificatio/scatter/bubble.md": [
-        "Wdingding"
+        "Wdingding",
+        "pissang"
     ],
     "contents/zh/best-practice/chart-specificatio/radar.md": [
         "Hansz00",
@@ -69,7 +58,8 @@ export default {
         "pissang"
     ],
     "contents/zh/best-practice/chart-specificatio/line/stacked-area.md": [
-        "Wdingding"
+        "Wdingding",
+        "pissang"
     ],
     "contents/zh/best-practice/chart-specificatio/line/basic-line.md": [
         "Hansz00",
@@ -78,21 +68,26 @@ export default {
     ],
     "contents/zh/best-practice/chart-specificatio/line/area.md": [
         "Hansz00",
-        "Wdingding"
+        "Wdingding",
+        "pissang"
     ],
     "contents/zh/best-practice/chart-specificatio/gauger.md": [
         "Hansz00",
-        "Wdingding"
+        "Wdingding",
+        "pissang"
     ],
     "contents/zh/best-practice/chart-specificatio/funnel.md": [
-        "Wdingding"
+        "Wdingding",
+        "pissang"
     ],
     "contents/zh/best-practice/chart-specificatio/bar/stacked-bar.md": [
-        "Wdingding"
+        "Wdingding",
+        "pissang"
     ],
     "contents/zh/best-practice/chart-specificatio/bar/grouped-bar.md": [
         "Hansz00",
-        "Wdingding"
+        "Wdingding",
+        "pissang"
     ],
     "contents/zh/best-practice/chart-specificatio/bar/bi-directional-bar.md": [
         "Ovilia",
@@ -122,11 +117,13 @@ export default {
     "contents/zh/basics/help.md": [
         "100pah",
         "Ovilia",
+        "pissang",
         "plainheart"
     ],
     "contents/zh/basics/download.md": [
         "100pah",
-        "Ovilia"
+        "Ovilia",
+        "pissang"
     ],
     "contents/zh/application/mobile.md": [
         "Ovilia"
@@ -139,13 +136,15 @@ export default {
         "pissang"
     ],
     "contents/zh/application/cross-platform/wechat-app.md": [
-        "Ovilia"
+        "Ovilia",
+        "pissang"
     ],
     "contents/zh/application/cross-platform/server.md": [
         "Ovilia"
     ],
     "contents/zh/application/cross-platform/baidu-app.md": [
-        "Ovilia"
+        "Ovilia",
+        "pissang"
     ],
     "contents/zh/application/connect.md": [
         "Ovilia"
@@ -197,13 +196,16 @@ export default {
         "Ovilia"
     ],
     "contents/zh/application/chart-types/bar/stacked-bar.md": [
-        "Ovilia"
+        "Ovilia",
+        "pissang"
     ],
     "contents/zh/application/chart-types/bar/polar-bar.md": [
-        "Ovilia"
+        "Ovilia",
+        "pissang"
     ],
     "contents/zh/application/chart-types/bar/basic-bar.md": [
-        "Ovilia"
+        "Ovilia",
+        "pissang"
     ],
     "contents/zh/application/chart-types/bar/bar-race.md": [
         "Ovilia"
@@ -364,18 +366,37 @@ export default {
     "contents/en/application/chart-types/bar/bar-race.md": [
         "Hansz00"
     ],
-    "contents/zh/meta/writing.md": [
-        "Ovilia"
+    "contents/.prettierrc": [
+        "pissang"
+    ],
+    "contents/zh/concepts/event.md": [
+        "100pah",
+        "Ovilia",
+        "huanghan01",
+        "pissang",
+        "plainheart"
+    ],
+    "contents/zh/concepts/visual-map.md": [
+        "Ovilia",
+        "pissang"
     ],
     "contents/zh/meta/get-started.md": [
         "Ovilia",
         "pissang"
     ],
-    "contents/zh/get-started.md": [
+    "contents/zh/concepts/tooltip.md": [
         "Ovilia"
     ],
-    "contents/zh/concepts/visual-map.md": [
+    "contents/zh/concepts/series.md": [
         "Ovilia"
+    ],
+    "contents/zh/get-started.md": [
+        "Ovilia",
+        "pissang"
+    ],
+    "contents/zh/meta/writing.md": [
+        "Ovilia",
+        "pissang"
     ],
     "contents/zh/posts.js": [
         "100pah",

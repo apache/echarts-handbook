@@ -29,7 +29,7 @@ export default {
     Contributors
   },
   async asyncData({ $content, params }) {
-    const postPath = `zh/${params.post.replace(/_/g, '/')}`
+    const postPath = `zh/${params.pathMatch}`
     const article = await $content(postPath).fetch()
     return {
       article,
