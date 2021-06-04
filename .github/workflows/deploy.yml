@@ -19,14 +19,16 @@ jobs:
           npm install
           npm run build:gh
 
-      - name: Prepare deploy action
-        run: |
-          npm install
-          npm run build
-        working-directory: .github/actions/github-pages-deploy-action
+      # - name: Prepare deploy action
+      #   # Needs install webpack@5 to avoid using the webpack@4 in the workspace.
+      #   run: |
+      #     npm install
+      #     npm install webpack@5
+      #     npm run build
+      #   working-directory: .github/actions/github-pages-deploy-action
 
       - name: Deploy 🚀
-        uses: ./.github/actions/github-pages-deploy-action
+        uses: ./node_modules/github-pages-deploy-action
         with:
           branch: gh-pages # The branch the action should deploy to.
           folder: dist
