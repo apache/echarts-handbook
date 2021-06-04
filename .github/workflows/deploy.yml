@@ -20,3 +20,5 @@ jobs:
       - name: Deploy 🚀
         run: |
           node build/deploy-gh.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
