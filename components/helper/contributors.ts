@@ -1,4 +1,18 @@
 export default {
+    "contents/zh/get-started.md": [
+        "Ovilia",
+        "pissang"
+    ],
+    "contents/zh/concepts/visual-map.md": [
+        "Ovilia",
+        "pissang"
+    ],
+    "contents/zh/concepts/tooltip.md": [
+        "Ovilia"
+    ],
+    "contents/zh/concepts/series.md": [
+        "Ovilia"
+    ],
     "contents/zh/concepts/options.md": [
         "Ovilia"
     ],
@@ -6,6 +20,13 @@ export default {
         "Ovilia",
         "pissang",
         "yufeng04"
+    ],
+    "contents/zh/concepts/event.md": [
+        "100pah",
+        "Ovilia",
+        "huanghan01",
+        "pissang",
+        "plainheart"
     ],
     "contents/zh/concepts/dataset.md": [
         "100pah",
@@ -369,28 +390,7 @@ export default {
     "contents/.prettierrc": [
         "pissang"
     ],
-    "contents/zh/concepts/event.md": [
-        "100pah",
-        "Ovilia",
-        "huanghan01",
-        "pissang",
-        "plainheart"
-    ],
-    "contents/zh/concepts/visual-map.md": [
-        "Ovilia",
-        "pissang"
-    ],
     "contents/zh/meta/get-started.md": [
-        "Ovilia",
-        "pissang"
-    ],
-    "contents/zh/concepts/tooltip.md": [
-        "Ovilia"
-    ],
-    "contents/zh/concepts/series.md": [
-        "Ovilia"
-    ],
-    "contents/zh/get-started.md": [
         "Ovilia",
         "pissang"
     ],

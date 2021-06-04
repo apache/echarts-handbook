@@ -37,7 +37,28 @@ export default {
       }
     }
   },
-
+  hooks: {
+    'content:file:beforeParse': file => {
+      if (file.extension === '.md') {
+        // Replace variables
+        ;[
+          'optionPath',
+          'mainSitePath',
+          'exampleViewPath',
+          'exampleEditorPath'
+        ].forEach(p => {
+          // console.log(
+          //   file.data.indexOf(new RegExp('${' + p + '}', 'g')),
+          //   new RegExp('\\$\\{' + p + '\\}', 'g')
+          // )
+          file.data = file.data.replace(
+            new RegExp('\\$\\{' + p + '\\}', 'g'),
+            config[p]
+          )
+        })
+      }
+    }
+  },
   /*
    ** Headers of the page
    */

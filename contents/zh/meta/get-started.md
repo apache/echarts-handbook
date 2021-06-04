@@ -19,6 +19,19 @@ markdown 文件名称小写，用 `-` 分割单词，不要用`_`分割。
 
 如果你发现有的代码块并没有被格式化，请先检查改代码是否存在语法上的错误。
 
+## 内置变量
+
+- `optionPath`
+- `mainSitePath`
+- `exampleViewPath`
+- `exampleEditorPath`
+
+使用方式:
+
+```
+${xxxxx}
+```
+
 ## 引用代码
 
 ### 基础使用
@@ -246,6 +259,17 @@ option = {
 效果：
 <md-example src="doc-example/tutorial-async" width="100%" height="300"></md-example>
 
+## 添加配置项链接
+
+使用：
+
+```markdown
+<md-option link="series-bar.itemStyle.color"></md-option>
+```
+
+效果:
+<md-option link="series-bar.itemStyle.color"></md-option>
+
 ## 更多组件使用
 
 文档支持使用全局注册的`markdown`组件，除了刚才介绍的`md-example`组件，还有下面几种组件
@@ -293,44 +317,3 @@ This is a danger alert.
 <md-alert type="danger">
 This is a danger alert.
 </md-alert>
-
-### md-live
-
-实时代码预览组件
-
-<md-alert type="danger">
-不推荐直接使用该组件，应该尽可能使用前面的代码语法
-直接使用该组件在 VSCode 中没法进行代码高亮，而且额外的空格可能会破坏 markdown 语法
-</md-alert>
-
-使用：
-
-```markdown
-<md-live>
-option = {
-    xAxis: {
-        data: ['A', 'B', 'C', 'D', 'E']
-    },
-    yAxis: {},
-    series: [{
-        data: [0, 22, '-', 23, 19],
-        type: 'line'
-    }]
-};
-</md-live>
-```
-
-效果：
-
-<md-live>
-option = {
-    xAxis: {
-        data: ['A', 'B', 'C', 'D', 'E']
-    },
-    yAxis: {},
-    series: [{
-        data: [0, 22, '-', 23, 19],
-        type: 'line'
-    }]
-};
-</md-live>
