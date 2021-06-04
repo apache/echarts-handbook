@@ -15,11 +15,11 @@ ECharts 支持多种下载方式，可以在下一篇教程[安装](zh/basics_in
 ```html
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <!-- 引入刚刚下载的 ECharts 文件 -->
     <script src="echarts.js"></script>
-</head>
+  </head>
 </html>
 ```
 
@@ -31,59 +31,58 @@ ECharts 支持多种下载方式，可以在下一篇教程[安装](zh/basics_in
 
 ```html
 <body>
-    <!-- 为 ECharts 准备一个定义了宽高的 DOM -->
-    <div id="main" style="width: 600px;height:400px;"></div>
+  <!-- 为 ECharts 准备一个定义了宽高的 DOM -->
+  <div id="main" style="width: 600px;height:400px;"></div>
 </body>
 ```
 
 然后就可以通过 [echarts.init](${mainSitePath}/api.html#echarts.init) 方法初始化一个 echarts 实例并通过 [setOption](${mainSitePath}/api.html#echartsInstance.setOption) 方法生成一个简单的柱状图，下面是完整代码。
 
-
 ```html
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <title>ECharts</title>
     <!-- 引入刚刚下载的 ECharts 文件 -->
     <script src="echarts.min.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <!-- 为 ECharts 准备一个定义了宽高的 DOM -->
     <div id="main" style="width: 600px;height:400px;"></div>
     <script type="text/javascript">
-        // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('main'));
+      // 基于准备好的dom，初始化echarts实例
+      var myChart = echarts.init(document.getElementById('main'));
 
-        // 指定图表的配置项和数据
-        var option = {
-            title: {
-                text: 'ECharts 入门示例'
-            },
-            tooltip: {},
-            legend: {
-                data:['销量']
-            },
-            xAxis: {
-                data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
-            },
-            yAxis: {},
-            series: [{
-                name: '销量',
-                type: 'bar',
-                data: [5, 20, 36, 10, 10, 20]
-            }]
-        };
+      // 指定图表的配置项和数据
+      var option = {
+        title: {
+          text: 'ECharts 入门示例'
+        },
+        tooltip: {},
+        legend: {
+          data: ['销量']
+        },
+        xAxis: {
+          data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子']
+        },
+        yAxis: {},
+        series: [
+          {
+            name: '销量',
+            type: 'bar',
+            data: [5, 20, 36, 10, 10, 20]
+          }
+        ]
+      };
 
-        // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
+      // 使用刚指定的配置项和数据显示图表。
+      myChart.setOption(option);
     </script>
-</body>
+  </body>
 </html>
 ```
 
 这样你的第一个图表就诞生了！
 
-<iframe width="600" height="400" src="${exampleViewPath}doc-example/getting-started&reset=1&edit=1"></iframe>
-
-你也可以直接进入 [ECharts Gallery](${galleryEditorPath}doc-example/getting-started) 中查看编辑示例
+<md-example src="doc-example/getting-started&reset=1&edit=1"></md-example>

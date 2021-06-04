@@ -2,7 +2,6 @@
 
 [echarts-for-weixin](https://github.com/ecomfe/echarts-for-weixin) 项目提供了一个小程序组件，用这种方式可以方便地使用 ECharts。
 
-
 ## 使用方式
 
 1. 下载该项目
@@ -10,7 +9,6 @@
 3. `pages` 目录下是使用的示例文件，可以作为参考，或者删除不需要的页面。
 
 更详细的说明请参见 [echarts-for-weixin](https://github.com/ecomfe/echarts-for-weixin) 项目。
-
 
 ## 注意事项
 

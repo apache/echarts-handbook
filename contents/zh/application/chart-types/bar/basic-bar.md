@@ -11,43 +11,48 @@
 最简单的柱状图可以这样设置：
 
 <!-- embed -->
+
 ```js
 option = {
-    xAxis: {
-        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-    },
-    yAxis: {},
-    series: [{
-        type: 'bar',
-        data: [23, 24, 18, 25, 27, 28, 25]
-    }]
+  xAxis: {
+    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+  },
+  yAxis: {},
+  series: [
+    {
+      type: 'bar',
+      data: [23, 24, 18, 25, 27, 28, 25]
+    }
+  ]
 };
 ```
 
 在这个例子中，横坐标是类目型的，因此需要在 `xAxis` 中指定对应的值；而纵坐标是数值型的，可以根据 `series` 中的 `data`，自动生成对应的坐标范围。
-
 
 ## 多系列的柱状图
 
 我们可以用一个系列表示一组相关的数据，如果需要实现多系列的柱状图，只需要在 `series` 多添加一项就可以了——
 
 <!-- embed -->
+
 ```js
 option = {
-    xAxis: {
-        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+  xAxis: {
+    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+  },
+  yAxis: {},
+  series: [
+    {
+      type: 'bar',
+      data: [23, 24, 18, 25, 27, 28, 25]
     },
-    yAxis: {},
-    series: [{
-        type: 'bar',
-        data: [23, 24, 18, 25, 27, 28, 25]
-    }, {
-        type: 'bar',
-        data: [26, 24, 18, 22, 23, 20, 27]
-    }]
+    {
+      type: 'bar',
+      data: [26, 24, 18, 22, 23, 20, 27]
+    }
+  ]
 };
 ```
-
 
 ## 柱状图样式设置
 
@@ -62,21 +67,25 @@ option = {
 - 阴影（`shadowBlur`、`shadowColor`、`shadowOffsetX`、`shadowOffsetY`）。
 
 <!-- embed -->
+
 ```js
 option = {
-    xAxis: {
-        data: ['A', 'B', 'C', 'D', 'E']
+  xAxis: {
+    data: ['A', 'B', 'C', 'D', 'E']
+  },
+  yAxis: {},
+  series: [
+    {
+      data: [10, 22, 28, 43, 49],
+      type: 'bar',
+      stack: 'x'
     },
-    yAxis: {},
-    series: [{
-        data: [10, 22, 28, 43, 49],
-        type: 'bar',
-        stack: 'x'
-    }, {
-        data: [5, 4, 3, 5, 10],
-        type: 'bar',
-        stack: 'x'
-    }]
+    {
+      data: [5, 4, 3, 5, 10],
+      type: 'bar',
+      stack: 'x'
+    }
+  ]
 };
 ```
 
@@ -87,21 +96,25 @@ option = {
 柱条宽度可以通过 [`barWidth`](${optionPath}#series-bar.barWidth) 设置。比如在下面的例子中，将 `barWidth` 设为 `'20%'`，表示每个柱条的宽度就是类目宽度的 20%。由于这个例子中，每个系列有 5 个数据，20% 的类目宽度也就是整个 x 轴宽度的 4%。
 
 <!-- embed -->
+
 ```js
 option = {
-    xAxis: {
-        data: ['A', 'B', 'C', 'D', 'E']
+  xAxis: {
+    data: ['A', 'B', 'C', 'D', 'E']
+  },
+  yAxis: {},
+  series: [
+    {
+      data: [10, 22, 28, 43, 49],
+      type: 'bar',
+      stack: 'x'
     },
-    yAxis: {},
-    series: [{
-        data: [10, 22, 28, 43, 49],
-        type: 'bar',
-        stack: 'x'
-    }, {
-        data: [5, 4, 3, 5, 10],
-        type: 'bar',
-        stack: 'x'
-    }]
+    {
+      data: [5, 4, 3, 5, 10],
+      type: 'bar',
+      stack: 'x'
+    }
+  ]
 };
 ```
 
@@ -112,21 +125,25 @@ option = {
 柱条间距分为两种，一种是不同系列在同一类目下的距离 [`barWidth`](${optionPath}series-bar.barWidth)，另一种是类目与类目的距离 [`barCategoryGap`](${optionPath}series-bar.barCategoryGap)。
 
 <!-- embed -->
+
 ```js
 option = {
-    xAxis: {
-        data: ['A', 'B', 'C', 'D', 'E']
+  xAxis: {
+    data: ['A', 'B', 'C', 'D', 'E']
+  },
+  yAxis: {},
+  series: [
+    {
+      type: 'bar',
+      data: [23, 24, 18, 25, 18],
+      barGap: '20%',
+      barCategoryGap: '40%'
     },
-    yAxis: {},
-    series: [{
-        type: 'bar',
-        data: [23, 24, 18, 25, 18],
-        barGap: '20%',
-        barCategoryGap: '40%'
-    }, {
-        type: 'bar',
-        data: [12, 14, 9, 9, 11]
-    }]
+    {
+      type: 'bar',
+      data: [12, 14, 9, 9, 11]
+    }
+  ]
 };
 ```
 
@@ -136,28 +153,30 @@ option = {
 
 > 在同一坐标系上，此属性会被多个柱状图系列共享。此属性应设置于此坐标系中最后一个柱状图系列上才会生效，并且是对此坐标系中所有柱状图系列生效。
 
-
 ### 为柱条添加背景色
 
 有时，我们希望能够为柱条添加背景色。从 ECharts 4.7.0 版本开始，这一功能可以简单地用 [`showBackground`](${optionPath}series-bar.showBackground) 开启，并且可以通过 [`backgroundStyle`](${optionPath}series-bar.backgroundStyle) 配置。
 
 <!-- embed -->
+
 ```js
 option = {
-    xAxis: {
-        type: 'category',
-        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-    },
-    yAxis: {
-        type: 'value'
-    },
-    series: [{
-        data: [120, 200, 150, 80, 70, 110, 130],
-        type: 'bar',
-        showBackground: true,
-        backgroundStyle: {
-            color: 'rgba(220, 220, 220, 0.8)'
-        }
-    }]
+  xAxis: {
+    type: 'category',
+    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+  },
+  yAxis: {
+    type: 'value'
+  },
+  series: [
+    {
+      data: [120, 200, 150, 80, 70, 110, 130],
+      type: 'bar',
+      showBackground: true,
+      backgroundStyle: {
+        color: 'rgba(220, 220, 220, 0.8)'
+      }
+    }
+  ]
 };
 ```

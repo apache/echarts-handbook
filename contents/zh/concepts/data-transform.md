@@ -102,7 +102,7 @@ var option = {
       datasetIndex: 3
     }
   ]
-}
+};
 ```
 
 下面是上述例子的效果，三个饼图分别显示了 2011、2012、2013 年的数据。
@@ -121,26 +121,34 @@ var option = {
 `transform` 可以被链式声明，这是一个语法糖。
 
 ```js
-option: {
-    dataset: [{
-        source: [ ... ] // 原始数据
-    }, {
-        // 几个 transform 被声明成 array ，他们构成了一个链，
-        // 前一个 transform 的输出是后一个 transform 的输入。
-        transform: [{
-            type: 'filter',
-            config: { dimension: 'Product', value: 'Tofu' }
-        }, {
-            type: 'sort',
-            config: { dimension: 'Year', order: 'desc' }
-        }]
-    }],
-    series: {
-        type: 'pie',
-        // 这个系列引用上述 transform 的结果。
-        datasetIndex: 1
+option = {
+  dataset: [
+    {
+      source: [
+        // 原始数据
+      ]
+    },
+    {
+      // 几个 transform 被声明成 array ，他们构成了一个链，
+      // 前一个 transform 的输出是后一个 transform 的输入。
+      transform: [
+        {
+          type: 'filter',
+          config: { dimension: 'Product', value: 'Tofu' }
+        },
+        {
+          type: 'sort',
+          config: { dimension: 'Year', order: 'desc' }
+        }
+      ]
     }
-}
+  ],
+  series: {
+    type: 'pie',
+    // 这个系列引用上述 transform 的结果。
+    datasetIndex: 1
+  }
+};
 ```
 
 > 注意：理论上，任何 transform 都可能有多个输入或多个输出。但是，如果一个 transform 被链式声明，它只能获取前一个 transform 的第一个输出作为输入（第一个 transform 除外），以及它只能把自己的第一个输出给到后一个 transform （最后一个 transform 除外）。
@@ -155,45 +163,53 @@ option: {
 
 ```js
 option = {
-    dataset: [{
-        // 这个 dataset 的 index 为 `0`。
-        source: [...] // 原始数据
-    }, {
-        // 这个 dataset 的 index 为 `1`。
-        transform: {
-            type: 'boxplot'
-        }
-        // 这个 "boxplot" transform 生成了两个数据：
-        // result[0]: boxplot series 所需的数据。
-        // result[1]: 离群点数据。
-        // 当其他 series 或者 dataset 引用这个 dataset 时，他们默认只能得到
-        // result[0] 。
-        // 如果想要他们得到 result[1] ，需要额外声明如下这样一个 dataset ：
-    }, {
-        // 这个 dataset 的 index 为 `2`。
-        // 这个额外的 dataset 指定了数据来源于 index 为 `1` 的 dataset。
-        fromDatasetIndex: 1,
-        // 并且指定了获取 transform result[1] 。
-        fromTransformResult: 1
-    }],
-    xAxis: {
-        type: 'category'
+  dataset: [
+    {
+      // 这个 dataset 的 index 为 `0`。
+      source: [
+        // 原始数据
+      ]
     },
-    yAxis: {
+    {
+      // 这个 dataset 的 index 为 `1`。
+      transform: {
+        type: 'boxplot'
+      }
+      // 这个 "boxplot" transform 生成了两个数据：
+      // result[0]: boxplot series 所需的数据。
+      // result[1]: 离群点数据。
+      // 当其他 series 或者 dataset 引用这个 dataset 时，他们默认只能得到
+      // result[0] 。
+      // 如果想要他们得到 result[1] ，需要额外声明如下这样一个 dataset ：
     },
-    series: [{
-        name: 'boxplot',
-        type: 'boxplot',
-        // Reference the data from result[0].
-        // 这个 series 引用 index 为 `1` 的 dataset 。
-        datasetIndex: 1
-    }, {
-        name: 'outlier',
-        type: 'scatter',
-        // 这个 series 引用 index 为 `2` 的 dataset 。
-        // 从而也就得到了上述的 transform result[1] （即离群点数据）
-        datasetIndex: 2
-    }]
+    {
+      // 这个 dataset 的 index 为 `2`。
+      // 这个额外的 dataset 指定了数据来源于 index 为 `1` 的 dataset。
+      fromDatasetIndex: 1,
+      // 并且指定了获取 transform result[1] 。
+      fromTransformResult: 1
+    }
+  ],
+  xAxis: {
+    type: 'category'
+  },
+  yAxis: {},
+  series: [
+    {
+      name: 'boxplot',
+      type: 'boxplot',
+      // Reference the data from result[0].
+      // 这个 series 引用 index 为 `1` 的 dataset 。
+      datasetIndex: 1
+    },
+    {
+      name: 'outlier',
+      type: 'scatter',
+      // 这个 series 引用 index 为 `2` 的 dataset 。
+      // 从而也就得到了上述的 transform result[1] （即离群点数据）
+      datasetIndex: 2
+    }
+  ]
 };
 ```
 
@@ -276,7 +292,7 @@ option = {
     type: 'pie',
     datasetIndex: 1
   }
-}
+};
 ```
 
 <br>
@@ -402,40 +418,40 @@ option = {
 
 ```ts
 type FilterTransform = {
-  type: 'filter'
-  config: ConditionalExpressionOption
-}
+  type: 'filter';
+  config: ConditionalExpressionOption;
+};
 type ConditionalExpressionOption =
   | true
   | false
   | RelationalExpressionOption
-  | LogicalExpressionOption
+  | LogicalExpressionOption;
 type RelationalExpressionOption = {
-  dimension: DimensionName | DimensionIndex
-  parser?: 'time' | 'trim' | 'number'
-  lt?: DataValue // less than
-  lte?: DataValue // less than or equal
-  gt?: DataValue // greater than
-  gte?: DataValue // greater than or equal
-  eq?: DataValue // equal
-  ne?: DataValue // not equal
-  '<'?: DataValue // lt
-  '<='?: DataValue // lte
-  '>'?: DataValue // gt
-  '>='?: DataValue // gte
-  '='?: DataValue // eq
-  '!='?: DataValue // ne
-  '<>'?: DataValue // ne (SQL style)
-  reg?: RegExp | string // RegExp
-}
+  dimension: DimensionName | DimensionIndex;
+  parser?: 'time' | 'trim' | 'number';
+  lt?: DataValue; // less than
+  lte?: DataValue; // less than or equal
+  gt?: DataValue; // greater than
+  gte?: DataValue; // greater than or equal
+  eq?: DataValue; // equal
+  ne?: DataValue; // not equal
+  '<'?: DataValue; // lt
+  '<='?: DataValue; // lte
+  '>'?: DataValue; // gt
+  '>='?: DataValue; // gte
+  '='?: DataValue; // eq
+  '!='?: DataValue; // ne
+  '<>'?: DataValue; // ne (SQL style)
+  reg?: RegExp | string; // RegExp
+};
 type LogicalExpressionOption = {
-  and?: ConditionalExpressionOption[]
-  or?: ConditionalExpressionOption[]
-  not?: ConditionalExpressionOption
-}
-type DataValue = string | number | Date
-type DimensionName = string
-type DimensionIndex = number
+  and?: ConditionalExpressionOption[];
+  or?: ConditionalExpressionOption[];
+  not?: ConditionalExpressionOption;
+};
+type DataValue = string | number | Date;
+type DimensionName = string;
+type DimensionIndex = number;
 ```
 
 ## 数据转换器 "sort"
@@ -526,17 +542,17 @@ option = {
 
 ```ts
 type SortTransform = {
-  type: 'filter'
-  config: OrderExpression | OrderExpression[]
-}
+  type: 'filter';
+  config: OrderExpression | OrderExpression[];
+};
 type OrderExpression = {
-  dimension: DimensionName | DimensionIndex
-  order: 'asc' | 'desc'
-  incomparable?: 'min' | 'max'
-  parser?: 'time' | 'trim' | 'number'
-}
-type DimensionName = string
-type DimensionIndex = number
+  dimension: DimensionName | DimensionIndex;
+  order: 'asc' | 'desc';
+  incomparable?: 'min' | 'max';
+  parser?: 'time' | 'trim' | 'number';
+};
+type DimensionName = string;
+type DimensionIndex = number;
 ```
 
 ## 使用外部的数据转换器
@@ -547,7 +563,7 @@ type DimensionIndex = number
 
 ```js
 // 首先要注册外部数据转换器。
-echarts.registerTransform(ecStatTransform(ecStat).regression)
+echarts.registerTransform(ecStatTransform(ecStat).regression);
 ```
 
 ```js
@@ -584,7 +600,7 @@ option = {
       datasetIndex: 1
     }
   ]
-}
+};
 ```
 
 一些使用 echarts-stat 的例子：

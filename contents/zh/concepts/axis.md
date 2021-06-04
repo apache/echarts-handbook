@@ -13,13 +13,12 @@ x 轴和 y 轴都由轴线、刻度、刻度标签、轴标题四个部分组成
 
 ```js
 option = {
-    xAxis: {
-        ...
-    },
-    yAxis: {
-        ...
-    }
-    ...
+  xAxis: {
+    // ...
+  },
+  yAxis: {
+    // ...
+  }
 };
 ```
 
@@ -27,17 +26,17 @@ x 轴常用来标示数据的维度，维度一般用来指数据的类别，是
 
 ```js
 option = {
-    xAxis: {
-        type: 'time',
-        name: '销售时间'
-        ...
-    },
-    yAxis: {
-        type: 'value',
-        name: '销售数量'
-        ...
-    }
-    ...
+  xAxis: {
+    type: 'time',
+    name: '销售时间'
+    // ...
+  },
+  yAxis: {
+    type: 'value',
+    name: '销售数量'
+    // ...
+  }
+  // ...
 };
 ```
 
@@ -45,18 +44,20 @@ option = {
 
 ```js
 option = {
-    xAxis: {
-        type: 'time',
-        name: '销售时间'
-        ...
-    },
-    yAxis: {
-        type: 'value',
-        name: '销售数量'
-        ...
-    },
-    dataZoom: [...]
-    ...
+  xAxis: {
+    type: 'time',
+    name: '销售时间'
+    // ...
+  },
+  yAxis: {
+    type: 'value',
+    name: '销售数量'
+    // ...
+  },
+  dataZoom: [
+    // ...
+  ]
+  // ...
 };
 ```
 
@@ -64,24 +65,24 @@ option = {
 
 ```js
 option = {
-    xAxis: {
-        type: 'time',
-        name: '销售时间'
-        ...
+  xAxis: {
+    type: 'time',
+    name: '销售时间'
+    // ...
+  },
+  yAxis: [
+    {
+      type: 'value',
+      name: '销售数量'
+      // ...
     },
-    yAxis: [
-        {
-            type: 'value',
-            name: '销售数量'
-            ...
-        },
-        {
-            type: 'value',
-            name: '销售金额'
-            ...
-        }
-    ]
-    ...
+    {
+      type: 'value',
+      name: '销售金额'
+      // ...
+    }
+  ]
+  // ...
 };
 ```
 
@@ -91,26 +92,26 @@ ECharts 提供了轴线 [axisLine](${optionPath}xAxis.axisLine) 相关的配置�
 
 ```js
 option = {
-    xAxis: {
-        axisLine: {
-            symbol: 'arrow',
-            lineStyle: {
-                type: 'dashed'
-                ...
-            }
-        }
-        ...
-    },
-    yAxis: {
-        axisLine: {
-            symbol: 'arrow',
-            lineStyle: {
-                type: 'dashed'
-                ...
-            }
-        }
+  xAxis: {
+    axisLine: {
+      symbol: 'arrow',
+      lineStyle: {
+        type: 'dashed'
+        // ...
+      }
     }
-    ...
+    // ...
+  },
+  yAxis: {
+    axisLine: {
+      symbol: 'arrow',
+      lineStyle: {
+        type: 'dashed'
+        // ...
+      }
+    }
+  }
+  // ...
 };
 ```
 
@@ -120,26 +121,26 @@ ECharts 提供了轴线 [axisTick](${optionPath}xAxis.axisTick) 相关的配置�
 
 ```js
 option = {
-    xAxis: {
-        axisTick: {
-            length: 6,
-            lineStyle: {
-                type: 'dashed'
-                ...
-            }
-        }
-        ...
-    },
-    yAxis: {
-        axisTick: {
-            length: 6,
-            lineStyle: {
-                type: 'dashed'
-                ...
-            }
-        }
+  xAxis: {
+    axisTick: {
+      length: 6,
+      lineStyle: {
+        type: 'dashed'
+        // ...
+      }
     }
-    ...
+    // ...
+  },
+  yAxis: {
+    axisTick: {
+      length: 6,
+      lineStyle: {
+        type: 'dashed'
+        // ...
+      }
+    }
+  }
+  // ...
 };
 ```
 
@@ -149,22 +150,22 @@ ECharts 提供了轴线 [axisLabel](${optionPath}xAxis.axisLabel) 相关的配�
 
 ```js
 option = {
-    xAxis: {
-        axisLabel: {
-            formatter: '{value} kg',
-            align: 'center'
-            ...
-        }
-        ...
-    },
-    yAxis: {
-        axisLabel: {
-            formatter: '{value} 元',
-            align: 'center'
-            ...
-        }
+  xAxis: {
+    axisLabel: {
+      formatter: '{value} kg',
+      align: 'center'
+      // ...
     }
-    ...
+    // ...
+  },
+  yAxis: {
+    axisLabel: {
+      formatter: '{value} 元',
+      align: 'center'
+      // ...
+    }
+  }
+  // ...
 };
 ```
 

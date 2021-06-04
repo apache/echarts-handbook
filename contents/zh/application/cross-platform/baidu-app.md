@@ -6,11 +6,9 @@
 
 如有使用上的问题，可以在 [baidu-smart-app-echarts-demo/issues](https://github.com/baidu-smart-app/baidu-smart-app-echarts-demo/issues) 中咨询。
 
-
 ## 使用方式
 
 参见百度智能小程序文档 [ECharts 图表-beta](http://smartprogram.baidu.com/docs/develop/framework/echarts/)。
-
 
 ## 注意事项
 

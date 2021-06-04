@@ -10,28 +10,33 @@
 
 ```js [live]
 option = {
-    title: {
-        text: '环形图的例子',
-        left: 'center',
-        top: 'center'
-    },
-    series: [{
-        type: 'pie',
-        data: [{
-            value: 335,
-            name: 'A'
-        }, {
-            value: 234,
-            name: 'B'
-        }, {
-            value: 1548,
-            name: 'C'
-        }],
-        radius: ['40%', '70%']
-    }]
+  title: {
+    text: '环形图的例子',
+    left: 'center',
+    top: 'center'
+  },
+  series: [
+    {
+      type: 'pie',
+      data: [
+        {
+          value: 335,
+          name: 'A'
+        },
+        {
+          value: 234,
+          name: 'B'
+        },
+        {
+          value: 1548,
+          name: 'C'
+        }
+      ],
+      radius: ['40%', '70%']
+    }
+  ]
 };
 ```
-
 
 如果半径是数组，其中的两项也可以一项是数值，另一项是百分比形式的字符串。但是这样可能导致在某些分辨率下，内半径小于外半径。ECharts 会自动使用小的一项作为内半径，但是仍应小心这样可能会导致的非预期效果。
 
@@ -41,44 +46,44 @@ option = {
 
 ```js [live]
 option = {
-    legend: {
-        orient: 'vertical',
-        x: 'left',
-        data: ['A', 'B', 'C', 'D', 'E']
-    },
-    series: [
-        {
-            type: 'pie',
-            radius: ['50%', '70%'],
-            avoidLabelOverlap: false,
-            label: {
-                show: false,
-                position: 'center',
-                emphasis: {
-                    show: true
-                }
-            },
-            labelLine: {
-                show: false
-            },
-            emphasis: {
-                label: {
-                    show: true,
-                    textStyle: {
-                        fontSize: '30',
-                        fontWeight: 'bold'
-                    }
-                }
-            },
-            data:[
-                {value: 335, name: 'A'},
-                {value: 310, name: 'B'},
-                {value: 234, name: 'C'},
-                {value: 135, name: 'D'},
-                {value: 1548, name: 'E'}
-            ]
+  legend: {
+    orient: 'vertical',
+    x: 'left',
+    data: ['A', 'B', 'C', 'D', 'E']
+  },
+  series: [
+    {
+      type: 'pie',
+      radius: ['50%', '70%'],
+      avoidLabelOverlap: false,
+      label: {
+        show: false,
+        position: 'center',
+        emphasis: {
+          show: true
         }
-    ]
+      },
+      labelLine: {
+        show: false
+      },
+      emphasis: {
+        label: {
+          show: true,
+          textStyle: {
+            fontSize: '30',
+            fontWeight: 'bold'
+          }
+        }
+      },
+      data: [
+        { value: 335, name: 'A' },
+        { value: 310, name: 'B' },
+        { value: 234, name: 'C' },
+        { value: 135, name: 'D' },
+        { value: 1548, name: 'E' }
+      ]
+    }
+  ]
 };
 ```
 

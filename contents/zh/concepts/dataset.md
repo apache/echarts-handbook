@@ -2,32 +2,35 @@
 
 `数据集`（`dataset`）是专门用来管理数据的组件。虽然每个系列都可以在 `series.data` 中设置数据，但是从 ECharts4 支持 `数据集` 开始，更推荐使用 `数据集` 来管理数据。因为这样，数据可以被多个组件复用，也方便进行 “数据和其他配置” 分离的配置风格。毕竟，在运行时，数据是最常改变的，而其他配置大多并不会改变。
 
-
 ## 在系列中设置数据
 
 如果数据设置在 `系列`（`series`）中，例如：
 
 ```js
 option = {
-    xAxis: {
-        type: 'category',
-        data: ['Matcha Latte', 'Milk Tea', 'Cheese Cocoa', 'Walnut Brownie']
+  xAxis: {
+    type: 'category',
+    data: ['Matcha Latte', 'Milk Tea', 'Cheese Cocoa', 'Walnut Brownie']
+  },
+  yAxis: {},
+  series: [
+    {
+      type: 'bar',
+      name: '2015',
+      data: [89.3, 92.1, 94.4, 85.4]
     },
-    yAxis: {},
-    series: [{
-        type: 'bar',
-        name: '2015',
-        data: [89.3, 92.1, 94.4, 85.4]
-    }, {
-        type: 'bar',
-        name: '2016',
-        data: [95.8, 89.4, 91.2, 76.9]
-    }, {
-        type: 'bar',
-        name: '2017',
-        data: [97.7, 83.1, 92.5, 78.1]
-    }]
-}
+    {
+      type: 'bar',
+      name: '2016',
+      data: [95.8, 89.4, 91.2, 76.9]
+    },
+    {
+      type: 'bar',
+      name: '2017',
+      data: [97.7, 83.1, 92.5, 78.1]
+    }
+  ]
+};
 ```
 
 这种方式的优点是，适于对一些特殊的数据结构（如“树”、“图”、超大数据）进行一定的数据类型定制。
@@ -37,39 +40,34 @@ option = {
 
 而数据设置在 `数据集`（`dataset`）中，会有这些好处：
 
-+ 能够贴近数据可视化常见思维方式：（I）提供数据，（II）指定数据到视觉的映射，从而形成图表。
-+ 数据和其他配置可以被分离开来。数据常变，其他配置常不变。分开易于分别管理。
-+ 数据可以被多个系列或者组件复用，对于大数据量的场景，不必为每个系列创建一份数据。
-+ 支持更多的数据的常用格式，例如二维数组、对象数组等，一定程度上避免使用者为了数据格式而进行转换。
-
+- 能够贴近数据可视化常见思维方式：（I）提供数据，（II）指定数据到视觉的映射，从而形成图表。
+- 数据和其他配置可以被分离开来。数据常变，其他配置常不变。分开易于分别管理。
+- 数据可以被多个系列或者组件复用，对于大数据量的场景，不必为每个系列创建一份数据。
+- 支持更多的数据的常用格式，例如二维数组、对象数组等，一定程度上避免使用者为了数据格式而进行转换。
 
 下面是一个最简单的 `dataset` 的例子：
 
 ```js
 option = {
-    legend: {},
-    tooltip: {},
-    dataset: {
-        // 提供一份数据。
-        source: [
-            ['product', '2015', '2016', '2017'],
-            ['Matcha Latte', 43.3, 85.8, 93.7],
-            ['Milk Tea', 83.1, 73.4, 55.1],
-            ['Cheese Cocoa', 86.4, 65.2, 82.5],
-            ['Walnut Brownie', 72.4, 53.9, 39.1]
-        ]
-    },
-    // 声明一个 X 轴，类目轴（category）。默认情况下，类目轴对应到 dataset 第一列。
-    xAxis: {type: 'category'},
-    // 声明一个 Y 轴，数值轴。
-    yAxis: {},
-    // 声明多个 bar 系列，默认情况下，每个系列会自动对应到 dataset 的每一列。
-    series: [
-        {type: 'bar'},
-        {type: 'bar'},
-        {type: 'bar'}
+  legend: {},
+  tooltip: {},
+  dataset: {
+    // 提供一份数据。
+    source: [
+      ['product', '2015', '2016', '2017'],
+      ['Matcha Latte', 43.3, 85.8, 93.7],
+      ['Milk Tea', 83.1, 73.4, 55.1],
+      ['Cheese Cocoa', 86.4, 65.2, 82.5],
+      ['Walnut Brownie', 72.4, 53.9, 39.1]
     ]
-}
+  },
+  // 声明一个 X 轴，类目轴（category）。默认情况下，类目轴对应到 dataset 第一列。
+  xAxis: { type: 'category' },
+  // 声明一个 Y 轴，数值轴。
+  yAxis: {},
+  // 声明多个 bar 系列，默认情况下，每个系列会自动对应到 dataset 的每一列。
+  series: [{ type: 'bar' }, { type: 'bar' }, { type: 'bar' }]
+};
 ```
 
 效果如下：
@@ -77,33 +75,29 @@ option = {
 <md-example src="dataset-simple0&edit=1&reset=1"></md-example>
 
 或者也可以使用常见的“对象数组”的格式：
+
 ```js
 option = {
-    legend: {},
-    tooltip: {},
-    dataset: {
-        // 用 dimensions 指定了维度的顺序。直角坐标系中，如果 X 轴 type 为 category，
-        // 默认把第一个维度映射到 X 轴上，后面维度映射到 Y 轴上。
-        // 如果不指定 dimensions，也可以通过指定 series.encode
-        // 完成映射，参见后文。
-        dimensions: ['product', '2015', '2016', '2017'],
-        source: [
-            {product: 'Matcha Latte', '2015': 43.3, '2016': 85.8, '2017': 93.7},
-            {product: 'Milk Tea', '2015': 83.1, '2016': 73.4, '2017': 55.1},
-            {product: 'Cheese Cocoa', '2015': 86.4, '2016': 65.2, '2017': 82.5},
-            {product: 'Walnut Brownie', '2015': 72.4, '2016': 53.9, '2017': 39.1}
-        ]
-    },
-    xAxis: {type: 'category'},
-    yAxis: {},
-    series: [
-        {type: 'bar'},
-        {type: 'bar'},
-        {type: 'bar'}
+  legend: {},
+  tooltip: {},
+  dataset: {
+    // 用 dimensions 指定了维度的顺序。直角坐标系中，如果 X 轴 type 为 category，
+    // 默认把第一个维度映射到 X 轴上，后面维度映射到 Y 轴上。
+    // 如果不指定 dimensions，也可以通过指定 series.encode
+    // 完成映射，参见后文。
+    dimensions: ['product', '2015', '2016', '2017'],
+    source: [
+      { product: 'Matcha Latte', '2015': 43.3, '2016': 85.8, '2017': 93.7 },
+      { product: 'Milk Tea', '2015': 83.1, '2016': 73.4, '2017': 55.1 },
+      { product: 'Cheese Cocoa', '2015': 86.4, '2016': 65.2, '2017': 82.5 },
+      { product: 'Walnut Brownie', '2015': 72.4, '2016': 53.9, '2017': 39.1 }
     ]
+  },
+  xAxis: { type: 'category' },
+  yAxis: {},
+  series: [{ type: 'bar' }, { type: 'bar' }, { type: 'bar' }]
 };
 ```
-
 
 ## 数据到图形的映射
 
@@ -111,65 +105,55 @@ option = {
 
 简而言之，可以进行这些映射的设定：
 
-+ 指定 `数据集` 的列（column）还是行（row）映射为 `系列`（`series`）。这件事可以使用 [series.seriesLayoutBy](${optionPath}#series.seriesLayoutBy) 属性来配置。默认是按照列（column）来映射。
-+ 指定维度映射的规则：如何从 dataset 的维度（一个“维度”的意思是一行/列）映射到坐标轴（如 X、Y 轴）、提示框（tooltip）、标签（label）、图形元素大小颜色等（visualMap）。这件事可以使用 [series.encode](${optionPath}#series.encode) 属性，以及 [visualMap](${optionPath}#visualMap) 组件来配置（如果有需要映射颜色大小等视觉维度的话）。上面的例子中，没有给出这种映射配置，那么 ECharts 就按最常见的理解进行默认映射：X 坐标轴声明为类目轴，默认情况下会自动对应到 `dataset.source` 中的第一列；三个柱图系列，一一对应到 `dataset.source` 中后面每一列。
-
+- 指定 `数据集` 的列（column）还是行（row）映射为 `系列`（`series`）。这件事可以使用 [series.seriesLayoutBy](${optionPath}#series.seriesLayoutBy) 属性来配置。默认是按照列（column）来映射。
+- 指定维度映射的规则：如何从 dataset 的维度（一个“维度”的意思是一行/列）映射到坐标轴（如 X、Y 轴）、提示框（tooltip）、标签（label）、图形元素大小颜色等（visualMap）。这件事可以使用 [series.encode](${optionPath}#series.encode) 属性，以及 [visualMap](${optionPath}#visualMap) 组件来配置（如果有需要映射颜色大小等视觉维度的话）。上面的例子中，没有给出这种映射配置，那么 ECharts 就按最常见的理解进行默认映射：X 坐标轴声明为类目轴，默认情况下会自动对应到 `dataset.source` 中的第一列；三个柱图系列，一一对应到 `dataset.source` 中后面每一列。
 
 下面详细解释这些映射的设定。
 
-
-
 ## 把数据集（ dataset ）的行或列映射为系列（series）
-
 
 有了数据表之后，使用者可以灵活地配置：数据如何对应到轴和图形系列。
 
 用户可以使用 `seriesLayoutBy` 配置项，改变图表对于行列的理解。`seriesLayoutBy` 可取值：
-+ 'column': 默认值。系列被安放到 `dataset` 的列上面。
-+ 'row': 系列被安放到 `dataset` 的行上面。
+
+- 'column': 默认值。系列被安放到 `dataset` 的列上面。
+- 'row': 系列被安放到 `dataset` 的行上面。
 
 看这个例子：
 
 ```js
 option = {
-    legend: {},
-    tooltip: {},
-    dataset: {
-        source: [
-            ['product', '2012', '2013', '2014', '2015'],
-            ['Matcha Latte', 41.1, 30.4, 65.1, 53.3],
-            ['Milk Tea', 86.5, 92.1, 85.7, 83.1],
-            ['Cheese Cocoa', 24.1, 67.2, 79.5, 86.4]
-        ]
-    },
-    xAxis: [
-        {type: 'category', gridIndex: 0},
-        {type: 'category', gridIndex: 1}
-    ],
-    yAxis: [
-        {gridIndex: 0},
-        {gridIndex: 1}
-    ],
-    grid: [
-        {bottom: '55%'},
-        {top: '55%'}
-    ],
-    series: [
-        // 这几个系列会出现在第一个直角坐标系中，每个系列对应到 dataset 的每一行。
-        {type: 'bar', seriesLayoutBy: 'row'},
-        {type: 'bar', seriesLayoutBy: 'row'},
-        {type: 'bar', seriesLayoutBy: 'row'},
-        // 这几个系列会出现在第二个直角坐标系中，每个系列对应到 dataset 的每一列。
-        {type: 'bar', xAxisIndex: 1, yAxisIndex: 1},
-        {type: 'bar', xAxisIndex: 1, yAxisIndex: 1},
-        {type: 'bar', xAxisIndex: 1, yAxisIndex: 1},
-        {type: 'bar', xAxisIndex: 1, yAxisIndex: 1}
+  legend: {},
+  tooltip: {},
+  dataset: {
+    source: [
+      ['product', '2012', '2013', '2014', '2015'],
+      ['Matcha Latte', 41.1, 30.4, 65.1, 53.3],
+      ['Milk Tea', 86.5, 92.1, 85.7, 83.1],
+      ['Cheese Cocoa', 24.1, 67.2, 79.5, 86.4]
     ]
-}
+  },
+  xAxis: [
+    { type: 'category', gridIndex: 0 },
+    { type: 'category', gridIndex: 1 }
+  ],
+  yAxis: [{ gridIndex: 0 }, { gridIndex: 1 }],
+  grid: [{ bottom: '55%' }, { top: '55%' }],
+  series: [
+    // 这几个系列会出现在第一个直角坐标系中，每个系列对应到 dataset 的每一行。
+    { type: 'bar', seriesLayoutBy: 'row' },
+    { type: 'bar', seriesLayoutBy: 'row' },
+    { type: 'bar', seriesLayoutBy: 'row' },
+    // 这几个系列会出现在第二个直角坐标系中，每个系列对应到 dataset 的每一列。
+    { type: 'bar', xAxisIndex: 1, yAxisIndex: 1 },
+    { type: 'bar', xAxisIndex: 1, yAxisIndex: 1 },
+    { type: 'bar', xAxisIndex: 1, yAxisIndex: 1 },
+    { type: 'bar', xAxisIndex: 1, yAxisIndex: 1 }
+  ]
+};
 ```
 
 [这个例子](${exampleEditorPath}dataset-series-layout-by&edit=1&reset=1) 里给出了设置的效果。
-
 
 ## 维度（ dimension ）
 
@@ -214,12 +198,12 @@ var option2 = {
 大多数情况下，我们并不需要去设置维度类型，因为 ECharts 会自动尝试判断。但是如果不足够准确时，可以手动设置维度类型。
 
 维度类型（ dimension type ）可以取这些值：
-+ `'number'`: 默认，表示普通数据。
-+ `'ordinal'`: 对于类目、文本这些 string 类型的数据，如果需要能在数轴上使用，须是 'ordinal' 类型。ECharts 默认会试图自动判断这个类型。但是自动判断也可能不准确，所以使用者也可以手动强制指定。
-+ `'time'`: 表示时间数据。设置成 `'time'` 则能支持自动解析数据成时间戳（timestamp），比如该维度的数据是 '2017-05-10'，会自动被解析。如果这个维度被用在时间数轴（[axis.type](${optionPath}#xAxis.type) 为 `'time'`）上，那么会被自动设置为 `'time'` 类型。时间类型的支持参见 [data](${optionPath}#series.data)。
-+ `'float'`: 如果设置成 `'float'`，在存储时候会使用 `TypedArray`，对性能优化有好处。
-+ `'int'`: 如果设置成 `'int'`，在存储时候会使用 `TypedArray`，对性能优化有好处。
 
+- `'number'`: 默认，表示普通数据。
+- `'ordinal'`: 对于类目、文本这些 string 类型的数据，如果需要能在数轴上使用，须是 'ordinal' 类型。ECharts 默认会试图自动判断这个类型。但是自动判断也可能不准确，所以使用者也可以手动强制指定。
+- `'time'`: 表示时间数据。设置成 `'time'` 则能支持自动解析数据成时间戳（timestamp），比如该维度的数据是 '2017-05-10'，会自动被解析。如果这个维度被用在时间数轴（[axis.type](${optionPath}#xAxis.type) 为 `'time'`）上，那么会被自动设置为 `'time'` 类型。时间类型的支持参见 [data](${optionPath}#series.data)。
+- `'float'`: 如果设置成 `'float'`，在存储时候会使用 `TypedArray`，对性能优化有好处。
+- `'int'`: 如果设置成 `'int'`，在存储时候会使用 `TypedArray`，对性能优化有好处。
 
 ## 数据到图形的映射（ series.encode ）
 
@@ -227,38 +211,37 @@ var option2 = {
 
 ```js
 var option = {
-    dataset: {
-        source: [
-            ['score', 'amount', 'product'],
-            [89.3, 58212, 'Matcha Latte'],
-            [57.1, 78254, 'Milk Tea'],
-            [74.4, 41032, 'Cheese Cocoa'],
-            [50.1, 12755, 'Cheese Brownie'],
-            [89.7, 20145, 'Matcha Cocoa'],
-            [68.1, 79146, 'Tea'],
-            [19.6, 91852, 'Orange Juice'],
-            [10.6, 101852, 'Lemon Juice'],
-            [32.7, 20112, 'Walnut Brownie']
-        ]
-    },
-    xAxis: {},
-    yAxis: {type: 'category'},
-    series: [
-        {
-            type: 'bar',
-            encode: {
-                // 将 "amount" 列映射到 X 轴。
-                x: 'amount',
-                // 将 "product" 列映射到 Y 轴。
-                y: 'product'
-            }
-        }
+  dataset: {
+    source: [
+      ['score', 'amount', 'product'],
+      [89.3, 58212, 'Matcha Latte'],
+      [57.1, 78254, 'Milk Tea'],
+      [74.4, 41032, 'Cheese Cocoa'],
+      [50.1, 12755, 'Cheese Brownie'],
+      [89.7, 20145, 'Matcha Cocoa'],
+      [68.1, 79146, 'Tea'],
+      [19.6, 91852, 'Orange Juice'],
+      [10.6, 101852, 'Lemon Juice'],
+      [32.7, 20112, 'Walnut Brownie']
     ]
+  },
+  xAxis: {},
+  yAxis: { type: 'category' },
+  series: [
+    {
+      type: 'bar',
+      encode: {
+        // 将 "amount" 列映射到 X 轴。
+        x: 'amount',
+        // 将 "product" 列映射到 Y 轴。
+        y: 'product'
+      }
+    }
+  ]
 };
 ```
 
 [这个例子](${exampleEditorPath}dataset-encode-simple0&edit=1&reset=1) 里是上面设置的效果。
-
 
 `series.encode` 声明的基本结构如下。其中冒号左边是坐标系、标签等特定名称，如 `'x'`, `'y'`, `'tooltip'` 等，冒号右边是数据中的维度名（string 格式）或者维度的序号（number 格式，从 0 开始计数），可以指定一个或多个维度（使用数组）。通常情况下，下面各种信息不需要所有的都写，按需写即可。
 
@@ -310,43 +293,46 @@ encode: {
 
 这是个更丰富的 `series.encode` 的 [示例](${exampleEditorPath}dataset-encode1&edit=1&reset=1) 。
 
-
-
 ## 默认的 series.encode
 
-值得一提的是，当 `series.encode` 并没有指定时，ECharts 针对最常见直角坐标系中的图表（折线图、柱状图、散点图、K线图等）、饼图、漏斗图，会采用一些默认的映射规则。默认的映射规则比较简单，大体是：
-+ 在坐标系中（如直角坐标系、极坐标系等）
-    + 如果有类目轴（axis.type 为 'category'），则将第一列（行）映射到这个轴上，后续每一列（行）对应一个系列。
-    + 如果没有类目轴，假如坐标系有两个轴（例如直角坐标系的 X Y 轴），则每两列对应一个系列，这两列分别映射到这两个轴上。
-+ 如果没有坐标系（如饼图）
-    + 取第一列（行）为名字，第二列（行）为数值（如果只有一列，则取第一列为数值）。
+值得一提的是，当 `series.encode` 并没有指定时，ECharts 针对最常见直角坐标系中的图表（折线图、柱状图、散点图、K 线图等）、饼图、漏斗图，会采用一些默认的映射规则。默认的映射规则比较简单，大体是：
+
+- 在坐标系中（如直角坐标系、极坐标系等）
+  - 如果有类目轴（axis.type 为 'category'），则将第一列（行）映射到这个轴上，后续每一列（行）对应一个系列。
+  - 如果没有类目轴，假如坐标系有两个轴（例如直角坐标系的 X Y 轴），则每两列对应一个系列，这两列分别映射到这两个轴上。
+- 如果没有坐标系（如饼图）
+  - 取第一列（行）为名字，第二列（行）为数值（如果只有一列，则取第一列为数值）。
 
 默认的规则不能满足要求时，就可以自己来配置 `encode`，也并不复杂。这是一个 [例子](${exampleEditorPath}dataset-default&edit=1&reset=1)。
-
-
 
 ## 几个常见的 series.encode 设置方式举例
 
 问：如何把第三列设置为 X 轴，第五列设置为 Y 轴？
 
 答：
+
 ```js
-series: {
+option = {
+  series: {
     // 注意维度序号（dimensionIndex）从 0 开始计数，第三列是 dimensions[2]。
-    encode: {x: 2, y: 4},
-    ...
-}
+    encode: { x: 2, y: 4 }
+    // ...
+  }
+};
 ```
 
 问：如何把第三行设置为 X 轴，第五行设置为 Y 轴？
 
 答：
+
 ```js
-series: {
-    encode: {x: 2, y: 4},
-    seriesLayoutBy: 'row',
-    ...
-}
+option = {
+  series: {
+    encode: { x: 2, y: 4 },
+    seriesLayoutBy: 'row'
+    // ...
+  }
+};
 ```
 
 问：如何把第二列设置为标签？
@@ -356,17 +342,18 @@ series: {
 
 ```js
 series: {
-    label: {
-        // `'{@score}'` 表示 “名为 score” 的维度里的值。
-        // `'{@[4]}'` 表示引用序号为 4 的维度里的值。
-        formatter: 'aaa{@product}bbb{@score}ccc{@[4]}ddd'
-    }
+  label: {
+    // `'{@score}'` 表示 “名为 score” 的维度里的值。
+    // `'{@[4]}'` 表示引用序号为 4 的维度里的值。
+    formatter: 'aaa{@product}bbb{@score}ccc{@[4]}ddd';
+  }
 }
 ```
 
 问：如何让第 2 列和第 3 列显示在提示框（tooltip）中？
 
 答：
+
 ```js
 series: {
     encode: {
@@ -380,6 +367,7 @@ series: {
 问：数据里没有维度名，那么怎么给出维度名？
 
 答：
+
 ```js
 dataset: {
     dimensions: ['score', 'amount'],
@@ -395,32 +383,33 @@ dataset: {
 问：如何把第三列映射为气泡图的点的大小？
 
 答：
+
 ```js
 var option = {
-    dataset: {
-        source: [
-            [12, 323, 11.2],
-            [23, 167, 8.3],
-            [81, 284, 12],
-            [91, 413, 4.1],
-            [13, 287, 13.5]
-        ]
-    },
-    visualMap: {
-        show: false,
-        dimension: 2, // 指向第三列（列序号从 0 开始记，所以设置为 2）。
-        min: 2, // 需要给出数值范围，最小数值。
-        max: 15, // 需要给出数值范围，最大数值。
-        inRange: {
-            // 气泡尺寸：5 像素到 60 像素。
-            symbolSize: [5, 60]
-        }
-    },
-    xAxis: {},
-    yAxis: {},
-    series: {
-        type: 'scatter'
+  dataset: {
+    source: [
+      [12, 323, 11.2],
+      [23, 167, 8.3],
+      [81, 284, 12],
+      [91, 413, 4.1],
+      [13, 287, 13.5]
+    ]
+  },
+  visualMap: {
+    show: false,
+    dimension: 2, // 指向第三列（列序号从 0 开始记，所以设置为 2）。
+    min: 2, // 需要给出数值范围，最小数值。
+    max: 15, // 需要给出数值范围，最大数值。
+    inRange: {
+      // 气泡尺寸：5 像素到 60 像素。
+      symbolSize: [5, 60]
     }
+  },
+  xAxis: {},
+  yAxis: {},
+  series: {
+    type: 'scatter'
+  }
 };
 ```
 
@@ -428,12 +417,9 @@ var option = {
 
 答：可以查查有没有拼错，比如，维度名是：`'Life Expectancy'`，encode 中拼成了 `'Life Expectency'`。
 
-
 ## 视觉通道（颜色、尺寸等）的映射
 
 我们可以使用 [visualMap](${optionPath}#visualMap) 组件进行视觉通道的映射。详见 [visualMap](${optionPath}#visualMap) 文档的介绍。这是一个 [示例](${exampleEditorPath}dataset-encode0&edit=1&reset=1)。
-
-
 
 ## 数据的各种格式
 
@@ -446,24 +432,26 @@ var option = {
 除了二维数组以外，dataset 也支持例如下面 key-value 方式的数据格式，这类格式也非常常见。但是这类格式中，目前并不支持 [seriesLayoutBy](${optionPath}#series.seriesLayoutBy) 参数。
 
 ```js
-dataset: [{
+dataset: [
+  {
     // 按行的 key-value 形式（对象数组），这是个比较常见的格式。
     source: [
-        {product: 'Matcha Latte', count: 823, score: 95.8},
-        {product: 'Milk Tea', count: 235, score: 81.4},
-        {product: 'Cheese Cocoa', count: 1042, score: 91.2},
-        {product: 'Walnut Brownie', count: 988, score: 76.9}
+      { product: 'Matcha Latte', count: 823, score: 95.8 },
+      { product: 'Milk Tea', count: 235, score: 81.4 },
+      { product: 'Cheese Cocoa', count: 1042, score: 91.2 },
+      { product: 'Walnut Brownie', count: 988, score: 76.9 }
     ]
-}, {
+  },
+  {
     // 按列的 key-value 形式。
     source: {
-        'product': ['Matcha Latte', 'Milk Tea', 'Cheese Cocoa', 'Walnut Brownie'],
-        'count': [823, 235, 1042, 988],
-        'score': [95.8, 81.4, 91.2, 76.9]
+      product: ['Matcha Latte', 'Milk Tea', 'Cheese Cocoa', 'Walnut Brownie'],
+      count: [823, 235, 1042, 988],
+      score: [95.8, 81.4, 91.2, 76.9]
     }
-}]
+  }
+];
 ```
-
 
 ## 多个 dataset 以及如何引用他们
 
@@ -490,9 +478,6 @@ var option = {
     }]
 }
 ```
-
-
-
 
 ## ECharts 3 的数据设置方式（series.data）仍正常使用
 
@@ -523,13 +508,10 @@ ECharts 4 之前一直以来的数据声明方式仍然被正常支持，如果�
 
 其实，[series.data](${optionPath}#series.data) 也是种会一直存在的重要设置方式。一些特殊的非 table 格式的图表，如 [treemap](${optionPath}#series-treemap)、[graph](${optionPath}#series-graph)、[lines](${optionPath}#series-lines) 等，现在仍不支持在 dataset 中设置，仍然需要使用 [series.data](${optionPath}#series.data)。另外，对于巨大数据量的渲染（如百万以上的数据量），需要使用 [appendData](api.html#echartsInstance.appendData) 进行增量加载，这种情况不支持使用 `dataset`。
 
-
 ## 其他
 
 目前并非所有图表都支持 dataset。支持 dataset 的图表有：
 `line`、`bar`、`pie`、`scatter`、`effectScatter`、`parallel`、`candlestick`、`map`、`funnel`、`custom`。
 后续会有更多的图表进行支持。
 
-
 最后，给出这个 [示例](${exampleEditorPath}dataset-link&edit=1&reset=1)，多个图表共享一个 `dataset`，并带有联动交互。
-

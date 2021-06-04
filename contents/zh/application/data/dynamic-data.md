@@ -1,6 +1,5 @@
 # 异步数据的加载与动态更新
 
-
 ## 异步加载
 
 [入门示例](~getting-started)中的数据是在初始化后`setOption`中直接填入的，但是很多时候可能数据需要异步加载后再填入。`ECharts` 中实现异步数据的更新非常简单，在图表初始化后不管任何时候只要通过 jQuery 等工具异步获取数据后通过 `setOption` 填入数据和配置项就行。
@@ -8,28 +7,30 @@
 ```js
 var myChart = echarts.init(document.getElementById('main'));
 
-$.get('data.json').done(function (data) {
-    // data 的结构:
-    // {
-    //     categories: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"],
-    //     values: [5, 20, 36, 10, 10, 20]
-    // }
-    myChart.setOption({
-        title: {
-            text: '异步数据加载示例'
-        },
-        tooltip: {},
-        legend: {},
-        xAxis: {
-            data: data.categories
-        },
-        yAxis: {},
-        series: [{
-            name: '销量',
-            type: 'bar',
-            data: data.values
-        }]
-    });
+$.get('data.json').done(function(data) {
+  // data 的结构:
+  // {
+  //     categories: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"],
+  //     values: [5, 20, 36, 10, 10, 20]
+  // }
+  myChart.setOption({
+    title: {
+      text: '异步数据加载示例'
+    },
+    tooltip: {},
+    legend: {},
+    xAxis: {
+      data: data.categories
+    },
+    yAxis: {},
+    series: [
+      {
+        name: '销量',
+        type: 'bar',
+        data: data.values
+      }
+    ]
+  });
 });
 ```
 
@@ -39,37 +40,41 @@ $.get('data.json').done(function (data) {
 var myChart = echarts.init(document.getElementById('main'));
 // 显示标题，图例和空的坐标轴
 myChart.setOption({
-    title: {
-        text: '异步数据加载示例'
-    },
-    tooltip: {},
-    legend: {
-        data:['销量']
-    },
-    xAxis: {
-        data: []
-    },
-    yAxis: {},
-    series: [{
-        name: '销量',
-        type: 'bar',
-        data: []
-    }]
+  title: {
+    text: '异步数据加载示例'
+  },
+  tooltip: {},
+  legend: {
+    data: ['销量']
+  },
+  xAxis: {
+    data: []
+  },
+  yAxis: {},
+  series: [
+    {
+      name: '销量',
+      type: 'bar',
+      data: []
+    }
+  ]
 });
 
 // 异步加载数据
-$.get('data.json').done(function (data) {
-    // 填入数据
-    myChart.setOption({
-        xAxis: {
-            data: data.categories
-        },
-        series: [{
-            // 根据名字对应到相应的系列
-            name: '销量',
-            data: data.data
-        }]
-    });
+$.get('data.json').done(function(data) {
+  // 填入数据
+  myChart.setOption({
+    xAxis: {
+      data: data.categories
+    },
+    series: [
+      {
+        // 根据名字对应到相应的系列
+        name: '销量',
+        data: data.data
+      }
+    ]
+  });
 });
 ```
 

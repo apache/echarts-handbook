@@ -15,13 +15,11 @@ ECharts 有非常大量的用户，所以你遇到过的问题，很可能别人
 - 在 [GitHub issue](https://github.com/apache/echarts/issues) 中搜索关键字
 - 使用搜索引擎搜索关键字
 
-
 ### 创建一个最简单可复现的例子
 
 使用 [Codepen](https://codepen.io/Ovilia/pen/dyYWXWM)、[Codesandbox](https://codesandbox.io/s/mystifying-bash-2uthz) 或者 [makeapie.com](https://www.makeapie.com/) 创建一个例子，这将使得他人更方便地复现你的问题。
 
 例子应尽可能以最简单的方式复现你的问题，去除不必要的配置项和数据，可以让帮助你的人更快速地定位问题，从而让你的问题更快得到解决。更详细的介绍请参见 [How to create a Minimal, Reproducible Example](https://stackoverflow.com/help/minimal-reproducible-example)。
-
 
 ### 判断是否是 bug
 
@@ -34,7 +32,6 @@ ECharts 有非常大量的用户，所以你遇到过的问题，很可能别人
 如果不是 bug，而是不知道如何实现某种效果，可以尝试在 <a href="https://stackoverflow.com">stackoverflow.com</a>、<a href="https://www.oschina.net/question/tag/echarts">开源中国</a> 或 <a href="https://segmentfault.com/t/echarts">segmentfault.com</a> 等问答平台上提问。
 
 如果没能得到答复，也可以发送邮件至邮件组 [dev@echarts.apache.org](mailto:dev@echarts.apache.org)。为了让更多人理解你的问题，并且在将来搜索的时候得到帮助，强烈建议使用英文发送邮件。
-
 
 ## 非技术类问题
 

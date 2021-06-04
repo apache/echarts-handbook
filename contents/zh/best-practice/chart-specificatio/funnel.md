@@ -4,10 +4,9 @@
 
 漏斗图多用于显示简化的数据，可以用来单向分析业务各环节丢失或增加变化，也可用来直接表示某个环节与上一环节的差异。漏斗图对于确定组织的销售过程中可能存在的问题和瓶颈也很有用。
 
-<iframe max-width="830" width="100%" height="400" 
+<iframe max-width="830" width="100%" height="400"
 src="https://gallery.echartsjs.com/view-lite.html?cid=xrJIQEN5NM">
 </iframe>
-
 
 ## 漏斗图的使用建议
 
@@ -15,23 +14,22 @@ src="https://gallery.echartsjs.com/view-lite.html?cid=xrJIQEN5NM">
 
 如下图，「展现」「点击」「访问」三个环节基本并没有太大的流失，但是从「访问」到「咨询」环节数据明显减少，所以就可以重点分析为什么咨询量明显减少，例如是不是咨询的入口不够明显造成的。
 
-<iframe max-width="830" width="100%" height="400" 
+<iframe max-width="830" width="100%" height="400"
 src="https://gallery.echartsjs.com/view-lite.html?cid=xHJIPHN9Nf">
 </iframe>
 
 2、可以对两个基于统一事情前后的两份数据使用叠加两个漏斗图进行对比，例如下图通过预期值和实现值的对比，可以分析每一项实现情况和预期指标的偏差。
 
-<iframe max-width="830" width="100%" height="400" 
+<iframe max-width="830" width="100%" height="400"
 src="https://gallery.echartsjs.com/view-lite.html?cid=xrydEwN94f">
 </iframe>
 
-3、还可以用左右对比的漏斗图同时分析两个项目的转化情况。如下图可见项目B从「访问」到「咨询」环节的流失率明显大于项目 A。
+3、还可以用左右对比的漏斗图同时分析两个项目的转化情况。如下图可见项目 B 从「访问」到「咨询」环节的流失率明显大于项目 A。
 
-<iframe max-width="830" width="100%" height="400" 
+<iframe max-width="830" width="100%" height="400"
 src="https://gallery.echartsjs.com/view-lite.html?cid=xrJfrjEc4z&v=1">
 </iframe>
 
 4、漏斗图不是表示各个分类的占比情况，而是展示数据变化的一个逻辑流程，如果数据是无逻辑顺序的占比比较，建议使用饼图更合适。
 
 5、可以根据数据选择使用对比色或同一种颜色的色调渐变，从最暗到最浅来依照漏斗的尺寸排列。切记，不要添加许多图层和颜色造成漏斗图难以阅读。
-

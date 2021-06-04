@@ -4,14 +4,16 @@
 
 ```js [live]
 option = {
-    xAxis: {
-        data: ['A', 'B', 'C', 'D', 'E']
-    },
-    yAxis: {},
-    series: [{
-        data: [10, 22, 28, 23, 19],
-        type: 'line',
-        smooth: true
-    }]
+  xAxis: {
+    data: ['A', 'B', 'C', 'D', 'E']
+  },
+  yAxis: {},
+  series: [
+    {
+      data: [10, 22, 28, 23, 19],
+      type: 'line',
+      smooth: true
+    }
+  ]
 };
 ```

@@ -6,10 +6,24 @@
 
 markdown 文件名称小写，用 `-` 分割单词，不要用`_`分割。
 
+## 使用 prettier 来自动格式化代码
+
+在开始之前，我们推荐安装`prettier`的 [VSCode 插件](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)，该插件可以在你保存的时候自动帮你格式化代码。
+
+如果你觉得自动的格式化破坏了你的代码块，你可以在改代码块外面加上组织`prettier`格式化该部分代码
+
+```markdown
+<!-- prettier-ignore-start -->
+<!-- prettier-ignore-end -->
+```
+
+如果你发现有的代码块并没有被格式化，请先检查改代码是否存在语法上的错误。
+
 ## 引用代码
 
 ### 基础使用
 
+<!-- prettier-ignore-start -->
 ```markdown
 ```js
 option = {
@@ -20,13 +34,33 @@ option = {
 };
 \```
 ```
+<!-- prettier-ignore-end -->
 
 ```js
 option = {
-    series: [{
-        type: 'bar',
-        data: [23, 24, 18, 25, 27, 28, 25]
-    }]
+  series: [
+    {
+      type: 'bar',
+      data: [23, 24, 18, 25, 27, 28, 25]
+    }
+  ]
+};
+```
+
+### 代码推荐写法
+
+为了可以让工具帮助我们对代码进行格式化，我们应该尽量避免有语法问题的写法。
+
+比如注释 `...`
+
+```js
+option = {
+  series: [
+    {
+      type: 'bar'
+      // ...
+    }
+  ]
 };
 ```
 
@@ -34,127 +68,154 @@ option = {
 
 > 目前只支持对 Option 代码的预览
 
+<!-- prettier-ignore-start -->
 ```markdown
 ```js [live]
 option = {
-    xAxis: {
-        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-    },
-    yAxis: {},
-    series: [{
-        type: 'bar',
-        data: [23, 24, 18, 25, 27, 28, 25]
-    }]
+  xAxis: {
+    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+  },
+  yAxis: {},
+  series: [
+    {
+      type: 'bar',
+      data: [23, 24, 18, 25, 27, 28, 25]
+    }
+  ]
 };
 \```
 ```
+<!-- prettier-ignore-end -->
 
 ```js [live]
 option = {
-    xAxis: {
-        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-    },
-    yAxis: {},
-    series: [{
-        type: 'bar',
-        data: [23, 24, 18, 25, 27, 28, 25]
-    }]
+  xAxis: {
+    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+  },
+  yAxis: {},
+  series: [
+    {
+      type: 'bar',
+      data: [23, 24, 18, 25, 27, 28, 25]
+    }
+  ]
 };
 ```
 
 ### 更多预览布局
+
 #### 左右
 
+<!-- prettier-ignore-start -->
 ```markdown
 ```js [live-lr]
 option = {
-    ...
+  ...
 };
 \```
 ```
+<!-- prettier-ignore-end -->
 
 ```js [live-lr]
 option = {
-    xAxis: {
-        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-    },
-    yAxis: {},
-    series: [{
-        type: 'bar',
-        data: [23, 24, 18, 25, 27, 28, 25]
-    }]
+  xAxis: {
+    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+  },
+  yAxis: {},
+  series: [
+    {
+      type: 'bar',
+      data: [23, 24, 18, 25, 27, 28, 25]
+    }
+  ]
 };
 ```
+
 #### 右左
 
+<!-- prettier-ignore-start -->
 ```markdown
 ```js [live-rl]
 option = {
-    ...
+  ...
 };
 \```
 ```
+<!-- prettier-ignore-end -->
 
 ```js [live-rl]
 option = {
-    xAxis: {
-        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-    },
-    yAxis: {},
-    series: [{
-        type: 'bar',
-        data: [23, 24, 18, 25, 27, 28, 25]
-    }]
+  xAxis: {
+    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+  },
+  yAxis: {},
+  series: [
+    {
+      type: 'bar',
+      data: [23, 24, 18, 25, 27, 28, 25]
+    }
+  ]
 };
 ```
 
 #### 下上
 
+<!-- prettier-ignore-start -->
 ```markdown
 ```js [live-bt]
 option = {
-    ...
+  ...
 };
 \```
 ```
+<!-- prettier-ignore-end -->
 
 ```js [live-bt]
 option = {
-    xAxis: {
-        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-    },
-    yAxis: {},
-    series: [{
-        type: 'bar',
-        data: [23, 24, 18, 25, 27, 28, 25]
-    }]
+  xAxis: {
+    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+  },
+  yAxis: {},
+  series: [
+    {
+      type: 'bar',
+      data: [23, 24, 18, 25, 27, 28, 25]
+    }
+  ]
 };
 ```
 
 ### 高亮代码行以及添加文件名
 
 使用：
+
+<!-- prettier-ignore-start -->
 ```markdown
 ```js{1,3-5}[option.js]
 option = {
-    series: [{
-        type: 'bar',
-        data: [23, 24, 18, 25, 27, 28, 25]
-    }]
+  series: [
+    {
+      type: 'bar',
+      data: [23, 24, 18, 25, 27, 28, 25]
+    }
+  ]
 };
 \```
 ```
+<!-- prettier-ignore-end -->
 
 效果：
+
 ```js{1,3-5}[option.js]
 option = {
-    series: [{
-        type: 'bar',
-        data: [23, 24, 18, 25, 27, 28, 25]
-    }]
+  series: [
+    {
+      type: 'bar',
+      data: [23, 24, 18, 25, 27, 28, 25]
+    }
+  ]
 };
 ```
-
 
 ## 引用图片
 
@@ -172,12 +233,12 @@ option = {
 <img src="images/demo.png" style="width: 50px" />
 ```
 
-
 ## 添加示例 iframe
 
 `src`为 https://echarts.apache.org/examples/zh/editor.html?c=line-simple 地址中`?c=`后面这一串
 
 使用：
+
 ```markdown
 <md-example src="doc-example/tutorial-async" width="100%" height="300"></md-example>
 ```
@@ -185,11 +246,9 @@ option = {
 效果：
 <md-example src="doc-example/tutorial-async" width="100%" height="300"></md-example>
 
-
 ## 更多组件使用
 
 文档支持使用全局注册的`markdown`组件，除了刚才介绍的`md-example`组件，还有下面几种组件
-
 
 ### md-alert
 
@@ -210,6 +269,7 @@ This is an info alert.
 This is a success alert.
 </md-alert>
 ```
+
 <md-alert type="success">
 This is a success alert.
 </md-alert>
@@ -233,7 +293,6 @@ This is a danger alert.
 <md-alert type="danger">
 This is a danger alert.
 </md-alert>
-
 
 ### md-live
 

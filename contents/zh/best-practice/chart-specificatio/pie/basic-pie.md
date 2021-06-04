@@ -6,7 +6,6 @@
 src="https://gallery.echartsjs.com/view-lite.html?cid=xHySlBkIEM&v=1">
 </iframe>
 
-
 虽然饼图能快速有效地展示数据的比例分布，并被广泛用于各个领域，但是饼图及其变形图表一直是比较受争议的图表。因此，我们在使用饼图及其变形图表时一定要谨慎并避免走进误区。
 
 ## 饼图的使用建议
@@ -16,7 +15,6 @@ src="https://gallery.echartsjs.com/view-lite.html?cid=xHySlBkIEM&v=1">
 2、我们很难比较一个分块过多的饼图的数据，建议尽量将饼图分块数量控制在五个以内。当数据类别较多时，可以把较小或不重要的数据合并成第五个分块，并命名为"其它"。如果各类别都必须全部展示，此时选择柱状图或堆积柱状图或许更合适。
 
 <img max-width="830" width="100%" height="100%" src="images/design/pie/pie02.jpg" />
-
 
 3、饼图不适合被用于精确数据的比较，因此当各类别数据占比较接近时（如下左图），我们很难对比出每个类别占比的大小。此时建议选用柱状图或南丁格尔玫瑰图（如下右图）来获取更好的展示效果。
 
@@ -30,13 +28,11 @@ src="https://gallery.echartsjs.com/view-lite.html?cid=xHySlBkIEM&v=1">
 
 按照数据大小区别顺序，不仅符合用户的视觉习惯，也更易于数据的识别和比较。当然基于这个原理，我们也可以把需要强调的最重要的部分（不一定是最大的部分）放在最突出重要的位置。
 
-
 5、可以添加一些装饰来强调饼图中的某一个数据。颜色、动效、样式、位置等元素都可以被用来突出显示一个扇区。请注意适度，有时太多的装饰会让用户理解数据时分心。
 
 <iframe max-width="830" width="100%" height="400"
  src="https://gallery.echartsjs.com/view-lite.html?cid=xHySlBkIEM&v=1">
 </iframe>
-
 
 6、三维的饼图歪曲了各分块相对于整体的比例关系，会造成错误及理解上的困扰。因此不建议使用 3D 饼图。
 

@@ -10,8 +10,6 @@ Apache ECharts 提供了多种安装方式，你可以根据项目的实际情�
 
 接下来我们将分别介绍这些安装方式，以及下载后的目录结构。
 
-
-
 ## 安装方式
 
 ### 从官网获取
@@ -20,11 +18,9 @@ Apache ECharts 提供了多种安装方式，你可以根据项目的实际情�
 
 具体的方法参见[官网下载页面](${mainSitePath}/download.html)。
 
-
 ### 从 GitHub 获取
 
 [apache/echarts](https://github.com/apache/echarts) 项目的 [release](https://github.com/apache/echarts/releases) 页面可以找到各个版本的链接。点击下载页面下方 Assets 中的 Source code，解压后 `dist` 目录下的 `echarts.js` 即为包含完整 ECharts 功能的文件。
-
 
 ### 从 npm 获取
 
@@ -34,16 +30,13 @@ npm install echarts --save
 
 详见[在 webpack 中使用 echarts](https://echarts.apache.org/tutorial.html#%E5%9C%A8%20webpack%20%E4%B8%AD%E4%BD%BF%E7%94%A8%20ECharts)。
 
-
 ### 从 CDN 获取
 
 在 jsDelivr 的 [echarts](https://www.jsdelivr.com/package/npm/echarts) 项目中找到 `dist/echarts.js`，下载到本地使用。
 
-
 ### 在线定制
 
 如果只想引入部分模块以减少包体积，可以使用 [ECharts 在线定制](${mainSitePath}/builder.html)功能。
-
 
 ## 目录结构
 

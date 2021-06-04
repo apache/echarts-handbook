@@ -13,12 +13,11 @@
 ```html
 <div id="main" style="width: 600px;height:400px;"></div>
 <script type="text/javascript">
-    var myChart = echarts.init(document.getElementById('main'));
+  var myChart = echarts.init(document.getElementById('main'));
 </script>
 ```
 
 需要注意的是，使用这种方法在调用 `echarts.init` 时需保证容器已经有宽度和高度了。
-
 
 ### 场景二：指定图表的大小
 
@@ -27,14 +26,12 @@
 ```html
 <div id="main"></div>
 <script type="text/javascript">
-    var myChart = echarts.init(document.getElementById('main'), null, {
-        width: 600,
-        height: 400
-    });
+  var myChart = echarts.init(document.getElementById('main'), null, {
+    width: 600,
+    height: 400
+  });
 </script>
 ```
-
-
 
 ## 响应容器大小的变化
 
@@ -48,22 +45,23 @@
 
 ```html
 <style>
-    #main, html, body {
-        width: 100%;
-    }
-    #main {
-        height: 400px;
-    }
+  #main,
+  html,
+  body {
+    width: 100%;
+  }
+  #main {
+    height: 400px;
+  }
 </style>
 <div id="main"></div>
 <script type="text/javascript">
-    var myChart = echarts.init(document.getElementById('main'));
-    window.onresize = function () {
-        myChart.resize();
-    };
+  var myChart = echarts.init(document.getElementById('main'));
+  window.onresize = function() {
+    myChart.resize();
+  };
 </script>
 ```
-
 
 ### 场景四：为图表设置特定的大小
 
@@ -71,13 +69,12 @@
 
 ```js
 myChart.resize({
-    width: 800,
-    height: 400
+  width: 800,
+  height: 400
 });
 ```
 
 > **小贴士：** 阅读 API 文档的时候要留意接口的定义方式，这一接口有时会被误认为是 myCharts.resize(800, 400) 的形式，但其实不存在这样的调用方式。
-
 
 ### 场景五：容器节点被销毁以及被重建时
 
@@ -88,4 +85,3 @@ myChart.resize({
 正确的做法是，在图表容器被销毁之后，调用 [`echartsInstance.dispose`](${mainSitePath}api.html#echartsInstance.dispose) 销毁实例，在图表容器重新被添加后再次调用 [echarts.init](${mainSitePath}/api.html#echarts.init) 初始化。
 
 > **小贴士：** 在容器节点被销毁时，总是应调用 [`echartsInstance.dispose`](${mainSitePath}api.html#echartsInstance.dispose) 以销毁实例释放资源，避免内存泄漏。
-

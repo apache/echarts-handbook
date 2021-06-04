@@ -32,57 +32,66 @@
 
 ```js [live]
 option = {
-    color: ["#6E9D4E", "#EDDB4F","#F7923A", "#F14747" ],
-    title: {
-        text: '7月水果销量',
-        x: '2%',
-        y:'1%',
-        textStyle: {
-            color: '#fff',
-            fontSize: '26'
-        },
+  color: ['#6E9D4E', '#EDDB4F', '#F7923A', '#F14747'],
+  title: {
+    text: '7月水果销量',
+    x: '2%',
+    y: '1%',
+    textStyle: {
+      color: '#fff',
+      fontSize: '26'
+    }
+  },
+  tooltip: {
+    trigger: 'axis'
+  },
+  legend: {
+    data: ['猕猴桃', '香蕉', '橙子', '草莓'],
+    align: 'right'
+  },
+  grid: {
+    left: '3%',
+    right: '3%',
+    top: '15%',
+    bottom: '3%',
+    containLabel: true
+  },
+  xAxis: [
+    {
+      type: 'category',
+      data: ['第一周', '第二周', '第三周', '第四周']
+    }
+  ],
+  yAxis: [
+    {
+      type: 'value',
+      axisLabel: {
+        formatter: '{value}'
+      }
+    }
+  ],
+  series: [
+    {
+      name: '猕猴桃',
+      type: 'bar',
+      data: [60, 110, 180, 100]
     },
-    tooltip: {
-        trigger: 'axis'
+    {
+      name: '香蕉',
+      type: 'bar',
+      data: [90, 130, 170, 130]
     },
-    legend: {
-        data: ['猕猴桃','香蕉', '橙子','草莓'],
-        align: 'right'
+    {
+      name: '橙子',
+      type: 'bar',
+      data: [120, 160, 140, 160]
     },
-    grid: {
-        left: '3%',
-        right: '3%',
-        top :'15%',
-        bottom: '3%',
-        containLabel: true
-    },
-    xAxis: [{
-        type: 'category',
-        data: ['第一周', '第二周', '第三周', '第四周'],
-    }],
-    yAxis: [{
-        type: 'value',
-        axisLabel: {
-            formatter: '{value}'
-        }
-    }],
-    series: [{
-        name: '猕猴桃',
-        type: 'bar',
-        data: [60, 110, 180, 100]
-    }, {
-        name: '香蕉',
-        type: 'bar',
-        data: [90, 130, 170, 130]
-    }, {
-        name: '橙子',
-        type: 'bar',
-        data: [120, 160, 140, 160 ]
-    }, {
-        name: '草莓',
-        type: 'bar',
-        data: [110, 190, 90, 100]
-    }]
+    {
+      name: '草莓',
+      type: 'bar',
+      data: [110, 190, 90, 100]
+    }
+  ]
 };
 ```
 
@@ -99,7 +108,6 @@ src="https://gallery.echartsjs.com/view-lite.html?cid=xp1oqJoQqG">
 <iframe max-width="830" width="100%" height="400"
 src="https://gallery.echartsjs.com/view-lite.html?cid=xIVoX5gZcT&v=1">
 </iframe>
-
 
 ## 用颜色来区分数据
 
