@@ -6,7 +6,7 @@
 
 如果数据设置在 `系列`（`series`）中，例如：
 
-```js
+```js [live]
 option = {
   xAxis: {
     type: 'category',
@@ -47,7 +47,7 @@ option = {
 
 下面是一个最简单的 `dataset` 的例子：
 
-```js
+```js [live]
 option = {
   legend: {},
   tooltip: {},
@@ -70,13 +70,9 @@ option = {
 };
 ```
 
-效果如下：
-
-<md-example src="dataset-simple0&edit=1&reset=1"></md-example>
-
 或者也可以使用常见的“对象数组”的格式：
 
-```js
+```js [live]
 option = {
   legend: {},
   tooltip: {},
@@ -121,7 +117,7 @@ option = {
 
 看这个例子：
 
-```js
+```js [live]
 option = {
   legend: {},
   tooltip: {},
@@ -153,8 +149,6 @@ option = {
 };
 ```
 
-[这个例子](${exampleEditorPath}dataset-series-layout-by&edit=1&reset=1) 里给出了设置的效果。
-
 ## 维度（ dimension ）
 
 常用图表所描述的数据大部分是“二维表”结构，上述的例子中，我们都使用二维数组来容纳二维表。现在，当我们把系列（ series ）对应到“列”的时候，那么每一列就称为一个“维度（ dimension ）”，而每一行称为数据项（ item ）。反之，如果我们把系列（ series ）对应到表行，那么每一行就是“维度（ dimension ）”，每一列就是数据项（ item ）。
@@ -165,33 +159,37 @@ option = {
 
 ```js
 var option1 = {
-    dataset: {
-        dimensions: [
-            {name: 'score'},
-            // 可以简写为 string ，表示 dimension name 。
-            'amount',
-            // 可以在 type 中指定维度类型。
-            {name: 'product', type: 'ordinal'}
-        ],
-        source: [...]
-    },
-    ...
+  dataset: {
+    dimensions: [
+      {name: 'score'},
+      // 可以简写为 string ，表示 dimension name 。
+      'amount',
+      // 可以在 type 中指定维度类型。
+      {name: 'product', type: 'ordinal'}
+    ],
+    source: [
+      //...
+    ]
+  },
+  // ...
 };
 
 var option2 = {
-    dataset: {
-        source: [...]
-    },
-    series: {
-        type: 'line',
-        // series.dimensions 会更优先于 dataset.dimension 采纳。
-        dimensions: [
-            null, // 可以设置为 null 表示不想设置维度名
-            'amount',
-            {name: 'product', type: 'ordinal'}
-        ]
-    },
-    ...
+  dataset: {
+    source: [
+      // ...
+    ]
+  },
+  series: {
+    type: 'line',
+    // series.dimensions 会更优先于 dataset.dimension 采纳。
+    dimensions: [
+      null, // 可以设置为 null 表示不想设置维度名
+      'amount',
+      {name: 'product', type: 'ordinal'}
+    ]
+  },
+  // ...
 };
 ```
 
@@ -250,44 +248,44 @@ var option = {
 ```js
 // 在任何坐标系和系列中，都支持：
 encode: {
-    // 使用 “名为 product 的维度” 和 “名为 score 的维度” 的值在 tooltip 中显示
-    tooltip: ['product', 'score']
-    // 使用 “维度 1” 和 “维度 3” 的维度名连起来作为系列名。（有时候名字比较长，这可以避免在 series.name 重复输入这些名字）
-    seriesName: [1, 3],
-    // 表示使用 “维度2” 中的值作为 id。这在使用 setOption 动态更新数据时有用处，可以使新老数据用 id 对应起来，从而能够产生合适的数据更新动画。
-    itemId: 2,
-    // 指定数据项的名称使用 “维度3” 在饼图等图表中有用，可以使这个名字显示在图例（legend）中。
-    itemName: 3
+  // 使用 “名为 product 的维度” 和 “名为 score 的维度” 的值在 tooltip 中显示
+  tooltip: ['product', 'score']
+  // 使用 “维度 1” 和 “维度 3” 的维度名连起来作为系列名。（有时候名字比较长，这可以避免在 series.name 重复输入这些名字）
+  seriesName: [1, 3],
+  // 表示使用 “维度2” 中的值作为 id。这在使用 setOption 动态更新数据时有用处，可以使新老数据用 id 对应起来，从而能够产生合适的数据更新动画。
+  itemId: 2,
+  // 指定数据项的名称使用 “维度3” 在饼图等图表中有用，可以使这个名字显示在图例（legend）中。
+  itemName: 3
 }
 
 // 直角坐标系（grid/cartesian）特有的属性：
 encode: {
-    // 把 “维度1”、“维度5”、“名为 score 的维度” 映射到 X 轴：
-    x: [1, 5, 'score'],
-    // 把“维度0”映射到 Y 轴。
-    y: 0
+  // 把 “维度1”、“维度5”、“名为 score 的维度” 映射到 X 轴：
+  x: [1, 5, 'score'],
+  // 把“维度0”映射到 Y 轴。
+  y: 0
 }
 
 // 单轴（singleAxis）特有的属性：
 encode: {
-    single: 3
+  single: 3
 }
 
 // 极坐标系（polar）特有的属性：
 encode: {
-    radius: 3,
-    angle: 2
+  radius: 3,
+  angle: 2
 }
 
 // 地理坐标系（geo）特有的属性：
 encode: {
-    lng: 3,
-    lat: 2
+  lng: 3,
+  lat: 2
 }
 
 // 对于一些没有坐标系的图表，例如饼图、漏斗图等，可以是：
 encode: {
-    value: 3
+  value: 3
 }
 ```
 
@@ -356,11 +354,11 @@ series: {
 
 ```js
 series: {
-    encode: {
-        tooltip: [1, 2]
-        ...
-    },
-    ...
+  encode: {
+    tooltip: [1, 2]
+    // ...
+  }
+  // ...
 }
 ```
 
@@ -369,14 +367,16 @@ series: {
 答：
 
 ```js
-dataset: {
+var option = {
+  dataset: {
     dimensions: ['score', 'amount'],
     source: [
-        [89.3, 3371],
-        [92.1, 8123],
-        [94.4, 1954],
-        [85.4, 829]
+      [89.3, 3371],
+      [92.1, 8123],
+      [94.4, 1954],
+      [85.4, 829]
     ]
+  }
 }
 ```
 
@@ -459,23 +459,23 @@ dataset: [
 
 ```js
 var option = {
-    dataset: [{
-        // 序号为 0 的 dataset。
-        source: [...],
-    }, {
-        // 序号为 1 的 dataset。
-        source: [...]
-    }, {
-        // 序号为 2 的 dataset。
-        source: [...]
-    }],
-    series: [{
-        // 使用序号为 2 的 dataset。
-        datasetIndex: 2
-    }, {
-        // 使用序号为 1 的 dataset。
-        datasetIndex: 1
-    }]
+  dataset: [{
+    // 序号为 0 的 dataset。
+    source: []
+  }, {
+    // 序号为 1 的 dataset。
+    source: []
+  }, {
+    // 序号为 2 的 dataset。
+    source: []
+  }],
+  series: [{
+    // 使用序号为 2 的 dataset。
+    datasetIndex: 2
+  }, {
+    // 使用序号为 1 的 dataset。
+    datasetIndex: 1
+  }]
 }
 ```
 
@@ -483,26 +483,26 @@ var option = {
 
 ECharts 4 之前一直以来的数据声明方式仍然被正常支持，如果系列已经声明了 [series.data](${optionPath}#series.data)， 那么就会使用 [series.data](${optionPath}#series.data) 而非 `dataset`。
 
-```js
-{
-    xAxis: {
-        type: 'category'
-        data: ['Matcha Latte', 'Milk Tea', 'Cheese Cocoa', 'Walnut Brownie']
-    },
-    yAxis: {},
-    series: [{
-        type: 'bar',
-        name: '2015',
-        data: [89.3, 92.1, 94.4, 85.4]
-    }, {
-        type: 'bar',
-        name: '2016',
-        data: [95.8, 89.4, 91.2, 76.9]
-    }, {
-        type: 'bar',
-        name: '2017',
-        data: [97.7, 83.1, 92.5, 78.1]
-    }]
+```js [live]
+option = {
+  xAxis: {
+    type: 'category',
+    data: ['Matcha Latte', 'Milk Tea', 'Cheese Cocoa', 'Walnut Brownie']
+  },
+  yAxis: {},
+  series: [{
+    type: 'bar',
+    name: '2015',
+    data: [89.3, 92.1, 94.4, 85.4]
+  }, {
+    type: 'bar',
+    name: '2016',
+    data: [95.8, 89.4, 91.2, 76.9]
+  }, {
+    type: 'bar',
+    name: '2017',
+    data: [97.7, 83.1, 92.5, 78.1]
+  }]
 }
 ```
 

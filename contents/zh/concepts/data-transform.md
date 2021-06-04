@@ -15,7 +15,10 @@ Apache ECharts<sup>TM</sup> 5 开始支持了“数据转换”（ data transfor
 
 在 echarts 中，数据转换是依托于数据集（[dataset](~dataset)）来实现的. 我们可以设置 [dataset.transform](${optionPath}#dataset.transform) 来表示，此 dataset 的数据，来自于此 transform 的结果。例如。
 
-```js
+
+下面是上述例子的效果，三个饼图分别显示了 2011、2012、2013 年的数据。
+
+```js [live]
 var option = {
   dataset: [
     {
@@ -104,10 +107,6 @@ var option = {
   ]
 };
 ```
-
-下面是上述例子的效果，三个饼图分别显示了 2011、2012、2013 年的数据。
-
-<md-example src="data-transform-multiple-pie&reset=1&edit=1"></md-example>
 
 现在我们简单总结下，使用 transform 时的几个要点：
 
@@ -251,7 +250,7 @@ option = {
 
 echarts 内置提供了能起过滤作用的数据转换器。我们只需声明 `transform.type: "filter"`，以及给出数据筛选条件。如下例：
 
-```js
+```js [live]
 option = {
   dataset: [
     {
