@@ -28,7 +28,7 @@ jobs:
       #   working-directory: .github/actions/github-pages-deploy-action
 
       - name: Deploy 🚀
-        uses: ./node_modules/github-pages-deploy-action
+        uses: ./node_modules/@jamesives/github-pages-deploy-action
         with:
           branch: gh-pages # The branch the action should deploy to.
           folder: dist
