@@ -19,6 +19,12 @@ jobs:
           npm install
           npm run build:gh
 
+      - name: Prepare deploy action
+        run: |
+          npm install
+          npm run build
+        working-directory: .github/actions/github-pages-deploy-action
+
       - name: Deploy 🚀
         uses: ./.github/actions/github-pages-deploy-action
         with:
