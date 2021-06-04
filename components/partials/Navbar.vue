@@ -1,16 +1,16 @@
 <template>
-  <div v-html="navContent"></div>
+  <div v-bind:is="navComponent"></div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import zhNav from './Navbar/zh'
-import enNav from './Navbar/en'
+import zhNav from './Navbar/zh.vue'
+import enNav from './Navbar/en.vue'
 
 export default Vue.extend({
   components: {},
   computed: {
-    navContent() {
+    navComponent() {
       return this.$store.state.locale === 'zh' ? zhNav : enNav
     }
   }

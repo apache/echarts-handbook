@@ -1,13 +1,17 @@
-const fs = require('fs');
+const fetch = require('node-fetch')
+const path = require('path')
+const fs = require('fs')
 
 const config = {
   cdnThirdParty: {
-      jquery: 'https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js',
-      bootstrapCSS: 'https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css',
-      bootstrapJS: 'https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js'
+    jquery: 'https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js',
+    bootstrapCSS:
+      'https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css',
+    bootstrapJS:
+      'https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js'
   },
   cdnPayRootMap: 'https://cdn.jsdelivr.net/gh/apache/echarts-website@asf-site'
-};
+}
 
 let template = `<!DOCTYPE html>
 <html {{ HTML_ATTRS }}>
@@ -22,22 +26,41 @@ let template = `<!DOCTYPE html>
         <script src="{{ bootstrapJS }}"></script>
     </body>
 </html>
-`;
-template = template.replace(new RegExp('{{ bootstrapCSS }}', 'g'), config.cdnThirdParty.bootstrapCSS);
-template = template.replace(new RegExp('{{ jquery }}', 'g'), config.cdnThirdParty.jquery);
-template = template.replace(new RegExp('{{ bootstrapJS }}', 'g'), config.cdnThirdParty.bootstrapJS);
-template = template.replace(new RegExp('{{ cdnPayRootMap }}', 'g'), config.cdnPayRootMap);
+`
+template = template.replace(
+  new RegExp('{{ bootstrapCSS }}', 'g'),
+  config.cdnThirdParty.bootstrapCSS
+)
+template = template.replace(
+  new RegExp('{{ jquery }}', 'g'),
+  config.cdnThirdParty.jquery
+)
+template = template.replace(
+  new RegExp('{{ bootstrapJS }}', 'g'),
+  config.cdnThirdParty.bootstrapJS
+)
+template = template.replace(
+  new RegExp('{{ cdnPayRootMap }}', 'g'),
+  config.cdnPayRootMap
+)
 
-fs.writeFileSync('./app.html', template, 'utf-8');
+fs.writeFileSync('./app.html', template, 'utf-8')
 
+async function updateNav() {
+  for (let locale of ['zh', 'en']) {
+    console.log('Fetching...', `http://echarts.apache.org//${locale}/nav.html`)
+    const navContent = await fetch(
+      `http://echarts.apache.org/${locale}/nav.html`
+    ).then(response => response.text())
 
-
-updateNav('zh');
-updateNav('en');
-
-function updateNav(locale) {
-    let navContent = fs.readFileSync(`../echarts-website/${locale}/nav.html`, 'utf-8');
-    navContent = `module.exports = \`${navContent}\`\n`;
-    fs.writeFileSync(`./components/partials/Navbar/${locale}.js`, navContent, 'utf-8');
+    fs.writeFileSync(
+      path.join(__dirname, `../components/partials/Navbar/${locale}.vue`),
+      `<template>
+${navContent}
+</template>`,
+      'utf-8'
+    )
+  }
 }
 
+updateNav()

@@ -221,11 +221,6 @@ export default [
         ]
       },
       {
-        title: '无障碍访问',
-        dir: 'aria',
-        draft: true
-      },
-      {
         title: '多图联动',
         dir: 'connect',
         draft: true

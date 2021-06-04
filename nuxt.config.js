@@ -1,3 +1,4 @@
+import zhPosts from './contents/zh/posts'
 import config from './configs/config'
 
 function escapeHtml(unsafe) {
@@ -10,7 +11,7 @@ function escapeHtml(unsafe) {
 }
 
 export default {
-  ssr: false,
+  ssr: true,
 
   target: 'static',
 
@@ -159,7 +160,7 @@ export default {
     }
   },
   generate: {
-    // routes: [].concat(generateRoutes(zhPosts, '/zh/'))
+    routes: [].concat(generateRoutes(zhPosts, '/zh/'))
     // .concat(enPosts.map(post => `/en/${post}`))
   }
 }
