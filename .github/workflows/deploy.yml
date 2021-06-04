@@ -32,5 +32,6 @@ jobs:
         with:
           branch: gh-pages # The branch the action should deploy to.
           folder: dist
-          # single-commit: true
+          target-folder: docs
+          single-commit: true
           clean: true
