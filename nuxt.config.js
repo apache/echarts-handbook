@@ -1,6 +1,9 @@
 import zhPosts from './contents/zh/posts'
 import config from './configs/config'
 
+if (process.env.NODE_ENV === 'production') {
+  console.log('Deploying to ...', process.env.NUXT_ENV_DEPLOY)
+}
 function escapeHtml(unsafe) {
   return unsafe
     .replace(/&/g, '&amp;')

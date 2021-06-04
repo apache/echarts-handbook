@@ -1,4 +1,7 @@
 export default {
+    "contents/zh/concepts/tooltip.md": [
+        "Ovilia"
+    ],
     "contents/zh/concepts/series.md": [
         "Ovilia"
     ],
@@ -361,21 +364,18 @@ export default {
     "contents/en/application/chart-types/bar/bar-race.md": [
         "Hansz00"
     ],
-    "contents/zh/concepts/visual-map.md": [
-        "Ovilia"
-    ],
-    "contents/zh/get-started.md": [
-        "Ovilia"
-    ],
-    "contents/zh/concepts/tooltip.md": [
-        "Ovilia"
-    ],
     "contents/zh/meta/writing.md": [
         "Ovilia"
     ],
     "contents/zh/meta/get-started.md": [
         "Ovilia",
         "pissang"
+    ],
+    "contents/zh/get-started.md": [
+        "Ovilia"
+    ],
+    "contents/zh/concepts/visual-map.md": [
+        "Ovilia"
     ],
     "contents/zh/posts.js": [
         "100pah",

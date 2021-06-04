@@ -7,8 +7,11 @@
   "scripts": {
     "dev": "nuxt",
     "start": "nuxt start",
-    "build:gh": "node build/generate-contributors.js && node build/generate && nuxt generate",
-    "release": "node build/generate-contributors.js && node build/generate && nuxt generate"
+    "prepare": "node build/generate-contributors.js && node build/generate",
+    "build:gh": "npm run prepare && NUXT_ENV_DEPLOY=gh nuxt generate",
+    "build:local": "npm run prepare && NUXT_ENV_DEPLOY=local nuxt generate",
+    "build:localsite": "npm run prepare && NUXT_ENV_DEPLOY=localsite nuxt generate",
+    "build:asf": "NUXT_ENV_DEPLOY=asf npm run prepare && nuxt generate"
   },
   "dependencies": {
     "@nuxt/types": "^2.15.6",

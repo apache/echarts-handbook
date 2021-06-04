@@ -1,6 +1,6 @@
 export default {
-  routerBase: '/',
-  rootPath: 'https://echarts-handbook.github.io/',
+  routerBase: '/echarts-handbook',
+  rootPath: 'https://apache.github.io/echarts-handbook/',
   exampleViewPath: 'https://echarts.apache.org/examples/zh/view.html?c=',
   exampleEditorPath: 'https://echarts.apache.org/examples/zh/editor.html?c=',
   mainSitePath: 'https://echarts.apache.org/',
