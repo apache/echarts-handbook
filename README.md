@@ -2,6 +2,10 @@
 
 This project is part of the source of [The Apache ECharts Official Website](https://echarts.apache.org/). See [echarts-website](https://github.com/apache/echarts-website) for more details of the building process.
 
+## Preview on GitHub Pages
+
+https://apache.github.io/echarts-handbook
+
 ## Init
 
 ```bash
