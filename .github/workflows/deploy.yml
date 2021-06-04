@@ -18,7 +18,9 @@ jobs:
           npm run build:gh
 
       - name: Deploy 🚀
-        run: |
-          node build/deploy-gh.js
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: ./.github/actions/github-pages-deploy-action
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: dist
+          single-commit: true
+          clean: true

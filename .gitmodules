@@ -1,0 +1,3 @@
+[submodule ".github/actions/github-pages-deploy-action"]
+	path = .github/actions/github-pages-deploy-action
+	url = https://github.com/JamesIves/github-pages-deploy-action
