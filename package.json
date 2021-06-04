@@ -8,7 +8,7 @@
     "dev": "nuxt",
     "start": "nuxt start",
     "prepare": "node build/generate-contributors.js && node build/generate",
-    "build:gh": "npm run prepare && NUXT_ENV_DEPLOY=gh nuxt generate",
+    "build:gh": "node build/generate && NUXT_ENV_DEPLOY=gh nuxt generate",
     "build:local": "npm run prepare && NUXT_ENV_DEPLOY=local nuxt generate",
     "build:localsite": "npm run prepare && NUXT_ENV_DEPLOY=localsite nuxt generate",
     "build:asf": "NUXT_ENV_DEPLOY=asf npm run prepare && nuxt generate"
