@@ -1,4 +1,3 @@
-import zhPosts from './contents/zh/posts'
 import config from './configs/config'
 
 if (process.env.NODE_ENV === 'production') {
@@ -170,6 +169,20 @@ export default {
         test: /\.md$/,
         use: ['raw-loader']
       })
+      //github.com/nuxt/nuxt.js/issues/4736#issuecomment-453429870
+      https: config.module.rules.push({
+        test: /\.ya?ml$/,
+        use: 'js-yaml-loader'
+      })
+      if (ctx.isDev && ctx.isClient) {
+        config.module.rules.push({
+          enforce: 'pre',
+          test: /\.(js|vue)$/,
+          loader: 'eslint-loader',
+          exclude: /(node_modules)/,
+          options: { fix: true }
+        })
+      }
     },
 
     filenames: {
@@ -177,30 +190,6 @@ export default {
     }
   },
   generate: {
-    routes: [].concat(generateRoutes(zhPosts, '/zh/'))
-    // .concat(enPosts.map(post => `/en/${post}`))
+    crawler: true
   }
-}
-
-// console.log(generateRoutes(zhPosts, '/zh/'))
-
-/**
- * Generate routes based info from 'contents/xx/xxPosts.js'
- */
-function generateRoutes(postTree, dir, routes) {
-  if (routes == null) {
-    routes = []
-  }
-
-  postTree.forEach(info => {
-    if (!info || typeof info !== 'object') {
-      return
-    }
-    if (info.children) {
-      generateRoutes(info.children, dir + info.dir + '/', routes)
-    } else {
-      routes.push(dir + info.dir)
-    }
-  })
-  return routes
 }

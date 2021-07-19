@@ -17,6 +17,7 @@
     "@nuxt/types": "^2.15.6",
     "@vue/composition-api": "^1.0.0-rc.10",
     "clipboard": "^2.0.8",
+    "js-yaml-loader": "^1.2.2",
     "lodash": "^4.17.21",
     "nuxt": "^2.15.6",
     "nuxt-i18n": "^6.27.0",

@@ -2,7 +2,7 @@
 
 ## 新增一个 markdown 文件
 
-在 `contents/zh/`（中文文章）或 `contents/en/`（英文文章）目录下新增一个 markdown 文件，最多支持三级目录。将路径及标题信息更新在 `contents/zh/posts.js` 或 `contents/en/posts.js`。
+在 `contents/zh/`（中文文章）或 `contents/en/`（英文文章）目录下新增一个 markdown 文件，最多支持三级目录。将路径及标题信息更新在 `contents/zh/posts.yml` 或 `contents/en/posts.yml`。
 
 markdown 文件名称小写，用 `-` 分割单词，不要用`_`分割。
 

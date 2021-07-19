@@ -1,4 +1,4 @@
-import zhPosts from '~/contents/zh/posts.js'
+import zhPosts from '~/contents/zh/posts.yml'
 import config from '~/configs/config'
 
 export const state = () => ({
