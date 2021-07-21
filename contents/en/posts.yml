@@ -93,7 +93,7 @@
             - title: Basic Pie
               dir: basic-pie
             - title: Ring Style
-              dir: ring
+              dir: doughnut
             - title: Rose Style
               dir: rose
         - title: Scatter

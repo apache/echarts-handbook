@@ -95,8 +95,8 @@
           children:
             - title: 基础饼图
               dir: basic-pie
-            - title: 环形图
-              dir: ring
+            - title: 圆环图
+              dir: doughnut
             - title: 南丁格尔图（玫瑰图）
               dir: rose
         - title: 散点图
