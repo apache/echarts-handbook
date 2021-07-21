@@ -2,11 +2,11 @@
 
 ## 获取 ECharts
 
-ECharts 支持多种下载方式，可以在下一篇教程[安装](zh/basics_installation)中查看所有方式。这里，我们以从 [jsDelivr](https://www.jsdelivr.com/package/npm/echarts) CDN 上获取为例，介绍如何快速安装。
+ECharts 支持多种下载方式，可以在下一篇教程[安装](${lang}/basics/download)中查看所有方式。这里，我们以从 [jsDelivr](https://www.jsdelivr.com/package/npm/echarts) CDN 上获取为例，介绍如何快速安装。
 
 在 [https://www.jsdelivr.com/package/npm/echarts](https://www.jsdelivr.com/package/npm/echarts) 选择 `dist/echarts.js`，点击并保存为 `echarts.js` 文件。
 
-> 关于这些文件的介绍，可以在下一篇教程[安装](zh/basics_installation)中了解更多信息。
+> 关于这些文件的介绍，可以在下一篇教程[安装](${lang}/basics/download)中了解更多信息。
 
 ## 引入 ECharts
 

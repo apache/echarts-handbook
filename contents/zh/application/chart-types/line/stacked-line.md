@@ -1,6 +1,6 @@
 # 堆叠折线图
 
-与[堆叠柱状图](./zh/application_chart-types_bar_stacked-bar)类似，堆叠折线图也是用系列的 `stack` 设置哪些系列堆叠在一起。
+与[堆叠柱状图](./zh/application/chart-types/bar/stacked-bar)类似，堆叠折线图也是用系列的 `stack` 设置哪些系列堆叠在一起。
 
 ```js [live]
 option = {
