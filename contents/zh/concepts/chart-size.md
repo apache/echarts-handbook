@@ -1,6 +1,6 @@
 # 图表容器及大小
 
-在[快速上手](./basics_configuration)中，我们介绍了初始化 ECharts 的接口 [`echarts.init`](${mainSitePath}/api.html#echarts.init)。[API 文档](${mainSitePath}/api.html#echarts.init)中详细介绍了参数的具体含义，建议理解后再阅读本文。
+在[快速上手](${lang}/get-started)中，我们介绍了初始化 ECharts 的接口 [`echarts.init`](${mainSitePath}/api.html#echarts.init)。[API 文档](${mainSitePath}/api.html#echarts.init)中详细介绍了参数的具体含义，建议理解后再阅读本文。
 
 下面，我们就常见的几种使用场景，介绍如何初始化一个图表以及改变其大小。
 
