@@ -1,26 +1,28 @@
-# Area Line Chart
+# Area Chart
 
-The area line chart fills the space between the line and axis with the background color, to express the data by the size of the area. Compared with the normal line chart, the area line chart has more intuitive visual effects. It is especially suitable for the scenario with a few series.
+The area chart fills the space between the line and axis with the background color, to express the data by the size of the area. Compared with the normal line chart, the area chart has more intuitive visual effects. It is especially suitable for the scenario with a few series.
 
-<!-- embed -->
-```js
+```js [live]
 option = {
-    xAxis: {
-        data: ['A', 'B', 'C', 'D', 'E']
+  xAxis: {
+    data: ['A', 'B', 'C', 'D', 'E']
+  },
+  yAxis: {},
+  series: [
+    {
+      data: [10, 22, 28, 23, 19],
+      type: 'line',
+      areaStyle: {}
     },
-    yAxis: {},
-    series: [{
-        data: [10, 22, 28, 23, 19],
-        type: 'line',
-        areaStyle: {}
-    }, {
-        data: [25, 14, 23, 35, 10],
-        type: 'line',
-        areaStyle: {
-            color: '#ff0',
-            opacity: 0.5
-        }
-    }]
+    {
+      data: [25, 14, 23, 35, 10],
+      type: 'line',
+      areaStyle: {
+        color: '#ff0',
+        opacity: 0.5
+      }
+    }
+  ]
 };
 ```
 

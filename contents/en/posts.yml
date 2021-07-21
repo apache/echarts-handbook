@@ -81,7 +81,7 @@
               dir: basic-line
             - title: Stacked Line
               dir: stacked-line
-            - title: Area
+            - title: Area Chart
               dir: area-line
             - title: Smoothed Line
               dir: smooth-line

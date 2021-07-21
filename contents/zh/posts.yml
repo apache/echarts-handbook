@@ -84,7 +84,7 @@
               dir: basic-line
             - title: 堆叠折线图
               dir: stacked-line
-            - title: 区域面积折线图
+            - title: 区域面积图
               dir: area-line
             - title: 平滑曲线图
               dir: smooth-line

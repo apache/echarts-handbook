@@ -40,7 +40,7 @@ option = {
 
 If we set one radius to string of a percentage value, while the other to a value, the inner radius will be smaller than the outer radius in some resolution. ECharts will choose the smaller element for the inner radius automatically. However, it will still cause not an unexpected outcome.
 
-## Show Text In Middle Of Ring From Highlighted Sector
+## Show Text In Middle Of Doughnut From Highlighted Sector
 
 The previous case gives you a way to show fixed text in the middle of doughnut chart. The next case will show you how to display the corresponding text of the sector highlighted by the mouse. The general idea is to fix `label` in the middle of the chart while hiding `label` in default.
 
