@@ -19,7 +19,7 @@ ECharts 从初始一直使用 Canvas 绘制图表。而 [ECharts v4.0](https://g
 
 我们强烈欢迎开发者们[反馈](https://github.com/apache/echarts/issues/new)给我们使用的体验和场景，帮助我们更好的做优化。
 
-注：当前某些特殊的渲染依然需要依赖 Canvas：如[炫光尾迹特效](${optionPath}series-lines.effect)、[带有混合效果的热力图](examples/editor.html?c=heatmap-bmap)等。
+注：当前某些特殊的渲染依然需要依赖 Canvas：如[炫光尾迹特效](${optionPath}series-lines.effect)、[带有混合效果的热力图](${mainSitePath}/examples/editor.html?c=heatmap-bmap)等。
 
 ## 如何使用渲染器
 
