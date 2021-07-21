@@ -2,7 +2,7 @@
 
 ## 异步加载
 
-[入门示例](~getting-started)中的数据是在初始化后`setOption`中直接填入的，但是很多时候可能数据需要异步加载后再填入。`ECharts` 中实现异步数据的更新非常简单，在图表初始化后不管任何时候只要通过 jQuery 等工具异步获取数据后通过 `setOption` 填入数据和配置项就行。
+[入门示例](${lang}/get-started)中的数据是在初始化后`setOption`中直接填入的，但是很多时候可能数据需要异步加载后再填入。`ECharts` 中实现异步数据的更新非常简单，在图表初始化后不管任何时候只要通过 jQuery 等工具异步获取数据后通过 `setOption` 填入数据和配置项就行。
 
 ```js
 var myChart = echarts.init(document.getElementById('main'));
@@ -80,7 +80,7 @@ $.get('data.json').done(function(data) {
 
 如下：
 
-<md-example src="doc-example/tutorial-async&edit=1"></md-example>
+<md-example src="doc-example/tutorial-async"></md-example>
 
 ECharts 中在更新数据的时候需要通过`name`属性对应到相应的系列，上面示例中如果`name`不存在也可以根据系列的顺序正常更新，但是更多时候推荐更新数据的时候加上系列的`name`数据。
 
@@ -100,7 +100,7 @@ $.get('data.json').done(function (data) {
 
 效果如下：
 
-<md-example src="doc-example/tutorial-loading&edit=1"></md-example>
+<md-example src="doc-example/tutorial-loading"></md-example>
 
 ## 数据的动态更新
 
@@ -110,4 +110,4 @@ ECharts 由数据驱动，数据的改变驱动图表展现的改变，因此动
 
 具体可以看下面示例：
 
-<md-example src="doc-example/tutorial-dynamic-data&edit=1"></md-example>
+<md-example src="doc-example/tutorial-dynamic-data"></md-example>
