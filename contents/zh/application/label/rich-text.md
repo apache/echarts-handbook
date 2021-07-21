@@ -166,18 +166,12 @@ option = {
     }
   ],
   xAxis: {
-    axisLabel: { show: false },
-    axisLine: { show: false },
-    splitLine: { show: false },
-    axisTick: { show: false },
+    show: false,
     min: -1,
     max: 1
   },
   yAxis: {
-    axisLabel: { show: false },
-    axisLine: { show: false },
-    splitLine: { show: false },
-    axisTick: { show: false },
+    show: false,
     min: -1,
     max: 1
   }
@@ -233,7 +227,7 @@ option = {
 };
 ```
 
-> 注意：`position` 在不同的图中可取值有所不同。`distance` 并不是在每个图中都支持。详情请参见 [option 文档](option.html)。
+> 注意：`position` 在不同的图中可取值有所不同。`distance` 并不是在每个图中都支持。详情请参见 [option 文档](${mainSitePath}option.html)。
 
 ## 标签的旋转
 
@@ -521,4 +515,4 @@ labelOption = {
 };
 ```
 
-简单表格的设定，其实就是给不同行上纵向对应的文本片段设定同样的宽度就可以了。
+简单表格的设定，其实就是给不同行上纵向对应的文本片段设定同样的宽度就可以了。见 [该例子](${exampleEditorPath}pie-rich-text)
