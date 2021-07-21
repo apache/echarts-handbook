@@ -7,7 +7,7 @@ export const state = () => ({
   docVersion: '',
   ghVersion: '',
   visibleAffix: false,
-  locale: 'zh',
+  locale: 'en',
   lang: {},
   menu: {},
   homepage: {},

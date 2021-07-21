@@ -28,6 +28,9 @@ export default {
   components: {
     Contributors
   },
+  mounted() {
+    this.$store.commit('setLocale', 'zh')
+  },
   async asyncData({ $content, params }) {
     const postPath = `zh/${params.pathMatch}`
     const article = await $content(postPath).fetch()

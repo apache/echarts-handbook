@@ -23,10 +23,15 @@
 import '~/components/markdown/global'
 
 import Contributors from '~/components/partials/Contributors.vue'
+// import { mutations } from '~/store'
+// mutations.setLocale('en')
 
 export default {
   components: {
     Contributors
+  },
+  mounted() {
+    this.$store.commit('setLocale', 'en')
   },
   async asyncData({ $content, params }) {
     const postPath = `en/${params.pathMatch}`

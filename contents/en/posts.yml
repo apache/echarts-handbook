@@ -130,18 +130,18 @@
         - title: Connect
           dir: connect
           draft: true
-- title: 最佳实践
+- title: Best Practice
   dir: best-practice
   children:
-    - title: 移动端优化
+    - title: Mobile Optimization
       dir: mobile
       draft: true
     - title: Canvas vs. SVG
       dir: canvas-vs-svg
-    - title: 无障碍访问
+    - title: Aria
       dir: aria
-- title: 编辑本文档
+- title: Edit Handbook
   dir: meta
   children:
-    - title: 文档编辑指南
+    - title: Edit Guide
       dir: get-started
