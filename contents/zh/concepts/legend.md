@@ -134,11 +134,3 @@ option = {
 ```
 
 当图表只有一种数据信息时，用图表标题说明数据信息即可。建议此时不要加上图例。
-
-## 示例
-
-<iframe max-width="830" width="100%" height="400"
- src="https://gallery.echartsjs.com/preview.html?c=xkyleg0ydW&v=2">
-</iframe>
-
-这里简要介绍了坐标轴相关的常用配置项及用法，更多关于坐标轴配置项及用法请移步[官网](${optionPath}legend)

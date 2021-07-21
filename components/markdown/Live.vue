@@ -153,6 +153,7 @@ export default defineComponent({
     }
     .md-live-preview {
       @apply flex-1;
+      height: auto;
     }
   }
 }

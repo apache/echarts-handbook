@@ -173,9 +173,86 @@ option = {
 
 图左侧的 y 轴代表东京月平均气温，右侧的 y 轴表示东京降水量，x 轴表示时间。两组 y 轴在一起，反映了平均气温和降水量间的趋势关系。
 
-<!-- src 需要替换 -->
-<iframe max-width="830" width="100%" height="400"
- src="https://gallery.echartsjs.com/view-lite.html?cid=xrJYBh__4z">
-</iframe>
+```js [live]
+option = {
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: { type: 'cross' }
+  },
+  legend: {},
+  xAxis: [
+    {
+      type: 'category',
+      axisTick: {
+        alignWithLabel: true
+      },
+      data: [
+        '1月',
+        '2月',
+        '3月',
+        '4月',
+        '5月',
+        '6月',
+        '7月',
+        '8月',
+        '9月',
+        '10月',
+        '11月',
+        '12月'
+      ]
+    }
+  ],
+  yAxis: [
+    {
+      type: 'value',
+      name: '降水量',
+      min: 0,
+      max: 250,
+      position: 'right',
+      axisLabel: {
+        formatter: '{value} ml'
+      }
+    },
+    {
+      type: 'value',
+      name: '温度',
+      min: 0,
+      max: 25,
+      position: 'left',
+      axisLabel: {
+        formatter: '{value} °C'
+      }
+    }
+  ],
+  series: [
+    {
+      name: '降水量',
+      type: 'bar',
+      yAxisIndex: 0,
+      data: [6, 32, 70, 86, 68.7, 100.7, 125.6, 112.2, 78.7, 48.8, 36.0, 19.3]
+    },
+    {
+      name: '温度',
+      type: 'line',
+      smooth: true,
+      yAxisIndex: 1,
+      data: [
+        6.0,
+        10.2,
+        10.3,
+        11.5,
+        10.3,
+        13.2,
+        14.3,
+        16.4,
+        18.0,
+        16.5,
+        12.0,
+        5.2
+      ]
+    }
+  ]
+};
+```
 
 这里简要介绍了坐标轴相关的常用配置项及用法，更多关于坐标轴配置项及用法请移步[官网](${optionPath}xAxis)。

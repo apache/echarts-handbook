@@ -4,4 +4,4 @@
 
 - [ECharts 官方实例](${mainSitePath}/examples/zh/index.html)
 - 本手册的“应用篇 - 常用图表类型”
-- [makeapie.com](https://www.makeapie.com/)
+- [makeapie.com](https://www.makeapie.com/) 社区用户的作品集

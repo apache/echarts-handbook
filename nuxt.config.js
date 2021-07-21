@@ -38,6 +38,8 @@ export default {
   },
   hooks: {
     'content:file:beforeParse': file => {
+      // TODO better way to detect?
+      const lang = file.path.match('contents/zh') ? 'zh' : 'en'
       if (file.extension === '.md') {
         // Replace variables
         ;[
@@ -56,13 +58,14 @@ export default {
           )
         })
       }
+      file.data = file.data.replace(/\$\{lang\}/g, lang)
     }
   },
   /*
    ** Headers of the page
    */
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'Handbook - Apache ECharts',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -72,7 +75,14 @@ export default {
         content: process.env.npm_package_description || ''
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href:
+          'https://cdn.jsdelivr.net/gh/apache/echarts-website@asf-site/zh/images/favicon.png'
+      }
+    ]
   },
   content: {
     dir: 'contents',

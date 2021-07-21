@@ -325,27 +325,32 @@ option = {
 
 ```js
 option = {
-    dataset: [{
-        source: [...]
-    }, {
-        transform: {
-            type: 'filter',
-            config: {
-                // 使用 and 操作符。
-                // 类似地，同样的位置也可以使用 “or” 或 “not”。
-                // 但是注意 “not” 后应该跟一个 {...} 而非 [...] 。
-                and: [
-                    { dimension: 'Year', '=': 2011 },
-                    { dimension: 'Price', '>=': 20, '<': 30 }
-                ]
-            }
-            // 这个表达的是，选出 2011 年价格大于等于 20 但小于 30 的数据项。
+  dataset: [
+    {
+      source: [
+        // ...
+      ]
+    },
+    {
+      transform: {
+        type: 'filter',
+        config: {
+          // 使用 and 操作符。
+          // 类似地，同样的位置也可以使用 “or” 或 “not”。
+          // 但是注意 “not” 后应该跟一个 {...} 而非 [...] 。
+          and: [
+            { dimension: 'Year', '=': 2011 },
+            { dimension: 'Price', '>=': 20, '<': 30 }
+          ]
         }
-    }],
-    series: {
-        type: 'pie',
-        datasetIndex: 1
+        // 这个表达的是，选出 2011 年价格大于等于 20 但小于 30 的数据项。
+      }
     }
+  ],
+  series: {
+    type: 'pie',
+    datasetIndex: 1
+  }
 };
 ```
 
@@ -353,26 +358,26 @@ option = {
 
 ```js
 transform: {
-    type: 'filter',
-    config: {
-        or: [{
-            and: [{
-                dimension: 'Price', '>=': 10, '<': 20
-            }, {
-                dimension: 'Sales', '<': 100
-            }, {
-                not: { dimension: 'Product', '=': 'Tofu' }
-            }]
-        }, {
-            and: [{
-                dimension: 'Price', '>=': 10, '<': 20
-            }, {
-                dimension: 'Sales', '<': 100
-            }, {
-                not: { dimension: 'Product', '=': 'Cake' }
-            }]
-        }]
-    }
+  type: 'filter',
+  config: {
+    or: [{
+      and: [{
+        dimension: 'Price', '>=': 10, '<': 20
+      }, {
+        dimension: 'Sales', '<': 100
+      }, {
+        not: { dimension: 'Product', '=': 'Tofu' }
+      }]
+    }, {
+      and: [{
+        dimension: 'Price', '>=': 10, '<': 20
+      }, {
+        dimension: 'Sales', '<': 100
+      }, {
+        not: { dimension: 'Product', '=': 'Cake' }
+      }]
+    }]
+  }
 }
 ```
 
@@ -388,26 +393,32 @@ transform: {
 
 ```js
 option = {
-    dataset: [{
-        source: [
-            ['Product', 'Sales', 'Price', 'Date'],
-            ['Milk Tee', 311, 21, '2012-05-12'],
-            ['Cake', 135, 28, '2012-05-22'],
-            ['Latte', 262, 36, '2012-06-02'],
-            ['Milk Tee', 359, 21, '2012-06-22'],
-            ['Cake', 121, 28, '2012-07-02'],
-            ['Latte', 271, 36, '2012-06-22'],
-            ...
-        ]
-    }, {
-        transform: {
-            type: 'filter',
-            config: {
-                { dimension: 'Date', '>=': '2012-05', '<': '2012-06', parser: 'time' }
-            }
+  dataset: [
+    {
+      source: [
+        ['Product', 'Sales', 'Price', 'Date'],
+        ['Milk Tee', 311, 21, '2012-05-12'],
+        ['Cake', 135, 28, '2012-05-22'],
+        ['Latte', 262, 36, '2012-06-02'],
+        ['Milk Tee', 359, 21, '2012-06-22'],
+        ['Cake', 121, 28, '2012-07-02'],
+        ['Latte', 271, 36, '2012-06-22']
+        // ...
+      ]
+    },
+    {
+      transform: {
+        type: 'filter',
+        config: {
+          dimension: 'Date',
+          '>=': '2012-05',
+          '<': '2012-06',
+          parser: 'time'
         }
-    }]
-}
+      }
+    }
+  ]
+};
 ```
 
 **形式化定义：**
@@ -458,31 +469,34 @@ type DimensionIndex = number;
 
 ```js
 option = {
-    dataset: [{
-        dimensions: ['name', 'age', 'profession', 'score', 'date'],
-        source: [
-            [' Hannah Krause ', 41, 'Engineer', 314, '2011-02-12'],
-            ['Zhao Qian ', 20, 'Teacher', 351, '2011-03-01'],
-            [' Jasmin Krause ', 52, 'Musician', 287, '2011-02-14'],
-            ['Li Lei', 37, 'Teacher', 219, '2011-02-18'],
-            [' Karle Neumann ', 25, 'Engineer', 253, '2011-04-02'],
-            [' Adrian Groß', 19, 'Teacher', null, '2011-01-16'],
-            ['Mia Neumann', 71, 'Engineer', 165, '2011-03-19'],
-            [' Böhm Fuchs', 36, 'Musician', 318, '2011-02-24'],
-            ['Han Meimei ', 67, 'Engineer', 366, '2011-03-12'],
-        ]
-    }, {
-        transform: {
-            type: 'sort',
-            // 按分数排序
-            config: { dimension: 'score', order: 'asc' }
-        }
-    }],
-    series: {
-        type: 'bar',
-        datasetIndex: 1
+  dataset: [
+    {
+      dimensions: ['name', 'age', 'profession', 'score', 'date'],
+      source: [
+        [' Hannah Krause ', 41, 'Engineer', 314, '2011-02-12'],
+        ['Zhao Qian ', 20, 'Teacher', 351, '2011-03-01'],
+        [' Jasmin Krause ', 52, 'Musician', 287, '2011-02-14'],
+        ['Li Lei', 37, 'Teacher', 219, '2011-02-18'],
+        [' Karle Neumann ', 25, 'Engineer', 253, '2011-04-02'],
+        [' Adrian Groß', 19, 'Teacher', null, '2011-01-16'],
+        ['Mia Neumann', 71, 'Engineer', 165, '2011-03-19'],
+        [' Böhm Fuchs', 36, 'Musician', 318, '2011-02-24'],
+        ['Han Meimei ', 67, 'Engineer', 366, '2011-03-12']
+      ]
     },
-    ...
+    {
+      transform: {
+        type: 'sort',
+        // 按分数排序
+        config: { dimension: 'score', order: 'asc' }
+      }
+    }
+  ],
+  series: {
+    type: 'bar',
+    datasetIndex: 1
+  }
+  // ...
 };
 ```
 
@@ -503,34 +517,37 @@ option = {
 
 ```js
 option = {
-    dataset: [{
-        dimensions: ['name', 'age', 'profession', 'score', 'date'],
-        source: [
-            [' Hannah Krause ', 41, 'Engineer', 314, '2011-02-12'],
-            ['Zhao Qian ', 20, 'Teacher', 351, '2011-03-01'],
-            [' Jasmin Krause ', 52, 'Musician', 287, '2011-02-14'],
-            ['Li Lei', 37, 'Teacher', 219, '2011-02-18'],
-            [' Karle Neumann ', 25, 'Engineer', 253, '2011-04-02'],
-            [' Adrian Groß', 19, 'Teacher', null, '2011-01-16'],
-            ['Mia Neumann', 71, 'Engineer', 165, '2011-03-19'],
-            [' Böhm Fuchs', 36, 'Musician', 318, '2011-02-24'],
-            ['Han Meimei ', 67, 'Engineer', 366, '2011-03-12'],
-        ]
-    }, {
-        transform: {
-            type: 'sort',
-            config: [
-                // 对两个维度按声明的优先级分别排序。
-                { dimension: 'profession', order: 'desc' },
-                { dimension: 'score', order: 'desc' }
-            ]
-        }
-    }],
-    series: {
-        type: 'bar',
-        datasetIndex: 1
+  dataset: [
+    {
+      dimensions: ['name', 'age', 'profession', 'score', 'date'],
+      source: [
+        [' Hannah Krause ', 41, 'Engineer', 314, '2011-02-12'],
+        ['Zhao Qian ', 20, 'Teacher', 351, '2011-03-01'],
+        [' Jasmin Krause ', 52, 'Musician', 287, '2011-02-14'],
+        ['Li Lei', 37, 'Teacher', 219, '2011-02-18'],
+        [' Karle Neumann ', 25, 'Engineer', 253, '2011-04-02'],
+        [' Adrian Groß', 19, 'Teacher', null, '2011-01-16'],
+        ['Mia Neumann', 71, 'Engineer', 165, '2011-03-19'],
+        [' Böhm Fuchs', 36, 'Musician', 318, '2011-02-24'],
+        ['Han Meimei ', 67, 'Engineer', 366, '2011-03-12']
+      ]
     },
-    ...
+    {
+      transform: {
+        type: 'sort',
+        config: [
+          // 对两个维度按声明的优先级分别排序。
+          { dimension: 'profession', order: 'desc' },
+          { dimension: 'score', order: 'desc' }
+        ]
+      }
+    }
+  ],
+  series: {
+    type: 'bar',
+    datasetIndex: 1
+  }
+  //...
 };
 ```
 

@@ -3,10 +3,13 @@
 - title: 入门篇
   dir: basics
   children:
-    - title: 下载
+    - title: 获取 ECharts
       dir: download
+    - title: 在项目中引入 ECharts
+      dir: import
     - title: 资源列表
       dir: resource
+      draft: true
     - title: 获取灵感
       dir: inspiration
     - title: 寻求帮助
@@ -28,6 +31,8 @@
     - title: 系列
       dir: series
       draft: true
+    - title: 样式
+      dir: style
     - title: 数据集
       dir: dataset
     - title: 数据转换
@@ -41,9 +46,6 @@
       dir: visual-map
     - title: 图例
       dir: legend
-    - title: 提示框
-      dir: tooltip
-      draft: true
     - title: 事件与行为
       dir: event
 - title: 应用篇
@@ -118,6 +120,16 @@
         - title: 数据下钻
           dir: drilldown
           draft: true
+    - title: 标签
+      dir: label
+      children:
+        - title: 富文本标签
+          dir: rich-text
+    - title: 交互
+      dir: interaction
+      children:
+        - title: 拖拽的实现
+          dir: drag
     - title: 多图联动
       dir: connect
       draft: true
@@ -131,11 +143,11 @@
       dir: canvas-vs-svg
     - title: 无障碍访问
       dir: aria
-    - title: 可视化设计原则
-      dir: design
-      children:
-        - title: 用颜色增强可视化效果
-          dir: color-enhance
+    # - title: 可视化设计原则
+    #   dir: design
+    #   children:
+    #     - title: 用颜色增强可视化效果
+    #       dir: color-enhance
     # - title: 可视化规范
     #   dir: chart-specificatio
     #   children:
