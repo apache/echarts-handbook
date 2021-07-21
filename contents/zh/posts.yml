@@ -197,4 +197,4 @@
   dir: meta
   children:
     - title: 文档编辑指南
-      dir: get-started
+      dir: edit-guide
