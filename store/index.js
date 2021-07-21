@@ -1,4 +1,5 @@
 import zhPosts from '~/contents/zh/posts.yml'
+import enPosts from '~/contents/en/posts.yml'
 import config from '~/configs/config'
 
 export const state = () => ({
@@ -13,7 +14,8 @@ export const state = () => ({
   adBlocked: false,
   focusMode: false,
   posts: {
-    zh: zhPosts
+    zh: zhPosts,
+    en: enPosts
   },
   config: config
 })

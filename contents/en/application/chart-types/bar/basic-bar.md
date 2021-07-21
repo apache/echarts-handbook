@@ -4,50 +4,55 @@ Bar Chart, is a chart that presents the comparisons among discrete data. The len
 
 To set the bar chart, you need to set the `name` of `series` as `'bar'`.
 
-[[CI Handbook]](${optionPath}series-bar)
+[[Configuraion]](${optionPath}series-bar)
 
 ## Simple Example
 
 Let's begin with a basic bar chart:
 
 <!-- embed -->
+
 ```js
 option = {
-    xAxis: {
-        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-    },
-    yAxis: {},
-    series: [{
-        type: 'bar',
-        data: [23, 24, 18, 25, 27, 28, 25]
-    }]
+  xAxis: {
+    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+  },
+  yAxis: {},
+  series: [
+    {
+      type: 'bar',
+      data: [23, 24, 18, 25, 27, 28, 25]
+    }
+  ]
 };
 ```
 
 In this case, the x-axis is under the category type. Therefore, you should define some corresponding values for `'xAxis'`. Meanwhile, the data type of the y-axis is numerical. The range of the y-axis will be generated automatically by the `data` in `'series'`.
-
 
 ## Multi-series Bar Chart
 
 You may use a series to represent a group of related data. To show multiple series in the same chart, you need to add one more array under the `series`.
 
 <!-- embed -->
+
 ```js
 option = {
-    xAxis: {
-        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+  xAxis: {
+    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+  },
+  yAxis: {},
+  series: [
+    {
+      type: 'bar',
+      data: [23, 24, 18, 25, 27, 28, 25]
     },
-    yAxis: {},
-    series: [{
-        type: 'bar',
-        data: [23, 24, 18, 25, 27, 28, 25]
-    }, {
-        type: 'bar',
-        data: [26, 24, 18, 22, 23, 20, 27]
-    }]
+    {
+      type: 'bar',
+      data: [26, 24, 18, 22, 23, 20, 27]
+    }
+  ]
 };
 ```
-
 
 ## Customized Bar Chart
 
@@ -64,21 +69,25 @@ It is a good idea to install the style of Bar Chart by using ['series.itemStyle'
 Here is a example:
 
 <!-- embed -->
+
 ```js
 option = {
-    xAxis: {
-        data: ['A', 'B', 'C', 'D', 'E']
+  xAxis: {
+    data: ['A', 'B', 'C', 'D', 'E']
+  },
+  yAxis: {},
+  series: [
+    {
+      data: [10, 22, 28, 43, 49],
+      type: 'bar',
+      stack: 'x'
     },
-    yAxis: {},
-    series: [{
-        data: [10, 22, 28, 43, 49],
-        type: 'bar',
-        stack: 'x'
-    }, {
-        data: [5, 4, 3, 5, 10],
-        type: 'bar',
-        stack: 'x'
-    }]
+    {
+      data: [5, 4, 3, 5, 10],
+      type: 'bar',
+      stack: 'x'
+    }
+  ]
 };
 ```
 
@@ -89,21 +98,25 @@ In this case, we defined the style of the bar chart by `'itemStyle'` of correspo
 You can use [`barWidth`](${optionPath}#series-bar.barWidth) to change the width of the bar. For instance, the `'barWidth'` in the following case was set to `'20%'`. It indicates that width of each bar is 20% of the category width. As there are 5 data in every series, 20% `'barWidth'` means 4% for the entire x-axis.
 
 <!-- embed -->
+
 ```js
 option = {
-    xAxis: {
-        data: ['A', 'B', 'C', 'D', 'E']
+  xAxis: {
+    data: ['A', 'B', 'C', 'D', 'E']
+  },
+  yAxis: {},
+  series: [
+    {
+      data: [10, 22, 28, 43, 49],
+      type: 'bar',
+      stack: 'x'
     },
-    yAxis: {},
-    series: [{
-        data: [10, 22, 28, 43, 49],
-        type: 'bar',
-        stack: 'x'
-    }, {
-        data: [5, 4, 3, 5, 10],
-        type: 'bar',
-        stack: 'x'
-    }]
+    {
+      data: [5, 4, 3, 5, 10],
+      type: 'bar',
+      stack: 'x'
+    }
+  ]
 };
 ```
 
@@ -114,21 +127,25 @@ In addition, [`barMaxWidth`](${optionPath}series-bar.barMaxWidth) has limited th
 There are two kinds of column spacing. One is the spacing between different series under the same category: [`barWidth`](${optionPath}series-bar.barWidth). The other is the spacing between categories: [`barCategoryGap`](${optionPath}series-bar.barCategoryGap).
 
 <!-- embed -->
+
 ```js
 option = {
-    xAxis: {
-        data: ['A', 'B', 'C', 'D', 'E']
+  xAxis: {
+    data: ['A', 'B', 'C', 'D', 'E']
+  },
+  yAxis: {},
+  series: [
+    {
+      type: 'bar',
+      data: [23, 24, 18, 25, 18],
+      barGap: '20%',
+      barCategoryGap: '40%'
     },
-    yAxis: {},
-    series: [{
-        type: 'bar',
-        data: [23, 24, 18, 25, 18],
-        barGap: '20%',
-        barCategoryGap: '40%'
-    }, {
-        type: 'bar',
-        data: [12, 14, 9, 9, 11]
-    }]
+    {
+      type: 'bar',
+      data: [12, 14, 9, 9, 11]
+    }
+  ]
 };
 ```
 
@@ -136,30 +153,32 @@ In this case, the `barGap` is `'20%'`. That means the distance between bars unde
 
 Usually, `barWidth` is not necessary to be clarified if `'barGap'` and `barCategoryGap` was set. If you need to make sure the bar is not too wide while the graph is large, try to use `barMaxWidth` to limit the maximum width of bars.
 
->In the same cartesian coordinate system, the property will be shared by several column series. To make sure it takes effect on the graph, please set the property on the last bar chart series of the system.
-
+> In the same cartesian coordinate system, the property will be shared by several column series. To make sure it takes effect on the graph, please set the property on the last bar chart series of the system.
 
 ### Add Background Color for Bars
 
 You might want to change the background color of bars sometimes. After ECharts v4.7.0, this function can be enabled by ['showBackground'](${optionPath}series-bar.showBackground) and configured by ['backgroundStyle'](${optionPath}series-bar.backgroundStyle).
 
 <!-- embed -->
+
 ```js
 option = {
-    xAxis: {
-        type: 'category',
-        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-    },
-    yAxis: {
-        type: 'value'
-    },
-    series: [{
-        data: [120, 200, 150, 80, 70, 110, 130],
-        type: 'bar',
-        showBackground: true,
-        backgroundStyle: {
-            color: 'rgba(220, 220, 220, 0.8)'
-        }
-    }]
+  xAxis: {
+    type: 'category',
+    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+  },
+  yAxis: {
+    type: 'value'
+  },
+  series: [
+    {
+      data: [120, 200, 150, 80, 70, 110, 130],
+      type: 'bar',
+      showBackground: true,
+      backgroundStyle: {
+        color: 'rgba(220, 220, 220, 0.8)'
+      }
+    }
+  ]
 };
 ```

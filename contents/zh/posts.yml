@@ -134,9 +134,9 @@
       children:
         - title: 拖拽的实现
           dir: drag
-    - title: 多图联动
-      dir: connect
-      draft: true
+        - title: 多图联动
+          dir: connect
+          draft: true
 - title: 最佳实践
   dir: best-practice
   children:

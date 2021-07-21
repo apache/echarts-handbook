@@ -1,0 +1,147 @@
+- title: Get Started
+  dir: get-started
+- title: Basics
+  dir: basics
+  children:
+    - title: Download ECharts
+      dir: download
+    - title: Import ECharts
+      dir: import
+    - title: Resources
+      dir: resource
+      draft: true
+    - title: Inspiration
+      dir: inspiration
+    - title: Get Help
+      dir: help
+    - title: Release Note
+      dir: release-note
+      children:
+        - title: ECharts 5.2.0
+          draft: true
+          dir: 5-2-0
+        - title: ECharts 5 Features
+          dir: v5-feature
+        - title: ECharts 5 Upgrade Guide
+          dir: v5-upgrade-guide
+- title: Concepts
+  dir: concepts
+  children:
+    - title: Chart Container
+      dir: chart-size
+    - title: Chart Option
+      dir: options
+      draft: true
+    - title: Series
+      dir: series
+      draft: true
+    - title: Style
+      dir: style
+    - title: Dataset
+      dir: dataset
+    - title: Data Transform
+      dir: data-transform
+    - title: Coordinate
+      dir: coordinate
+      draft: true
+    - title: Axis
+      dir: axis
+    - title: Visual Mapping
+      dir: visual-map
+    - title: Legend
+      dir: legend
+    - title: Event and Action
+      dir: event
+- title: Application
+  dir: application
+  children:
+    - title: Common Charts
+      dir: chart-types
+      children:
+        - title: Bar
+          dir: bar
+          children:
+            - title: Basic Bar
+              dir: basic-bar
+            - title: Stacked Bar
+              dir: stacked-bar
+            - title: Bar Racing
+              dir: bar-race
+              draft: true
+            - title: Bar Polar
+              dir: polar-bar
+              draft: true
+            - title: Waterfall
+              dir: waterfall
+              draft: true
+        - title: Line
+          dir: line
+          children:
+            - title: Basic Line
+              dir: basic-line
+            - title: Stacked Line
+              dir: stacked-line
+            - title: Area
+              dir: area-line
+            - title: Smoothed Line
+              dir: smooth-line
+            - title: Step Line
+              dir: step-line
+        - title: Pie
+          dir: pie
+          children:
+            - title: Basic Pie
+              dir: basic-pie
+            - title: Ring Style
+              dir: ring
+            - title: Rose Style
+              dir: rose
+        - title: Scatter
+          dir: scatter
+          children:
+            - title: Basic Scatter
+              dir: basic-scatter
+    - title: Mobile
+      dir: mobile
+      draft: true
+    - title: Cross Platform
+      dir: cross-platform
+      children:
+        - title: Server Side Rendering
+          dir: server
+    - title: Data
+      dir: data
+      children:
+        - title: Dynamic Data
+          dir: dynamic-data
+        - title: Drilldown
+          dir: drilldown
+          draft: true
+    - title: Label
+      dir: label
+      children:
+        - title: Rich Text
+          dir: rich-text
+    - title: Interaction
+      dir: interaction
+      children:
+        - title: Drag
+          dir: drag
+        - title: Connect
+          dir: connect
+          draft: true
+- title: 最佳实践
+  dir: best-practice
+  children:
+    - title: 移动端优化
+      dir: mobile
+      draft: true
+    - title: Canvas vs. SVG
+      dir: canvas-vs-svg
+    - title: 无障碍访问
+      dir: aria
+- title: 编辑本文档
+  dir: meta
+  children:
+    - title: 文档编辑指南
+      dir: get-started
