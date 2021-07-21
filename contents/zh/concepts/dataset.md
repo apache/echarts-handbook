@@ -161,16 +161,16 @@ option = {
 var option1 = {
   dataset: {
     dimensions: [
-      {name: 'score'},
+      { name: 'score' },
       // 可以简写为 string ，表示 dimension name 。
       'amount',
       // 可以在 type 中指定维度类型。
-      {name: 'product', type: 'ordinal'}
+      { name: 'product', type: 'ordinal' }
     ],
     source: [
       //...
     ]
-  },
+  }
   // ...
 };
 
@@ -186,9 +186,9 @@ var option2 = {
     dimensions: [
       null, // 可以设置为 null 表示不想设置维度名
       'amount',
-      {name: 'product', type: 'ordinal'}
+      { name: 'product', type: 'ordinal' }
     ]
-  },
+  }
   // ...
 };
 ```
@@ -207,7 +207,7 @@ var option2 = {
 
 了解了维度的概念后，我们就可以使用 [series.encode](${optionPath}#series.encode) 来做映射。总体是这样的感觉：
 
-```js
+```js [live]
 var option = {
   dataset: {
     source: [
@@ -238,8 +238,6 @@ var option = {
   ]
 };
 ```
-
-[这个例子](${exampleEditorPath}dataset-encode-simple0&edit=1&reset=1) 里是上面设置的效果。
 
 `series.encode` 声明的基本结构如下。其中冒号左边是坐标系、标签等特定名称，如 `'x'`, `'y'`, `'tooltip'` 等，冒号右边是数据中的维度名（string 格式）或者维度的序号（number 格式，从 0 开始计数），可以指定一个或多个维度（使用数组）。通常情况下，下面各种信息不需要所有的都写，按需写即可。
 
@@ -353,13 +351,15 @@ series: {
 答：
 
 ```js
-series: {
-  encode: {
-    tooltip: [1, 2]
+option = {
+  series: {
+    encode: {
+      tooltip: [1, 2]
+      // ...
+    }
     // ...
   }
-  // ...
-}
+};
 ```
 
 问：数据里没有维度名，那么怎么给出维度名？
@@ -377,14 +377,14 @@ var option = {
       [85.4, 829]
     ]
   }
-}
+};
 ```
 
 问：如何把第三列映射为气泡图的点的大小？
 
 答：
 
-```js
+```js [live]
 var option = {
   dataset: {
     source: [
@@ -459,24 +459,31 @@ dataset: [
 
 ```js
 var option = {
-  dataset: [{
-    // 序号为 0 的 dataset。
-    source: []
-  }, {
-    // 序号为 1 的 dataset。
-    source: []
-  }, {
-    // 序号为 2 的 dataset。
-    source: []
-  }],
-  series: [{
-    // 使用序号为 2 的 dataset。
-    datasetIndex: 2
-  }, {
-    // 使用序号为 1 的 dataset。
-    datasetIndex: 1
-  }]
-}
+  dataset: [
+    {
+      // 序号为 0 的 dataset。
+      source: []
+    },
+    {
+      // 序号为 1 的 dataset。
+      source: []
+    },
+    {
+      // 序号为 2 的 dataset。
+      source: []
+    }
+  ],
+  series: [
+    {
+      // 使用序号为 2 的 dataset。
+      datasetIndex: 2
+    },
+    {
+      // 使用序号为 1 的 dataset。
+      datasetIndex: 1
+    }
+  ]
+};
 ```
 
 ## ECharts 3 的数据设置方式（series.data）仍正常使用
@@ -490,20 +497,24 @@ option = {
     data: ['Matcha Latte', 'Milk Tea', 'Cheese Cocoa', 'Walnut Brownie']
   },
   yAxis: {},
-  series: [{
-    type: 'bar',
-    name: '2015',
-    data: [89.3, 92.1, 94.4, 85.4]
-  }, {
-    type: 'bar',
-    name: '2016',
-    data: [95.8, 89.4, 91.2, 76.9]
-  }, {
-    type: 'bar',
-    name: '2017',
-    data: [97.7, 83.1, 92.5, 78.1]
-  }]
-}
+  series: [
+    {
+      type: 'bar',
+      name: '2015',
+      data: [89.3, 92.1, 94.4, 85.4]
+    },
+    {
+      type: 'bar',
+      name: '2016',
+      data: [95.8, 89.4, 91.2, 76.9]
+    },
+    {
+      type: 'bar',
+      name: '2017',
+      data: [97.7, 83.1, 92.5, 78.1]
+    }
+  ]
+};
 ```
 
 其实，[series.data](${optionPath}#series.data) 也是种会一直存在的重要设置方式。一些特殊的非 table 格式的图表，如 [treemap](${optionPath}#series-treemap)、[graph](${optionPath}#series-graph)、[lines](${optionPath}#series-lines) 等，现在仍不支持在 dataset 中设置，仍然需要使用 [series.data](${optionPath}#series.data)。另外，对于巨大数据量的渲染（如百万以上的数据量），需要使用 [appendData](api.html#echartsInstance.appendData) 进行增量加载，这种情况不支持使用 `dataset`。
