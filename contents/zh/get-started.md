@@ -85,4 +85,4 @@ ECharts 支持多种下载方式，可以在下一篇教程[安装](${lang}/basi
 
 这样你的第一个图表就诞生了！
 
-<md-example src="doc-example/getting-started&reset=1&edit=1"></md-example>
+<md-example src="doc-example/getting-started"></md-example>

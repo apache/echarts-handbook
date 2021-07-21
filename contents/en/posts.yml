@@ -144,4 +144,4 @@
   dir: meta
   children:
     - title: Edit Guide
-      dir: get-started
+      dir: edit-guide

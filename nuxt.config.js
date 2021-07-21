@@ -48,13 +48,10 @@ export default {
           'exampleViewPath',
           'exampleEditorPath'
         ].forEach(p => {
-          // console.log(
-          //   file.data.indexOf(new RegExp('${' + p + '}', 'g')),
-          //   new RegExp('\\$\\{' + p + '\\}', 'g')
-          // )
+          const val = config[p].replace('${lang}', lang)
           file.data = file.data.replace(
             new RegExp('\\$\\{' + p + '\\}', 'g'),
-            config[p]
+            val
           )
         })
       }

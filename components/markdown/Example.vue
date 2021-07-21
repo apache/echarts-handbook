@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, ref } from '@vue/composition-api'
+import { computed, defineComponent } from '@vue/composition-api'
 import config from '~/configs/config'
 
 export default defineComponent({
@@ -19,9 +19,14 @@ export default defineComponent({
     src: String
   },
 
-  setup(props) {
+  setup(props, ctx) {
     const fullSrc = computed(() => {
-      return config.exampleViewPath + props.src
+      return (
+        config.exampleViewPath.replace(
+          '${lang}',
+          ctx.root.$store.state.locale
+        ) + props.src
+      )
     })
     return {
       fullSrc
