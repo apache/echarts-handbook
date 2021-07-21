@@ -42,4 +42,4 @@ npm run build:asf
 
 ## Writing
 
-https://apache.github.io/echarts-handbook/zh/meta/get-started/
+https://apache.github.io/echarts-handbook/zh/meta/edit-guide/
