@@ -17,9 +17,13 @@
     - title: 版本介绍
       dir: release-note
       children:
-        - title: Apache ECharts 5.2.0
+        - title: ECharts 5.2.0
           draft: true
           dir: 5-2-0
+        - title: ECharts 5 新特性
+          dir: v5-feature
+        - title: ECharts 5 升级指南
+          dir: v5-upgrade-guide
 - title: 概念篇
   dir: concepts
   children:
