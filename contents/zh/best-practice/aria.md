@@ -31,7 +31,7 @@ option = {
 };
 ```
 
-<md-example src="doc-example/aria-pie&reset=1&edit=1"></md-example>
+<md-example src="doc-example/aria-pie"></md-example>
 
 生成的图表 DOM 上，会有一个 `aria-label` 属性，在朗读设备的帮助下，盲人能够了解图表的内容。其值为：
 
@@ -42,8 +42,6 @@ option = {
 ## 整体修改描述
 
 对于有些图表，默认生成的数据点的描述并不足以表现整体的信息。比如下图的散点图，默认生成的描述可以包含数据点的坐标值，但是知道几百几千个点的坐标并不能帮助我们有效地理解图表表达的信息。
-
-![600xauto](~aria-example.png)
 
 这时候，用户可以通过 [aria.description](${optionPath}aria.description) 配置项指定图表的整体描述。
 

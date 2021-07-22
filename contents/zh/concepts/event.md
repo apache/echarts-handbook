@@ -260,7 +260,7 @@ myChart.on('legendselectchanged', function(params) {
 
 上面提到诸如 `'legendselectchanged'` 事件会由组件交互的行为触发，那除了用户的交互操作，有时候也会有需要在程序里调用方法触发图表的行为，诸如显示 tooltip，选中图例。
 
-在 ECharts 2 是通过 `myChart.component.tooltip.showTip` 这种形式调用相应的接口触发图表行为，入口很深，而且涉及到内部组件的组织。相对地，在 ECharts 3 里改为通过调用 `myChart.dispatchAction({ type: '' })` 触发图表行为，统一管理了所有动作，也可以方便地根据需要去记录用户的行为路径。
+在 ECharts 通过调用 `myChart.dispatchAction({ type: '' })` 触发图表行为，统一管理了所有动作，也可以方便地根据需要去记录用户的行为路径。
 
 常用的动作和动作对应参数在 [action](${mainSitePath}/api.html#action) 文档中有列出。
 
@@ -335,7 +335,7 @@ setInterval(function() {
 
 有时候，开发者需要监听画布的“空白处”所触发的事件。比如，当需要在用户点击“空白处”的时候重置图表时。
 
-在讨论这个功能之前，我们需要先明确两种事件。`zrender 事件`和`echarts 事件`。
+在讨论这个功能之前，我们需要先明确两种事件。zrender 事件和 echarts 事件。
 
 ```js
 myChart.getZr().on('click', function(event) {
@@ -346,9 +346,9 @@ myChart.on('click', function(event) {
 });
 ```
 
-`zrender 事件`与`echarts 事件`不同。前者是当鼠标在任何地方都会被触发，而后者是只有当鼠标在图形元素上时才能被触发。事实上，`echarts 事件` 是在 `zrender 事件` 的基础上实现的，也就是说，当一个 `zrender 事件` 在图形元素上被触发时，`echarts` 将触发一个 `echarts 事件` 给开发者。
+zrender 事件与 echarts 事件不同。前者是当鼠标在任何地方都会被触发，而后者是只有当鼠标在图形元素上时才能被触发。事实上，echarts 事件是在 zrender 事件的基础上实现的，也就是说，当一个 zrender 事件在图形元素上被触发时，echarts 将触发一个 echarts 事件给开发者。
 
-有了 `zrender事件`，我们就可以实现 “监听空白处的事件”，具体如下：
+有了 zrender 事件，我们就可以实现监听空白处的事件，具体如下：
 
 ```js
 myChart.getZr().on('click', function(event) {

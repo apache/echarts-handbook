@@ -1,42 +1,43 @@
-# 文档编辑指南
+# Document Editing Guidelines
 
-## 新增一个 markdown 文件
+## Adding a Markdown File
 
-在 `contents/zh/`（中文文章）或 `contents/en/`（英文文章）目录下新增一个 markdown 文件，最多支持三级目录。将路径及标题信息更新在 `contents/zh/posts.yml` 或 `contents/en/posts.yml`。
+Add a markdown file to the `contents/zh/` (Chinese posts) or `contents/en/` (English posts) directories, up to three levels. Update the path and title information in `contents/zh/posts.yml` or `contents/en/posts.yml`.
 
-markdown 文件名称小写，用 `-` 分割单词，不要用`_`分割。
+Lowercase markdown file names.
 
-## 使用 prettier 来自动格式化代码
+## Using Prettier to Automatically Format Code
 
-在开始之前，我们推荐安装`prettier`的 [VSCode 插件](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)，该插件可以在你保存的时候自动帮你格式化代码。
+Before you start, we recommend installing the [prettier VSCode plugin](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode), which will automatically format the code for you when you save it.
 
-如果你觉得自动的格式化破坏了你的代码块，你可以在改代码块外面加上组织`prettier`格式化该部分代码
+If you feel that the automatic formatting is breaking your code block, you can add the following comment to prevent `prettier` from formatting the code inside the block
 
 ```markdown
 <!-- prettier-ignore-start -->
 <!-- prettier-ignore-end -->
 ```
 
-如果你发现有的代码块并没有被格式化，请先检查改代码是否存在语法上的错误。
+If you find blocks of code that are not formatted, check first for syntax errors in the code.
 
-## 内置变量
+## Built-in Variables
 
 - `optionPath`
 - `mainSitePath`
 - `exampleViewPath`
 - `exampleEditorPath`
 
-使用方式:
+Usage:
 
 ```
 ${xxxxx}
 ```
 
-## 引用代码
+## Embedding Code
 
-### 基础使用
+### Basic Usage
 
 <!-- prettier-ignore-start -->
+
 ```markdown
 ```js
 option = {
@@ -47,6 +48,7 @@ option = {
 };
 \```
 ```
+
 <!-- prettier-ignore-end -->
 
 ```js
@@ -60,11 +62,11 @@ option = {
 };
 ```
 
-### 代码推荐写法
+### Recommended Way of Writing Code
 
-为了可以让工具帮助我们对代码进行格式化，我们应该尽量避免有语法问题的写法。
+In order to allow the tool to help us format the code, we should try to avoid syntactically problematic writing styles.
 
-比如注释 `...`
+For example, the comment `...`
 
 ```js
 option = {
@@ -77,9 +79,9 @@ option = {
 };
 ```
 
-### 实时预览和编辑
+### Live Preview and Editing
 
-> 目前只支持对 Option 代码的预览
+> Currently only preview of Option code is supported
 
 <!-- prettier-ignore-start -->
 ```markdown
@@ -98,6 +100,7 @@ option = {
 };
 \```
 ```
+
 <!-- prettier-ignore-end -->
 
 ```js [live]
@@ -115,11 +118,12 @@ option = {
 };
 ```
 
-### 更多预览布局
+### More Preview Layouts
 
-#### 左右
+#### Left to Right
 
 <!-- prettier-ignore-start -->
+
 ```markdown
 ```js [live-lr]
 option = {
@@ -127,6 +131,7 @@ option = {
 };
 \```
 ```
+
 <!-- prettier-ignore-end -->
 
 ```js [live-lr]
@@ -144,9 +149,10 @@ option = {
 };
 ```
 
-#### 右左
+#### Right to left
 
 <!-- prettier-ignore-start -->
+
 ```markdown
 ```js [live-rl]
 option = {
@@ -154,6 +160,7 @@ option = {
 };
 \```
 ```
+
 <!-- prettier-ignore-end -->
 
 ```js [live-rl]
@@ -171,9 +178,10 @@ option = {
 };
 ```
 
-#### 下上
+#### Down to Up
 
 <!-- prettier-ignore-start -->
+
 ```markdown
 ```js [live-bt]
 option = {
@@ -181,6 +189,7 @@ option = {
 };
 \```
 ```
+
 <!-- prettier-ignore-end -->
 
 ```js [live-bt]
@@ -198,11 +207,12 @@ option = {
 };
 ```
 
-### 高亮代码行以及添加文件名
+### Highlighting Lines of Code and Adding Filenames
 
-使用：
+Use.
 
 <!-- prettier-ignore-start -->
+
 ```markdown
 ```js{1,3-5}[option.js]
 option = {
@@ -215,9 +225,10 @@ option = {
 };
 \```
 ```
+
 <!-- prettier-ignore-end -->
 
-效果：
+Effects.
 
 ```js{1,3-5}[option.js]
 option = {
@@ -230,53 +241,53 @@ option = {
 };
 ```
 
-## 引用图片
+## Embedding Images
 
-图片实际存放地址在 `static/images/` 下。
+Source images are stored under `static/images/`.
 
 ```markdown
-![图片说明](images/demo.png)
+![image description](images/demo.png)
 ```
 
-### 设置图片高宽
+### Set the Image Height and Width
 
-对于当前页面的临时样式，可以直接写 html：
+For the temporary style of the current page, you can just write html.
 
 ```markdown
 <img src="images/demo.png" style="width: 50px" />
 ```
 
-## 添加示例 iframe
+## Add Example Iframe
 
-`src`为 https://echarts.apache.org/examples/zh/editor.html?c=line-simple 地址中`?c=`后面这一串
+`src` is the string after `?c=` in the https://echarts.apache.org/examples/en/editor.html?c=line-simple address
 
-使用：
+Use:
 
 ```markdown
-<md-example src="doc-example/tutorial-async" width="100%" height="300"></md-example>
+<md-example src="doc-example/getting-started" width="100%" height="300"></md-example>
 ```
 
-效果：
-<md-example src="doc-example/tutorial-async" width="100%" height="300"></md-example>
+Result:
+<md-example src="doc-example/getting-started" width="100%" height="300"></md-example>
 
-## 添加配置项链接
+## Add Link to Option Item
 
-使用：
+Use:
 
 ```markdown
 <md-option link="series-bar.itemStyle.color"></md-option>
 ```
 
-效果:
+Result:
 <md-option link="series-bar.itemStyle.color"></md-option>
 
-## 更多组件使用
+## More Component Usage
 
-文档支持使用全局注册的`markdown`组件，除了刚才介绍的`md-example`组件，还有下面几种组件
+The documentation supports the use of globally registered `markdown` components. In addition to the `md-example` component just described, the following components are also available
 
 ### md-alert
 
-提示组件
+Prompt components
 
 ```markdown
 <md-alert type="info">

@@ -13,7 +13,7 @@ Apache ECharts<sup>TM</sup> 5 开始支持了“数据转换”（ data transfor
 
 ## 数据转换基础使用
 
-在 echarts 中，数据转换是依托于数据集（[dataset](~dataset)）来实现的. 我们可以设置 [dataset.transform](${optionPath}#dataset.transform) 来表示，此 dataset 的数据，来自于此 transform 的结果。例如。
+在 echarts 中，数据转换是依托于数据集（[dataset](${optionPath}#dataset)）来实现的. 我们可以设置 [dataset.transform](${optionPath}#dataset.transform) 来表示，此 dataset 的数据，来自于此 transform 的结果。例如。
 
 下面是上述例子的效果，三个饼图分别显示了 2011、2012、2013 年的数据。
 
@@ -155,7 +155,7 @@ option = {
 
 在大多数场景下，transform 只需输出一个 data 。但是也有一些场景，需要输出多个 data ，每个 data 可以被不同的 series 或者 dataset 所使用。
 
-例如，在内置的 "boxplot" transform 中，除了 boxplot 系列所需要的 data 外，离群点（ outlier ）也会被生成，并且可以用例如散点图系列显示出来。例如，[example](${exampleEditorPath}boxplot-light-velocity&edit=1&reset=1)。
+例如，在内置的 "boxplot" transform 中，除了 boxplot 系列所需要的 data 外，离群点（ outlier ）也会被生成，并且可以用例如散点图系列显示出来。例如，[example](${exampleEditorPath}boxplot-light-velocity)。
 
 我们提供配置 [dataset.fromTransformResult](${optionPath}#dataset.fromTransformResult) 来满足这种情况，例如：
 
@@ -215,12 +215,12 @@ option = {
 
 ```js
 {
-    fromDatasetIndex: 1,
-    fromTransformResult: 1,
-    transform: {
-        type: 'sort',
-        config: { dimension: 2, order: 'desc' }
-    }
+  fromDatasetIndex: 1,
+  fromTransformResult: 1,
+  transform: {
+    type: 'sort',
+    config: { dimension: 2, order: 'desc' }
+  }
 }
 ```
 
@@ -230,19 +230,22 @@ option = {
 
 ```js
 option = {
-    dataset: [{
-        source: [ ... ]
-    }, {
-        transform: {
-            type: 'filter',
-            config: { ... }
-            // 配置为 `true` 后， transform 的结果
-            // 会被 console.log 打印出来。
-            print: true
-        }
-    }],
-    ...
-}
+  dataset: [
+    {
+      source: []
+    },
+    {
+      transform: {
+        type: 'filter',
+        config: {},
+        // 配置为 `true` 后， transform 的结果
+        // 会被 console.log 打印出来。
+        print: true
+      }
+    }
+  ]
+  // ...
+};
 ```
 
 ## 数据转换器 "filter"
@@ -293,11 +296,9 @@ option = {
 };
 ```
 
-<br>
-<br>
-这是 filter 的另一个例子的效果：<br>
+这是 filter 的另一个例子的效果：
 
-<md-example src="data-transform-filter&reset=1&edit=1"></md-example>
+<md-example src="data-transform-filter"></md-example>
 
 在 "filter" transform 中，有这些要素：
 
@@ -500,7 +501,7 @@ option = {
 };
 ```
 
-<md-example src="data-transform-sort-bar&reset=1&edit=1"></md-example>
+<md-example src="data-transform-sort-bar"></md-example>
 
 数据转换器 "sort" 还有一些额外的功能：
 
@@ -551,7 +552,7 @@ option = {
 };
 ```
 
-<md-example src="doc-example/data-transform-multiple-sort-bar&reset=1&edit=1"></md-example>
+<md-example src="doc-example/data-transform-multiple-sort-bar"></md-example>
 
 最后，我们给出数据转换器 "sort" 的 config 的形式化定义。
 

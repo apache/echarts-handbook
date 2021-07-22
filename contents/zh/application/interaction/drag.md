@@ -2,6 +2,8 @@
 
 本篇通过介绍一个实现拖拽的小例子来介绍如何在 Apache ECharts<sup>TM</sup> 中实现复杂的交互。
 
+<md-example src="line-draggable" height="400"></md-example>
+
 这个例子主要做到了这样一件事，用鼠标可以拖拽曲线的点，从而改变曲线的形状。例子很简单，但是有了这个基础我们还可以做更多的事情，比如在图中进行可视化得编辑。所以我们从这个简单的例子开始。
 
 echarts 本身没有提供封装好的“拖拽改变图表”这样比较业务定制的功能。但是这个功能开发者可以通过 API 扩展实现。
@@ -107,7 +109,7 @@ function onPointDragging(dataIndex) {
 }
 ```
 
-上面的代码中，使用了 [convertFromPixel](api.html#echartsInstance.convertFromPixel) 这个 API。它是 [convertToPixel](api.html#echartsInstance.convertToPixel) 的逆向过程。`myChart.convertFromPixel('grid', this.position)` 表示把当前像素坐标转换成 [grid](${optionPath}grid) 组件中直角坐标系的 dataItem 值。
+上面的代码中，使用了 [convertFromPixel](${mainSitePath}/api.html#echartsInstance.convertFromPixel) 这个 API。它是 [convertToPixel](${mainSitePath}/api.html#echartsInstance.convertToPixel) 的逆向过程。`myChart.convertFromPixel('grid', this.position)` 表示把当前像素坐标转换成 [grid](${optionPath}grid) 组件中直角坐标系的 dataItem 值。
 
 最后，为了使 dom 尺寸改变时，图中的元素能自适应得变化，加上这些代码：
 
@@ -132,42 +134,47 @@ window.addEventListener('resize', function() {
 
 ```js
 myChart.setOption({
-    ...,
-    tooltip: {
-        // 表示不使用默认的“显示”“隐藏”触发规则。
-        triggerOn: 'none',
-        formatter: function (params) {
-            return 'X: ' + params.data[0].toFixed(2) + '<br>Y: ' + params.data[1].toFixed(2);
-        }
+  // ...,
+  tooltip: {
+    // 表示不使用默认的“显示”“隐藏”触发规则。
+    triggerOn: 'none',
+    formatter: function(params) {
+      return (
+        'X: ' +
+        params.data[0].toFixed(2) +
+        '<br>Y: ' +
+        params.data[1].toFixed(2)
+      );
     }
+  }
 });
 ```
 
 ```js
 myChart.setOption({
-    graphic: echarts.util.map(data, function (item, dataIndex) {
-        return {
-            type: 'circle',
-            ...,
-            // 在 mouseover 的时候显示，在 mouseout 的时候隐藏。
-            onmousemove: echarts.util.curry(showTooltip, dataIndex),
-            onmouseout: echarts.util.curry(hideTooltip, dataIndex),
-        };
-    })
+  graphic: data.map(function(item, dataIndex) {
+    return {
+      type: 'circle',
+      // ...,
+      // 在 mouseover 的时候显示，在 mouseout 的时候隐藏。
+      onmousemove: echarts.util.curry(showTooltip, dataIndex),
+      onmouseout: echarts.util.curry(hideTooltip, dataIndex)
+    };
+  })
 });
 
 function showTooltip(dataIndex) {
-    myChart.dispatchAction({
-        type: 'showTip',
-        seriesIndex: 0,
-        dataIndex: dataIndex
-    });
+  myChart.dispatchAction({
+    type: 'showTip',
+    seriesIndex: 0,
+    dataIndex: dataIndex
+  });
 }
 
 function hideTooltip(dataIndex) {
-    myChart.dispatchAction({
-        type: 'hideTip'
-    });
+  myChart.dispatchAction({
+    type: 'hideTip'
+  });
 }
 ```
 

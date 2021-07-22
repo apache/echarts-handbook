@@ -8,46 +8,45 @@ Canvas has been used as the renderer (VML for IE8-) of ECharts from the beginnin
 
 ## How to Choose a Renderer?
 
-Generally, Canvas is more suitable for charts with a large number of elements (heat map, large-scale line or scatter plot in geo or parallel coordinates, etc.), and with visual [effect](examples/editor.html?c=lines-bmap-effect). However, SVG has an important advantage: It has less memory usage (which is important for mobile devices), higher rendering performance, no blur when using the browser zoom. For instance, we used Canvas and SVG renderer in some hardware environment to draw the chart with medium data volume and recorded the frame rate during the initial animation performing:
+Generally, Canvas is more suitable for charts with a large number of elements (heat map, large-scale line or scatter plot in geo or parallel coordinates, etc.), and with visual [effect](${mainSitePath}/examples/editor.html?c=lines-bmap-effect). However, SVG has an important advantage: It has less memory usage (which is important for mobile devices), no blur when using the browser zoom.
 
-<iframe width="600" height="400" src="${exampleViewPath}doc-example/canvas-vs-svg&reset=1&edit=1"></iframe>
+The choice of renderer can be based on a combination of hardware and software environment, data volume and functional requirements.
 
-In those scenarios, SVG renderer has better overall performance than Canvas in mobile devices. This is not a comprehensive evaluation for sure, in other scenarios of huge data volume, the performance of Canvas is still better than SVG. We keep both renderers to provide a wider space for developers to optimize their program.
+- In scenarios where the hardware and software environment is good and the amount of data is not too large, both renderers will work and there is not much need to agonise over them.
+- In scenarios where the environment is poor and performance issues arise that require optimisation, experimentation can be used to determine which renderer to use. For example, there are these experiences.
+  - In situations where many instances of ECharts have to be created and the browser is prone to crashing (probably because the number of Canvas is causing the memory footprint to exceed the phone's capacity), the SVG renderer can be used to make improvements. Roughly speaking, the SVG renderer may work better if the chart is running on a low-end Android, or if we are using specific charts such as the [LiquidFill chart](https://ecomfe.github.io/echarts-liquidfill/example/).
+  - For larger amounts of data (>1k is an experience value), canvas renderer is always recommended.
 
-When choosing renderer, try to consider hardware and software environment, data amount, and functional requirement:
-+ If the environment is not harsh, and the data volume is not big (eg. Business report in PC), you can choose both of them without tangling.
-+ In some harsh environment, try to consider these points:
+We strongly welcome [feedback](https://github.com/apache/echarts/issues/new) from developers on their experiences and scenarios to help us make better optimizations.
 
-	+ To create a huge amount of instance in a crash-prone browser (It perhaps because the number of Canvas exceeded the capacity of the phone.), Try to use SVG renderer to improve. Generally, if the chart is running on a low-end Android phone, or you are using some specific chart like [liquidfill](https://ecomfe.github.io/echarts-liquidfill/example/), the SVG render will perform better.
-	+ Use Canvas while visualizing a large amount of data.
+Note: Currently, some special rendering still relies on Canvas: e.g. [trail effect](${optionPath}series-lines.effect), [heatmap with blending effect](${mainSitePath}/examples/editor.html?c=heatmap-bmap), etc.
 
-We strongly welcome developers to give us a [feedback](https://github.com/apache/echarts/issues/new). It will be very helpful for us to optimize ECharts. Thank you!
+## How to Use the Renderer
 
-Note: except some specific charts rely on Canvas (eg. [series lines effect](option.html#series-lines.effect), [heatmap bmap](examples/editor.html?c=heatmap-bmap), etc.), most of the remaining render are supported by SVG. SVG can not support rich text, texture, and shadow right now.
-
-## Suggestion for Using Renderer
-
-ECharts uses Canvas by default. You must include the SVG renderer module if you intend to try SVG.
-
-- ECharts
-
-- In [pre-built](https://www.jsdelivr.com/package/npm/echarts) of ECharts，[common](https://cdn.jsdelivr.net/npm/echarts/dist/echarts.common.min.js) version and [complete](https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js) version included SVG renderer that can be used directly. The [simple](https://cdn.jsdelivr.net/npm/echarts/dist/echarts.simple.min.js) version did not include SVG renderer.
-- If [build ECharts online](builder.html), tick the "SVG Renderer" checkbox.
-- If [build ECharts offline](tutorial.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%9E%84%E5%BB%BA%20ECharts), import the SVG renderer module:
-
+If `echarts` is fully imported in the following way, the code already contains an SVG renderer and a Canvas renderer
 
 ```js
-import 'zrender/lib/svg/svg';
+import * as echarts from 'echarts';
 ```
 
-Then you can define the [parameter](api.html#echarts.init) of renderer type while initializing it:
+If you are using treeshakable import as described in [Introducing Apache ECharts in your project](${lang}/basics/import), you will need to import the required renderers manually
 
 ```js
-// Use Canvas renderer（default）
-var chart = echarts.init(containerDom, null, {renderer: 'canvas'});
-// equivalent to:
+import * as echarts from 'echarts/core';
+// You can use only the renderers you need
+import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
+
+echarts.use([SVGRenderer, CanvasRenderer]);
+```
+
+Then, we can [pass in the parameter](${mainSitePath}/api.html/api.html#echarts.init) when initializing the chart instance in code to select the renderer.
+
+```js
+// Use the Canvas renderer (default)
+var chart = echarts.init(containerDom, null, { renderer: 'canvas' });
+// Equivalent to.
 var chart = echarts.init(containerDom);
 
-// Use SVG renderer
-var chart = echarts.init(containerDom, null, {renderer: 'svg'});
+// using the SVG renderer
+var chart = echarts.init(containerDom, null, { renderer: 'svg' });
 ```

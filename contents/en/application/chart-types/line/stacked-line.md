@@ -1,10 +1,8 @@
 # Stacked Line Chart
 
-Similar to the [Stacked Bar Chart](./zh/application/chart-types/bar/stacked-bar), Stacked Line Chart use the `'stack'` in `series` to decide which series should be stacked together.
+Similar to the [Stacked Bar Chart](${lang}/application/chart-types/bar/stacked-bar), Stacked Line Chart use the `'stack'` in `series` to decide which series should be stacked together.
 
-<!-- embed -->
-
-```js
+```js [live]
 option = {
   xAxis: {
     data: ['A', 'B', 'C', 'D', 'E']
@@ -27,9 +25,7 @@ option = {
 
 However, without clarification, it is hard for us to judge whether it is a stacked line chart or normal line chart. Therefore, filling color for the area under the line is recommended to indicate for a stacked bar chart.
 
-<!-- embed -->
-
-```js
+```js [live]
 option = {
   xAxis: {
     data: ['A', 'B', 'C', 'D', 'E']

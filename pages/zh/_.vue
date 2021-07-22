@@ -20,18 +20,19 @@
 </template>
 
 <script lang="ts">
+import Vue from 'vue'
 import '~/components/markdown/global'
 
 import Contributors from '~/components/partials/Contributors.vue'
 
-export default {
+export default Vue.extend({
   components: {
     Contributors
   },
   mounted() {
     this.$store.commit('setLocale', 'zh')
   },
-  async asyncData({ $content, params }) {
+  async asyncData({ $content, params }: any) {
     const postPath = `zh/${params.pathMatch}`
     const article = await $content(postPath).fetch()
     return {
@@ -39,7 +40,7 @@ export default {
       postPath
     }
   }
-}
+})
 </script>
 
 <style lang="scss"></style>
