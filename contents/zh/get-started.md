@@ -1,14 +1,14 @@
 # 快速上手
 
-## 获取 ECharts
+## 获取 Apache ECharts
 
-ECharts 支持多种下载方式，可以在下一篇教程[安装](${lang}/basics/download)中查看所有方式。这里，我们以从 [jsDelivr](https://www.jsdelivr.com/package/npm/echarts) CDN 上获取为例，介绍如何快速安装。
+Apache ECharts 支持多种下载方式，可以在下一篇教程[安装](${lang}/basics/download)中查看所有方式。这里，我们以从 [jsDelivr](https://www.jsdelivr.com/package/npm/echarts) CDN 上获取为例，介绍如何快速安装。
 
 在 [https://www.jsdelivr.com/package/npm/echarts](https://www.jsdelivr.com/package/npm/echarts) 选择 `dist/echarts.js`，点击并保存为 `echarts.js` 文件。
 
 > 关于这些文件的介绍，可以在下一篇教程[安装](${lang}/basics/download)中了解更多信息。
 
-## 引入 ECharts
+## 引入 Apache ECharts
 
 在刚才保存 `echarts.js` 的目录新建一个 `index.html` 文件，内容如下：
 
@@ -23,7 +23,7 @@ ECharts 支持多种下载方式，可以在下一篇教程[安装](${lang}/basi
 </html>
 ```
 
-打开这个 `index.html`，你会看到一片空白。但是不要担心，打开控制台看到没有报错信息，就可以进行下一步。
+打开这个 `index.html`，你会看到一片空白。但是不要担心，打开控制台确认没有报错信息，就可以进行下一步。
 
 ## 绘制一个简单的图表
 
