@@ -2,7 +2,7 @@
 
 If your development environment uses a package management tool like `npm` or `yarn` and builds with a packaging tool like Webpack, this article will describe how to get a minimal bundle of Apache ECharts<sup>TM</sup> via treeshaking.
 
-## NPM installation of ECharts
+## NPM Installation of ECharts
 
 You can install ECharts via npm using the following command
 
@@ -37,7 +37,7 @@ myChart.setOption({
 });
 ```
 
-## Importing required charts and components to have minimal bundle.
+## Importing Required Charts and Components to Have Minimal Bundle.
 
 The above code will import all the charts and components in ECharts, but if you don't want to bring in all the components, you can use the tree-shakeable interface provided by ECharts to bundle the required components and get a minimal bundle.
 
