@@ -3,7 +3,7 @@
     <div class="post-inner">
       <nuxt-content :document="article" />
       <div class="table-of-contents">
-        <h4 class="toc-container-header">本页目录</h4>
+        <h4 class="toc-container-header">{{ $t('inThisPage') }}</h4>
         <ul>
           <li
             v-for="link of article.toc"

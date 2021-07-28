@@ -139,13 +139,17 @@ export default {
       'nuxt-i18n',
       {
         locales: ['en', 'zh'],
-        strategy: 'prefix_except_default',
+        strategy: 'prefix',
         defaultLocale: 'en',
         vueI18n: {
           fallbackLocale: 'en',
           messages: {
-            en: {},
-            zh: {}
+            en: {
+              inThisPage: 'In This Page'
+            },
+            zh: {
+              inThisPage: '本页目录'
+            }
           }
         }
       }
