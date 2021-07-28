@@ -24,7 +24,7 @@ export default defineComponent({
       return (
         config.exampleViewPath.replace(
           '${lang}',
-          ctx.root.$store.state.locale
+          (ctx.root as any).$i18n.locale
         ) + props.src
       )
     })
