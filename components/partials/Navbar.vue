@@ -11,7 +11,7 @@ export default Vue.extend({
   components: {},
   computed: {
     navComponent() {
-      return this.$store.state.locale === 'zh' ? zhNav : enNav
+      return (this as any).$i18n.locale === 'zh' ? zhNav : enNav
     }
   }
 })

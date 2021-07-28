@@ -57,7 +57,8 @@ export default Vue.extend({
 
   computed: {
     link(): string {
-      return '/' + this.$store.state.locale + '/' + this.path
+      const locale = (this as any).$i18n.locale
+      return '/' + locale + '/' + this.path
     },
 
     isActived(): boolean {

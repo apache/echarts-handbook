@@ -4,7 +4,7 @@
     <div class="bd-docs-nav">
       <ul class="nav bd-sidenav nav-root level0">
         <SidebarNavItem
-          v-for="level0Post in $store.state.posts[this.$store.state.locale]"
+          v-for="level0Post in $store.state.posts[this.$i18n.locale]"
           :key="level0Post.dir"
           :item="level0Post"
           :parentPath="''"

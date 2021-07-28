@@ -29,11 +29,8 @@ export default Vue.extend({
   components: {
     Contributors
   },
-  mounted() {
-    this.$store.commit('setLocale', 'zh')
-  },
-  async asyncData({ $content, params }: any) {
-    const postPath = `zh/${params.pathMatch}`
+  async asyncData({ $content, params, i18n }: any) {
+    const postPath = `${i18n.locale}/${params.pathMatch}`
     const article = await $content(postPath).fetch()
     return {
       article,
