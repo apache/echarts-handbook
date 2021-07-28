@@ -141,6 +141,11 @@ export default {
         locales: ['en', 'zh'],
         strategy: 'prefix',
         defaultLocale: 'en',
+        detectBrowserLanguage: {
+          useCookie: true,
+          cookieKey: 'i18n_redirected',
+          onlyOnRoot: true
+        },
         vueI18n: {
           fallbackLocale: 'en',
           messages: {
