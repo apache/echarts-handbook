@@ -1,5 +1,5 @@
 <template>
-  <li :class="['nav-item', isActived ? 'actived' : '']" v-if="!item.draft">
+  <li class="nav-item" v-if="!item.draft">
     <nuxt-link class="nav-link" v-if="!item.children" :to="link">
       <span class="title">{{ item.title }}</span>
     </nuxt-link>
@@ -59,10 +59,6 @@ export default Vue.extend({
     link(): string {
       const locale = (this as any).$i18n.locale
       return '/' + locale + '/' + this.path
-    },
-
-    isActived(): boolean {
-      return this.$route.params.post === this.path
     }
   },
 
@@ -100,10 +96,8 @@ export default Vue.extend({
       padding: 2px 6px;
     }
 
-    &.actived {
-      .nav-link {
-        color: #5470c6;
-      }
+    .nav-link.nuxt-link-active {
+      color: #5470c6;
     }
 
     .nav-link:hover > .title {
