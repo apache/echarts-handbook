@@ -7,9 +7,13 @@
 </template>
 
 <script lang="ts">
-export default {
+import Vue from 'vue'
+export default Vue.extend({
+  mounted() {
+    this.$router.push('get-started')
+  },
   async asyncData() {}
-}
+})
 </script>
 
 <style></style>
