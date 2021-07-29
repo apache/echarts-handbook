@@ -26,3 +26,10 @@ export default Vue.extend({
   }
 })
 </script>
+
+<style lang="postcss">
+svg.icon-external-link {
+  display: initial;
+  vertical-align: initial;
+}
+</style>
