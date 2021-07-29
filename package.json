@@ -9,7 +9,7 @@
     "build:gh": "node build/generate && NUXT_ENV_DEPLOY=gh nuxt generate",
     "build:local": "npm run prepare && NUXT_ENV_DEPLOY=local nuxt generate",
     "build:localsite": "npm run prepare && NUXT_ENV_DEPLOY=localsite nuxt generate",
-    "build:asf": "NUXT_ENV_DEPLOY=asf npm run prepare && nuxt generate"
+    "build:asf": "npm run prepare && NUXT_ENV_DEPLOY=asf nuxt generate"
   },
   "dependencies": {
     "@nuxt/types": "^2.15.6",
