@@ -12,7 +12,7 @@ With the help of those transform methods, users can be implements the features l
 - Remove or choose some kind of empty or special datums.
 - ...
 
-## Get started to data transform
+## Get Started to Data Transform
 
 In echarts, data transform is implemented based on the concept of [dataset](~${optionPath}#dataset). A [dataset.transform](${optionPath}#dataset.transform) can be configured in a dataset instance to indicate that this dataset is to be generated from this `transform`. For example:
 
@@ -117,9 +117,9 @@ Let's summarize the key points of using data transform:
 - Generate new data from existing declared data via the declaration of `transform`, `fromDatasetIndex`/`fromDatasetId` in some blank dataset.
 - Series references these datasets to show the result.
 
-## Advanced usage
+## Advanced Usage
 
-#### Piped transform
+#### Piped Transform
 
 There is a syntactic sugar that pipe transforms like:
 
@@ -155,7 +155,7 @@ option = {
 
 > Note: theoretically any type of transform is able to have multiple input data and multiple output data. But when a transform is piped, it is only able to take one input (except it is the first transform of the pipe) and product one output (except it is the last transform of the pipe).
 
-#### Output multiple data
+#### Output Multiple Data
 
 In most cases, transform functions only need to produce one data. But there is indeed scenarios that a transform function needs to produce multiple data, each of whom might be used by different series.
 
@@ -224,7 +224,7 @@ What more, [dataset.fromTransformResult](${optionPath}#dataset.fromTransformResu
 }
 ```
 
-#### Debug in develop environment
+#### Debug in Develop Environment
 
 When using data transform, we might run into the trouble that the final chart do not display correctly but we do not know where the config is wrong. There is a property `transform.print` might help in such case. (`transform.print` is only available in dev environment).
 
@@ -247,7 +247,7 @@ option = {
 };
 ```
 
-## The transform "filter"
+## Filter Transform
 
 Transform type "filter" is a built-in transform that provide data filter according to specified conditions. The basic option is like:
 
@@ -572,7 +572,7 @@ type DimensionName = string;
 type DimensionIndex = number;
 ```
 
-## Use external transforms
+## Use External Transforms
 
 Besides built-in transforms (like 'filter', 'sort'), we can also use external transforms to provide more powerful functionalities. Here we use a third-party library [ecStat](https://github.com/ecomfe/echarts-stat) as an example:
 

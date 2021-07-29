@@ -8,15 +8,14 @@ src="https://gallery.echartsjs.com/view-lite.html?cid=xSkCyUwKNG&v=1">
 
 The scatter chart can reflect the correlation(relation between variables) of a different type. It can be positively correlated, negatively correlated and uncorrelated.
 
-+ Positively Correlated: When one value increases, the other value increases.
+- Positively Correlated: When one value increases, the other value increases.
 
-+ Negatively Correlated: When one value increases, the other value decreases.
+- Negatively Correlated: When one value increases, the other value decreases.
 
-+ Uncorrelated: Two values have no obvious relation and have no influence on each other.
-
+- Uncorrelated: Two values have no obvious relation and have no influence on each other.
 
 <img max-width="830" width="100%" height="100%"
-src="/images/design/scatter/scatter5.jpg">
+src="images/design/scatter/scatter5.jpg">
 </img>
 
 To be mentioned, the scatter chart can effectively illustrate the correlation between the two variables. However, it cannot strongly prove there exist causality. For example, AD serving and Visits are positively correlated, but we cannot prove that more AD serving must lead to more Visits. However, we have enough reason to increase the AD serving and observe the outcome after we find out the positive correlation between them.

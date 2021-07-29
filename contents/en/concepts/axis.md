@@ -7,7 +7,7 @@ The x/y-axis in the Cartesian coordinate system.
 Both x-axis and y-axis included axis line, tick, label and title. Some chart will use the grid to assist the data viewing and calculating.
 
 <img max-width="830" width="100%" height="100%"
-src="/images/design/axis/charts_axis_img02.jpg">
+src="images/design/axis/charts_axis_img02.jpg">
 </img>
 
 A normal 2D coordinate system has x-axis and y-axis. X-axis located at the bottom while y-axis at the left side in common. The Config is shown below:

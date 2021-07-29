@@ -25,7 +25,7 @@ src="https://gallery.echartsjs.com/view-lite.html?cid=xByYRlN7Ef">
 3. Data on Y-axis should be started from 0, to reflect the value appropriately. If the y-axis is incomplete, it will mislead the user to make wrong judgments. For instance, the chart on the left side shows that the income in 2017 is 4 times higher than in 2014. But the chart on the right side shows the truth that the income in 2017 only increased by 25% compared with 2014.
 
 <img max-width="830" width="100%" height="100%"
-src="/images/design/bar/bar03.jpg">
+src="images/design/bar/bar03.jpg">
 </img>
 
 4. When sorting multiple data, if it is not related to some specific value like date, it is better to comply with a certain logic and guide the user to check the data in an intuitive way. In short, logical sorting can lead the user to read data better to a certain extent.
@@ -37,5 +37,5 @@ src="https://gallery.echartsjs.com/view-lite.html?cid=xHJhWhGm4M">
 We don't recommend using a 3D bar chart because the data transmission is not accurate. Users even have to guess which is the top of the bar.
 
 <img max-width="830" width="100%" height="100%"
-src="/images/design/bar/bar04.jpg">
+src="images/design/bar/bar04.jpg">
 </img>

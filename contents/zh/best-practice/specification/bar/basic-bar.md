@@ -25,7 +25,7 @@ src="https://gallery.echartsjs.com/view-lite.html?cid=xByYRlN7Ef">
 3、Y 轴数据应该从 0 基线开始，以恰当地反映数值。如果展示的是被截断的数据，那很可能会误导观众做出错误的判断。例如左侧图表显示出的数据结果是 2017 年收入是 2014 年收入的五倍，而实际上如右侧图表完整显示的数据表明 2017 年收入相对于 2014 年其实只提升了 25%。
 
 <img max-width="830" width="100%" height="100%"
-src="/images/design/bar/bar03.jpg">
+src="images/design/bar/bar03.jpg">
 </img>
 
 4、对多个数据系列排序时，如果不涉及到日期等特定数据，最好能符合一定的逻辑用直观的方式引导用户更好地查看数据。可以通过升序或降序排布，例如按照数量从多到少来对数据进行排序，也可以按照字母顺序等来排布。总之，按照逻辑排序可以一定程度上引导人们更好地阅读数据。
@@ -37,5 +37,5 @@ src="https://gallery.echartsjs.com/view-lite.html?cid=xHJhWhGm4M">
 5、一般情况下不建议使用三维柱状图，与三维饼图一样，对于数据传达不太精准，甚至还不得不猜测哪个才是数据的顶端。
 
 <img max-width="830" width="100%" height="100%"
-src="/images/design/bar/bar04.jpg">
+src="images/design/bar/bar04.jpg">
 </img>

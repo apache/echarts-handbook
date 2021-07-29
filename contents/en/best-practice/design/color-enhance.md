@@ -11,13 +11,13 @@ In the field of visualization, if we choose the color that coincides with the ch
 Here is an example of the selling percentage of a certain dessert shop.
 
 <img max-width="830" width="50%" height="100%"
-src="/images/design/color/color01.png">
+src="images/design/color/color01.png">
 </img>
 
 We provided two charts with the same style but different color schemes. The right side one obviously performs better for the dessert data displaying.
 
 <img max-width="830" width="100%" height="100%"
-src="/images/design/color/color02.png">
+src="images/design/color/color02.png">
 </img>
 
 Compared with blue and purple, color likes orange, yellow, pink and green are preferred choices to inspire the appetite, happiness and warmness which matched the motion of eating sweets. In the other hand, most of the customer group for desserts is woman and children. Lively and cute chart colors in the left chart might be the better choice compared with the calm and rational colors of the chart.
@@ -29,7 +29,7 @@ Different colors can help us to identify and classify different ideas because we
 The researchers noticed that matching the semantic-resonant color for words contained specific color can increase the speed of the cognitive process and vice versa. This funny phenomenon is called the "Stroop Effect". In a comparative test (as shown below), the text "YELLOW" in the first line is easier to be positioned compared with the text "YELLOW" in the second line. In the second line, the text "PURPLE" have the font color of yellow, which makes it being noticed earlier sometimes. The font color here interfered with our speed of finding the right answer.
 
 <img max-width="830" width="100%" height="100%"
-src="/images/design/color/color03.png">
+src="images/design/color/color03.png">
 </img>
 
 Using semantic-resonant color effectively, we use the same color as the meaning of the data to improve the cognition efficiency of the visualization. For instance, you might use blue to display the data of "OCEAN", yellow to display the data of "DESERT".
@@ -61,5 +61,5 @@ We usually use the line chart to analyze the trend. We can actively configure an
 Therefore, color can be used as an effective tool to improve the readability of the chart.
 
 <img max-width="830" width="80%" height="100%"
-src="/images/design/color/color04.png">
+src="images/design/color/color04.png">
 </img>

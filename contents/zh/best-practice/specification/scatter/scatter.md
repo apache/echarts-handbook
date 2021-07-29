@@ -15,7 +15,7 @@ src="https://gallery.echartsjs.com/view-lite.html?cid=xSkCyUwKNG&v=1">
 - 不相关：数据没有明显的方向性，一个变量变化对另一个没有影响。
 
 <img max-width="830" width="100%" height="100%"
-src="/images/design/scatter/scatter5.jpg">
+src="images/design/scatter/scatter5.jpg">
 </img>
 
 需要注意的是，散点图能够有效的说明两个变量之间的相关性，但是并不能有力地证明  其中存在因果关系。例如广告投放量和点击率是正相关的，但是不能说点击率高一定是因为广告投放量多造成的。但是，如果有明显的正相关性，就有足够的理由去增加投放量，然后再去观察数据。

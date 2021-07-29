@@ -33,4 +33,4 @@ src="https://gallery.echartsjs.com/view-lite.html?cid=xS1Tbdr8EG&v=1">
 4. When displaying the data of the line chart, avoid deliberately distorting the trend. The meaningful volatility analysis chart should make the height of the item be two-thirds of the height of the y-axis.
 
 <img max-width="830" width="100%" height="100%"
-src="/images/design/line/line01.jpg"></img>
+src="images/design/line/line01.jpg"></img>

@@ -21,11 +21,11 @@ src="https://gallery.echartsjs.com/view-lite.html?cid=xS18jqmX4f">
 2、永远不要在 0 基线的右边画负值的水平条行图或在 0 基线的上边画负值的柱子，以免和常识违背造成误解。
 
 <img max-width="830" width="100%" height="100%"
-src="/images/design/bar/bi-directional-bar01.jpg">
+src="images/design/bar/bi-directional-bar01.jpg">
 </img>
 
 3、双向柱状图多用于展示含相反含义的数据，因此要避免不具有正负含义的数据使用而造成的误解。 如下图人口统计图表中使用双向柱状图，一侧绘制男性的数据，另一侧绘制女性的数据，只是单纯的两类不同数据的对比，并不存在负数。那么，此时将两个数据序列绘制成一个分组柱状图是更合适的。
 
 <img max-width="830" width="100%" height="100%"
-src="/images/design/bar/bi-directional-bar02.jpg">
+src="images/design/bar/bi-directional-bar02.jpg">
 </img>

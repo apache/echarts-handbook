@@ -67,7 +67,7 @@ option = {
 
 The color of legend has many ways to design. For different charts, the legend style can be different.
 
-<img max-width="830" width="80%" height="80%" src="/images/design/legend/charts_sign_img04.png" />
+<img max-width="830" width="80%" height="80%" src="images/design/legend/charts_sign_img04.png" />
 
 ```js
 option = {

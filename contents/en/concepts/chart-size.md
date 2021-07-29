@@ -6,7 +6,7 @@ Refer to several common usage scenarios, here is the example to initialize a cha
 
 ## Initialization
 
-### Define a parent container in HTML
+### Define a Parent Container in HTML
 
 In general, you need to define a `<div>` node and use the CSS to change the width and height. While initializing, import the chart into the node. Without declaring `opts.width` or `opts.height`, the size of the chart will default to the size of the node.
 
@@ -35,7 +35,7 @@ If the height and width of the container do not exist, or you wish the chart siz
 
 ## Reactive of the Container Size
 
-### Listen to the container size to change the chart size
+### Listen to the Container Size to Change the Chart Size
 
 In some cases, we want to accordingly change the chart size while the size of containers changed.
 
@@ -63,7 +63,7 @@ You can listen to `window.onresize` of the site to catch the event that the brow
 </script>
 ```
 
-### State a specific chart size
+### State a Specific Chart Size
 
 Except for calling `resize()` without parameters, you can state the height and width to implement the chart size different from the size of the container.
 
@@ -76,7 +76,7 @@ myChart.resize({
 
 > **Tips: ** Pay attention to how the API defined while reading the file. `resize()` API was sometimes mistaken for the form like `myCharts.resize(800, 400)` which do not exist.
 
-### Dispose and rebuild of the container node
+### Dispose and Rebuild of the Container Node
 
 We assume that there exist several bookmark pages and each page contained some charts. In this case, the content in other pages will be removed in DOM when select one page. The user will not find the chart after reselecting these pages.
 
