@@ -1,9 +1,7 @@
 {
   "name": "echarts-handbook",
   "version": "1.0.0",
-  "description": "ECharts Handbook",
-  "author": "Ovilia",
-  "private": true,
+  "description": "Apache ECharts Handbook",
   "scripts": {
     "dev": "nuxt",
     "start": "nuxt start",
