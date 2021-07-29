@@ -1,6 +1,6 @@
 export default {
-  routerBase: '/echarts-website/handbook/dist',
-  rootPath: 'http://localhost/echarts-website/handbook/dist/',
+  routerBase: '/echarts-website/handbook',
+  rootPath: 'http://localhost/echarts-website/handbook',
   exampleViewPath:
     'http://localhost/echarts-website/examples/${lang}/view.html?c=',
   exampleEditorPath:
