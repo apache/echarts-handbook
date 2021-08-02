@@ -3,7 +3,7 @@
     <navbar />
 
     <div class="page-main">
-      <div class="page-content single-page container-fluid row flex-xl-nowrap">
+      <div class="page-content handbook-content single-page container-fluid row flex-xl-nowrap">
         <sidebar />
 
         <div class="bd-content col-sm-7 pl-sm-2 col-12">
@@ -49,12 +49,21 @@ export default {
 </script>
 
 <style lang="postcss">
+body {
+  font-family: 'Open Sans', 'PingFang SC', Helvetica, Arial, sans-serif;;
+}
+
 .page-main {
   overflow-x: hidden;
 }
 
 .handbook-content {
-  margin-top: 50px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.bd-content {
+  padding-left: 50px;
 }
 
 .post-content {
@@ -68,18 +77,18 @@ export default {
   @apply text-blue-gray-500;
 
   h1 {
-    margin: 50px 0;
+    margin: 40px 0 30px 0;
     font-size: 36px;
     @apply text-blue-gray-800;
     font-weight: 500;
   }
 
   h2 {
-    margin: 70px 0 20px 0;
-    padding-bottom: 10px;
+    margin: 50px 0 20px 0;
+    padding-bottom: 15px;
     font-size: 26px;
     @apply text-blue-gray-900;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #eee;
   }
 
   h1 + h2 {
@@ -184,7 +193,7 @@ export default {
   }
 
   a {
-    @apply text-purple-600;
+    color: #337ab7;
   }
 }
 
@@ -192,7 +201,7 @@ export default {
   position: fixed;
   left: 77%;
   width: 21%;
-  top: 50px;
+  top: 65px;
   background-color: transparent;
   padding: 10px;
   height: auto;

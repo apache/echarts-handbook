@@ -86,33 +86,19 @@ export default Vue.extend({
 <style lang="postcss">
 .page-content {
   .nav-item {
-    cursor: pointer;
+    margin: 0;
 
     .nav-link {
       @apply text-blue-gray-500;
     }
 
-    .title {
-      padding: 2px 6px;
+    a.nav-link {
+      cursor: pointer;
     }
 
     .nav-link.nuxt-link-active {
-      color: #5470c6;
-    }
-
-    .nav-link:hover > .title {
-      /* color: #5470c6; */
-      background: #efefef;
-      border-radius: 3px;
-    }
-
-    .glyphicon {
-      padding: 5px;
-      color: #ccc;
-      cursor: pointer;
-      transform: scale(0.8);
-      top: 2px;
-      left: -5px;
+      font-weight: bold;
+      color: #337ab7;
     }
   }
 }

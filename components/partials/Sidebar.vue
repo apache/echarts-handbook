@@ -48,23 +48,27 @@ export default Vue.extend({
 
 <style lang="postcss">
 .bd-sidebar {
-  padding: 10px;
   position: sticky;
   z-index: 1000;
   top: 0;
+  left: 0;
   height: calc(100vh - 50px);
+  padding: 0;
   overflow-y: auto;
   border-right: 1px solid #eee;
 }
 
 .bd-sidenav {
-  margin-top: 4px;
-  margin-left: 10px;
   display: none;
 }
 
 .page-content {
   padding-bottom: 0;
+
+  .bd-docs-nav {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
 
   .nav {
     display: block;
@@ -76,7 +80,7 @@ export default Vue.extend({
 
   .nav > li > a:focus,
   .nav > li > a:hover {
-    background-color: transparent;
+    background-color: #f6f8fc;
   }
 
   .nav .b-icon.bi {
@@ -88,7 +92,7 @@ export default Vue.extend({
 
   .glyphicon {
     padding: 5px;
-    color: #ccc;
+    color: #cfd9e2;
     cursor: pointer;
     transform: scale(0.8);
     top: 2px;
@@ -97,7 +101,9 @@ export default Vue.extend({
   }
 
   .level0 > li > .nav-link {
-    padding: 10px 0;
+    margin-top: 5px;
+    padding: 6px 0 6px 20px;
+    font-weight: bold;
     @apply text-blue-gray-800;
   }
   .level1 {
@@ -105,25 +111,20 @@ export default Vue.extend({
     font-size: 14px;
 
     .nav-link {
-      padding: 5px 0;
+      padding: 6px 0 6px 35px;
     }
+  }
+
+  .level2 .nav-link {
+    padding: 5px 0 5px 50px;
   }
 
   .level3 {
     margin-top: 1px;
 
     .nav-link {
-      padding: 0;
+      padding: 5px 0 5px 60px;
     }
-  }
-  .nav.level3 {
-    padding-left: 5px;
-    margin-left: 5px;
-    @apply border-blue-gray-300 border-l;
-  }
-
-  .level3 .nav-link {
-    margin: 2px 0;
   }
 }
 </style>

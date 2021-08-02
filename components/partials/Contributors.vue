@@ -87,8 +87,9 @@ export default defineComponent({
   .post-contributor {
     display: inline-block;
     margin-right: 15px;
+    border: 1px solid #eee;
 
-    @apply rounded-md shadow-md;
+    @apply rounded-lg shadow-md;
 
     &:hover {
       text-decoration: none;
