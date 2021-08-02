@@ -1,7 +1,9 @@
 export default {
-    "contents/zh/concepts/visual-map.md": [
-        "Ovilia",
+    "contents/zh/concepts/style.md": [
         "pissang"
+    ],
+    "contents/zh/concepts/series.md": [
+        "Ovilia"
     ],
     "contents/zh/concepts/options.md": [
         "Ovilia"
@@ -42,70 +44,49 @@ export default {
         "plainheart",
         "yufeng04"
     ],
+    "contents/zh/best-practice/specification/scatter/scatter.md": [
+        "pissang"
+    ],
+    "contents/zh/best-practice/specification/scatter/bubble.md": [
+        "pissang"
+    ],
+    "contents/zh/best-practice/specification/radar.md": [
+        "pissang"
+    ],
+    "contents/zh/best-practice/specification/pie/basic-pie.md": [
+        "pissang"
+    ],
+    "contents/zh/best-practice/specification/line/stacked-area.md": [
+        "pissang"
+    ],
+    "contents/zh/best-practice/specification/line/basic-line.md": [
+        "pissang"
+    ],
+    "contents/zh/best-practice/specification/line/area.md": [
+        "pissang"
+    ],
+    "contents/zh/best-practice/specification/gauge.md": [
+        "pissang"
+    ],
+    "contents/zh/best-practice/specification/funnel.md": [
+        "pissang"
+    ],
+    "contents/zh/best-practice/specification/bar/stacked-bar.md": [
+        "pissang"
+    ],
+    "contents/zh/best-practice/specification/bar/grouped-bar.md": [
+        "pissang"
+    ],
+    "contents/zh/best-practice/specification/bar/bi-directional-bar.md": [
+        "pissang"
+    ],
+    "contents/zh/best-practice/specification/bar/basic-bar.md": [
+        "pissang"
+    ],
     "contents/zh/best-practice/mobile.md": [
         "Ovilia"
     ],
     "contents/zh/best-practice/design/color-enhance.md": [
-        "Hansz00",
-        "Wdingding",
-        "pissang"
-    ],
-    "contents/zh/best-practice/chart-specificatio/scatter/scatter.md": [
-        "Hansz00",
-        "Wdingding",
-        "pissang"
-    ],
-    "contents/zh/best-practice/chart-specificatio/scatter/bubble.md": [
-        "Wdingding",
-        "pissang"
-    ],
-    "contents/zh/best-practice/chart-specificatio/radar.md": [
-        "Hansz00",
-        "Wdingding"
-    ],
-    "contents/zh/best-practice/chart-specificatio/pie/basic-pie.md": [
-        "100pah",
-        "Wdingding",
-        "pissang"
-    ],
-    "contents/zh/best-practice/chart-specificatio/line/stacked-area.md": [
-        "Wdingding",
-        "pissang"
-    ],
-    "contents/zh/best-practice/chart-specificatio/line/basic-line.md": [
-        "Hansz00",
-        "Wdingding",
-        "pissang"
-    ],
-    "contents/zh/best-practice/chart-specificatio/line/area.md": [
-        "Hansz00",
-        "Wdingding",
-        "pissang"
-    ],
-    "contents/zh/best-practice/chart-specificatio/gauger.md": [
-        "Hansz00",
-        "Wdingding",
-        "pissang"
-    ],
-    "contents/zh/best-practice/chart-specificatio/funnel.md": [
-        "Wdingding",
-        "pissang"
-    ],
-    "contents/zh/best-practice/chart-specificatio/bar/stacked-bar.md": [
-        "Wdingding",
-        "pissang"
-    ],
-    "contents/zh/best-practice/chart-specificatio/bar/grouped-bar.md": [
-        "Hansz00",
-        "Wdingding",
-        "pissang"
-    ],
-    "contents/zh/best-practice/chart-specificatio/bar/bi-directional-bar.md": [
-        "Ovilia",
-        "Wdingding",
-        "pissang"
-    ],
-    "contents/zh/best-practice/chart-specificatio/bar/basic-bar.md": [
         "Hansz00",
         "Wdingding",
         "pissang"
@@ -293,54 +274,49 @@ export default {
         "huanghan01",
         "pissang"
     ],
+    "contents/en/best-practice/specification/scatter/scatter.md": [
+        "pissang"
+    ],
+    "contents/en/best-practice/specification/scatter/bubble.md": [
+        "pissang"
+    ],
+    "contents/en/best-practice/specification/radar.md": [
+        "pissang"
+    ],
+    "contents/en/best-practice/specification/pie/basic-pie.md": [
+        "pissang"
+    ],
+    "contents/en/best-practice/specification/line/stacked-area.md": [
+        "pissang"
+    ],
+    "contents/en/best-practice/specification/line/basic-line.md": [
+        "pissang"
+    ],
+    "contents/en/best-practice/specification/line/area.md": [
+        "pissang"
+    ],
+    "contents/en/best-practice/specification/gauge.md": [
+        "pissang"
+    ],
+    "contents/en/best-practice/specification/funnel.md": [
+        "pissang"
+    ],
+    "contents/en/best-practice/specification/bar/stacked-bar.md": [
+        "pissang"
+    ],
+    "contents/en/best-practice/specification/bar/grouped-bar.md": [
+        "pissang"
+    ],
+    "contents/en/best-practice/specification/bar/bi-directional-bar.md": [
+        "pissang"
+    ],
+    "contents/en/best-practice/specification/bar/basic-bar.md": [
+        "pissang"
+    ],
     "contents/en/best-practice/mobile.md": [
         "Hansz00"
     ],
     "contents/en/best-practice/design/color-enhance.md": [
-        "Hansz00",
-        "pissang"
-    ],
-    "contents/en/best-practice/chart-specificatio/scatter/scatter.md": [
-        "Hansz00",
-        "pissang"
-    ],
-    "contents/en/best-practice/chart-specificatio/scatter/bubble.md": [
-        "Hansz00"
-    ],
-    "contents/en/best-practice/chart-specificatio/radar.md": [
-        "Hansz00"
-    ],
-    "contents/en/best-practice/chart-specificatio/pie/basic-pie.md": [
-        "Hansz00",
-        "pissang"
-    ],
-    "contents/en/best-practice/chart-specificatio/line/stacked-area.md": [
-        "Hansz00"
-    ],
-    "contents/en/best-practice/chart-specificatio/line/basic-line.md": [
-        "Hansz00",
-        "pissang"
-    ],
-    "contents/en/best-practice/chart-specificatio/line/area.md": [
-        "Hansz00"
-    ],
-    "contents/en/best-practice/chart-specificatio/gauger.md": [
-        "Hansz00"
-    ],
-    "contents/en/best-practice/chart-specificatio/funnel.md": [
-        "Hansz00"
-    ],
-    "contents/en/best-practice/chart-specificatio/bar/stacked-bar.md": [
-        "Hansz00"
-    ],
-    "contents/en/best-practice/chart-specificatio/bar/grouped-bar.md": [
-        "Hansz00"
-    ],
-    "contents/en/best-practice/chart-specificatio/bar/bi-directional-bar.md": [
-        "Hansz00",
-        "pissang"
-    ],
-    "contents/en/best-practice/chart-specificatio/bar/basic-bar.md": [
         "Hansz00",
         "pissang"
     ],
@@ -447,20 +423,18 @@ export default {
     "contents/.prettierrc": [
         "pissang"
     ],
-    "contents/zh/concepts/tooltip.md": [
-        "Ovilia"
-    ],
     "contents/zh/get-started.md": [
         "Ovilia",
         "pissang"
     ],
-    "contents/zh/meta/edit-guide.md": [
+    "contents/zh/concepts/visual-map.md": [
+        "Ovilia",
         "pissang"
     ],
-    "contents/zh/concepts/series.md": [
+    "contents/zh/concepts/tooltip.md": [
         "Ovilia"
     ],
-    "contents/zh/concepts/style.md": [
+    "contents/zh/meta/edit-guide.md": [
         "pissang"
     ],
     "contents/zh/meta/writing.md": [

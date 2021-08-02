@@ -15,7 +15,8 @@ function escapeHtml(unsafe) {
 export default {
   ssr: true,
 
-  target: 'static',
+  // TODO static target will generate lot's of static js files. Not sure why
+  // target: 'static',
 
   router: {
     mode: 'history',
