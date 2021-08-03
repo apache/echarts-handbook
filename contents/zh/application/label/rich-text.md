@@ -13,7 +13,8 @@ Apache ECharts<sup>TM</sup> 中的文本标签从 v3.7 开始支持富文本模�
 - 文本片段（Text fragment）：文本标签块中的部分文本。
 
 如下图示例：
-~[340x240](${galleryViewPath}doc-example/text-block-fragment&edit=1&reset=1)
+
+<md-example src="doc-example/text-block-fragment" width="400" height="300"></md-example>
 
 ## 文本样式相关的配置项
 
