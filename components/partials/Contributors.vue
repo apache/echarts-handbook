@@ -87,14 +87,13 @@ export default defineComponent({
   .post-contributor {
     display: inline-block;
     margin-right: 15px;
-    border: 1px solid #eee;
 
-    @apply rounded-lg shadow-md;
+    @apply border-blue-gray-200 border;
+    @apply rounded-lg;
 
     &:hover {
       text-decoration: none;
-
-      @apply shadow-lg transition-shadow;
+      @apply border-blue-gray-300;
     }
 
     img {
