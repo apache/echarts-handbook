@@ -74,7 +74,7 @@ myChart.resize({
 });
 ```
 
-> **Tips: ** Pay attention to how the API defined while reading the file. `resize()` API was sometimes mistaken for the form like `myCharts.resize(800, 400)` which do not exist.
+> Tips: Pay attention to how the API defined while reading the documentation. `resize()` API was sometimes mistaken for the form like `myCharts.resize(800, 400)` which do not exist.
 
 ### Dispose and Rebuild of the Container Node
 
@@ -84,4 +84,4 @@ Essentially, this is because the container node of the charts was removed. Even 
 
 The correct way is, call [`echartsInstance.dispose`](${mainSitePath}api.html#echartsInstance.dispose) to dispose the instance after the container was disposed, and call [echarts.init](${mainSitePath}/api.html#echarts.init) to initialize after the container was added again.
 
-> **Tips: ** Call [`echartsInstance.dispose`](${mainSitePath}api.html#echartsInstance.dispose) to release resources while disposing the node to avoid memory leaks.
+> Tips: Call [`echartsInstance.dispose`](${mainSitePath}api.html#echartsInstance.dispose) to release resources while disposing the node to avoid memory leaks.

@@ -41,7 +41,7 @@ declare const echarts: any
 function ensureECharts() {
   if (typeof echarts === 'undefined') {
     return loadScriptsAsync([
-      'https://cdn.jsdelivr.net/npm/echarts/dist/echarts.js'
+      '//localhost/echarts/dist/echarts.js'
     ]).then(() => {})
   }
   return Promise.resolve()

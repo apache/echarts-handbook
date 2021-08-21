@@ -74,7 +74,7 @@ myChart.resize({
 });
 ```
 
-> **小贴士：** 阅读 API 文档的时候要留意接口的定义方式，这一接口有时会被误认为是 myCharts.resize(800, 400) 的形式，但其实不存在这样的调用方式。
+> 小贴士：阅读 API 文档的时候要留意接口的定义方式，这一接口有时会被误认为是 myCharts.resize(800, 400) 的形式，但其实不存在这样的调用方式。
 
 ### 容器节点被销毁以及被重建时
 
@@ -84,4 +84,4 @@ myChart.resize({
 
 正确的做法是，在图表容器被销毁之后，调用 [`echartsInstance.dispose`](${mainSitePath}api.html#echartsInstance.dispose) 销毁实例，在图表容器重新被添加后再次调用 [echarts.init](${mainSitePath}/api.html#echarts.init) 初始化。
 
-> **小贴士：** 在容器节点被销毁时，总是应调用 [`echartsInstance.dispose`](${mainSitePath}api.html#echartsInstance.dispose) 以销毁实例释放资源，避免内存泄漏。
+> 小贴士：在容器节点被销毁时，总是应调用 [`echartsInstance.dispose`](${mainSitePath}api.html#echartsInstance.dispose) 以销毁实例释放资源，避免内存泄漏。

@@ -1,7 +1,4 @@
 export default {
-    "contents/zh/concepts/style.md": [
-        "pissang"
-    ],
     "contents/zh/concepts/series.md": [
         "Ovilia"
     ],
@@ -423,18 +420,21 @@ export default {
     "contents/.prettierrc": [
         "pissang"
     ],
-    "contents/zh/get-started.md": [
+    "contents/zh/concepts/visual-map.md": [
         "Ovilia",
         "pissang"
     ],
-    "contents/zh/concepts/visual-map.md": [
+    "contents/zh/meta/edit-guide.md": [
+        "pissang"
+    ],
+    "contents/zh/get-started.md": [
         "Ovilia",
         "pissang"
     ],
     "contents/zh/concepts/tooltip.md": [
         "Ovilia"
     ],
-    "contents/zh/meta/edit-guide.md": [
+    "contents/zh/concepts/style.md": [
         "pissang"
     ],
     "contents/zh/meta/writing.md": [
