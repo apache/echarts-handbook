@@ -20,7 +20,7 @@
 
     <ul
       :class="['nav', 'bd-sidenav', 'level' + level]"
-      v-if="!item.draft && item.children && !collapsed"
+      v-show="!item.draft && item.children && !collapsed"
     >
       <SidebarNavItem
         v-for="child in item.children"
