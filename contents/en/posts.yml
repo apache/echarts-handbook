@@ -67,7 +67,6 @@
               dir: stacked-bar
             - title: Bar Racing
               dir: bar-race
-              draft: true
             - title: Bar Polar
               dir: polar-bar
               draft: true

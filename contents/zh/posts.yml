@@ -66,7 +66,6 @@
               dir: stacked-bar
             - title: 动态排序柱状图
               dir: bar-race
-              draft: true
             - title: 极坐标系柱状图
               dir: polar-bar
               draft: true

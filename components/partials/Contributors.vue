@@ -75,6 +75,7 @@ export default defineComponent({
   margin-bottom: 50px;
   padding-top: 10px;
   border-top: 1px solid #ddd;
+  @apply text-blue-gray-600;
 
   a {
     @apply text-blue-gray-500;

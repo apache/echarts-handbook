@@ -1,4 +1,21 @@
 export default {
+    "contents/zh/meta/edit-guide.md": [
+        "pissang"
+    ],
+    "contents/zh/get-started.md": [
+        "Ovilia",
+        "pissang"
+    ],
+    "contents/zh/concepts/visual-map.md": [
+        "Ovilia",
+        "pissang"
+    ],
+    "contents/zh/concepts/tooltip.md": [
+        "Ovilia"
+    ],
+    "contents/zh/concepts/style.md": [
+        "pissang"
+    ],
     "contents/zh/concepts/series.md": [
         "Ovilia"
     ],
@@ -334,6 +351,9 @@ export default {
     "contents/en/basics/release-note/v5-feature.md": [
         "pissang"
     ],
+    "contents/en/basics/release-note/5-2-0.md": [
+        "pissang"
+    ],
     "contents/en/basics/inspiration.md": [
         "pissang"
     ],
@@ -418,27 +438,6 @@ export default {
         "Hansz00"
     ],
     "contents/.prettierrc": [
-        "pissang"
-    ],
-    "contents/zh/concepts/visual-map.md": [
-        "Ovilia",
-        "pissang"
-    ],
-    "contents/zh/meta/edit-guide.md": [
-        "pissang"
-    ],
-    "contents/zh/get-started.md": [
-        "Ovilia",
-        "pissang"
-    ],
-    "contents/zh/concepts/tooltip.md": [
-        "Ovilia"
-    ],
-    "contents/zh/concepts/style.md": [
-        "pissang"
-    ],
-    "contents/zh/meta/writing.md": [
-        "Ovilia",
         "pissang"
     ],
     "contents/zh/posts.yml": [

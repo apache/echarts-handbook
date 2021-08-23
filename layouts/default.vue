@@ -98,23 +98,23 @@ body {
   h3 {
     margin: 30px 0 20px 0;
     font-size: 22px;
-    @apply text-blue-gray-900;
+    @apply text-blue-gray-700;
   }
 
   h4 {
     margin: 25px 0 20px 0;
     font-size: 18px;
-    color: #666;
+    @apply text-blue-gray-600;
   }
 
   h5 {
     font-size: 16px;
-    color: #666;
+    @apply text-blue-gray-500;
   }
 
   h6 {
     font-size: 14px;
-    color: #222;
+    @apply text-blue-gray-500;
   }
 
   .permalink {
