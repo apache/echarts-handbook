@@ -72,7 +72,6 @@
               draft: true
             - title: Waterfall
               dir: waterfall
-              draft: true
         - title: Line
           dir: line
           children:

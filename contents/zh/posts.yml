@@ -69,9 +69,8 @@
             - title: 极坐标系柱状图
               dir: polar-bar
               draft: true
-            - title: 瀑布图
+            - title: 阶梯瀑布图
               dir: waterfall
-              draft: true
             - title: 视觉映射的柱状图
               dir: visual-map
               draft: true
