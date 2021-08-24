@@ -6,7 +6,7 @@
 
 下面是一个横坐标为类目轴、纵坐标为数值轴的最简单的散点图配置：
 
-```js [live]
+```js live
 option = {
   xAxis: {
     data: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
@@ -25,7 +25,7 @@ option = {
 
 在上文的例子中，散点图的横坐标都是离散的类目轴，而纵坐标都是连续的数值轴。而对于散点图而言，另一种常见的场景是，两个坐标轴均为连续的数值轴，也就是笛卡尔坐标系。这时的系列形式略有不同，数据的横坐标和纵坐标一同写在 `data` 中，而非坐标轴中。
 
-```js [live]
+```js live
 option = {
   xAxis: {},
   yAxis: {},
@@ -69,7 +69,7 @@ ECharts 内置形状包括：圆形、矩形、圆角矩形、三角形、菱形
 
 在 ECharts 的 `symbol` 配置项中，我们使用 `d` 的值作为路径。
 
-```js [live]
+```js live
 option = {
   xAxis: {
     data: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
@@ -103,7 +103,7 @@ option = {
 
 在下面的例子中，我们将散点图点的大小设置为与其数据值成正比。
 
-```js [live]
+```js live
 option = {
   xAxis: {
     data: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']

@@ -2,7 +2,7 @@
 
 The area chart fills the space between the line and axis with the background color, to express the data by the size of the area. Compared with the normal line chart, the area chart has more intuitive visual effects. It is especially suitable for the scenario with a few series.
 
-```js [live]
+```js live
 option = {
   xAxis: {
     data: ['A', 'B', 'C', 'D', 'E']

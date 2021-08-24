@@ -4,7 +4,7 @@ Rose Chart, which was also called the nightingale chart, usually indicates categ
 
 ECharts can implement Rose Chart by defining [`series.roseType`](${optionPath}series-pie.roseType) of pie chart to `'area'`. All other configs are the same as a basic pie chart.
 
-```js [live]
+```js live
 option = {
   series: [
     {

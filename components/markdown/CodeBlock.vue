@@ -30,6 +30,8 @@ import 'prismjs/plugins/diff-highlight/prism-diff-highlight'
 import 'prism-themes/themes/prism-material-oceanic.css'
 
 import { defineComponent, ref, onMounted, computed } from '@vue/composition-api'
+import * as base64 from 'js-base64'
+
 import CodeBlockCopyClipboard from './CodeBlockCopyClipboard.vue'
 
 const DIFF_HIGHLIGHT_SYNTAX = /^(diff)-([\w-]+)/i
@@ -84,21 +86,18 @@ export default defineComponent({
       type: String,
       default: 'js'
     },
+    code: {
+      type: String
+    },
     lineHighlights: String,
     fileName: String
   },
 
   setup(props, context) {
-    const rawCode = ref('')
+    const rawCode = ref(base64.decode(props.code!))
 
     const highlightResult = computed(() => {
       return highlight(props.lang, rawCode.value)
-    })
-
-    // Update first time.
-    onMounted(() => {
-      const defaultSlot = context.slots.default && context.slots.default()
-      rawCode.value = ((defaultSlot && defaultSlot[0].text) || '').trim()
     })
 
     return {

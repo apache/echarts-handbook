@@ -4,7 +4,7 @@
 
 We can use the following code to build a line chart which has x-axis as `category`, y-axis as `value`:
 
-```js [live]
+```js live
 option = {
   xAxis: {
     type: 'category',
@@ -30,7 +30,7 @@ In this case, we set the type of axis to `category` and `value` under `xAxis` an
 
 How to implement if we want the line chart to be continuous? The answer is simple, as long as every value in `data` of the `series` is represented by an array containing two elements.
 
-```js [live]
+```js live
 option = {
   xAxis: {},
   yAxis: {},
@@ -55,7 +55,7 @@ Line style can be changed by `lineStyle` setting. You can specify color, line wi
 
 Here is an example of setting color, line width and type.
 
-```js [live]
+```js live
 option = {
   xAxis: {
     data: ['A', 'B', 'C', 'D', 'E']
@@ -87,7 +87,7 @@ Item style can be change by [`series.itemStyle`](${optionPath}series-line.itemSt
 
 In the series, the label of the item was specified by [`series.label`](${optionPath}series-line.label). If we change the `show` under `label` to `true`, the value will be displayed by default. Otherwise, if [`series.emphasis.label.show`](${optionPath}series-line.emphasis.label.show) is `true`, the label will show only if the mouse moved across the item.
 
-```js [live]
+```js live
 option = {
   xAxis: {
     data: ['A', 'B', 'C', 'D', 'E']
@@ -115,7 +115,7 @@ In a `series`, there are empty data. It has some difference with `0`. While ther
 
 In ECharts, we use `'-'` to represent null data, It is applicable for data in other series.
 
-```js [live]
+```js live
 option = {
   xAxis: {
     data: ['A', 'B', 'C', 'D', 'E']

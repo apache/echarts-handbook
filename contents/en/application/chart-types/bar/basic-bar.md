@@ -10,7 +10,11 @@ To set the bar chart, you need to set the `type` of `series` as `'bar'`.
 
 Let's begin with a basic bar chart:
 
-```js [live]
+```js
+/*
+live
+
+*/
 option = {
   xAxis: {
     data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
@@ -31,7 +35,7 @@ In this case, the x-axis is under the category type. Therefore, you should defin
 
 You may use a series to represent a group of related data. To show multiple series in the same chart, you need to add one more array under the `series`.
 
-```js [live]
+```js live
 option = {
   xAxis: {
     data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
@@ -64,7 +68,7 @@ It is a good idea to install the style of Bar Chart by using ['series.itemStyle'
 
 Here is a example:
 
-```js [live]
+```js live
 option = {
   xAxis: {
     data: ['A', 'B', 'C', 'D', 'E']
@@ -91,7 +95,7 @@ In this case, we defined the style of the bar chart by `'itemStyle'` of correspo
 
 You can use [`barWidth`](${optionPath}#series-bar.barWidth) to change the width of the bar. For instance, the `'barWidth'` in the following case was set to `'20%'`. It indicates that width of each bar is 20% of the category width. As there are 5 data in every series, 20% `'barWidth'` means 4% for the entire x-axis.
 
-```js [live]
+```js live
 option = {
   xAxis: {
     data: ['A', 'B', 'C', 'D', 'E']
@@ -118,7 +122,7 @@ In addition, [`barMaxWidth`](${optionPath}series-bar.barMaxWidth) has limited th
 
 There are two kinds of column spacing. One is the spacing between different series under the same category: [`barWidth`](${optionPath}series-bar.barWidth). The other is the spacing between categories: [`barCategoryGap`](${optionPath}series-bar.barCategoryGap).
 
-```js [live]
+```js live
 option = {
   xAxis: {
     data: ['A', 'B', 'C', 'D', 'E']
@@ -149,7 +153,7 @@ Usually, `barWidth` is not necessary to be clarified if `'barGap'` and `barCateg
 
 You might want to change the background color of bars sometimes. After ECharts v4.7.0, this function can be enabled by ['showBackground'](${optionPath}series-bar.showBackground) and configured by ['backgroundStyle'](${optionPath}series-bar.backgroundStyle).
 
-```js [live]
+```js live
 option = {
   xAxis: {
     type: 'category',

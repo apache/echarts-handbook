@@ -83,7 +83,7 @@ option = {
 
 <!-- prettier-ignore-start -->
 ```markdown
-```js [live]
+\```js live
 option = {
   xAxis: {
     data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
@@ -100,7 +100,7 @@ option = {
 ```
 <!-- prettier-ignore-end -->
 
-```js [live]
+```js live
 option = {
   xAxis: {
     data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
@@ -121,7 +121,7 @@ option = {
 
 <!-- prettier-ignore-start -->
 ```markdown
-```js [live-lr]
+\```js live {layout: 'lr'}
 option = {
   ...
 };
@@ -129,7 +129,7 @@ option = {
 ```
 <!-- prettier-ignore-end -->
 
-```js [live-lr]
+```js live {layout: 'lr'}
 option = {
   xAxis: {
     data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
@@ -148,7 +148,7 @@ option = {
 
 <!-- prettier-ignore-start -->
 ```markdown
-```js [live-rl]
+\```js live {layout: 'rl'}
 option = {
   ...
 };
@@ -156,7 +156,7 @@ option = {
 ```
 <!-- prettier-ignore-end -->
 
-```js [live-rl]
+```js live {layout: 'rl'}
 option = {
   xAxis: {
     data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
@@ -175,7 +175,7 @@ option = {
 
 <!-- prettier-ignore-start -->
 ```markdown
-```js [live-bt]
+\```js live {layout: 'bt'}
 option = {
   ...
 };
@@ -183,7 +183,7 @@ option = {
 ```
 <!-- prettier-ignore-end -->
 
-```js [live-bt]
+```js live {layout: 'bt'}
 option = {
   xAxis: {
     data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
@@ -198,13 +198,13 @@ option = {
 };
 ```
 
-### 高亮代码行以及添加文件名
+### 高亮代码行
 
 使用：
 
 <!-- prettier-ignore-start -->
 ```markdown
-```js{1,3-5}[option.js]
+\```js {1,3-5}
 option = {
   series: [
     {
@@ -219,7 +219,7 @@ option = {
 
 效果：
 
-```js{1,3-5}[option.js]
+```js {1,3-5}
 option = {
   series: [
     {
@@ -253,22 +253,22 @@ option = {
 使用：
 
 ```markdown
-<md-example src="doc-example/getting-started" width="100%" height="300"></md-example>
+<md-example src="doc-example/getting-started" width="100%" height="300" />
 ```
 
 效果：
-<md-example src="doc-example/getting-started" width="100%" height="300"></md-example>
+<md-example src="doc-example/getting-started" width="100%" height="300" />
 
 ## 添加配置项链接
 
 使用：
 
 ```markdown
-<md-option link="series-bar.itemStyle.color"></md-option>
+<md-option link="series-bar.itemStyle.color" />
 ```
 
 效果:
-<md-option link="series-bar.itemStyle.color"></md-option>
+<md-option link="series-bar.itemStyle.color" />
 
 ## 更多组件使用
 

@@ -17,7 +17,7 @@ myChart.on('click', function(params) {
 
 ECharts 支持常规的鼠标事件类型，包括 `'click'`、 `'dblclick'`、 `'mousedown'`、 `'mousemove'`、 `'mouseup'`、 `'mouseover'`、 `'mouseout'`、 `'globalout'`、 `'contextmenu'` 事件。下面先来看一个简单的点击柱状图后打开相应的百度搜索页面的示例。
 
-```js [live]
+```js live
 // 基于准备好的dom，初始化ECharts实例
 // var myChart = echarts.init(document.getElementById('main'));
 
@@ -266,7 +266,7 @@ myChart.on('legendselectchanged', function(params) {
 
 下面示例演示了如何通过 `dispatchAction` 去轮流高亮饼图的每个扇形。
 
-```js [live]
+```js live
 option = {
   title: {
     text: '饼图程序调用高亮示例',

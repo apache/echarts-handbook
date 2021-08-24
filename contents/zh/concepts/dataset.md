@@ -6,7 +6,7 @@
 
 如果数据设置在 `系列`（`series`）中，例如：
 
-```js [live]
+```js live
 option = {
   xAxis: {
     type: 'category',
@@ -47,7 +47,7 @@ option = {
 
 下面是一个最简单的 `dataset` 的例子：
 
-```js [live]
+```js live
 option = {
   legend: {},
   tooltip: {},
@@ -72,7 +72,7 @@ option = {
 
 或者也可以使用常见的“对象数组”的格式：
 
-```js [live]
+```js live
 option = {
   legend: {},
   tooltip: {},
@@ -117,7 +117,7 @@ option = {
 
 看这个例子：
 
-```js [live]
+```js live
 option = {
   legend: {},
   tooltip: {},
@@ -207,7 +207,7 @@ var option2 = {
 
 了解了维度的概念后，我们就可以使用 [series.encode](${optionPath}#series.encode) 来做映射。总体是这样的感觉：
 
-```js [live]
+```js live
 var option = {
   dataset: {
     source: [
@@ -384,7 +384,7 @@ var option = {
 
 答：
 
-```js [live]
+```js live
 var option = {
   dataset: {
     source: [
@@ -490,7 +490,7 @@ var option = {
 
 ECharts 4 之前一直以来的数据声明方式仍然被正常支持，如果系列已经声明了 [series.data](${optionPath}#series.data)， 那么就会使用 [series.data](${optionPath}#series.data) 而非 `dataset`。
 
-```js [live]
+```js live
 option = {
   xAxis: {
     type: 'category',

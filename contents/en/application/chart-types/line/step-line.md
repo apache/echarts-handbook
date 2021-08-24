@@ -4,7 +4,7 @@ The normal line chart connects two points by straight line directly, while the s
 
 In ECharts, `step` is used to characterize the connection type of the step line chart. It has three available values: `'start'`, `'end'`, and `'middle'`. For item A and B, these values corresponded that the corner occurred at A, B, and mid-point between A and B.
 
-```js [live]
+```js live
 option = {
   legend: {},
   xAxis: {

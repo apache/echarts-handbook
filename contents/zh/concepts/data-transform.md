@@ -17,7 +17,7 @@ Apache ECharts<sup>TM</sup> 5 开始支持了“数据转换”（ data transfor
 
 下面是上述例子的效果，三个饼图分别显示了 2011、2012、2013 年的数据。
 
-```js [live]
+```js live
 var option = {
   dataset: [
     {
@@ -252,7 +252,7 @@ option = {
 
 echarts 内置提供了能起过滤作用的数据转换器。我们只需声明 `transform.type: "filter"`，以及给出数据筛选条件。如下例：
 
-```js [live]
+```js live
 option = {
   dataset: [
     {

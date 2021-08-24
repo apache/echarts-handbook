@@ -173,7 +173,7 @@ option = {
 
 图左侧的 y 轴代表东京月平均气温，右侧的 y 轴表示东京降水量，x 轴表示时间。两组 y 轴在一起，反映了平均气温和降水量间的趋势关系。
 
-```js [live]
+```js live
 option = {
   tooltip: {
     trigger: 'axis',

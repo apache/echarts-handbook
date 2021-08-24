@@ -4,7 +4,7 @@
 
 在 ECharts 中，系列的 `step` 属性用来表征阶梯线图的连接类型，它共有三种取值：`'start'`、`'middle'` 和 `'end'`，分别表示在当前点，当前点与下个点的中间点，下个点拐弯。
 
-```js [live]
+```js live
 option = {
   xAxis: {
     type: 'category',

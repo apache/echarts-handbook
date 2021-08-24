@@ -6,7 +6,7 @@ Legends are used to annotate the content in the chart using different colors, sh
 
 Legend is always placed at the upper right corner of the chart. All legends in the same page need to be consistent, align horizontally or vertically by considering the layout of the overall chart space. When the chart have little vertical space or the content area is crowded, it is also a good choice to put legent on the bottom of the chart. Here are some layouts of the legend:
 
-```js [live]
+```js live
 option = {
   legend: {
     // Try 'horizontal'

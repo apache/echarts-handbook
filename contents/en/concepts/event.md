@@ -279,7 +279,7 @@ Commonly used behavior and corresponding parameters are listed in [action](${mai
 
 The following example shows how to highlight each sector one by one in the pie chart using `dispatchAction`.
 
-```js [live]
+```js live
 option = {
   tooltip: {
     trigger: 'item',

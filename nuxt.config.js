@@ -3,14 +3,6 @@ import config from './configs/config'
 if (process.env.NODE_ENV === 'production') {
   console.log('Deploying to ...', process.env.NUXT_ENV_DEPLOY)
 }
-function escapeHtml(unsafe) {
-  return unsafe
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#039;')
-}
 
 export default {
   ssr: true,
@@ -37,28 +29,6 @@ export default {
       }
     }
   },
-  hooks: {
-    'content:file:beforeParse': file => {
-      // TODO better way to detect?
-      const lang = file.path.match('contents/zh') ? 'zh' : 'en'
-      if (file.extension === '.md') {
-        // Replace variables
-        ;[
-          'optionPath',
-          'mainSitePath',
-          'exampleViewPath',
-          'exampleEditorPath'
-        ].forEach(p => {
-          const val = config[p].replace('${lang}', lang)
-          file.data = file.data.replace(
-            new RegExp('\\$\\{' + p + '\\}', 'g'),
-            val
-          )
-        })
-      }
-      file.data = file.data.replace(/\$\{lang\}/g, lang)
-    }
-  },
   /*
    ** Headers of the page
    */
@@ -82,35 +52,6 @@ export default {
       }
     ]
   },
-  content: {
-    dir: 'contents',
-    markdown: {
-      tocDepth: 3,
-      prism: {
-        theme: 'prism-themes/themes/prism-material-oceanic.css'
-      },
-      highlighter(rawCode, lang, attrs) {
-        if (attrs.fileName === 'null') {
-          attrs.fileName = ''
-        }
-        if (attrs.lineHighlights === 'null') {
-          attrs.lineHighlights = ''
-        }
-        const liveMatch = /^live(-(lr|tb|bt|rl))?$/.exec(attrs.fileName || '')
-        if (liveMatch) {
-          return `<md-live lang="${lang}" layout="${liveMatch[2] ||
-            'tb'}">${escapeHtml(rawCode)}</md-live>`
-        } else {
-          return `<md-code-block lang="${lang}" line-highlights="${attrs.lineHighlights ||
-            ''}" file-name="${attrs.fileName || ''}" >${escapeHtml(
-            rawCode
-          )}</md-code-block>`
-        }
-      },
-      remarkPlugins: []
-    },
-    liveEdit: false
-  },
   tailwindcss: {},
   /*
    ** Customize the progress-bar color
@@ -127,11 +68,7 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: [
-    '@nuxt/typescript-build',
-    '@nuxt/content',
-    '@nuxtjs/tailwindcss'
-  ],
+  buildModules: ['@nuxt/typescript-build', '@nuxtjs/tailwindcss'],
   /*
    ** Nuxt.js modules
    */
@@ -179,6 +116,8 @@ export default {
      ** You can extend webpack config here
      */
     extend(config, ctx) {
+      config.resolve.alias['vue'] = 'vue/dist/vue.common'
+
       config.module.rules.push({
         test: /\.md$/,
         use: ['raw-loader']
@@ -188,17 +127,16 @@ export default {
         test: /\.ya?ml$/,
         use: 'js-yaml-loader'
       })
-      if (ctx.isDev && ctx.isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/,
-          options: { fix: true }
-        })
-      }
+      // if (ctx.isDev && ctx.isClient) {
+      //   config.module.rules.push({
+      //     enforce: 'pre',
+      //     test: /\.(js|vue)$/,
+      //     loader: 'eslint-loader',
+      //     exclude: /(node_modules)/,
+      //     options: { fix: true }
+      //   })
+      // }
     },
-
     filenames: {
       chunk: ({ isDev }) => (isDev ? '[name].js' : 'js/[contenthash].js')
     }

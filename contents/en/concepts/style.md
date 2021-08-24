@@ -114,7 +114,7 @@ Generally speaking, all of the built-in components and series follow the naming 
 
 In the following code we add shadow, gradient to bubble chart.
 
-```js [live]
+```js live
 var data = [
   [
     [28604, 77, 17096869, 'Australia', 1990],

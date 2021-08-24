@@ -6,7 +6,7 @@ Pie charts are mainly used to show the proportion of several categories compared
 
 The config of the pie chart is not completely the same as the line chart and bar chart. There is no need to configure the axis. The name and value of data need to be defined in the series. Let's begin with a basic pie chart:
 
-```js [live]
+```js live
 option = {
   series: [
     {
@@ -38,7 +38,7 @@ To be mentioned, the `value` here does not need to be percentage data. ECharts w
 
 The radius of pie chart can be defined by [`series.radius`](${optionPath}series-pie.radius). Both percent string(`'60%'`) and absolute pixel string(`'200'`) are available. While it is a percent string, it is proportional related to the shorter container(`'div'`) edge.
 
-```js [live]
+```js live
 option = {
   series: [
     {
@@ -67,7 +67,7 @@ option = {
 
 By default, if the data sum is 0, the series will divide the shape equally. For instance, if you don't want to show any shape while all 4 series have value equals 0, you could define [`series.stillShowZeroSum`](${optionPath}series-pie.stillShowZeroSum) to `false`.
 
-```js [live]
+```js live
 option = {
   series: [
     {
@@ -94,7 +94,7 @@ option = {
 
 If you are willing to hide the label as well, define the [`series.label.show`](${optionPath}series-pie.label.show) to `false` as well.
 
-```js [live]
+```js live
 option = {
     series: [{
         type: 'pie',

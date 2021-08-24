@@ -1,16 +1,16 @@
 <template>
   <div>
     <div class="post-inner">
-      <nuxt-content :document="article" />
+      <post-content :content="html"></post-content>
       <div class="table-of-contents">
         <h4 class="toc-container-header">{{ $t('inThisPage') }}</h4>
         <ul>
           <li
-            v-for="link of article.toc"
+            v-for="link of toc"
             :key="link.id"
             :class="{ toc2: link.depth === 2, toc3: link.depth === 3 }"
           >
-            <NuxtLink :to="`#${link.id}`">{{ link.text }}</NuxtLink>
+            <NuxtLink :to="`#${link.id}`">{{ link.title }}</NuxtLink>
           </li>
         </ul>
       </div>
@@ -22,20 +22,107 @@
 <script lang="ts">
 import Vue from 'vue'
 import '~/components/markdown/global'
-
+import markdown from 'markdown-it'
+import anchor from 'markdown-it-anchor'
 import Contributors from '~/components/partials/Contributors.vue'
+import PostContent from '~/components/partials/PostContent'
+import * as base64 from 'js-base64'
+import config from '~/configs/config'
+
+function parseLiveCodeBlocks(md: string) {
+  return md.replace(
+    /^```(\w+?)\s+live\s*({.*?})?\s*?\n([\s\S]+?)^```/gm,
+    (full, lang = 'js', options = '{}', code: string = '') => {
+      lang = lang.trim()
+      options = options.trim() || '{}'
+      const encoded = base64.encode(code.trim(), true)
+      return `<md-live lang="${lang}" code="'${encoded}'" v-bind="${options}" />`
+    }
+  )
+}
+
+function parseCodeBlocks(md: string) {
+  return md.replace(
+    /^```(\w+?)\s*({.*?})?\s*?\n([\s\S]+?)^```/gm,
+    (full, lang = 'js', lineHighlights = '', code: string = '') => {
+      lang = lang.trim()
+      const encoded = base64.encode(code.trim(), true)
+      return `<md-code-block lang="${lang}" code="'${encoded}'" line-highlights="'${lineHighlights}'" />`
+    }
+  )
+}
+
+function replaceVars(md: string, lang: string) {
+  // Replace variables
+  ;[
+    'optionPath',
+    'mainSitePath',
+    'exampleViewPath',
+    'exampleEditorPath'
+  ].forEach(p => {
+    const val = config[p].replace('${lang}', lang)
+    md = md.replace(new RegExp('\\$\\{' + p + '\\}', 'g'), val)
+  })
+  md = md.replace(/\$\{lang\}/g, lang)
+  return md
+}
+
+function slugify(s: string) {
+  return encodeURIComponent(
+    String(s)
+      .trim()
+      .toLowerCase()
+      .replace(/\s+/g, '-')
+  )
+}
 
 export default Vue.extend({
   components: {
-    Contributors
+    Contributors,
+    PostContent
   },
-  async asyncData({ $content, params, i18n }: any) {
-    const postPath = `${i18n.locale}/${params.pathMatch}`
-    const article = await $content(postPath).fetch()
+  data() {
     return {
-      article,
-      postPath
+      toc: [] as {
+        title: string
+        id: string
+        depth: number
+      }[]
     }
+  },
+  mounted() {
+    this.toc = []
+    const headers =
+      this.$el.querySelector('.post-inner')?.querySelectorAll(' h2,h3') || []
+    for (let i = 0; i < headers.length; i++) {
+      const title = (headers[i] as HTMLHeadingElement).innerText
+      this.toc.push({
+        title,
+        depth: +headers[i].nodeName.replace(/\D/g, ''),
+        id: slugify(title)
+      })
+    }
+  },
+  async asyncData({ $content, params, i18n, $el }: any) {
+    const postPath = `${i18n.locale}/${params.pathMatch}`
+    const fileContent = await import(`~/contents/${postPath}.md`)
+    const content = replaceVars(
+      parseCodeBlocks(parseLiveCodeBlocks(fileContent.default)),
+      i18n.locale
+    )
+
+    const md = markdown({
+      html: true,
+      linkify: true
+    }).use(anchor, {
+      // slugify,
+      permalink: false,
+      permalinkAfter: true,
+      permalinkSymbol: '#',
+      permalinkClass: 'permalink'
+    })
+
+    return { html: md.render(content), postPath }
   }
 })
 </script>

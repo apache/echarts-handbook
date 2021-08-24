@@ -4,7 +4,7 @@
 
 ECharts 可以通过将饼图的 [`series.roseType`](${optionPath}series-pie.roseType) 值设为 `'area'` 实现南丁格尔图，其他配置项和饼图是相同的。
 
-```js [live]
+```js live
 option = {
   series: [
     {

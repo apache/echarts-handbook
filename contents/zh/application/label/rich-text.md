@@ -90,7 +90,7 @@ labelOption = {
 
 例如：
 
-```js [live]
+```js live
 option = {
   series: [
     {
@@ -185,7 +185,7 @@ option = {
 
 试试在下面例子中修改`position`和`distance` 属性：
 
-```js [live]
+```js live
 option = {
   series: [
     {
@@ -234,7 +234,7 @@ option = {
 
 某些图中，为了能有足够长的空间来显示标签，需要对标签进行旋转。例如：
 
-```js [live-lr]
+```js live {layout: 'lr'}
 const labelOption = {
   show: true,
   rotate: 90,
@@ -317,7 +317,7 @@ option = {
 
 看下面的例子：
 
-```js [live-lr]
+```js live {layout: 'lr'}
 option = {
   series: [
     {

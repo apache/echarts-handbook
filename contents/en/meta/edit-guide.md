@@ -85,7 +85,7 @@ option = {
 
 <!-- prettier-ignore-start -->
 ```markdown
-```js [live]
+\```js live
 option = {
   xAxis: {
     data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
@@ -103,7 +103,7 @@ option = {
 
 <!-- prettier-ignore-end -->
 
-```js [live]
+```js live
 option = {
   xAxis: {
     data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
@@ -125,7 +125,7 @@ option = {
 <!-- prettier-ignore-start -->
 
 ```markdown
-```js [live-lr]
+```js live {layout: 'lr'}
 option = {
   ...
 };
@@ -134,7 +134,7 @@ option = {
 
 <!-- prettier-ignore-end -->
 
-```js [live-lr]
+```js live {layout: 'lr'}
 option = {
   xAxis: {
     data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
@@ -154,7 +154,7 @@ option = {
 <!-- prettier-ignore-start -->
 
 ```markdown
-```js [live-rl]
+```js live {layout: 'rl'}
 option = {
   ...
 };
@@ -163,7 +163,7 @@ option = {
 
 <!-- prettier-ignore-end -->
 
-```js [live-rl]
+```js live {layout: 'rl'}
 option = {
   xAxis: {
     data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
@@ -183,7 +183,7 @@ option = {
 <!-- prettier-ignore-start -->
 
 ```markdown
-```js [live-bt]
+```js live {layout: 'bt'}
 option = {
   ...
 };
@@ -192,7 +192,7 @@ option = {
 
 <!-- prettier-ignore-end -->
 
-```js [live-bt]
+```js live {layout: 'bt'}
 option = {
   xAxis: {
     data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']

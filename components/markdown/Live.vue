@@ -32,7 +32,7 @@ import {
   onMounted,
   onUnmounted
 } from '@vue/composition-api'
-
+import * as base64 from 'js-base64'
 import { createSandbox } from '../helper/sandbox'
 import CodeBlockCopyClipboard from './CodeBlockCopyClipboard.vue'
 
@@ -61,6 +61,10 @@ export default defineComponent({
       default: 'js'
     },
 
+    code: {
+      type: String
+    },
+
     layout: {
       type: String,
       default: 'tb',
@@ -71,7 +75,7 @@ export default defineComponent({
   },
 
   setup(props, context) {
-    const innerCode = ref('')
+    const innerCode = ref(base64.decode(props.code))
     const previewContainer = ref<HTMLElement | null>(null)
 
     let sandbox: ReturnType<typeof createSandbox>
@@ -105,10 +109,9 @@ export default defineComponent({
     watch(innerCode, () => {
       debouncedUpdate()
     })
-    // Update first time.
+
     onMounted(() => {
-      const defaultSlot = context.slots.default && context.slots.default()
-      innerCode.value = ((defaultSlot && defaultSlot[0].text) || '').trim()
+      debouncedUpdate()
     })
 
     onUnmounted(() => {

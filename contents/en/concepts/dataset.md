@@ -6,7 +6,7 @@
 
 If data is defined under `series`, for example:
 
-```js [live]
+```js live
 option = {
   xAxis: {
     type: 'category',
@@ -48,7 +48,7 @@ Here are the advantages if you define `data` in `dataset`:
 
 Here is a simple `dataset` example:
 
-```js [live]
+```js live
 option = {
   legend: {},
   tooltip: {},
@@ -75,7 +75,7 @@ option = {
 
 Or try to use the "array of classes" format:
 
-```js [live]
+```js live
 option = {
   legend: {},
   tooltip: {},
@@ -122,7 +122,7 @@ You can use `seriesLayoutBy` to change the understanding of row and column of th
 
 Check this case:
 
-```js [live]
+```js live
 option = {
   legend: {},
   tooltip: {},
@@ -210,7 +210,7 @@ Dimension type can be the following values:
 
 After understand the concept of dimension, you can use [series.encode](${optionPath}#series.encode) to make a mapping:
 
-```js [live]
+```js live
 var option = {
   dataset: {
     source: [
@@ -390,7 +390,7 @@ Q: How to map the 3rd column to the size of the scatter chart?
 
 A:
 
-```js [live]
+```js live
 var option = {
   dataset: {
     source: [

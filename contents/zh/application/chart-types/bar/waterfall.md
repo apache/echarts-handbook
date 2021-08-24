@@ -10,7 +10,7 @@ var data = [900, 345, 393, -108, -154, 135, 178, 286, -119, -361, -203];
 
 也就是第一个数据是 `900`，第二个数据 `345` 表示的是在 `900` 的基础上增加了 `345`……将这个数据展示为阶梯瀑布图时，我们可以使用三个系列：第一个是不可交互的透明系列，用来实现“悬空”的柱状图效果；第二个系列用来表示正数；第二个系列用来表示负数。
 
-```js [live]
+```js live
 var data = [900, 345, 393, -108, -154, 135, 178, 286, -119, -361, -203];
 var help = [];
 var positive = [];
@@ -19,21 +19,18 @@ for (var i = 0, sum = 0; i < data.length; ++i) {
   if (data[i] >= 0) {
     positive.push(data[i]);
     negative.push('-');
-  }
-  else {
+  } else {
     positive.push('-');
     negative.push(-data[i]);
   }
 
   if (i === 0) {
     help.push(0);
-  }
-  else {
+  } else {
     sum += data[i - 1];
     if (data[i] < 0) {
       help.push(sum + data[i]);
-    }
-    else {
+    } else {
       help.push(sum);
     }
   }
@@ -51,17 +48,17 @@ option = {
   },
   xAxis: {
     type: 'category',
-    splitLine: {show:false},
-    data: function (){
+    splitLine: { show: false },
+    data: (function() {
       var list = [];
       for (var i = 1; i <= 11; i++) {
         list.push('Oct/' + i);
       }
       return list;
-    }()
+    })()
   },
   yAxis: {
-    type : 'value'
+    type: 'value'
   },
   series: [
     {

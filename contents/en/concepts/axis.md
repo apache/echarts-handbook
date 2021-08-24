@@ -173,7 +173,7 @@ option = {
 
 The y-axis on the left side represents the monthly average temperature in Tokyo, the y-axis on the right side represents the precipitation of Tokyo. The x-axis represents the time. It reflects the trend and relation between the average temperature and precipitation.
 
-```js [live]
+```js live
 option = {
   tooltip: {
     trigger: 'axis',

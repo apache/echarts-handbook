@@ -10,7 +10,7 @@
 
 最简单的柱状图可以这样设置：
 
-```js [live]
+```js live
 option = {
   xAxis: {
     data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
@@ -31,7 +31,7 @@ option = {
 
 我们可以用一个系列表示一组相关的数据，如果需要实现多系列的柱状图，只需要在 `series` 多添加一项就可以了——
 
-```js [live]
+```js live
 option = {
   xAxis: {
     data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
@@ -62,7 +62,7 @@ option = {
 - 柱条透明度（`opacity`）；
 - 阴影（`shadowBlur`、`shadowColor`、`shadowOffsetX`、`shadowOffsetY`）。
 
-```js [live]
+```js live
 option = {
   xAxis: {
     data: ['A', 'B', 'C', 'D', 'E']
@@ -89,7 +89,7 @@ option = {
 
 柱条宽度可以通过 [`barWidth`](${optionPath}#series-bar.barWidth) 设置。比如在下面的例子中，将 `barWidth` 设为 `'20%'`，表示每个柱条的宽度就是类目宽度的 20%。由于这个例子中，每个系列有 5 个数据，20% 的类目宽度也就是整个 x 轴宽度的 4%。
 
-```js [live]
+```js live
 option = {
   xAxis: {
     data: ['A', 'B', 'C', 'D', 'E']
@@ -116,7 +116,7 @@ option = {
 
 柱条间距分为两种，一种是不同系列在同一类目下的距离 [`barWidth`](${optionPath}series-bar.barWidth)，另一种是类目与类目的距离 [`barCategoryGap`](${optionPath}series-bar.barCategoryGap)。
 
-```js [live]
+```js live
 option = {
   xAxis: {
     data: ['A', 'B', 'C', 'D', 'E']
@@ -147,7 +147,7 @@ option = {
 
 有时，我们希望能够为柱条添加背景色。从 ECharts 4.7.0 版本开始，这一功能可以简单地用 [`showBackground`](${optionPath}series-bar.showBackground) 开启，并且可以通过 [`backgroundStyle`](${optionPath}series-bar.backgroundStyle) 配置。
 
-```js [live]
+```js live
 option = {
   xAxis: {
     type: 'category',

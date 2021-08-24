@@ -4,7 +4,7 @@ Sometimes, we hope to not only figure series separately but also the trend of th
 
 There is a simple way to implement a stacked bar chart by ECharts. You need to set the same string type value for a group of series in `stack`. The series with the same `stack` value will be in the same category.
 
-```js [live]
+```js live
 option = {
   xAxis: {
     data: ['A', 'B', 'C', 'D', 'E']

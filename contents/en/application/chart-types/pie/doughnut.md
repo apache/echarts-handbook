@@ -8,7 +8,7 @@ In ECharts, the radius of the pie chart could also be an array with 2 elements. 
 
 The bar chart, from this perspective, is a subset of the doughnut chart that has inner radius equals to 0.
 
-```js [live]
+```js live
 option = {
   title: {
     text: 'A Case of Doughnut Chart',
@@ -44,7 +44,7 @@ If we set one radius to string of a percentage value, while the other to a value
 
 The previous case gives you a way to show fixed text in the middle of doughnut chart. The next case will show you how to display the corresponding text of the sector highlighted by the mouse. The general idea is to fix `label` in the middle of the chart while hiding `label` in default.
 
-```js [live]
+```js live
 option = {
   legend: {
     orient: 'vertical',

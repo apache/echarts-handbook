@@ -6,7 +6,7 @@ Scatter Chart, a frequently used chart type, was constructed with several "point
 
 The following example is a basic scatter chart configuration with the x-axis as category and the y-axis as value:
 
-```js [live]
+```js live
 option = {
   xAxis: {
     data: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
@@ -25,7 +25,7 @@ option = {
 
 In the previous case, the x-axis of the scatter chart is a discrete category axis and the y-axis is a continuous value axis. However, the normal scene for the scatter chart is to have 2 continuous value axis (also called the cartesian coordinate system). The series type is different in that both x-axis and y-axis value are included in `data`, but not in `xAxis` and `yAxis`.
 
-```js [live]
+```js live
 option = {
   xAxis: {},
   yAxis: {},
@@ -69,7 +69,7 @@ Firstly, we need an `SVG` file of a heart. You can draw one by vector editing so
 
 In ECharts, define config `symbol` as a path of d:
 
-```js [live]
+```js live
 option = {
   xAxis: {
     data: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
@@ -101,7 +101,7 @@ Besides, it can be defined as a call back function. Here is an example of the fo
 
 The first argument is the data value, and the second argument included other arguments of the data item. In the following instance, we define the size of the item proportional related to the data value.
 
-```js [live]
+```js live
 option = {
   xAxis: {
     data: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']

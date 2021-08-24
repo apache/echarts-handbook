@@ -16,7 +16,7 @@ With the help of those transform methods, users can be implements the features l
 
 In echarts, data transform is implemented based on the concept of [dataset](~${optionPath}#dataset). A [dataset.transform](${optionPath}#dataset.transform) can be configured in a dataset instance to indicate that this dataset is to be generated from this `transform`. For example:
 
-```js [live]
+```js live
 var option = {
   dataset: [
     {
@@ -251,7 +251,7 @@ option = {
 
 Transform type "filter" is a built-in transform that provide data filter according to specified conditions. The basic option is like:
 
-```js [live]
+```js live
 option = {
   dataset: [
     {

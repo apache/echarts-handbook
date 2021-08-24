@@ -3,7 +3,9 @@
     <navbar />
 
     <div class="page-main">
-      <div class="page-content handbook-content single-page container-fluid row flex-xl-nowrap">
+      <div
+        class="page-content handbook-content single-page container-fluid row flex-xl-nowrap"
+      >
         <sidebar />
 
         <div class="bd-content col-sm-7 pl-sm-2 col-12">
@@ -50,7 +52,7 @@ export default {
 
 <style lang="postcss">
 body {
-  font-family: 'Open Sans', 'PingFang SC', Helvetica, Arial, sans-serif;;
+  font-family: 'Open Sans', 'PingFang SC', Helvetica, Arial, sans-serif;
 }
 
 .page-main {

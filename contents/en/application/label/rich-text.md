@@ -91,7 +91,7 @@ Border style and background style can be set to text fragment too: `borderColor`
 
 For example:
 
-```js [live]
+```js live
 option = {
   series: [
     {
@@ -186,7 +186,7 @@ option = {
 
 Try to modify the `position` and `distance` option in the following example:
 
-```js [live]
+```js live
 option = {
   series: [
     {
@@ -234,7 +234,7 @@ option = {
 
 Sometimes label is needed to be rotated. For example:
 
-```js [live-lr]
+```js live {layout: 'lr'}
 const labelOption = {
   show: true,
   rotate: 90,
@@ -317,7 +317,7 @@ The position of text in a text fragment:
 
 See example:
 
-```js [live-lr]
+```js live {layout: 'lr'}
 option = {
   series: [
     {
