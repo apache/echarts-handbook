@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="post-inner">
-      <div class="table-of-contents">
+      <div v-if="toc.length" class="table-of-contents">
         <h4 class="toc-container-header">{{ $t('inThisPage') }}</h4>
         <ul>
           <li
