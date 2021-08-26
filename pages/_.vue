@@ -1,7 +1,6 @@
 <template>
   <div>
     <div class="post-inner">
-      <post-content :content="html"></post-content>
       <div class="table-of-contents">
         <h4 class="toc-container-header">{{ $t('inThisPage') }}</h4>
         <ul>
@@ -14,6 +13,7 @@
           </li>
         </ul>
       </div>
+      <post-content :content="html"></post-content>
     </div>
     <contributors :path="postPath"></contributors>
   </div>

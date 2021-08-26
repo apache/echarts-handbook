@@ -56,6 +56,10 @@ export default Vue.extend({
   padding: 0;
   overflow-y: auto;
   border-right: 1px solid #eee;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 .bd-sidenav {

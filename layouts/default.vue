@@ -66,6 +66,10 @@ body {
 
 .bd-content {
   padding-left: 50px;
+
+  @media (max-width: 768px) {
+    padding-left: 30px;
+  }
 }
 
 .post-content {
@@ -209,14 +213,12 @@ body {
   height: auto;
 
   @media (max-width: 768px) {
-    & {
-      position: relative;
-      width: 100%;
-      left: 0;
-      top: 0;
-      padding: 10px 20px;
-      margin: 0 0 20px 0;
-    }
+    position: relative;
+    width: 100%;
+    left: 0;
+    top: 0;
+    padding: 0;
+    margin: 0 0 10px 0;
   }
 
   .toc-container-header {

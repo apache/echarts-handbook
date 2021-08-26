@@ -133,33 +133,35 @@ export default defineComponent({
 .md-live {
   @apply overflow-hidden;
   @apply shadow-lg rounded-lg mt-10 mb-20;
-  @apply flex;
+  @apply flex flex-col-reverse;
 
-  &.layout-lr {
-    @apply flex-row;
-  }
-  &.layout-rl {
-    @apply flex-row-reverse;
-  }
-  &.layout-tb {
-    @apply flex-col;
-  }
-  &.layout-bt {
-    @apply flex-col-reverse;
-  }
-  &.layout-lr,
-  &.layout-rl {
-    @apply items-stretch;
+  @media (min-width: 768px) {
+    &.layout-lr {
+      @apply flex-row;
+    }
+    &.layout-rl {
+      @apply flex-row-reverse;
+    }
+    &.layout-tb {
+      @apply flex-col;
+    }
+    &.layout-bt {
+      @apply flex-col-reverse;
+    }
+    &.layout-lr,
+    &.layout-rl {
+      @apply items-stretch;
 
-    .md-live-editor-container {
-      height: 100%;
-    }
-    .md-live-editor {
-      @apply flex-1;
-    }
-    .md-live-preview {
-      @apply flex-1;
-      height: auto;
+      .md-live-editor-container {
+        height: 100%;
+      }
+      .md-live-editor {
+        @apply flex-1;
+      }
+      .md-live-preview {
+        @apply flex-1;
+        height: auto;
+      }
     }
   }
 }
