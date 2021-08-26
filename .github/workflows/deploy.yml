@@ -11,6 +11,9 @@ jobs:
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v2
+        with:
+          # for generating contributors from all commit histories
+          fetch-depth: 0
 
       - name: Install and Build 🔧
         run: |
