@@ -122,6 +122,7 @@ export default {
         "pissang"
     ],
     "contents/zh/basics/release-note/5-2-0.md": [
+        "Ovilia",
         "pissang"
     ],
     "contents/zh/basics/inspiration.md": [
