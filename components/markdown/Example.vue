@@ -1,9 +1,14 @@
 <template>
-  <iframe :width="width" :height="height" :src="fullSrc"></iframe>
+  <iframe
+    :width="width"
+    :height="height"
+    :src="finalSrc"
+    v-observe-visibility="visibilityChanged"
+  ></iframe>
 </template>
 
 <script lang="ts">
-import { computed, defineComponent } from '@vue/composition-api'
+import { computed, defineComponent, ref } from '@vue/composition-api'
 import config from '~/configs/config'
 
 export default defineComponent({
@@ -28,8 +33,14 @@ export default defineComponent({
         ) + props.src
       )
     })
+    const finalSrc = ref('')
     return {
-      fullSrc
+      finalSrc,
+      visibilityChanged(isVisible) {
+        if (isVisible) {
+          finalSrc.value = fullSrc.value
+        }
+      }
     }
   }
 })

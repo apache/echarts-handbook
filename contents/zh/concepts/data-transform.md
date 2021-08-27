@@ -13,7 +13,7 @@ Apache ECharts<sup>TM</sup> 5 开始支持了“数据转换”（ data transfor
 
 ## 数据转换基础使用
 
-在 echarts 中，数据转换是依托于数据集（[dataset](${optionPath}#dataset)）来实现的. 我们可以设置 [dataset.transform](${optionPath}#dataset.transform) 来表示，此 dataset 的数据，来自于此 transform 的结果。例如。
+在 echarts 中，数据转换是依托于数据集（[dataset](${optionPath}#dataset)）来实现的. 我们可以设置 [dataset.transform](${optionPath}#dataset.transform) 来表示，此 dataset 的数据，来自于此 transform 的结果。
 
 下面是上述例子的效果，三个饼图分别显示了 2011、2012、2013 年的数据。
 

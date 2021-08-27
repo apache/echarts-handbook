@@ -243,7 +243,7 @@ option = {
 对于当前页面的临时样式，可以直接写 html：
 
 ```markdown
-<img src="images/demo.png" style="width: 50px" />
+<img data-src="images/demo.png" style="width: 50px" />
 ```
 
 ## 添加示例 iframe

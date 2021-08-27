@@ -4,7 +4,7 @@ Data visualization has come a long way in the last few years. Developers no long
 
 Apache ECharts has always been committed to making it easier for developers to create flexible and rich visualizations. In the latest release of Apache ECharts 5, we have focused on enhancing the storytelling of charts, allowing developers to tell the story behind the data in a simpler way.
 
-<img src="images/feature-v5/echarts-5-en.png" width="800px" />
+<img data-src="images/feature-v5/echarts-5-en.png" width="800px" />
 
 "The core of Apache ECharts 5 is "Show, do not tell", which is a comprehensive upgrade of five topics and 15 features around the stroy telling of visualizations, allowing charts to better tell the story behind the data. It helps developers to create visualizations that meet the needs of various scenarios more easily.
 
@@ -16,8 +16,8 @@ The importance of animation to human cognition cannot be overstated. In our prev
 
 Apache ECharts 5 adds support for dynamically sorted bar-racing and dynamically sorted line-racing charts to help developers easily create time-series charts that show changes in data over time and tell the evolution of data.
 
-<md-example src="bar-race-country" width="700" height="400"></md-example>
-<md-example src="line-race" width="700" height="400"></md-example>
+<md-example data-src="bar-race-country" width="700" height="400"></md-example>
+<md-example data-src="line-race" width="700" height="400"></md-example>
 
 The dynamic sorting chart shows the derivation of different categories in the ranking over time. The developer can enable this effect in ECharts with a few simple configuration code.
 
@@ -35,18 +35,18 @@ The role of visual design is not only to make the chart look better, but more im
 
 We have found that a large percentage of developers use the default theme style for ECharts, so it is important to have an elegant default theme design. In Apache ECharts 5, we redesigned the default theme style, optimizing it for different charts and components. For example, we took into account factors such as differentiation between colors, contrast with background colors, and harmony with adjacent colors, and ensured that people with color blindness could clearly distinguish data.
 
-<img src="images/feature-v5/theme-color.png" width="400px" />
+<img data-src="images/feature-v5/theme-color.png" width="400px" />
 
 Let's look at the new version of the light and dark theme styles using the most commonly used bar chart as an example.
 
-<img src="images/feature-v5/new-theme-light.png" width="500px" />
-<img src="images/feature-v5/new-theme-dark.png" width="500px" />
+<img data-src="images/feature-v5/new-theme-light.png" width="500px" />
+<img data-src="images/feature-v5/new-theme-dark.png" width="500px" />
 
 For the data area zoom, timeline and other interactive components, we also designed a new style and provide a better interactive experience:
 
-<img src="images/feature-v5/dataZoom.png" width="500px" />
+<img data-src="images/feature-v5/dataZoom.png" width="500px" />
 
-<img src="images/feature-v5/timeline.png" width="500px" />
+<img data-src="images/feature-v5/timeline.png" width="500px" />
 
 #### Label
 
@@ -60,7 +60,7 @@ We also provide several configuration options to allow developers to actively co
 
 The new label feature allows you to have very clear label presentation even in a confined space mobile:
 
-<img src="images/feature-v5/pie-label.png" width="400px" />
+<img data-src="images/feature-v5/pie-label.png" width="400px" />
 
 #### Time Axis
 
@@ -70,16 +70,16 @@ First of all, the time axis is no longer split absolutely evenly as before, but 
 
 The display of the time scale at different dataZoom granularities.
 
-<img src="images/feature-v5/time-axis.png" width="600px" />
+<img data-src="images/feature-v5/time-axis.png" width="600px" />
 
-<img src="images/feature-v5/time-axis-2.png" width="600px" />
+<img data-src="images/feature-v5/time-axis-2.png" width="600px" />
 
 #### Tooltip
 
 Tooltip is one of the most commonly used visualization components to help users interactively understand the details of data. In Apache ECharts 5, we have optimized the style of the tooltip, making the default display of the tooltip elegant and clear by adjusting the font style, color, arrow pointing to the graph, border color following the graph color, and other features. The rendering logic of rich text has been improved to ensure that the display is consistent with the HTML way, allowing users to choose different technical solutions to achieve the same effect in different scenarios.
 
-<img src="images/feature-v5/new-tooltip.png" width="400px" />
-<img src="images/feature-v5/new-tooltip-2.png" width="400px" />
+<img data-src="images/feature-v5/new-tooltip.png" width="400px" />
+<img data-src="images/feature-v5/new-tooltip-2.png" width="400px" />
 
 In addition to this, we have also added the ability to sort the list in the tip box by value size or category order this time.
 
@@ -89,7 +89,7 @@ We have seen a lot of cool gauge charts created by community users, but the way 
 
 Different styles of gauge pointers.
 
-<img src="images/feature-v5/gauge-pointer.png" width="600px" />
+<img data-src="images/feature-v5/gauge-pointer.png" width="600px" />
 
 These upgrades not only allow developers to achieve cool effects with simpler configuration items, but also bring richer customization capabilities.
 
@@ -123,7 +123,7 @@ Apache ECharts 5 has new support for dirty rectangle rendering to address perfor
 
 A visual demonstration of a dirty rectangle, with the red boxed area redrawn for the frame.
 
-<img src="images/feature-v5/dirty-rect.gif" width="500px" />
+<img data-src="images/feature-v5/dirty-rect.gif" width="500px" />
 
 You can see the effect by enable dirty rectangle optimization on the new example page.
 

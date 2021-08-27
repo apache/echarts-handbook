@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import VueCompositionAPI from '@vue/composition-api'
+import 'intersection-observer'
+import { ObserveVisibility } from 'vue-observe-visibility'
 
 import Example from './Example.vue'
 import Alert from './Alert.vue'
@@ -14,3 +16,5 @@ Vue.component('md-alert', Alert)
 Vue.component('md-live', Live)
 Vue.component('md-code-block', CodeBlock)
 Vue.component('md-option', OptionLink)
+
+Vue.directive('observe-visibility', ObserveVisibility)

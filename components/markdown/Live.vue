@@ -1,5 +1,9 @@
 <template>
-  <div :class="`md-live layout-${layout}`" v-if="innerCode">
+  <div
+    :class="`md-live layout-${layout}`"
+    v-observe-visibility="visibilityChanged"
+    v-if="innerCode"
+  >
     <div class="md-live-editor">
       <div class="md-live-editor-container">
         <prism-editor v-model="innerCode" :highlight="highlighter">
@@ -110,9 +114,9 @@ export default defineComponent({
       debouncedUpdate()
     })
 
-    onMounted(() => {
-      debouncedUpdate()
-    })
+    // onMounted(() => {
+    //   debouncedUpdate()
+    // })
 
     onUnmounted(() => {
       removeListener(unref(previewContainer)!, resize)
@@ -123,6 +127,19 @@ export default defineComponent({
       previewContainer,
       highlighter(code) {
         return highlight(code, languages[props.lang] || languages.js)
+      },
+      visibilityChanged(isVisible) {
+        if (isVisible) {
+          if (!sandbox) {
+            debouncedUpdate()
+          } else {
+            sandbox.resume()
+          }
+        } else {
+          if (sandbox) {
+            sandbox.pause()
+          }
+        }
       }
     }
   }
@@ -183,6 +200,10 @@ export default defineComponent({
 
     font-size: 13px;
     padding: 10px;
+
+    @media (max-width: 768px) {
+      max-height: 300px;
+    }
   }
 
   pre {

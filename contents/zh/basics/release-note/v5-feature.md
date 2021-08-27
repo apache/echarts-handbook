@@ -4,7 +4,7 @@
 
 Apache ECharts 始终致力于让开发者以更方便的方式创造灵活丰富的可视化作品。在最新推出的 Apache ECharts 5，我们着力加强了图表的叙事能力，让开发者可以以更简单的方式，讲述数据背后的故事。
 
-<img src="images/feature-v5/echarts-5.png" width="800px" />
+<img data-src="images/feature-v5/echarts-5.png" width="800px" />
 
 “表·达”是 Apache ECharts 5 的核心，通过五大模块、十五项特性的全面升级，围绕可视化作品的叙事表达能力，让图“表”更能传“达”数据背后的故事，帮助开发者更轻松地创造满足各种场景需求的可视化作品。
 
@@ -35,18 +35,18 @@ Apache ECharts 5 新增支持动态排序柱状图（bar-racing）以及动态�
 
 我们发现，有很大一部分开发者使用了 ECharts 默认的主题样式，因而设计优雅、符合可视化原理的默认主题设计是非常重要的。在 Apache ECharts 5 中，我们重新设计了默认的主题样式，针对不同的系列和组件分别做了优化调整。以主题色为例，我们考量了颜色之间的区分度、与背景色的对比度、相邻颜色的和谐度等因素，并且确保色觉辨识障碍人士也能清楚地区分数据。
 
-<img src="images/feature-v5/theme-color.png" width="400px" />
+<img data-src="images/feature-v5/theme-color.png" width="400px" />
 
 我们以最常用的柱状图为例，来看看新版本浅色主题和深色主题的样式：
 
-<img src="images/feature-v5/new-theme-light.png" width="500px" />
-<img src="images/feature-v5/new-theme-dark.png" width="500px" />
+<img data-src="images/feature-v5/new-theme-light.png" width="500px" />
+<img data-src="images/feature-v5/new-theme-dark.png" width="500px" />
 
 对于数据区域缩放，时间轴等交互组件，我们也设计了全新的样式并且提供了更好的交互体验：
 
-<img src="images/feature-v5/dataZoom.png" width="500px" />
+<img data-src="images/feature-v5/dataZoom.png" width="500px" />
 
-<img src="images/feature-v5/timeline.png" width="500px" />
+<img data-src="images/feature-v5/timeline.png" width="500px" />
 
 #### 标签
 
@@ -60,7 +60,7 @@ Apache ECharts 5 可以通过一个配置项开启自动隐藏重叠的标签。
 
 新的标签功能可以让你在移动端这样局限的空间内也可以有很优雅的标签展示：
 
-<img src="images/feature-v5/pie-label.png" width="400px" />
+<img data-src="images/feature-v5/pie-label.png" width="400px" />
 
 #### 时间轴
 
@@ -70,16 +70,16 @@ Apache ECharts 5 带来了适于表达时间标签刻度的时间轴。时间轴
 
 不同的 dataZoom 粒度下时间刻度的显示：
 
-<img src="images/feature-v5/time-axis.png" width="600px" />
+<img data-src="images/feature-v5/time-axis.png" width="600px" />
 
-<img src="images/feature-v5/time-axis-2.png" width="600px" />
+<img data-src="images/feature-v5/time-axis-2.png" width="600px" />
 
 #### 提示框
 
 提示框（Tooltip）是一种最常用的可视化组件，可以帮助用户交互式地了解数据的详细信息。在 Apache ECharts 5 中，我们对提示框的样式进行了优化，通过对字体样式，颜色的调整，指向图形的箭头，跟随图形颜色的边框色等功能，让提示框的默认展示优雅又清晰。并且改进了富文本的渲染逻辑，确保显示效果与 HTML 方式一致，让用户在不同场景下可以选择不同的技术方案实现同样的效果。
 
-<img src="images/feature-v5/new-tooltip.png" width="400px" />
-<img src="images/feature-v5/new-tooltip-2.png" width="400px" />
+<img data-src="images/feature-v5/new-tooltip.png" width="400px" />
+<img data-src="images/feature-v5/new-tooltip-2.png" width="400px" />
 
 除此之外，我们这次也加上了提示框内的列表按照数值大小或者类目顺序排序的功能。
 
@@ -89,7 +89,7 @@ Apache ECharts 5 带来了适于表达时间标签刻度的时间轴。时间轴
 
 不同样式的仪表盘指针：
 
-<img src="images/feature-v5/gauge-pointer.png" width="600px" />
+<img data-src="images/feature-v5/gauge-pointer.png" width="600px" />
 
 这些升级，不仅可以让开发者用更简单的配置项实现酷炫的效果，而且带来了更丰富的定制能力。
 
@@ -123,7 +123,7 @@ Apache ECharts 5 新支持了脏矩形渲染，解决只有局部变化的场景
 
 脏矩形的可视化演示，红色框选部分为该帧重绘区域：
 
-<img src="images/feature-v5/dirty-rect.gif" width="500px" />
+<img data-src="images/feature-v5/dirty-rect.gif" width="500px" />
 
 大家在新的示例页面选择开启脏矩形优化就可以看到该效果。
 

@@ -28,6 +28,7 @@ import Contributors from '~/components/partials/Contributors.vue'
 import PostContent from '~/components/partials/PostContent'
 import * as base64 from 'js-base64'
 import config from '~/configs/config'
+import LazyLoad from 'vanilla-lazyload'
 
 function parseLiveCodeBlocks(md: string) {
   return md.replace(
@@ -102,6 +103,20 @@ export default Vue.extend({
         id: slugify(title)
       })
     }
+    setTimeout(() => {
+      // FIXME not sure why this needs to be in the setTimeout
+      // init lazy load
+      // @ts-ignore
+      this._lazyload = new LazyLoad({
+        // container: this.$el.querySelector('.post-inner') as HTMLElement,
+        elements_selector: 'img[data-src], iframe[data-src]',
+        threshold: 300
+      })
+    })
+  },
+  destroyed() {
+    // @ts-ignore
+    this._lazyload && this._lazyload.destroy()
   },
   async asyncData({ $content, params, i18n, $el }: any) {
     const postPath = `${i18n.locale}/${params.pathMatch}`
@@ -114,13 +129,24 @@ export default Vue.extend({
     const md = markdown({
       html: true,
       linkify: true
-    }).use(anchor, {
-      // slugify,
-      permalink: false,
-      permalinkAfter: true,
-      permalinkSymbol: '#',
-      permalinkClass: 'permalink'
     })
+      .use(anchor, {
+        // slugify,
+        permalink: false,
+        permalinkAfter: true,
+        permalinkSymbol: '#',
+        permalinkClass: 'permalink'
+      })
+      .use(function(md) {
+        const defaultImageRenderer = md.renderer.rules.image
+        md.renderer.rules.image = function(tokens, idx, options, env, self) {
+          const token = tokens[idx]
+          const srcValue = token.attrGet('src')
+          token.attrPush(['data-src', srcValue])
+          token.attrSet('src', '')
+          return defaultImageRenderer(tokens, idx, options, env, self)
+        }
+      }) // lazyload
 
     return { html: md.render(content), postPath }
   }

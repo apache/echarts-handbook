@@ -1,32 +1,91 @@
+import Vue from 'vue'
 declare const echarts: any
 export function createSandbox() {
   let appEnv: any = {}
 
-  let _intervalIdList: number[] = []
-  let _timeoutIdList: number[] = []
+  const animatorIdMap = {}
+  let animatorId = 1
+  // Using echarts timer so it can be paused.
+  function chartSetTimeout(cb: () => void, time: number) {
+    const animator = chartInstance
+      .getZr()
+      .animation.animate({ val: 0 } as any, {
+        loop: false
+      })
+      .when(time, {
+        val: 1
+      })
+      .during(() => {
+        // Please don't fall sleep.
+        // TODO Can be configurable.
+        chartInstance.getZr().wakeUp()
+      })
+      .done(() => {
+        // NOTE: Must delay the callback. Or zrender flush will invoke the chartSetTimeout callback again.
+        // TODO: This is something needs to be fixed in zrender.
+        Vue.nextTick(cb)
+      })
+      .start()
 
-  const _oldSetTimeout = window.setTimeout
-  const _oldSetInterval = window.setInterval
+    return animator
+  }
+
+  function chartSetInterval(cb: () => void, time: number) {
+    const animator = chartInstance
+      .getZr()
+      .animation.animate({ val: 0 } as any, {
+        loop: true
+      })
+      .when(time, {
+        val: 1
+      })
+      .during((target, percent) => {
+        // Please don't fall sleep.
+        // TODO Can be configurable.
+        chartInstance.getZr().wakeUp()
+        if (percent === 1) {
+          // NOTE: Must delay the callback. Or zrender flush will invoke the chartSetTimeout callback again.
+          // TODO: This is something needs to be fixed in zrender.
+          Vue.nextTick(cb)
+        }
+      })
+      .start()
+
+    return animator
+  }
 
   function setTimeout(func, delay) {
-    var id = _oldSetTimeout(func, delay)
-    _timeoutIdList.push(id)
-    return id
+    const animator = chartSetTimeout(func, delay)
+    animatorIdMap[animatorId] = animator
+    return animatorId++
   }
   function setInterval(func, gap) {
-    var id = _oldSetInterval(func, gap)
-    _intervalIdList.push(id)
-    return id
+    const animator = chartSetInterval(func, gap)
+    animatorIdMap[animatorId] = animator
+    return animatorId++
   }
+
+  function clearTimer(id) {
+    const animator = animatorIdMap[id]
+    if (animator) {
+      chartInstance.getZr().animation.removeAnimator(animator)
+      delete animatorIdMap[id]
+    }
+  }
+
+  function clearTimeout(id) {
+    clearTimer(id)
+  }
+  function clearInterval(id) {
+    clearTimer(id)
+  }
+
   function _clearTimeTickers() {
-    for (var i = 0; i < _intervalIdList.length; i++) {
-      clearInterval(_intervalIdList[i])
+    for (let key in animatorIdMap) {
+      if (animatorIdMap.hasOwnProperty(key)) {
+        clearTimer(key)
+      }
     }
-    for (var i = 0; i < _timeoutIdList.length; i++) {
-      clearTimeout(_timeoutIdList[i])
-    }
-    _intervalIdList = []
-    _timeoutIdList = []
   }
   const _events: string[] = []
   function _wrapOnMethods(chart) {
@@ -84,6 +143,18 @@ export function createSandbox() {
       return chartInstance
     },
 
+    pause() {
+      if (chartInstance) {
+        chartInstance.getZr().animation.pause()
+      }
+    },
+
+    resume() {
+      if (chartInstance) {
+        chartInstance.getZr().animation.resume()
+      }
+    },
+
     run(
       el: HTMLElement,
       code: string,
@@ -122,10 +193,18 @@ export function createSandbox() {
         'app',
         'setTimeout',
         'setInterval',
-        'ROOT_PATH',
+        'clearTimeout',
+        'clearInterval',
         'var option;\n' + compiledCode + '\nreturn option;'
       )
-      const option = func(chartInstance, appEnv, setTimeout, setInterval)
+      const option = func(
+        chartInstance,
+        appEnv,
+        setTimeout,
+        setInterval,
+        clearTimer,
+        clearInterval
+      )
       let updateTime = 0
 
       if (option && typeof option === 'object') {

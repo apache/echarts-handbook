@@ -254,7 +254,7 @@ Source images are stored under `static/images/`.
 For the temporary style of the current page, you can just write html.
 
 ```markdown
-<img src="images/demo.png" style="width: 50px" />
+<img data-src="images/demo.png" style="width: 50px" />
 ```
 
 ## Add Example Iframe
