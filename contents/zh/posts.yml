@@ -17,12 +17,12 @@
     - title: 版本介绍
       dir: release-note
       children:
-        - title: 5.2.0 特性介绍
-          dir: 5-2-0
         - title: ECharts 5 特性介绍
           dir: v5-feature
         - title: ECharts 5 升级指南
           dir: v5-upgrade-guide
+        - title: 5.2.0
+          dir: 5-2-0
 - title: 概念篇
   dir: concepts
   children:
