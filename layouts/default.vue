@@ -82,29 +82,42 @@ body {
 
   @apply text-blue-gray-500;
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 500;
+
+    &:hover .permalink {
+      display: inline-block;
+    }
+  }
+
   h1 {
     margin: 40px 0 30px 0;
     font-size: 36px;
-    @apply text-blue-gray-800;
-    font-weight: 500;
+    font-weight: 700;
+    @apply text-blue-gray-700;
   }
 
   h2 {
-    margin: 50px 0 20px 0;
-    padding-bottom: 15px;
+    margin: 100px 0 20px 0;
+    padding-bottom: 20px;
     font-size: 26px;
-    @apply text-blue-gray-900;
+    @apply text-blue-gray-600;
     border-bottom: 1px solid #eee;
   }
 
   h1 + h2 {
-    margin-top: 30px;
+    margin-top: 40px;
   }
 
   h3 {
-    margin: 30px 0 20px 0;
-    font-size: 22px;
-    @apply text-blue-gray-700;
+    margin: 80px 0 30px 0;
+    font-size: 24px;
+    @apply text-blue-gray-600;
   }
 
   h4 {
@@ -125,17 +138,6 @@ body {
 
   .permalink {
     display: none;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    &:hover .permalink {
-      display: inline-block;
-    }
   }
 
   blockquote {
@@ -186,12 +188,12 @@ body {
 
   p,
   li {
-    line-height: 1.8em;
+    line-height: 1.7em;
     font-size: 16px;
   }
 
   p {
-    margin: 20px 0;
+    margin: 15px 0;
   }
 
   img {
@@ -222,7 +224,7 @@ body {
   }
 
   .toc-container-header {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
   }
 
@@ -233,11 +235,19 @@ body {
     li {
       list-style: none;
       font-size: 14px;
-    }
 
-    li.toc3 {
-      padding-left: 10px;
-      font-size: 12px;
+      &.toc2 {
+        font-size: 15px;
+      }
+
+      &.toc3 {
+        font-size: 14px;
+        padding-left: 15px;
+      }
+
+      &.toc3 + .toc2 {
+        margin-top: 15px;
+      }
     }
   }
 

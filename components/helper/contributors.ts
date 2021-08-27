@@ -1,7 +1,4 @@
 export default {
-    "contents/zh/meta/edit-guide.md": [
-        "pissang"
-    ],
     "contents/zh/get-started.md": [
         "Ovilia",
         "pissang"
@@ -215,7 +212,8 @@ export default {
         "pissang"
     ],
     "contents/zh/application/chart-types/bar/waterfall.md": [
-        "Ovilia"
+        "Ovilia",
+        "pissang"
     ],
     "contents/zh/application/chart-types/bar/stacked-bar.md": [
         "Ovilia",
@@ -230,9 +228,11 @@ export default {
         "pissang"
     ],
     "contents/zh/application/chart-types/bar/bar-race.md": [
-        "Ovilia"
+        "Ovilia",
+        "pissang"
     ],
     "contents/en/posts.yml": [
+        "Ovilia",
         "pissang"
     ],
     "contents/en/meta/edit-guide.md": [
@@ -420,7 +420,9 @@ export default {
         "pissang"
     ],
     "contents/en/application/chart-types/bar/waterfall.md": [
-        "Hansz00"
+        "Hansz00",
+        "Ovilia",
+        "pissang"
     ],
     "contents/en/application/chart-types/bar/stacked-bar.md": [
         "Hansz00",
@@ -435,12 +437,15 @@ export default {
         "pissang"
     ],
     "contents/en/application/chart-types/bar/bar-race.md": [
-        "Hansz00"
+        "Hansz00",
+        "Ovilia",
+        "pissang"
     ],
     "contents/.prettierrc": [
         "pissang"
     ],
     "contents/zh/posts.yml": [
+        "Ovilia",
         "pissang"
     ]
 };
