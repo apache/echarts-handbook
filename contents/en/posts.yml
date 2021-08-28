@@ -22,7 +22,6 @@
         - title: ECharts 5 Upgrade Guide
           dir: v5-upgrade-guide
         - title: 5.2
-          draft: true
           dir: 5-2-0
 - title: Concepts
   dir: concepts
