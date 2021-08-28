@@ -153,7 +153,7 @@ export default Vue.extend({
       display: block;
       position: absolute;
       left: 280px;
-      bottom: 20px;
+      bottom: 60px;
       width: 40px;
       height: 40px;
       padding: 5px;

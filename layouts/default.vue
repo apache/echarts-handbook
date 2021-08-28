@@ -69,6 +69,7 @@ body {
 
   @media (max-width: 768px) {
     padding-left: 30px;
+    padding-right: 30px;
   }
 }
 
