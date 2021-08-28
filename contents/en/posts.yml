@@ -14,16 +14,16 @@
       dir: inspiration
     - title: Get Help
       dir: help
-    - title: Release Note
+    - title: What's New
       dir: release-note
       children:
-        - title: ECharts 5.2.0
-          draft: true
-          dir: 5-2-0
         - title: ECharts 5 Features
           dir: v5-feature
         - title: ECharts 5 Upgrade Guide
           dir: v5-upgrade-guide
+        - title: 5.2
+          draft: true
+          dir: 5-2-0
 - title: Concepts
   dir: concepts
   children:

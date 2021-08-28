@@ -1,6 +1,11 @@
 <template>
-  <div class="bd-sidebar border-bottom-0 col-sm-3 col-sm-9 col-md-2 col-md-10">
-    <!-- active: {{ active }}. {{ posts }} -->
+  <div
+    :class="
+      `bd-sidebar col-sm-3 col-sm-9 col-md-2 col-md-10 ${
+        sidebarOpen ? '' : 'closed'
+      }`
+    "
+  >
     <div class="bd-docs-nav">
       <ul class="nav bd-sidenav nav-root level0">
         <SidebarNavItem
@@ -13,6 +18,52 @@
         </SidebarNavItem>
       </ul>
     </div>
+    <div class="open-sidebar" @click="sidebarOpen = !sidebarOpen">
+      <!-- <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h8m-8 6h16"
+        />
+      </svg> -->
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        v-if="!sidebarOpen"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M9 5l7 7-7 7"
+        />
+      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        v-else
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M15 19l-7-7 7-7"
+        />
+      </svg>
+    </div>
   </div>
 </template>
 
@@ -24,6 +75,17 @@ import SidebarNavItem from './SidebarNavItem.vue'
 export default Vue.extend({
   components: {
     SidebarNavItem
+  },
+
+  data() {
+    return {
+      sidebarOpen: false
+    }
+  },
+  watch: {
+    $route(to, from) {
+      this.sidebarOpen = false
+    }
   },
 
   mounted() {
@@ -56,9 +118,55 @@ export default Vue.extend({
   padding: 0;
   overflow-y: auto;
   border-right: 1px solid #eee;
+  border-bottom: none;
+
+  .open-sidebar {
+    display: none;
+  }
 
   @media (max-width: 768px) {
-    display: none;
+    &.closed {
+      left: -280px;
+      @apply shadow-none;
+    }
+
+    position: fixed;
+    left: 0;
+    width: 280px;
+    top: 50px;
+    bottom: 0;
+    background-color: #fff;
+    @apply shadow-2xl;
+    border-right: none;
+    overflow: visible;
+
+    @apply transition-all;
+
+    .bd-docs-nav {
+      overflow-x: hidden;
+      overflow-y: scroll;
+      width: 280px;
+      height: calc(100vh - 50px);
+    }
+
+    .open-sidebar {
+      display: block;
+      position: absolute;
+      left: 280px;
+      bottom: 20px;
+      width: 40px;
+      height: 40px;
+      padding: 5px;
+      color: #000;
+      z-index: 1200;
+      background: #eee;
+      @apply shadow-lg rounded-r-2xl;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
   }
 }
 
