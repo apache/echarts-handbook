@@ -104,9 +104,9 @@ body {
   }
 
   h2 {
-    margin: 100px 0 20px 0;
+    margin: 60px 0 20px 0;
     padding-bottom: 20px;
-    font-size: 26px;
+    font-size: 28px;
     @apply text-blue-gray-600;
     border-bottom: 1px solid #eee;
   }
@@ -116,8 +116,8 @@ body {
   }
 
   h3 {
-    margin: 80px 0 30px 0;
-    font-size: 24px;
+    margin: 40px 0 20px 0;
+    font-size: 22px;
     @apply text-blue-gray-600;
   }
 

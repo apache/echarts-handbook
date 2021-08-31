@@ -126,9 +126,9 @@ export default Vue.extend({
       apiKey: '6ade5f1ff34e94690f9ea38cddcc2f55',
       indexName: 'apache_echarts',
       inputSelector: '#handbook-search-intput',
-      // algoliaOptions: {
-      //   facetFilters: ['language:en']
-      // },
+      algoliaOptions: {
+        facetFilters: ['language:en']
+      },
       debug: false // Set debug to true if you want to inspect the dropdown
     })
   }
