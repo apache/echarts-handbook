@@ -31,12 +31,12 @@ Before drawing we need to prepare a DOM container for ECharts with a defined hei
 
 ```html
 <body>
-  <! -- Prepare a DOM with a defined width and height for ECharts -->
+  <!-- Prepare a DOM with a defined width and height for ECharts -->
   <div id="main" style="width: 600px;height:400px;"></div>
 </body>
 ```
 
-Then you can initialize an echarts instance with the [echarts.init](${mainSitePath}/api.html#echarts.init) method and set the echarts instance with [setOption](${mainSitePath}/api.html# echartsInstance.setOption) method to generate a simple bar chart。 Here is the complete code.
+Then you can initialize an echarts instance with the [echarts.init](${mainSitePath}api.html#echarts.init) method and set the echarts instance with [setOption](${mainSitePath}api.html#echartsInstance.setOption) method to generate a simple bar chart. Here is the complete code.
 
 ```html
 <!DOCTYPE html>
