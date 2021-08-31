@@ -1,11 +1,28 @@
 <template>
-  <div
-    :class="
-      `bd-sidebar col-sm-3 col-sm-9 col-md-2 col-md-10 ${
-        sidebarOpen ? '' : 'closed'
-      }`
-    "
-  >
+  <div :class="`bd-sidebar col-sm-3 col-md-2  ${sidebarOpen ? '' : 'closed'}`">
+    <div class="sidebar-search">
+      <input
+        id="handbook-search-intput"
+        type="search"
+        placeholder="Search Handbook"
+      />
+      <div class="search-icon">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+          />
+        </svg>
+      </div>
+    </div>
     <div class="bd-docs-nav">
       <ul class="nav bd-sidenav nav-root level0">
         <SidebarNavItem
@@ -104,6 +121,16 @@ export default Vue.extend({
         }
       })
     }
+    // @ts-ignore
+    docsearch({
+      apiKey: '6ade5f1ff34e94690f9ea38cddcc2f55',
+      indexName: 'apache_echarts',
+      inputSelector: '#handbook-search-intput',
+      // algoliaOptions: {
+      //   facetFilters: ['language:en']
+      // },
+      debug: false // Set debug to true if you want to inspect the dropdown
+    })
   }
 })
 </script>
@@ -114,14 +141,38 @@ export default Vue.extend({
   z-index: 1000;
   top: 0;
   left: 0;
-  height: calc(100vh - 50px);
   padding: 0;
-  overflow-y: auto;
+  overflow: visible;
   border-right: 1px solid #eee;
   border-bottom: none;
 
   .open-sidebar {
     display: none;
+  }
+
+  .bd-docs-nav {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: calc(100vh - 50px);
+  }
+
+  .sidebar-search {
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+
+    .algolia-autocomplete {
+      @apply w-full;
+    }
+
+    input {
+      @apply shadow rounded-xl border-0 p-4 w-full;
+    }
+
+    .search-icon {
+      position: absolute;
+      right: 30px;
+      top: 28px;
+    }
   }
 
   @media (max-width: 768px) {
@@ -143,10 +194,7 @@ export default Vue.extend({
     @apply transition-all;
 
     .bd-docs-nav {
-      overflow-x: hidden;
-      overflow-y: scroll;
       width: 280px;
-      height: calc(100vh - 50px);
     }
 
     .open-sidebar {

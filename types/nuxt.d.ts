@@ -11,7 +11,6 @@ declare module 'vue/types/options' {
     isDev: boolean
     store: Store<any> // Consider vuex-typex in future
     env: object
-    $content: Function
     params: object
     query: object
   }

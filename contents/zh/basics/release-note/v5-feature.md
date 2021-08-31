@@ -16,8 +16,8 @@ Apache ECharts 始终致力于让开发者以更方便的方式创造灵活丰�
 
 Apache ECharts 5 新增支持动态排序柱状图（bar-racing）以及动态排序折线图（line-racing），帮助开发者方便地创建带有时序性的图表，展现数据随着时间维度上的变化，讲述数据的演变过程。
 
-<md-example src="bar-race-country" width="700" height="400"></md-example>
-<md-example src="line-race" width="700" height="400"></md-example>
+<md-example src="bar-race-country" width="700" height="400" />
+<md-example src="line-race" width="700" height="400" />
 
 动态排序图展现了不同的类目随着时间在排名上的衍变。而开发者只需要通过几行简单的配置项就可以在 ECharts 中开启这样的效果。
 
@@ -93,13 +93,13 @@ Apache ECharts 5 带来了适于表达时间标签刻度的时间轴。时间轴
 
 这些升级，不仅可以让开发者用更简单的配置项实现酷炫的效果，而且带来了更丰富的定制能力。
 
-<md-example src="gauge-clock" width="600" height="600"></md-example>
+<md-example src="gauge-clock" width="600" height="600" />
 
 #### 扇形圆角
 
 圆角可以带来更美观而柔和的视觉，也能够赋予更多的创造力。Apache ECharts 5 支持了饼图、旭日图、矩形树图的扇形圆角。可不要小看了简单的圆角配置项，合理地搭配其他的效果，就可以形成更具个性的的可视化作品。
 
-<md-example src="sunburst-borderRadius" width="400" height="400"></md-example>
+<md-example src="sunburst-borderRadius" width="400" height="400" />
 
 ## 交互能力
 
@@ -179,11 +179,11 @@ Apache ECharts 一直非常重视无障碍设计，我们希望让视觉障碍�
 
 ECharts 5 还新增提供了贴花的功能，用图案辅助颜色表达，进一步帮助用户区分数据。
 
-<md-example src="doc-example/aria-decal-simple" width="600" height="350"></md-example>
+<md-example src="doc-example/aria-decal-simple" width="600" height="350" />
 
 此外，贴花图案还能在一些其他的场景下提供帮助，比如：在报纸、书籍之类只有单色或者非常少的颜色的印刷品中，帮助更好地区分数据；用图形元素方便用户对数据产生更直观的理解等。
 
-<md-example src="doc-example/aria-decal-newspaper" width="600" height="350"></md-example>
+<md-example src="doc-example/aria-decal-newspaper" width="600" height="350" />
 
 ## 小结
 

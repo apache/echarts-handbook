@@ -1,7 +1,7 @@
 <template>
   <iframe
-    :width="width"
-    :height="height"
+    :width="width || 200"
+    :height="height || 200"
     :src="finalSrc"
     v-observe-visibility="visibilityChanged"
   ></iframe>
