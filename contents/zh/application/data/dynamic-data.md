@@ -88,7 +88,7 @@ ECharts 中在更新数据的时候需要通过`name`属性对应到相应的系
 
 如果数据加载时间较长，一个空的坐标轴放在画布上也会让用户觉得是不是产生 bug 了，因此需要一个 loading 的动画来提示用户数据正在加载。
 
-ECharts 默认有提供了一个简单的加载动画。只需要调用 [showLoading](api.html#echartsInstance.showLoading) 方法显示。数据加载完成后再调用 [hideLoading](api.html#echartsInstance.hideLoading) 方法隐藏加载动画。
+ECharts 默认有提供了一个简单的加载动画。只需要调用 [showLoading](${mainSitePath}/api.html#echartsInstance.showLoading) 方法显示。数据加载完成后再调用 [hideLoading](${mainSitePath}/api.html#echartsInstance.hideLoading) 方法隐藏加载动画。
 
 ```js
 myChart.showLoading();
@@ -106,7 +106,7 @@ $.get('data.json').done(function (data) {
 
 ECharts 由数据驱动，数据的改变驱动图表展现的改变，因此动态数据的实现也变得异常简单。
 
-所有数据的更新都通过 [setOption](~api.html#echartsInstance.setOption)实现，你只需要定时获取数据，[setOption](~api.html#echartsInstance.setOption) 填入数据，而不用考虑数据到底产生了那些变化，ECharts 会找到两组数据之间的差异然后通过合适的动画去表现数据的变化。
+所有数据的更新都通过 [setOption](${mainSitePath}/api.html#echartsInstance.setOption)实现，你只需要定时获取数据，[setOption](~api.html#echartsInstance.setOption) 填入数据，而不用考虑数据到底产生了那些变化，ECharts 会找到两组数据之间的差异然后通过合适的动画去表现数据的变化。
 
 具体可以看下面示例：
 

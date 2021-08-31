@@ -25,12 +25,21 @@ If you find blocks of code that are not formatted, check first for syntax errors
 - `mainSitePath`
 - `exampleViewPath`
 - `exampleEditorPath`
+- `lang`
 
 Usage:
 
 ```
 ${xxxxx}
 ```
+
+## Link to Other Articles
+
+```markdown
+[Get Apache ECharts](${lang}/basics/download)
+```
+
+[Get Apache ECharts](${lang}/basics/download)
 
 ## Embedding Code
 
