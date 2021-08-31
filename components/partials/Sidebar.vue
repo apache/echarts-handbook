@@ -1,7 +1,8 @@
 <template>
   <div :class="`bd-sidebar col-sm-3 col-md-2  ${sidebarOpen ? '' : 'closed'}`">
     <div class="sidebar-search">
-      <input
+      <div id="handbook-search-intput"></div>
+      <!-- <input
         id="handbook-search-intput"
         type="search"
         placeholder="Search Handbook"
@@ -21,7 +22,7 @@
             d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
           />
         </svg>
-      </div>
+      </div> -->
     </div>
     <div class="bd-docs-nav">
       <ul class="nav bd-sidenav nav-root level0">
@@ -88,6 +89,9 @@
 import Vue from 'vue'
 import scrollIntoView from 'scroll-into-view'
 import SidebarNavItem from './SidebarNavItem.vue'
+// @ts-ignore
+import docsearch from '@docsearch/js'
+// import '@docsearch/css'
 
 export default Vue.extend({
   components: {
@@ -125,10 +129,10 @@ export default Vue.extend({
     docsearch({
       apiKey: '6ade5f1ff34e94690f9ea38cddcc2f55',
       indexName: 'apache_echarts',
-      inputSelector: '#handbook-search-intput',
-      algoliaOptions: {
-        facetFilters: ['language:en']
-      },
+      container: '#handbook-search-intput',
+      // searchParameters: {
+      //   facetFilters: ['language:en']
+      // },
       debug: false // Set debug to true if you want to inspect the dropdown
     })
   }
@@ -136,9 +140,11 @@ export default Vue.extend({
 </script>
 
 <style lang="postcss">
+@import '@docsearch/css';
+
 .bd-sidebar {
   position: sticky;
-  z-index: 1000;
+  z-index: 10;
   top: 0;
   left: 0;
   padding: 0;
@@ -158,15 +164,19 @@ export default Vue.extend({
   }
 
   .sidebar-search {
-    padding: 15px 20px;
+    padding: 15px 30px 15px 0;
     border-bottom: 1px solid #eee;
 
     .algolia-autocomplete {
       @apply w-full;
     }
 
-    input {
-      @apply shadow rounded-xl border-0 p-4 w-full;
+    #handbook-search-intput {
+      @apply w-full;
+
+      button {
+        @apply w-full;
+      }
     }
 
     .search-icon {
@@ -207,7 +217,7 @@ export default Vue.extend({
       height: 40px;
       padding: 5px;
       color: #000;
-      z-index: 1200;
+      z-index: 20;
       background: #eee;
       @apply shadow-lg rounded-r-2xl;
 

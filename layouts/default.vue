@@ -261,4 +261,8 @@ body {
     }
   }
 }
+
+footer.DocSearch-Footer {
+  min-height: initial;
+}
 </style>
