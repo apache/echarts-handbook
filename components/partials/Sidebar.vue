@@ -156,6 +156,7 @@ export default Vue.extend({
   border-right: 1px solid #eee;
   border-bottom: none;
   max-width: 350px;
+  height: calc(100vh - 50px);
 
   .open-sidebar {
     display: none;
