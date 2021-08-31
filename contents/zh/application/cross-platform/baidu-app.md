@@ -1,14 +1,14 @@
 # 在百度智能小程序中使用 ECharts
 
-[ECharts 图表-beta](http://smartprogram.baidu.com/docs/develop/framework/echarts/) 以小程序动态库的形式提供了在百度智能小程序中使用 ECharts 的方式。
+[ECharts 图表](http://smartprogram.baidu.com/docs/develop/framework/echarts/) 以小程序动态库的形式提供了在百度智能小程序中使用 ECharts 的方式。
 
-[aidu-smart-app-echarts-demo](https://github.com/baidu-smart-app/baidu-smart-app-echarts-demo) 项目是使用该动态库的一个示例工程，可以作为参考，一般情况下不需要引入自己的项目。
+[baidu-smart-app-echarts-demo](https://github.com/baidu-smart-app/baidu-smart-app-echarts-demo) 项目是使用该动态库的一个示例工程，可以作为参考，一般情况下不需要引入自己的项目。
 
 如有使用上的问题，可以在 [baidu-smart-app-echarts-demo/issues](https://github.com/baidu-smart-app/baidu-smart-app-echarts-demo/issues) 中咨询。
 
 ## 使用方式
 
-参见百度智能小程序文档 [ECharts 图表-beta](http://smartprogram.baidu.com/docs/develop/framework/echarts/)。
+参见百度智能小程序文档 [ECharts 图表](http://smartprogram.baidu.com/docs/develop/framework/echarts/)。
 
 ## 注意事项
 
