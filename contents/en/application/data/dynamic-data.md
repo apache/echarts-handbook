@@ -88,7 +88,7 @@ You need to use `name` to "navigate" ECharts when updating data. In the previous
 
 When it takes a long time to load the data, the user is facing the empty chart with only axes will wonder if there are bugs appear.
 
-ECharts have a simple loading animation by default. You can call [showLoading](api.html#echartsInstance.showLoading) to display. When the data loading was completed, call [hideLoading](api.html#echartsInstance.hideLoading) to hide the animation.
+ECharts have a simple loading animation by default. You can call [showLoading](${mainSitePath}/api.html#echartsInstance.showLoading) to display. When the data loading was completed, call [hideLoading](${mainSitePath}/api.html#echartsInstance.hideLoading) to hide the animation.
 
 ```js
 myChart.showLoading();
@@ -106,7 +106,7 @@ Here is the effect:
 
 ECharts was driven by data, change in data will drive changes in the presentation of the chart. Therefore, It's surprisingly simple to implement a dynamic update.
 
-All data's update was implemented by [setOption](~api.html#echartsInstance.setOption). You only need to fetch the data periodically. ECharts will find the difference between two groups of data to use the proper way to choose the animation.
+All data's update was implemented by [setOption](${mainSitePath}/api.html#echartsInstance.setOption). You only need to fetch the data periodically. ECharts will find the difference between two groups of data to use the proper way to choose the animation.
 
 Check the following example.
 

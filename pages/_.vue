@@ -13,7 +13,13 @@
           </li>
         </ul>
       </div>
-      <post-content :content="html"></post-content>
+      <!--
+        'nuxt-content' class for DocSearch
+        https://github.com/algolia/docsearch-configs/blob/master/configs/apache_echarts.json
+      -->
+      <div class="nuxt-content">
+        <post-content :content="html"></post-content>
+      </div>
     </div>
     <contributors :path="postPath"></contributors>
   </div>
@@ -77,7 +83,7 @@ function slugify(s: string) {
   )
 }
 
-export default Vue.extend({
+export default {
   components: {
     Contributors,
     PostContent
@@ -92,11 +98,14 @@ export default Vue.extend({
     }
   },
   mounted() {
+    // @ts-ignore
     this.toc = []
     const headers =
+      // @ts-ignore
       this.$el.querySelector('.post-inner')?.querySelectorAll(' h2,h3') || []
     for (let i = 0; i < headers.length; i++) {
       const title = (headers[i] as HTMLHeadingElement).innerText
+      // @ts-ignore
       this.toc.push({
         title,
         depth: +headers[i].nodeName.replace(/\D/g, ''),
@@ -118,7 +127,19 @@ export default Vue.extend({
     // @ts-ignore
     this._lazyload && this._lazyload.destroy()
   },
-  async asyncData({ $content, params, i18n, $el }: any) {
+  head() {
+    return {
+      meta: [
+        {
+          hid: 'docsearch:language',
+          name: 'docsearch:language',
+          // @ts-ignore
+          content: this.$i18n.locale
+        }
+      ]
+    }
+  },
+  async asyncData({ params, i18n }: any) {
     const postPath = `${i18n.locale}/${params.pathMatch}`
     const fileContent = await import(`~/contents/${postPath}.md`)
     const content = replaceVars(
@@ -150,7 +171,7 @@ export default Vue.extend({
 
     return { html: md.render(content), postPath }
   }
-})
+}
 </script>
 
 <style lang="scss"></style>

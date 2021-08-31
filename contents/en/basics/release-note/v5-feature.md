@@ -16,8 +16,8 @@ The importance of animation to human cognition cannot be overstated. In our prev
 
 Apache ECharts 5 adds support for dynamically sorted bar-racing and dynamically sorted line-racing charts to help developers easily create time-series charts that show changes in data over time and tell the evolution of data.
 
-<md-example data-src="bar-race-country" width="700" height="400"></md-example>
-<md-example data-src="line-race" width="700" height="400"></md-example>
+<md-example src="bar-race-country" width="700" height="400" />
+<md-example src="line-race" width="700" height="400" />
 
 The dynamic sorting chart shows the derivation of different categories in the ranking over time. The developer can enable this effect in ECharts with a few simple configuration code.
 
@@ -93,13 +93,13 @@ Different styles of gauge pointers.
 
 These upgrades not only allow developers to achieve cool effects with simpler configuration items, but also bring richer customization capabilities.
 
-<md-example src="gauge-clock" width="600" height="600"></md-example>
+<md-example src="gauge-clock" width="600" height="600" />
 
 #### Round Corner
 
 Apache ECharts 5 supports round corner for pie charts, sunburst charts, and treemap charts. Don't underestimate the simplicity of the rounded corners configuration, but combine them with other effects to create a more personalized visualization.
 
-<md-example src="sunburst-borderRadius" width="400" height="400"></md-example>
+<md-example src="sunburst-borderRadius" width="400" height="400" />
 
 ## Interactivity
 
@@ -179,11 +179,11 @@ Moreover, for developers with further accessibility needs, we also provide speci
 
 ECharts 5 also provides a new feature of decals to help users further differentiate data by using patterns to assist with color representation.
 
-<md-example src="doc-example/aria-decal-simple" width="600" height="350"></md-example>
+<md-example src="doc-example/aria-decal-simple" width="600" height="350" />
 
 In addition, decal patterns can also help in some other scenarios, such as: helping to better distinguish data in printed materials like newspapers and books that have only a single color or very few colors; using graphical elements to facilitate a more intuitive understanding of the data by the user.
 
-<md-example src="doc-example/aria-decal-newspaper" width="600" height="350"></md-example>
+<md-example src="doc-example/aria-decal-newspaper" width="600" height="350" />
 
 ## Summary
 

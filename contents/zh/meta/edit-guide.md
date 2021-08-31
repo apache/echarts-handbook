@@ -25,12 +25,21 @@ markdown 文件名称小写。
 - `mainSitePath`
 - `exampleViewPath`
 - `exampleEditorPath`
+- `lang`
 
 使用方式:
 
 ```
 ${xxxxx}
 ```
+
+## 引用其它文章
+
+```markdown
+[获取 Apache ECharts](${lang}/basics/download)
+```
+
+[获取 Apache ECharts](${lang}/basics/download)
 
 ## 引用代码
 
