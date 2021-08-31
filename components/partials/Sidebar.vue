@@ -145,6 +145,7 @@ export default Vue.extend({
   overflow: visible;
   border-right: 1px solid #eee;
   border-bottom: none;
+  max-width: 350px;
 
   .open-sidebar {
     display: none;
@@ -152,7 +153,7 @@ export default Vue.extend({
 
   .bd-docs-nav {
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: auto;
     height: calc(100vh - 50px);
   }
 
