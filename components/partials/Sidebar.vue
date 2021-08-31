@@ -126,16 +126,26 @@ export default Vue.extend({
       apiKey: '6ade5f1ff34e94690f9ea38cddcc2f55',
       indexName: 'apache_echarts',
       inputSelector: '#handbook-search-intput',
-      algoliaOptions: {
-        facetFilters: ['language:en']
-      },
-      debug: false // Set debug to true if you want to inspect the dropdown
+      // algoliaOptions: {
+      //   facetFilters: ['language:en']
+      // },
+      debug: true // Set debug to true if you want to inspect the dropdown
     })
   }
 })
 </script>
 
 <style lang="postcss">
+.algolia-autocomplete .ds-dropdown-menu {
+  @apply shadow-xl border-none;
+}
+.algolia-autocomplete .ds-dropdown-menu [class^='ds-dataset-'] {
+  @apply border-none;
+}
+.algolia-autocomplete .ds-dropdown-menu:before {
+  @apply border-none;
+  @apply shadow-xl;
+}
 .bd-sidebar {
   position: sticky;
   z-index: 1000;
