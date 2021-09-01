@@ -11,10 +11,6 @@ We'll go over each of these installation methods and the directory structure aft
 
 ## Installation
 
-### Use From GitHub
-
-You can find links to each version on the [release](https://github.com/apache/echarts/releases) page of the [apache/echarts](https://github.com/apache/echarts) project. Click on the Source code in Assets at the bottom of the download page, and unzip the `echarts.js` file in the `dist` directory to include the full ECharts functionality.
-
 ### Use From npm
 
 ```sh
@@ -26,6 +22,10 @@ See [Introducing Apache ECharts in your project](${lang}/basics/import) for deta
 ### Use From CDN
 
 Recommend referencing [echarts](https://www.jsdelivr.com/package/npm/echarts) from jsDelivr.
+
+### Use From GitHub
+
+You can find links to each version on the [release](https://github.com/apache/echarts/releases) page of the [apache/echarts](https://github.com/apache/echarts) project. Click on the Source code in Assets at the bottom of the download page, and unzip the `echarts.js` file in the `dist` directory to include the full ECharts functionality.
 
 ### Online Customization
 
