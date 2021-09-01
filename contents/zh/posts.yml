@@ -135,7 +135,7 @@
           dir: connect
           draft: true
 - title: 最佳实践
-  dir: best-practice
+  dir: best-practices
   children:
     - title: 移动端优化
       dir: mobile
