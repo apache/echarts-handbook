@@ -12,24 +12,29 @@ async function updateNav() {
       `../components/partials/Navbar/${locale}.vue`
     )
     console.log('Fetching...', localPath)
+    let navContent = ''
     try {
-      fs.copyFileSync(`${websitePath}/${locale}/nav.html`, targetPath)
+      navContent = fs.readFileSync(
+        `${websitePath}/${locale}/nav.html`,
+        targetPath
+      )
     } catch (e) {
       console.log(
         'Local file not found. Fetching...',
         `http://echarts.apache.org/${locale}/nav.html`
       )
-      const navContent = await fetch(
+      navContent = await fetch(
         `http://echarts.apache.org/${locale}/nav.html`
       ).then(response => response.text())
-      fs.writeFileSync(
-        localPath,
-        `<template>
-  ${navContent}
-  </template>`,
-        'utf-8'
-      )
     }
+
+    fs.writeFileSync(
+      localPath,
+      `<template>
+${navContent}
+</template>`,
+      'utf-8'
+    )
   }
 }
 
