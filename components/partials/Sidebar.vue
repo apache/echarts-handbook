@@ -4,7 +4,7 @@
       <input
         id="handbook-search-intput"
         type="search"
-        placeholder="Search Handbook"
+       :placeholder="$t('searchHandbook')"
       />
       <div class="search-icon">
         <svg
@@ -165,7 +165,11 @@ export default Vue.extend({
   .bd-docs-nav {
     overflow-x: hidden;
     overflow-y: auto;
-    height: calc(100vh - 50px);
+    height: calc(100% - 83px);
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
   }
 
   .sidebar-search {
@@ -177,7 +181,7 @@ export default Vue.extend({
     }
 
     input {
-      @apply shadow rounded-xl border-0 p-4 w-full;
+      @apply shadow rounded-xl border-0 p-4 w-full outline-none;
     }
 
     .search-icon {
@@ -236,11 +240,6 @@ export default Vue.extend({
 
 .page-content {
   padding-bottom: 0;
-
-  .bd-docs-nav {
-    margin-top: 10px;
-    margin-bottom: 20px;
-  }
 
   .nav {
     display: block;
