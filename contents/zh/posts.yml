@@ -52,7 +52,7 @@
     - title: 事件与行为
       dir: event
 - title: 应用篇
-  dir: application
+  dir: how-to
   children:
     - title: 常用图表类型
       dir: chart-types

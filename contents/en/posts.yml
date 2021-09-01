@@ -51,8 +51,8 @@
       dir: legend
     - title: Event and Action
       dir: event
-- title: Application
-  dir: application
+- title: How To Guides
+  dir: how-to
   children:
     - title: Common Charts
       dir: chart-types
