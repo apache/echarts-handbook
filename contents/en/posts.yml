@@ -51,8 +51,8 @@
       dir: legend
     - title: Event and Action
       dir: event
-- title: Application
-  dir: application
+- title: How To Guides
+  dir: how-to
   children:
     - title: Common Charts
       dir: chart-types
@@ -127,8 +127,8 @@
         - title: Connect
           dir: connect
           draft: true
-- title: Best Practice
-  dir: best-practice
+- title: Best Practices
+  dir: best-practices
   children:
     - title: Mobile Optimization
       dir: mobile

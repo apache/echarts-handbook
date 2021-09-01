@@ -88,10 +88,12 @@ export default {
           fallbackLocale: 'en',
           messages: {
             en: {
-              inThisPage: 'In This Page'
+              inThisPage: 'In This Page',
+              searchHandbook: 'Search Handbook'
             },
             zh: {
-              inThisPage: '本页目录'
+              inThisPage: '本页目录',
+              searchHandbook: '搜索手册'
             }
           }
         }

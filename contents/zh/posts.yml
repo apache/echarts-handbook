@@ -52,7 +52,7 @@
     - title: 事件与行为
       dir: event
 - title: 应用篇
-  dir: application
+  dir: how-to
   children:
     - title: 常用图表类型
       dir: chart-types
@@ -135,7 +135,7 @@
           dir: connect
           draft: true
 - title: 最佳实践
-  dir: best-practice
+  dir: best-practices
   children:
     - title: 移动端优化
       dir: mobile

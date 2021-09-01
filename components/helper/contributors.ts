@@ -1,4 +1,89 @@
 export default {
+    "contents/zh/how-to/data/dynamic-data.md": [
+        "Ovilia",
+        "pissang"
+    ],
+    "contents/zh/how-to/data/drilldown.md": [
+        "Hansz00",
+        "Ovilia",
+        "pissang"
+    ],
+    "contents/zh/how-to/cross-platform/wechat-app.md": [
+        "Ovilia",
+        "pissang"
+    ],
+    "contents/zh/how-to/cross-platform/server.md": [
+        "Ovilia",
+        "pissang"
+    ],
+    "contents/zh/how-to/cross-platform/baidu-app.md": [
+        "Ovilia",
+        "pissang"
+    ],
+    "contents/zh/how-to/connect.md": [
+        "Ovilia",
+        "pissang"
+    ],
+    "contents/zh/how-to/chart-types/scatter/basic-scatter.md": [
+        "Ovilia",
+        "Wdingding",
+        "pissang"
+    ],
+    "contents/zh/how-to/chart-types/pie/rose.md": [
+        "Ovilia",
+        "pissang"
+    ],
+    "contents/zh/how-to/chart-types/pie/doughnut.md": [
+        "Hansz00",
+        "Ovilia",
+        "pissang"
+    ],
+    "contents/zh/how-to/chart-types/pie/basic-pie.md": [
+        "Hansz00",
+        "Ovilia",
+        "pissang"
+    ],
+    "contents/zh/how-to/chart-types/line/step-line.md": [
+        "Ovilia",
+        "pissang"
+    ],
+    "contents/zh/how-to/chart-types/line/stacked-line.md": [
+        "Ovilia",
+        "pissang"
+    ],
+    "contents/zh/how-to/chart-types/line/smooth-line.md": [
+        "Ovilia",
+        "pissang"
+    ],
+    "contents/zh/how-to/chart-types/line/basic-line.md": [
+        "Hansz00",
+        "Ovilia",
+        "pissang"
+    ],
+    "contents/zh/how-to/chart-types/line/area-line.md": [
+        "Ovilia",
+        "pissang"
+    ],
+    "contents/zh/how-to/chart-types/bar/waterfall.md": [
+        "Ovilia",
+        "pissang"
+    ],
+    "contents/zh/how-to/chart-types/bar/stacked-bar.md": [
+        "Ovilia",
+        "pissang"
+    ],
+    "contents/zh/how-to/chart-types/bar/polar-bar.md": [
+        "Ovilia",
+        "pissang"
+    ],
+    "contents/zh/how-to/chart-types/bar/basic-bar.md": [
+        "Ovilia",
+        "pissang"
+    ],
+    "contents/zh/how-to/chart-types/bar/bar-race.md": [
+        "Ovilia",
+        "pissang"
+    ],
     "contents/zh/get-started.md": [
         "Ovilia",
         "pissang"
@@ -56,42 +141,64 @@ export default {
         "yufeng04"
     ],
     "contents/zh/best-practice/specification/scatter/scatter.md": [
+        "Hansz00",
+        "Wdingding",
         "pissang"
     ],
     "contents/zh/best-practice/specification/scatter/bubble.md": [
+        "Wdingding",
         "pissang"
     ],
     "contents/zh/best-practice/specification/radar.md": [
+        "Hansz00",
+        "Wdingding",
         "pissang"
     ],
     "contents/zh/best-practice/specification/pie/basic-pie.md": [
+        "100pah",
+        "Wdingding",
         "pissang"
     ],
     "contents/zh/best-practice/specification/line/stacked-area.md": [
+        "Wdingding",
         "pissang"
     ],
     "contents/zh/best-practice/specification/line/basic-line.md": [
+        "Hansz00",
+        "Wdingding",
         "pissang"
     ],
     "contents/zh/best-practice/specification/line/area.md": [
+        "Hansz00",
+        "Wdingding",
         "pissang"
     ],
     "contents/zh/best-practice/specification/gauge.md": [
+        "Hansz00",
+        "Wdingding",
         "pissang"
     ],
     "contents/zh/best-practice/specification/funnel.md": [
+        "Wdingding",
         "pissang"
     ],
     "contents/zh/best-practice/specification/bar/stacked-bar.md": [
+        "Wdingding",
         "pissang"
     ],
     "contents/zh/best-practice/specification/bar/grouped-bar.md": [
+        "Hansz00",
+        "Wdingding",
         "pissang"
     ],
     "contents/zh/best-practice/specification/bar/bi-directional-bar.md": [
+        "Ovilia",
+        "Wdingding",
         "pissang"
     ],
     "contents/zh/best-practice/specification/bar/basic-bar.md": [
+        "Hansz00",
+        "Wdingding",
         "pissang"
     ],
     "contents/zh/best-practice/mobile.md": [
@@ -143,119 +250,115 @@ export default {
         "Ovilia",
         "pissang"
     ],
-    "contents/zh/application/mobile.md": [
-        "Ovilia"
-    ],
-    "contents/zh/application/label/rich-text.md": [
-        "pissang"
-    ],
-    "contents/zh/application/interaction/drag.md": [
-        "pissang"
-    ],
-    "contents/zh/application/data/dynamic-data.md": [
-        "Ovilia",
-        "pissang"
-    ],
-    "contents/zh/application/data/drilldown.md": [
-        "pissang"
-    ],
-    "contents/zh/application/cross-platform/wechat-app.md": [
-        "Ovilia",
-        "pissang"
-    ],
-    "contents/zh/application/cross-platform/server.md": [
-        "Ovilia",
-        "pissang"
-    ],
-    "contents/zh/application/cross-platform/baidu-app.md": [
-        "Ovilia",
-        "pissang"
-    ],
-    "contents/zh/application/connect.md": [
-        "Ovilia"
-    ],
-    "contents/zh/application/chart-types/scatter/basic-scatter.md": [
-        "Ovilia",
-        "Wdingding",
-        "pissang"
-    ],
-    "contents/zh/application/chart-types/pie/rose.md": [
-        "Ovilia",
-        "pissang"
-    ],
-    "contents/zh/application/chart-types/pie/doughnut.md": [
-        "pissang"
-    ],
-    "contents/zh/application/chart-types/pie/basic-pie.md": [
-        "Hansz00",
-        "Ovilia",
-        "pissang"
-    ],
-    "contents/zh/application/chart-types/line/step-line.md": [
-        "Ovilia",
-        "pissang"
-    ],
-    "contents/zh/application/chart-types/line/stacked-line.md": [
-        "Ovilia",
-        "pissang"
-    ],
-    "contents/zh/application/chart-types/line/smooth-line.md": [
-        "Ovilia",
-        "pissang"
-    ],
-    "contents/zh/application/chart-types/line/basic-line.md": [
-        "Hansz00",
-        "Ovilia",
-        "pissang"
-    ],
-    "contents/zh/application/chart-types/line/area-line.md": [
-        "Ovilia",
-        "pissang"
-    ],
-    "contents/zh/application/chart-types/bar/waterfall.md": [
-        "Ovilia",
-        "pissang"
-    ],
-    "contents/zh/application/chart-types/bar/stacked-bar.md": [
-        "Ovilia",
-        "pissang"
-    ],
-    "contents/zh/application/chart-types/bar/polar-bar.md": [
-        "Ovilia",
-        "pissang"
-    ],
-    "contents/zh/application/chart-types/bar/basic-bar.md": [
-        "Ovilia",
-        "pissang"
-    ],
-    "contents/zh/application/chart-types/bar/bar-race.md": [
-        "Ovilia",
-        "pissang"
-    ],
     "contents/en/posts.yml": [
         "Ovilia",
         "pissang"
     ],
     "contents/en/meta/edit-guide.md": [
+        "Ovilia",
+        "pissang"
+    ],
+    "contents/en/how-to/label/rich-text.md": [
+        "pissang"
+    ],
+    "contents/en/how-to/interaction/drag.md": [
+        "pissang"
+    ],
+    "contents/en/how-to/data/dynamic-data.md": [
+        "Hansz00",
+        "Ovilia",
+        "pissang"
+    ],
+    "contents/en/how-to/data/drilldown.md": [
+        "Hansz00",
+        "Ovilia",
+        "pissang"
+    ],
+    "contents/en/how-to/cross-platform/server.md": [
+        "pissang"
+    ],
+    "contents/en/how-to/chart-types/scatter/basic-scatter.md": [
+        "Hansz00",
+        "pissang"
+    ],
+    "contents/en/how-to/chart-types/pie/rose.md": [
+        "Hansz00",
+        "Ovilia",
+        "pissang"
+    ],
+    "contents/en/how-to/chart-types/pie/doughnut.md": [
+        "pissang"
+    ],
+    "contents/en/how-to/chart-types/pie/basic-pie.md": [
+        "Hansz00",
+        "pissang"
+    ],
+    "contents/en/how-to/chart-types/line/step-line.md": [
+        "Hansz00",
+        "pissang"
+    ],
+    "contents/en/how-to/chart-types/line/stacked-line.md": [
+        "Hansz00",
+        "Ovilia",
+        "pissang"
+    ],
+    "contents/en/how-to/chart-types/line/smooth-line.md": [
+        "Hansz00",
+        "pissang"
+    ],
+    "contents/en/how-to/chart-types/line/basic-line.md": [
+        "Hansz00",
+        "pissang"
+    ],
+    "contents/en/how-to/chart-types/line/area-line.md": [
+        "Hank",
+        "Hansz00",
+        "pissang"
+    ],
+    "contents/en/how-to/chart-types/bar/waterfall.md": [
+        "Hansz00",
+        "Ovilia",
+        "pissang"
+    ],
+    "contents/en/how-to/chart-types/bar/stacked-bar.md": [
+        "Hansz00",
+        "pissang"
+    ],
+    "contents/en/how-to/chart-types/bar/polar-bar.md": [
+        "Hansz00",
+        "pissang"
+    ],
+    "contents/en/how-to/chart-types/bar/basic-bar.md": [
+        "Hank",
+        "Hansz00",
+        "pissang"
+    ],
+    "contents/en/how-to/chart-types/bar/bar-race.md": [
+        "Hansz00",
+        "Ovilia",
         "pissang"
     ],
     "contents/en/get-started.md": [
         "Ovilia",
-        "pissang"
+        "pissang",
+        "plainheart"
     ],
     "contents/en/concepts/visual-map.md": [
         "pissang"
     ],
     "contents/en/concepts/tooltip.md": [
+        "Ovilia",
         "huanghan01"
     ],
     "contents/en/concepts/style.md": [
         "pissang"
     ],
     "contents/en/concepts/series.md": [
+        "Ovilia",
         "huanghan01"
     ],
     "contents/en/concepts/options.md": [
+        "Ovilia",
         "huanghan01"
     ],
     "contents/en/concepts/legend.md": [
@@ -279,6 +382,7 @@ export default {
         "pissang"
     ],
     "contents/en/concepts/coordinate.md": [
+        "Ovilia",
         "huanghan01"
     ],
     "contents/en/concepts/chart-size.md": [
@@ -290,46 +394,60 @@ export default {
         "pissang"
     ],
     "contents/en/best-practice/specification/scatter/scatter.md": [
+        "Hansz00",
         "pissang"
     ],
     "contents/en/best-practice/specification/scatter/bubble.md": [
+        "Hansz00",
         "pissang"
     ],
     "contents/en/best-practice/specification/radar.md": [
+        "Hansz00",
         "pissang"
     ],
     "contents/en/best-practice/specification/pie/basic-pie.md": [
+        "Hansz00",
         "pissang"
     ],
     "contents/en/best-practice/specification/line/stacked-area.md": [
+        "Hansz00",
         "pissang"
     ],
     "contents/en/best-practice/specification/line/basic-line.md": [
+        "Hansz00",
         "pissang"
     ],
     "contents/en/best-practice/specification/line/area.md": [
+        "Hansz00",
         "pissang"
     ],
     "contents/en/best-practice/specification/gauge.md": [
+        "Hansz00",
         "pissang"
     ],
     "contents/en/best-practice/specification/funnel.md": [
+        "Hansz00",
         "pissang"
     ],
     "contents/en/best-practice/specification/bar/stacked-bar.md": [
+        "Hansz00",
         "pissang"
     ],
     "contents/en/best-practice/specification/bar/grouped-bar.md": [
+        "Hansz00",
         "pissang"
     ],
     "contents/en/best-practice/specification/bar/bi-directional-bar.md": [
+        "Hansz00",
         "pissang"
     ],
     "contents/en/best-practice/specification/bar/basic-bar.md": [
+        "Hansz00",
         "pissang"
     ],
     "contents/en/best-practice/mobile.md": [
-        "Hansz00"
+        "Hansz00",
+        "Ovilia"
     ],
     "contents/en/best-practice/design/color-enhance.md": [
         "Hansz00",
@@ -353,6 +471,7 @@ export default {
         "pissang"
     ],
     "contents/en/basics/release-note/5-2-0.md": [
+        "Ovilia",
         "pissang"
     ],
     "contents/en/basics/inspiration.md": [
@@ -365,84 +484,28 @@ export default {
         "pissang"
     ],
     "contents/en/basics/download.md": [
-        "Ovilia"
-    ],
-    "contents/en/application/label/rich-text.md": [
-        "pissang"
-    ],
-    "contents/en/application/interaction/drag.md": [
-        "pissang"
-    ],
-    "contents/en/application/data/dynamic-data.md": [
-        "Hansz00",
-        "Ovilia",
-        "pissang"
-    ],
-    "contents/en/application/data/drilldown.md": [
-        "Hansz00"
-    ],
-    "contents/en/application/cross-platform/server.md": [
-        "pissang"
-    ],
-    "contents/en/application/chart-types/scatter/basic-scatter.md": [
-        "Hansz00",
-        "pissang"
-    ],
-    "contents/en/application/chart-types/pie/rose.md": [
-        "Hansz00",
-        "pissang"
-    ],
-    "contents/en/application/chart-types/pie/doughnut.md": [
-        "pissang"
-    ],
-    "contents/en/application/chart-types/pie/basic-pie.md": [
-        "Hansz00",
-        "pissang"
-    ],
-    "contents/en/application/chart-types/line/step-line.md": [
-        "Hansz00",
-        "pissang"
-    ],
-    "contents/en/application/chart-types/line/stacked-line.md": [
-        "Hansz00",
-        "pissang"
-    ],
-    "contents/en/application/chart-types/line/smooth-line.md": [
-        "Hansz00",
-        "pissang"
-    ],
-    "contents/en/application/chart-types/line/basic-line.md": [
-        "Hansz00",
-        "pissang"
-    ],
-    "contents/en/application/chart-types/line/area-line.md": [
-        "Hank",
-        "Hansz00",
-        "pissang"
-    ],
-    "contents/en/application/chart-types/bar/waterfall.md": [
-        "Hansz00",
-        "Ovilia",
-        "pissang"
-    ],
-    "contents/en/application/chart-types/bar/stacked-bar.md": [
-        "Hansz00",
-        "pissang"
-    ],
-    "contents/en/application/chart-types/bar/polar-bar.md": [
-        "Hansz00"
-    ],
-    "contents/en/application/chart-types/bar/basic-bar.md": [
-        "Hank",
-        "Hansz00",
-        "pissang"
-    ],
-    "contents/en/application/chart-types/bar/bar-race.md": [
-        "Hansz00",
         "Ovilia",
         "pissang"
     ],
     "contents/.prettierrc": [
+        "pissang"
+    ],
+    "contents/zh/meta/edit-guide.md": [
+        "Ovilia",
+        "pissang"
+    ],
+    "contents/zh/how-to/mobile.md": [
+        "Ovilia",
+        "pissang"
+    ],
+    "contents/zh/how-to/label/rich-text.md": [
+        "pissang"
+    ],
+    "contents/zh/how-to/interaction/drag.md": [
+        "pissang"
+    ],
+    "contents/zh/meta/writing.md": [
+        "Ovilia",
         "pissang"
     ],
     "contents/zh/posts.yml": [

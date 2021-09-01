@@ -21,7 +21,7 @@ const loopDir = path => {
 loopDir(dir)
 
 for (let i = 0; i < paths.length; ++i) {
-  const cmd = `git log --pretty=format:"%an%x09" ${paths[i]} | sort | uniq`
+  const cmd = `git log --follow --pretty=format:"%an%x09" ${paths[i]} | sort | uniq`
   ;(i => {
     exec(cmd, (err, stdout) => {
       if (err) {
