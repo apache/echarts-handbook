@@ -127,7 +127,7 @@
         - title: Connect
           dir: connect
           draft: true
-- title: Best Practice
+- title: Best Practices
   dir: best-practice
   children:
     - title: Mobile Optimization

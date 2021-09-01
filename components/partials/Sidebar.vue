@@ -129,7 +129,7 @@ export default Vue.extend({
       // algoliaOptions: {
       //   facetFilters: ['language:en']
       // },
-      debug: true // Set debug to true if you want to inspect the dropdown
+      debug: false // Set debug to true if you want to inspect the dropdown
     })
   }
 })
