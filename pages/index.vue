@@ -10,8 +10,7 @@
 import Vue from 'vue'
 export default Vue.extend({
   mounted() {
-    const locale = (this as any).$i18n.locale
-    this.$router.push(locale + '/get-started')
+    this.$router.push('/get-started')
   }
 })
 </script>
