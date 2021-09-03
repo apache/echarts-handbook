@@ -10,7 +10,7 @@
 import Vue from 'vue'
 export default Vue.extend({
   mounted() {
-    this.$router.push('/get-started')
+    this.$router.push('get-started')
   }
 })
 </script>
