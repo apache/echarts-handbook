@@ -157,7 +157,7 @@ echarts.init(DomElement, null, {​
 
 #### TypeScript 重构
 
-在近 8 年的时间里，Apache ECharts 已经发展成一个非常复杂的可视化库了，为了续可以更安全高效的进行重构和新功能的开发，我们在 Apache ECharts 5 的开发之初，使用 TypeScript 对代码进行了重写，TypeScript 所带来的强类型让我们更有信心地在 ECharts 5 开发的时候对代码进行大刀阔斧的重构以实现更多令人激动人心的特性。
+在近 8 年的时间里，Apache ECharts 已经发展成一个非常复杂的可视化库了，为了可以更安全高效的进行重构和新功能的开发，我们在 Apache ECharts 5 的开发之初，使用 TypeScript 对代码进行了重写，TypeScript 所带来的强类型让我们更有信心地在 ECharts 5 开发的时候对代码进行大刀阔斧的重构以实现更多令人激动人心的特性。
 
 对于开发者，我们也可以从 TypeScript 代码直接生成更好更符合代码的`DTS`类型描述文件。在此之前，ECharts 的类型描述文件一直是由社区开发者帮我们维护并发布到[DefinityTyped](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/echarts)，这个有着不小的工作量，非常感谢大家的贡献。
 

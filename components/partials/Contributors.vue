@@ -82,12 +82,13 @@ export default defineComponent({
   }
 
   .post-contributors-list {
-    margin-top: 20px;
+    margin-top: 10px;
   }
 
   .post-contributor {
     display: inline-block;
     margin-right: 15px;
+    margin-top: 10px;
 
     @apply border-blue-gray-200 border;
     @apply rounded-lg;

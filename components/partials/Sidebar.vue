@@ -4,7 +4,7 @@
       <input
         id="handbook-search-intput"
         type="search"
-       :placeholder="$t('searchHandbook')"
+        :placeholder="$t('searchHandbook')"
       />
       <div class="search-icon">
         <svg
@@ -126,9 +126,10 @@ export default Vue.extend({
       apiKey: '6ade5f1ff34e94690f9ea38cddcc2f55',
       indexName: 'apache_echarts',
       inputSelector: '#handbook-search-intput',
-      // algoliaOptions: {
-      //   facetFilters: ['language:en']
-      // },
+      algoliaOptions: {
+        // @ts-ignore
+        facetFilters: [`lang:${this.$i18n.locale}`]
+      },
       debug: false // Set debug to true if you want to inspect the dropdown
     })
   }

@@ -26,7 +26,6 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
 import '~/components/markdown/global'
 import markdown from 'markdown-it'
 import anchor from 'markdown-it-anchor'
