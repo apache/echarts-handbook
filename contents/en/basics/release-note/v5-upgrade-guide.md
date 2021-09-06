@@ -4,7 +4,7 @@ This guide is for those who want to upgrade from echarts 4.x (hereafter `v4`) to
 
 ## Breaking Changes
 
-#### Default theme
+### Default Theme
 
 First of all, the default theme has been changed. `v5` has made a lot of changes and optimizations on the theme design. If you still want to keep the colors of the old version, you can manually declare the colors as follows.
 
@@ -49,9 +49,9 @@ var chart = echarts.init(dom, themeEC4);
 chart.setOption(/* ... */);
 ```
 
-#### Importing ECharts
+### Importing ECharts
 
-##### Removing Support for Default Exports
+#### Removing Support for Default Exports
 
 Since `v5`, echarts only provides `named exports`.
 
@@ -71,7 +71,7 @@ import * as echarts from 'echarts';
 import * as echarts from 'echarts/lib/echarts';
 ```
 
-##### tree-shaking API
+#### Tree-shaking API
 
 In 5.0.1, we introduced the new [tree-shaking API](${lang}/basics/import)
 
@@ -97,11 +97,11 @@ require('echarts/lib/component/grid');
 
 Second, because our source code has been rewritten using TypeScript, `v5` will no longer support importing files from `echarts/src`. You need to change it to import from `echarts/lib`.
 
-##### Dependency Adjustment
+#### Dependency Changes
 
 > Note: This section is only for developers who use tree-shaking interfaces to ensure a minimal bundle size, not for those who imports the whole package.
 
-In order to keep the size of the bundle small enough, we remove some dependencies that would have been imported by default. For example, as mentioned above, when using the new on-demand interface, `CanvasRenderer` is no longer introduced by default, which ensures that unneeded Canvas rendering code is not imported when only SVG rendering mode is used, and in addition, the following dependencies are adjusted.
+In order to keep the size of the bundle small enough, we remove some dependencies that would have been imported by default. For example, as mentioned above, when using the new on-demand interface, `CanvasRenderer` is no longer included by default, which ensures that unneeded Canvas rendering code is not imported when only SVG rendering mode is used, and in addition, the following dependencies are adjusted.
 
 - The right-angle coordinate system component is no longer introduced by default when using line charts and bar charts, so the following introduction method was used before
 
@@ -132,17 +132,17 @@ Or
 require('echarts/lib/component/aria');
 ```
 
-#### Removes Built-in GeoJSON
+### Built-in GeoJSON Removed
 
 `v5` removes the built-in geoJSON (previously in the `echarts/map` folder). These geoJSON files were always sourced from third parties. If users still need them, they can go get them from the old version, or find more appropriate data and register it with ECharts via the registerMap interface.
 
-#### Browser Compatibility
+### Browser Compatibility
 
 IE8 is no longer supported by `v5`. We no longer maintain and upgrade the previous [VML renderer](https://github.com/ecomfe/zrender/tree/4.3.2/src/vml) for IE8 compatibility. If developers have a strong need for a VML renderer, they are welcome to submit a pull request to upgrade the VML renderer or maintain a separate third-party VML renderer, as we support registration of standalone renderers starting with `v5.0.1`.
 
-#### ECharts configuration item adjustment
+### Configuration Item Adjustment
 
-##### Visual style settings priority change
+#### Visual Style Settings Priority Changes
 
 The priority of the visuals between [visualMap component](${optionPath}visualMap) and [itemStyle](${optionPath}series-scatter.itemStyle) | [lineStyle](${optionPath}series-scatter.lineStyle) | [areaStyle](${optionPath}series-scatter.areaStyle) are reversed since `v5`.
 
@@ -150,13 +150,13 @@ That is, previously in `v4`, the visuals (i.e., color, symbol, symbolSize, ...) 
 
 In most cases, users will probably not notice this change when migrating from `v4` to `v5`. But users can still check that if [visualMap component](${optionPath}visualMap) and [itemStyle](${optionPath}series-scatter.itemStyle) | [lineStyle](${optionPath}series-scatter.lineStyle) | [areaStyle](${optionPath}series-scatter.areaStyle) are both specified.
 
-##### `padding` for Rich Text
+#### `padding` for Rich Text
 
 `v5` adjusts the [rich.?.padding](${optionPath}series-scatter.label.rich.<style_name>.padding) to make it more compliant with CSS specifications. In `v4`, for example `rich. .padding: [11, 22, 33, 44]` means that `padding-top` is `33` and `padding-bottom` is `11`. The position of the top and bottom is adjusted in `v5`, `rich. .padding: [11, 22, 33, 44]` means that `padding-top` is `11` and `padding-bottom` is `33`.
 
 If the user is using [rich.?.padding](${optionPath}series-scatter.label.rich.<style_name>.padding), this order needs to be adjusted.
 
-## ECharts Related Extensions
+## Extensions
 
 These extensions need to be upgraded to new version to support echarts `v5`:
 
@@ -164,7 +164,7 @@ These extensions need to be upgraded to new version to support echarts `v5`:
 - [echarts-wordcloud](https://github.com/ecomfe/echarts-wordcloud)
 - [echarts-liquidfill](https://github.com/ecomfe/echarts-liquidfill)
 
-## Deprecated API
+## Deprecated APIs
 
 Some of the API and echarts options are deprecated since `v5`, but are still backward compatible. Users can **keep using these deprecated API**, with only some warning will be printed to console in dev mode. But if users have spare time, it is recommended to upgraded to new API for the consideration of long term maintenance.
 

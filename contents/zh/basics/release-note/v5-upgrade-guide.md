@@ -4,7 +4,7 @@
 
 ## 非兼容性改变
 
-#### 默认主题（theme）
+### 默认主题（theme）
 
 首先是默认主题的改动，`v5` 在配色等主题设计上做了很多的优化来达到更好的视觉效果。如果大家依旧想保留旧版本的颜色，可以手动声明颜色，如下：
 
@@ -49,9 +49,9 @@ var chart = echarts.init(dom, themeEC4);
 chart.setOption(/* ... */);
 ```
 
-#### 引用 ECharts
+### 引用 ECharts
 
-##### 去除 default exports 的支持
+#### 去除 default exports 的支持
 
 如果使用者在 `v4` 中这样引用了 echarts：
 
@@ -71,7 +71,7 @@ import * as echarts from 'echarts';
 import * as echarts from 'echarts/lib/echarts';
 ```
 
-##### 按需引入
+#### 按需引入
 
 在 5.0.1 中，我们引入了新的[按需引入接口](${lang}/basics/import)
 
@@ -99,7 +99,7 @@ require('echarts/lib/component/grid');
 
 其次，因为我们的源代码已使用 TypeScript 重写，`v5` 将不再支持从 `echarts/src` 引用文件，需要改为从`echarts/lib`引入。
 
-##### 依赖调整
+#### 依赖调整
 
 > 注意：该部分只针对为了保证较小的打包体积而是用按需引入接口的开发者，如果是全量引入的不需要关注
 
@@ -134,17 +134,17 @@ echarts.use(AriaComponent);
 require('echarts/lib/component/aria');
 ```
 
-#### 去除内置的 geoJSON
+### 去除内置的 geoJSON
 
 `v5` 移除了内置的 geoJSON（原先在 `echarts/map` 文件夹下）。这些 geoJSON 文件本就一直来源于第三方。如果使用者仍然需要他们，可以去从老版本中得到，或者自己寻找更合适的数据然后通过 registerMap 接口注册到 ECharts 中。
 
-#### 浏览器兼容性
+### 浏览器兼容性
 
 `v5` 不再支持 IE8 浏览器。我们不再继续维护和升级之前的 [VML 渲染器](https://github.com/ecomfe/zrender/tree/4.3.2/src/vml) 来着实现 IE8 的兼容。如果使用者确实有很强的需求，那么欢迎提 pull request 来升级 VML 渲染器，或者单独维护一个第三方 VML 渲染器，我们从 `v5.0.1` 开始支持注册独立的渲染器了。
 
-#### ECharts 配置项调整
+### 配置项调整
 
-##### 视觉样式设置的优先级改变
+#### 视觉样式设置的优先级改变
 
 `v5` 对调了 [visualMap 组件](${optionPath}visualMap) 和 [itemStyle](${optionPath}series-scatter.itemStyle) | [lineStyle](${optionPath}series-scatter.lineStyle) | [areaStyle](${optionPath}series-scatter.areaStyle) 的视觉样式优先级。
 
@@ -152,13 +152,13 @@ require('echarts/lib/component/aria');
 
 在绝大多处情况下，这个变化并不会带来什么影响。但是为保险起见，使用者在升级 `v4` 到 `v5` 时，还是可以检查下，是否有同时使用 [visualMap](${optionPath}visualMap) 和 [itemStyle](${optionPath}series-scatter.itemStyle) | [lineStyle](${optionPath}series-scatter.lineStyle) | [areaStyle](${optionPath}series-scatter.areaStyle) 的情况。
 
-##### 富文本的 `padding`
+#### 富文本的 `padding`
 
 `v5` 调整了 [rich.?.padding](${optionPath}series-scatter.label.rich.<style_name>.padding) 的格式使其更符合 CSS 的规范。`v4` 里，例如 `rich.?.padding: [11, 22, 33, 44]` 表示 `padding-top` 是 `33` 且 `padding-bottom` 是 `11`。在 `v5` 中调整了上下的位置，`rich.?.padding: [11, 22, 33, 44]` 表示 `padding-top` 是 `11` 且 `padding-bottom` 是 `33`。
 
 如果使用者有在使用 [rich.?.padding](${optionPath}series-scatter.label.rich.<style_name>.padding)，需要注意调整下这个顺序。
 
-## ECharts 的相关扩展
+## 扩展的兼容
 
 如果想要升级到 `v5` ，下面这些扩展需要升级到最新的版本实现兼容。
 
