@@ -1,8 +1,14 @@
 # 无障碍访问
 
-W3C 制定了无障碍富互联网应用规范集（[WAI-ARIA](https://www.w3.org/WAI/intro/aria)，the Accessible Rich Internet Applications Suite），致力于使得网页内容和网页应用能够被更多残障人士访问。ECharts 4.0 遵从这一规范，支持自动根据图表配置项智能生成描述，使得盲人可以在朗读设备的帮助下了解图表内容，让图表可以被更多人群访问。
+W3C 制定了无障碍富互联网应用规范集（[WAI-ARIA](https://www.w3.org/WAI/intro/aria)，the Accessible Rich Internet Applications Suite），致力于使得网页内容和网页应用能够被更多残障人士访问。
 
-默认关闭，需要通过将 [aria.show](${optionPath}aria.show) 设置为 `true` 开启。开启后，会根据图表、数据、标题等情况，自动智能生成关于图表的描述，用户也可以通过配置项修改描述。
+Apache ECharts 4 遵从这一规范，支持自动根据图表配置项智能生成描述，使得盲人可以在朗读设备的帮助下了解图表内容，让图表可以被更多人群访问。Apache ECharts 5 新增了贴花功能，让图表数据除了可以用颜色区分之外，还能用贴花图案区分，提供了更好的无障碍访问体验。
+
+无障碍访问功能默认关闭，需要通过将 [aria.show](${optionPath}aria.show) 设置为 `true` 开启。
+
+## 图表描述
+
+开启 [aria.show](${optionPath}aria.show) 后，会根据图表、数据、标题等情况，自动智能生成关于图表的描述，用户也可以通过配置项修改描述。
 
 对于配置项：
 
@@ -39,13 +45,15 @@ option = {
 这是一个关于“某站点用户访问来源”的图表。图表类型是饼图，表示访问来源。其数据是——直接访问的数据是335，邮件营销的数据是310，联盟广告的数据是234，视频广告的数据是135，搜索引擎的数据是1548。
 ```
 
-## 整体修改描述
+默认语言会根据语言包（默认中文）选择，也可以使用配置项自定义模板。
+
+### 整体修改描述
 
 对于有些图表，默认生成的数据点的描述并不足以表现整体的信息。比如下图的散点图，默认生成的描述可以包含数据点的坐标值，但是知道几百几千个点的坐标并不能帮助我们有效地理解图表表达的信息。
 
 这时候，用户可以通过 [aria.description](${optionPath}aria.description) 配置项指定图表的整体描述。
 
-## 定制模板描述
+### 定制模板描述
 
 除了整体性修改描述之外，我们还提供了生成描述的模板，可以方便地进行细粒度的修改。
 
@@ -55,4 +63,14 @@ option = {
 
 拼接完标题之后，会依次拼接系列的描述（[aria.series](${optionPath}aria.series)），和每个系列的数据的描述（[aria.data](${optionPath}aria.data)）。同样，每个模板都有可能包括模板变量，用以替换实际的值。
 
-完整的描述生成流程请参见 [ARIA 文档](${optionPath}aria)。
+完整的描述生成流程请参见 [ARIA 文档](${optionPath}aria.label)。
+
+## 贴花图案
+
+除此之外，Apache ECharts 5 新增支持贴花纹理，作为颜色的辅助表达，进一步用以区分数据。在 `aria.enabled` 为 `true` 的前提下，将 `aria.decal.show` 设为 `true` 即可采用默认的贴花样式。
+
+<md-example src="doc-example/aria-decal-simple"></md-example>
+
+如果需要自定义贴花图案，可以使用 [aria.decal.decals](option.html#aria.decal.decals) 配置出灵活多变的图案。
+
+更具体的信息请参见 [ARIA 文档](${optionPath}aria.decal)。
