@@ -157,6 +157,10 @@ body {
     :last-child {
       margin-bottom: 0;
     }
+
+    pre {
+      padding: 0.5em;
+    }
   }
 
   pre {

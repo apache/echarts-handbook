@@ -52,6 +52,8 @@ import {
   TooltipComponent,
   GridComponent
 } from 'echarts/components';
+// 标签自动布局，全局过渡动画等特性
+import { LabelLayout, UniversalTransition } from 'echarts/features';
 // 引入 Canvas 渲染器，注意引入 CanvasRenderer 或者 SVGRenderer 是必须的一步
 import { CanvasRenderer } from 'echarts/renderers';
 
@@ -61,6 +63,8 @@ echarts.use([
   TooltipComponent,
   GridComponent,
   BarChart,
+  LabelLayout,
+  UniversalTransition,
   CanvasRenderer
 ]);
 
@@ -95,6 +99,7 @@ import {
   GridComponent,
   GridComponentOption
 } from 'echarts/components';
+import { LabelLayout, UniversalTransition } from 'echarts/features';
 import { CanvasRenderer } from 'echarts/renderers';
 
 // 通过 ComposeOption 来组合出一个只有必须组件和图表的 Option 类型
@@ -111,6 +116,8 @@ echarts.use([
   TooltipComponent,
   GridComponent,
   BarChart,
+  LabelLayout,
+  UniversalTransition,
   CanvasRenderer
 ]);
 

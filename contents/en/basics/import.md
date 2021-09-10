@@ -10,7 +10,7 @@ You can install ECharts via npm using the following command
 npm install echarts --save
 ```
 
-## Introduce ECharts
+## Import ECharts
 
 ```js
 import * as echarts from 'echarts';
@@ -52,6 +52,8 @@ import {
   TooltipComponent,
   GridComponent
 } from 'echarts/components';
+// Features like Universal Transition and Label Layout
+import { LabelLayout, UniversalTransition } from 'echarts/features';
 // Import the Canvas renderer, note that introducing the CanvasRenderer or SVGRenderer is a required step
 import { CanvasRenderer } from 'echarts/renderers';
 
@@ -61,6 +63,8 @@ echarts.use([
   TooltipComponent,
   GridComponent,
   BarChart,
+  LabelLayout,
+  UniversalTransition,
   CanvasRenderer
 ]);
 
@@ -95,6 +99,7 @@ import {
   GridComponent,
   GridComponentOption
 } from 'echarts/components';
+import { LabelLayout, UniversalTransition } from 'echarts/features';
 import { CanvasRenderer } from 'echarts/renderers';
 
 // Combine an Option type with only required components and charts via ComposeOption
@@ -111,6 +116,8 @@ echarts.use([
   TooltipComponent,
   GridComponent,
   BarChart,
+  LabelLayout,
+  UniversalTransition,
   CanvasRenderer
 ]);
 
