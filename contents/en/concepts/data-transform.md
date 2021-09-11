@@ -465,7 +465,21 @@ type DimensionName = string;
 type DimensionIndex = number;
 ```
 
-## The transform "sort"
+> Note that when using [Minimal Bundle](${lang}/basics/import#importing-required-charts-and-components-to-have-minimal-bundle), if you need to use this built-in transform, besides the `Dataset` component, it's required to import the `Transform` component.
+
+```ts
+import {
+  DatasetComponent,
+  TransformComponent
+} from 'echarts/components';
+
+echarts.use([
+  DatasetComponent,
+  TransformComponent
+]);
+```
+
+## Sort Transform
 
 Another built-in transform is "sort".
 
@@ -570,6 +584,20 @@ type OrderExpression = {
 };
 type DimensionName = string;
 type DimensionIndex = number;
+```
+
+> Note that when using [Minimal Bundle](${lang}/basics/import#importing-required-charts-and-components-to-have-minimal-bundle), if you need to use this built-in transform, besides the `Dataset` component, it's required to import the `Transform` component.
+
+```ts
+import {
+  DatasetComponent,
+  TransformComponent
+} from 'echarts/components';
+
+echarts.use([
+  DatasetComponent,
+  TransformComponent
+]);
 ```
 
 ## Use External Transforms

@@ -2,7 +2,7 @@
 
 If your development environment uses a package management tool like `npm` or `yarn` and builds with a packaging tool like Webpack, this article will describe how to get a minimal bundle of Apache ECharts<sup>TM</sup> via treeshaking.
 
-## NPM Installation of ECharts
+## Install ECharts via NPM
 
 You can install ECharts via npm using the following command
 
@@ -37,24 +37,28 @@ myChart.setOption({
 });
 ```
 
-## Importing Required Charts and Components to Have Minimal Bundle.
+## Importing Required Charts and Components to Have Minimal Bundle
 
 The above code will import all the charts and components in ECharts, but if you don't want to bring in all the components, you can use the tree-shakeable interface provided by ECharts to bundle the required components and get a minimal bundle.
 
 ```js
 // Import the echarts core module, which provides the necessary interfaces for using echarts.
 import * as echarts from 'echarts/core';
-// Import bar charts, all with Chart suffix
+// Import bar charts, all suffixed with Chart
 import { BarChart } from 'echarts/charts';
-// import the tooltip, title, and rectangular coordinate system components, all suffixed with Component
+// Import the tooltip, title, rectangular coordinate system, dataset and transform components
+// all suffixed with Component
 import {
   TitleComponent,
   TooltipComponent,
-  GridComponent
+  GridComponent,
+  DatasetComponent,
+  TransformComponent
 } from 'echarts/components';
 // Features like Universal Transition and Label Layout
 import { LabelLayout, UniversalTransition } from 'echarts/features';
-// Import the Canvas renderer, note that introducing the CanvasRenderer or SVGRenderer is a required step
+// Import the Canvas renderer
+// Note that introducing the CanvasRenderer or SVGRenderer is a required step
 import { CanvasRenderer } from 'echarts/renderers';
 
 // Register the required components
@@ -62,6 +66,8 @@ echarts.use([
   TitleComponent,
   TooltipComponent,
   GridComponent,
+  DatasetComponent,
+  TransformComponent,
   BarChart,
   LabelLayout,
   UniversalTransition,
@@ -97,7 +103,12 @@ import {
   // The component types are defined with the suffix ComponentOption
   TitleComponentOption,
   GridComponent,
-  GridComponentOption
+  GridComponentOption,
+  // Dataset
+  DatasetComponent,
+  DatasetComponentOption,
+  // Built-in transform (filter, sort)
+  TransformComponent
 } from 'echarts/components';
 import { LabelLayout, UniversalTransition } from 'echarts/features';
 import { CanvasRenderer } from 'echarts/renderers';
@@ -108,6 +119,7 @@ type ECOption = echarts.ComposeOption<
   | LineSeriesOption
   | TitleComponentOption
   | GridComponentOption
+  | DatasetComponentOption
 >;
 
 // Register the required components
@@ -115,13 +127,15 @@ echarts.use([
   TitleComponent,
   TooltipComponent,
   GridComponent,
+  DatasetComponent,
+  TransformComponent,
   BarChart,
   LabelLayout,
   UniversalTransition,
   CanvasRenderer
 ]);
 
-var option: ECOption = {
+const option: ECOption = {
   // ...
 };
 ```

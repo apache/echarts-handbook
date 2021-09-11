@@ -464,6 +464,20 @@ type DimensionName = string;
 type DimensionIndex = number;
 ```
 
+> 注意：使用[按需引入](${lang}/basics/import#按需引入-echarts-图表和组件)接口时，如果需要使用该内置转换器，除了 `Dataset` 组件，还需引入 `Transform` 组件。
+
+```ts
+import {
+  DatasetComponent,
+  TransformComponent
+} from 'echarts/components';
+
+echarts.use([
+  DatasetComponent,
+  TransformComponent
+]);
+```
+
 ## 数据转换器 "sort"
 
 "sort" 是另一个内置的数据转换器，用于排序数据。目前主要能用于在类目轴（ `axis.type: 'category'` ）中显示排过序的数据。例如：
@@ -569,6 +583,20 @@ type OrderExpression = {
 };
 type DimensionName = string;
 type DimensionIndex = number;
+```
+
+> 注意：使用[按需引入](${lang}/basics/import#按需引入-echarts-图表和组件)接口时，如果需要使用该内置转换器，除了 `Dataset` 组件，还需引入 `Transform` 组件。
+
+```ts
+import {
+  DatasetComponent,
+  TransformComponent
+} from 'echarts/components';
+
+echarts.use([
+  DatasetComponent,
+  TransformComponent
+]);
 ```
 
 ## 使用外部的数据转换器
