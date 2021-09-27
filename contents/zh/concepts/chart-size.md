@@ -63,6 +63,16 @@
 </script>
 ```
 
+在 Vue.js 中，可在 `mounted` 中通过监听 `resize` 事件获取浏览器大小改变的事件
+```js
+mounted() {
+  const myChart = echarts.init(document.getElementById('main'));
+  window.addEventListener('resize', () => {
+    if(myChart) myChart.resize();
+  })
+},
+```
+
 ### 为图表设置特定的大小
 
 除了直接调用 `resize()` 不含参数的形式之外，还可以指定宽度和高度，实现图表大小不等于容器大小的效果。
