@@ -39,7 +39,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
 echarts.use([SVGRenderer, CanvasRenderer]);
 ```
 
-然后，我们就可以在代码中，初始化图表实例时，[传入参数](${mainSitePath}/api.html/api.html#echarts.init) 选择渲染器类型：
+然后，我们就可以在代码中，初始化图表实例时，[传入参数](${mainSitePath}/api.html#echarts.init) 选择渲染器类型：
 
 ```js
 // 使用 Canvas 渲染器（默认）
