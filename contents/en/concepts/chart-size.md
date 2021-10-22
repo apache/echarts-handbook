@@ -39,7 +39,7 @@ If the height and width of the container do not exist, or you wish the chart siz
 
 In some cases, we want to accordingly change the chart size while the size of containers changed.
 
-For instance, the container has a height of 300px and a width of 100% site width. If you are willing to change the site width while stable the chart width as 100% of it, try the following method.
+For instance, the container has a height of 400px and a width of 100% site width. If you are willing to change the site width while stable the chart width as 100% of it, try the following method.
 
 You can listen to `window.onresize` of the site to catch the event that the browser is resized. Then use [`echartsInstance.resize`](${mainSitePath}api.html#echartsInstance.resize) to resize the chart.
 
