@@ -45,7 +45,7 @@ Then you can initialize an echarts instance with the [echarts.init](${mainSitePa
     <meta charset="utf-8" />
     <title>ECharts</title>
     <!-- Include the ECharts file you just downloaded -->
-    <script src="echarts.min.js"></script>
+    <script src="echarts.js"></script>
   </head>
   <body>
     <!-- Prepare a DOM with a defined width and height for ECharts -->
