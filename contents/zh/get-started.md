@@ -45,7 +45,7 @@ Apache ECharts 支持多种下载方式，可以在下一篇教程[安装](${lan
     <meta charset="utf-8" />
     <title>ECharts</title>
     <!-- 引入刚刚下载的 ECharts 文件 -->
-    <script src="echarts.min.js"></script>
+    <script src="echarts.js"></script>
   </head>
   <body>
     <!-- 为 ECharts 准备一个定义了宽高的 DOM -->
