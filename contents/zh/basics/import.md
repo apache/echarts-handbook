@@ -88,6 +88,68 @@ myChart.setOption({
 
 对于使用了 TypeScript 来开发 ECharts 的开发者，我们提供了类型接口来组合出最小的`EChartsOption`类型。这个更严格的类型可以有效帮助你检查出是否少加载了组件或者图表。
 
+### with V5 for next.js
+
+```
+// next.config.js
+const withEcharts = require('next-transpile-modules')(['echarts', 'zrender']);
+module.exports = withEcharts({});
+
+```
+
+
+```ts
+import * as echarts from 'echarts/core';
+import {
+  BarChart,
+  // 系列类型的定义后缀都为 SeriesOption
+  BarSeriesOption,
+  LineChart,
+  LineSeriesOption
+} from 'echarts/charts';
+import {
+  TitleComponent,
+  // 组件类型的定义后缀都为 ComponentOption
+  TitleComponentOption,
+  GridComponent,
+  GridComponentOption,
+  // 数据集组件
+  DatasetComponent,
+  DatasetComponentOption,
+  // 内置数据转换器组件 (filter, sort)
+  TransformComponent
+} from 'echarts/components';
+import { LabelLayout, UniversalTransition } from 'echarts/features';
+import { CanvasRenderer } from 'echarts/renderers';
+
+// 通过 ComposeOption 来组合出一个只有必须组件和图表的 Option 类型
+type ECOption = echarts.ComposeOption<
+  | BarSeriesOption
+  | LineSeriesOption
+  | TitleComponentOption
+  | GridComponentOption
+  | DatasetComponentOption
+>;
+
+// 注册必须的组件
+echarts.use([
+  TitleComponent,
+  TooltipComponent,
+  GridComponent,
+  DatasetComponent,
+  TransformComponent,
+  BarChart,
+  LabelLayout,
+  UniversalTransition,
+  CanvasRenderer
+]);
+
+const option: ECOption = {
+  // ...
+};
+```
+### Others
+
 ```ts
 import * as echarts from 'echarts/core';
 import {
