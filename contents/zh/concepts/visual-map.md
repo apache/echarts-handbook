@@ -94,7 +94,7 @@ ECharts 的视觉映射组件分为连续型（[visualMapContinuous](${optionPat
 option = {
   visualMap: [
     {
-      type: 'piecewise',
+      type: 'continuous',
       min: 0,
       max: 5000,
       dimension: 3, // series.data 的第四个维度（即 value[3]）被映射
