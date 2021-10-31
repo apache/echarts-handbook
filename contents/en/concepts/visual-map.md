@@ -94,7 +94,7 @@ Continuous type visual mapping can determine the range of visual mapping by spec
 option = {
   visualMap: [
     {
-      type: 'piecewise',
+      type: 'continuous',
       min: 0,
       max: 5000,
       dimension: 3, // the fourth dimension of series.data (i.e. value[3]) is mapped
