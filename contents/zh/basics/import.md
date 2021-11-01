@@ -101,6 +101,8 @@ import {
   TitleComponent,
   // 组件类型的定义后缀都为 ComponentOption
   TitleComponentOption,
+  TooltipComponent,
+  TooltipComponentOption,
   GridComponent,
   GridComponentOption,
   // 数据集组件
@@ -117,6 +119,7 @@ type ECOption = echarts.ComposeOption<
   | BarSeriesOption
   | LineSeriesOption
   | TitleComponentOption
+  | TooltipComponentOption
   | GridComponentOption
   | DatasetComponentOption
 >;
