@@ -352,4 +352,4 @@ The option format is still **compatible**, but not recommended. In fact, in most
 
 ## Visual Encoding by visualMap Component
 
-[visualMap component](${optionPath}visualMap) supports config the rule that mapping value to visual channel (color, size, ...). More details can be check in [Visual Map of Data](~Visual%20Map%20of%20Data).
+[visualMap component](${optionPath}visualMap) supports config the rule that mapping value to visual channel (color, size, ...). More details can be check in [Visual Map of Data](${lang}/concepts/visual-map/).
