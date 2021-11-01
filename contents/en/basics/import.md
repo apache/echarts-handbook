@@ -102,6 +102,8 @@ import {
   TitleComponent,
   // The component types are defined with the suffix ComponentOption
   TitleComponentOption,
+  TooltipComponent,
+  TooltipComponentOption,
   GridComponent,
   GridComponentOption,
   // Dataset
@@ -118,6 +120,7 @@ type ECOption = echarts.ComposeOption<
   | BarSeriesOption
   | LineSeriesOption
   | TitleComponentOption
+  | TooltipComponentOption
   | GridComponentOption
   | DatasetComponentOption
 >;
