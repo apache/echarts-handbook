@@ -61,13 +61,13 @@ function local() {
  * Drawback: rate limit
  */
 async function ghAPI() {
-  const GH_REPO_URL = 'https://api.github.com/repos/apache/echarts-handbook/commits?path='
+  const GH_COMMITS_URL = 'https://api.github.com/repos/apache/echarts-handbook/commits?path='
   const total = paths.length
   const tasks = new Array(total)
   for (let i = 0; i < total; ++i) {
     ((i) => {
       const path = paths[i].slice(2)
-      tasks[i] = fetch(GH_REPO_URL + path)
+      tasks[i] = fetch(GH_COMMITS_URL + path)
         .then(response => response.json())
         .then(commits => {
           const contributors = {}
@@ -83,7 +83,7 @@ async function ghAPI() {
     })(i)
   }
   await Promise.allSettled(tasks)
-  writeToFile()
+  Object.keys(entries).length && writeToFile()
 }
 
 /**
@@ -92,26 +92,33 @@ async function ghAPI() {
  * Drawback: potential network/request error
  */
 async function ghWeb() {
-  const GH_REPO_URL = 'https://github.com/apache/echarts-handbook/contributors/master/'
+  const GH_CONTRIBUTOR_URL = 'https://github.com/apache/echarts-handbook/contributors/master/'
+  // All contributors
+  const GH_CONTRIBUTOR_LIST_URL = 'https://github.com/apache/echarts-handbook/contributors-list/master/'
   const total = paths.length
   const tasks = new Array(total)
-  for (let i = 0; i < total; ++i) {
+  for (let i = 0; i < 1; ++i) {
     ((i) => {
       const path = paths[i].slice(2)
       console.log('fetching contributors of path', path)
-      tasks[i] = fetch(GH_REPO_URL + path)
+      tasks[i] = fetch(GH_CONTRIBUTOR_LIST_URL + path)
         .then(response => response.text())
-        .then(html => {
-          const $ = cheerio.load(html)
+        .then(async html => {
+          let $ = cheerio.load(html)
           let contributors
-          const avatars = $('a.avatar-link .avatar-user')
-          if (avatars.length) {
-            contributors = avatars.map((i, avatar) => $(avatar).attr('alt').slice(1)).toArray()
+          const links = $('li > a')
+          if (links.length) {
+            contributors = links.map((i, link) => $(link).attr('href').slice(1)).toArray()
           } else {
-            const avatar = $('a[rel=contributor] .avatar-user').attr('alt')
-            contributors = avatar ? [avatar.slice(1)] : []
+            // for special case, for example, ghost account
+            html = await (await fetch(GH_CONTRIBUTOR_URL + path)).text()
+            $ = cheerio.load(html)
+            let creator = $('span.Link--primary').text()
+            if (creator && (creator = creator.trim())) {
+              contributors = [creator]
+            }
           }
-          entries[path] = contributors
+          entries[path] = contributors = contributors || []
           console.log('fetched contributors of path', path, contributors)
         })
         .catch(e => {
@@ -119,9 +126,17 @@ async function ghWeb() {
         })
     })(i)
   }
-  await Promise.allSettled(tasks)
-  console.log(entries)
-  writeToFile()
+  const results = await Promise.allSettled(tasks)
+  const errorCount = results.filter(r => r.status === 'rejected').length
+  console.log(`
+    All Done!
+      ${total} Total, 
+      ${total - errorCount} Successful,
+      ${errorCount} Errors`
+  )
+  console.log('\nResults', entries)
+  Object.keys(entries).length && writeToFile()
 }
 
 ghWeb()
+
