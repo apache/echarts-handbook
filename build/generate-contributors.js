@@ -97,7 +97,7 @@ async function ghWeb() {
   const GH_CONTRIBUTOR_LIST_URL = 'https://github.com/apache/echarts-handbook/contributors-list/master/'
   const total = paths.length
   const tasks = new Array(total)
-  for (let i = 0; i < 1; ++i) {
+  for (let i = 0; i < total; ++i) {
     ((i) => {
       const path = paths[i].slice(2)
       console.log('fetching contributors of path', path)
