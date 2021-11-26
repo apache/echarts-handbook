@@ -8,7 +8,7 @@ Assuming that the values in the data array represent an increase or decrease fro
 var data = [900, 345, 393, -108, -154, 135, 178, 286, -119, -361, -203];
 ```
 
-That is, the first data is `900` and the second data `345` represents the addition of `345` to `900`, etc. When presenting this data as a stepped waterfall chart, we can use three series: the first is a non-interactive transparent series to implement the suspension bar effect; the second series is used to represent positive numbers; and the second series is used to represent negative numbers.
+That is, the first data is `900` and the second data `345` represents the addition of `345` to `900`, etc. When presenting this data as a stepped waterfall chart, we can use three series: the first is a non-interactive transparent series to implement the suspension bar effect, the second series is used to represent positive numbers, and the third series is used to represent negative numbers.
 
 ```js live
 var data = [900, 345, 393, -108, -154, 135, 178, 286, -119, -361, -203];
