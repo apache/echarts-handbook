@@ -14,26 +14,22 @@ async function updateNav() {
     console.log('Fetching...', localPath)
     let navContent = ''
     try {
-      navContent = fs.readFileSync(
-        `${websitePath}/${locale}/nav.html`,
-        targetPath
-      )
+      navContent = fs.readFileSync(`${websitePath}/${locale}/nav.html`)
     } catch (e) {
       console.log(
         'Local file not found. Fetching...',
-        `http://echarts.apache.org/${locale}/nav.html`
+        `https://echarts.apache.org/${locale}/nav.html`
       )
       navContent = await fetch(
-        `http://echarts.apache.org/${locale}/nav.html`
+        `https://echarts.apache.org/${locale}/nav.html`
       ).then(response => response.text())
     }
 
     fs.writeFileSync(
-      localPath,
+      targetPath,
       `<template>
 ${navContent}
-</template>`,
-      'utf-8'
+</template>`
     )
   }
 }
