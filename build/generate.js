@@ -20,9 +20,12 @@ async function updateNav() {
         'Local file not found. Fetching...',
         `https://echarts.apache.org/${locale}/nav.html`
       )
-      navContent = await fetch(
+      navContent = (await fetch(
         `https://echarts.apache.org/${locale}/nav.html`
-      ).then(response => response.text())
+      ).then(response => response.text()))
+      // remove extra `template` tag
+      // PENDING: Generated nav html by echarts-www action seems buggy
+      navContent = navContent.replace(/<\/?template>/g, '').trim()
     }
 
     fs.writeFileSync(
