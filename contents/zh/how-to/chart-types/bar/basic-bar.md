@@ -81,7 +81,7 @@ option = {
           itemStyle: {
             color: '#91cc75',
             shadowColor: '#91cc75',
-            borderType: [10, 5, 5],
+            borderType: 'dashed',
             opacity: 0.5
           }
         },
