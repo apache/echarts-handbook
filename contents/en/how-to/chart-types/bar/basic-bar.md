@@ -76,14 +76,31 @@ option = {
   yAxis: {},
   series: [
     {
-      data: [10, 22, 28, 43, 49],
       type: 'bar',
-      stack: 'x'
-    },
-    {
-      data: [5, 4, 3, 5, 10],
-      type: 'bar',
-      stack: 'x'
+      data: [
+        10,
+        22,
+        28,
+        {
+          value: 43,
+          // Specify the style for single bar
+          itemStyle: {
+            color: '#91cc75',
+            shadowColor: '#91cc75',
+            borderType: [10, 5, 5],
+            opacity: 0.5
+          }
+        },
+        49
+      ],
+      itemStyle: {
+        barBorderRadius: 5,
+        borderWidth: 1,
+        borderType: 'solid',
+        borderColor: '#73c0de',
+        shadowColor: '#5470c6',
+        shadowBlur: 3
+      }
     }
   ]
 };
@@ -103,14 +120,9 @@ option = {
   yAxis: {},
   series: [
     {
+      type: 'bar',
       data: [10, 22, 28, 43, 49],
-      type: 'bar',
-      stack: 'x'
-    },
-    {
-      data: [5, 4, 3, 5, 10],
-      type: 'bar',
-      stack: 'x'
+      barWidth: '20%'
     }
   ]
 };
