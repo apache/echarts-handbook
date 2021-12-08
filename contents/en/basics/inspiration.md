@@ -4,3 +4,4 @@ The following list provides some ideas when you have a question "I don't know ho
 
 - [Apache ECharts Official Examples](${mainSitePath}/examples)
 - "How To Guides - Common Charts" in this handbook
+- Community works from [makeapie.com](https://www.makeapie.com/)
