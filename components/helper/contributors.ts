@@ -96,6 +96,7 @@ export default {
         "Ovilia"
     ],
     "contents/zh/concepts/style.md": [
+        "SuWanBin",
         "pissang"
     ],
     "contents/zh/concepts/series.md": [
@@ -124,7 +125,8 @@ export default {
     ],
     "contents/zh/concepts/data-transform.md": [
         "100pah",
-        "pissang"
+        "pissang",
+        "plainheart"
     ],
     "contents/zh/concepts/coordinate.md": [
         "Ovilia"
@@ -134,87 +136,90 @@ export default {
         "pissang"
     ],
     "contents/zh/concepts/axis.md": [
+        "Essentric",
         "Ovilia",
         "huanghan01",
         "pissang",
         "plainheart",
         "yufeng04"
     ],
-    "contents/zh/best-practice/specification/scatter/scatter.md": [
+    "contents/zh/best-practices/specification/scatter/scatter.md": [
         "Hansz00",
         "Wdingding",
         "pissang"
     ],
-    "contents/zh/best-practice/specification/scatter/bubble.md": [
+    "contents/zh/best-practices/specification/scatter/bubble.md": [
         "Wdingding",
         "pissang"
     ],
-    "contents/zh/best-practice/specification/radar.md": [
+    "contents/zh/best-practices/specification/radar.md": [
         "Hansz00",
         "Wdingding",
         "pissang"
     ],
-    "contents/zh/best-practice/specification/pie/basic-pie.md": [
+    "contents/zh/best-practices/specification/pie/basic-pie.md": [
         "100pah",
         "Wdingding",
         "pissang"
     ],
-    "contents/zh/best-practice/specification/line/stacked-area.md": [
+    "contents/zh/best-practices/specification/line/stacked-area.md": [
         "Wdingding",
         "pissang"
     ],
-    "contents/zh/best-practice/specification/line/basic-line.md": [
+    "contents/zh/best-practices/specification/line/basic-line.md": [
         "Hansz00",
         "Wdingding",
         "pissang"
     ],
-    "contents/zh/best-practice/specification/line/area.md": [
+    "contents/zh/best-practices/specification/line/area.md": [
         "Hansz00",
         "Wdingding",
         "pissang"
     ],
-    "contents/zh/best-practice/specification/gauge.md": [
+    "contents/zh/best-practices/specification/gauge.md": [
         "Hansz00",
         "Wdingding",
         "pissang"
     ],
-    "contents/zh/best-practice/specification/funnel.md": [
+    "contents/zh/best-practices/specification/funnel.md": [
         "Wdingding",
         "pissang"
     ],
-    "contents/zh/best-practice/specification/bar/stacked-bar.md": [
+    "contents/zh/best-practices/specification/bar/stacked-bar.md": [
         "Wdingding",
         "pissang"
     ],
-    "contents/zh/best-practice/specification/bar/grouped-bar.md": [
+    "contents/zh/best-practices/specification/bar/grouped-bar.md": [
         "Hansz00",
         "Wdingding",
         "pissang"
     ],
-    "contents/zh/best-practice/specification/bar/bi-directional-bar.md": [
+    "contents/zh/best-practices/specification/bar/bi-directional-bar.md": [
         "Ovilia",
         "Wdingding",
         "pissang"
     ],
-    "contents/zh/best-practice/specification/bar/basic-bar.md": [
+    "contents/zh/best-practices/specification/bar/basic-bar.md": [
         "Hansz00",
         "Wdingding",
         "pissang"
     ],
-    "contents/zh/best-practice/mobile.md": [
-        "Ovilia"
+    "contents/zh/best-practices/mobile.md": [
+        "Hansz00",
+        "Ovilia",
+        "pissang"
     ],
-    "contents/zh/best-practice/design/color-enhance.md": [
+    "contents/zh/best-practices/design/color-enhance.md": [
         "Hansz00",
         "Wdingding",
         "pissang"
     ],
-    "contents/zh/best-practice/canvas-vs-svg.md": [
+    "contents/zh/best-practices/canvas-vs-svg.md": [
         "100pah",
         "Ovilia",
         "pissang"
     ],
-    "contents/zh/best-practice/aria.md": [
+    "contents/zh/best-practices/aria.md": [
         "Ovilia",
         "pissang"
     ],
@@ -223,9 +228,11 @@ export default {
         "pissang"
     ],
     "contents/zh/basics/release-note/v5-upgrade-guide.md": [
+        "Ovilia",
         "pissang"
     ],
     "contents/zh/basics/release-note/v5-feature.md": [
+        "Hookin",
         "pissang"
     ],
     "contents/zh/basics/release-note/5-2-0.md": [
@@ -237,7 +244,8 @@ export default {
         "pissang"
     ],
     "contents/zh/basics/import.md": [
-        "pissang"
+        "pissang",
+        "plainheart"
     ],
     "contents/zh/basics/help.md": [
         "100pah",
@@ -379,7 +387,8 @@ export default {
     ],
     "contents/en/concepts/data-transform.md": [
         "100pah",
-        "pissang"
+        "pissang",
+        "plainheart"
     ],
     "contents/en/concepts/coordinate.md": [
         "Ovilia",
@@ -393,78 +402,80 @@ export default {
         "huanghan01",
         "pissang"
     ],
-    "contents/en/best-practice/specification/scatter/scatter.md": [
+    "contents/en/best-practices/specification/scatter/scatter.md": [
         "Hansz00",
         "pissang"
     ],
-    "contents/en/best-practice/specification/scatter/bubble.md": [
+    "contents/en/best-practices/specification/scatter/bubble.md": [
         "Hansz00",
         "pissang"
     ],
-    "contents/en/best-practice/specification/radar.md": [
+    "contents/en/best-practices/specification/radar.md": [
         "Hansz00",
         "pissang"
     ],
-    "contents/en/best-practice/specification/pie/basic-pie.md": [
+    "contents/en/best-practices/specification/pie/basic-pie.md": [
         "Hansz00",
         "pissang"
     ],
-    "contents/en/best-practice/specification/line/stacked-area.md": [
+    "contents/en/best-practices/specification/line/stacked-area.md": [
         "Hansz00",
         "pissang"
     ],
-    "contents/en/best-practice/specification/line/basic-line.md": [
+    "contents/en/best-practices/specification/line/basic-line.md": [
         "Hansz00",
         "pissang"
     ],
-    "contents/en/best-practice/specification/line/area.md": [
+    "contents/en/best-practices/specification/line/area.md": [
         "Hansz00",
         "pissang"
     ],
-    "contents/en/best-practice/specification/gauge.md": [
+    "contents/en/best-practices/specification/gauge.md": [
         "Hansz00",
         "pissang"
     ],
-    "contents/en/best-practice/specification/funnel.md": [
+    "contents/en/best-practices/specification/funnel.md": [
         "Hansz00",
         "pissang"
     ],
-    "contents/en/best-practice/specification/bar/stacked-bar.md": [
+    "contents/en/best-practices/specification/bar/stacked-bar.md": [
         "Hansz00",
         "pissang"
     ],
-    "contents/en/best-practice/specification/bar/grouped-bar.md": [
+    "contents/en/best-practices/specification/bar/grouped-bar.md": [
         "Hansz00",
         "pissang"
     ],
-    "contents/en/best-practice/specification/bar/bi-directional-bar.md": [
+    "contents/en/best-practices/specification/bar/bi-directional-bar.md": [
         "Hansz00",
         "pissang"
     ],
-    "contents/en/best-practice/specification/bar/basic-bar.md": [
+    "contents/en/best-practices/specification/bar/basic-bar.md": [
         "Hansz00",
         "pissang"
     ],
-    "contents/en/best-practice/mobile.md": [
+    "contents/en/best-practices/mobile.md": [
         "Hansz00",
-        "Ovilia"
+        "Ovilia",
+        "pissang"
     ],
-    "contents/en/best-practice/design/color-enhance.md": [
+    "contents/en/best-practices/design/color-enhance.md": [
         "Hansz00",
         "pissang"
     ],
-    "contents/en/best-practice/canvas-vs-svg.md": [
+    "contents/en/best-practices/canvas-vs-svg.md": [
         "100pah",
         "Hansz00",
         "Ovilia",
         "pissang"
     ],
-    "contents/en/best-practice/aria.md": [
+    "contents/en/best-practices/aria.md": [
         "Hansz00",
         "Ovilia",
         "pissang"
     ],
     "contents/en/basics/release-note/v5-upgrade-guide.md": [
+        "Ovilia",
         "pissang"
     ],
     "contents/en/basics/release-note/v5-feature.md": [
@@ -475,10 +486,12 @@ export default {
         "pissang"
     ],
     "contents/en/basics/inspiration.md": [
-        "pissang"
+        "pissang",
+        "plainheart"
     ],
     "contents/en/basics/import.md": [
-        "pissang"
+        "pissang",
+        "plainheart"
     ],
     "contents/en/basics/help.md": [
         "pissang"
@@ -490,18 +503,18 @@ export default {
     "contents/.prettierrc": [
         "pissang"
     ],
-    "contents/zh/meta/edit-guide.md": [
-        "Ovilia",
+    "contents/zh/how-to/label/rich-text.md": [
         "pissang"
     ],
     "contents/zh/how-to/mobile.md": [
         "Ovilia",
         "pissang"
     ],
-    "contents/zh/how-to/label/rich-text.md": [
+    "contents/zh/how-to/interaction/drag.md": [
         "pissang"
     ],
-    "contents/zh/how-to/interaction/drag.md": [
+    "contents/zh/meta/edit-guide.md": [
+        "Ovilia",
         "pissang"
     ],
     "contents/zh/meta/writing.md": [
