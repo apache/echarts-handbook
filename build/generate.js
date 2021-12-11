@@ -14,18 +14,16 @@ async function updateNav() {
     console.log('Fetching...', localPath)
     let navContent = ''
     try {
-      navContent = fs.readFileSync(`${websitePath}/${locale}/nav.html`)
+      navContent = fs.readFileSync(localPath, 'utf-8')
     } catch (e) {
+      console.error('failed to read local nav file', e)
       console.log(
-        'Local file not found. Fetching...',
+        'Fetching...',
         `https://echarts.apache.org/${locale}/nav.html`
       )
       navContent = (await fetch(
         `https://echarts.apache.org/${locale}/nav.html`
       ).then(response => response.text()))
-      // remove extra `template` tag
-      // PENDING: Generated nav html by echarts-www action seems buggy
-      navContent = navContent.replace(/<\/?template>/g, '').trim()
     }
 
     fs.writeFileSync(
