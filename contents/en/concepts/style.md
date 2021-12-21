@@ -13,7 +13,7 @@ These approaches below will be introduced. The functionalities of them might be 
 
 ## Theme
 
-Setting a theme is the simplest way to change the color style. For example, in [Examples page](${websitePath}/examples/en/index.html), we can switch to dark mode and see the result of a different theme.
+Setting a theme is the simplest way to change the color style. For example, in [Examples page](${mainSitePath}examples), we can switch to dark mode and see the result of a different theme.
 
 In our project, we can switch to dark theme like:
 
@@ -21,7 +21,7 @@ In our project, we can switch to dark theme like:
 var chart = echarts.init(dom, 'dark');
 ```
 
-Other themes are not included by default, and need to load them ourselves if we want to use them. Themes can be visited and downloaded in the [theme builder](https://echarts.apache.org/en/theme-builder.html). Theme can also be created or edited in it. The downloaded theme can be used as follows:
+Other themes are not included by default, and need to load them ourselves if we want to use them. Themes can be visited and downloaded in the [theme builder](${mainSitePath}theme-builder.html). Theme can also be created or edited in it. The downloaded theme can be used as follows:
 
 If a theme is downloaded as a JSON file, we should register it by ourselves, for example:
 
