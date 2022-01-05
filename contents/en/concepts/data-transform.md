@@ -525,7 +525,7 @@ Some extra features about "sort transform":
   - By default "numeric" (that is, number and numeric-string like `' 123 '`) are able to sorted by numeric order.
   - Otherwise "non-numeric-string" are also able to be ordered among themselves. This might help to the case like grouping data items with the same tag, especially when multiple dimensions participated in the sort (See example below).
   - When "numeric" is compared with "non-numeric-string", or either of them is compared with other types of value, they are not comparable. So we call the latter one as "incomparable" and treat it as "min value" or "max value" according to the prop `incomparable: 'min' | 'max'`. This feature usually helps to decide whether to put the empty values (like `null`, `undefined`, `NaN`, `''`, `'-'`) or other illegal values to the head or tail.
-- `filter: 'time' | 'trim' | 'number'` can be used, the same as "filter transform".
+- `parser: 'time' | 'trim' | 'number'` can be used, the same as "filter transform".
   - If intending to sort time values (JS `Date` instance or time string like `'2012-03-12 11:13:54'`), `parser: 'time'` should be specified. Like `config: { dimension: 'date', order: 'desc', parser: 'time' }`
   - If intending to sort values with unit suffix (like `'33%'`, `'16px'`), need to use `parser: 'number'`.
 
