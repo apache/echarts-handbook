@@ -52,7 +52,6 @@ import {
   TooltipComponent,
   GridComponent,
   DatasetComponent,
-  DatasetComponentOption,
   TransformComponent
 } from 'echarts/components';
 // 标签自动布局，全局过渡动画等特性
