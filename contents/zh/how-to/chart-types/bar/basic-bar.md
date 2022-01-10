@@ -126,7 +126,7 @@ option = {
 
 ### 柱条间距
 
-柱条间距分为两种，一种是不同系列在同一类目下的距离 [`barWidth`](${optionPath}series-bar.barWidth)，另一种是类目与类目的距离 [`barCategoryGap`](${optionPath}series-bar.barCategoryGap)。
+柱条间距分为两种，一种是不同系列在同一类目下的距离 [`barGap`](${optionPath}series-bar.barGap)，另一种是类目与类目的距离 [`barCategoryGap`](${optionPath}series-bar.barCategoryGap)。
 
 ```js live
 option = {

@@ -132,7 +132,7 @@ In addition, [`barMaxWidth`](${optionPath}series-bar.barMaxWidth) has limited th
 
 ### Column Spacing
 
-There are two kinds of column spacing. One is the spacing between different series under the same category: [`barWidth`](${optionPath}series-bar.barWidth). The other is the spacing between categories: [`barCategoryGap`](${optionPath}series-bar.barCategoryGap).
+There are two kinds of column spacing. One is the spacing between different series under the same category: [`barGap`](${optionPath}series-bar.barGap). The other is the spacing between categories: [`barCategoryGap`](${optionPath}series-bar.barCategoryGap).
 
 ```js live
 option = {
