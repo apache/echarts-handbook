@@ -22,7 +22,7 @@ src="https://github.com/apache/echarts-handbook/blob/master/static/images/design
 
 Compared with blue and purple, color likes orange, yellow, pink and green are preferred choices to inspire the appetite, happiness and warmness which matched the motion of eating sweets. In the other hand, most of the customer group for desserts is woman and children. Lively and cute chart colors in the left chart might be the better choice compared with the calm and rational colors of the chart.
 
-##Semantic Response of Color
+## Semantic Response of Color
 
 Different colors can help us to identify and classify different ideas because we are familiar with combining things and concepts with colors. We subconsciously think of white when we referring to "clouds", pink when we referring to "love". Those colors that are naturally consistent with semantics are called "semantic-resonant color".
 
