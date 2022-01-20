@@ -89,11 +89,18 @@ export default {
           messages: {
             en: {
               inThisPage: 'In This Page',
-              searchHandbook: 'Search Handbook'
+              searchHandbook: 'Search Handbook',
+              contributorsWithThisDocument:
+                'All Contributors with this Document',
+              editInThisDocumentTip: 'Edit this Document',
+              editInGithub: 'Edit this page on GitHub'
             },
             zh: {
               inThisPage: '本页目录',
-              searchHandbook: '搜索手册'
+              searchHandbook: '搜索手册',
+              contributorsWithThisDocument: '本文贡献者',
+              editInThisDocumentTip: '编辑本文',
+              editInGithub: '在 GitHub 上编辑本页'
             }
           }
         }
