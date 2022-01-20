@@ -101,7 +101,7 @@ export default {
     this.toc = []
     const headers =
       // @ts-ignore
-      this.$el.querySelector('.post-inner')?.querySelectorAll(' h2,h3') || []
+      this.$el.querySelector('.post-inner')?.querySelectorAll('h2,h3') || []
     for (let i = 0; i < headers.length; i++) {
       const title = (headers[i] as HTMLHeadingElement).innerText
       // @ts-ignore
