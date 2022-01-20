@@ -1,11 +1,11 @@
 <template>
   <div class="post-contributors">
     <h3>
-      <span class="inline-block align-middle">本文贡献者</span>
+      <span class="inline-block align-middle">{{ label.title }}</span>
       <a
         target="_blank"
         :href="sourcePath"
-        title="编辑本文"
+        :title="label.editTip"
         class="inline-block align-middle text-sm"
       >
         <svg
@@ -22,7 +22,7 @@
             d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
           />
         </svg>
-        <span class="inline-block align-middle">在 GitHub 上编辑本页</span>
+        <span class="inline-block align-middle">{{ label.editInGithub }}</span>
       </a>
     </h3>
     <div
@@ -51,9 +51,40 @@ import { computed, defineComponent } from '@vue/composition-api'
 import allContributors from '../helper/contributors'
 import { getSourcePath } from '../helper/post'
 
+const LABEL = {
+  en: {
+    title: 'All Contributors with this Document',
+    editTip: 'Edit this Document',
+    editInGithub: 'Edit this page on GitHub'
+  },
+  zh: {
+    title: '本文贡献者',
+    editTip: '编辑本文',
+    editInGithub: '在 GitHub 上编辑本页'
+  }
+}
+
 export default defineComponent({
   props: {
     path: String
+  },
+  data() {
+    return {
+      label: {
+        title: '本文贡献者',
+        editTip: '编辑本文',
+        editInGithub: '在 GitHub 上编辑本页'
+      }
+    }
+  },
+  computed: {
+    currentLocale() {
+      // @ts-ignore
+      return this.$i18n?.getLocaleCookie()
+    }
+  },
+  mounted() {
+    this.label = LABEL[this.currentLocale]
   },
   setup(props) {
     const contributors = computed(() => {
