@@ -1,12 +1,17 @@
 <template>
   <div
+    ref="container"
     :class="`md-live layout-${layout}`"
     v-observe-visibility="visibilityChanged"
     v-if="innerCode"
   >
     <div class="md-live-editor">
       <div class="md-live-editor-container">
-        <prism-editor v-model="innerCode" :highlight="highlighter">
+        <prism-editor
+          v-model="innerCode"
+          :highlight="highlighter"
+          :readonly="readOnly"
+        >
         </prism-editor>
       </div>
       <div class="md-live-tag">live</div>
@@ -75,16 +80,29 @@ export default defineComponent({
       validator(value: string) {
         return ['lr', 'tb', 'rl', 'bt'].includes(value)
       }
+    },
+
+    height: {
+      type: Number
+    },
+
+    readOnly: {
+      type: Boolean,
+      default: false
     }
   },
 
   setup(props, context) {
     const innerCode = ref(base64.decode(props.code))
     const previewContainer = ref<HTMLElement | null>(null)
+    const container = ref<HTMLElement | null>(null)
 
     let sandbox: ReturnType<typeof createSandbox>
 
     function update() {
+      if (props.height) {
+        container.value!.style.height = props.height + 'px'
+      }
       ensureECharts().then(() => {
         if (!sandbox) {
           addListener(unref(previewContainer)!, resize)
@@ -125,6 +143,7 @@ export default defineComponent({
     return {
       innerCode,
       previewContainer,
+      container,
       highlighter(code) {
         return highlight(code, languages[props.lang] || languages.js)
       },
@@ -151,6 +170,10 @@ export default defineComponent({
   @apply overflow-hidden;
   @apply shadow-lg rounded-lg mt-10 mb-20;
   @apply flex flex-col-reverse;
+
+  @media (max-width: 768px) {
+    min-height: 500px;
+  }
 
   @media (min-width: 768px) {
     &.layout-lr {
