@@ -71,6 +71,6 @@ In addition, Apache ECharts 5 adds support for decal patterns as a secondary rep
 
 <md-example src="doc-example/aria-decal-simple"></md-example>
 
-If you need to customize the decal pattern, you can use [aria.decal.decals](option.html#aria.decal.decals) to configure a flexible decal pattern.
+If you need to customize the decal pattern, you can use [aria.decal.decals](${optionPath}aria.decal.decals) to configure a flexible decal pattern.
 
 Please refer to [ARIA option](${optionPath}aria.decal) for more detail.
