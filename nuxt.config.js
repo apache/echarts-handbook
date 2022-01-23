@@ -90,8 +90,7 @@ export default {
             en: {
               inThisPage: 'In This Page',
               searchHandbook: 'Search Handbook',
-              contributorsWithThisDocument:
-                'All Contributors with this Document',
+              contributorsWithThisDocument: 'Contributors',
               editInThisDocumentTip: 'Edit this Document',
               editInGithub: 'Edit this page on GitHub'
             },
