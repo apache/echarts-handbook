@@ -19,7 +19,7 @@
       children:
         - title: ECharts 5 Features
           dir: v5-feature
-        - title: ECharts 5 Upgrade Guide
+        - title: Migration from v4 to v5
           dir: v5-upgrade-guide
         - title: 5.2
           dir: 5-2-0

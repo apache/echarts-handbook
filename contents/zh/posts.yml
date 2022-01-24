@@ -19,7 +19,7 @@
       children:
         - title: ECharts 5 特性介绍
           dir: v5-feature
-        - title: ECharts 5 升级指南
+        - title: v4 升级 v5 指南
           dir: v5-upgrade-guide
         - title: 5.2
           dir: 5-2-0
