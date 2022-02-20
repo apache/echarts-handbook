@@ -27,7 +27,7 @@ When you open this `index.html`, you will see an empty page. But don't worry. Op
 
 ## Plotting a Simple Chart
 
-Before drawing we need to prepare a DOM container for ECharts with a defined height and width. After the following code after the `</head>` tag introduced earlier.
+Before drawing we need to prepare a DOM container for ECharts with a defined height and width. Add the following code after the `</head>` tag introduced earlier.
 
 ```html
 <body>
