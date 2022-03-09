@@ -5,7 +5,7 @@
 ## 使用方式
 
 1. 下载该项目
-2. 如有必要，将 `ec-canvas` 目录下的 `echarts.js` 替换为最新版的 ECharts。如果希望减小包体积大小，可以使用[自定义构建](${mainSitePath}/build.html)生成并替换 `echarts.js`
+2. 如有必要，将 `ec-canvas` 目录下的 `echarts.js` 替换为最新版的 ECharts。如果希望减小包体积大小，可以使用[自定义构建](${mainSitePath}/builder.html)生成并替换 `echarts.js`
 3. `pages` 目录下是使用的示例文件，可以作为参考，或者删除不需要的页面。
 
 更详细的说明请参见 [echarts-for-weixin](https://github.com/ecomfe/echarts-for-weixin) 项目。

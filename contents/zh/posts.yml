@@ -109,12 +109,12 @@
     - title: 跨平台方案
       dir: cross-platform
       children:
-        - title: 百度智能小程序
-          dir: baidu-app
-        - title: 微信小程序
-          dir: wechat-app
         - title: 服务端渲染
           dir: server
+        - title: 微信小程序
+          dir: wechat-app
+        - title: 百度智能小程序
+          dir: baidu-app
     - title: 数据处理
       dir: data
       children:

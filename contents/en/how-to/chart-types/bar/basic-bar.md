@@ -10,11 +10,7 @@ To set the bar chart, you need to set the `type` of `series` as `'bar'`.
 
 Let's begin with a basic bar chart:
 
-```js
-/*
-live
-
-*/
+```js live
 option = {
   xAxis: {
     data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
