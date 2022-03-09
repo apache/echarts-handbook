@@ -121,6 +121,11 @@
       children:
         - title: Rich Text
           dir: rich-text
+    - title: Animation
+      dir: animation
+      children:
+        - title: Data Transition
+          dir: transition
     - title: Interaction
       dir: interaction
       children:
