@@ -11,7 +11,6 @@
       dir: resource
       draft: true
     # - title: 获取灵感
-    #   dir: inspiration
     - title: 寻求帮助
       dir: help
     - title: 版本特性
@@ -128,6 +127,11 @@
       children:
         - title: 富文本标签
           dir: rich-text
+    - title: 动画
+      dir: animation
+      children:
+        - title: 数据过渡动画
+          dir: transition
     - title: 交互
       dir: interaction
       children:
