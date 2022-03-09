@@ -1,6 +1,6 @@
 # 过渡动画
 
-Apache ECharts<sup>TM</sup> 中使用了平移，缩放，变形等形式的过渡动画让数据的添加更新删除，以及用户的交互变得更加顺滑。通常情况下开发者不需要操心该如何去使用动画，只需要按自己的也无需求使用`setOption`更新数据，ECharts 就会找出跟上一次数据之间的区别，然后自动应用最合适的过渡动画。
+Apache ECharts<sup>TM</sup> 中使用了平移，缩放，变形等形式的过渡动画让数据的添加更新删除，以及用户的交互变得更加顺滑。通常情况下开发者不需要操心该如何去使用动画，只需要按自己的需求使用`setOption`更新数据，ECharts 就会找出跟上一次数据之间的区别，然后自动应用最合适的过渡动画。
 
 比如下面例子就是定时更新饼图数据（随机）的过渡动画效果。
 
@@ -63,7 +63,7 @@ setInterval(() => {
 
 ### 动画缓动
 
-`animationEasing`和`animationEasingUpdate`两个配置项用于设置动画的缓动函数，缓动函数是一个动画进度关于动画时间的函数：
+`animationEasing`和`animationEasingUpdate`两个配置项用于设置动画的缓动函数，缓动函数是一个输入动画时间，输出动画进度的函数：
 
 ```ts
 (t: number) => number;
@@ -138,7 +138,7 @@ option = {
 
 ## 监听动画结束
 
-有时候我们想要获取当前渲染的结果，如果没有使用动画，我们在`setOption`之后 ECharts 就会直接执行渲染，我们可以同步的可以通过`getDataURL`方法获取渲染得到的结果。
+有时候我们想要获取当前渲染的结果，如果没有使用动画，我们在`setOption`之后 ECharts 就会直接执行渲染，我们可以同步的通过`getDataURL`方法获取渲染得到的结果。
 
 ```ts
 const chart = echarts.init(dom);
