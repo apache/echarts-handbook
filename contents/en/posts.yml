@@ -10,8 +10,8 @@
     - title: Resources
       dir: resource
       draft: true
-    - title: Inspiration
-      dir: inspiration
+    # - title: Inspiration
+    #   dir: inspiration
     - title: Get Help
       dir: help
     - title: What's New

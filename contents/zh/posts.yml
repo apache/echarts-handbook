@@ -10,8 +10,8 @@
     - title: 资源列表
       dir: resource
       draft: true
-    - title: 获取灵感
-      dir: inspiration
+    # - title: 获取灵感
+    #   dir: inspiration
     - title: 寻求帮助
       dir: help
     - title: 版本特性

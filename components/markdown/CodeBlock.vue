@@ -128,6 +128,8 @@ export default defineComponent({
     word-break: normal;
     word-wrap: normal;
     text-align: left;
+
+    border: none;
   }
 
   .filename {
