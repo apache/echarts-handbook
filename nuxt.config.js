@@ -26,6 +26,12 @@ export default {
               behavior: 'smooth'
             })
         }
+      } else {
+        document.getElementsByClassName('page-main')[0].scrollTo({
+          top: 0,
+          left: 0,
+          behavior: 'smooth'
+        })
       }
     }
   },
