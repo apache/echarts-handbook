@@ -198,7 +198,7 @@ require('echarts/lib/component/aria');
       - textStrokeWidth => lineWidth
       - textAlign => align
       - textVerticalAlign => verticalAlign
-      - textLineHeight =>
+      - textLineHeight => lineHeight
       - textWidth => width
       - textHeight => hight
       - textBackgroundColor => backgroundColor
