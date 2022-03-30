@@ -6,7 +6,7 @@
 
 > 动态排序柱状图通常是横向的柱条，如果想要采用纵向的柱条，只要把本教程中的 X 轴和 Y 轴相反设置即可。
 
-1. `yAxis.realtimeSort` 设为 `true`，表示开启 Y 轴的动态排序效果
+1. 柱状图系列的 `realtimeSort` 设为 `true`，表示开启该系列的动态排序效果
 2. `yAxis.inverse` 设为 `true`，表示 Y 轴从下往上是从小到大的排列
 3. `yAxis.animationDuration` 建议设为 `300`，表示第一次柱条排序动画的时长
 4. `yAxis.animationDurationUpdate` 建议设为 `300`，表示第一次后柱条排序动画的时长

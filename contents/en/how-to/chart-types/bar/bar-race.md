@@ -6,7 +6,7 @@ Bar race is a chart that shows changes in the ranking of data over time and it i
 
 > Bar race charts usually use horizontal bars. If you want to use vertical bars, just take the X axis and Y axis in this tutorial to the opposite.
 
-1. Set `yAxis.realtimeSort` to be `true` to enable bar race
+1. Set `realtimeSort` of the bar series to be `true` to enable bar race
 2. Set `yAxis.inverse` to be `true` to display longer bars at top
 3. `yAxis.animationDuration` is suggested to be set to be `300` for bar reordering animation for the first time
 4. `yAxis.animationDurationUpdate` is suggested to be set to be `300` for bar reordering animation for later times
