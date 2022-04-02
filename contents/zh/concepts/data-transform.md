@@ -572,7 +572,7 @@ option = {
 
 ```ts
 type SortTransform = {
-  type: 'filter';
+  type: 'sort';
   config: OrderExpression | OrderExpression[];
 };
 type OrderExpression = {
