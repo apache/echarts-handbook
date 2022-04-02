@@ -573,7 +573,7 @@ Finally, we give the formally definition of the sort transform config here:
 
 ```ts
 type SortTransform = {
-  type: 'filter';
+  type: 'sort';
   config: OrderExpression | OrderExpression[];
 };
 type OrderExpression = {
