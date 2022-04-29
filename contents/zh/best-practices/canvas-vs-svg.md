@@ -14,7 +14,7 @@ ECharts 从初始一直使用 Canvas 绘制图表。而 [ECharts v4.0](https://g
 
 - 在软硬件环境较好，数据量不大的场景下，两种渲染器都可以适用，并不需要太多纠结。
 - 在环境较差，出现性能问题需要优化的场景下，可以通过试验来确定使用哪种渲染器。比如有这些经验：
-  - 在须要创建很多 ECharts 实例且浏览器易崩溃的情况下（可能是因为 Canvas 数量多导致内存占用超出手机承受能力），可以使用 SVG 渲染器来进行改善。大略得说，如果图表运行在低端安卓机，或者我们在使用一些特定图表如 [水球图](https://ecomfe.github.io/echarts-liquidfill/example/) 等，SVG 渲染器可能效果更好。
+  - 在须要创建很多 ECharts 实例且浏览器易崩溃的情况下（可能是因为 Canvas 数量多导致内存占用超出手机承受能力），可以使用 SVG 渲染器来进行改善。大略的说，如果图表运行在低端安卓机，或者我们在使用一些特定图表如 [水球图](https://ecomfe.github.io/echarts-liquidfill/example/) 等，SVG 渲染器可能效果更好。
   - 数据量较大（经验判断 > 1k）、较多交互时，建议选择 Canvas 渲染器。
 
 我们强烈欢迎开发者们[反馈](https://github.com/apache/echarts/issues/new)给我们使用的体验和场景，帮助我们更好的做优化。
