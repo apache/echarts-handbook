@@ -1,6 +1,6 @@
 # Stacked Line Chart
 
-Similar to the [Stacked Bar Chart](${lang}/application/chart-types/bar/stacked-bar), Stacked Line Chart use the `'stack'` in `series` to decide which series should be stacked together.
+Similar to the [Stacked Bar Chart](${lang}/how-to/chart-types/bar/stacked-bar), Stacked Line Chart use the `'stack'` in `series` to decide which series should be stacked together.
 
 ```js live
 option = {
