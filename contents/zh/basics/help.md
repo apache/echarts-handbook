@@ -4,7 +4,7 @@
 
 ### 确保现有文档等资料无法解决你的问题
 
-ECharts 有非常大量的用户，所以你遇到过的问题，很可能别人在此之前也遇到并解决了。通过查看文档以及使用搜索引擎搜索关键字，可以帮助你自助地在第一时间解决问题，而不需要依赖社区的帮助。
+ECharts 有非常大量的用户，所以你遇到过的问题很可能别人在此之前也遇到并解决了。通过查看文档以及使用搜索引擎搜索关键字，可以帮助你自助地在第一时间解决问题，而不需要依赖社区的帮助。
 
 因此，在做其他操作前，请确保现有文档等资料无法解决你的问题。可以尝试查看或搜索的资料包括：
 
@@ -17,15 +17,15 @@ ECharts 有非常大量的用户，所以你遇到过的问题，很可能别人
 
 ### 创建一个最简单可复现的例子
 
-使用 [Codepen](https://codepen.io/Ovilia/pen/dyYWXWM)、[Codesandbox](https://codesandbox.io/s/mystifying-bash-2uthz) 或者 [makeapie.com](https://www.makeapie.com/) 创建一个例子，这将使得他人更方便地复现你的问题。
+使用[官方编辑器](${mainSitePath}examples/editor.html)、[Codepen](https://codepen.io/Ovilia/pen/dyYWXWM)、[Codesandbox](https://codesandbox.io/s/echarts-basic-example-template-mpfz1s) 或 [JSFiddle](https://jsfiddle.net/plainheart/e46ozpqj/7/) 创建一个例子，这将使得他人更方便地复现你的问题。
 
-例子应尽可能以最简单的方式复现你的问题，去除不必要的配置项和数据，可以让帮助你的人更快速地定位问题，从而让你的问题更快得到解决。更详细的介绍请参见 [How to create a Minimal, Reproducible Example](https://stackoverflow.com/help/minimal-reproducible-example)。
+例子应尽可能以最简单的方式复现你的问题，去除不必要的配置项和数据，可以让帮助你的人更快速地定位问题，从而让你的问题更快得到解决。更详细的介绍请参见 [如何创建一个最小的可复现代码示例](https://stackoverflow.com/help/minimal-reproducible-example)。
 
 ### 判断是否是 bug
 
 #### 报告 bug 或请求新功能
 
-如果不符合文档描述或你的预期效果，这很有可能是 bug。如果是 bug，或者你有一个想请求实现的功能，请使用 [issue 模板](https://ecomfe.github.io/echarts-issue-helper/) 中新建一个 issue 并按照提示详细描述。
+如果不符合文档描述或你的预期效果，这很有可能是 bug。如果是 bug，或者你有一个想请求实现的功能，请使用 [issue 模板](https://github.com/apache/echarts/issues/new/choose) 中新建一个 issue 并按照提示详细描述。
 
 #### 咨询类问题
 

@@ -4,28 +4,28 @@
 
 ### Make sure that existing documentation do not solve your problem
 
-ECharts has a very large number of users, so it's likely that someone else has encountered and solved a problem you've had before. By looking at the documentation and using the search engine, you can help yourself to solve the problem in the first place without relying on the community for help.
+ECharts has a very large number of users, so it's more than likely that someone else has encountered and solved the problem you've had. By reading the documentation and using the search engine, you can solve your problem quickly by yourself without help from the community.
 
-Therefore, before doing anything else, make sure that existing documentation and other resources do not solve your problem. Reources that can be helpful include:
+Therefore, before doing anything else, make sure that current documentation and other resources can't solve your problem. Resources that can be helpful for you include,
 
-- [API](${mainSitePath}/api.html)
-- [Option Manual](${mainSitePath}/option.html): you can try to use the search function
+- [API](${mainSitePath}api.html)
+- [Option Manual](${mainSitePath}option.html) - you can try to use the search function
 - Articles in this handbook
-- [FAQ](${mainSitePath}/faq.html)
+- [FAQ](${mainSitePath}faq.html)
 - Searching in [GitHub issue](https://github.com/apache/echarts/issues)
 - Using the search engine
 
 ### Create the Minimal Reproducible Demo
 
-Create an example on [Codepen](https://codepen.io/Ovilia/pen/dyYWXWM), [Codesandbox](https://codesandbox.io/s/mystifying-bash-2uthz), which will make it easier for others to reproduce your problem.
+Create an example on [Official Editor](${mainSitePath}examples/editor.html), [Codepen](https://codepen.io/Ovilia/pen/dyYWXWM), [Codesandbox](https://codesandbox.io/s/echarts-basic-example-template-mpfz1s) or [JSFiddle](https://jsfiddle.net/plainheart/e46ozpqj/7/), which will make it easier for others to reproduce your problem.
 
-The example should reproduce your problem in the simplest way possible. Removing unnecessary code and data will allow those who help you to locate the problem more quickly, thus allowing your problem to be solved more quickly. See [How to Create a Minimal, Reproducible Example](https://stackoverflow.com/help/minimal-reproducible-example) for a more detailed description.
+The example should reproduce your problem in the simplest way. Removing unnecessary code and data can enable those who want to help you to locate and then solve the problem more quickly. Please refer to [How to Create a Minimal, Reproducible Example](https://stackoverflow.com/help/minimal-reproducible-example) for more details.
 
 ### Determining if It's a Bug
 
 #### Report a Bug or Request a New Feature
 
-If it doesn't match the documentation or your intended result, it's probably a bug. If it's a bug, or you have a feature request, use the [issue template](https://ecomfe.github.io/echarts-issue-helper/) to create a new issue and follow the prompts to describe it in detail.
+If it doesn't match the documentation or your intended result, it's probably a bug. If it's a bug, or you have a feature request, use the [issue template](https://github.com/apache/echarts/issues/new/choose) to create a new issue and follow the prompts to describe it in detail.
 
 #### How-To Questions
 
