@@ -17,7 +17,7 @@ ECharts 有非常大量的用户，所以你遇到过的问题很可能别人在
 
 ### 创建一个最简单可复现的例子
 
-使用[官方编辑器](${mainSitePath}examples/editor.html)、[Codepen](https://codepen.io/Ovilia/pen/dyYWXWM)、[Codesandbox](https://codesandbox.io/s/echarts-basic-example-template-mpfz1s) 或 [JSFiddle](https://jsfiddle.net/plainheart/e46ozpqj/7/) 创建一个例子，这将使得他人更方便地复现你的问题。
+使用[官方编辑器](${mainSitePath}examples/editor.html)、[CodePen](https://codepen.io/Ovilia/pen/dyYWXWM)、[CodeSandbox](https://codesandbox.io/s/echarts-basic-example-template-mpfz1s) 或 [JSFiddle](https://jsfiddle.net/plainheart/e46ozpqj/7/) 创建一个例子，这将使得他人更方便地复现你的问题。
 
 例子应尽可能以最简单的方式复现你的问题，去除不必要的配置项和数据，可以让帮助你的人更快速地定位问题，从而让你的问题更快得到解决。更详细的介绍请参见 [如何创建一个最小的可复现代码示例](https://stackoverflow.com/help/minimal-reproducible-example)。
 

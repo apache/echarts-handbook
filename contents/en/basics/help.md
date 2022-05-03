@@ -17,7 +17,7 @@ Therefore, before doing anything else, make sure that current documentation and 
 
 ### Create the Minimal Reproducible Demo
 
-Create an example on [Official Editor](${mainSitePath}examples/editor.html), [Codepen](https://codepen.io/Ovilia/pen/dyYWXWM), [Codesandbox](https://codesandbox.io/s/echarts-basic-example-template-mpfz1s) or [JSFiddle](https://jsfiddle.net/plainheart/e46ozpqj/7/), which will make it easier for others to reproduce your problem.
+Create an example on [Official Editor](${mainSitePath}examples/editor.html), [CodePen](https://codepen.io/Ovilia/pen/dyYWXWM), [CodeSandbox](https://codesandbox.io/s/echarts-basic-example-template-mpfz1s) or [JSFiddle](https://jsfiddle.net/plainheart/e46ozpqj/7/), which will make it easier for others to reproduce your problem.
 
 The example should reproduce your problem in the simplest way. Removing unnecessary code and data can enable those who want to help you to locate and then solve the problem more quickly. Please refer to [How to Create a Minimal, Reproducible Example](https://stackoverflow.com/help/minimal-reproducible-example) for more details.
 
