@@ -215,9 +215,12 @@ body {
   left: 77%;
   width: 21%;
   top: 65px;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
   background-color: transparent;
   padding: 10px;
-  height: auto;
+  overflow: hidden;
 
   @media (max-width: 768px) {
     position: relative;
@@ -234,8 +237,10 @@ body {
   }
 
   ul {
-    padding-left: 0px;
+    padding-left: 0;
     margin-bottom: 0;
+    flex-grow: 1;
+    overflow: auto;
 
     li {
       list-style: none;
