@@ -25,14 +25,14 @@ The example should reproduce your problem in the simplest way. Removing unnecess
 
 #### Report a Bug or Request a New Feature
 
-If it doesn't match the documentation or your intended result, it's probably a bug. If it's a bug, or you have a feature request, use the [issue template](https://github.com/apache/echarts/issues/new/choose) to create a new issue and follow the prompts to describe it in detail.
+If some behavior is different from the documentation or isn't what you expected, it's probably a bug. If it's a bug, or you have a feature request, please use the [issue template](https://github.com/apache/echarts/issues/new/choose) to create a new issue and describe it in detail as per the prompts.
 
 #### How-To Questions
 
 If it's not a bug, but you don't know how to achieve something, try the <a href="https://stackoverflow.com">stackoverflow.com</a>
 
-If you don't get an answer, you can also send an email to the email group [dev@echarts.apache.org](mailto:dev@echarts.apache.org). In order for more people to understand your question and to get help in future searches, it is highly recommended to send emails in English.
+If you don't get an answer, you can also send an email to [dev@echarts.apache.org](mailto:dev@echarts.apache.org). In order for more people to understand your question and to get help in future searches, it is highly recommended to write the email in English.
 
 ## Non-technical questions
 
-Other questions can be sent in English to the mail group [dev@echarts.apache.org](mailto:dev@echarts.apache.org).
+For other non-technical questions, you can send an email in English to [dev@echarts.apache.org](mailto:dev@echarts.apache.org).
