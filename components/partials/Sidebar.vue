@@ -183,11 +183,12 @@ export default Vue.extend({
 
     input {
       @apply shadow rounded-xl border-0 p-4 w-full outline-none;
+      padding-right: 3rem;
     }
 
     .search-icon {
       position: absolute;
-      right: 30px;
+      right: 3rem;
       top: 28px;
     }
   }
