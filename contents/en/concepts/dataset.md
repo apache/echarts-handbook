@@ -63,12 +63,12 @@ option = {
     ]
   },
   // Declare an x-axis (category axis).
-  // The category map the first row in the dataset by default.
+  // The category map the first column in the dataset by default.
   xAxis: { type: 'category' },
   // Declare a y-axis (value axis).
   yAxis: {},
   // Declare several 'bar' series,
-  // every series will auto-map to each rows by default.
+  // every series will auto-map to each column by default.
   series: [{ type: 'bar' }, { type: 'bar' }, { type: 'bar' }]
 };
 ```
