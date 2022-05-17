@@ -50,10 +50,10 @@ declare const echarts: any
 function ensureECharts() {
   if (typeof echarts === 'undefined') {
     return loadScriptsAsync([
-      // 'https://cdn.jsdelivr.net/npm/echarts/dist/echarts.js'
+      // 'https://fastly.jsdelivr.net/npm/echarts/dist/echarts.js'
       process.env.NUXT_ENV_DEPLOY === 'asf'
-        ? 'https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js'
-        : 'https://cdn.jsdelivr.net/npm/echarts-nightly/dist/echarts.min.js'
+        ? 'https://fastly.jsdelivr.net/npm/echarts/dist/echarts.min.js'
+        : 'https://fastly.jsdelivr.net/npm/echarts-nightly/dist/echarts.min.js'
     ]).then(() => {})
   }
   return Promise.resolve()
