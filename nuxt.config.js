@@ -54,7 +54,7 @@ export default {
         rel: 'icon',
         type: 'image/x-icon',
         href:
-          'https://cdn.jsdelivr.net/gh/apache/echarts-website@asf-site/zh/images/favicon.png'
+          'https://fastly.jsdelivr.net/gh/apache/echarts-website@asf-site/zh/images/favicon.png'
       }
     ]
   },

@@ -17,7 +17,7 @@
 
       <link
         rel="stylesheet"
-        href="//cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/github-gist.min.css"
+        href="//fastly.jsdelivr.net/npm/highlight.js@9.12.0/styles/github-gist.min.css"
       />
     </div>
   </div>
