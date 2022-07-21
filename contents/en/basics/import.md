@@ -58,7 +58,7 @@ import {
 // Features like Universal Transition and Label Layout
 import { LabelLayout, UniversalTransition } from 'echarts/features';
 // Import the Canvas renderer
-// Note that introducing the CanvasRenderer or SVGRenderer is a required step
+// Note that including the CanvasRenderer or SVGRenderer is a required step
 import { CanvasRenderer } from 'echarts/renderers';
 
 // Register the required components
