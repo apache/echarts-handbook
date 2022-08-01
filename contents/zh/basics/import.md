@@ -131,6 +131,7 @@ echarts.use([
   DatasetComponent,
   TransformComponent,
   BarChart,
+  LineChart,
   LabelLayout,
   UniversalTransition,
   CanvasRenderer
