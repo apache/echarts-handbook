@@ -86,7 +86,7 @@ You need to use `name` to "navigate" ECharts when updating data. In the previous
 
 ## loading Animation
 
-When it takes a long time to load the data, the user is facing the empty chart with only axes will wonder if there are bugs appear.
+When it takes a long time to load the data, the user is facing the empty chart with only axes will wonder if there is a bug.
 
 ECharts have a simple loading animation by default. You can call [showLoading](${mainSitePath}/api.html#echartsInstance.showLoading) to display. When the data loading was completed, call [hideLoading](${mainSitePath}/api.html#echartsInstance.hideLoading) to hide the animation.
 
