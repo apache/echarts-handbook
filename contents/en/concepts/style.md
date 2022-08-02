@@ -106,7 +106,7 @@ option = {
 };
 ```
 
-## Customize Style Explicitly (itemStyle, lineStyle, areaStyle, label, ...)
+## Customize Style Explicitly
 
 It is a common way to set style explicitly. Throughout ECharts [option](${optionPath}), style related options can be set in various place, including [itemStyle](${optionPath}series.itemStyle), [lineStyle](${optionPath}series-line.lineStyle), [areaStyle](${optionPath}series-line.areaStyle), [label](${optionPath}series.label), etc.
 
