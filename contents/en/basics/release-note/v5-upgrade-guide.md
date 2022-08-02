@@ -195,8 +195,8 @@ The deprecated API and their corresponding new API are listed as follows:
       - textFont => font
       - textStrokeWidth => lineWidth
       - textAlign => align
-      - textVerticalAlign => verticalAlign);
-      - textLineHeight =>
+      - textVerticalAlign => verticalAlign
+      - textLineHeight => lineHeight
       - textWidth => width
       - textHeight => hight
       - textBackgroundColor => backgroundColor
