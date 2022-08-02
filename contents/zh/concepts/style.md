@@ -106,7 +106,7 @@ option = {
 };
 ```
 
-## 直接的样式设置 itemStyle, lineStyle, areaStyle, label, ...
+## 直接的样式设置
 
 直接的样式设置是比较常用设置方式。纵观 ECharts 的 [option](${optionPath}) 中，很多地方可以设置 [itemStyle](${optionPath}series-bar.itemStyle)、[lineStyle](${optionPath}series-line.lineStyle)、[areaStyle](${optionPath}series-line.areaStyle)、[label](${optionPath}series-bar.label) 等等。这些的地方可以直接设置图形元素的颜色、线宽、点的大小、标签的文字、标签的样式等等。
 
