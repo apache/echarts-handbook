@@ -131,6 +131,10 @@ export default defineComponent({
 
     border: none;
   }
+  pre[class*='language-']::selection,
+  code[class*='language-']::selection {
+    background: #337ab7;
+  }
 
   .filename {
     position: absolute;
