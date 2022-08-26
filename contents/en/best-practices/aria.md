@@ -39,7 +39,7 @@ option = {
 
 <md-example src="doc-example/aria-pie"></md-example>
 
-There will be an `area-label` attribute on the Chart DOM. With the help of the reading device, blind people can understand by hearing the following message:
+There will be an `aria-label` attribute on the Chart DOM. With the help of the reading device, blind people can understand by hearing the following message:
 
 ```
 This is a chart about "Referrer of a User" with type Pie chart named Referrer. The data is as follows: the data of Direct Visit is 335,the data of Mail Marketing is 310,the data of Union Ad is 234,the data of Video Ad is 135,the data of Search Engine is 1548.
