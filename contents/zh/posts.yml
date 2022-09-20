@@ -140,6 +140,8 @@
         - title: 多图联动
           dir: connect
           draft: true
+        - title: 智能指针吸附
+          dir: coarse-pointer
 - title: 最佳实践
   dir: best-practices
   children:
