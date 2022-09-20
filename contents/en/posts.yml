@@ -134,6 +134,8 @@
         - title: Connect
           dir: connect
           draft: true
+        - title: Intelligent Pointer Snapping
+          dir: coarse-pointer
 - title: Best Practices
   dir: best-practices
   children:
