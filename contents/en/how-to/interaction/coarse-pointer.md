@@ -22,6 +22,6 @@ That is, if an element is within the `opt.pointerSize` radius of the mouse or to
 
 ## Performance
 
-As for the implementation, we first judge the intersection between the mouse or touch position and the AABB bounding box of all interactive elements, so as to quickly eliminate most of the elements that is not interacting. Then, we perform an accurate path intersection judgment on the remaining elements. Therefore, from the perspective of user experience, there is hardly any perceivable performance loss.
+As for the implementation, we first judge the intersection between the mouse or touch position and the AABB bounding box of all interactive elements, so as to quickly eliminate most of the elements that is not intersecting. Then, we perform an accurate path intersection judgment on the remaining elements. Therefore, from the perspective of user experience, there is hardly any perceivable performance loss.
 
 For chart series with large-scale data (that is, bar charts, scatter charts, etc. with `large: true` enabled), the snapping will not be enabled.
