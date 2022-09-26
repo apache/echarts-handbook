@@ -24,6 +24,8 @@
           dir: 5-2-0
         - title: 5.3
           dir: 5-3-0
+        - title: 5.4
+          dir: 5-4-0
 - title: 概念篇
   dir: concepts
   children:

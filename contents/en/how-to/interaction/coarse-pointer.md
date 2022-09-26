@@ -1,6 +1,6 @@
 # Intelligent Pointer Snapping
 
-Some interactive elements may be relatively small in charts, so sometimes it is difficult for users to click and do other operations accurately, especially on the mobile. Therefore, in Apache ECharts<sup>TM</sup> 5.4.0, we introduced the concept of "smart pointer snapping".
+Some interactive elements may be relatively small in charts, so sometimes it is difficult for users to click and do other operations accurately, especially on the mobile. Therefore, in Apache ECharts<sup>TM</sup> 5.4.0, we introduced the concept of "intelligent pointer snapping".
 
 Starting from this version, by default, ECharts enables pointer snapping for mobile charts and disables it for non-mobile charts.
 
