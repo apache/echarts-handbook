@@ -4,7 +4,7 @@
 
 从该版本起，在默认情况下，ECharts 对移动端的图表开启指针吸附，对非移动端的图表关闭。
 
-> 如果需要对所有平台都开启，则可以通过在 [init](${mainSitePath}api.html#echarts.init) 的时候将 `opt.useCoarserPointer` 设置为 `true` 来实现；设为 `false` 则对所有平台都关闭。
+> 如果需要对所有平台都开启，则可以通过在 [init](${mainSitePath}api.html#echarts.init) 的时候将 `opt.useCoarsePointer` 设置为 `true` 来实现；设为 `false` 则对所有平台都关闭。
 
 ## 吸附原理
 

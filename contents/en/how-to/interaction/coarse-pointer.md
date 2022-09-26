@@ -4,7 +4,7 @@ Some interactive elements may be relatively small in charts, so sometimes it is 
 
 Starting from this version, by default, ECharts enables pointer snapping for mobile charts and disables it for non-mobile charts.
 
-> If it needs to be enabled for all platforms, it can be achieved by setting `opt.useCoarserPointer` to `true` in [init](${mainSitePath}api.html#echarts.init); set to `false` is turned off for all platforms.
+> If it needs to be enabled for all platforms, it can be achieved by setting `opt.useCoarsePointer` to `true` in [init](${mainSitePath}api.html#echarts.init); set to `false` is turned off for all platforms.
 
 ## Snapping Algorithm
 
