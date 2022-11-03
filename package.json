@@ -2,6 +2,7 @@
   "name": "echarts-handbook",
   "version": "1.0.0",
   "description": "Apache ECharts Handbook",
+  "license": "Apache-2.0",
   "scripts": {
     "dev": "nuxt",
     "start": "nuxt start",
@@ -37,7 +38,7 @@
     "@nuxtjs/tailwindcss": "^4.1.2",
     "@types/scroll-into-view": "^1.13.0",
     "babel-eslint": "^10.0.1",
-    "cheerio": "^1.0.0-rc.10",
+    "cheerio": "^1.0.0-rc.12",
     "child_process": "^1.0.2",
     "eslint": "^6.1.0",
     "eslint-plugin-nuxt": ">=0.4.2",
