@@ -2,3 +2,12 @@ github:
   description: Apache ECharts Handbook
   homepage: https://echarts.apache.org/handbook
   ghp_branch: gh-pages
+  labels:
+    - echarts
+    - apache
+    - handbook
+
+notifications:
+  commits: commits@echarts.apache.org
+  pullrequests: commits@echarts.apache.org
+  issues: commits@echarts.apache.org
