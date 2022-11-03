@@ -58,10 +58,7 @@ option = {
       avoidLabelOverlap: false,
       label: {
         show: false,
-        position: 'center',
-        emphasis: {
-          show: true
-        }
+        position: 'center'
       },
       labelLine: {
         show: false
