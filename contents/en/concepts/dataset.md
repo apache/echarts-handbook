@@ -2,7 +2,7 @@
 
 `dataset` is a component dedicated to manage data. Although you can set the data in `series.data` for every series, we recommend you use the `dataset` to manage the data since ECharts 4 so that the data can be reused by multiple components and convenient for the separation of "data and configs". After all, data is the most common part to be changed while other configurations will mostly not change at runtime.
 
-## Define `data` under `series`
+## Define **data** under **series**
 
 If data is defined under `series`, for example:
 
@@ -36,7 +36,7 @@ option = {
 Define `data` under `series` is suitable for customization for some special data structures such as "tree", "graph" and large data.
 However, it is not conducive to the data sharing for multiple series as well as mapping arrangement of chart types and series based on the original data. The other disadvantage is that programmers always need to divide the data in separate series (and categories) first.
 
-## Define `data` in `dataset`
+## Define **data** in **dataset**
 
 Here are the advantages if you define `data` in `dataset`:
 
@@ -106,12 +106,12 @@ The ideas of data visualization: (I) Provide the data, (II)Mapping from data to 
 
 In short, you can set these configs of mapping:
 
-- Specify 'column' or 'row' of `dataset` to map the `series`. You can use [series.seriesLayoutBy](${optionPath}#series.seriesLayoutBy) to configure it. The default is to map according to the column.
-- Rule of specifying dimension mapping: how to mapping from dimensions of 'dataset' to `axis`, `tooltip`, `label` and `visualMap`. To configure the mapping, please use [series.encode](${optionPath}#series.encode) and [visualMap](${optionPath}#visualMap). The previous case did not give the mapping configuration so that ECharts will follow the default: if x-axis is category, mapping to the first row in `dataset.source`; three-column chart mapping with each row in `dataset.source` one by one.
+- Specify 'column' or 'row' of `dataset` to map the `series`. You can use [series.seriesLayoutBy](${optionPath}series.seriesLayoutBy) to configure it. The default is to map according to the column.
+- Rule of specifying dimension mapping: how to mapping from dimensions of 'dataset' to `axis`, `tooltip`, `label` and `visualMap`. To configure the mapping, please use [series.encode](${optionPath}series.encode) and [visualMap](${optionPath}visualMap). The previous case did not give the mapping configuration so that ECharts will follow the default: if x-axis is category, mapping to the first row in `dataset.source`; three-column chart mapping with each row in `dataset.source` one by one.
 
 The details of the configuration are shown below:
 
-## Map Row or Column of `dataset` to `series`
+## Map Row or Column of **dataset** to **series**
 
 After having the dataset, you can configure flexibly: how the data map to the axis and graph series.
 
@@ -202,13 +202,13 @@ Dimension type can be the following values:
 
 - `'number'`: Default, normal data.
 - `'ordinal'`: String types data like categories, text can be used on the axis only with the dimension type 'ordinal'. ECharts will try to judge this type automatically but might be inaccurate, so you can specify manually.
-- `'time'`: To represent time data, ECharts can automatically analyze data as timestamp if the dimension type is defined as `'time'`. For instance, ECharts will auto-analyze if the data of this dimension is '2017-05-10'`. If the dimension is used as time axis ([axis.type](${optionPath}#xAxis.type) =`'time'`), the dimension type will also be`'time'`. See [data](${optionPath}#series.data) for more time type support.
+- `'time'`: To represent time data, ECharts can automatically analyze data as timestamp if the dimension type is defined as `'time'`. For instance, ECharts will auto-analyze if the data of this dimension is '2017-05-10'`. If the dimension is used as time axis ([axis.type](${optionPath}xAxis.type) =`'time'`), the dimension type will also be`'time'`. See [data](${optionPath}series.data) for more time type support.
 - `'float'`: Use `TypedArray` to optimize the performance in `'float'` dimension.
 - `'int'`: Use `TypedArray` to optimize the performance in `'int'` dimension.
 
 ## Map from Data to Charts (series.encode)
 
-After understand the concept of dimension, you can use [series.encode](${optionPath}#series.encode) to make a mapping:
+After understand the concept of dimension, you can use [series.encode](${optionPath}series.encode) to make a mapping:
 
 ```js live
 var option = {
@@ -340,7 +340,7 @@ option = {
 Q: How to set the 2nd column as a label?
 
 A:
-We now support to trace value from specific dimension for [label.formatter](${optionPath}#series.label.formatter):
+We now support to trace value from specific dimension for [label.formatter](${optionPath}series.label.formatter):
 
 ```js
 series: {
@@ -425,7 +425,7 @@ A: Check your spelling, such as misspell the dimension name `'Life Expectancy'` 
 
 ## Visual Channel Mapping
 
-We can map visual channel by using [visualMap](${optionPath}#visualMap). Check details in the [visualMap](${optionPath}#visualMap) document. Here is an [example](${exampleEditorPath}dataset-encode0).
+We can map visual channel by using [visualMap](${optionPath}visualMap). Check details in the [visualMap](${optionPath}visualMap) document. Here is an [example](${exampleEditorPath}dataset-encode0).
 
 ## Formats of Charts
 
@@ -435,7 +435,7 @@ In most of the normal chart, the data is suitable to be described in the form of
 
 As the example shown behind, in the data transmission of JavaScript, the two-dimensional data can be stored directly by two-dimensional array.
 
-Expect from the two-dimensional array, the dataset also supports using key-value which is also a common way. However, we don't support [seriesLayoutBy](${optionPath}#series.seriesLayoutBy) in this format right now.
+Expect from the two-dimensional array, the dataset also supports using key-value which is also a common way. However, we don't support [seriesLayoutBy](${optionPath}series.seriesLayoutBy) in this format right now.
 
 ```js
 dataset: [
@@ -461,7 +461,7 @@ dataset: [
 
 ## How to Reference Several Datasets
 
-ECharts support to define several datasets at the same moment. Series can assign the one to reference by [series.datasetIndex](${optionPath}#series.datasetIndex). For example:
+ECharts support to define several datasets at the same moment. Series can assign the one to reference by [series.datasetIndex](${optionPath}series.datasetIndex). For example:
 
 ```js
 var option = {
@@ -494,7 +494,7 @@ var option = {
 
 ## series.data in ECharts 3
 
-ECharts 4 still support the data declaration way in ECharts 3. If the series has already declared the [series.data](${optionPath}#series.data), then use [series.data](${optionPath}#series.data) but not `dataset`.
+ECharts 4 still supports the data declaration way in ECharts 3. If the series has already declared the [series.data](${optionPath}series.data), then use [series.data](${optionPath}series.data) but not `dataset`.
 
 ```js
 option = {
@@ -523,7 +523,7 @@ option = {
 };
 ```
 
-In fact, [series.data](${optionPath}#series.data) is an important setting method which will always exist. Some special non-table format chart like [treemap](${optionPath}#series-treemap), [graph](${optionPath}#series-graph) and [lines](${optionPath}#series-lines) still cannot be edit in dataset, you still need to use [series.data](${optionPath}#series.data). In another way, for render huge amount of data (over a million), you need to use [appendData](${mainSitePath}api.html#echartsInstance.appendData) which is not supported by `dataset`.
+In fact, [series.data](${optionPath}series.data) is an important setting method which will always exist. Some special non-table format chart like [treemap](${optionPath}series-treemap), [graph](${optionPath}series-graph) and [lines](${optionPath}series-lines) still cannot be edit in dataset, you still need to use [series.data](${optionPath}series.data). In another way, for render huge amount of data (over a million), you need to use [appendData](${mainSitePath}api.html#echartsInstance.appendData) which is not supported by `dataset`.
 
 ## Others
 

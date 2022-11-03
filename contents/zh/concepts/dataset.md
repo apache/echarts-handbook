@@ -101,8 +101,8 @@ option = {
 
 简而言之，可以进行这些映射的设定：
 
-- 指定 `数据集` 的列（column）还是行（row）映射为 `系列`（`series`）。这件事可以使用 [series.seriesLayoutBy](${optionPath}#series.seriesLayoutBy) 属性来配置。默认是按照列（column）来映射。
-- 指定维度映射的规则：如何从 dataset 的维度（一个“维度”的意思是一行/列）映射到坐标轴（如 X、Y 轴）、提示框（tooltip）、标签（label）、图形元素大小颜色等（visualMap）。这件事可以使用 [series.encode](${optionPath}#series.encode) 属性，以及 [visualMap](${optionPath}#visualMap) 组件来配置（如果有需要映射颜色大小等视觉维度的话）。上面的例子中，没有给出这种映射配置，那么 ECharts 就按最常见的理解进行默认映射：X 坐标轴声明为类目轴，默认情况下会自动对应到 `dataset.source` 中的第一列；三个柱图系列，一一对应到 `dataset.source` 中后面每一列。
+- 指定 `数据集` 的列（column）还是行（row）映射为 `系列`（`series`）。这件事可以使用 [series.seriesLayoutBy](${optionPath}series.seriesLayoutBy) 属性来配置。默认是按照列（column）来映射。
+- 指定维度映射的规则：如何从 dataset 的维度（一个“维度”的意思是一行/列）映射到坐标轴（如 X、Y 轴）、提示框（tooltip）、标签（label）、图形元素大小颜色等（visualMap）。这件事可以使用 [series.encode](${optionPath}series.encode) 属性，以及 [visualMap](${optionPath}visualMap) 组件来配置（如果有需要映射颜色大小等视觉维度的话）。上面的例子中，没有给出这种映射配置，那么 ECharts 就按最常见的理解进行默认映射：X 坐标轴声明为类目轴，默认情况下会自动对应到 `dataset.source` 中的第一列；三个柱图系列，一一对应到 `dataset.source` 中后面每一列。
 
 下面详细解释这些映射的设定。
 
@@ -199,13 +199,13 @@ var option2 = {
 
 - `'number'`: 默认，表示普通数据。
 - `'ordinal'`: 对于类目、文本这些 string 类型的数据，如果需要能在数轴上使用，须是 'ordinal' 类型。ECharts 默认会试图自动判断这个类型。但是自动判断也可能不准确，所以使用者也可以手动强制指定。
-- `'time'`: 表示时间数据。设置成 `'time'` 则能支持自动解析数据成时间戳（timestamp），比如该维度的数据是 '2017-05-10'，会自动被解析。如果这个维度被用在时间数轴（[axis.type](${optionPath}#xAxis.type) 为 `'time'`）上，那么会被自动设置为 `'time'` 类型。时间类型的支持参见 [data](${optionPath}#series.data)。
+- `'time'`: 表示时间数据。设置成 `'time'` 则能支持自动解析数据成时间戳（timestamp），比如该维度的数据是 '2017-05-10'，会自动被解析。如果这个维度被用在时间数轴（[axis.type](${optionPath}xAxis.type) 为 `'time'`）上，那么会被自动设置为 `'time'` 类型。时间类型的支持参见 [data](${optionPath}series.data)。
 - `'float'`: 如果设置成 `'float'`，在存储时候会使用 `TypedArray`，对性能优化有好处。
 - `'int'`: 如果设置成 `'int'`，在存储时候会使用 `TypedArray`，对性能优化有好处。
 
 ## 数据到图形的映射（ series.encode ）
 
-了解了维度的概念后，我们就可以使用 [series.encode](${optionPath}#series.encode) 来做映射。总体是这样的感觉：
+了解了维度的概念后，我们就可以使用 [series.encode](${optionPath}series.encode) 来做映射。总体是这样的感觉：
 
 ```js live
 var option = {
@@ -334,7 +334,7 @@ option = {
 问：如何把第二列设置为标签？
 
 答：
-关于标签的显示 [label.formatter](${optionPath}#series.label.formatter)，现在支持引用特定维度的值，例如：
+关于标签的显示 [label.formatter](${optionPath}series.label.formatter)，现在支持引用特定维度的值，例如：
 
 ```js
 series: {
@@ -419,7 +419,7 @@ var option = {
 
 ## 视觉通道（颜色、尺寸等）的映射
 
-我们可以使用 [visualMap](${optionPath}#visualMap) 组件进行视觉通道的映射。详见 [visualMap](${optionPath}#visualMap) 文档的介绍。这是一个 [示例](${exampleEditorPath}dataset-encode0&edit=1&reset=1)。
+我们可以使用 [visualMap](${optionPath}visualMap) 组件进行视觉通道的映射。详见 [visualMap](${optionPath}visualMap) 文档的介绍。这是一个 [示例](${exampleEditorPath}dataset-encode0&edit=1&reset=1)。
 
 ## 数据的各种格式
 
@@ -429,7 +429,7 @@ var option = {
 
 在 JavaScript 常用的数据传输格式中，二维数组可以比较直观的存储二维表。前面的示例都是使用二维数组表示。
 
-除了二维数组以外，dataset 也支持例如下面 key-value 方式的数据格式，这类格式也非常常见。但是这类格式中，目前并不支持 [seriesLayoutBy](${optionPath}#series.seriesLayoutBy) 参数。
+除了二维数组以外，dataset 也支持例如下面 key-value 方式的数据格式，这类格式也非常常见。但是这类格式中，目前并不支持 [seriesLayoutBy](${optionPath}series.seriesLayoutBy) 参数。
 
 ```js
 dataset: [
@@ -455,7 +455,7 @@ dataset: [
 
 ## 多个 dataset 以及如何引用他们
 
-可以同时定义多个 dataset。系列可以通过 [series.datasetIndex](${optionPath}#series.datasetIndex) 来指定引用哪个 dataset。例如：
+可以同时定义多个 dataset。系列可以通过 [series.datasetIndex](${optionPath}series.datasetIndex) 来指定引用哪个 dataset。例如：
 
 ```js
 var option = {
@@ -488,7 +488,7 @@ var option = {
 
 ## ECharts 3 的数据设置方式（series.data）仍正常使用
 
-ECharts 4 之前一直以来的数据声明方式仍然被正常支持，如果系列已经声明了 [series.data](${optionPath}#series.data)， 那么就会使用 [series.data](${optionPath}#series.data) 而非 `dataset`。
+ECharts 4 之前一直以来的数据声明方式仍然被正常支持，如果系列已经声明了 [series.data](${optionPath}series.data)， 那么就会使用 [series.data](${optionPath}series.data) 而非 `dataset`。
 
 ```js live
 option = {
@@ -517,7 +517,7 @@ option = {
 };
 ```
 
-其实，[series.data](${optionPath}#series.data) 也是种会一直存在的重要设置方式。一些特殊的非 table 格式的图表，如 [treemap](${optionPath}#series-treemap)、[graph](${optionPath}#series-graph)、[lines](${optionPath}#series-lines) 等，现在仍不支持在 dataset 中设置，仍然需要使用 [series.data](${optionPath}#series.data)。另外，对于巨大数据量的渲染（如百万以上的数据量），需要使用 [appendData](api.html#echartsInstance.appendData) 进行增量加载，这种情况不支持使用 `dataset`。
+其实，[series.data](${optionPath}series.data) 也是种会一直存在的重要设置方式。一些特殊的非 table 格式的图表，如 [treemap](${optionPath}series-treemap)、[graph](${optionPath}series-graph)、[lines](${optionPath}series-lines) 等，现在仍不支持在 dataset 中设置，仍然需要使用 [series.data](${optionPath}series.data)。另外，对于巨大数据量的渲染（如百万以上的数据量），需要使用 [appendData](api.html#echartsInstance.appendData) 进行增量加载，这种情况不支持使用 `dataset`。
 
 ## 其他
 
