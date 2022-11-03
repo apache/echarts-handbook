@@ -33,7 +33,7 @@ option = {
 };
 ```
 
-Define `data` under `series` is suitable for customization for some special data structures such as "tree", "graph" and large data.
+Defining `data` under `series` is suitable for customization for some special data structures such as "tree", "graph" and large data.
 However, it is not conducive to the data sharing for multiple series as well as mapping arrangement of chart types and series based on the original data. The other disadvantage is that programmers always need to divide the data in separate series (and categories) first.
 
 ## Define **data** in **dataset**
@@ -113,12 +113,12 @@ The details of the configuration are shown below:
 
 ## Map Row or Column of **dataset** to **series**
 
-After having the dataset, you can configure flexibly: how the data map to the axis and graph series.
+Having the dataset, you can configure flexibly how the data map to the axis and series.
 
 You can use `seriesLayoutBy` to change the understanding of row and column of the chart. `seriesLayoutBy` can be:
 
-- 'column': Default, the series are placed above the column of `dataset`.
-- 'row': The series is placed above the row of `dataset`.
+- `'column'`: Default value. The series are placed above the column of `dataset`.
+- `'row'`: The series are placed above the row of `dataset`.
 
 Check this case:
 
@@ -202,7 +202,7 @@ Dimension type can be the following values:
 
 - `'number'`: Default, normal data.
 - `'ordinal'`: String types data like categories, text can be used on the axis only with the dimension type 'ordinal'. ECharts will try to judge this type automatically but might be inaccurate, so you can specify manually.
-- `'time'`: To represent time data, ECharts can automatically analyze data as timestamp if the dimension type is defined as `'time'`. For instance, ECharts will auto-analyze if the data of this dimension is '2017-05-10'`. If the dimension is used as time axis ([axis.type](${optionPath}xAxis.type) =`'time'`), the dimension type will also be`'time'`. See [data](${optionPath}series.data) for more time type support.
+- `'time'`: To represent time data, ECharts can automatically analyze data as timestamp if the dimension type is defined as `'time'`. For instance, ECharts will auto-analyze if the data of this dimension is '2017-05-10'. If the dimension is used as time axis ([axis.type](${optionPath}xAxis.type) = `'time'`), the dimension type will also be `'time'`. See [data](${optionPath}series.data) for more time type support.
 - `'float'`: Use `TypedArray` to optimize the performance in `'float'` dimension.
 - `'int'`: Use `TypedArray` to optimize the performance in `'int'` dimension.
 
@@ -302,8 +302,11 @@ This is a richer [example](${exampleEditorPath}dataset-encode1) of `series.encod
 
 It is worth mentioning that ECharts will use some default mapping rules for some general charts (line, bar, scatter, candlestick, etc.) if `series.encode` is not specified. The default rule is:
 
-- In coordinate system (eg. Cartesian, Polar): + If there is category axis (axis.type = 'category'), map the first column(row) to the axis and each subsequent column(row) to each series. + If both axes is not the category, then map every two columns in one series to two axes.
-- Without axis (such as Pie Chart): + Use the first column(row) as the name, second column(row) as value. ECharts will not set the name if there is only one column(row).
+- In coordinate system (e.g. Cartesian, Polar):
+  - If there is category axis ([axis.type](${optionPath}xAxis.type) = `'category'`), map the first column(row) to the axis and each subsequent column(row) to each series.
+  - If both axes is not the category, then map every two columns in one series to two axes.
+- Without axis (e.g. Pie Chart):
+  - Use the first column(row) as the name, second column(row) as value. ECharts will not set the name if there is only one column(row).
 
 While the default rule cannot fulfill the requirements, you can configure `encode` by yourself, which is not complicate. Here is an [example](${exampleEditorPath}dataset-default).
 

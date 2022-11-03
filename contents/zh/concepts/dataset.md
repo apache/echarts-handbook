@@ -1,10 +1,10 @@
 # 数据集
 
-`数据集`（`dataset`）是专门用来管理数据的组件。虽然每个系列都可以在 `series.data` 中设置数据，但是从 ECharts4 支持 `数据集` 开始，更推荐使用 `数据集` 来管理数据。因为这样，数据可以被多个组件复用，也方便进行 “数据和其他配置” 分离的配置风格。毕竟，在运行时，数据是最常改变的，而其他配置大多并不会改变。
+`数据集（dataset）`是专门用来管理数据的组件。虽然每个系列都可以在 `series.data` 中设置数据，但是从 ECharts4 支持数据集开始，更推荐使用数据集来管理数据。因为这样，数据可以被多个组件复用，也方便进行 “数据和其他配置” 分离的配置风格。毕竟，在运行时，数据是最常改变的，而其他配置大多并不会改变。
 
 ## 在系列中设置数据
 
-如果数据设置在 `系列`（`series`）中，例如：
+如果数据设置在 `系列（series）` 中，例如：
 
 ```js live
 option = {
@@ -38,7 +38,7 @@ option = {
 
 ## 在数据集中设置数据
 
-而数据设置在 `数据集`（`dataset`）中，会有这些好处：
+而数据设置在 `数据集（dataset）` 中，会有这些好处：
 
 - 能够贴近数据可视化常见思维方式：（I）提供数据，（II）指定数据到视觉的映射，从而形成图表。
 - 数据和其他配置可以被分离开来。数据常变，其他配置常不变。分开易于分别管理。
@@ -101,19 +101,19 @@ option = {
 
 简而言之，可以进行这些映射的设定：
 
-- 指定 `数据集` 的列（column）还是行（row）映射为 `系列`（`series`）。这件事可以使用 [series.seriesLayoutBy](${optionPath}series.seriesLayoutBy) 属性来配置。默认是按照列（column）来映射。
+- 指定 `数据集` 的列（column）还是行（row）映射为 `系列（series）`。这件事可以使用 [series.seriesLayoutBy](${optionPath}series.seriesLayoutBy) 属性来配置。默认是按照列（column）来映射。
 - 指定维度映射的规则：如何从 dataset 的维度（一个“维度”的意思是一行/列）映射到坐标轴（如 X、Y 轴）、提示框（tooltip）、标签（label）、图形元素大小颜色等（visualMap）。这件事可以使用 [series.encode](${optionPath}series.encode) 属性，以及 [visualMap](${optionPath}visualMap) 组件来配置（如果有需要映射颜色大小等视觉维度的话）。上面的例子中，没有给出这种映射配置，那么 ECharts 就按最常见的理解进行默认映射：X 坐标轴声明为类目轴，默认情况下会自动对应到 `dataset.source` 中的第一列；三个柱图系列，一一对应到 `dataset.source` 中后面每一列。
 
 下面详细解释这些映射的设定。
 
-## 把数据集（ dataset ）的行或列映射为系列（series）
+## 把数据集（dataset）的行或列映射为系列（series）
 
 有了数据表之后，使用者可以灵活地配置：数据如何对应到轴和图形系列。
 
 用户可以使用 `seriesLayoutBy` 配置项，改变图表对于行列的理解。`seriesLayoutBy` 可取值：
 
-- 'column': 默认值。系列被安放到 `dataset` 的列上面。
-- 'row': 系列被安放到 `dataset` 的行上面。
+- `'column'`: 默认值。系列被安放到 `dataset` 的列上面。
+- `'row'`: 系列被安放到 `dataset` 的行上面。
 
 看这个例子：
 
@@ -149,13 +149,13 @@ option = {
 };
 ```
 
-## 维度（ dimension ）
+## 维度（dimension）
 
-常用图表所描述的数据大部分是“二维表”结构，上述的例子中，我们都使用二维数组来容纳二维表。现在，当我们把系列（ series ）对应到“列”的时候，那么每一列就称为一个“维度（ dimension ）”，而每一行称为数据项（ item ）。反之，如果我们把系列（ series ）对应到表行，那么每一行就是“维度（ dimension ）”，每一列就是数据项（ item ）。
+常用图表所描述的数据大部分是“二维表”结构，上述的例子中，我们都使用二维数组来容纳二维表。现在，当我们把系列（series）对应到“列”的时候，那么每一列就称为一个“维度（dimension）”，而每一行称为数据项（item）。反之，如果我们把系列（series）对应到表行，那么每一行就是“维度（dimension）”，每一列就是数据项（item）。
 
-维度可以有单独的名字，便于在图表中显示。维度名（ dimension name ）可以在定义在 dataset 的第一行（或者第一列）。例如上面的例子中，`'score'`、`'amount'`、`'product'` 就是维度名。从第二行开始，才是正式的数据。`dataset.source` 中第一行（列）到底包含不包含维度名，ECharts 默认会自动探测。当然也可以设置 `dataset.sourceHeader: true` 显示声明第一行（列）就是维度，或者 `dataset.sourceHeader: false` 表明第一行（列）开始就直接是数据。
+维度可以有单独的名字，便于在图表中显示。维度名（dimension name）可以在定义在 dataset 的第一行（或者第一列）。例如上面的例子中，`'score'`、`'amount'`、`'product'` 就是维度名。从第二行开始，才是正式的数据。`dataset.source` 中第一行（列）到底包含不包含维度名，ECharts 默认会自动探测。当然也可以设置 `dataset.sourceHeader: true` 显示声明第一行（列）就是维度，或者 `dataset.sourceHeader: false` 表明第一行（列）开始就直接是数据。
 
-维度的定义，也可以使用单独的 `dataset.dimensions` 或者 `series.dimensions` 来定义，这样可以同时指定维度名，和维度的类型（ dimension type ）：
+维度的定义，也可以使用单独的 `dataset.dimensions` 或者 `series.dimensions` 来定义，这样可以同时指定维度名，和维度的类型（dimension type）：
 
 ```js
 var option1 = {
@@ -195,7 +195,7 @@ var option2 = {
 
 大多数情况下，我们并不需要去设置维度类型，因为 ECharts 会自动尝试判断。但是如果不足够准确时，可以手动设置维度类型。
 
-维度类型（ dimension type ）可以取这些值：
+维度类型（dimension type）可以取这些值：
 
 - `'number'`: 默认，表示普通数据。
 - `'ordinal'`: 对于类目、文本这些 string 类型的数据，如果需要能在数轴上使用，须是 'ordinal' 类型。ECharts 默认会试图自动判断这个类型。但是自动判断也可能不准确，所以使用者也可以手动强制指定。
@@ -203,7 +203,7 @@ var option2 = {
 - `'float'`: 如果设置成 `'float'`，在存储时候会使用 `TypedArray`，对性能优化有好处。
 - `'int'`: 如果设置成 `'int'`，在存储时候会使用 `TypedArray`，对性能优化有好处。
 
-## 数据到图形的映射（ series.encode ）
+## 数据到图形的映射（series.encode）
 
 了解了维度的概念后，我们就可以使用 [series.encode](${optionPath}series.encode) 来做映射。总体是这样的感觉：
 
@@ -294,7 +294,7 @@ encode: {
 值得一提的是，当 `series.encode` 并没有指定时，ECharts 针对最常见直角坐标系中的图表（折线图、柱状图、散点图、K 线图等）、饼图、漏斗图，会采用一些默认的映射规则。默认的映射规则比较简单，大体是：
 
 - 在坐标系中（如直角坐标系、极坐标系等）
-  - 如果有类目轴（axis.type 为 'category'），则将第一列（行）映射到这个轴上，后续每一列（行）对应一个系列。
+  - 如果有类目轴（[axis.type](${optionPath}xAxis.type) 为 `'category'`），则将第一列（行）映射到这个轴上，后续每一列（行）对应一个系列。
   - 如果没有类目轴，假如坐标系有两个轴（例如直角坐标系的 X Y 轴），则每两列对应一个系列，这两列分别映射到这两个轴上。
 - 如果没有坐标系（如饼图）
   - 取第一列（行）为名字，第二列（行）为数值（如果只有一列，则取第一列为数值）。
