@@ -158,11 +158,11 @@ export default {
         permalinkClass: 'permalink'
       })
       .use(function(md) {
-        const defaultImageRenderer = md.renderer.rules.image
+        const defaultImageRenderer = md.renderer.rules.image!
         md.renderer.rules.image = function(tokens, idx, options, env, self) {
           const token = tokens[idx]
           const srcValue = token.attrGet('src')
-          token.attrPush(['data-src', srcValue])
+          token.attrPush(['data-src', srcValue!])
           token.attrSet('src', '')
           return defaultImageRenderer(tokens, idx, options, env, self)
         }

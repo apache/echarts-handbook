@@ -8,7 +8,7 @@ export default {
   ssr: true,
 
   // TODO static target will generate lot's of static js files. Not sure why
-  // target: 'static',
+  target: 'static',
 
   router: {
     mode: 'history',

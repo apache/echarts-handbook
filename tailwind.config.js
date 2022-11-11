@@ -13,7 +13,7 @@ module.exports = {
         emerald: colors.emerald,
         lime: colors.lime,
         teal: colors.teal,
-        'light-blue': colors.lightBlue
+        'light-blue': colors.sky
       }
     }
   }

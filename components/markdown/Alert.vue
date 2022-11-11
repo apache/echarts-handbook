@@ -7,13 +7,13 @@
 </template>
 
 <script lang="ts">
-import Vue, { PropType } from 'vue'
+import Vue from 'vue'
 export default Vue.extend({
   props: {
     type: {
       type: String,
       default: 'info',
-      validator(value) {
+      validator(value: string) {
         return ['info', 'success', 'warning', 'danger'].includes(value)
       }
     }
