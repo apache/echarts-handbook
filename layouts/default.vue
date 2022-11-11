@@ -221,6 +221,7 @@ body {
   background-color: transparent;
   padding: 10px;
   overflow: hidden;
+  z-index: 10;
 
   @media (max-width: 768px) {
     position: relative;
