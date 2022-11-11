@@ -14,7 +14,7 @@ At the beginning, the meanings of two terms that will be used below should be cl
 
 For example:
 
-<md-example src="doc-example/text-block-fragment" width="400" height="300"></md-example>
+<md-example src="doc-example/text-block-fragment" width="450" height="300"></md-example>
 
 ## Options about Text
 
@@ -101,65 +101,63 @@ option = {
         {
           value: [0, 0],
           label: {
-            normal: {
-              show: true,
-              formatter: [
-                'Plain text',
-                '{textBorder|textBorderColor + textBorderWidth}',
-                '{textShadow|textShadowColor + textShadowBlur + textShadowOffsetX + textShadowOffsetY}',
-                '{bg|backgroundColor + borderRadius + padding}',
-                '{border|borderColor + borderWidth + borderRadius + padding}',
-                '{shadow|shadowColor + shadowBlur + shadowOffsetX + shadowOffsetY}'
-              ].join('\n'),
-              backgroundColor: '#eee',
-              borderColor: '#333',
-              borderWidth: 2,
-              borderRadius: 5,
-              padding: 10,
-              color: '#000',
-              fontSize: 14,
-              shadowBlur: 3,
-              shadowColor: '#888',
-              shadowOffsetX: 0,
-              shadowOffsetY: 3,
-              lineHeight: 30,
-              rich: {
-                textBorder: {
-                  fontSize: 20,
-                  textBorderColor: '#000',
-                  textBorderWidth: 3,
-                  color: '#fff'
-                },
-                textShadow: {
-                  fontSize: 16,
-                  textShadowBlur: 5,
-                  textShadowColor: '#000',
-                  textShadowOffsetX: 3,
-                  textShadowOffsetY: 3,
-                  color: '#fff'
-                },
-                bg: {
-                  backgroundColor: '#339911',
-                  color: '#fff',
-                  borderRadius: 15,
-                  padding: 5
-                },
-                border: {
-                  color: '#000',
-                  borderColor: '#449911',
-                  borderWidth: 1,
-                  borderRadius: 3,
-                  padding: 5
-                },
-                shadow: {
-                  backgroundColor: '#992233',
-                  padding: 5,
-                  color: '#fff',
-                  shadowBlur: 5,
-                  shadowColor: '#336699',
-                  shadowOffsetX: 6,
-                  shadowOffsetY: 6
-                }
+            show: true,
+            formatter: [
+              'Plain text',
+              '{textBorder|textBorderColor + textBorderWidth}',
+              '{textShadow|textShadowColor + textShadowBlur + textShadowOffsetX + textShadowOffsetY}',
+              '{bg|backgroundColor + borderRadius + padding}',
+              '{border|borderColor + borderWidth + borderRadius + padding}',
+              '{shadow|shadowColor + shadowBlur + shadowOffsetX + shadowOffsetY}'
+            ].join('\n'),
+            backgroundColor: '#eee',
+            borderColor: '#333',
+            borderWidth: 2,
+            borderRadius: 5,
+            padding: 10,
+            color: '#000',
+            fontSize: 14,
+            shadowBlur: 3,
+            shadowColor: '#888',
+            shadowOffsetX: 0,
+            shadowOffsetY: 3,
+            lineHeight: 30,
+            rich: {
+              textBorder: {
+                fontSize: 20,
+                textBorderColor: '#000',
+                textBorderWidth: 3,
+                color: '#fff'
+              },
+              textShadow: {
+                fontSize: 16,
+                textShadowBlur: 5,
+                textShadowColor: '#000',
+                textShadowOffsetX: 3,
+                textShadowOffsetY: 3,
+                color: '#fff'
+              },
+              bg: {
+                backgroundColor: '#339911',
+                color: '#fff',
+                borderRadius: 15,
+                padding: 5
+              },
+              border: {
+                color: '#000',
+                borderColor: '#449911',
+                borderWidth: 1,
+                borderRadius: 3,
+                padding: 5
+              },
+              shadow: {
+                backgroundColor: '#992233',
+                padding: 5,
+                color: '#fff',
+                shadowBlur: 5,
+                shadowColor: '#336699',
+                shadowOffsetX: 6,
+                shadowOffsetY: 6
               }
             }
           }
@@ -195,27 +193,25 @@ option = {
       symbol: 'roundRect',
       data: [[1, 1]],
       label: {
-        normal: {
-          // Options: 'left', 'right', 'top', 'bottom', 'inside', 'insideTop', 'insideLeft', 'insideRight', 'insideBottom', 'insideTopLeft', 'insideTopRight', 'insideBottomLeft', 'insideBottomRight'
-          position: 'top',
-          distance: 10,
+        // Options: 'left', 'right', 'top', 'bottom', 'inside', 'insideTop', 'insideLeft', 'insideRight', 'insideBottom', 'insideTopLeft', 'insideTopRight', 'insideBottomLeft', 'insideBottomRight'
+        position: 'top',
+        distance: 10,
 
-          show: true,
-          formatter: ['Label Text'].join('\n'),
-          backgroundColor: '#eee',
-          borderColor: '#555',
-          borderWidth: 2,
-          borderRadius: 5,
-          padding: 10,
-          fontSize: 18,
-          shadowBlur: 3,
-          shadowColor: '#888',
-          shadowOffsetX: 0,
-          shadowOffsetY: 3,
-          textBorderColor: '#000',
-          textBorderWidth: 3,
-          color: '#fff'
-        }
+        show: true,
+        formatter: ['Label Text'].join('\n'),
+        backgroundColor: '#eee',
+        borderColor: '#555',
+        borderWidth: 2,
+        borderRadius: 5,
+        padding: 10,
+        fontSize: 18,
+        shadowBlur: 3,
+        shadowColor: '#888',
+        shadowOffsetX: 0,
+        shadowOffsetY: 3,
+        textBorderColor: '#000',
+        textBorderWidth: 3,
+        color: '#fff'
       }
     }
   ],
@@ -326,17 +322,15 @@ option = {
         {
           value: [0, 0],
           label: {
-            normal: {
-              formatter: [
-                '{tc|Center Title}{titleBg|}',
-                '  Content text xxxxxxxx {sunny|} xxxxxxxx {cloudy|}  ',
-                '{hr|}',
-                '  xxxxx {showers|} xxxxxxxx  xxxxxxxxx  '
-              ].join('\n'),
-              rich: {
-                titleBg: {
-                  align: 'right'
-                }
+            formatter: [
+              '{tc|Center Title}{titleBg|}',
+              '  Content text xxxxxxxx {sunny|} xxxxxxxx {cloudy|}  ',
+              '{hr|}',
+              '  xxxxx {showers|} xxxxxxxx  xxxxxxxxx  '
+            ].join('\n'),
+            rich: {
+              titleBg: {
+                align: 'right'
               }
             }
           }
@@ -344,30 +338,26 @@ option = {
         {
           value: [0, 1],
           label: {
-            normal: {
-              formatter: [
-                '{titleBg|Left Title}',
-                '  Content text xxxxxxxx {sunny|} xxxxxxxx {cloudy|}  ',
-                '{hr|}',
-                '  xxxxx {showers|} xxxxxxxx  xxxxxxxxx  '
-              ].join('\n')
-            }
+            formatter: [
+              '{titleBg|Left Title}',
+              '  Content text xxxxxxxx {sunny|} xxxxxxxx {cloudy|}  ',
+              '{hr|}',
+              '  xxxxx {showers|} xxxxxxxx  xxxxxxxxx  '
+            ].join('\n')
           }
         },
         {
           value: [0, 2],
           label: {
-            normal: {
-              formatter: [
-                '{titleBg|Right Title}',
-                '  Content text xxxxxxxx {sunny|} xxxxxxxx {cloudy|}  ',
-                '{hr|}',
-                '  xxxxx {showers|} xxxxxxxx  xxxxxxxxx  '
-              ].join('\n'),
-              rich: {
-                titleBg: {
-                  align: 'right'
-                }
+            formatter: [
+              '{titleBg|Right Title}',
+              '  Content text xxxxxxxx {sunny|} xxxxxxxx {cloudy|}  ',
+              '{hr|}',
+              '  xxxxx {showers|} xxxxxxxx  xxxxxxxxx  '
+            ].join('\n'),
+            rich: {
+              titleBg: {
+                align: 'right'
               }
             }
           }
@@ -375,56 +365,54 @@ option = {
       ],
       symbolSize: 1,
       label: {
-        normal: {
-          show: true,
-          backgroundColor: '#ddd',
-          borderColor: '#555',
-          borderWidth: 1,
-          borderRadius: 5,
-          color: '#000',
-          fontSize: 14,
-          rich: {
-            titleBg: {
-              backgroundColor: '#000',
-              height: 30,
-              borderRadius: [5, 5, 0, 0],
-              padding: [0, 10, 0, 10],
-              width: '100%',
-              color: '#eee'
-            },
-            tc: {
-              align: 'center',
-              color: '#eee'
-            },
-            hr: {
-              borderColor: '#777',
-              width: '100%',
-              borderWidth: 0.5,
-              height: 0
-            },
-            sunny: {
-              height: 30,
-              align: 'left',
-              backgroundColor: {
-                image:
-                  'https://echarts.apache.org/examples/data/asset/img/weather/sunny_128.png'
-              }
-            },
-            cloudy: {
-              height: 30,
-              align: 'left',
-              backgroundColor: {
-                image:
-                  'https://echarts.apache.org/examples/data/asset/img/weather/cloudy_128.png'
-              }
-            },
-            showers: {
-              height: 30,
-              align: 'left',
-              backgroundColor: {
-                image:
-                  'https://echarts.apache.org/examples/data/asset/img/weather/showers_128.png'
-              }
+        show: true,
+        backgroundColor: '#ddd',
+        borderColor: '#555',
+        borderWidth: 1,
+        borderRadius: 5,
+        color: '#000',
+        fontSize: 14,
+        rich: {
+          titleBg: {
+            backgroundColor: '#000',
+            height: 30,
+            borderRadius: [5, 5, 0, 0],
+            padding: [0, 10, 0, 10],
+            width: '100%',
+            color: '#eee'
+          },
+          tc: {
+            align: 'center',
+            color: '#eee'
+          },
+          hr: {
+            borderColor: '#777',
+            width: '100%',
+            borderWidth: 0.5,
+            height: 0
+          },
+          sunny: {
+            height: 30,
+            align: 'left',
+            backgroundColor: {
+              image:
+                'https://echarts.apache.org/examples/data/asset/img/weather/sunny_128.png'
+            }
+          },
+          cloudy: {
+            height: 30,
+            align: 'left',
+            backgroundColor: {
+              image:
+                'https://echarts.apache.org/examples/data/asset/img/weather/cloudy_128.png'
+            }
+          },
+          showers: {
+            height: 30,
+            align: 'left',
+            backgroundColor: {
+              image:
+                'https://echarts.apache.org/examples/data/asset/img/weather/showers_128.png'
             }
           }
         }
