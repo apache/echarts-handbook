@@ -6,11 +6,11 @@
   "scripts": {
     "dev": "nuxt",
     "start": "nuxt start",
-    "prepare": "node build/generate-contributors.js && node build/generate",
-    "build:gh": "node build/generate && NUXT_ENV_DEPLOY=gh nuxt generate",
-    "build:local": "npm run prepare && NUXT_ENV_DEPLOY=local nuxt generate",
-    "build:localsite": "npm run prepare && NUXT_ENV_DEPLOY=localsite nuxt generate",
-    "build:asf": "npm run prepare && NUXT_ENV_DEPLOY=asf nuxt generate"
+    "prepare-generate": "node build/generate-contributors.js && node build/generate",
+    "build:gh": "npm run prepare-generate && NUXT_ENV_DEPLOY=gh nuxt generate",
+    "build:local": "npm run prepare-generate && NUXT_ENV_DEPLOY=local nuxt generate",
+    "build:localsite": "npm run prepare-generate && NUXT_ENV_DEPLOY=localsite nuxt generate",
+    "build:asf": "npm run prepare-generate && NUXT_ENV_DEPLOY=asf nuxt generate"
   },
   "dependencies": {
     "@nuxt/types": "^2.15.6",
@@ -31,7 +31,7 @@
     "vue-prism-editor": "^1.2.2"
   },
   "devDependencies": {
-    "@jamesives/github-pages-deploy-action": "^4.1.3",
+    "@jamesives/github-pages-deploy-action": "^4.4.1",
     "@nuxt/typescript-build": "^2.1.0",
     "@nuxtjs/eslint-config-typescript": "^1.0.0",
     "@nuxtjs/eslint-module": "^1.0.0",
@@ -39,7 +39,6 @@
     "@types/scroll-into-view": "^1.13.0",
     "babel-eslint": "^10.0.1",
     "cheerio": "^1.0.0-rc.12",
-    "child_process": "^1.0.2",
     "eslint": "^6.1.0",
     "eslint-plugin-nuxt": ">=0.4.2",
     "eslint-plugin-prettier": "^3.4.1",
