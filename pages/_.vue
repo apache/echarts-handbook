@@ -82,6 +82,25 @@ function slugify(s: string) {
   )
 }
 
+function findPostByDir(posts: any[], dir: string) {
+  for (let i = 0, len = posts.length, post; i < len; i++) {
+    post = posts[i]
+    if (post.dir === dir) {
+      return post
+    }
+  }
+}
+
+function composePostTitle(posts: any[], path: string) {
+  const parts: string[] = []
+  const slugs = path.split('/')
+  for (let i = 0, post; i < slugs.length; i++) {
+    post = findPostByDir(post ? post.children : posts, slugs[i])
+    post && parts.unshift(post.title)
+  }
+  return parts.join(' - ')
+}
+
 export default {
   components: {
     Contributors,
@@ -128,6 +147,8 @@ export default {
   },
   head() {
     return {
+      // @ts-ignore
+      title: this.title,
       meta: [
         {
           hid: 'docsearch:language',
@@ -138,8 +159,11 @@ export default {
       ]
     }
   },
-  async asyncData({ params, i18n }: any) {
-    const postPath = `${i18n.locale}/${params.pathMatch}`
+  async asyncData({ params, i18n, store }: any) {
+    const posts = store.state.posts[i18n.locale]
+    const path = params.pathMatch;
+    const title = composePostTitle(posts, path);
+    const postPath = `${i18n.locale}/${path}`
     const fileContent = await import(`~/contents/${postPath}.md`)
     const content = replaceVars(
       parseCodeBlocks(parseLiveCodeBlocks(fileContent.default)),
@@ -168,7 +192,7 @@ export default {
         }
       }) // lazyload
 
-    return { html: md.render(content), postPath }
+    return { html: md.render(content), postPath, title }
   }
 }
 </script>

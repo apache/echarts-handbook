@@ -5,6 +5,9 @@ if (process.env.NODE_ENV === 'production') {
   console.log('Deploying to ...', process.env.NUXT_ENV_DEPLOY)
 }
 
+/**
+ * @type {import('@nuxt/types').NuxtConfig}
+ */
 export default {
   ssr: true,
 
@@ -40,7 +43,7 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: 'Handbook - Apache ECharts',
+    titleTemplate: chunk => `${chunk ? chunk + ' - ' : ''}Handbook - Apache ECharts`,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
