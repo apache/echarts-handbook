@@ -100,13 +100,13 @@ export default Vue.extend({
     }
   },
   watch: {
-    $route(to, from) {
+    $route() {
       this.sidebarOpen = false
     }
   },
 
   mounted() {
-    const $actived = this.$el.querySelector('.actived') as HTMLElement
+    const $actived = this.$el.querySelector('.nav-link.nuxt-link-active') as HTMLElement
     if ($actived) {
       scrollIntoView($actived, {
         time: 0,
@@ -114,11 +114,7 @@ export default Vue.extend({
           top: 0,
           topOffset: 300
         },
-        isScrollable(target) {
-          return (
-            !!target.className && target.className.indexOf('bd-sidebar') >= 0
-          )
-        }
+        validTarget: target => target.className?.indexOf('bd-docs-nav') > -1
       })
     }
     // @ts-ignore
