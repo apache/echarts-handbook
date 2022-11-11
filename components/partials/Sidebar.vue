@@ -106,7 +106,10 @@ export default Vue.extend({
 
   mounted() {
     const $actived = this.$el.querySelector('.nav-link.nuxt-link-active') as HTMLElement
-    $actived?.scrollIntoView?.()
+    $actived?.scrollIntoView?.({
+      block: 'nearest',
+      inline: 'start'
+    })
     // @ts-ignore
     docsearch({
       apiKey: '6ade5f1ff34e94690f9ea38cddcc2f55',
