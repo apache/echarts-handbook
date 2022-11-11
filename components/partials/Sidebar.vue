@@ -86,7 +86,6 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import scrollIntoView from 'scroll-into-view'
 import SidebarNavItem from './SidebarNavItem.vue'
 
 export default Vue.extend({
@@ -107,16 +106,7 @@ export default Vue.extend({
 
   mounted() {
     const $actived = this.$el.querySelector('.nav-link.nuxt-link-active') as HTMLElement
-    if ($actived) {
-      scrollIntoView($actived, {
-        time: 0,
-        align: {
-          top: 0,
-          topOffset: 300
-        },
-        validTarget: target => target.className?.indexOf('bd-docs-nav') > -1
-      })
-    }
+    $actived?.scrollIntoView?.()
     // @ts-ignore
     docsearch({
       apiKey: '6ade5f1ff34e94690f9ea38cddcc2f55',

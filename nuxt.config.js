@@ -1,4 +1,5 @@
 import config from './configs/config'
+import { description } from './package.json'
 
 if (process.env.NODE_ENV === 'production') {
   console.log('Deploying to ...', process.env.NUXT_ENV_DEPLOY)
@@ -46,7 +47,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || ''
+        content: description || ''
       }
     ],
     link: [
