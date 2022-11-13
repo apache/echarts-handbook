@@ -1,5 +1,4 @@
 import config from './configs/config'
-import { description } from './package.json'
 
 if (process.env.NODE_ENV === 'production') {
   console.log('Deploying to ...', process.env.NUXT_ENV_DEPLOY)
@@ -46,12 +45,7 @@ export default {
     titleTemplate: chunk => `${chunk ? chunk + ' - ' : ''}Handbook - Apache ECharts`,
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      {
-        hid: 'description',
-        name: 'description',
-        content: description || ''
-      }
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' }
     ],
     link: [
       {
