@@ -90,6 +90,7 @@ body {
   h5,
   h6 {
     font-weight: 500;
+    scroll-margin-top: 20px;
 
     &:hover .permalink {
       display: inline-block;

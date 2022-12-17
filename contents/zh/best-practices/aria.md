@@ -71,6 +71,6 @@ option = {
 
 <md-example src="doc-example/aria-decal-simple"></md-example>
 
-如果需要自定义贴花图案，可以使用 [aria.decal.decals](option.html#aria.decal.decals) 配置出灵活多变的图案。
+如果需要自定义贴花图案，可以使用 [aria.decal.decals](${optionPath}aria.decal.decals) 配置出灵活多变的图案。
 
 更具体的信息请参见 [ARIA 文档](${optionPath}aria.decal)。
