@@ -216,7 +216,7 @@ body {
   left: 77%;
   width: 21%;
   top: 65px;
-  bottom: 20px;
+  max-height: calc(100% - 85px);
   display: flex;
   flex-direction: column;
   background-color: transparent;
