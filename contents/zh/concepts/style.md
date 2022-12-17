@@ -27,10 +27,12 @@ var chart = echarts.init(dom, 'dark');
 
 ```js
 // 假设主题名称是 "vintage"
-$.getJSON('xxx/xxx/vintage.json', function(themeJSON) {
-  echarts.registerTheme('vintage', JSON.parse(themeJSON));
-  var chart = echarts.init(dom, 'vintage');
-});
+fetch('theme/vintage.json')
+  .then(r => r.json())
+  .then(theme => {
+    echarts.registerTheme('vintage', theme);
+    var chart = echarts.init(dom, 'vintage');
+  })
 ```
 
 如果保存为 UMD 格式的 JS 文件，文件内部已经做了自注册，直接引入 JS 即可：
