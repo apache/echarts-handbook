@@ -26,12 +26,13 @@ Other themes are not included by default, and need to load them ourselves if we 
 If a theme is downloaded as a JSON file, we should register it by ourselves, for example:
 
 ```js
-var xhr = new XMLHttpRequest();
 // Assume the theme name is "vintage".
-$.getJSON('xxx/xxx/vintage.json', function(themeJSON) {
-  echarts.registerTheme('vintage', JSON.parse(themeJSON));
-  var chart = echarts.init(dom, 'vintage');
-});
+fetch('theme/vintage.json')
+  .then(r => r.json())
+  .then(theme => {
+    echarts.registerTheme('vintage', theme);
+    var chart = echarts.init(dom, 'vintage');
+  })
 ```
 
 If a theme is downloaded as a JS file, it will auto register itself:
