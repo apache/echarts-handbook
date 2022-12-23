@@ -465,7 +465,7 @@ type DimensionName = string;
 type DimensionIndex = number;
 ```
 
-> Note that when using [Minimal Bundle](${lang}/basics/import#importing-required-charts-and-components-to-have-minimal-bundle), if you need to use this built-in transform, besides the `Dataset` component, it's required to import the `Transform` component.
+> Note that when using [Minimal Bundle](${lang}/basics/import#shrinking-bundle-size), if you need to use this built-in transform, besides the `Dataset` component, it's required to import the `Transform` component.
 
 ```ts
 import {
@@ -586,7 +586,7 @@ type DimensionName = string;
 type DimensionIndex = number;
 ```
 
-> Note that when using [Minimal Bundle](${lang}/basics/import#importing-required-charts-and-components-to-have-minimal-bundle), if you need to use this built-in transform, besides the `Dataset` component, it's required to import the `Transform` component.
+> Note that when using [Minimal Bundle](${lang}/basics/import#shrinking-bundle-size), if you need to use this built-in transform, besides the `Dataset` component, it's required to import the `Transform` component.
 
 ```ts
 import {

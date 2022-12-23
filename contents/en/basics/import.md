@@ -1,6 +1,6 @@
 # Using ECharts as an NPM Package
 
-There are two approaches to using ECharts as a package. The simplest approach is to make all functionality immediately available by importing from `echarts`. However, it is encouraged to substantially decrease bundle size by only importing as neccessary such as `echarts/core` and `echarts/charts`.
+There are two approaches to using ECharts as a package. The simplest approach is to make all functionality immediately available by importing from `echarts`. However, it is encouraged to substantially decrease bundle size by only importing as necessary such as `echarts/core` and `echarts/charts`.
 
 ## Install ECharts via NPM
 
@@ -12,7 +12,7 @@ npm install echarts
 
 ## Import All ECharts Functionality
 
-To include all of ECharts, we simplely need to import `echarts`.
+To include all of ECharts, we simply need to import `echarts`.
 
 ```js
 import * as echarts from 'echarts';
@@ -25,6 +25,7 @@ myChart.setOption({
   title: {
     text: 'ECharts Getting Started Example'
   },
+  tooltip: {},
   xAxis: {
     data: ['shirt', 'cardigan', 'chiffon', 'pants', 'heels', 'socks']
   },
@@ -105,7 +106,7 @@ import {
 } from 'echarts/charts';
 import {
   TitleComponent,
-  // The component option types are defined with the suffix ComponentOption
+  // The component option types are defined with the ComponentOption suffix
   TitleComponentOption,
   TooltipComponent,
   TooltipComponentOption,

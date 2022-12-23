@@ -1,6 +1,6 @@
 # 在项目中引入 Apache ECharts
 
-假如你的开发环境使用了`npm`或者`yarn`等包管理工具，并且使用 Webpack 等打包工具进行构建，本文将会介绍如何引入 Apache ECharts<sup>TM</sup> 并通过 treeshaking 特性只打包需要的模块。
+假如你的开发环境使用了 `npm` 或者 `yarn` 等包管理工具，并且使用 `webpack` 等打包工具进行构建，本文将会介绍如何引入 Apache ECharts<sup>TM</sup> 并通过 tree-shaking 特性只打包需要的模块以减少包体积。
 
 ## NPM 安装 ECharts
 
@@ -54,7 +54,7 @@ import {
   DatasetComponent,
   TransformComponent
 } from 'echarts/components';
-// 标签自动布局，全局过渡动画等特性
+// 标签自动布局、全局过渡动画等特性
 import { LabelLayout, UniversalTransition } from 'echarts/features';
 // 引入 Canvas 渲染器，注意引入 CanvasRenderer 或者 SVGRenderer 是必须的一步
 import { CanvasRenderer } from 'echarts/renderers';
@@ -85,7 +85,7 @@ myChart.setOption({
 
 ## 在 TypeScript 中按需引入
 
-对于使用了 TypeScript 来开发 ECharts 的开发者，我们提供了类型接口来组合出最小的`EChartsOption`类型。这个更严格的类型可以有效帮助你检查出是否少加载了组件或者图表。
+对于使用了 TypeScript 来开发 ECharts 的开发者，我们提供了类型接口来组合出最小的 `EChartsOption` 类型。这个更严格的类型可以有效帮助你检查出是否少加载了组件或者图表。
 
 ```ts
 import * as echarts from 'echarts/core';
