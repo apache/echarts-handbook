@@ -26,8 +26,6 @@ npm install echarts
 - [jsDelivr](https://www.jsdelivr.com/package/npm/echarts)
 - [unpkg](https://unpkg.com/browse/echarts/)
 - [cdnjs](https://cdnjs.com/libraries/echarts)
-- [baomitu](https://cdn.baomitu.com/echarts)
-- [BootCDN](https://www.bootcdn.cn/echarts)
 
 ### 从 GitHub 获取
 
@@ -35,4 +33,4 @@ npm install echarts
 
 ### 在线定制
 
-如果只想引入部分模块以减少包体积，可以使用 [ECharts 在线定制](${mainSitePath}/builder.html)功能。
+如果只想引入部分模块以减少包体积，可以使用 [ECharts 在线定制](${mainSitePath}builder.html)功能。

@@ -33,4 +33,4 @@ You can find links to each version on the [releases](https://github.com/apache/e
 
 ### Online Customization
 
-If you want to introduce only some modules to reduce package size, you can use the [ECharts online customization](${mainSitePath}/builder.html) function to create a customized download of ECharts.
+If you want to introduce only some modules to reduce package size, you can use the [ECharts online customization](${mainSitePath}builder.html) function to create a customized download of ECharts.
