@@ -1,22 +1,25 @@
-# Use Apache ECharts with bundler and NPM
+# Using ECharts as an NPM Package
 
-If your development environment uses a package management tool like `npm` or `yarn` and builds with a packaging tool like Webpack, this article will describe how to get a minimal bundle of Apache ECharts<sup>TM</sup> via treeshaking.
+There are two approaches to using ECharts as a package. The simplest approach is to make all functionality immediately available by importing from `echarts`. However, it is encouraged to substantially decrease bundle size by only importing as necessary such as `echarts/core` and `echarts/charts`.
 
 ## Install ECharts via NPM
 
 You can install ECharts via npm using the following command
 
 ```shell
-npm install echarts --save
+npm install echarts
 ```
 
-## Import ECharts
+## Import All ECharts Functionality
+
+To include all of ECharts, we simply need to import `echarts`.
 
 ```js
 import * as echarts from 'echarts';
 
-// initialize the echarts instance
+// Create the echarts instance
 var myChart = echarts.init(document.getElementById('main'));
+
 // Draw the chart
 myChart.setOption({
   title: {
@@ -37,17 +40,18 @@ myChart.setOption({
 });
 ```
 
-## Importing Required Charts and Components to Have Minimal Bundle
+## Shrinking Bundle Size
 
 The above code will import all the charts and components in ECharts, but if you don't want to bring in all the components, you can use the tree-shakeable interface provided by ECharts to bundle the required components and get a minimal bundle.
 
 ```js
 // Import the echarts core module, which provides the necessary interfaces for using echarts.
 import * as echarts from 'echarts/core';
+
 // Import bar charts, all suffixed with Chart
 import { BarChart } from 'echarts/charts';
+
 // Import the tooltip, title, rectangular coordinate system, dataset and transform components
-// all suffixed with Component
 import {
   TitleComponent,
   TooltipComponent,
@@ -55,52 +59,54 @@ import {
   DatasetComponent,
   TransformComponent
 } from 'echarts/components';
+
 // Features like Universal Transition and Label Layout
 import { LabelLayout, UniversalTransition } from 'echarts/features';
+
 // Import the Canvas renderer
 // Note that including the CanvasRenderer or SVGRenderer is a required step
 import { CanvasRenderer } from 'echarts/renderers';
 
 // Register the required components
 echarts.use([
+  BarChart,
   TitleComponent,
   TooltipComponent,
   GridComponent,
   DatasetComponent,
   TransformComponent,
-  BarChart,
   LabelLayout,
   UniversalTransition,
   CanvasRenderer
 ]);
 
-// The next step is the same as before, initialize the chart and set the configuration items
+// The chart is initialized and configured in the same manner as before
 var myChart = echarts.init(document.getElementById('main'));
 myChart.setOption({
   // ...
 });
 ```
 
-> Note that in order to keep the size of the package to a minimum, ECharts does not provide any renderer in tree-shakeable interface, so you need to choose to import `CanvasRenderer` or `SVGRenderer` as the renderer. The advantage of this is that if you only need to use the svg rendering mode, the bundle will not include the `CanvasRenderer` module, which is not needed.
+> Note that in order to keep the size of the package to a minimum, ECharts does not provide any renderer in the tree-shakeable interface, so you need to choose to import `CanvasRenderer` or `SVGRenderer` as the renderer. The advantage of this is that if you only need to use the SVG rendering mode, the bundle will not include the `CanvasRenderer` module, which is not needed.
 
-The "Full Code" tab on our sample editor page provides a very convenient way to generate a tree-shakable code. It will generate tree-shakable code based on the current option dynamically. You can use it directly in your project.
+The "Full Code" tab on our sample editor page provides a very convenient way to generate a tree-shakable code. It will generate tree-shakable code based on the current option dynamically to use it directly in your project.
 
-## Minimal Option Type in TypeScript
+## Creating an Option Type in TypeScript
 
-For developers who are using TypeScript to develop ECharts, we provide a type interface to combine the minimal `EChartsOption` type. This stricter type can effectively help you check for missing components or charts.
+For developers who are using TypeScript to develop ECharts, type interface is provided to create a minimal `EChartsOption` type. This type will be stricter than the default one provided because it will know exactly what components are being used. This can help you check for missing components or charts more effectively.
 
 ```ts
 import * as echarts from 'echarts/core';
 import {
   BarChart,
-  // The series types are defined with the SeriesOption suffix
+  // The series option types are defined with the SeriesOption suffix
   BarSeriesOption,
   LineChart,
   LineSeriesOption
 } from 'echarts/charts';
 import {
   TitleComponent,
-  // The component types are defined with the suffix ComponentOption
+  // The component option types are defined with the ComponentOption suffix
   TitleComponentOption,
   TooltipComponent,
   TooltipComponentOption,
@@ -115,7 +121,7 @@ import {
 import { LabelLayout, UniversalTransition } from 'echarts/features';
 import { CanvasRenderer } from 'echarts/renderers';
 
-// Combine an Option type with only required components and charts via ComposeOption
+// Create an Option type with only the required components and charts via ComposeOption
 type ECOption = echarts.ComposeOption<
   | BarSeriesOption
   | LineSeriesOption
