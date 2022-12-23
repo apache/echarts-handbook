@@ -21,7 +21,11 @@ See [Import ECharts](${lang}/basics/import) for details on usage.
 
 ### Use From CDN
 
-ECharts is availablle on the free CDN [jsDelivr](https://www.jsdelivr.com/package/npm/echarts).
+ECharts is available on the following free CDNs:
+
+- [jsDelivr](https://www.jsdelivr.com/package/npm/echarts)
+- [unpkg](https://unpkg.com/browse/echarts/)
+- [cdnjs](https://cdnjs.com/libraries/echarts)
 
 ### Download From GitHub
 

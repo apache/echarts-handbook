@@ -14,14 +14,20 @@ Apache ECharts 提供了多种安装方式，你可以根据项目的实际情�
 ### 从 npm 获取
 
 ```sh
-npm install echarts --save
+npm install echarts
 ```
 
 详见[在项目中引入 Apache ECharts](${lang}/basics/import)。
 
 ### 从 CDN 获取
 
-推荐从 jsDelivr 引用 [echarts](https://www.jsdelivr.com/package/npm/echarts)。
+可以从以下免费 CDN 中获取和引用 ECharts。
+
+- [jsDelivr](https://www.jsdelivr.com/package/npm/echarts)
+- [unpkg](https://unpkg.com/browse/echarts/)
+- [cdnjs](https://cdnjs.com/libraries/echarts)
+- [baomitu](https://cdn.baomitu.com/echarts)
+- [BootCDN](https://www.bootcdn.cn/echarts)
 
 ### 从 GitHub 获取
 
