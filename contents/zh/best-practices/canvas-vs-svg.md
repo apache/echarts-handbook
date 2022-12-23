@@ -21,6 +21,8 @@ ECharts 从初始一直使用 Canvas 绘制图表。而 [ECharts v4.0](https://e
 
 注：当前某些特殊的渲染依然需要依赖 Canvas：如[炫光尾迹特效](${optionPath}series-lines.effect)、[带有混合效果的热力图](${mainSitePath}examples/editor.html?c=heatmap-bmap)等。
 
+我们在 [v5.3.0](${lang}/basics/release-note/5-3-0/#全新的-svg-渲染器) 中使用虚拟 DOM 技术对 SVG 渲染器进行了重构，从而使其渲染性能提升了 2~10 倍，在某些特殊场景中甚至能有数十倍的提升！参见 [#836](https://github.com/ecomfe/zrender/pull/836)。
+
 ## 如何使用渲染器
 
 如果是用如下的方式完整引入`echarts`，代码中已经包含了 SVG 渲染器和 Canvas 渲染器
