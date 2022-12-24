@@ -130,10 +130,12 @@ export default defineComponent({
     text-align: left;
 
     border: none;
-  }
-  pre[class*='language-']::selection,
-  code[class*='language-']::selection {
-    background: #337ab7;
+
+    &::selection,
+    & ::selection {
+      background: rgba(0, 116, 255, 0.8);
+      color: #fff;
+    }
   }
 
   .filename {
