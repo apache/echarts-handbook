@@ -41,7 +41,7 @@
 
 比如，图表容器是一个高度为 400px、宽度为页面 100% 的节点，你希望在浏览器宽度改变的时候，始终保持图表宽度是页面的 100%。
 
-这种情况下，可以监听页面的 `window.onresize` 事件获取浏览器大小改变的事件，然后调用 [`echartsInstance.resize`](${mainSitePath}api.html#echartsInstance.resize) 改变图表的大小。
+这种情况下，可以监听页面的 `resize` 事件获取浏览器大小改变的事件，然后调用 [`echartsInstance.resize`](${mainSitePath}api.html#echartsInstance.resize) 改变图表的大小。
 
 ```html
 <style>
@@ -57,9 +57,9 @@
 <div id="main"></div>
 <script type="text/javascript">
   var myChart = echarts.init(document.getElementById('main'));
-  window.onresize = function() {
+  window.addEventListener('resize', function() {
     myChart.resize();
-  };
+  });
 </script>
 ```
 

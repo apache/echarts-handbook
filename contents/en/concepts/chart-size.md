@@ -41,7 +41,7 @@ In some cases, we want to accordingly change the chart size while the size of co
 
 For instance, the container has a height of 400px and a width of 100% site width. If you are willing to change the site width while stable the chart width as 100% of it, try the following method.
 
-You can listen to `window.onresize` of the site to catch the event that the browser is resized. Then use [`echartsInstance.resize`](${mainSitePath}api.html#echartsInstance.resize) to resize the chart.
+You can listen to `resize` of the site to catch the event that the browser is resized. Then use [`echartsInstance.resize`](${mainSitePath}api.html#echartsInstance.resize) to resize the chart.
 
 ```html
 <style>
@@ -57,9 +57,9 @@ You can listen to `window.onresize` of the site to catch the event that the brow
 <div id="main"></div>
 <script type="text/javascript">
   var myChart = echarts.init(document.getElementById('main'));
-  window.onresize = function() {
+  window.addEventListener('resize', function() {
     myChart.resize();
-  };
+  });
 </script>
 ```
 
