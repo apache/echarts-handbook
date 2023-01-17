@@ -175,4 +175,4 @@ Here is an example of building a CodeSandbox with SVG for server-side rendering 
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
    ></iframe>
 
-As we can see, from the user experience point of view, there is almost no secondary rendering process, and the whole switching effect is very seamless. You can also use a library like [space-js](https://www.npmjs.com/package/pace-js) to display the loading progress bar during the loading of `echarts.js` as in the above example to solve the problem of no interactive feedback before the ECharts are fully loaded.
+As we can see, from the user experience point of view, there is almost no secondary rendering process, and the whole switching effect is very seamless. You can also use a library like [pace-js](https://www.npmjs.com/package/pace-js) to display the loading progress bar during the loading of `echarts.js` as in the above example to solve the problem of no interactive feedback before the ECharts are fully loaded.
