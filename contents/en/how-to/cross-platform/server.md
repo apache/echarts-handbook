@@ -5,7 +5,7 @@ Normally, Apache ECharts<sup>TM</sup> renders the chart dynamically in the brows
 - Reducing the FCP time and ensuring the chart is displayed immediately.
 - Embedding charts in the environments such as Markdown, PDF that do not support scripts.
 
-In these scenarios, ECharts offers both SVG and Canvas rendering solutions.
+In these scenarios, ECharts offers both SVG and Canvas server-side rendering (SSR) solutions.
 
 | Solution           | Rendering Result  | Pros              |
 | ----------------- | ----------------- | ----------------- |
@@ -14,7 +14,7 @@ In these scenarios, ECharts offers both SVG and Canvas rendering solutions.
 
 In general, the server-side SVG rendering solution should be preferred, or if SVG is not applicable, the Canvas rendering solution can be considered.
 
-Server-side rendering also has some limitations, especially some operations related to interaction cannot be supported. Therefore, if you have interaction requirements, you can refer to "Server-Side Rendering + Client-Side Secondary Rendering" below.
+Server-side rendering also has some limitations, especially some operations related to interaction cannot be supported. Therefore, if you have interaction requirements, you can refer to "Server-Side Rendering with Hydration" below.
 
 ## Server-Side SVG Rendering
 
@@ -152,7 +152,7 @@ echarts.setPlatformAPI({
 
 If your are using image from remote, we recommend that you prefetch the image via an http request to get `base64` before passing it in as the URL of the image, to ensure that the image is loaded when render.
 
-## Server-Side Rendering + Client-Side Secondary Rendering
+## Server-Side Rendering with Hydration
 
 Features that cannot be supported by server-side rendering include
 
