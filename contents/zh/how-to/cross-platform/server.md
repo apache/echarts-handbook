@@ -5,9 +5,18 @@
 - 需要缩短前端的渲染时间，保证第一时间显示图表
 - 需要在 Markdown, PDF 等不支持动态运行脚本的环境中嵌入图表
 
-在这些场景下，ECharts 也提供了多种服务端渲染的方案：
+在这些场景下，ECharts 也提供了两种服务端渲染的方案：SVG 渲染或 Canvas 渲染。
 
-## 服务端 SVG 字符串渲染
+| 渲染方案           | 渲染结果的形式  | 优点              |
+| ----------------- | ----------------- | ----------------- |
+| 服务端 SVG 渲染     | SVG 字符串 | 比 Canvas 图片体积更小；<br>矢量 SVG 图片不会模糊；<br>支持初始动画 |
+| 服务端 Canvas 渲染  | 图片       | 图片形式适用场景更广泛，对不支持 SVG 的场景可选择 |
+
+通常情况下，应优先考虑使用服务端 SVG 渲染方案，如果 SVG 不适用，也可以考虑 Canvas 渲染方案。
+
+使用服务端渲染也有一定的局限性，尤其是和交互相关的一些操作无法支持。因此，如果有交互需求，可参考下文的“服务端渲染 + 客户端二次渲染”。
+
+## 服务端 SVG 渲染
 
 如果你在使用 5.3.0 以及更新的版本，我们强烈推荐你使用 5.3.0 里新引入的零依赖的服务端 SVG 字符串渲染方案：
 
@@ -142,3 +151,28 @@ echarts.setPlatformAPI({
 ```
 
 如果你的图片是需要远程获取的，我们建议你通过 http 请求先预取该图片得到`base64`之后再作为图片的 URL 传入，这样可以保证在 Response 输出的时候图片是加载完成的。
+
+## 服务端渲染 + 客户端二次渲染
+
+服务端渲染无法支持的功能包括：
+
+- 动态改变数据
+- 高亮鼠标所在的数据项
+- 点击图例切换系列是否显示
+- 移动鼠标显示提示框
+- 其他交互相关的功能
+
+如果有相关需求，可以考虑先使用服务端渲染快速输出首屏图表，然后等待 `echarts.js` 加载完后，重新在客户端渲染同样的图表，这样就可以实现正常的交互效果和动态改变数据了。需要注意的是，在客户端渲染的时候，应开启 `tooltip: { show: true }` 之类的交互组件，并且用 `animation: 0` 关闭初始动画（初始动画应由服务端渲染结果的 SVG 动画完成）。
+
+下面是一个在 CodeSandbox 中搭建一个例子，先用 SVG 做服务端渲染，再用 Canvas 做客户端渲染的效果。建议点击“Open Sandbox”学习具体实现的代码。
+
+> 如果希望使用 Canvas 做服务端渲染，或使用 SVG 做客户端也是类似的，不再赘述。
+
+<iframe src="https://codesandbox.io/embed/apache-echarts-5-3-ssr-csr-0jvsdu?fontsize=14&hidenavigation=1&theme=dark"
+     style="width:100%; height:400px; border:0; border-radius: 4px; overflow:hidden;"
+     title="Apache ECharts 5.3 SSR + CSR"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+
+我们可以看到，从用户体验的角度，几乎感受不到二次渲染的过程，整个切换效果是非常无缝衔接的。你也可以像上面的例子中一样，在加载 `echarts.js` 的过程中使用 [pace-js](https://www.npmjs.com/package/pace-js) 之类的库实现显示加载进度条的效果，来解决 ECharts 尚未完全加载完之前没有交互反馈的问题。
