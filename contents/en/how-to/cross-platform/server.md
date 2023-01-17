@@ -5,9 +5,18 @@ Normally, Apache ECharts<sup>TM</sup> renders the chart dynamically in the brows
 - Reducing the FCP time and ensuring the chart is displayed immediately.
 - Embedding charts in the environments such as Markdown, PDF that do not support scripts.
 
-In these scenarios, ECharts also offers a variety of server-side rendering options.
+In these scenarios, ECharts offers both SVG and Canvas server-side rendering (SSR) solutions.
 
-## Server-Side String based SVG Rendering
+| Solution           | Rendering Result  | Pros              |
+| ----------------- | ----------------- | ----------------- |
+| Serverside SVG Rendering     | SVG string | Smaller than Canvas images;<br>Vector SVG images are not blurred;<br>Support for initial animation |
+| Serverside Canvas Rendering  | Image       | The image format is available for a wider range of scenarios, and is optional for scenarios that do not support SVG |
+
+In general, the server-side SVG rendering solution should be preferred, or if SVG is not applicable, the Canvas rendering solution can be considered.
+
+Server-side rendering also has some limitations, especially some operations related to interaction cannot be supported. Therefore, if you have interaction requirements, you can refer to "Server-Side Rendering with Hydration" below.
+
+## Server-Side SVG Rendering
 
 If you are using 5.3.0 and newer, we strongly recommend that you use the new zero-dependency server-side string based SVG rendering solution introduced in 5.3.0.
 
@@ -142,3 +151,28 @@ echarts.setPlatformAPI({
 ```
 
 If your are using image from remote, we recommend that you prefetch the image via an http request to get `base64` before passing it in as the URL of the image, to ensure that the image is loaded when render.
+
+## Server-Side Rendering with Hydration
+
+Features that cannot be supported by server-side rendering include
+
+- Dynamically changing data
+- Highlighting the data item where the mouse is hovered
+- Clicking on a legend to toggle whether the series is displayed or not
+- Moving the mouse to show a tooltip
+- Other interaction-related features
+
+If you have such requirements, you can consider using server-side rendering to quickly output the first screen chart, then wait for `echarts.js` to finish loading and re-render the same chart on the client side, so that you can achieve normal interaction effects and dynamically change the data. Note that when rendering on the client side, you should turn on interactive components like `tooltip: { show: true }` and turn off the initial animation with `animation: 0` (the initial animation should be done by the SVG animation of the rendered result on the server side).
+
+Here is an example of building a CodeSandbox with SVG for server-side rendering and Canvas for client-side rendering. It is recommended to click "Open Sandbox" to learn the code implementation.
+
+> If you want to use Canvas for server-side rendering or SVG for client-side rendering, it's similar, so I won't go over it again.
+
+<iframe src="https://codesandbox.io/embed/apache-echarts-5-3-ssr-csr-0jvsdu?fontsize=14&hidenavigation=1&theme=dark"
+     style="width:100%; height:400px; border:0; border-radius: 4px; overflow:hidden;"
+     title="Apache ECharts 5.3 SSR + CSR"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+
+As we can see, from the user experience point of view, there is almost no secondary rendering process, and the whole switching effect is very seamless. You can also use a library like [pace-js](https://www.npmjs.com/package/pace-js) to display the loading progress bar during the loading of `echarts.js` as in the above example to solve the problem of no interactive feedback before the ECharts are fully loaded.
