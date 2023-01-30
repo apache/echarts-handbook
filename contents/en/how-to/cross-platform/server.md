@@ -46,7 +46,7 @@ The overall code structure is the almost same as in the browser, starting with `
 - Then in the third parameter of `init` we need to tell ECharts that we need to enable server-side rendering mode by specifying `ssr: true` in the display. Then ECharts will know it needs to disable the animation loop and event modules.
 - We also have to specify the height and width of the chart, so if your chart size needs to be responsive to the container, you may need to think about whether server-side rendering is appropriate for your scenario.
 
-In the browser ECharts automatically renders the result to the page after `setOption` and then determines at each frame if there is an animation that needs to be redrawn, but in NodeJS we don't do this after setting `ssr: true`. Instead we use `renderToSVGString` to render the current chart to an SVG string, which can then be returned to the front-end via HTTP Response or saved to a local file.
+In the browser ECharts automatically renders the result to the page after `setOption` and then determines at each frame if there is an animation that needs to be redrawn, but in NodeJS we don't do this after setting `ssr: true`. Instead, we use `renderToSVGString` to render the current chart to an SVG string, which can then be returned to the front-end via HTTP Response or saved to a local file.
 
 Response to the browser
 
@@ -150,7 +150,7 @@ echarts.setPlatformAPI({
 });
 ```
 
-If your are using image from remote, we recommend that you prefetch the image via an http request to get `base64` before passing it in as the URL of the image, to ensure that the image is loaded when render.
+If you are using images from remote, we recommend that you prefetch the image via an http request to get `base64` before passing it on as the URL of the image, to ensure that the image is loaded when render.
 
 ## Server-Side Rendering with Hydration
 
