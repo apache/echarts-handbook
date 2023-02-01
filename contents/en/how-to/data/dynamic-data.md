@@ -2,7 +2,7 @@
 
 ## Asynchronous Loading
 
-Data in [Getting Started Example](${lang}/get-started) is directly updated by using `setOption`. But in many cases, data need to be filled by asynchronous loading frequently. `ECharts` can implement asynchronous loading in a simple way. You can get data asynchronously through a function such as jQuery and use `setOption` to fill in data and configs after the chart initialized.
+Data in [Getting Started Example](${lang}/get-started) is directly updated by using `setOption`. But in many cases, the data needs to be filled by asynchronous loading frequently. `ECharts` can implement asynchronous loading in a simple way. You can get data asynchronously through a function such as jQuery and use `setOption` to fill in data and configs after the chart initialized.
 
 ```js
 var myChart = echarts.init(document.getElementById('main'));
@@ -106,7 +106,7 @@ Here is the effect:
 
 ECharts was driven by data, change in data will drive changes in the presentation of the chart. Therefore, It's surprisingly simple to implement a dynamic update.
 
-All data's update was implemented by [setOption](${mainSitePath}/api.html#echartsInstance.setOption). You only need to fetch the data periodically. ECharts will find the difference between two groups of data to use the proper way to choose the animation.
+All data's updates were implemented by [setOption](${mainSitePath}/api.html#echartsInstance.setOption). You only need to fetch the data periodically. ECharts will find the difference between two groups of data to use the proper way to choose the animation.
 
 Check the following example.
 
