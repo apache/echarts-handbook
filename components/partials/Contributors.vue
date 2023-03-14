@@ -41,6 +41,7 @@
         <img
           :alt="contributor"
           :src="`https://avatars.githubusercontent.com/${contributor}?size=60`"
+          loading="lazy"
         />
         <span>{{ contributor }}</span>
       </a>
