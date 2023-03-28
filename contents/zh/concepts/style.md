@@ -282,7 +282,7 @@ option = {
 
 ## 高亮的样式：emphasis
 
-在鼠标悬浮到图形元素上时，一般会出现高亮的样式。默认情况下，高亮的样式是根据普通样式自动生成的。但是高亮的样式也可以自己定义，主要是通过 [emphasis](${optionPath}series-bar.emphasis) 属性来定制。[emphsis](${optionPath}series-bar.emphasis) 中的结构，和普通样式的结构相同，例如：
+在鼠标悬浮到图形元素上时，一般会出现高亮的样式。默认情况下，高亮的样式是根据普通样式自动生成的。但是高亮的样式也可以自己定义，主要是通过 [emphasis](${optionPath}series-bar.emphasis) 属性来定制。[emphasis](${optionPath}series-bar.emphasis) 中的结构，和普通样式的结构相同，例如：
 
 ```js
 option = {
