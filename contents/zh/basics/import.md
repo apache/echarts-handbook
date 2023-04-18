@@ -91,22 +91,14 @@ myChart.setOption({
 import * as echarts from 'echarts/core';
 import {
   BarChart,
-  // 系列类型的定义后缀都为 SeriesOption
-  BarSeriesOption,
-  LineChart,
-  LineSeriesOption
+  LineChart
 } from 'echarts/charts';
 import {
   TitleComponent,
-  // 组件类型的定义后缀都为 ComponentOption
-  TitleComponentOption,
   TooltipComponent,
-  TooltipComponentOption,
   GridComponent,
-  GridComponentOption,
   // 数据集组件
   DatasetComponent,
-  DatasetComponentOption,
   // 内置数据转换器组件 (filter, sort)
   TransformComponent
 } from 'echarts/components';
@@ -114,8 +106,10 @@ import { LabelLayout, UniversalTransition } from 'echarts/features';
 import { CanvasRenderer } from 'echarts/renderers';
 import type { 
   ComposeOption, 
+  // 系列类型的定义后缀都为 SeriesOption
   BarSeriesOption, 
   LineSeriesOption, 
+  // 组件类型的定义后缀都为 ComponentOption
   TitleComponentOption,
   TooltipComponentOption,
   GridComponentOption,

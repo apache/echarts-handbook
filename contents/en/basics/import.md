@@ -99,22 +99,14 @@ For developers who are using TypeScript to develop ECharts, type interface is pr
 import * as echarts from 'echarts/core';
 import {
   BarChart,
-  // The series option types are defined with the SeriesOption suffix
-  BarSeriesOption,
   LineChart,
-  LineSeriesOption
 } from 'echarts/charts';
 import {
   TitleComponent,
-  // The component option types are defined with the ComponentOption suffix
-  TitleComponentOption,
   TooltipComponent,
-  TooltipComponentOption,
   GridComponent,
-  GridComponentOption,
   // Dataset
   DatasetComponent,
-  DatasetComponentOption,
   // Built-in transform (filter, sort)
   TransformComponent
 } from 'echarts/components';
@@ -122,9 +114,11 @@ import { LabelLayout, UniversalTransition } from 'echarts/features';
 import { CanvasRenderer } from 'echarts/renderers';
 import type { 
   ComposeOption, 
+  // The series option types are defined with the SeriesOption suffix
   BarSeriesOption, 
-  LineSeriesOption, 
-  TitleComponentOption,
+  LineSeriesOption,
+  // The component option types are defined with the ComponentOption suffix
+  TitleComponentOption, 
   TooltipComponentOption,
   GridComponentOption,
   DatasetComponentOption
