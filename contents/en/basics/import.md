@@ -112,12 +112,12 @@ import {
 } from 'echarts/components';
 import { LabelLayout, UniversalTransition } from 'echarts/features';
 import { CanvasRenderer } from 'echarts/renderers';
-import {
+import type {
   // The series option types are defined with the SeriesOption suffix
   BarSeriesOption, 
   LineSeriesOption,
 } from 'echarts/charts';
-import {
+import type {
   // The component option types are defined with the ComponentOption suffix
   TitleComponentOption, 
   TooltipComponentOption,

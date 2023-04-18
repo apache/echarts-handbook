@@ -104,12 +104,12 @@ import {
 } from 'echarts/components';
 import { LabelLayout, UniversalTransition } from 'echarts/features';
 import { CanvasRenderer } from 'echarts/renderers';
-import {
+import type {
   // 系列类型的定义后缀都为 SeriesOption
   BarSeriesOption, 
   LineSeriesOption
 } from 'echarts/charts';
-import {
+import type {
   // 组件类型的定义后缀都为 ComponentOption
   TitleComponentOption,
   TooltipComponentOption,
