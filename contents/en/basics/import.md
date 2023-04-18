@@ -112,17 +112,21 @@ import {
 } from 'echarts/components';
 import { LabelLayout, UniversalTransition } from 'echarts/features';
 import { CanvasRenderer } from 'echarts/renderers';
-import type { 
-  ComposeOption, 
+import {
   // The series option types are defined with the SeriesOption suffix
   BarSeriesOption, 
   LineSeriesOption,
+} from 'echarts/charts';
+import {
   // The component option types are defined with the ComponentOption suffix
   TitleComponentOption, 
   TooltipComponentOption,
   GridComponentOption,
   DatasetComponentOption
-} from 'echarts';
+} from 'echarts/components';
+import type { 
+  ComposeOption, 
+} from 'echarts/core';
 
 // Create an Option type with only the required components and charts via ComposeOption
 type ECOption = ComposeOption<
