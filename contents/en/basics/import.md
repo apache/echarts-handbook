@@ -120,9 +120,18 @@ import {
 } from 'echarts/components';
 import { LabelLayout, UniversalTransition } from 'echarts/features';
 import { CanvasRenderer } from 'echarts/renderers';
+import type { 
+  ComposeOption, 
+  BarSeriesOption, 
+  LineSeriesOption, 
+  TitleComponentOption,
+  TooltipComponentOption,
+  GridComponentOption,
+  DatasetComponentOption
+} from 'echarts';
 
 // Create an Option type with only the required components and charts via ComposeOption
-type ECOption = echarts.ComposeOption<
+type ECOption = ComposeOption<
   | BarSeriesOption
   | LineSeriesOption
   | TitleComponentOption
