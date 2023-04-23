@@ -329,7 +329,7 @@ This is a warning alert.
 </md-alert>
 
 ```markdown
-<md-alert type="warning">
+<md-alert type="danger">
 This is a danger alert.
 </md-alert>
 ```
