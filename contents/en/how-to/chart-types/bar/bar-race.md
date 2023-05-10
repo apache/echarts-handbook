@@ -2,7 +2,7 @@
 
 ## Related Options
 
-Bar race is a chart that shows changes in the ranking of data over time and it is supported by default sinde ECharts 5.
+Bar race is a chart that shows changes in the ranking of data over time and it is supported by default since ECharts 5.
 
 > Bar race charts usually use horizontal bars. If you want to use vertical bars, just take the X axis and Y axis in this tutorial to the opposite.
 
