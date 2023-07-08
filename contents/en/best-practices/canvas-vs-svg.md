@@ -12,7 +12,7 @@ Generally, Canvas is more suitable for charts with a large number of elements (h
 
 The choice of renderer can be based on a combination of hardware and software environment, data volume and functional requirements.
 
-- In scenarios where the hardware and software environment is good and the amount of data is not too large, both renderers will work and there is not much need to agonies over them.
+- In scenarios where the hardware and software environment is good and the amount of data is not too large, both renderers will work and there is not much need to agonize over them.
 - In scenarios where the environment is poor and performance issues arise that require optimization, experimentation can be used to determine which renderer to use. For example, there are these experiences.
   - In situations where many instances of ECharts have to be created and the browser is prone to crashing (probably because the number of Canvas is causing the memory footprint to exceed the phone's capacity), the SVG renderer can be used to make improvements. Roughly speaking, the SVG renderer may work better if the chart is running on a low-end Android, or if we are using specific charts such as the [LiquidFill chart](https://ecomfe.github.io/echarts-liquidfill/example/).
   - For larger amounts of data (>1k is an experience value), canvas renderer is always recommended.
