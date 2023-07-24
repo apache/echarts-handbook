@@ -142,6 +142,21 @@ IE8 is no longer supported by `v5`. We no longer maintain and upgrade the previo
 
 ### Configuration Item Adjustment
 
+#### Axis-Line and Axis-Tick Are Hidden by Default
+
+The axis line and axis ticks of the Y axis has been hidden by default since `v5`. If you prefer the previous style, you will need to explicitly configure as follows,
+
+```js
+yAxis: {
+  axisLine: {
+    show: true
+  },
+  axisTick: {
+    show: true
+  }
+}
+```
+
 #### Visual Style Settings Priority Changes
 
 The priority of the visuals between [visualMap component](${optionPath}visualMap) and [itemStyle](${optionPath}series-scatter.itemStyle) | [lineStyle](${optionPath}series-scatter.lineStyle) | [areaStyle](${optionPath}series-scatter.areaStyle) are reversed since `v5`.

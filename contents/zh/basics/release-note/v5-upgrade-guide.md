@@ -144,6 +144,21 @@ require('echarts/lib/component/aria');
 
 ### 配置项调整
 
+#### Y 轴默认不显示轴线和刻度线
+
+`v5` 去掉了直角坐标系最左侧数据轴 Y 轴的默认显示。如果仍希望展示轴线和刻度线，需要显式配置：
+
+```js
+yAxis: {
+  axisLine: {
+    show: true
+  },
+  axisTick: {
+    show: true
+  }
+}
+```
+
 #### 视觉样式设置的优先级改变
 
 `v5` 对调了 [visualMap 组件](${optionPath}visualMap) 和 [itemStyle](${optionPath}series-scatter.itemStyle) | [lineStyle](${optionPath}series-scatter.lineStyle) | [areaStyle](${optionPath}series-scatter.areaStyle) 的视觉样式优先级。

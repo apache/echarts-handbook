@@ -42,6 +42,10 @@ Let's look at the new version of the light and dark theme styles using the most 
 <img data-src="images/feature-v5/new-theme-light.png" width="500px" />
 <img data-src="images/feature-v5/new-theme-dark.png" width="500px" />
 
+For the line chart, there is an intuitive style change that the axis line and axis tick of the y axis are hidden by default. Look at the following image, the left one is the default style of the line chart in `v4` and the right one is the new style in `v5`. In fact, we already can figure out the values just by the split lines, so we hope to hide unnecessary elements to deliver the chart message in a clearer way.
+
+<img data-src="images/feature-v5/yAxis-default-line-change.webp" width="500px" />
+
 For the data area zoom, timeline and other interactive components, we also designed a new style and provide a better interactive experience:
 
 <img data-src="images/feature-v5/dataZoom.png" width="500px" />
