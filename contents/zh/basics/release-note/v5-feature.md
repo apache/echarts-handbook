@@ -44,7 +44,7 @@ Apache ECharts 5 新增支持动态排序柱状图（bar-racing）以及动态�
 
 对于折线图，我们做了比较直观的一个改变就是去掉了直角坐标系最左侧数据轴Y轴的默认显示。左侧是原本默认的折线图的样式，其实通过中间的几条数据分割线，我们就已经可以定位折线图的每个数据值。因此我们希望通过减少不必要的图形元素，来达到更清晰地传递信息的目的。
 
-<img data-src="images/feature-v5/yAxis-default-line-change.webp" width="500px" />
+<img data-src="images/feature-v5/yAxis-default-style-change.webp" width="500px" />
 
 对于数据区域缩放，时间轴等交互组件，我们也设计了全新的样式并且提供了更好的交互体验：
 

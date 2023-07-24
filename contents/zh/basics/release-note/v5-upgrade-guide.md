@@ -150,6 +150,8 @@ require('echarts/lib/component/aria');
 
 ```js
 yAxis: {
+  type: 'value',
+  // 显式设置 `axisLine.show` 和 `axisTick.show` 为 `true`
   axisLine: {
     show: true
   },

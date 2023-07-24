@@ -142,12 +142,14 @@ IE8 is no longer supported by `v5`. We no longer maintain and upgrade the previo
 
 ### Configuration Item Adjustment
 
-#### Axis-Line and Axis-Tick Are Hidden by Default
+#### Axis-Line and Axis-Tick of Y-Axis (Value Axis) Are Hidden by Default
 
-The axis line and axis ticks of the Y axis has been hidden by default since `v5`. If you prefer the previous style, you will need to explicitly configure as follows,
+The axis line and axis ticks of the Y axis (`value` axis) has been hidden by default since `v5`. If you prefer the previous style, you will need to explicitly configure as follows,
 
 ```js
 yAxis: {
+  type: 'value',
+  // explicitly set `axisLine.show` & `axisTick.show` as `true`
   axisLine: {
     show: true
   },
