@@ -63,6 +63,8 @@ You can listen to `resize` of the site to catch the event that the browser is re
 </script>
 ```
 
+> Tips：Sometimes we may adjust the container size by JS/CSS, but this doesn't change the page size so that the `resize` event won't be triggered. You can try the [`ResizeObserver`](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver) API to cover this scenario.
+
 ### State a Specific Chart Size
 
 Except for calling `resize()` without parameters, you can state the height and width to implement the chart size different from the size of the container.

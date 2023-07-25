@@ -63,6 +63,8 @@
 </script>
 ```
 
+> 小贴士：有时候我们可能会通过 JS 或 CSS 调整容器大小，由于页面大小并未发生改变，因此 `resize` 事件将不会被触发。如果有需要覆盖这种情况，可以借助浏览器的 [`ResizeObserver`](https://developer.mozilla.org/zh-CN/docs/Web/API/ResizeObserver) API 来实现更细粒度的监听。
+
 ### 为图表设置特定的大小
 
 除了直接调用 `resize()` 不含参数的形式之外，还可以指定宽度和高度，实现图表大小不等于容器大小的效果。
