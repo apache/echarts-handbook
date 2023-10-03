@@ -29,7 +29,7 @@ If some behavior is different from the documentation or isn't what you expected,
 
 #### How-To Questions
 
-If it's not a bug, but you don't know how to achieve something, try the <a href="https://stackoverflow.com">stackoverflow.com</a>
+If it's not a bug, but you don't know how to achieve something, try the <a href="https://stackoverflow.com/questions/tagged/echarts">stackoverflow.com</a>
 
 If you don't get an answer, you can also send an email to [dev@echarts.apache.org](mailto:dev@echarts.apache.org). In order for more people to understand your question and to get help in future searches, it is highly recommended to write the email in English.
 

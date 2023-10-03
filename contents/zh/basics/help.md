@@ -8,10 +8,10 @@ ECharts 有非常大量的用户，所以你遇到过的问题很可能别人在
 
 因此，在做其他操作前，请确保现有文档等资料无法解决你的问题。可以尝试查看或搜索的资料包括：
 
-- [API](${mainSitePath}/api.html)
-- [配置项手册](${mainSitePath}/option.html)：可以尝试使用搜索功能
+- [API](${mainSitePath}api.html)
+- [配置项手册](${mainSitePath}option.html)：可以尝试使用搜索功能
 - 本手册的文章
-- [常见问题](${mainSitePath}/faq.html)
+- [常见问题](${mainSitePath}faq.html)
 - 在 [GitHub issue](https://github.com/apache/echarts/issues) 中搜索关键字
 - 使用搜索引擎搜索关键字
 
@@ -29,7 +29,7 @@ ECharts 有非常大量的用户，所以你遇到过的问题很可能别人在
 
 #### 咨询类问题
 
-如果不是 bug，而是不知道如何实现某种效果，可以尝试在 <a href="https://stackoverflow.com">stackoverflow.com</a>、<a href="https://www.oschina.net/question/tag/echarts">开源中国</a> 或 <a href="https://segmentfault.com/t/echarts">segmentfault.com</a> 等问答平台上提问。
+如果不是 bug，而是不知道如何实现某种效果，可以尝试在 <a href="https://stackoverflow.com/questions/tagged/echarts">stackoverflow.com</a>、<a href="https://www.oschina.net/question/tag/echarts">开源中国</a> 或 <a href="https://segmentfault.com/t/echarts">SegmentFault 思否</a> 等问答平台上提问。
 
 如果没能得到答复，也可以发送邮件至邮件组 [dev@echarts.apache.org](mailto:dev@echarts.apache.org)。为了让更多人理解你的问题，并且在将来搜索的时候得到帮助，强烈建议使用英文发送邮件。
 
