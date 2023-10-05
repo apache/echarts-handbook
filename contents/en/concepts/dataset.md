@@ -485,11 +485,11 @@ var option = {
   series: [
     {
       // Use 2nd dataset
-      datasetIndex: 2
+      datasetIndex: 1
     },
     {
       // Use 1st dataset
-      datasetIndex: 1
+      datasetIndex: 0
     }
   ]
 };
