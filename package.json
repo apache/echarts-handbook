@@ -45,7 +45,7 @@
     "eslint-plugin-nuxt": "^4.0.0",
     "eslint-plugin-prettier": "^4.2.1",
     "node-fetch": "^2.6.7",
-    "postcss": "^8.4.19",
+    "postcss": "^8.4.31",
     "raw-loader": "^4.0.2"
   }
 }
