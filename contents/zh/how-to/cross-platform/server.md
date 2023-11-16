@@ -38,6 +38,10 @@ chart.setOption({
 
 // 输出字符串
 const svgStr = chart.renderToSVGString();
+
+// 如果不再需要图表，调用 dispose 以释放内存
+chart.dispose();
+chart = null;
 ```
 
 整体使用的代码结构跟在浏览器中使用一样，首先是`init`初始化一个图表实例，然后通过`setOption`设置图表的配置项。但是`init`传入的参数会跟在跟浏览器中使用有所不同：
@@ -112,11 +116,17 @@ chart.setOption({
   //...
 });
 
+const buffer = renderChart().toBuffer('image/png');
+
+// 如果不再需要图表，调用 dispose 以释放内存
+chart.dispose();
+chart = null;
+
 // 通过 Response 输出 PNG 图片
 res.writeHead(200, {
   'Content-Type': 'image/png'
 });
-res.write(renderChart().toBuffer('image/png'));
+res.write(buffer);
 res.end();
 ```
 

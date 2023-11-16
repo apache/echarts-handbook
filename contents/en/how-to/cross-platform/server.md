@@ -38,6 +38,10 @@ chart.setOption({
 
 // Output a string
 const svgStr = chart.renderToSVGString();
+
+// If chart is no longer useful, consider dispose it to release memory.
+chart.dispose();
+chart = null;
 ```
 
 The overall code structure is the almost same as in the browser, starting with `init` to initialise a chart example and then setting the configuration items for the chart via `setOption`. However, the parameters passed to `init` will be different from those used in the browser.
@@ -112,11 +116,17 @@ chart.setOption({
   //...
 });
 
+const buffer = renderChart().toBuffer('image/png');
+
+// If chart is no longer useful, consider dispose it to release memory.
+chart.dispose();
+chart = null;
+
 // Output the PNG image via Response
 res.writeHead(200, {
   'Content-Type': 'image/png'
 });
-res.write(renderChart().toBuffer('image/png'));
+res.write(buffer);
 res.end();
 ```
 
