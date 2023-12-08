@@ -41,54 +41,7 @@ export default {
   /*
    ** Headers of the page
    */
-  head() {
-    const locale = this.$i18n.locale;
-    const isCN = locale === 'zh';
-    const appName = isCN ? '使用手册' : 'Handbook'
-    return {
-      titleTemplate: chunk => `${chunk ? chunk + ' - ' : ''}${appName} - Apache ECharts`,
-      link: [
-        {
-          rel: 'shortcut icon',
-          type: 'image/png',
-          href: `https://echarts.apache.org/${locale}/images/favicon.png`
-        },
-        {
-          rel: 'stylesheet',
-          href: isCN
-            ? 'https://lib.baomitu.com/twitter-bootstrap/3.4.1/css/bootstrap.min.css'
-            : 'https://fastly.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css'
-        },
-        {
-          rel: 'stylesheet',
-          href: `https://echarts.apache.org/${locale}/css/main.css`
-        },
-        {
-          rel: 'stylesheet',
-          href: isCN
-            ? 'https://lib.baomitu.com/docsearch.js/2.6.3/docsearch.min.css'
-            : 'https://fastly.jsdelivr.net/npm/docsearch.js@2.6.3/dist/cdn/docsearch.min.css'
-        }
-      ],
-      script: [
-        {
-          src: isCN
-            ? 'https://cdn.staticfile.org/jquery/3.7.1/jquery.min.js'
-            : 'https://fastly.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js'
-        },
-        {
-          src: isCN
-            ? 'https://lib.baomitu.com/twitter-bootstrap/3.4.1/js/bootstrap.min.js'
-            : 'https://fastly.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js'
-        },
-        {
-          src: isCN
-            ? 'https://lib.baomitu.com/docsearch.js/2.6.3/docsearch.min.js'
-            : 'https://fastly.jsdelivr.net/npm/docsearch.js@2.6.3/dist/cdn/docsearch.min.js'
-        }
-      ]
-    }
-  },
+  head: {},
   tailwindcss: {},
   /*
    ** Customize the progress-bar color

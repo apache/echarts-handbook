@@ -28,20 +28,71 @@ export default {
     Navbar
   },
 
+  head() {
+    const locale = (this as any).$i18n.locale;
+    const isCN = locale === 'zh';
+    const appName = isCN ? '使用手册' : 'Handbook'
+    return {
+      titleTemplate: chunk => `${chunk ? chunk + ' - ' : ''}${appName} - Apache ECharts`,
+      htmlAttrs: {
+        lang: isCN ? 'zh-CN' : 'en'
+      },
+      link: [
+        {
+          rel: 'shortcut icon',
+          type: 'image/png',
+          href: `https://echarts.apache.org/${locale}/images/favicon.png`
+        },
+        {
+          rel: 'stylesheet',
+          href: isCN
+            ? 'https://lib.baomitu.com/twitter-bootstrap/3.4.1/css/bootstrap.min.css'
+            : 'https://fastly.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css'
+        },
+        {
+          rel: 'stylesheet',
+          href: `https://echarts.apache.org/${locale}/css/main.css`
+        },
+        {
+          rel: 'stylesheet',
+          href: isCN
+            ? 'https://lib.baomitu.com/docsearch.js/2.6.3/docsearch.min.css'
+            : 'https://fastly.jsdelivr.net/npm/docsearch.js@2.6.3/dist/cdn/docsearch.min.css'
+        }
+      ],
+      script: [
+        {
+          src: isCN
+            ? 'https://cdn.staticfile.org/jquery/3.7.1/jquery.min.js'
+            : 'https://fastly.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js'
+        },
+        {
+          src: isCN
+            ? 'https://lib.baomitu.com/twitter-bootstrap/3.4.1/js/bootstrap.min.js'
+            : 'https://fastly.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js'
+        },
+        {
+          src: isCN
+            ? 'https://lib.baomitu.com/docsearch.js/2.6.3/docsearch.min.js'
+            : 'https://fastly.jsdelivr.net/npm/docsearch.js@2.6.3/dist/cdn/docsearch.min.js'
+        }
+      ],
+      noscript: [
+        {
+          body: true,
+          innerHTML: '<div class="no-script"><strong>很抱歉，Apache ECharts 网站需要启用 JavaScript 才能正常运行。</strong></div>'
+        }
+      ],
+      __dangerouslyDisableSanitizers: ['noscript']
+    }
+  },
+
   mounted() {
     // This help scroll to the hash
     const hash = location.hash
     location.hash = ''
     location.hash = hash
-  },
-
-  computed: {
-    // posts(): string {
-    //   return this.$store.state.posts.zh
-    // }
-  },
-
-  methods: {}
+  }
 }
 </script>
 
