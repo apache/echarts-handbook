@@ -47,13 +47,14 @@ import CodeBlockCopyClipboard from './CodeBlockCopyClipboard.vue'
 
 declare const echarts: any
 
-function ensureECharts() {
+function ensureECharts(locale) {
   if (typeof echarts === 'undefined') {
+    const isCN = locale === 'zh'
+    const lib = process.env.NUXT_ENV_DEPLOY === 'asf' ? 'echarts' : 'echarts-nightly'
     return loadScriptsAsync([
-      // 'https://fastly.jsdelivr.net/npm/echarts/dist/echarts.js'
-      process.env.NUXT_ENV_DEPLOY === 'asf'
-        ? 'https://fastly.jsdelivr.net/npm/echarts/dist/echarts.min.js'
-        : 'https://fastly.jsdelivr.net/npm/echarts-nightly/dist/echarts.min.js'
+      isCN
+        ? `https://registry.npmmirror.com/${lib}/latest/files/dist/echarts.min.js`
+        : `https://fastly.jsdelivr.net/npm/${lib}@latest/dist/echarts.min.js`
     ]).then(() => {})
   }
   return Promise.resolve()
@@ -103,7 +104,7 @@ export default defineComponent({
       if (props.height) {
         container.value!.style.height = props.height + 'px'
       }
-      ensureECharts().then(() => {
+      ensureECharts((context.root as any).$i18n.locale).then(() => {
         if (!sandbox) {
           addListener(unref(previewContainer)!, resize)
           sandbox = createSandbox()

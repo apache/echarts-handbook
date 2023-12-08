@@ -14,11 +14,6 @@
           </div>
         </div>
       </div>
-
-      <link
-        rel="stylesheet"
-        href="//fastly.jsdelivr.net/npm/highlight.js@9.12.0/styles/github-gist.min.css"
-      />
     </div>
   </div>
 </template>
