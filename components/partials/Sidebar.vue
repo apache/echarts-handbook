@@ -2,7 +2,7 @@
   <div :class="`bd-sidebar col-sm-3 col-md-2  ${sidebarOpen ? '' : 'closed'}`">
     <div class="sidebar-search">
       <input
-        id="handbook-search-intput"
+        id="handbook-search-input"
         type="search"
         :placeholder="$t('searchHandbook')"
       />
@@ -112,14 +112,16 @@ export default Vue.extend({
     })
     // @ts-ignore
     docsearch({
-      apiKey: '6ade5f1ff34e94690f9ea38cddcc2f55',
+      appId: atob('MTRTWVJJRkVUTw'),
+      apiKey: atob('MDY2ZGZiZDg3MTVlN2E0NGNjNjA4N2UyOTE0Njk1ZDE'),
       indexName: 'apache_echarts',
-      inputSelector: '#handbook-search-intput',
+      inputSelector: '#handbook-search-input',
       algoliaOptions: {
         // @ts-ignore
         facetFilters: [`lang:${this.$i18n.locale}`]
       },
-      debug: false // Set debug to true if you want to inspect the dropdown
+      // Set debug to true if you want to inspect the dropdown
+      // debug: true
     })
   }
 })
