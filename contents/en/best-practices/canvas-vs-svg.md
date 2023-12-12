@@ -41,7 +41,7 @@ import { SVGRenderer, CanvasRenderer } from 'echarts/renderers';
 echarts.use([SVGRenderer, CanvasRenderer]);
 ```
 
-Then you can set the [renderer parameter](${mainSitePath}api.html#echarts.init) when initializing the chart.
+Then you can set the [renderer parameter](${mainSitePath}api.html#echarts.init) when initializing the chart and you can use it.
 
 ```js
 // Use the Canvas renderer (default)
