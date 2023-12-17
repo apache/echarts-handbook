@@ -88,9 +88,21 @@
 import Vue from 'vue'
 import SidebarNavItem from './SidebarNavItem.vue'
 
+const docsearchAppId = '14SYRIFETO'
+
 export default Vue.extend({
   components: {
     SidebarNavItem
+  },
+
+  head: {
+    link: [
+      {
+        rel: 'preconnect',
+        href: `https://${docsearchAppId.toLowerCase()}-dsn.algolia.net`,
+        crossOrigin: ''
+      }
+    ]
   },
 
   data() {
@@ -112,7 +124,7 @@ export default Vue.extend({
     })
     // @ts-ignore
     docsearch({
-      appId: atob('MTRTWVJJRkVUTw'),
+      appId: docsearchAppId,
       apiKey: atob('MDY2ZGZiZDg3MTVlN2E0NGNjNjA4N2UyOTE0Njk1ZDE'),
       indexName: 'apache_echarts',
       inputSelector: '#handbook-search-input',
