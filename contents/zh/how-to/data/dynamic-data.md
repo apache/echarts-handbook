@@ -106,7 +106,7 @@ $.get('data.json').done(function (data) {
 
 ECharts 由数据驱动，数据的改变驱动图表展现的改变，因此动态数据的实现也变得异常简单。
 
-所有数据的更新都通过 [setOption](${mainSitePath}/api.html#echartsInstance.setOption)实现，你只需要定时获取数据，[setOption](~api.html#echartsInstance.setOption) 填入数据，而不用考虑数据到底产生了哪些变化，ECharts 会找到两组数据之间的差异然后通过合适的动画去表现数据的变化。
+所有数据的更新都通过 [setOption](${mainSitePath}/api.html#echartsInstance.setOption)实现，你只需要定时获取数据，[setOption](${mainSitePath}/api.html#echartsInstance.setOption) 填入数据，而不用考虑数据到底产生了哪些变化，ECharts 会找到两组数据之间的差异然后通过合适的动画去表现数据的变化。
 
 具体可以看下面示例：
 
