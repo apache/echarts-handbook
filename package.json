@@ -4,13 +4,13 @@
   "description": "Apache ECharts Handbook",
   "license": "Apache-2.0",
   "scripts": {
-    "dev": "nuxt",
-    "start": "nuxt start",
+    "dev": "cross-env NODE_OPTIONS=--openssl-legacy-provider nuxt",
+    "start": "cross-env NODE_OPTIONS=--openssl-legacy-provider nuxt start",
     "prepare-generate": "node build/generate-contributors.js && node build/generate",
-    "build:gh": "npm run prepare-generate && NUXT_ENV_DEPLOY=gh nuxt generate",
-    "build:local": "npm run prepare-generate && NUXT_ENV_DEPLOY=local nuxt generate",
-    "build:localsite": "npm run prepare-generate && NUXT_ENV_DEPLOY=localsite nuxt generate",
-    "build:asf": "npm run prepare-generate && NUXT_ENV_DEPLOY=asf nuxt generate"
+    "build:gh": "npm run prepare-generate && cross-env NODE_OPTIONS=--openssl-legacy-provider NUXT_ENV_DEPLOY=gh nuxt generate",
+    "build:local": "npm run prepare-generate && cross-env NODE_OPTIONS=--openssl-legacy-provider NUXT_ENV_DEPLOY=local nuxt generate",
+    "build:localsite": "npm run prepare-generate && cross-env NODE_OPTIONS=--openssl-legacy-provider NUXT_ENV_DEPLOY=localsite nuxt generate",
+    "build:asf": "npm run prepare-generate && cross-env NODE_OPTIONS=--openssl-legacy-provider NUXT_ENV_DEPLOY=asf nuxt generate"
   },
   "dependencies": {
     "@nuxt/types": "^2.15.8",
