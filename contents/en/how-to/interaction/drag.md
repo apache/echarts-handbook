@@ -87,7 +87,7 @@ myChart.setOption({
 });
 ```
 
-In the code above, API [convertToPixel](api.html#echartsInstance.convertToPixel) is used to convert data to its "pixel coodinate", based on which each graphic elements can be rendered on canvas. The term "pixel coodinate" means the coordinate is in canvas pixel, whose origin is the top-left of the canvas. In the sentence `myChart.convertToPixel('grid', dataItem)`, the first parameter `'grid'` indicates that `dataItem` should be converted in the first [grid component (cartesian)](${optionPath}grid).
+In the code above, API [convertToPixel](${mainSitePath}api.html#echartsInstance.convertToPixel) is used to convert data to its "pixel coodinate", based on which each graphic elements can be rendered on canvas. The term "pixel coodinate" means the coordinate is in canvas pixel, whose origin is the top-left of the canvas. In the sentence `myChart.convertToPixel('grid', dataItem)`, the first parameter `'grid'` indicates that `dataItem` should be converted in the first [grid component (cartesian)](${optionPath}grid).
 
 **Notice:** `convertToPixel` should not be called before the first time that `setOption` called. Namely, it can only be used after coordinate systems (grid/polar/...) initialized.
 

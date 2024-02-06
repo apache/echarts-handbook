@@ -83,6 +83,8 @@ myChart.setOption({
 
 我们在示例编辑页的“完整代码”标签提供了非常方便的生成按需引入代码的功能。这个功能会根据当前的配置项动态生成最小的按需引入的代码。你可以直接在你的项目中使用。
 
+> v5.5.0 版本开始使用 ESM 作为默认的模块规范，查看可能的 [Breaking Changes](https://github.com/apache/echarts/pull/19513#issuecomment-1916237700) 以及 [Pull Request](https://github.com/apache/echarts/pull/19513)。
+
 ## 在 TypeScript 中按需引入
 
 对于使用了 TypeScript 来开发 ECharts 的开发者，我们提供了类型接口来组合出最小的 `EChartsOption` 类型。这个更严格的类型可以有效帮助你检查出是否少加载了组件或者图表。
@@ -106,7 +108,7 @@ import { LabelLayout, UniversalTransition } from 'echarts/features';
 import { CanvasRenderer } from 'echarts/renderers';
 import type {
   // 系列类型的定义后缀都为 SeriesOption
-  BarSeriesOption, 
+  BarSeriesOption,
   LineSeriesOption
 } from 'echarts/charts';
 import type {
@@ -116,8 +118,8 @@ import type {
   GridComponentOption,
   DatasetComponentOption
 } from 'echarts/components';
-import type { 
-  ComposeOption, 
+import type {
+  ComposeOption,
 } from 'echarts/core';
 
 // 通过 ComposeOption 来组合出一个只有必须组件和图表的 Option 类型
