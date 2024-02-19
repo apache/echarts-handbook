@@ -60,7 +60,7 @@ chart = null;
 
 在浏览器中我们在`setOption`完之后 ECharts 就会自动进行渲染将结果绘制到页面中，后续也会在每一帧判断是否有动画需要进行重绘。Node.js 中我们在设置了`ssr: true`后则没有这个过程。取而代之我们使用了`renderToSVGString`，将当前的图表渲染到 SVG 字符串，进一步得再通过 HTTP Response 返回给前端或者缓存到本地。
 
-HTTP Response 返回给前端：
+HTTP Response 返回给前端（这里以 Express.js 为例）：
 
 ```ts
 res.writeHead(200, {
