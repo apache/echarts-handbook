@@ -60,7 +60,7 @@ The overall code structure is the almost same as in the browser, starting with `
 
 In the browser ECharts automatically renders the result to the page after `setOption` and then determines at each frame if there is an animation that needs to be redrawn, but in Node.js we don't do this after setting `ssr: true`. Instead, we use `renderToSVGString` to render the current chart to an SVG string, which can then be returned to the front-end via HTTP Response or saved to a local file.
 
-Response to the browser
+Response to the browser (using Express.js as example):
 
 ```ts
 res.writeHead(200, {
