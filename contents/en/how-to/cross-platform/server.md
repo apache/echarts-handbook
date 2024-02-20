@@ -170,9 +170,9 @@ echarts.setPlatformAPI({
 
 If you are using images from remote, we recommend that you prefetch the image via an http request to get `base64` before passing it on as the URL of the image, to ensure that the image is loaded when render.
 
-## Server-Side Rendering and Hydration
+## Client Hydration
 
-### Solution A: Server-Side Rendering with a lazy-loading ECharts on the Client Side
+### Lazy-loading Full ECharts
 
 With the latest version of ECharts, the server-side rendering solution can do the following things along with rendering the chart:
 
@@ -203,7 +203,7 @@ As we can see, from the user experience point of view, there is almost no second
 
 Using server-side rendering with client-side rendering along with a lazy-loading `echarts.js` on the client side is a good solution for scenarios where the first screen needs to be rendered quickly and then the interaction needs to be supported. However, it takes some time to load the `echarts.js` and before it is fully loaded, there is no interactive feedback, in which case, a "Loading" text might be displayed to the user. This is a commonly recommended solution for scenarios where the first screen needs to be rendered quickly and then the interaction needs to be supported.
 
-### Solution B: Server-Side Rendering with a lightweight client runtime
+### Lightweight Client Runtime
 
 Solution A provides a way for implementing complete interactions, but in some scenarios, we don't need complex interactions, we just hope to be able to perform some simple interactions on the client side based on server-side rendering, such as: clicking the legend to toggle whether the series is displayed. In this case, can we avoid loading at least a few hundred KBs of ECharts code on the client side?
 
@@ -259,7 +259,63 @@ The server side performs secondary rendering based on the information passed by 
 
 Using server-side SVG rendering plus client-side lightweight runtime, the advantage is that the client no longer needs to load hundreds of KBs of ECharts code, only needs to load a less than 4KB lightweight runtime code; and from the user experience, very little is sacrificed (supports initial animation, mouse highlighting). The disadvantage is that it requires a certain development cost to maintain additional state information, and it does not support interactions with high real-time requirements (such as displaying tooltips when moving the mouse). Overall, **it is recommended to use it in environments with very strict requirements for code volume**.
 
-## Decide the Rendering Solution According to the Scenario
+## Using Lightweight Runtime
+
+The client-side lightweight runtime enables interaction with the SVG charts rendered by the server-side by understanding the content.
+
+The client-side lightweight runtime can be imported in the following ways:
+
+```html
+<!-- Method one: Using CDN -->
+<script src="https://cdn.jsdelivr.net/npm/echarts/ssr/client/dist/index.js"></script>
+<!-- Method two: Using NPM -->
+<script src="node_modules/echarts/ssr/client/dist/index.js"></script>
+```
+
+### API
+
+The following APIs are provided in the global variable `window['echarts-ssr-client']`:
+
+#### hydrate(dom: HTMLElement, options: ECSSRClientOptions)
+
+- `dom`: The chart container, the content of which should be set as the SVG chart rendered by the server-side before calling this method
+- `options`: Configuration items
+
+##### ECSSRClientOptions
+
+```ts
+on?: {
+  mouseover?: (params: ECSSRClientEventParams) => void,
+  mouseout?: (params: ECSSRClientEventParams) => void,
+  click?: (params: ECSSRClientEventParams) => void
+}
+```
+
+Just like the [chart mouse events](${mainSitePath}api.html#events.Mouse%20events), the events here are for the chart items (e.g., the bars of a bar chart, the data item of a line chart, etc.), not for the chart container.
+
+##### ECSSRClientEventParams
+
+```ts
+{
+  type: 'mouseover' | 'mouseout' | 'click';
+  ssrType: 'legend' | 'chart';
+  seriesIndex?: number;
+  dataIndex?: number;
+  event: Event;
+}
+```
+
+- `type`: Event type
+- `ssrType`: Event object type, `legend` represents legend data, `chart` represents chart data object
+- `seriesIndex`: Series index
+- `dataIndex`: Data index
+- `event`: Native event object
+
+### Example
+
+See the "Lightweight Client Runtime" section above.
+
+## Summary
 
 Above, we introduced several different rendering solutions, including:
 

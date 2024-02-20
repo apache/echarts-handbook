@@ -170,9 +170,9 @@ echarts.setPlatformAPI({
 
 如果你的图片是需要远程获取的，我们建议你通过 http 请求先预取该图片得到`base64`之后再作为图片的 URL 传入，这样可以保证在 Response 输出的时候图片是加载完成的。
 
-## 服务端渲染与客户端二次渲染
+## 客户端二次渲染
 
-### 方案一：首屏服务端渲染与客户端渲染懒加载
+### 客户端懒加载完整 ECharts
 
 最新版本的 ECharts 服务端 SVG 渲染除了完成图表的渲染外，支持的功能包括：
 
@@ -203,7 +203,7 @@ echarts.setPlatformAPI({
 
 使用服务端渲染 SVG 加上客户端 ECharts 懒加载的方式，其优点是，能够在首屏快速展示图表，而懒加载完成后可以实现所有 ECharts 的功能和交互；而缺点是，懒加载完整的 ECharts 需要一定时间，在加载完成前无法实现除高亮之外的用户交互（在这种情况下，开发者可以通过显示“加载中”来解决无交互反馈带来的困惑）。这个方案也是目前比较推荐的对首屏加载时间敏感，对功能交互完整性要求高的方案。
 
-### 方案二：首屏服务端渲染与客户端轻量运行时
+### 客户端轻量运行时
 
 方案一给出了实现完整交互的方案，但是有些场景下，我们并不需要很复杂的交互，只是希望在服务端渲染的基础上，能够在客户端进行一些简单的交互，例如：点击图例切换系列是否显示。这种情况下，我们能否不在客户端加载至少需要几百 KB 的 ECharts 代码呢？
 
@@ -259,7 +259,63 @@ $.get('...').then(svgStr => {
 
 使用服务端 SVG 渲染加上客户端轻量运行时的方式，其优点是，客户端不再需要加载几百 KB 的 ECharts 代码，只需要加载一个不到 4KB 的轻量运行时代码；并且从用户体验的角度牺牲很少（支持初始动画、鼠标高亮）。而缺点是，需要一定的开发成本来维护额外的状态信息，并且无法支持实时性要求高的交互（例如移动鼠标显示提示框）。总体来说，**推荐在对代码体积有非常严格要求的环境使用**。
 
-## 根据场景决定渲染方案
+## 使用轻量运行时
+
+客户端轻量运行时通过将服务端渲染的 SVG 图表进行理解，从而赋予图表一定的交互能力。
+
+可以通过以下方式引入客户端轻量运行时：
+
+```html
+<!-- 方法一：使用 CDN -->
+<script src="https://cdn.jsdelivr.net/npm/echarts/ssr/client/dist/index.js"></script>
+<!-- 方法二：使用 NPM -->
+<script src="node_modules/echarts/ssr/client/dist/index.js"></script>
+```
+
+### API
+
+在全局变量 `window['echarts-ssr-client']` 中提供了以下 API：
+
+#### hydrate(dom: HTMLElement, options: ECSSRClientOptions)
+
+- `dom`：图表容器，其内部的内容在调用本方法前应已设为服务端渲染的 SVG 图表
+- `options`：配置项
+
+##### ECSSRClientOptions
+
+```ts
+on?: {
+  mouseover?: (params: ECSSRClientEventParams) => void,
+  mouseout?: (params: ECSSRClientEventParams) => void,
+  click?: (params: ECSSRClientEventParams) => void
+}
+```
+
+和[图表鼠标事件](${mainSitePath}api.html#events.鼠标事件)一样，这里的时间都是针对图表数据对象的（例如：柱状图的柱子、折线图的数据点等），而不是针对图表容器的。
+
+##### ECSSRClientEventParams
+
+```ts
+{
+  type: 'mouseover' | 'mouseout' | 'click';
+  ssrType: 'legend' | 'chart';
+  seriesIndex?: number;
+  dataIndex?: number;
+  event: Event;
+}
+```
+
+- `type`：事件类型
+- `ssrType`：事件对象类型，`legend` 表示图例数据，`chart` 表示图表数据对象
+- `seriesIndex`：系列索引
+- `dataIndex`：数据索引
+- `event`：原生事件对象
+
+### 示例
+
+参见上文「客户端轻量运行时」章节。
+
+## 小结
 
 上面，我们介绍了几种不同的渲染方案，包括：
 
