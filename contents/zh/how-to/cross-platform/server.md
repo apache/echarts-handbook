@@ -76,15 +76,6 @@ res.end();
 fs.writeFile('bar.svg', svgStr, 'utf-8');
 ```
 
-下面是一个完整的在 CodeSandbox 中搭建一个最简单的 Node.js 服务器然后使用 ECharts 服务端 SVG 渲染的效果：
-
-<iframe src="https://codesandbox.io/embed/heuristic-leftpad-oq23t?autoresize=1&codemirror=1&fontsize=12&hidenavigation=1&&theme=dark"
-     style="width:100%; height:400px; border:0; border-radius: 4px; overflow:hidden;"
-     title="heuristic-leftpad-oq23t"
-     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-   ></iframe>
-
 #### 服务端渲染中的动画效果
 
 上面的例子中可以看到，就算是服务端渲染 ECharts 也可以提供动画效果，这个动画效果是通过在输出的 SVG 字符串中嵌入 CSS 动画实现的。并不需要额外的 JavaScript 再去控制动画。
@@ -138,15 +129,6 @@ res.write(buffer);
 res.end();
 ```
 
-下面是一个完整的在 CodeSandbox 中搭建一个最简单的 Node.js 服务器然后使用 ECharts 服务端 Canvas 渲染的效果：
-
-<iframe src="https://codesandbox.io/embed/apache-echarts-canvas-ssr-demo-e340rt?autoresize=1&codemirror=1&fontsize=12&hidenavigation=1&&theme=dark"
-     style="width:100%; height:400px; border:0; border-radius: 4px; overflow:hidden;"
-     title="heuristic-leftpad-oq23t"
-     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-   ></iframe>
-
 #### 图片的加载
 
 [node-canvas](https://github.com/Automattic/node-canvas) 提供了图片加载的`Image`实现，如果你在图表中使用了到了图片，我们可以使用`5.3.0`新增的`setPlatformAPI`接口来适配。
@@ -188,18 +170,7 @@ echarts.setPlatformAPI({
 
 如果有相关需求，可以考虑先使用服务端渲染快速输出首屏图表，然后等待 `echarts.js` 加载完后，重新在客户端渲染同样的图表（称为 Hydration），这样就可以实现正常的交互效果和动态改变数据了。需要注意的是，在客户端渲染的时候，应开启 `tooltip: { show: true }` 之类的交互组件，并且用 `animation: 0` 关闭初始动画（初始动画应由服务端渲染结果的 SVG 动画完成）。
 
-下面是一个在 CodeSandbox 中搭建一个例子，先用 SVG 做服务端渲染，再用 Canvas 做客户端渲染的效果。建议点击“Open Sandbox”学习具体实现的代码。
-
-> 如果希望使用 Canvas 做服务端渲染，或使用 SVG 做客户端也是类似的，不再赘述。
-
-<iframe src="https://codesandbox.io/embed/apache-echarts-5-3-ssr-csr-0jvsdu?fontsize=14&hidenavigation=1&theme=dark"
-     style="width:100%; height:400px; border:0; border-radius: 4px; overflow:hidden;"
-     title="Apache ECharts 5.3 SSR + CSR"
-     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-   ></iframe>
-
-我们可以看到，从用户体验的角度，几乎感受不到二次渲染的过程，整个切换效果是非常无缝衔接的。你也可以像上面的例子中一样，在加载 `echarts.js` 的过程中使用 [pace-js](https://www.npmjs.com/package/pace-js) 之类的库实现显示加载进度条的效果，来解决 ECharts 尚未完全加载完之前没有交互反馈的问题。
+从用户体验的角度，几乎感受不到二次渲染的过程，整个切换效果是非常无缝衔接的。你也可以像上面的例子中一样，在加载 `echarts.js` 的过程中使用 [pace-js](https://www.npmjs.com/package/pace-js) 之类的库实现显示加载进度条的效果，来解决 ECharts 尚未完全加载完之前没有交互反馈的问题。
 
 使用服务端渲染 SVG 加上客户端 ECharts 懒加载的方式，其优点是，能够在首屏快速展示图表，而懒加载完成后可以实现所有 ECharts 的功能和交互；而缺点是，懒加载完整的 ECharts 需要一定时间，在加载完成前无法实现除高亮之外的用户交互（在这种情况下，开发者可以通过显示“加载中”来解决无交互反馈带来的困惑）。这个方案也是目前比较推荐的对首屏加载时间敏感，对功能交互完整性要求高的方案。
 

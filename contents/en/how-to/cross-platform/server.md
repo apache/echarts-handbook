@@ -76,15 +76,6 @@ Or save to a local file
 fs.writeFile('bar.svg', svgStr, 'utf-8');
 ```
 
-Here is a complete server-side SVG rendering example in CodeSandbox.
-
-<iframe src="https://codesandbox.io/embed/heuristic-leftpad-oq23t?autoresize=1&codemirror=1&fontsize=12&hidenavigation=1&&theme= dark"
-     style="width:100%; height:400px; border:0; border-radius: 4px; overflow:hidden;"
-     title="heuristic-leftpad-oq23t"
-     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr- spatial-tracking"
-     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-   ></iframe>
-
 #### Animations in Server-side Rendering
 
 As you can see in the example above, even using server-side rendering, ECharts can still provide animation effects, which are achieved by embedding CSS animations in the output SVG string. There is no need for additional JavaScript to play the animation.
@@ -138,15 +129,6 @@ res.write(buffer);
 res.end();
 ```
 
-Here is a complete example in CodeSandbox
-
-<iframe src="https://codesandbox.io/embed/apache-echarts-canvas-ssr-demo-e340rt?autoresize=1&codemirror=1&fontsize=12& hidenavigation=1&&theme=dark"
-     style="width:100%; height:400px; border:0; border-radius: 4px; overflow:hidden;"
-     title="heuristic-leftpad-oq23t"
-     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr- spatial-tracking"
-     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-   ></iframe>
-
 #### Loading of images
 
 [node-canvas](https://github.com/Automattic/node-canvas) provides an `Image` implementation for image loading. If you use to images in your code, we can adapt them using the `setPlatformAPI` interface that was introduced in `5.3.0`.
@@ -187,17 +169,6 @@ But there are features that cannot be supported by server-side rendering:
 - Other interaction-related features
 
 If you have such requirements, you can consider using server-side rendering to quickly output the first screen chart, then wait for `echarts.js` to finish loading and re-render the same chart on the client side, so that you can achieve normal interaction effects and dynamically change the data. Note that when rendering on the client side, you should turn on interactive components like `tooltip: { show: true }` and turn off the initial animation with `animation: 0` (the initial animation should be done by the SVG animation of the rendered result on the server side).
-
-Here is an example of building a CodeSandbox with SVG for server-side rendering and Canvas for client-side rendering. It is recommended to click "Open Sandbox" to learn the code implementation.
-
-> If you want to use Canvas for server-side rendering or SVG for client-side rendering, it's similar, so I won't go over it again.
-
-<iframe src="https://codesandbox.io/embed/apache-echarts-5-3-ssr-csr-0jvsdu?fontsize=14&hidenavigation=1&theme=dark"
-     style="width:100%; height:400px; border:0; border-radius: 4px; overflow:hidden;"
-     title="Apache ECharts 5.3 SSR + CSR"
-     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-   ></iframe>
 
 As we can see, from the user experience point of view, there is almost no secondary rendering process, and the whole switching effect is very seamless. You can also use a library like [pace-js](https://www.npmjs.com/package/pace-js) to display the loading progress bar during the loading of `echarts.js` as in the above example to solve the problem of no interactive feedback before the ECharts are fully loaded.
 
