@@ -78,7 +78,7 @@ function slugify(s: string) {
     String(s)
       .trim()
       .toLowerCase()
-      .replace(/\s+/g, '-')
+      .replace(/[\s+:]/g, '-')
   )
 }
 
@@ -175,7 +175,7 @@ export default {
       linkify: true
     })
       .use(anchor, {
-        // slugify,
+        slugify,
         permalink: false,
         permalinkAfter: true,
         permalinkSymbol: '#',
