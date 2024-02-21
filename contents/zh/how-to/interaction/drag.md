@@ -84,7 +84,7 @@ myChart.setOption({
 });
 ```
 
-上面的代码中，使用 [convertToPixel](api.html#echartsInstance.convertToPixel) 这个 API，进行了从 data 到“像素坐标”的转换，从而得到了每个圆点应该在的位置，从而能绘制这些圆点。`myChart.convertToPixel('grid', dataItem)` 这句话中，第一个参数 `'grid'` 表示 `dataItem` 在 [grid](${optionPath}grid) 这个组件中（即直角坐标系）中进行转换。所谓“像素坐标”，就是以 echarts 容器 dom element 的左上角为零点的以像素为单位的坐标系中的坐标。
+上面的代码中，使用 [convertToPixel](${mainSitePath}api.html#echartsInstance.convertToPixel) 这个 API，进行了从 data 到“像素坐标”的转换，从而得到了每个圆点应该在的位置，从而能绘制这些圆点。`myChart.convertToPixel('grid', dataItem)` 这句话中，第一个参数 `'grid'` 表示 `dataItem` 在 [grid](${optionPath}grid) 这个组件中（即直角坐标系）中进行转换。所谓“像素坐标”，就是以 echarts 容器 dom element 的左上角为零点的以像素为单位的坐标系中的坐标。
 
 注意这件事需要在第一次 setOption 后再进行，也就是说，须在坐标系（[grid](${optionPath}grid)）初始化后才能调用 `myChart.convertToPixel('grid', dataItem)`。
 
