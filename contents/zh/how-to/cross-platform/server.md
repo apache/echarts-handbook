@@ -208,9 +208,11 @@ function updateChart(svgStr) {
         if (params.ssrType === 'legend') {
           // 点击图例元素，请求服务器进行二次渲染
           isSeriesShown[params.seriesName] = !isSeriesShown[params.seriesName];
-          $.get('...?series=' + JSON.stringify(isSeriesShown)).then(svgStr => {
-            updateChart(svgStr);
-          });
+          fetch('...?series=' + JSON.stringify(isSeriesShown))
+            .then(res => res.text())
+            .then(svgStr => {
+              updateChart(svgStr);
+            });
         }
       }
     }
@@ -218,9 +220,11 @@ function updateChart(svgStr) {
 }
 
 // 通过 AJAX 请求获取服务端渲染的 SVG 字符串
-$.get('...').then(svgStr => {
-  updateChart(svgStr);
-});
+fetch('...')
+  .then(res => res.text())
+  .then(svgStr => {
+    updateChart(svgStr);
+  });
 </script>
 ```
 

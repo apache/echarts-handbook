@@ -208,9 +208,11 @@ function updateChart(svgStr) {
         if (params.ssrType === 'legend') {
           // Click the legend element, request the server for secondary rendering
           isSeriesShown[params.seriesName] = !isSeriesShown[params.seriesName];
-          $.get('...?series=' + JSON.stringify(isSeriesShown)).then(svgStr => {
-            updateChart(svgStr);
-          });
+          fetch('...?series=' + JSON.stringify(isSeriesShown))
+            .then(res => res.text())
+            .then(svgStr => {
+              updateChart(svgStr);
+            });
         }
       }
     }
@@ -218,9 +220,11 @@ function updateChart(svgStr) {
 }
 
 // Get the SVG string rendered by the server through an AJAX request
-$.get('...').then(svgStr => {
-  updateChart(svgStr);
-});
+fetch('...')
+  .then(res => res.text())
+  .then(svgStr => {
+    updateChart(svgStr);
+  });
 </script>
 ```
 
