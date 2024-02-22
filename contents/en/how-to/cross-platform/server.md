@@ -9,8 +9,8 @@ In these scenarios, ECharts offers both SVG and Canvas server-side rendering (SS
 
 | Solution           | Rendering Result  | Pros              |
 | ----------------- | ----------------- | ----------------- |
-| Serverside SVG Rendering     | SVG string | Smaller than Canvas images;<br>Vector SVG images are not blurred;<br>Support for initial animation |
-| Serverside Canvas Rendering  | Image       | The image format is available for a wider range of scenarios, and is optional for scenarios that do not support SVG |
+| Server-side SVG Rendering     | SVG string | Smaller than Canvas images;<br>Vector SVG images are not blurred;<br>Support for initial animation |
+| Server-side Canvas Rendering  | Image       | The image format is available for a wider range of scenarios, and is optional for scenarios that do not support SVG |
 
 In general, the server-side SVG rendering solution should be preferred, or if SVG is not applicable, the Canvas rendering solution can be considered.
 
@@ -100,7 +100,7 @@ Here's a simple example
 var echarts = require('echarts');
 const { createCanvas } = require('canvas');
 
-// In versions ealier than 5.3.0, you had to register the canvas factory with setCanvasCreator.
+// In versions earlier than 5.3.0, you had to register the canvas factory with setCanvasCreator.
 // Not necessary since 5.3.0
 echarts.setCanvasCreator(() => {
   return createCanvas();
@@ -188,7 +188,7 @@ Starting from version v5.5.0, if the chart only needs the following effects and 
 ```html
 <div id="chart-container" style="width:800px;height:600px"></div>
 
-<script src="https://cdn.jsdelivr.net/npm/echarts/ssr/client/dist/index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/echarts/ssr/client/dist/index.min.js"></script>
 <script>
 const ssrClient = window['echarts-ssr-client'];
 
@@ -238,7 +238,7 @@ The client-side lightweight runtime can be imported in the following ways:
 
 ```html
 <!-- Method one: Using CDN -->
-<script src="https://cdn.jsdelivr.net/npm/echarts/ssr/client/dist/index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/echarts/ssr/client/dist/index.min.js"></script>
 <!-- Method two: Using NPM -->
 <script src="node_modules/echarts/ssr/client/dist/index.js"></script>
 ```
@@ -300,7 +300,7 @@ These four rendering methods can be used in combination. Let's summarize their r
 | Rendering Solution | Loading Volume | Loss of Function and Interaction | Relative Development Workload | Recommended Scenario |
 | --- | --- | --- | --- | --- |
 | Client-side rendering | Largest | None | Minimum | The first screen load time is not sensitive, and there is a high demand for complete functionality and interaction |
-| Client-side rendering ([partial package importing](basics/import#shrinking-bundle-size) on demand) | Large | Large: the packages not included cannot use the corresponding functions | Small | The first screen load time is not sensitive, there is no strict requirement for code volume but hope to be as small as possible, only use a small part of ECharts functions, no server resources |
+| Client-side rendering ([partial package importing](${lang}/basics/import#shrinking-bundle-size) on demand) | Large | Large: the packages not included cannot use the corresponding functions | Small | The first screen load time is not sensitive, there is no strict requirement for code volume but hope to be as small as possible, only use a small part of ECharts functions, no server resources |
 | One-time server-side SVG rendering | Small | Large: unable to dynamically change data, does not support legend toggle series display, does not support tooltips and other interactions with high real-time requirements | Medium | The first screen load time is sensitive, low demand for complete functionality and interaction |
 | One-time server-side Canvas rendering | Large | Largest: the same as above and does not support initial animation, larger image volume, blurry when enlarged | Medium | The first screen load time is sensitive, low demand for complete functionality and interaction, platform restrictions cannot use SVG |
 | Server-side SVG rendering plus client-side ECharts lazy loading | Small, then large | Medium: cannot interact before lazy loading is completed | Medium | The first screen load time is sensitive, high demand for complete functionality and interaction, the chart is best not needed for interaction immediately after loading |

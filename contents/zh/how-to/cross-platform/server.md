@@ -188,7 +188,7 @@ echarts.setPlatformAPI({
 ```html
 <div id="chart-container" style="width:800px;height:600px"></div>
 
-<script src="https://cdn.jsdelivr.net/npm/echarts/ssr/client/dist/index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/echarts/ssr/client/dist/index.min.js"></script>
 <script>
 const ssrClient = window['echarts-ssr-client'];
 
@@ -238,7 +238,7 @@ $.get('...').then(svgStr => {
 
 ```html
 <!-- 方法一：使用 CDN -->
-<script src="https://cdn.jsdelivr.net/npm/echarts/ssr/client/dist/index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/echarts/ssr/client/dist/index.min.js"></script>
 <!-- 方法二：使用 NPM -->
 <script src="node_modules/echarts/ssr/client/dist/index.js"></script>
 ```
@@ -300,7 +300,7 @@ on?: {
 | 渲染方案 | 加载体积 | 功能及交互损失 | 相对开发工作量 | 推荐场景 |
 | --- | --- | --- | --- | --- |
 | 客户端渲染 | 最大 | 无 | 最小 | 首屏加载时间不敏感，对功能交互完整性要求高 |
-| 客户端渲染（[按需引用](basics/import#按需引入-echarts-图表和组件)部分包） | 大 | 大：没有引入的包就无法使用对应功能 | 小 | 首屏加载时间不敏感，对代码体积没有严格要求但是希望尽可能小，仅使用 ECharts 的一小部分功能，没有服务器资源 |
+| 客户端渲染（[按需引用](${lang}/basics/import#按需引入-echarts-图表和组件)部分包） | 大 | 大：没有引入的包就无法使用对应功能 | 小 | 首屏加载时间不敏感，对代码体积没有严格要求但是希望尽可能小，仅使用 ECharts 的一小部分功能，没有服务器资源 |
 | 一次性服务端 SVG 渲染 | 小 | 大：无法动态改变数据、不支持图例切换系列是否显示、不支持提示框等实时性要求高的交互 | 中 | 首屏加载时间敏感，对功能交互完整性要求低 |
 | 一次性服务端 Canvas 渲染 | 大 | 最大：同上且不支持初始动画、图片体积更大、放大会模糊 | 中 | 首屏加载时间敏感，对功能交互完整性要求低，平台限制无法使用 SVG |
 | 服务端 SVG 渲染加客户端懒加载 ECharts | 小，然后大 | 中：懒加载完成前无法交互 | 中 | 首屏加载时间敏感，对功能交互完整性要求高，最好图表不会在加载后立刻需要交互 |
