@@ -1,4 +1,4 @@
-# Server Side Rendering
+# Server-Side Rendering
 
 Normally, Apache ECharts<sup>TM</sup> renders the chart dynamically in the browser and will re-render after user interactions. However, there are specific scenarios where we also need to render charts on the server side:
 
@@ -9,8 +9,8 @@ In these scenarios, ECharts offers both SVG and Canvas server-side rendering (SS
 
 | Solution           | Rendering Result  | Pros              |
 | ----------------- | ----------------- | ----------------- |
-| Server-side SVG Rendering     | SVG string | Smaller than Canvas images;<br>Vector SVG images are not blurred;<br>Support for initial animation |
-| Server-side Canvas Rendering  | Image       | The image format is available for a wider range of scenarios, and is optional for scenarios that do not support SVG |
+| Server-Side SVG Rendering     | SVG string | Smaller than Canvas images;<br>Vector SVG images are not blurred;<br>Support for initial animation |
+| Server-Side Canvas Rendering  | Image       | The image format is available for a wider range of scenarios, and is optional for scenarios that do not support SVG |
 
 In general, the server-side SVG rendering solution should be preferred, or if SVG is not applicable, the Canvas rendering solution can be considered.
 
@@ -76,7 +76,7 @@ Or save to a local file
 fs.writeFile('bar.svg', svgStr, 'utf-8');
 ```
 
-#### Animations in Server-side Rendering
+#### Animations in Server-Side Rendering
 
 As you can see in the example above, even using server-side rendering, ECharts can still provide animation effects, which are achieved by embedding CSS animations in the output SVG string. There is no need for additional JavaScript to play the animation.
 
@@ -90,7 +90,7 @@ setOption({
 });
 ```
 
-### Server-side Canvas rendering
+### Server-Side Canvas Rendering
 
 If you want the output to be an image rather than an SVG string, or if you're still using an older version, we'd recommend using [node-canvas](https://github.com/Automattic/node-canvas) for server-side rendering, [node-canvas](https://github.com/Automattic/node-canvas) is Canvas implementations on Node.js that provide an interface that is almost identical to the Canvas in the browser.
 
@@ -154,7 +154,7 @@ If you are using images from remote, we recommend that you prefetch the image vi
 
 ## Client Hydration
 
-### Lazy-loading Full ECharts
+### Lazy-Loading Full ECharts
 
 With the latest version of ECharts, the server-side rendering solution can do the following things along with rendering the chart:
 
