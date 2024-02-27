@@ -32,7 +32,7 @@
 const echarts = require('echarts');
 
 // 在 SSR 模式下第一个参数不需要再传入 DOM 对象
-const chart = echarts.init(null, null, {
+let chart = echarts.init(null, null, {
   renderer: 'svg', // 必须使用 SVG 模式
   ssr: true, // 开启 SSR
   width: 400, // 需要指明高和宽
@@ -108,7 +108,7 @@ echarts.setCanvasCreator(() => {
 
 const canvas = createCanvas(800, 600);
 // ECharts 可以直接使用 node-canvas 创建的 Canvas 实例作为容器
-const chart = echarts.init(canvas);
+let chart = echarts.init(canvas);
 
 // 像正常使用一样 setOption
 chart.setOption({

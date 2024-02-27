@@ -32,7 +32,7 @@ We introduced a new zero-dependency server-side string based SVG rendering solut
 const echarts = require('echarts');
 
 // In SSR mode the first container parameter is not required
-const chart = echarts.init(null, null, {
+let chart = echarts.init(null, null, {
   renderer: 'svg', // must use SVG rendering mode
   ssr: true, // enable SSR
   width: 400, // need to specify height and width
@@ -47,7 +47,7 @@ chart.setOption({
 // Output a string
 const svgStr = chart.renderToSVGString();
 
-// If chart is no longer useful, consider dispose it to release memory.
+// If chart is no longer useful, consider disposing it to release memory.
 chart.dispose();
 chart = null;
 ```
@@ -108,7 +108,7 @@ echarts.setCanvasCreator(() => {
 
 const canvas = createCanvas(800, 600);
 // ECharts can use the Canvas instance created by node-canvas as a container directly
-const chart = echarts.init(canvas);
+let chart = echarts.init(canvas);
 
 // setOption as normal
 chart.setOption({
@@ -117,7 +117,7 @@ chart.setOption({
 
 const buffer = renderChart().toBuffer('image/png');
 
-// If chart is no longer useful, consider dispose it to release memory.
+// If chart is no longer useful, consider disposing it to release memory.
 chart.dispose();
 chart = null;
 
