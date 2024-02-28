@@ -16,7 +16,7 @@ In general, the server-side SVG rendering solution should be preferred, or if SV
 
 Server-side rendering also has some limitations, especially some operations related to interaction cannot be supported. Therefore, if you have interaction requirements, you can refer to "Server-Side Rendering with Hydration" below.
 
-## Server-Side SVG Rendering
+## Server-Side Rendering
 
 ### Server-Side SVG Rendering
 
