@@ -192,7 +192,7 @@ Starting from version v5.5.0, if the chart only needs the following effects and 
 <script>
 const ssrClient = window['echarts-ssr-client'];
 
-let isSeriesShown = {
+const isSeriesShown = {
   a: true,
   b: true
 };
@@ -202,7 +202,7 @@ function updateChart(svgStr) {
   container.innerHTML = svgStr;
 
   // Use the lightweight runtime to give the chart interactive capabilities
-  ssrClient.hydrate(main, {
+  ssrClient.hydrate(container, {
     on: {
       click: (params) => {
         if (params.ssrType === 'legend') {

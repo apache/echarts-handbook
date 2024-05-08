@@ -192,7 +192,7 @@ echarts.setPlatformAPI({
 <script>
 const ssrClient = window['echarts-ssr-client'];
 
-let isSeriesShown = {
+const isSeriesShown = {
   a: true,
   b: true
 };
@@ -202,7 +202,7 @@ function updateChart(svgStr) {
   container.innerHTML = svgStr;
 
   // 使用轻量运行时赋予图表交互能力
-  ssrClient.hydrate(main, {
+  ssrClient.hydrate(container, {
     on: {
       click: (params) => {
         if (params.ssrType === 'legend') {
