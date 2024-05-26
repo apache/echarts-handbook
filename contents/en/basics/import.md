@@ -51,7 +51,7 @@ import * as echarts from 'echarts/core';
 // Import bar charts, all suffixed with Chart
 import { BarChart } from 'echarts/charts';
 
-// Import the tooltip, title, rectangular coordinate system, dataset and transform components
+// Import the title, tooltip, rectangular coordinate system, dataset and transform components
 import {
   TitleComponent,
   TooltipComponent,
