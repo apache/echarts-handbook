@@ -137,14 +137,14 @@ option = {
   grid: [{ bottom: '55%' }, { top: '55%' }],
   series: [
     // 这几个系列会出现在第一个直角坐标系中，每个系列对应到 dataset 的每一行。
-    { type: 'bar', seriesLayoutBy: 'row' },
-    { type: 'bar', seriesLayoutBy: 'row' },
-    { type: 'bar', seriesLayoutBy: 'row' },
+    { type: 'bar', seriesLayoutBy: 'row', xAxisIndex: 0, yAxisIndex: 0 },
+    { type: 'bar', seriesLayoutBy: 'row', xAxisIndex: 0, yAxisIndex: 0 },
+    { type: 'bar', seriesLayoutBy: 'row', xAxisIndex: 0, yAxisIndex: 0 },
     // 这几个系列会出现在第二个直角坐标系中，每个系列对应到 dataset 的每一列。
-    { type: 'bar', xAxisIndex: 1, yAxisIndex: 1 },
-    { type: 'bar', xAxisIndex: 1, yAxisIndex: 1 },
-    { type: 'bar', xAxisIndex: 1, yAxisIndex: 1 },
-    { type: 'bar', xAxisIndex: 1, yAxisIndex: 1 }
+    { type: 'bar', seriesLayoutBy: 'column', xAxisIndex: 1, yAxisIndex: 1 },
+    { type: 'bar', seriesLayoutBy: 'column', xAxisIndex: 1, yAxisIndex: 1 },
+    { type: 'bar', seriesLayoutBy: 'column', xAxisIndex: 1, yAxisIndex: 1 },
+    { type: 'bar', seriesLayoutBy: 'column', xAxisIndex: 1, yAxisIndex: 1 }
   ]
 };
 ```
