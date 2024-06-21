@@ -46,7 +46,7 @@ export default {
         {
           rel: 'stylesheet',
           href: isCN
-            ? 'https://lib.baomitu.com/twitter-bootstrap/3.4.1/css/bootstrap.min.css'
+            ? 'https://cdn.staticfile.net/twitter-bootstrap/3.4.1/css/bootstrap.min.css'
             : 'https://fastly.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css'
         },
         {
@@ -56,7 +56,7 @@ export default {
         {
           rel: 'stylesheet',
           href: isCN
-            ? 'https://lib.baomitu.com/docsearch.js/2.6.3/docsearch.min.css'
+            ? 'https://cdn.staticfile.net/docsearch.js/2.6.3/docsearch.min.css'
             : 'https://fastly.jsdelivr.net/npm/docsearch.js@2.6.3/dist/cdn/docsearch.min.css'
         }
       ],
@@ -68,12 +68,12 @@ export default {
         },
         {
           src: isCN
-            ? 'https://lib.baomitu.com/twitter-bootstrap/3.4.1/js/bootstrap.min.js'
+            ? 'https://cdn.staticfile.net/twitter-bootstrap/3.4.1/js/bootstrap.min.js'
             : 'https://fastly.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js'
         },
         {
           src: isCN
-            ? 'https://lib.baomitu.com/docsearch.js/2.6.3/docsearch.min.js'
+            ? 'https://cdn.staticfile.net/docsearch.js/2.6.3/docsearch.min.js'
             : 'https://fastly.jsdelivr.net/npm/docsearch.js@2.6.3/dist/cdn/docsearch.min.js'
         }
       ],
