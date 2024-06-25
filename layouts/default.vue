@@ -63,7 +63,7 @@ export default {
       script: [
         {
           src: isCN
-            ? 'https://cdn.staticfile.net/jquery/3.7.1/jquery.min.js'
+            ? 'https://registry.npmmirror.com/jquery/3.7.1/files/dist/jquery.min.js'
             : 'https://fastly.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js'
         },
         {
