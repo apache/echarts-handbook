@@ -37,7 +37,7 @@ option = {
     inverse: true,
     animationDuration: 300,
     animationDurationUpdate: 300,
-    max: 2 // only the largest 3 bars will be displayed
+    max: 2 // 只显示最大的2个柱条
   },
   series: [
     {
