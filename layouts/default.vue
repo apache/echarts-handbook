@@ -43,6 +43,18 @@ export default {
           type: 'image/png',
           href: `https://echarts.apache.org/${locale}/images/favicon.png`
         },
+        ...(isCN ? [
+          'https://lib.baomitu.com',
+          'https://registry.npmmirror.com'
+        ] : [
+          'https://fastly.jsdelivr.net',
+          'https://cdn.jsdelivr.net',
+        ])
+        .concat('https://avatars.githubusercontent.com')
+        .map(domain => ({
+          rel: 'dns-prefetch',
+          href: domain
+        })),
         {
           rel: 'stylesheet',
           href: isCN
