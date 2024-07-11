@@ -160,7 +160,7 @@ The effect of configuration is shown in [this case](${exampleEditorPath}dataset-
 
 Most of the data described in commonly used charts is a "two-dimensional table" structure, in the previous case, we use a 2D array to contain a two-dimensional table. Now, when we map a series to a column, that column was called a "dimension" and each row was called "item", vice versa.
 
-The dimension can have their name to display in the chart. Dimension name can be defined in the first column (row). In the [next case](${lang}/concepts/dataset#map-from-data-to-charts-(series.encode)), `'score'`, `'amount'`, `'product'` are the name of dimensions. The actual data locate from the second row. ECharts will automatically check if the first column (row) contained dimension name in `dataset.source`. You can also use `dataset.sourceHeader: true` to declare that the first column (row) represents the dimension name.
+The dimension can have their name to display in the chart. Dimension name can be defined in the first column (row). In the [next case](${lang}/concepts/dataset/#map-from-data-to-charts-(series.encode)), `'score'`, `'amount'`, `'product'` are the name of dimensions. The actual data locate from the second row. ECharts will automatically check if the first column (row) contained dimension name in `dataset.source`. You can also use `dataset.sourceHeader: true` to declare that the first column (row) represents the dimension name.
 
 Try to use single `dataset.dimensions` or some `series.dimensions` to define the dimensions, therefore you can specify the name and type together.
 
