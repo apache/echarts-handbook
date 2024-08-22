@@ -245,8 +245,8 @@ The deprecated API and their corresponding new API are listed as follows:
 - `custom series`:
   - In `renderItem`, the `api.style(...)` and `api.styleEmphasis(...)` are deprecated. Because it is not really necessary and hard to ensure backward compatibility. Users can fetch system designated visual by `api.visual(...)`.
 - `sunburst series`:
-  - Action type `highlight` is deprecated. Use `sunburstHighlight` instead.
-  - Action type `downplay` is deprecated. Use `sunburstUnhighlight` instead.
+  - Action type `sunburstHighlight` is deprecated. Use `highlight` instead.
+  - Action type `sunburstUnhighlight` is deprecated. Use `downplay` instead.
   - option `series.downplay` is deprecated. Use `series.blur` instead.
   - option `series.highlightPolicy` is deprecated. Use `series.emphasis.focus` instead.
 - `pie series`:

@@ -247,8 +247,8 @@ yAxis: {
 - 自定义系列（`custom series`）。
   - 在 `renderItem` 中，`api.style(...)` 和 `api.styleEmphasis(...)` 已不推荐使用。因为这两个接口其实并不真正必要，也很难保证向后兼容。用户可以通过 `api.visual(...)` 获取系统自动分配的视觉信息。
 - 旭日图（`sunburst`）：
-  - 动作类型 `highlight` 已被弃用，请使用 `sunburstHighlight` 代替。
-  - 动作类型 `downplay` 已被弃用，请使用 `sunburstUnhighlight` 代替。
+  - 动作类型 `sunburstHighlight` 已被弃用，请使用 `highlight` 代替。
+  - 动作类型 `sunburstUnhighlight` 已被弃用，请使用 `downplay` 代替。
   - 选项 `series.downplay` 已被弃用，请使用 `series.blur` 代替。
   - 选项 `series.highlightPolicy` 已不适用，请使用 `series.emphasis.focus` 代替。
 - 饼图（`pie`）：
