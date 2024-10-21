@@ -6,7 +6,7 @@ Doughnut charts are also used to show the proportion of values compared with the
 
 In ECharts, the radius of the pie chart could also be an array with 2 elements. Every element in the array could be string or value. The first element represents the inner radius while the second one is the outer radius.
 
-The bar chart, from this perspective, is a subset of the doughnut chart that has inner radius equals to 0.
+The pie chart, from this perspective, is a subset of the doughnut chart that has inner radius equals to 0.
 
 ```js live
 option = {
