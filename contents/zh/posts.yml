@@ -28,6 +28,8 @@
           dir: 5-4-0
         - title: 5.5
           dir: 5-5-0
+        - title: 5.6
+          dir: 5-6-0
 - title: 概念篇
   dir: concepts
   children:
