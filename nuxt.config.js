@@ -69,16 +69,16 @@ export default {
     [
       'nuxt-i18n',
       {
-        locales: ['en', 'zh'],
+        locales: ['en', 'zh' ,'es'],
         strategy: 'prefix',
-        defaultLocale: 'en',
+        defaultLocale: 'es',
         detectBrowserLanguage: {
           useCookie: true,
           cookieKey: 'i18n_redirected',
           onlyOnRoot: true
         },
         vueI18n: {
-          fallbackLocale: 'en',
+          fallbackLocale: 'zh',
           messages: {
             en: {
               inThisPage: 'In This Page',
@@ -93,6 +93,13 @@ export default {
               contributorsWithThisDocument: '本文贡献者',
               editInThisDocumentTip: '编辑本文',
               editInGithub: '在 GitHub 上编辑本页'
+            },
+            es: {
+              inThisPage: 'En esta página',
+              searchHandbook: 'Buscar en el manual',
+              contributorsWithThisDocument: 'Contribuidores',
+              editInThisDocumentTip: 'Editar este documento',
+              editInGithub: 'Editar esta página en GitHub'
             }
           }
         }
