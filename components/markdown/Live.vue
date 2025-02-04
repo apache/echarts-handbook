@@ -39,7 +39,7 @@ import {
   ref,
   unref,
   onMounted,
-  onUnmounted
+  onUnmounted,
 } from '@vue/composition-api'
 import * as base64 from 'js-base64'
 import { createSandbox } from '../helper/sandbox'
@@ -49,12 +49,15 @@ declare const echarts: any
 
 function ensureECharts(locale) {
   if (typeof echarts === 'undefined') {
-    const isCN = locale === 'zh'
-    const lib = process.env.NUXT_ENV_DEPLOY === 'asf' ? 'echarts' : 'echarts-nightly'
+    // const isASFDeploy = process.env.NUXT_ENV_DEPLOY === 'asf'
+    // const lib = isASFDeploy ? 'echarts' : 'echarts-nightly'
     return loadScriptsAsync([
-      isCN
-        ? `https://registry.npmmirror.com/${lib}/latest/files/dist/echarts.min.js`
-        : `https://fastly.jsdelivr.net/npm/${lib}@latest/dist/echarts.min.js`
+      // @ts-ignore
+      (window.ECHARTS_WWW_VENDORS_CDN_ROOT ||
+        'https://fastly.jsdelivr.net/npm/') + 'echarts/dist/echarts.min.js',
+      // isCN
+      //   ? `https://registry.npmmirror.com/${lib}/latest/files/dist/echarts.min.js`
+      //   : `https://fastly.jsdelivr.net/npm/${lib}@latest/dist/echarts.min.js`,
     ]).then(() => {})
   }
   return Promise.resolve()
@@ -63,16 +66,16 @@ function ensureECharts(locale) {
 export default defineComponent({
   components: {
     PrismEditor,
-    CodeBlockCopyClipboard
+    CodeBlockCopyClipboard,
   },
   props: {
     lang: {
       type: String,
-      default: 'js'
+      default: 'js',
     },
 
     code: {
-      type: String
+      type: String,
     },
 
     layout: {
@@ -80,17 +83,17 @@ export default defineComponent({
       default: 'tb',
       validator(value: string) {
         return ['lr', 'tb', 'rl', 'bt'].includes(value)
-      }
+      },
     },
 
     height: {
-      type: Number
+      type: Number,
     },
 
     readOnly: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
 
   setup(props, context) {
@@ -126,7 +129,7 @@ export default defineComponent({
     }
 
     const debouncedUpdate = debounce(update, 500, {
-      trailing: true
+      trailing: true,
     })
 
     watch(innerCode, () => {
@@ -160,9 +163,9 @@ export default defineComponent({
             sandbox.pause()
           }
         }
-      }
+      },
     }
-  }
+  },
 })
 </script>
 
