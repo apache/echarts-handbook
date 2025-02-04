@@ -25,77 +25,76 @@ import Navbar from '~/components/partials/Navbar.vue'
 export default {
   components: {
     Sidebar,
-    Navbar
+    Navbar,
   },
 
   head() {
-    const locale = (this as any).$i18n.locale;
-    const isCN = locale === 'zh';
+    const locale = (this as any).$i18n.locale
+    const isCN = locale === 'zh'
     const appName = isCN ? '使用手册' : 'Handbook'
+
+    // TODO CSP 问题
+    // const cdnRoot =
+    //   // @ts-ignore
+    //   (typeof window !== 'undefined' && window.ECHARTS_WWW_VENDORS_CDN_ROOT) ||
+    //   'https://fastly.jsdelivr.net/npm/'
+    const cdnRoot = `//echarts.apache.org/${locale}/js/vendors/`
     return {
-      titleTemplate: chunk => `${chunk ? chunk + ' - ' : ''}${appName} - Apache ECharts`,
+      titleTemplate: (chunk) =>
+        `${chunk ? chunk + ' - ' : ''}${appName} - Apache ECharts`,
       htmlAttrs: {
-        lang: isCN ? 'zh-CN' : 'en'
+        lang: isCN ? 'zh-CN' : 'en',
       },
       link: [
         {
           rel: 'shortcut icon',
           type: 'image/png',
-          href: `https://echarts.apache.org/${locale}/images/favicon.png`
+          href: `https://echarts.apache.org/${locale}/images/favicon.png`,
         },
-        ...(isCN ? [
-          'https://lib.baomitu.com',
-          'https://registry.npmmirror.com'
-        ] : [
-          'https://fastly.jsdelivr.net',
-          'https://cdn.jsdelivr.net',
-        ])
-        .concat('https://avatars.githubusercontent.com')
-        .map(domain => ({
-          rel: 'dns-prefetch',
-          href: domain
-        })),
+        // ...(isCN ? [
+        //   'https://lib.baomitu.com',
+        //   'https://registry.npmmirror.com'
+        // ] : [
+        //   'https://fastly.jsdelivr.net',
+        //   'https://cdn.jsdelivr.net',
+        // ])
+        // .concat('https://avatars.githubusercontent.com')
+        // .map(domain => ({
+        //   rel: 'dns-prefetch',
+        //   href: domain
+        // })),
         {
           rel: 'stylesheet',
-          href: isCN
-            ? 'https://lib.baomitu.com/twitter-bootstrap/3.4.1/css/bootstrap.min.css'
-            : 'https://fastly.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css'
+          href: `${cdnRoot}bootstrap@3.3.7/css/bootstrap.min.css`,
         },
         {
           rel: 'stylesheet',
-          href: `https://echarts.apache.org/${locale}/css/main.css`
+          href: `https://echarts.apache.org/${locale}/css/main.css`,
         },
         {
           rel: 'stylesheet',
-          href: isCN
-            ? 'https://lib.baomitu.com/docsearch.js/2.6.3/docsearch.min.css'
-            : 'https://fastly.jsdelivr.net/npm/docsearch.js@2.6.3/dist/cdn/docsearch.min.css'
-        }
+          href: `${cdnRoot}docsearch.js@2.6.3/dist/cdn/docsearch.min.css`,
+        },
       ],
       script: [
         {
-          src: isCN
-            ? 'https://registry.npmmirror.com/jquery/3.7.1/files/dist/jquery.min.js'
-            : 'https://fastly.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js'
+          src: `${cdnRoot}jquery@3.7.1/dist/jquery.min.js`,
         },
         {
-          src: isCN
-            ? 'https://lib.baomitu.com/twitter-bootstrap/3.4.1/js/bootstrap.min.js'
-            : 'https://fastly.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js'
+          src: `${cdnRoot}bootstrap@3.3.7/js/bootstrap.min.js`,
         },
         {
-          src: isCN
-            ? 'https://lib.baomitu.com/docsearch.js/2.6.3/docsearch.min.js'
-            : 'https://fastly.jsdelivr.net/npm/docsearch.js@2.6.3/dist/cdn/docsearch.min.js'
-        }
+          src: `${cdnRoot}docsearch.js@2.6.3/dist/cdn/docsearch.min.js`,
+        },
       ],
       noscript: [
         {
           body: true,
-          innerHTML: '<div class="no-script"><strong>很抱歉，Apache ECharts 网站需要启用 JavaScript 才能正常运行。</strong></div>'
-        }
+          innerHTML:
+            '<div class="no-script"><strong>很抱歉，Apache ECharts 网站需要启用 JavaScript 才能正常运行。</strong></div>',
+        },
       ],
-      __dangerouslyDisableSanitizers: ['noscript']
+      __dangerouslyDisableSanitizers: ['noscript'],
     }
   },
 
@@ -104,7 +103,7 @@ export default {
     const hash = location.hash
     location.hash = ''
     location.hash = hash
-  }
+  },
 }
 </script>
 
