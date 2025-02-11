@@ -115,7 +115,7 @@ chart.setOption({
   //...
 });
 
-const buffer = renderChart().toBuffer('image/png');
+const buffer = canvas.toBuffer('image/png');
 
 // If chart is no longer useful, consider disposing it to release memory.
 chart.dispose();

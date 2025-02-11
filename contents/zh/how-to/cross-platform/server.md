@@ -115,7 +115,7 @@ chart.setOption({
   //...
 });
 
-const buffer = renderChart().toBuffer('image/png');
+const buffer = canvas.toBuffer('image/png');
 
 // 如果不再需要图表，调用 dispose 以释放内存
 chart.dispose();
