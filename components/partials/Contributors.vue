@@ -38,11 +38,11 @@
         target="_blank"
         class="post-contributor"
       >
-        <img
+        <!-- <img
           :alt="contributor"
           :src="`https://avatars.githubusercontent.com/${contributor}?size=60`"
           loading="lazy"
-        />
+        /> -->
         <span>{{ contributor }}</span>
       </a>
     </div>
@@ -109,9 +109,10 @@ export default defineComponent({
     }
     span {
       display: inline-block;
-      margin: 0 8px 0 5px;
+      /* margin: 0 8px 0 5px; */
+      margin: 2px 8px;
       position: relative;
-      top: 2px;
+      /* top: 2px; */
     }
   }
 }

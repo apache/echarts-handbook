@@ -1,6 +1,6 @@
 <template>
   <div :class="`bd-sidebar col-sm-3 col-md-2  ${sidebarOpen ? '' : 'closed'}`">
-    <div class="sidebar-search">
+    <!-- <div class="sidebar-search">
       <input
         id="handbook-search-input"
         type="search"
@@ -22,7 +22,7 @@
           />
         </svg>
       </div>
-    </div>
+    </div> -->
     <div class="bd-docs-nav">
       <ul class="nav bd-sidenav nav-root level0">
         <SidebarNavItem
@@ -88,22 +88,22 @@
 import Vue from 'vue'
 import SidebarNavItem from './SidebarNavItem.vue'
 
-const docsearchAppId = '14SYRIFETO'
+// const docsearchAppId = '14SYRIFETO'
 
 export default Vue.extend({
   components: {
     SidebarNavItem
   },
 
-  head: {
-    link: [
-      {
-        rel: 'preconnect',
-        href: `https://${docsearchAppId.toLowerCase()}-dsn.algolia.net`,
-        crossOrigin: ''
-      }
-    ]
-  },
+  // head: {
+  //   link: [
+  //     {
+  //       rel: 'preconnect',
+  //       href: `https://${docsearchAppId.toLowerCase()}-dsn.algolia.net`,
+  //       crossOrigin: ''
+  //     }
+  //   ]
+  // },
 
   data() {
     return {
@@ -123,18 +123,18 @@ export default Vue.extend({
       inline: 'start'
     })
     // @ts-ignore
-    docsearch({
-      appId: docsearchAppId,
-      apiKey: atob('MDY2ZGZiZDg3MTVlN2E0NGNjNjA4N2UyOTE0Njk1ZDE'),
-      indexName: 'apache_echarts',
-      inputSelector: '#handbook-search-input',
-      algoliaOptions: {
-        // @ts-ignore
-        facetFilters: [`lang:${this.$i18n.locale}`]
-      },
-      // Set debug to true if you want to inspect the dropdown
-      // debug: true
-    })
+    // docsearch({
+    //   appId: docsearchAppId,
+    //   apiKey: atob('MDY2ZGZiZDg3MTVlN2E0NGNjNjA4N2UyOTE0Njk1ZDE'),
+    //   indexName: 'apache_echarts',
+    //   inputSelector: '#handbook-search-input',
+    //   algoliaOptions: {
+    //     // @ts-ignore
+    //     facetFilters: [`lang:${this.$i18n.locale}`]
+    //   },
+    //   // Set debug to true if you want to inspect the dropdown
+    //   // debug: true
+    // })
   }
 })
 </script>
@@ -169,7 +169,8 @@ export default Vue.extend({
   .bd-docs-nav {
     overflow-x: hidden;
     overflow-y: auto;
-    height: calc(100% - 83px);
+    /* height: calc(100% - 83px); */
+    height: calc(100% - 10px);
     padding-bottom: 10px;
     padding-top: 10px;
     margin-top: 5px;
