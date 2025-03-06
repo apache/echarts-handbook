@@ -1,8 +1,9 @@
 <template>
-  <div class="hidden">
+  <div >
     <!-- These two links are for generate.crawler -->
     <nuxt-link to="zh/get-started">中文</nuxt-link>
     <nuxt-link to="en/get-started">English</nuxt-link>
+    <nuxt-link to="es/get-started">Español</nuxt-link>
   </div>
 </template>
 

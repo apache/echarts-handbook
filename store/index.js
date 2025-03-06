@@ -1,6 +1,8 @@
 import zhPosts from '~/contents/zh/posts.yml'
 import enPosts from '~/contents/en/posts.yml'
+import esPosts from '~/contents/es/posts.yml'
 import config from '~/configs/config'
+import { effectScope } from '@vue/composition-api'
 
 export const state = () => ({
   filled: false,
@@ -12,7 +14,8 @@ export const state = () => ({
   focusMode: false,
   posts: {
     zh: zhPosts,
-    en: enPosts
+    en: enPosts,
+    es: esPosts
   },
   config: config
 })
