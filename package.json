@@ -25,7 +25,7 @@
     "nuxt": "^2.15.8",
     "nuxt-i18n": "^6.28.1",
     "prism-themes": "^1.9.0",
-    "prismjs": "^1.29.0",
+    "prismjs": "^1.30.0",
     "resize-detector": "^0.3.0",
     "vanilla-lazyload": "^17.8.3",
     "vue": "2.6.14",
