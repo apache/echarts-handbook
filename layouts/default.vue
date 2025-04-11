@@ -78,6 +78,9 @@ export default {
       ],
       script: [
         {
+          innerHTML: `window.ECHARTS_WWW_VENDORS_CDN_ROOT = '${cdnRoot}';`
+        },
+        {
           src: `${cdnRoot}jquery@3.7.1/dist/jquery.min.js`,
         },
         {
@@ -94,7 +97,7 @@ export default {
             '<div class="no-script"><strong>很抱歉，Apache ECharts 网站需要启用 JavaScript 才能正常运行。</strong></div>',
         },
       ],
-      __dangerouslyDisableSanitizers: ['noscript'],
+      __dangerouslyDisableSanitizers: ['noscript', 'script'],
     }
   },
 
