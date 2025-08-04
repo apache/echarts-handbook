@@ -16,7 +16,11 @@
     - title: 版本特性
       dir: release-note
       children:
-        - title: ECharts 5 特性介绍
+        - title: ECharts 6 特性介绍
+          dir: v6-feature
+        - title: v5 升级 v6 指南
+          dir: v6-upgrade-guide
+        - title: "5.0"
           dir: v5-feature
         - title: v4 升级 v5 指南
           dir: v5-upgrade-guide
