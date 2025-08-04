@@ -71,7 +71,7 @@ option = {
     series: {
         // ...
         label: {
-            // 如果在 option 根级别设置不生效，则在此处设置：
+            // 也可以在此处设置，只控制此 label 。
             // richInheritPlainLabel: true
             rich: {
                 // ...
