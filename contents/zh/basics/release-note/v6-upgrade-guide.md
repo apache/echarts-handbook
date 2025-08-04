@@ -47,19 +47,6 @@ const chart = echarts.init(document.getElementById('container'), 'myTheme');
 
 在直角坐标系中 (`grid` 组件)，如果之前坐标轴名称 (`axisName`) 或标签 (`axisLabel`) 溢出画布或发生重叠，升级之后的坐标轴的位置可能会相对之前而言略微偏移，因为默认启用了防止溢出和防止坐标轴名称与标签重叠的机制。在大多数情况下，这些变化肉眼难以察觉。但如果出现不合理的变化，可以通过设置 [grid.outerBoundsMode: 'none'](${mainSitePath}option.html#grid.outerBoundsMode) 选项关闭防溢出机制，或设置 [xAxis/yAxis.axisLabel.nameMoveOverlap: false](${mainSitePath}option.html#xAxis.nameMoveOverlap) 选项关闭防重叠机制。
 
-### 中心位置
-
-在 [geo](${mainSitePath}option.html#geo.center)、[series.map](${mainSitePath}option.html#series-map.center)、[series.graph](${mainSitePath}option.html#series-graph.center) 和 [series.tree](${mainSitePath}option.html#series-tree.center) 中，`center` 如果使用百分比时 (如 `'33%'`)，百分比的基准发生了变化。之前的百分比基准是不合理的。如需恢复旧行为，可在 ECharts option 的根级别设置 `legacyViewCoordSysCenterBase: true`。
-
-例如：
-```js
-option = {
-    legacyViewCoordSysCenterBase: true,
-    geo: {...}
-    series: {...}
-}
-```
-
 ### 富文本
 
 v6 中 [富文本标签 (label.rich / textStyle.rich)](${mainSitePath}option.html#series-scatter.label.rich) 的这些样式 `fontStyle`、`fontWeight`、`fontSize`、`fontFamily`、`textShadowColor`、`textShadowBlur`、`textShadowOffsetX`、`textShadowOffsetY` 会改为继承 [普通标签 (label / textStyle)](${mainSitePath}option.html#series-scatter.label) 中的同名样式。如需恢复旧行为，可以在 ECharts option 的根级别或 label / textStyle option 中设置 `richInheritPlainLabel: false`。
