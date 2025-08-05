@@ -19,6 +19,8 @@
       children:
         - title: ECharts 6 Features
           dir: v6-feature
+        - title: Migration from v5 to v6
+          dir: v6-upgrade-guide
         - title: "5.0"
           dir: v5-feature
         - title: Migration from v4 to v5
