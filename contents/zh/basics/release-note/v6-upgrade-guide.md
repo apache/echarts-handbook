@@ -45,7 +45,7 @@ const chart = echarts.init(document.getElementById('container'), 'myTheme');
 
 ### 标签位置
 
-在直角坐标系中 (`grid` 组件)，如果之前坐标轴名称 (`axisName`) 或标签 (`axisLabel`) 溢出画布或发生重叠，升级之后的坐标轴的位置可能会相对之前而言略微偏移，因为默认启用了防止溢出和防止坐标轴名称与标签重叠的机制。在大多数情况下，这些变化肉眼难以察觉。但如果出现不合理的变化，可以通过设置 [grid.outerBoundsMode: 'none'](${mainSitePath}option.html#grid.outerBoundsMode) 选项关闭防溢出机制，或设置 [xAxis/yAxis.axisLabel.nameMoveOverlap: false](${mainSitePath}option.html#xAxis.nameMoveOverlap) 选项关闭防重叠机制。
+在直角坐标系中 (`grid` 组件)，如果之前坐标轴名称 (`axisName`) 或标签 (`axisLabel`) 溢出画布或发生重叠，升级之后的坐标轴的位置可能会相对之前而言略微偏移，因为默认启用了防止溢出和防止坐标轴名称与标签重叠的机制。在大多数情况下，这些变化肉眼难以察觉。但如果出现不合理的变化，可以通过设置 [grid.outerBoundsMode: 'none'](${mainSitePath}option.html#grid.outerBoundsMode) 选项关闭防溢出机制，或设置 [xAxis/yAxis.nameMoveOverlap: false](${mainSitePath}option.html#xAxis.nameMoveOverlap) 选项关闭防重叠机制。
 
 ### 富文本
 
