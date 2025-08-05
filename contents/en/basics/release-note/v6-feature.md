@@ -177,4 +177,4 @@ In previous versions, axis labels and names in rectangular coordinate systems co
 
 ## Upgrade Guide
 
-See the full [changelog](${mainSitePath}changelog.html#v6-0-0) and [upgrade guide](./v6-upgrade-guide).
+See the full [changelog](${mainSitePath}changelog.html#v6-0-0) and [upgrade guide](${lang}/basics/release-note/v6-upgrade-guide).

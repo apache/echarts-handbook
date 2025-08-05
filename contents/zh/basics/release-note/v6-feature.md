@@ -180,4 +180,4 @@ ECharts 6.0 针对金融交易场景深度优化，增强了标签针对坐标�
 
 ## 升级方法
 
-请参见完整的[版本更新内容](${mainSitePath}changelog.html#v6-0-0)和[升级指南](./v6-upgrade-guide)。
+请参见完整的[版本更新内容](${mainSitePath}changelog.html#v6-0-0)和[升级指南](${lang}/basics/release-note/v6-upgrade-guide)。
