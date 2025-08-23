@@ -6,5 +6,6 @@ export default {
     'https://echarts.apache.org/examples/${lang}/editor.html?c=',
   mainSitePath: 'https://echarts.apache.org/',
   optionPath: 'https://echarts.apache.org/option.html#',
+  apiPath: 'https://echarts.apache.org/api.html#',
   gitRepo: 'apache/echarts-handbook'
 }

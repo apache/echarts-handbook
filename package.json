@@ -4,7 +4,7 @@
   "description": "Apache ECharts Handbook",
   "license": "Apache-2.0",
   "scripts": {
-    "dev": "cross-env NODE_OPTIONS=--openssl-legacy-provider nuxt",
+    "dev": "cross-env NODE_OPTIONS=--openssl-legacy-provider DEBUG=nuxt:*  nuxt dev",
     "start": "cross-env NODE_OPTIONS=--openssl-legacy-provider nuxt start",
     "prepare-generate": "node build/generate-contributors.js && node build/generate",
     "build:gh": "npm run prepare-generate && cross-env NODE_OPTIONS=--openssl-legacy-provider NUXT_ENV_DEPLOY=gh nuxt generate",
@@ -22,6 +22,7 @@
     "lodash": "^4.17.21",
     "markdown-it": "^12.2.0",
     "markdown-it-anchor": "^8.1.2",
+    "markdown-it-attrs": "^4.3.1",
     "nuxt": "^2.15.8",
     "nuxt-i18n": "^6.28.1",
     "prism-themes": "^1.9.0",
