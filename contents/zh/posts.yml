@@ -112,6 +112,14 @@
           children:
             - title: 基础散点图
               dir: basic-scatter
+    - title: 常用组件
+      dir: component-types
+      children:
+        - title: 地理坐标系（Geo）
+          dir: geo
+          children:
+            - title: SVG 底图
+              dir: svg-base-map
     - title: 移动端优化
       dir: mobile
       draft: true

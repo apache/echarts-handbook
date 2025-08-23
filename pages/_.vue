@@ -29,6 +29,7 @@
 import '~/components/markdown/global'
 import markdown from 'markdown-it'
 import anchor from 'markdown-it-anchor'
+import markdownItAttrs from 'markdown-it-attrs'
 import Contributors from '~/components/partials/Contributors.vue'
 import PostContent from '~/components/partials/PostContent'
 import * as base64 from 'js-base64'
@@ -62,6 +63,7 @@ function replaceVars(md: string, lang: string) {
   // Replace variables
   ;[
     'optionPath',
+    'apiPath',
     'mainSitePath',
     'exampleViewPath',
     'exampleEditorPath'
@@ -122,12 +124,13 @@ export default {
       // @ts-ignore
       this.$el.querySelector('.post-inner')?.querySelectorAll('h2,h3') || []
     for (let i = 0; i < headers.length; i++) {
-      const title = (headers[i] as HTMLHeadingElement).innerText
+      const headerItem = headers[i] as HTMLHeadingElement
+      const title = headerItem.innerText
       // @ts-ignore
       this.toc.push({
         title,
-        depth: +headers[i].nodeName.replace(/\D/g, ''),
-        id: slugify(title)
+        depth: +headerItem.nodeName.replace(/\D/g, ''),
+        id: headerItem.id != null ? headerItem.id : slugify(title)
       })
     }
     setTimeout(() => {
@@ -180,6 +183,12 @@ export default {
         permalinkAfter: true,
         permalinkSymbol: '#',
         permalinkClass: 'permalink'
+      })
+      .use(markdownItAttrs, {
+        leftDelimiter: '[[[',
+        rightDelimiter: ']]]',
+        // empty array = all attributes are allowed
+        allowedAttributes: ['id']
       })
       .use(function(md) {
         const defaultImageRenderer = md.renderer.rules.image!
