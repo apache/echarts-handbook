@@ -110,6 +110,14 @@
           children:
             - title: Basic Scatter
               dir: basic-scatter
+    - title: Common Components
+      dir: component-types
+      children:
+        - title: Geo
+          dir: geo
+          children:
+            - title: SVG Base Map
+              dir: svg-base-map
     - title: Mobile
       dir: mobile
       draft: true
