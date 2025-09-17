@@ -121,7 +121,7 @@ ECharts 6.0 针对金融交易场景深度优化，增强了标签针对坐标�
 
 <img data-src="images/feature-v6/8-stock.png" width="600px" />
 
-这些实例可以帮助开发者快速实现金融交易场景的需求。其中，在图表的四个角落显示数字可以使用 [relativeTo](${optionPathseries-line.markPoint.data.relativeTo) 实现。
+这些实例可以帮助开发者快速实现金融交易场景的需求。其中，在图表的四个角落显示数字可以使用 [relativeTo](${optionPath}series-line.markPoint.data.relativeTo) 实现。
 
 ### 9. 新增矩阵坐标系
 
