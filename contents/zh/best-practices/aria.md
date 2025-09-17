@@ -6,9 +6,26 @@ Apache ECharts 4 遵从这一规范，支持自动根据图表配置项智能生
 
 无障碍访问功能默认关闭，需要通过将 [aria.show](${optionPath}aria.show) 设置为 `true` 开启。
 
+## 导入 AriaComponent
+
+从 ECharts 5 开始, `aria` 组件不再默认导入。在使用无障碍访问特性之前，你需要先导入和注册 `AriaComponent` 组件：
+
+```js
+import { AriaComponent } from 'echarts/components';
+echarts.use(AriaComponent);
+```
+
+或者如果你在使用 CommonJS 模块：
+
+```js
+require('echarts/lib/component/aria');
+```
+
+如果未导入 `AriaComponent` 组件，设置 `aria.show: true` 不会生效。
+
 ## 图表描述
 
-开启 [aria.show](${optionPath}aria.show) 后，会根据图表、数据、标题等情况，自动智能生成关于图表的描述，用户也可以通过配置项修改描述。
+在导入 `AriaComponent` 组件并开启 [aria.show](${optionPath}aria.show) 后，会根据图表、数据、标题等情况，自动智能生成关于图表的描述，用户也可以通过配置项修改描述。
 
 对于配置项：
 

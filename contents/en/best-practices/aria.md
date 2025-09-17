@@ -30,9 +30,6 @@ After importing the AriaComponent and setting [aria.show](${optionPath}aria.show
 Example configuration object:
 
 ```js
-import { AriaComponent } from 'echarts/components';
-echarts.use(AriaComponent);
-
 option = {
   aria: {
     show: true
