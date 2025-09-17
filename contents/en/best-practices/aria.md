@@ -6,13 +6,33 @@ ECharts 4.0 complied with the specification, supports generating a description b
 
 This accessibility function is turned off by default. It can be turned on by setting the value of [aria.show](${optionPath}aria.show) to `true`.
 
+## Import AriaComponent
+
+Starting with ECharts 5, `aria` components are no longer imported by default. You must manually import the AriaComponent before using accessibility features:
+
+```js
+import { AriaComponent } from 'echarts/components';
+echarts.use(AriaComponent);
+```
+
+Or using CommonJS:
+
+```js
+require('echarts/lib/component/aria');
+```
+
+Without this import, setting `aria.show: true` will not work properly.
+
 ## Chart Labels
 
-After setting [aria.show](${optionPath}aria.show) to `true`, ECharts will automatically generate a description of the chart according to the title, chart, data, etc. Users can also set description manually through the configuration object.
+After importing the AriaComponent and setting [aria.show](${optionPath}aria.show) to `true`, ECharts will automatically generate a description of the chart according to the title, chart, data, etc. Users can also set description manually through the configuration object.
 
 Example configuration object:
 
 ```js
+import { AriaComponent } from 'echarts/components';
+echarts.use(AriaComponent);
+
 option = {
   aria: {
     show: true
