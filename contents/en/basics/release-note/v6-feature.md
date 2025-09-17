@@ -119,7 +119,7 @@ Below is a comprehensive stock trading chart using ECharts, combining **time-sha
 
 <img data-src="images/feature-v6/8-stock.png" width="600px" />
 
-These examples help developers quickly meet financial trading needs. For example, displaying numbers in the four corners of the chart can be achieved with [relativeTo](${optionPathseries-line.markPoint.data.relativeTo).
+These examples help developers quickly meet financial trading needs. For example, displaying numbers in the four corners of the chart can be achieved with [relativeTo](${optionPath}series-line.markPoint.data.relativeTo).
 
 ### 9. New Matrix Coordinate System
 
