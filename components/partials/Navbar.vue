@@ -6,6 +6,7 @@
 import Vue from 'vue'
 import zhNav from './Navbar/zh.vue'
 import enNav from './Navbar/en.vue'
+import esNav from './Navbar/es.vue';
 
 export default Vue.extend({
   components: {},
@@ -15,13 +16,19 @@ export default Vue.extend({
     ;(window as any).changeLang = () => {
       window.location.href = window.location.href.replace(
         `/${locale}/`,
-        locale === 'zh' ? '/en/' : '/zh/'
+        locale === 'zh' ? '/en/' : locale === 'en' ? '/es/' : '/zh/'
       )
     }
   },
   computed: {
     navComponent() {
-      return (this as any).$i18n.locale === 'zh' ? zhNav : enNav
+      const locale = (this as any).$i18n.locale
+      if (locale === 'zh') {
+        return zhNav
+      } else if (locale === 'es') {
+        return esNav
+      }
+      return enNav 
     }
   }
 })

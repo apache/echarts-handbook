@@ -7,7 +7,7 @@
           <li
             v-for="link of toc"
             :key="link.id"
-            :class="{ toc2: link.depth === 2, toc3: link.depth === 3 }"
+            :class="{ toc2: link.depth === 2, toc3: link.depth === 3 , toc4: link.depth === 4 }"
           >
             <NuxtLink :to="`#${link.id}`">{{ link.title }}</NuxtLink>
           </li>
