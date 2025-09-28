@@ -33,17 +33,21 @@
     >
       <a
         v-for="contributor of contributors"
-        :key="contributor"
-        :href="`https://github.com/${contributor}`"
+        :key="contributor.id"
+        :href="`https://github.com/${contributor.id}`"
         target="_blank"
         class="post-contributor"
+        :class="contributor.avatar && 'has-avatar'"
       >
-        <!-- <img
-          :alt="contributor"
-          :src="`https://avatars.githubusercontent.com/${contributor}?size=60`"
+        <img
+          v-if="contributor.avatar"
+          :alt="contributor.id"
+          :src="contributor.avatar"
           loading="lazy"
-        /> -->
-        <span>{{ contributor }}</span>
+          decoding="async"
+          fetchpriority="low"
+        />
+        <span>{{ contributor.id }}</span>
       </a>
     </div>
   </div>
@@ -52,6 +56,7 @@
 <script lang="ts">
 import { computed, defineComponent } from '@vue/composition-api'
 import allContributors from '../helper/contributors'
+import contributorAvatar from '../helper/contributor-avatar'
 import { getSourcePath } from '../helper/post'
 
 export default defineComponent({
@@ -60,7 +65,12 @@ export default defineComponent({
   },
   setup(props) {
     const contributors = computed(() => {
-      return allContributors[`contents/${props.path || ''}.md`]
+      return allContributors[`contents/${props.path || ''}.md`].map(contributor => {
+        return {
+          id: contributor,
+          avatar: contributorAvatar[contributor]
+        }
+      })
     })
     const sourcePath = computed(() => {
       return getSourcePath(props.path!)
@@ -85,11 +95,16 @@ export default defineComponent({
   }
 
   .post-contributors-list {
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
     margin-top: 10px;
   }
 
   .post-contributor {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-right: 15px;
     margin-top: 10px;
 
@@ -109,10 +124,14 @@ export default defineComponent({
     }
     span {
       display: inline-block;
-      /* margin: 0 8px 0 5px; */
-      margin: 2px 8px;
+      margin: 2px 10px;
       position: relative;
-      /* top: 2px; */
+    }
+
+    &.has-avatar {
+      span {
+        margin: 2px 8px;
+      }
     }
   }
 }

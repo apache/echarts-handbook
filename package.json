@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "cross-env NODE_OPTIONS=--openssl-legacy-provider DEBUG=nuxt:*  nuxt dev",
     "start": "cross-env NODE_OPTIONS=--openssl-legacy-provider nuxt start",
-    "prepare-generate": "node build/generate-contributors.js && node build/generate",
+    "prepare-generate": "node build/generate-contributors.js && node build/generate-contributor-avatar.js && node build/generate-nav.js",
     "build:gh": "npm run prepare-generate && cross-env NODE_OPTIONS=--openssl-legacy-provider NUXT_ENV_DEPLOY=gh nuxt generate",
     "build:local": "npm run prepare-generate && cross-env NODE_OPTIONS=--openssl-legacy-provider NUXT_ENV_DEPLOY=local nuxt generate",
     "build:localsite": "npm run prepare-generate && cross-env NODE_OPTIONS=--openssl-legacy-provider NUXT_ENV_DEPLOY=localsite nuxt generate",
@@ -41,12 +41,12 @@
     "@nuxtjs/eslint-config-typescript": "^11.0.0",
     "@nuxtjs/tailwindcss": "^4.1.2",
     "babel-eslint": "^10.1.0",
-    "cheerio": "^1.0.0-rc.12",
+    "cheerio": "^1.1.2",
     "cross-env": "^7.0.3",
     "eslint": "^8.27.0",
     "eslint-plugin-nuxt": "^4.0.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "node-fetch": "^2.6.7",
+    "node-fetch": "^3.3.2",
     "postcss": "^8.4.31",
     "raw-loader": "^4.0.2"
   }
