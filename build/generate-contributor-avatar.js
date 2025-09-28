@@ -3,8 +3,8 @@ const path = require('path')
 const fetch = require('node-fetch')
 const cheerio = require('cheerio')
 
-;(async () => {
-  const localFilePath = path.resolve(__dirname, '../../echarts-www/_generated/en/committers.html')
+;(async () => {  
+  const localFilePath = path.resolve(__dirname, '../../echarts-website/en/committers.html')
   let html
   if (fs.existsSync(localFilePath)) {
     console.log('use local built committers page:', localFilePath)
@@ -17,7 +17,7 @@ const cheerio = require('cheerio')
   const $ = cheerio.load(html)
   /** @type {{[key: string]: string}} */
   const githubIdAvatarMap = {}
-  const githubIdReg = /(?:https?:\/\/github.com\/)?([\w-]+)/
+  const githubIdReg = /(?:https?:\/\/github.com\/)([\w-]+)/
   $('.about-person > a').each((idx, el) => {
     const link = el.attribs['data-github'] || el.attribs.href
     const githubId = link && link.match(githubIdReg)?.[1]
