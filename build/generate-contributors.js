@@ -1,6 +1,6 @@
 const { exec } = require('child_process')
 const fs = require('fs')
-const fetch = require('node-fetch').default
+const fetch = require('node-fetch')
 const cheerio = require('cheerio')
 
 const dir = './contents'

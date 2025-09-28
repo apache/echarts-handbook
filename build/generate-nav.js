@@ -1,6 +1,6 @@
 const path = require('path')
 const fs = require('fs')
-const fetch = require('node-fetch').default
+const fetch = require('node-fetch')
 
 const websitePath = path.resolve(__dirname, '../../echarts-website')
 
