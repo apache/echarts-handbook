@@ -1,9 +1,19 @@
 const fs = require('fs')
+const path = require('path')
 const fetch = require('node-fetch')
 const cheerio = require('cheerio')
 
 ;(async () => {
-  const html = await (await fetch('https://echarts.apache.org/en/committers.html')).text()
+  const localFilePath = path.resolve(__dirname, '../../echarts-www/_generated/en/committers.html')
+  let html
+  if (fs.existsSync(localFilePath)) {
+    console.log('use local built committers page:', localFilePath)
+    html = fs.readFileSync(localFilePath, { encoding: 'utf-8' })
+  } else {
+    const website = 'https://echarts.apache.org/en/committers.html'
+    console.log('fetch committers page from website:', website)
+    html = await (await fetch(website)).text()
+  }
   const $ = cheerio.load(html)
   /** @type {{[key: string]: string}} */
   const githubIdAvatarMap = {}

@@ -2,7 +2,7 @@ export default {
     "pissang": "https://echarts.apache.org/en/images/people/沈毅.jpg?_v_=20240226",
     "100pah": "https://echarts.apache.org/en/images/people/宿爽.jpg?_v_=20240226",
     "Ovilia": "https://echarts.apache.org/en/images/people/羡辙.jpg?_v_=20240226",
-    "https": "https://echarts.apache.org/en/images/people/王俊婷.jpg?_v_=20240226",
+    "Wdingding": "https://echarts.apache.org/en/images/people/王俊婷.jpg?_v_=20240226",
     "plainheart": "https://echarts.apache.org/en/images/people/plainheart.jpg",
     "sz-p": "https://echarts.apache.org/en/images/people/潘士钊.jpg?_v_=20240226.jpg",
     "susiwen8": "https://echarts.apache.org/en/images/people/苏思文.jpg?_v_=20240226",
