@@ -65,7 +65,7 @@ export default defineComponent({
   },
   setup(props) {
     const contributors = computed(() => {
-      return allContributors[`contents/${props.path || ''}.md`].map(contributor => {
+      return (allContributors[`contents/${props.path || ''}.md`] || []).map(contributor => {
         return {
           id: contributor,
           avatar: contributorAvatar[contributor]
