@@ -2,7 +2,7 @@
 
 ## 新增一个 markdown 文件 [[[#adding-a-markdown-file]]]
 
-在 `contents/zh/`（中文文章）或 `contents/en/`（英文文章）目录下新增一个 markdown 文件，最多支持三级目录。将路径及标题信息更新在 `contents/zh/posts.yml` 或 `contents/en/posts.yml`。
+在 `contents/zh/`（中文文章）或 `contents/en/`（英文文章）目录下新增一个 markdown 文件，最多支持三级目录。将路径及标题信息更新在 `contents/zh/posts.yml` 或 `contents/en/posts.yml`。将作者信息添加在 `components/helper/contributors.ts`。（注意，此文件中 `en` 和 `zh` 是不同的条目。）
 
 markdown 文件名称小写。
 

@@ -2,7 +2,7 @@
 
 ## Adding a Markdown File [[[#adding-a-markdown-file]]]
 
-Add a markdown file to the `contents/zh/` (Chinese posts) or `contents/en/` (English posts) directories, up to three levels. Update the path and title information in `contents/zh/posts.yml` or `contents/en/posts.yml`.
+Add a markdown file to the `contents/zh/` (Chinese posts) or `contents/en/` (English posts) directories, up to three levels. Update the path and title information in `contents/zh/posts.yml` or `contents/en/posts.yml`. Add the corresponding contributor information in `components/helper/contributors.ts`. (Notice, `en` and `zh` are separate entries in that file.)
 
 Lowercase markdown file names.
 
