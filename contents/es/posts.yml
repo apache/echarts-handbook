@@ -1,0 +1,159 @@
+- title: Empezar
+  dir: get-started
+- title: Basicos
+  dir: basics
+  children:
+    - title: Descargar ECharts
+      dir: download
+    - title: Importar ECharts
+      dir: import
+    - title: Recursos
+      dir: resource
+      draft: true
+    # - title: Inspiration
+    #   dir: inspiration
+    - title: Obtener Ayudar
+      dir: help
+    - title: Novedades
+      dir: release-note
+      children:
+        - title: ECharts 5 Features
+          dir: v5-feature
+        - title: Migration from v4 to v5
+          dir: v5-upgrade-guide
+        - title: 5.2
+          dir: 5-2-0
+        - title: 5.3
+          dir: 5-3-0
+        - title: 5.4
+          dir: 5-4-0
+        - title: 5.5
+          dir: 5-5-0
+        - title: 5.6
+          dir: 5-6-0
+- title: Conceptos
+  dir: concepts
+  children:
+    - title: Contenedor de Graficos
+      dir: chart-size
+    - title: Opciones de Graficos
+      dir: options
+      draft: true
+    - title: Series
+      dir: series
+      draft: true
+    - title: Estilos
+      dir: style
+    - title: Conjunto de Datos
+      dir: dataset
+    - title: Trasformacion de Datos
+      dir: data-transform
+    - title: Coordenadas
+      dir: coordinate
+      draft: true
+    - title: Axis
+      dir: axis
+    - title: Mapeo Visual
+      dir: visual-map
+    - title: Leyenda
+      dir: legend
+    - title: Eventos y Acciones
+      dir: event
+- title: Guias de Como Hacer
+  dir: how-to
+  children:
+    - title: Graficos Comunes
+      dir: chart-types
+      children:
+        - title: Barras
+          dir: bar
+          children:
+            - title: Barra Basica
+              dir: basic-bar
+            - title: Barra Apilada
+              dir: stacked-bar
+            - title: Barra en Carrera
+              dir: bar-race
+            - title: Barra Polar
+              dir: polar-bar
+              draft: true
+            - title: Cascada
+              dir: waterfall
+        - title: Lineas
+          dir: line
+          children:
+            - title: Linea  Basica
+              dir: basic-line
+            - title: Linea Apilada
+              dir: stacked-line
+            - title: Grafico de Area
+              dir: area-line
+            - title: Linea Suavizada
+              dir: smooth-line
+            - title: Linea de Escalon
+              dir: step-line
+        - title: Pastel
+          dir: pie
+          children:
+            - title: Pastel Basico
+              dir: basic-pie
+            - title: Estilo de Anillo
+              dir: doughnut
+            - title: Estilo Rosa
+              dir: rose
+        - title: Dispersion
+          dir: scatter
+          children:
+            - title: Dispersion Basica
+              dir: basic-scatter
+    - title: Movil
+      dir: mobile
+      draft: true
+    - title: Plataforma Cruzada
+      dir: cross-platform
+      children:
+        - title: Renderizado del Lado del Servidor
+          dir: server
+    - title: Datos
+      dir: data
+      children:
+        - title: Datos Dinamicos
+          dir: dynamic-data
+        - title: Drilldown
+          dir: drilldown
+          draft: true
+    - title: Etiquetas
+      dir: label
+      children:
+        - title: Texto en Ricos
+          dir: rich-text
+    - title: Animacion
+      dir: animation
+      children:
+        - title: Transicion de Datos
+          dir: transition
+    - title: Interaccion
+      dir: interaction
+      children:
+        - title: Arrastre
+          dir: drag
+        - title: Conectar
+          dir: connect
+          draft: true
+        - title: Ajuste Inteligente de Puntero
+          dir: coarse-pointer
+- title: Mejores Practicas
+  dir: best-practices
+  children:
+    - title: Optimizacion para Moviles
+      dir: mobile
+      draft: true
+    - title: Canvas vs. SVG
+      dir: canvas-vs-svg
+    - title: Aria
+      dir: aria
+- title: Edit Manual
+  dir: meta
+  children:
+    - title: Editar Guia
+      dir: edit-guide
