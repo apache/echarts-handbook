@@ -164,6 +164,8 @@
       dir: canvas-vs-svg
     - title: Aria
       dir: aria
+    - title: Security
+      dir: security
 - title: Edit Handbook
   dir: meta
   children:

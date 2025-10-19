@@ -84,6 +84,9 @@ export default {
         "Ovilia",
         "pissang"
     ],
+    "contents/zh/how-to/component-types/geo/svg-base-map.md": [
+        "100pah"
+    ],
     "contents/zh/get-started.md": [
         "Ovilia",
         "pissang"
@@ -223,6 +226,9 @@ export default {
         "Ovilia",
         "pissang"
     ],
+    "contents/zh/best-practices/security.md": [
+        "100pah",
+    ],
     "contents/zh/basics/resource.md": [
         "Ovilia",
         "pissang"
@@ -345,6 +351,9 @@ export default {
         "Hansz00",
         "Ovilia",
         "pissang"
+    ],
+    "contents/en/how-to/component-types/geo/svg-base-map.md": [
+        "100pah"
     ],
     "contents/en/get-started.md": [
         "Ovilia",
@@ -473,6 +482,9 @@ export default {
         "Hansz00",
         "Ovilia",
         "pissang"
+    ],
+    "contents/en/best-practices/security.md": [
+        "100pah",
     ],
     "contents/en/basics/release-note/v5-upgrade-guide.md": [
         "Ovilia",
