@@ -1,10 +1,10 @@
-# 安全性
+# 安全指南
 
 ## 概述
 
 ECharts 旨在提供丰富而灵活的可视化能力。虽然其绝大多数 API 不需要额外的安全考虑，但有几个例外。例如，`tooltip.formatter` 允许输入 HTML 字符串，从而完全控制组件的内容与布局；`title.link` 直接使用输入的 URL 字符串而不进行自动的净化处理（sanitization）。这种灵活性虽然强大，但当输入来自“不受信任”的来源时，可能带来安全风险。本文档列出了这些 API，并提供了如何安全使用这些特性的建议。
 
-任何潜在安全问题，可通过邮件报告至 [private@echarts.apache.org](mailto:private@echarts.apache.org)。
+任何潜在安全问题，可依照 [ASF 安全](https://echarts.apache.org/zh/security.html) 中的渠道进行报告。
 
 
 ## 安全边界与检查清单 [[[#security_boundaries_and_checklist]]]
@@ -36,11 +36,11 @@ ECharts 通过 Canvas 或 SVG 渲染，只有几个特殊组件例外，允许 H
 
 最简单和常见的 HTML 转义是这些字符串转换：
 ```
-'&' => '&'
-'<' => '<'
-'>' => '>'
-'"' => '"'
-"'" => '''
+'&' => '&amp;'
+'<' => '&lt;'
+'>' => '&gt;'
+'"' => '&quot;'
+"'" => '&#39;
 ```
 转换后，这些字符的功能被去除了，只能显示，从而也无法通过他们进行注入攻击（如 `<script>...</script>`）。
 
@@ -55,7 +55,7 @@ ECharts 通过 Canvas 或 SVG 渲染，只有几个特殊组件例外，允许 H
 
 这些场景需要承受相对更高的安全风险，可通过净化（sanitization）机制缓解。净化器（sanitizer）一般基于白名单过滤 HTML 内容，例如移除所有 `<script>`、`<style>`、`<link>`、内联 CSS、事件属性（如 `onclick`）以及 `javascript:` 协议的 URL。推荐使用维护良好、社区广泛采用的库，而非用自己写的正则或字符串处理来做这件事。
 
-净化可在前端（指 client）、后端（指 server）或两者同时进行，取决于实际场景和安全需求。例如，对于生成于前端的内容（例如前端提交给后端的内容），仅依赖前端净化不够，攻击者可直接伪造请求绕过前端。比如，一个在线编辑器允许用户以所见即所得（WYSIWYG）的方式创建内容，其中，用户可选择使用内置的几个 HTML 模板或 JS 函数（如 `tooltip.formatter`）。如果这些选好或者继而生成的 HTML 文本或 JS 函数文本被传输到后端，并不做处理直接存于数据库，则攻击者可在这个阶段注入恶意代码。后续它们被从数据库中取出，并传给 `chart.setOption()` 时，恶意代码会被执行。所以建议在这类场景中：
+净化可在前端（指 client）、后端（指 server）或两者同时进行，取决于实际场景和安全需求。例如，对于生成于前端的内容（例如前端提交给后端的内容），仅依赖前端净化不够，攻击者可直接伪造请求绕过前端。比如，一个在线编辑器允许用户以所见即所得（WYSIWYG）的方式创建内容，其中，用户可选择使用内置的几个 HTML 模板或 JS 函数（如 [tooltip.formatter](${optionPath}tooltip.formatter) 或 [label.formatter](${optionPath}series-scatter.label.formatter)）。如果这些选好或者继而生成的 HTML 文本或 JS 函数文本被传输到后端，并不做处理直接存于数据库，则攻击者可在这个阶段注入恶意代码。后续它们被从数据库中取出，并传给 `chart.setOption()` 时，恶意代码会被执行。所以建议在这类场景中：
 + 仅存储内置模板/函数的引用 ID，而不存储原始代码。
 + 若为了更高的定制能力而允许自定义模板，或可引入安全的第三方模板引擎，从而避免注入。
 + 若必须允许用户自定义 HTML，须要严格的后端净化或校验（如过滤掉所有 JS、CSS 和其他可能有安全隐患的内容），并依据实际情况考虑在沙盒中渲染以降低潜在的风险。
@@ -95,6 +95,6 @@ HTML 的安全（见 [“传入 HTML 时的安全考虑”](best-practices/secur
 
 ## 传入 JS 函数时的安全考虑 [[[#passing_js_function_safely]]]
 
-ECharts 的 `option`（即 [chart.setOption()](${apiPath}echartsInstance.setOption) 的输入）主要是声明式的，但部分 option 可接受 JS 函数（回调）输入以增强表达能力和灵活性，如 [label.formatter](${optionPath}#series-scatter.label.formatter)、[axisTick.interval](xAxis.axisTick.interval) 等。在大多数情况下，这些函数是 app 源代码的一部分于是完全可信任，因此不会引入风险。
+ECharts 的 `option`（即 [chart.setOption()](${apiPath}echartsInstance.setOption) 的输入）主要是声明式的，但部分 option 可接受 JS 函数（回调）输入以增强表达能力和灵活性，如 [label.formatter](${optionPath}series-scatter.label.formatter)、[axisTick.interval](${optionPath}xAxis.axisTick.interval) 等。在大多数情况下，这些函数是 app 源代码的一部分于是完全可信任，因此不会引入风险。
 
 但若某些产品允许这些 JS 函数来自于“不受信任”的来源，如用户提供函数，则风险与维护成本显著增加。这种场景实质上与执行“不受信任”的 HTML 代码风险相当，可参考 [“传入 HTML 时的安全考虑”](best-practices/security#passing_raw_html_safely) 中的讨论。

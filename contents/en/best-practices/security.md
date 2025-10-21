@@ -1,15 +1,15 @@
-# Security
+# Security Guidelines
 
 ## Overview
 
 ECharts aims to provide rich and flexible visualization capabilities. Although the vast majority of its APIs do not require special security considerations, sereval APIs are exceptions. For example, the option `tooltip.formatter` accepts a raw HTML string, allowing full control over the component's content and layout; the option `title.link` uses the provided URL string directly without automatic sanitization. While this flexibility is powerful, security risks may arise if the input comes from untrusted sources. These APIs are listed below, along with suggestions on how to use these features safely.
 
-Any security issues can be reported to [private@echarts.apache.org](mailto:private@echarts.apache.org) .
+Any security issues can be reported according to [ASF Security Page][https://echarts.apache.org/en/security.html].
 
 
 ## Security Boundaries and Checklist [[[#security_boundaries_and_checklist]]]
 
-ECharts focuses on visualization logic. It assumes that inputs are trusted, and does not automatically sanitize them. In fact, ECharts itself can not properly sanitize inputs, as there are no universal sanitization rules that applies to all use cases. However, ECharts should clearly identify which APIs (especially ECharts options) require security-related preprocessing or considerations in specific use cases. Given the large number of ECharts options, preprocess all inputs in every case would be impractical and unnecessary.
+ECharts focuses on visualization logic. It assumes that inputs are trusted, and does not automatically sanitize them. In fact, ECharts itself can not properly sanitize inputs, as there are no universal sanitization rules that apply to all use cases. However, ECharts should clearly identify which APIs (especially ECharts options) require security-related preprocessing or considerations in specific use cases. Given the large number of ECharts options, preprocess all inputs in every case would be impractical and unnecessary.
 
 ECharts renders using Canvas or SVG, except for several special components that allow HTML rendering (e.g., [toolip](${optionPath}tooltip), [dataView](${optionPath}toolbox.feature.dataView)). ECharts APIs accept Non-JS-function inputs and JS-function inputs. JS-function inputs are intended to be execute. Most non-JS-function inputs (e.g., plain text provided to be rendered) are treated as data only, and are inherently prevented from code evaluation and execution. Therefore, they generally do not require sanitization from malicious code. However, several APIs allow embeding potential unsafe content (for example, raw HTML or raw URLs) into the page. These APIs are powerful but vulnerable to Cross-Site Scripting (XSS) and related attacks if the inputs originate from untrusted sources.
 
@@ -53,7 +53,7 @@ Some use cases require untrusted markup tokens to be interpreted as actual marku
 
 In these cases, the security risks are heightened. Sanitization can be applied to mitigate those risks, provided that no embedded JS and CSS code is allowed to execute. A sanitizer filters HTML content based on predefined whitelists -- for example, removing `<script>` and `<style>` blocks, `<link>` elements, inline CSS, event handler attributes such as `onclick`, and URLs using `javascript:` protocol. It's recommended to use a well-maintained and widely adopted sanitizer rather than writing your own regex or manual string manipulations.
 
-Sanitization may be enforced on the client-side, on the server-side, or both, depending on the product requirements and threat model. For example, concerning content that originates from client (e.g., submitted by users), relying only on client-side sanitization is insufficient because an attacker can bypass the client and submit crafted payloads directly to the server. For instance, an online visual editor lets users compose posts in a WYSIWYG fashion, where users can choose from several built-in HTML snippets/templates or JS-functions (e.g., for [tooltip.formatter](${optionPath}#tooltip.formatter) or [label.formatter](${optionPath}#series-scatter.label.formatter)). If the selected or generated HTML text or JS-function text are sent from client to server and persisted to the database without any additional handling, an attacker can simulate a network request to inject malicious code. Later, when those options are retrieved and passed to [chart.setOption()](${apiPath}echartsInstance.setOption), the malicious code will execute. There are some recommended mitigations for this case:
+Sanitization may be enforced on the client-side, on the server-side, or both, depending on the product requirements and threat model. For example, concerning content that originates from client (e.g., submitted by users), relying only on client-side sanitization is insufficient because an attacker can bypass the client and submit crafted payloads directly to the server. For instance, an online visual editor lets users compose posts in a WYSIWYG fashion, where users can choose from several built-in HTML snippets/templates or JS-functions (e.g., for [tooltip.formatter](${optionPath}tooltip.formatter) or [label.formatter](${optionPath}series-scatter.label.formatter)). If the selected or generated HTML text or JS-function text are sent from client to server and persisted to the database without any additional handling, an attacker can simulate a network request to inject malicious code. Later, when those options are retrieved and passed to [chart.setOption()](${apiPath}echartsInstance.setOption), the malicious code will execute. There are some recommended mitigations for this case:
 + Persist only reference (IDs) to this built-in snippets/tempates or JS-functions, not raw code supplied by client.
 + If user-provided snippets are allowed for expressiveness (beyond built-in selections), some third-party string templating libraries may be introduced to preventing injection.
 + If user-provided snippets must allow HTML (beyond the approaches above), enforce strict server-side sanitization or validation before persisting. This should include removing all JS, CSS, and other potentially unsafe content. Additionally, consider using a sandboxed iframe to limit the potential impact of any remaining security issues.
@@ -67,7 +67,7 @@ If executing untrusted code is required, or other measures are considered insuff
 
 ## Passing inline CSS Safely [[[#passing_inline_css_safely]]]
 
-Although CSS safety issues is covered by the discussion about HTML safety (see section ["Passing Raw HTML Safely"](best-practices/security#passing_raw_html_safely)), this section focuses especially the APIs that only accept inline CSS strings (those that modify `style` attribute via the DOM API `.style.cssText =`), which are listed in section ["Security Boundaries and Checklist"](best-practices/security#security_boundaries_and_checklist).
+Although CSS safety issues are covered by the discussion about HTML safety (see section ["Passing Raw HTML Safely"](best-practices/security#passing_raw_html_safely)), this section focuses on the APIs that only accept inline CSS strings (those that modify `style` attribute via the DOM API `.style.cssText =`), which are listed in section ["Security Boundaries and Checklist"](best-practices/security#security_boundaries_and_checklist).
 
 If the inline CSS strings come entirely from trusted sources (e.g., they are part of your application), security considerations are minimal -- this is also the most common case.
 
@@ -76,7 +76,7 @@ Otherwise, untrusted CSS can lead to attacks. Some widely adopted HTML sanitizer
 
 ## Passing Raw URLs Safely [[[#passing_raw_urls_safely]]]
 
-Although URL safety issues is covered by the discussion of HTML safety (see section ["Passing Raw HTML Safely"](best-practices/security#passing_raw_html_safely)), this section focuses especially the APIs that only accept URL strings, which is listed in section ["Security Boundaries and Checklist"](best-practices/security#security_boundaries_and_checklist).
+Although URL safety issues is covered by the discussion of HTML safety (see section ["Passing Raw HTML Safely"](best-practices/security#passing_raw_html_safely)), this section focuses on the APIs that only accept URL strings, which is listed in section ["Security Boundaries and Checklist"](best-practices/security#security_boundaries_and_checklist).
 
 If the URL strings are entirely from trusted sources (e.g., they are part of your application), security considerations are minimal.
 
@@ -92,6 +92,6 @@ Otherwise, although modern browsers have significantly improved their handling o
 
 ## Passing JS Function Safely [[[#passing_js_function_safely]]]
 
-ECharts options (i.e., the input to [chart.setOption()](${apiPath}echartsInstance.setOption)) are primarily declarative, but some options accept JS-function (callbacks) to provide greater expressiveness and flexibility. Examples include [label.formatter](${optionPath}#series-scatter.label.formatter), [axisTick.interval](xAxis.axisTick.interval), and similar. In most use cases, these JS-function options are part of the source code of the application itself and thus fully trusted, so no security risk is introduced.
+ECharts options (i.e., the input to [chart.setOption()](${apiPath}echartsInstance.setOption)) are primarily declarative, but some options accept JS-function (callbacks) to provide greater expressiveness and flexibility. Examples include [label.formatter](${optionPath}series-scatter.label.formatter), [axisTick.interval](${optionPath}xAxis.axisTick.interval), and similar. In most use cases, these JS-function options are part of the source code of the application itself and thus fully trusted, so no security risk is introduced.
 
 However, certain products may allow JS-function options to originate from untrusted sources, for example, end users. Allowing this introduces both security risks and maintenance costs. Essentially, this scenario carries the same level of risk as allowing code execution in untrusted raw HTML, and can be mitigated using similar approaches, as discussed in ["Passing Raw HTML Safely"](best-practices/security#passing_raw_html_safely).
