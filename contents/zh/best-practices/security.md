@@ -7,9 +7,9 @@ ECharts 旨在提供丰富而灵活的可视化能力。虽然其绝大多数 AP
 任何潜在安全问题，可依照 [ASF 安全](https://echarts.apache.org/zh/security.html) 中的渠道进行报告。
 
 
-## 安全边界与检查清单 [[[#security_boundaries_and_checklist]]]
+## 安全模型与检查清单 [[[#security_model_and_checklist]]]
 
-ECharts 专注于可视化逻辑，一般假定输入内容是可信任的，因此不会自动对输入进行净化处理。其实 ECharts 自身也不知如何合适地做净化处理，因为不存在适用于所有使用场景的通用处理规则。然而，ECharts 应该明确哪些 API（尤其是 ECharts options）在哪些场景下须在输入前进行安全相关的处理或考量。由于 ECharts options 数量庞大，对所有输入在任何场景下都进行安全处理不现实也无必要。
+ECharts 专注于可视化逻辑，一般假定输入内容都是来自“可信任”的来源，不会自动对输入进行净化（sanitization）处理。这和多数前端 UI 库的原则类似。其实 ECharts 自身也不知如何合适地对“不受信任”的内容做净化处理，因为不知哪些输入是“不受信任”的，且不存在适用于所有使用场景的通用净化规则。然而，ECharts 应该明确哪些 API（尤其是 ECharts options）在哪些场景下须在输入前进行安全相关的处理或考量。由于 ECharts options 数量庞大，对所有输入在任何场景下都进行安全处理不现实也无必要。
 
 ECharts 通过 Canvas 或 SVG 渲染，只有几个特殊组件例外，允许 HTML 渲染（例如，[toolip](${optionPath}tooltip) 和 [dataView](${optionPath}toolbox.feature.dataView)）。ECharts API 的输入可被分为“JS 函数”或者“非 JS 函数”。“JS 函数输入”本意就须允许执行。而大多数“非 JS 函数输入”（例如仅用于渲染的纯文本）不会被执行，因此通常无需防范恶意代码注入。然而，某些 API 允许在页面中嵌入不安全内容（如 HTML 或 URL 文本）。这些 API 能带来丰富的定制能力，但当输入来自“不受信任”的来源时，容易遭受 XSS （跨站脚本攻击）或相关攻击。
 
@@ -29,7 +29,7 @@ ECharts 通过 Canvas 或 SVG 渲染，只有几个特殊组件例外，允许 H
 
 ## 传入 HTML 时的安全考虑 [[[#passing_raw_html_safely]]]
 
-在 [“安全边界与检查清单”](best-practices/security#security_boundaries_and_checklist) 一节中已列出会接受原始 HTML 的 API。“不受信任”的 HTML 可能导致 XSS 等攻击，因此在传入 ECharts 前应进行处理。常见的处理方式包括 **HTML 转义（HTML Escaping）**、**净化（Sanitization）**、**沙盒**。大多数情况下，仅进行 HTML 转义即可，除非那些不能被转义的部分来自于“不受信任”的来源。
+在 [“安全模型与检查清单”](best-practices/security#security_model_and_checklist) 一节中已列出会接受原始 HTML 的 API。“不受信任”的 HTML 可能导致 XSS 等攻击，因此在传入 ECharts 前应进行处理。常见的处理方式包括 **HTML 转义（HTML Escaping）**、**净化（Sanitization）**、**沙盒**。大多数情况下，仅进行 HTML 转义即可，除非那些不能被转义的部分来自于“不受信任”的来源。
 
 ### HTML 转义（HTML Escaping） [[[#passing_raw_html_safely_html_escaping]]]
 数据组装成 HTML 字符串前总需要进行 HTML 转义。这不仅是安全需要，也是正确显示的前提。
@@ -43,6 +43,22 @@ ECharts 通过 Canvas 或 SVG 渲染，只有几个特殊组件例外，允许 H
 "'" => '&#39;
 ```
 转换后，这些字符的功能被去除了，只能显示，从而也无法通过他们进行注入攻击（如 `<script>...</script>`）。
+
+例如：
+```js
+// 功能不正确也不安全。
+formatter: params => {
+    const { name, value } = params;
+    // 如果 name 或 value 中含有功能性字符，如 '<' '>' 等，则可能渲染不正确。
+    // 同时，如果 name 或 value 的值来自于“非受信任”的来源，则可能被注入恶意代码并运行。
+    return `${name}, <b>${value + ''}<b/>`;
+}
+// 功能正确且安全。
+formatter: params => {
+    const { name, value } = params;
+    return `${echarts.format.encodeHTML(name)}, <b>${echarts.format.encodeHTML(value + '')}<b/>`;
+}
+```
 
 使用 DOM API（如 `.textContent = `）也能实现转义。
 
@@ -70,7 +86,7 @@ ECharts 通过 Canvas 或 SVG 渲染，只有几个特殊组件例外，允许 H
 
 ## 传入内联 CSS 时的安全考虑 [[[#passing_inline_css_safely]]]
 
-HTML 的安全（见 [“传入 HTML 时的安全考虑”](best-practices/security#passing_raw_html_safely) 一节）已经包括了 CSS 相关安全问题，而本节主要讨论那些仅接受内联 CSS 字符串的 API（即通过 `.style.cssText =` 修改 `style` 属性的情形）。在 [“安全边界与检查清单”](best-practices/security#security_boundaries_and_checklist) 一节中列出了这些 API。
+HTML 的安全（见 [“传入 HTML 时的安全考虑”](best-practices/security#passing_raw_html_safely) 一节）已经包括了 CSS 相关安全问题，而本节主要讨论那些仅接受内联 CSS 字符串的 API（即通过 `.style.cssText =` 修改 `style` 属性的情形）。在 [“安全模型与检查清单”](best-practices/security#security_model_and_checklist) 一节中列出了这些 API。
 
 若内联 CSS 完全来自“可信任”的来源（例如应用自身），则几乎无需担心安全问题，这也是最常见的情况。
 
@@ -79,11 +95,11 @@ HTML 的安全（见 [“传入 HTML 时的安全考虑”](best-practices/secur
 
 ## 传入 URL 时的安全考虑 [[[#passing_raw_urls_safely]]]
 
-HTML 的安全（见 [“传入 HTML 时的安全考虑”](best-practices/security#passing_raw_html_safely) 一节）已经包括了 URL 相关安全问题，而本节专门针对那些仅接受 URL 输入的 API。在 [“安全边界与检查清单”](best-practices/security#security_boundaries_and_checklist) 一节中列出了这些 API。
+HTML 的安全（见 [“传入 HTML 时的安全考虑”](best-practices/security#passing_raw_html_safely) 一节）已经包括了 URL 相关安全问题，而本节专门针对那些仅接受 URL 输入的 API。在 [“安全模型与检查清单”](best-practices/security#security_model_and_checklist) 一节中列出了这些 API。
 
 若 URL 完全来自“可信任”的来源（例如应用自身），则几乎无需担心安全问题。
 
-否则，“不受信任”的 URL 可能有安全问题，例如利用 `javascript:` 协议执行恶意代码。因此，在传入 ECharts 前，应进行校验或净化，通常会依据白名单仅允许安全的协议。
+否则，“不受信任”的 URL 可能有安全问题，例如利用 `javascript:` 或 `data:` 协议执行恶意代码。因此，在传入 ECharts 前，应进行校验或净化，通常会依据白名单仅允许安全的协议。
 
 
 ## 传入下载文件名时的安全考虑 [[[#passing_download_filename_safely]]]

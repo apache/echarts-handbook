@@ -7,9 +7,9 @@ ECharts aims to provide rich and flexible visualization capabilities. Although t
 Any security issues can be reported according to [ASF Security Page][https://echarts.apache.org/en/security.html].
 
 
-## Security Boundaries and Checklist [[[#security_boundaries_and_checklist]]]
+## Security Model and Checklist [[[#security_model_and_checklist]]]
 
-ECharts focuses on visualization logic. It assumes that inputs are trusted, and does not automatically sanitize them. In fact, ECharts itself can not properly sanitize inputs, as there are no universal sanitization rules that apply to all use cases. However, ECharts should clearly identify which APIs (especially ECharts options) require security-related preprocessing or considerations in specific use cases. Given the large number of ECharts options, preprocess all inputs in every case would be impractical and unnecessary.
+ECharts focuses on visualization logic. It generally assumes that inputs originate from trusted sources and does not perform automatic sanitization, as in the case with most frontend UI libraries. In fact, ECharts itself cannot properly sanitize untrusted inputs, because it can not determine which inputs are untrusted, and no universal sanitization rules fit all cases. However, ECharts should clearly identify which APIs (especially ECharts options) require security-related preprocessing or considerations in specific use cases. Given the large number of ECharts options, preprocess all inputs in every case would be impractical and unnecessary.
 
 ECharts renders using Canvas or SVG, except for several special components that allow HTML rendering (e.g., [toolip](${optionPath}tooltip), [dataView](${optionPath}toolbox.feature.dataView)). ECharts APIs accept Non-JS-function inputs and JS-function inputs. JS-function inputs are intended to be execute. Most non-JS-function inputs (e.g., plain text provided to be rendered) are treated as data only, and are inherently prevented from code evaluation and execution. Therefore, they generally do not require sanitization from malicious code. However, several APIs allow embeding potential unsafe content (for example, raw HTML or raw URLs) into the page. These APIs are powerful but vulnerable to Cross-Site Scripting (XSS) and related attacks if the inputs originate from untrusted sources.
 
@@ -28,7 +28,7 @@ Before deploying charts, please review this **checklist** to ensure your usage i
 
 ## Passing Raw HTML Safely [[[#passing_raw_html_safely]]]
 
-Section ["Security Boundaries and Checklist"](best-practices/security#security_boundaries_and_checklist) have listed the APIs that accept raw HTML directly. Untrusted HTML may lead to XSS and related attacks, so additional processing is required before passing content to ECharts. Several commonly used mitigation approaches -- "HTML Escaping", "Sanitization", "Sandboxing" are described below. In most cases, "HTML Escaping" is sufficient, except when unescaped content comes from untrusted sources.
+Section ["Security Model and Checklist"](best-practices/security#security_model_and_checklist) have listed the APIs that accept raw HTML directly. Untrusted HTML may lead to XSS and related attacks, so additional processing is required before passing content to ECharts. Several commonly used mitigation approaches -- "HTML Escaping", "Sanitization", "Sandboxing" are described below. In most cases, "HTML Escaping" is sufficient, except when unescaped content comes from untrusted sources.
 
 ### HTML Escaping [[[#passing_raw_html_safely_html_escaping]]]
 HTML escaping is always necessary for data before assembling it to an HTML string -- not only for security, but also for the basic correctness of display.
@@ -42,6 +42,24 @@ A typical and simplest HTML escaping implementation is these character conversio
 "'" => '&#39;
 ```
 It removes the functionality from the markup characters, thereby closing the attack vector for code injection (e.g., `<script>...</script>`), regardless of whether the content is trusted or untrusted.
+
+For example,
+```js
+// Incorrect and unsafe.
+formatter: params => {
+    const { name, value } = params;
+    // May cause incorrect rendering if `name` or `value` contain functional
+    // charactors like '<', '>', etc.
+    // Additionally, it introduces XSS risks if `name` or `value` come from
+    // untrusted sources and may contain malicious code.
+    return `${name}, <b>${value + ''}<b/>`;
+}
+// Correct and safe.
+formatter: params => {
+    const { name, value } = params;
+    return `${echarts.format.encodeHTML(name)}, <b>${echarts.format.encodeHTML(value + '')}<b/>`;
+}
+```
 
 Other approaches, like using DOM API `.textContent = `, can also escape HTML.
 
@@ -67,7 +85,7 @@ If executing untrusted code is required, or other measures are considered insuff
 
 ## Passing inline CSS Safely [[[#passing_inline_css_safely]]]
 
-Although CSS safety issues are covered by the discussion about HTML safety (see section ["Passing Raw HTML Safely"](best-practices/security#passing_raw_html_safely)), this section focuses on the APIs that only accept inline CSS strings (those that modify `style` attribute via the DOM API `.style.cssText =`), which are listed in section ["Security Boundaries and Checklist"](best-practices/security#security_boundaries_and_checklist).
+Although CSS safety issues are covered by the discussion about HTML safety (see section ["Passing Raw HTML Safely"](best-practices/security#passing_raw_html_safely)), this section focuses on the APIs that only accept inline CSS strings (those that modify `style` attribute via the DOM API `.style.cssText =`), which are listed in section ["Security Model and Checklist"](best-practices/security#security_model_and_checklist).
 
 If the inline CSS strings come entirely from trusted sources (e.g., they are part of your application), security considerations are minimal -- this is also the most common case.
 
@@ -76,11 +94,11 @@ Otherwise, untrusted CSS can lead to attacks. Some widely adopted HTML sanitizer
 
 ## Passing Raw URLs Safely [[[#passing_raw_urls_safely]]]
 
-Although URL safety issues is covered by the discussion of HTML safety (see section ["Passing Raw HTML Safely"](best-practices/security#passing_raw_html_safely)), this section focuses on the APIs that only accept URL strings, which is listed in section ["Security Boundaries and Checklist"](best-practices/security#security_boundaries_and_checklist).
+Although URL safety issues is covered by the discussion of HTML safety (see section ["Passing Raw HTML Safely"](best-practices/security#passing_raw_html_safely)), this section focuses on the APIs that only accept URL strings, which is listed in section ["Security Model and Checklist"](best-practices/security#security_model_and_checklist).
 
 If the URL strings are entirely from trusted sources (e.g., they are part of your application), security considerations are minimal.
 
-Otherwise, untrusted URL strings can lead to attacks, for example, by using protocols such as `javascript:` to execute malicious code. Therefore, before passing them to ECharts, sanitization should be enforced, typically by validating the protocol against a specified whitelist.
+Otherwise, untrusted URL strings can lead to attacks, for example, by using protocols, such as `javascript:` or `data:`, to execute malicious code. Therefore, before passing them to ECharts, sanitization should be enforced, typically by validating the protocol against a specified whitelist.
 
 
 ## Passing Download Filename Safely [[[#passing_download_filename_safely]]]
