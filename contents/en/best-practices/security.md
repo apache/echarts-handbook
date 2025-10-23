@@ -52,7 +52,7 @@ formatter: params => {
     // charactors like '<', '>', etc.
     // Additionally, it introduces XSS risks if `name` or `value` come from
     // untrusted sources and may contain malicious code.
-    return `${name}, <b>${value + ''}<b/>`;
+    return `${name}, <b>${value + ''}</b>`;
 }
 // Correct and safe.
 formatter: params => {

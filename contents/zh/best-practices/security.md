@@ -56,7 +56,7 @@ formatter: params => {
 // 功能正确且安全。
 formatter: params => {
     const { name, value } = params;
-    return `${echarts.format.encodeHTML(name)}, <b>${echarts.format.encodeHTML(value + '')}<b/>`;
+    return `${echarts.format.encodeHTML(name)}, <b>${echarts.format.encodeHTML(value + '')}</b>`;
 }
 ```
 
