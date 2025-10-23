@@ -51,7 +51,7 @@ formatter: params => {
     // May cause incorrect rendering if `name` or `value` contain functional
     // charactors like '<', '>', etc.
     // Additionally, it introduces XSS risks if `name` or `value` come from
-    // untrusted sources and may contain malicious code.
+    // untrusted sources, where malicious code may be injected into that strings.
     return `${name}, <b>${value + ''}</b>`;
 }
 // Correct and safe.
