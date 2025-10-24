@@ -6,6 +6,8 @@ ECharts 旨在提供丰富而灵活的可视化能力。虽然其绝大多数 AP
 
 任何潜在安全问题，可依照 [ASF 安全](https://echarts.apache.org/zh/security.html) 中的渠道进行报告。
 
+注：本文档面向 ECharts API 调用者。而另有一文档 [代码贡献者的安全检查清单](https://github.com/apache/echarts/wiki/Security-Checklist-for-Code-Contributors) 用于 ECharts 贡献者提交 Pull Request 前的检查，并非面向 ECharts 调用者，但如有兴趣也可参阅。
+
 
 ## 安全模型与检查清单 [[[#security_model_and_checklist]]]
 

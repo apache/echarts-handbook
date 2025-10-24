@@ -4,7 +4,9 @@
 
 ECharts aims to provide rich and flexible visualization capabilities. Although the vast majority of its APIs do not require special security considerations, sereval APIs are exceptions. For example, the option `tooltip.formatter` accepts a raw HTML string, allowing full control over the component's content and layout; the option `title.link` uses the provided URL string directly without automatic sanitization. While this flexibility is powerful, security risks may arise if the input comes from untrusted sources. These APIs are listed below, along with suggestions on how to use these features safely.
 
-Any security issues can be reported according to [ASF Security Page][https://echarts.apache.org/en/security.html].
+Any security issues can be reported according to [ASF Security Page](https://echarts.apache.org/en/security.html).
+
+Note: This document is intended for ECharts API callers. [Security Checklist for Code Contributors](https://github.com/apache/echarts/wiki/Security-Checklist-for-Code-Contributors) is another document used before submitting a pull request to ECharts. It is not intended for ECharts API callers, but they may refer to it if interested.
 
 
 ## Security Model and Checklist [[[#security_model_and_checklist]]]
@@ -113,3 +115,4 @@ Otherwise, although modern browsers have significantly improved their handling o
 ECharts options (i.e., the input to [chart.setOption()](${apiPath}echartsInstance.setOption)) are primarily declarative, but some options accept JS-function (callbacks) to provide greater expressiveness and flexibility. Examples include [label.formatter](${optionPath}series-scatter.label.formatter), [axisTick.interval](${optionPath}xAxis.axisTick.interval), and similar. In most use cases, these JS-function options are part of the source code of the application itself and thus fully trusted, so no security risk is introduced.
 
 However, certain products may allow JS-function options to originate from untrusted sources, for example, end users. Allowing this introduces both security risks and maintenance costs. Essentially, this scenario carries the same level of risk as allowing code execution in untrusted raw HTML, and can be mitigated using similar approaches, as discussed in ["Passing Raw HTML Safely"](best-practices/security#passing_raw_html_safely).
+
