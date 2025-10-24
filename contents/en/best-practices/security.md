@@ -54,12 +54,12 @@ formatter: params => {
     // charactors like '<', '>', etc.
     // Additionally, it introduces XSS risks if `name` or `value` come from
     // untrusted sources, where malicious code may be injected into that strings.
-    return `${name}, <b>${value + ''}</b>`;
+    return `${name}, <b>${value}</b>`;
 }
 // Correct and safe.
 formatter: params => {
     const { name, value } = params;
-    return `${echarts.format.encodeHTML(name)}, <b>${echarts.format.encodeHTML(value + '')}<b/>`;
+    return `${echarts.format.encodeHTML(name)}, <b>${echarts.format.encodeHTML(value)}<b/>`;
 }
 ```
 

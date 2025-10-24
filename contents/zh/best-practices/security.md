@@ -53,12 +53,12 @@ formatter: params => {
     const { name, value } = params;
     // 如果 name 或 value 中含有功能性字符，如 '<' '>' 等，则可能渲染不正确。
     // 同时，如果 name 或 value 的值来自于“非受信任”的来源，则可能被注入恶意代码并运行。
-    return `${name}, <b>${value + ''}<b/>`;
+    return `${name}, <b>${value}<b/>`;
 }
 // 功能正确且安全。
 formatter: params => {
     const { name, value } = params;
-    return `${echarts.format.encodeHTML(name)}, <b>${echarts.format.encodeHTML(value + '')}</b>`;
+    return `${echarts.format.encodeHTML(name)}, <b>${echarts.format.encodeHTML(value)}</b>`;
 }
 ```
 
