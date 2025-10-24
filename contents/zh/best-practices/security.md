@@ -6,17 +6,17 @@ ECharts 旨在提供丰富而灵活的可视化能力。虽然其绝大多数 AP
 
 任何潜在安全问题，可依照 [ASF 安全](https://echarts.apache.org/zh/security.html) 中的渠道进行报告。
 
-注：本文档面向 ECharts API 调用者。而另有一文档 [代码贡献者的安全检查清单](https://github.com/apache/echarts/wiki/Security-Checklist-for-Code-Contributors) 用于 ECharts 贡献者提交 Pull Request 前的检查，并非面向 ECharts 调用者，但如有兴趣也可参阅。
+注：本文档面向 ECharts API 调用者。而另有一文档 [代码贡献者的安全检查清单](https://github.com/apache/echarts/wiki/Security-Checklist-for-Code-Contributors) 用于 ECharts 贡献者提交 Pull Request 前的检查，并非面向 ECharts API 调用者，但如有兴趣也可参阅。
 
 
 ## 安全模型与检查清单 [[[#security_model_and_checklist]]]
 
 ECharts 专注于可视化逻辑，一般假定输入内容都是来自“可信任”的来源，不会自动对输入进行净化（sanitization）处理。这和多数前端 UI 库的原则类似。其实 ECharts 自身也不知如何合适地对“不受信任”的内容做净化处理，因为不知哪些输入是“不受信任”的，且不存在适用于所有使用场景的通用净化规则。然而，ECharts 应该明确哪些 API（尤其是 ECharts options）在哪些场景下须在输入前进行安全相关的处理或考量。由于 ECharts options 数量庞大，对所有输入在任何场景下都进行安全处理不现实也无必要。
 
-ECharts 通过 Canvas 或 SVG 渲染，只有几个特殊组件例外，允许 HTML 渲染（例如，[toolip](${optionPath}tooltip) 和 [dataView](${optionPath}toolbox.feature.dataView)）。ECharts API 的输入可被分为“JS 函数”或者“非 JS 函数”。“JS 函数输入”本意就须允许执行。而大多数“非 JS 函数输入”（例如仅用于渲染的纯文本）不会被执行，因此通常无需防范恶意代码注入。然而，某些 API 允许在页面中嵌入不安全内容（如 HTML 或 URL 文本）。这些 API 能带来丰富的定制能力，但当输入来自“不受信任”的来源时，容易遭受 XSS （跨站脚本攻击）或相关攻击。
+ECharts 通过 Canvas 或 SVG 渲染，只有几个特殊组件例外，允许 HTML 渲染（例如，[tooltip](${optionPath}tooltip) 和 [dataView](${optionPath}toolbox.feature.dataView)）。ECharts API 的输入可被分类为“JS 函数”或者“非 JS 函数”。“JS 函数输入”本意就须允许执行。而大多数“非 JS 函数输入”（例如仅用于渲染的纯文本）并无被执行的可能，因此通常无需防范恶意代码注入。然而例外是，某些 API 允许在页面中嵌入不安全内容（如 HTML 或 URL 文本）。这些 API 能带来丰富的定制能力，但当输入来自“不受信任”的来源时，容易遭受 XSS （跨站脚本攻击）或相关攻击。
 
 **一般而言，如果输入的内容都是可被信任的，就不会出现这些注入漏洞。**
-“不受信任”（untrusted）的内容指，内容来自于无法完全控制的来源，或者内容可能被用户或外部系统修改或注入。开发者应该总是假定直接在 HTML、CSS、JS 中使用这些内容会不安全。例如，用户生成的数据或来自客户端的输入都应被认为是“不受信任”的。但在许多情况下，处理用户生成的内容不可避免。例如，从数据库获取用户生成的数据，并组装成 HTML 输入 `tooltip.formatter` 来渲染，就须要进行额外处理，首先是保正渲染正确（通常通过 HTML 转义（HTML escaping）），然后是防止 XSS 攻击（如果无法被转义的部分也是“不受信任”的，需要净化处理（sanitization））。
+“不受信任”（untrusted）的内容指，内容来自于无法完全控制的来源，或者内容可能被用户或外部系统修改或注入。开发者应该总是假定直接在 HTML、CSS、JS 中使用这些内容会不安全。例如，用户生成的数据或来自浏览器/客户端的输入都应被认为是“不受信任”的。但在许多情况下，处理用户生成的内容不可避免。例如，从数据库获取用户生成的数据，并组装成 HTML 输入 `tooltip.formatter` 来渲染。于是须要额外处理保正渲染正确和安全，通常首先依靠 HTML 转义（HTML escaping）；但如果无法被转义的部分也来自“不受信任”的来源，则需要净化处理（sanitization）。
 
 在部署图表之前，请根据以下**检查清单**确认使用是否安全：
 
@@ -71,14 +71,14 @@ formatter: params => {
 
 有些场景中，需要有功能的部分（如 HTML 标签或属性）也来自“不受信任”的来源。例如，数据库里取出的文本中包含有 `<em>`、`<a>` 等标签，并且想要它们被当做 HTML 标记解释运行，而不是原样显示。又例如，允许用户或者“不受信任”的来源提供 HTML 模板，用于定义布局与样式，继而和数据结合形成最终可被渲染的 HTML 传给 ECharts 。
 
-这些场景需要承受相对更高的安全风险，可通过净化（sanitization）机制缓解。净化器（sanitizer）一般基于白名单过滤 HTML 内容，例如移除所有 `<script>`、`<style>`、`<link>`、内联 CSS、事件属性（如 `onclick`）以及 `javascript:` 协议的 URL。推荐使用维护良好、社区广泛采用的库，而非用自己写的正则或字符串处理来做这件事。
+这些场景需要承受相对更高的安全风险，可通过净化（sanitization）机制缓解。净化器（sanitizer）一般基于白名单过滤 HTML 内容，例如移除所有 `<script>`、`<style>`、`<link>`、内联 CSS、事件属性（如 `onclick`）以及 `javascript:`/`data:` 协议的 URL。推荐使用维护良好、社区广泛采用的库，而非用自己写的正则或字符串处理来做这件事。
 
-净化可在前端（指 client）、后端（指 server）或两者同时进行，取决于实际场景和安全需求。例如，对于生成于前端的内容（例如前端提交给后端的内容），仅依赖前端净化不够，攻击者可直接伪造请求绕过前端。比如，一个在线编辑器允许用户以所见即所得（WYSIWYG）的方式创建内容，其中，用户可选择使用内置的几个 HTML 模板或 JS 函数（如 [tooltip.formatter](${optionPath}tooltip.formatter) 或 [label.formatter](${optionPath}series-scatter.label.formatter)）。如果这些选好或者继而生成的 HTML 文本或 JS 函数文本被传输到后端，并不做处理直接存于数据库，则攻击者可在这个阶段注入恶意代码。后续它们被从数据库中取出，并传给 `chart.setOption()` 时，恶意代码会被执行。所以建议在这类场景中：
+净化可在前端（指 client）、后端（指 server）或两者同时进行，取决于实际场景和安全需求。例如，对于生成于前端的内容（例如前端提交给后端的内容），仅依赖前端净化不够，攻击者可直接伪造请求绕过前端。比如，一个在线编辑器允许用户以所见即所得（WYSIWYG）的方式创建内容，其中，用户可选择使用内置的几个 HTML 模板或 JS 函数（如 [tooltip.formatter](${optionPath}tooltip.formatter) 或 [label.formatter](${optionPath}series-scatter.label.formatter)）。如果这些选好的或者生成的 HTML 文本或 JS 函数文本被传输到后端，并且不做处理直接存于数据库，则攻击者可在这个阶段注入恶意代码。后续它们被从数据库中取出，并传给 `chart.setOption()` 时，恶意代码会被执行。所以建议在这类场景中：
 + 仅存储内置模板/函数的引用 ID，而不存储原始代码。
-+ 若为了更高的定制能力而允许自定义模板，或可引入安全的第三方模板引擎，从而避免注入。
-+ 若必须允许用户自定义 HTML，须要严格的后端净化或校验（如过滤掉所有 JS、CSS 和其他可能有安全隐患的内容），并依据实际情况考虑在沙盒中渲染以降低潜在的风险。
++ 若为了更高的定制能力而允许自定义模板，则可考虑是否引入安全的第三方模板引擎，从而避免注入。
++ 若必须允许用户自定义 HTML，须要严格的后端净化（sanitization）或校验（如过滤掉所有 JS、CSS 和其他可能有安全隐患的内容），并依据实际情况考虑是否在沙盒中渲染以降低潜在的风险。
 
-通过净化达到足够的安全性有时并不容易。它需要有仔细和合理的配置，并不断随着浏览器/客户端更新，并常需结合其他防御机制从而达到“绝大多数情况下足够安全”。HTML 本身非常复杂和多变，在“不受信任”的内容上支持的功能越丰富，可攻击的渠道就越多。
+通过净化达到足够的安全性有时并不容易。它需要有仔细和合理的配置，并不断随着浏览器/客户端更新，并常需结合其他防御机制从而达到“绝大多数情况下足够安全”。HTML 在能力上本身非常复杂和多变，在“不受信任”的内容上支持的功能越丰富，可攻击的渠道就越多。
 
 
 ### 沙盒 [[[#passing_raw_html_sandboxing]]]

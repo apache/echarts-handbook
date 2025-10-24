@@ -170,7 +170,7 @@
       dir: canvas-vs-svg
     - title: 无障碍访问
       dir: aria
-    - title: 安全性
+    - title: 安全指南
       dir: security
     # - title: 可视化设计原则
     #   dir: design
