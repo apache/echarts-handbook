@@ -22,16 +22,16 @@ ECharts 通过 Canvas 或 SVG 渲染，只有几个特殊组件例外，允许 H
 
 | APIs | 潜在风险与建议 |
 | ------ | ------------------ |
-| **option [tooltip.formatter](${optionPath}tooltip.formatter)**<br>· `formatter` 允许 HTML 文本或 DOM 元素传入，并后续直接渲染到 tooltip 内部，于是需要考虑 XSS 风险。<br>（例外）：如果 `formatter` 被直接设置成一个字符串，则认为是一个内部实现的简单模版，后续能内部填入数据。[tooltip.renderMode: 'richText'](${optionPath}tooltip.renderMode) 是另一种内部实现的模版，用于定制样式。他们都不涉及 HTML，从而安全。<br><br>**option [toolbox.feature.dataView.optionToContent](${optionPath}toolbox.feature.dataView.optionToContent)**<br>**option [toolbox.feature.dataView.title](${optionPath}toolbox.feature.dataView.title)**<br>**option [toolbox.feature.dataView.lang](${optionPath}toolbox.feature.dataView.lang)**<br>· `tooltip.dataView` 面板完全以 HTML 渲染，这些 API 可自定义 HTML 文本中的部分内容，于是需要考虑 XSS 风险。 | 需要考虑 XSS 风险。一般情况下，仅需 HTML 转义即可。但如果一些不能转义的部分来自“不受信任”的来源，则须更多处理（如净化处理（sanitization）或沙盒隔离）。<br><br>详细描述见 [“传入 HTML 时的安全考虑”](best-practices/security#passing_raw_html_safely)。 |
-| **option [tooltip.extraCssText](${optionPath}tooltip.extraCssText)**<br>· `extraCssText` 接受一个原始 CSS style 字符串，并接下来直接拼接进 `tooltipEl.style.cssText`。<br>（例外）：[tooltip.renderMode: 'richText'](${optionPath}tooltip.renderMode) 时此 `extraCssText` 无效。 | 若输入来自可信来源，则一般无安全问题，否则需要仔细评估风险。<br><br>详细描述见 [“传入内联 CSS 时的安全考虑”](best-practices/security#passing_inline_css_safely)。 |
-| **option [title.link](${optionPath}title.link)**<br>**option [title.sublink](${optionPath}title.sublink)**<br>**option [series-treemap.data.link](${optionPath}series-treemap.data.link)**<br>**option [series-sunburst.data.link](${optionPath}series-sunburst.data.link)**<br>· 这些 option 直接接受原始 URL 字符串。 | 若若输入来自可信来源，则一般无安全问题，否则须要考虑 XSS 风险。<br><br>详细描述见 ["传入 URL 时的安全考虑"](best-practices/security#passing_raw_urls_safely)。 |
-| **option [toolbox.feature.saveAsImage.name](${optionPath}toolbox.feature.saveAsImage.name)**<br>**option [toolbox.feature.saveAsImage.type](${optionPath}toolbox.feature.saveAsImage.type)**<br>**option [title[0].text](${optionPath}title.text)**<br>· `saveAsImage` 功能的下载文件名由 `{name}.{type}` 拼装而成，并未做额外校验或净化（sanitization）处理。如果 `name` 没有指定，则使用 `title[0].text` 替代，尽管这种用法并不推荐。 | 详细描述见 [“传入下载文件名时的安全考虑”](best-practices/security#passing_download_filename_safely)。 |
-| 所有“JS 函数”输入（回调） | 通常无安全问题，除非存在特殊使用场景（例如需要执行不可信来源的函数）。<br><br>详细描述见 [“传入 JS 函数时的安全考虑”](best-practices/security#passing_js_function_safely)。 |
+| **option [tooltip.formatter](${optionPath}tooltip.formatter)**<br>· `formatter` 允许 HTML 文本或 DOM 元素传入，并后续直接渲染到 tooltip 内部，于是需要考虑 XSS 风险。<br>（例外）：如果 `formatter` 被直接设置成一个字符串，则认为是一个内部实现的简单模版，后续能内部填入数据。[tooltip.renderMode: 'richText'](${optionPath}tooltip.renderMode) 是另一种内部实现的模版，用于定制样式。他们都不涉及 HTML，从而安全。<br><br>**option [toolbox.feature.dataView.optionToContent](${optionPath}toolbox.feature.dataView.optionToContent)**<br>**option [toolbox.feature.dataView.title](${optionPath}toolbox.feature.dataView.title)**<br>**option [toolbox.feature.dataView.lang](${optionPath}toolbox.feature.dataView.lang)**<br>· `tooltip.dataView` 面板完全以 HTML 渲染，这些 API 可自定义 HTML 文本中的部分内容，于是需要考虑 XSS 风险。 | 需要考虑 XSS 风险。一般情况下，仅需 HTML 转义即可。但如果一些不能转义的部分来自“不受信任”的来源，则须更多处理（如净化处理（sanitization）或沙盒隔离）。<br><br>详细描述见 [“传入 HTML 时的安全考虑”](${lang}/best-practices/security#passing_raw_html_safely)。 |
+| **option [tooltip.extraCssText](${optionPath}tooltip.extraCssText)**<br>· `extraCssText` 接受一个原始 CSS style 字符串，并接下来直接拼接进 `tooltipEl.style.cssText`。<br>（例外）：[tooltip.renderMode: 'richText'](${optionPath}tooltip.renderMode) 时此 `extraCssText` 无效。 | 若输入来自可信来源，则一般无安全问题，否则需要仔细评估风险。<br><br>详细描述见 [“传入内联 CSS 时的安全考虑”](${lang}/best-practices/security#passing_inline_css_safely)。 |
+| **option [title.link](${optionPath}title.link)**<br>**option [title.sublink](${optionPath}title.sublink)**<br>**option [series-treemap.data.link](${optionPath}series-treemap.data.link)**<br>**option [series-sunburst.data.link](${optionPath}series-sunburst.data.link)**<br>· 这些 option 直接接受原始 URL 字符串。 | 若若输入来自可信来源，则一般无安全问题，否则须要考虑 XSS 风险。<br><br>详细描述见 ["传入 URL 时的安全考虑"](${lang}/best-practices/security#passing_raw_urls_safely)。 |
+| **option [toolbox.feature.saveAsImage.name](${optionPath}toolbox.feature.saveAsImage.name)**<br>**option [toolbox.feature.saveAsImage.type](${optionPath}toolbox.feature.saveAsImage.type)**<br>**option [title[0].text](${optionPath}title.text)**<br>· `saveAsImage` 功能的下载文件名由 `{name}.{type}` 拼装而成，并未做额外校验或净化（sanitization）处理。如果 `name` 没有指定，则使用 `title[0].text` 替代，尽管这种用法并不推荐。 | 详细描述见 [“传入下载文件名时的安全考虑”](${lang}/best-practices/security#passing_download_filename_safely)。 |
+| 所有“JS 函数”输入（回调） | 通常无安全问题，除非存在特殊使用场景（例如需要执行不可信来源的函数）。<br><br>详细描述见 [“传入 JS 函数时的安全考虑”](${lang}/best-practices/security#passing_js_function_safely)。 |
 
 
 ## 传入 HTML 时的安全考虑 [[[#passing_raw_html_safely]]]
 
-在 [“安全模型与检查清单”](best-practices/security#security_model_and_checklist) 一节中已列出会接受原始 HTML 的 API。“不受信任”的 HTML 可能导致 XSS 等攻击，因此在传入 ECharts 前应进行处理。常见的处理方式包括 **HTML 转义（HTML Escaping）**、**净化（Sanitization）**、**沙盒**。大多数情况下，仅进行 HTML 转义即可，除非那些不能被转义的部分来自于“不受信任”的来源。
+在 [“安全模型与检查清单”](${lang}/best-practices/security#security_model_and_checklist) 一节中已列出会接受原始 HTML 的 API。“不受信任”的 HTML 可能导致 XSS 等攻击，因此在传入 ECharts 前应进行处理。常见的处理方式包括 **HTML 转义（HTML Escaping）**、**净化（Sanitization）**、**沙盒**。大多数情况下，仅进行 HTML 转义即可，除非那些不能被转义的部分来自于“不受信任”的来源。
 
 ### HTML 转义（HTML Escaping） [[[#passing_raw_html_safely_html_escaping]]]
 数据组装成 HTML 字符串前总需要进行 HTML 转义。这不仅是安全需要，也是正确显示的前提。
@@ -88,7 +88,7 @@ formatter: params => {
 
 ## 传入内联 CSS 时的安全考虑 [[[#passing_inline_css_safely]]]
 
-HTML 的安全（见 [“传入 HTML 时的安全考虑”](best-practices/security#passing_raw_html_safely) 一节）已经包括了 CSS 相关安全问题，而本节主要讨论那些仅接受内联 CSS 字符串的 API（即通过 `.style.cssText =` 修改 `style` 属性的情形）。在 [“安全模型与检查清单”](best-practices/security#security_model_and_checklist) 一节中列出了这些 API。
+HTML 的安全（见 [“传入 HTML 时的安全考虑”](${lang}/best-practices/security#passing_raw_html_safely) 一节）已经包括了 CSS 相关安全问题，而本节主要讨论那些仅接受内联 CSS 字符串的 API（即通过 `.style.cssText =` 修改 `style` 属性的情形）。在 [“安全模型与检查清单”](${lang}/best-practices/security#security_model_and_checklist) 一节中列出了这些 API。
 
 若内联 CSS 完全来自“可信任”的来源（例如应用自身），则几乎无需担心安全问题，这也是最常见的情况。
 
@@ -97,7 +97,7 @@ HTML 的安全（见 [“传入 HTML 时的安全考虑”](best-practices/secur
 
 ## 传入 URL 时的安全考虑 [[[#passing_raw_urls_safely]]]
 
-HTML 的安全（见 [“传入 HTML 时的安全考虑”](best-practices/security#passing_raw_html_safely) 一节）已经包括了 URL 相关安全问题，而本节专门针对那些仅接受 URL 输入的 API。在 [“安全模型与检查清单”](best-practices/security#security_model_and_checklist) 一节中列出了这些 API。
+HTML 的安全（见 [“传入 HTML 时的安全考虑”](${lang}/best-practices/security#passing_raw_html_safely) 一节）已经包括了 URL 相关安全问题，而本节专门针对那些仅接受 URL 输入的 API。在 [“安全模型与检查清单”](${lang}/best-practices/security#security_model_and_checklist) 一节中列出了这些 API。
 
 若 URL 完全来自“可信任”的来源（例如应用自身），则几乎无需担心安全问题。
 
@@ -115,4 +115,4 @@ HTML 的安全（见 [“传入 HTML 时的安全考虑”](best-practices/secur
 
 ECharts 的 `option`（即 [chart.setOption()](${apiPath}echartsInstance.setOption) 的输入）主要是声明式的，但部分 option 可接受 JS 函数（回调）输入以增强表达能力和灵活性，如 [label.formatter](${optionPath}series-scatter.label.formatter)、[axisTick.interval](${optionPath}xAxis.axisTick.interval) 等。在大多数情况下，这些函数是 app 源代码的一部分于是完全可信任，因此不会引入风险。
 
-但若某些产品允许这些 JS 函数来自于“不受信任”的来源，如用户提供函数，则风险与维护成本显著增加。这种场景实质上与执行“不受信任”的 HTML 代码风险相当，可参考 [“传入 HTML 时的安全考虑”](best-practices/security#passing_raw_html_safely) 中的讨论。
+但若某些产品允许这些 JS 函数来自于“不受信任”的来源，如用户提供函数，则风险与维护成本显著增加。这种场景实质上与执行“不受信任”的 HTML 代码风险相当，可参考 [“传入 HTML 时的安全考虑”](${lang}/best-practices/security#passing_raw_html_safely) 中的讨论。
