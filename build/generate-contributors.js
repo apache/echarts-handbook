@@ -15,7 +15,7 @@ const loopDir = path => {
   if (fs.lstatSync(path).isDirectory()) {
     const children = fs.readdirSync(path)
     children.forEach(child => loopDir([path, child].join('/')))
-  } else {
+  } else if (path.endsWith('.md')) {
     paths.push(path)
   }
 }
@@ -106,9 +106,9 @@ async function ghWeb() {
         .then(async html => {
           let $ = cheerio.load(html)
           let contributors
-          const links = $('li > a')
+          const links = $('img.avatar-user')
           if (links.length) {
-            contributors = links.map((i, link) => $(link).attr('href').slice(1)).toArray()
+            contributors = links.map((i, link) => $(link).parent().attr('href').slice(1)).toArray()
           } else {
             // for special case, for example, ghost account
             html = await (await fetch(GH_CONTRIBUTOR_URL + path)).text()
@@ -117,6 +117,9 @@ async function ghWeb() {
             if (creator && (creator = creator.trim())) {
               contributors = [creator]
             }
+          }
+          if (contributors && contributors.length > 1) {
+            contributors = Array.from(new Set(contributors))
           }
           entries[path] = contributors = contributors || []
           console.log('fetched contributors of path', path, contributors)
