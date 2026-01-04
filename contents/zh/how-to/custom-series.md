@@ -6,13 +6,6 @@
 
 从 Apache ECharts v6.0.0 版本起，我们支持了可注册的自定义系列，并且在 [echarts-custom-series](https://github.com/apache/echarts-custom-series) 中提供了多个可直接通过 NPM 安装的自定义系列。
 
-| | |
-|-|-|
-| `@echarts-x/custom-violin`<br> [doc](https://github.com/apache/echarts-custom-series/tree/main/custom-series/violin) [npm](https://www.npmjs.com/package/@echarts-x/custom-violin) <br> ![violin](https://raw.githubusercontent.com/apache/echarts-custom-series/refs/heads/main/custom-series/violin/screenshots/violin.svg) | `@echarts-x/custom-contour`<br> [doc](https://github.com/apache/echarts-custom-series/tree/main/custom-series/contour) [npm](https://www.npmjs.com/package/@echarts-x/custom-contour) <br> ![contour](https://raw.githubusercontent.com/apache/echarts-custom-series/refs/heads/main/custom-series/contour/screenshots/contour.svg) |
-| `@echarts-x/custom-stage`<br> [doc](https://github.com/apache/echarts-custom-series/tree/main/custom-series/stage) [npm](https://www.npmjs.com/package/@echarts-x/custom-stage) <br> ![stage](https://raw.githubusercontent.com/apache/echarts-custom-series/refs/heads/main/custom-series/stage/screenshots/stage.svg) | `@echarts-x/custom-segmented-doughnut`<br> [doc](https://github.com/apache/echarts-custom-series/tree/main/custom-series/segmentedDoughnut) [npm](https://www.npmjs.com/package/@echarts-x/custom-segmented-doughnut) <br> ![segmentedDoughnut](https://raw.githubusercontent.com/apache/echarts-custom-series/refs/heads/main/custom-series/segmentedDoughnut/screenshots/segmentedDoughnut.svg) |
-| `@echarts-x/custom-bar-range`<br> [doc](https://github.com/apache/echarts-custom-series/tree/main/custom-series/barRange) [npm](https://www.npmjs.com/package/@echarts-x/custom-bar-range) <br> ![barRange](https://raw.githubusercontent.com/apache/echarts-custom-series/refs/heads/main/custom-series/barRange/screenshots/barRange.svg) | `@echarts-x/custom-line-range`<br> [doc](https://github.com/apache/echarts-custom-series/tree/main/custom-series/lineRange) [npm](https://www.npmjs.com/package/@echarts-x/custom-line-range) <br> ![lineRange](https://raw.githubusercontent.com/apache/echarts-custom-series/refs/heads/main/custom-series/lineRange/screenshots/lineRange.svg) |
-| `@echarts-x/custom-liquid-fill`<br> [doc](https://github.com/apache/echarts-custom-series/tree/main/custom-series/liquidFill) [npm](https://www.npmjs.com/package/@echarts-x/custom-liquid-fill) <br> ![liquidFill](https://raw.githubusercontent.com/apache/echarts-custom-series/refs/heads/main/custom-series/liquidFill/screenshots/liquidFill.svg) | |
-
 你可以直接使用该项目中的自定义系列开发图表，或者使用其他人发布的自定义系列，或者自己开发自定义系列（后文将会详细介绍）并通过类似的方式使用。首先，让我们来了解一下最简单的方式——使用官方发布的自定义系列。
 
 ### 使用已发布的自定义系列
