@@ -110,6 +110,8 @@
           children:
             - title: Basic Scatter
               dir: basic-scatter
+    - title: Custom Series
+      dir: custom-series
     - title: Common Components
       dir: component-types
       children:

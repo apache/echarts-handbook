@@ -112,6 +112,8 @@
           children:
             - title: 基础散点图
               dir: basic-scatter
+    - title: 自定义系列
+      dir: custom-series
     - title: 常用组件
       dir: component-types
       children:
