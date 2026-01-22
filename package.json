@@ -19,7 +19,7 @@
     "intersection-observer": "^0.12.2",
     "js-base64": "^3.7.2",
     "js-yaml-loader": "^1.2.2",
-    "lodash": "^4.17.21",
+    "lodash": "^4.17.23",
     "markdown-it": "^12.2.0",
     "markdown-it-anchor": "^8.1.2",
     "markdown-it-attrs": "^4.3.1",
