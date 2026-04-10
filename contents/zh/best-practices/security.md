@@ -24,8 +24,9 @@ ECharts 通过 Canvas 或 SVG 渲染，只有几个特殊组件例外，允许 H
 | ------ | ------------------ |
 | **option [tooltip.formatter](${optionPath}tooltip.formatter)**<br>· `formatter` 允许 HTML 文本或 DOM 元素传入，并后续直接渲染到 tooltip 内部，于是需要考虑 XSS 风险。<br>（例外）：如果 `formatter` 被直接设置成一个字符串，则认为是一个内部实现的简单模版，后续能内部填入数据。[tooltip.renderMode: 'richText'](${optionPath}tooltip.renderMode) 是另一种内部实现的模版，用于定制样式。他们都不涉及 HTML，从而安全。<br><br>**option [toolbox.feature.dataView.optionToContent](${optionPath}toolbox.feature.dataView.optionToContent)**<br>**option [toolbox.feature.dataView.title](${optionPath}toolbox.feature.dataView.title)**<br>**option [toolbox.feature.dataView.lang](${optionPath}toolbox.feature.dataView.lang)**<br>· `tooltip.dataView` 面板完全以 HTML 渲染，这些 API 可自定义 HTML 文本中的部分内容，于是需要考虑 XSS 风险。 | 需要考虑 XSS 风险。一般情况下，仅需 HTML 转义即可。但如果一些不能转义的部分来自“不受信任”的来源，则须更多处理（如净化处理（sanitization）或沙盒隔离）。<br><br>详细描述见 [“传入 HTML 时的安全考虑”](${lang}/best-practices/security#passing_raw_html_safely)。 |
 | **option [tooltip.extraCssText](${optionPath}tooltip.extraCssText)**<br>· `extraCssText` 接受一个原始 CSS style 字符串，并接下来直接拼接进 `tooltipEl.style.cssText`。<br>（例外）：[tooltip.renderMode: 'richText'](${optionPath}tooltip.renderMode) 时此 `extraCssText` 无效。 | 若输入来自可信来源，则一般无安全问题，否则需要仔细评估风险。<br><br>详细描述见 [“传入内联 CSS 时的安全考虑”](${lang}/best-practices/security#passing_inline_css_safely)。 |
-| **option [title.link](${optionPath}title.link)**<br>**option [title.sublink](${optionPath}title.sublink)**<br>**option [series-treemap.data.link](${optionPath}series-treemap.data.link)**<br>**option [series-sunburst.data.link](${optionPath}series-sunburst.data.link)**<br>· 这些 option 直接接受原始 URL 字符串。 | 若若输入来自可信来源，则一般无安全问题，否则须要考虑 XSS 风险。<br><br>详细描述见 ["传入 URL 时的安全考虑"](${lang}/best-practices/security#passing_raw_urls_safely)。 |
+| **option [title.link](${optionPath}title.link)**<br>**option [title.sublink](${optionPath}title.sublink)**<br>**option [series-treemap.data.link](${optionPath}series-treemap.data.link)**<br>**option [series-sunburst.data.link](${optionPath}series-sunburst.data.link)**<br>· 这些 option 直接接受原始 URL 字符串。 | 若输入来自可信来源，则一般无安全问题，否则须要考虑 XSS 风险。<br><br>详细描述见 ["传入 URL 时的安全考虑"](${lang}/best-practices/security#passing_raw_urls_safely)。 |
 | **option [toolbox.feature.saveAsImage.name](${optionPath}toolbox.feature.saveAsImage.name)**<br>**option [toolbox.feature.saveAsImage.type](${optionPath}toolbox.feature.saveAsImage.type)**<br>**option [title[0].text](${optionPath}title.text)**<br>· `saveAsImage` 功能的下载文件名由 `{name}.{type}` 拼装而成，并未做额外校验或净化（sanitization）处理。如果 `name` 没有指定，则使用 `title[0].text` 替代，尽管这种用法并不推荐。 | 详细描述见 [“传入下载文件名时的安全考虑”](${lang}/best-practices/security#passing_download_filename_safely)。 |
+| **option [dataset.transform](${optionPath}dataset.transform) 中 type: 'filter' 的 config.reg**<br>· filter 变换的 `config` 支持 `reg` 键，接受字符串或 RegExp，用于按正则匹配筛选数据行。字符串会直接被编译为 `RegExp`，并对每一行数据执行匹配，未对正则复杂度或长度做校验。 | 若 `config`（含 `reg`）来自不受信任来源，存在 ReDoS（正则表达式拒绝服务）风险，可能导致浏览器标签页卡死或服务端渲染阻塞。<br><br>详细描述见 [“Dataset 筛选变换中正则（reg）的安全考虑”](${lang}/best-practices/security#dataset_filter_reg_safely)。 |
 | 所有“JS 函数”输入（回调） | 通常无安全问题，除非存在特殊使用场景（例如需要执行不可信来源的函数）。<br><br>详细描述见 [“传入 JS 函数时的安全考虑”](${lang}/best-practices/security#passing_js_function_safely)。 |
 
 
@@ -109,6 +110,29 @@ HTML 的安全（见 [“传入 HTML 时的安全考虑”](${lang}/best-practic
 目前，仅 [SaveAsImage](${optionPath}toolbox.feature.saveAsImage) 功能需要传入文件名。若该输入来自“可信任”的来源、长度合规且仅包含 ASCII 字母数字（可含`-`、`_`、`.`），则安全。
 
 否则，虽然现代浏览器已显著改进了文件名的自动转义和净化处理（如去除 `../` 之类试图访问上级目录的路径、正确处理特殊字符等），但也存在一些风险，例如不同系统对保留字符的处理有差异，长度限制也不同。此外，旧浏览器或客户端的行为不够明确且不足够可信赖。因此，对这些“不受信任”的文件名仍应在输入前净化处理。
+
+
+## Dataset 筛选变换中正则（reg）的安全考虑 [[[#dataset_filter_reg_safely]]]
+
+[dataset 的 filter 变换](${optionPath}dataset.transform) 的 `config` 支持 `reg` 键，用于按正则表达式匹配某一维度的值以筛选数据行。`reg` 可接受字符串或 `RegExp`；字符串会**直接被编译为 `RegExp`**，并对**每一行**数据执行 `test()`，且**未对正则模式的复杂度、长度或执行时间做任何校验或限制**。该设计便于从 JSON/API 等可序列化配置中传入正则（如 `reg: '^asdf$'`），但当 `config` 来自“不受信任”的来源时，会引入 **ReDoS（Regular Expression Denial of Service，正则表达式拒绝服务）** 风险。
+
+### 风险说明
+
+若攻击者能控制或影响图表配置（例如看板、分析平台中用户可保存的图表配置），可构造带有**灾难性回溯**（catastrophic backtracking）的正则模式（例如嵌套量词 `^(a+)+$`），并配合不匹配的长字符串数据。此时单次 `test()` 即可导致 CPU 呈指数级消耗：
+
+- **客户端**：渲染该图表的浏览器标签页会卡死，需强制关闭。
+- **服务端**：若使用 ECharts 的服务端渲染（SSR），单次恶意请求会阻塞 Node.js 事件循环，影响所有并发用户。
+- **持久化场景**：若恶意配置被存入数据库，每次有用户打开该看板或报表都会触发 DoS。
+
+此类问题不涉及数据泄露或篡改，主要影响可用性。
+
+### 建议
+
+- **若 `dataset.transform` 的 `config`（含 `reg`）完全来自可信任来源**（如应用自身或受控后台），则无需额外措施。
+- **若 `config` 可能来自不受信任来源**（如用户输入、外部 API、未校验的数据库内容）：
+  - 在传入 ECharts 前，对 `reg` 字符串做**长度上限**与**复杂度校验**（例如拒绝包含嵌套量词等已知易引发灾难性回溯的写法），或仅允许白名单内的简单模式。
+  - 或考虑使用具备线性时间保证的正则引擎（如服务端使用 RE2）或为匹配过程增加**超时**（如将耗时逻辑放入 Web Worker 并设上限），以降低 ReDoS 风险。
+  - 若业务上不需要由不可信方指定正则，可禁止从外部配置中传入 `reg`，仅允许写死在代码中的安全模式。
 
 
 ## 传入 JS 函数时的安全考虑 [[[#passing_js_function_safely]]]
