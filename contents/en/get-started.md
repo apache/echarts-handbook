@@ -2,7 +2,7 @@
 
 ## Getting Apache ECharts
 
-Apache ECharts supports several download methods, which are further explained in the next tutorial [Installation](${lang}/basics/download). Here, we take the example of getting it from the [jsDelivr](https://www.jsdelivr.com/package/npm/echarts) CDN and explain how to install it quickly.
+Apache ECharts supports several Installation methods, which are explained in detail in the next [Installation](${lang}/basics/download) tutorial.Here, we’ll use [jsDelivr](https://www.jsdelivr.com/package/npm/echarts) CDN as an example to quickly set up ECharts..
 
 At [https://www.jsdelivr.com/package/npm/echarts](https://www.jsdelivr.com/package/npm/echarts) select `dist/echarts.js`, click and save it as `echarts.js` file.
 
@@ -23,11 +23,11 @@ Create a new `index.html` file in the directory where you just saved `echarts.js
 </html>
 ```
 
-When you open this `index.html`, you will see an empty page. But don't worry. Open the console and make sure that no error message is reported, then you can proceed to the next step.
+When you open `index.html` the page will appear blank. But don't worry. Open the console and make sure that no error message is reported, then you can proceed to the next step.
 
 ## Plotting a Simple Chart
 
-Before drawing we need to prepare a DOM container for ECharts with a defined height and width. Add the following code after the `</head>` tag introduced earlier.
+Before rendering a chart we need to prepare a DOM container for ECharts with a defined height and width. Add the following code immediately after the closing `</head>` tag.
 
 ```html
 <body>
@@ -36,7 +36,7 @@ Before drawing we need to prepare a DOM container for ECharts with a defined hei
 </body>
 ```
 
-Then you can initialize an echarts instance with the [echarts.init](${mainSitePath}api.html#echarts.init) method and set the echarts instance with [setOption](${mainSitePath}api.html#echartsInstance.setOption) method to generate a simple bar chart. Here is the complete code.
+Next, initialize an ECharts instance using [echarts.init](${mainSitePath}api.html#echarts.init) method and configure it with [setOption](${mainSitePath}api.html#echartsInstance.setOption) method to generate a simple bar chart. Here is the complete code.
 
 ```html
 <!DOCTYPE html>
@@ -57,26 +57,26 @@ Then you can initialize an echarts instance with the [echarts.init](${mainSitePa
       // Specify the configuration items and data for the chart
       var option = {
         title: {
-          text: 'ECharts Getting Started Example'
+          text: 'ECharts Getting Started Example',
         },
         tooltip: {},
         legend: {
-          data: ['sales']
+          data: ['sales'],
         },
         xAxis: {
-          data: ['Shirts', 'Cardigans', 'Chiffons', 'Pants', 'Heels', 'Socks']
+          data: ['Shirts', 'Cardigans', 'Chiffons', 'Pants', 'Heels', 'Socks'],
         },
         yAxis: {},
         series: [
           {
             name: 'sales',
             type: 'bar',
-            data: [5, 20, 36, 10, 10, 20]
-          }
-        ]
+            data: [5, 20, 36, 10, 10, 20],
+          },
+        ],
       };
 
-      // Display the chart using the configuration items and data just specified.
+      // Display the chart using the configuration and the data defined above.
       myChart.setOption(option);
     </script>
   </body>
