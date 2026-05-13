@@ -57,23 +57,23 @@ Next, initialize an ECharts instance using [echarts.init](${mainSitePath}api.htm
       // Specify the configuration items and data for the chart
       var option = {
         title: {
-          text: 'ECharts Getting Started Example',
+          text: 'ECharts Getting Started Example'
         },
         tooltip: {},
         legend: {
-          data: ['sales'],
+          data: ['sales']
         },
         xAxis: {
-          data: ['Shirts', 'Cardigans', 'Chiffons', 'Pants', 'Heels', 'Socks'],
+          data: ['Shirts', 'Cardigans', 'Chiffons', 'Pants', 'Heels', 'Socks']
         },
         yAxis: {},
         series: [
           {
             name: 'sales',
             type: 'bar',
-            data: [5, 20, 36, 10, 10, 20],
-          },
-        ],
+            data: [5, 20, 36, 10, 10, 20]
+          }
+        ]
       };
 
       // Display the chart using the configuration and the data defined above.
