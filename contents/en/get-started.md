@@ -2,7 +2,7 @@
 
 ## Getting Apache ECharts
 
-Apache ECharts supports several Installation methods, which are explained in detail in the next [Installation](${lang}/basics/download) tutorial.Here, we’ll use [jsDelivr](https://www.jsdelivr.com/package/npm/echarts) CDN as an example to quickly set up ECharts..
+Apache ECharts supports several Installation methods, which are explained in detail in the next [Installation](${lang}/basics/download) tutorial. Here, we'll use [jsDelivr](https://www.jsdelivr.com/package/npm/echarts) CDN as an example to quickly set up ECharts.
 
 At [https://www.jsdelivr.com/package/npm/echarts](https://www.jsdelivr.com/package/npm/echarts) select `dist/echarts.js`, click and save it as `echarts.js` file.
 
