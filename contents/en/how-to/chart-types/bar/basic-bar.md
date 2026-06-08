@@ -33,8 +33,11 @@ A horizontal bar chart can be created by using a value axis on the X-axis and a 
 
 ```js live
 option = {
-  xAxis: {},
+  xAxis: {
+    type: 'value',
+  },
   yAxis: {
+    type: 'category',
     data:  ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
   },
   series: [
