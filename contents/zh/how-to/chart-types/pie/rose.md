@@ -36,3 +36,40 @@ option = {
   ]
 };
 ```
+上面是最基本的南丁格尔图,有时候,我们希望不同的标签,展示的方式不太一样
+
+比如:最大的扇形,标签要在里面,那我们可以修改 [`series.data.label`](${optionPath}series-pie.data.label) 来进行单独控制
+
+```js live
+option = {
+  series: [
+    {
+      type: 'pie',
+      data: [
+        {
+          value: 100,
+          name: 'A'
+        },
+        {
+          value: 200,
+          name: 'B'
+        },
+        {
+          value: 300,
+          name: 'C'
+        },
+        {
+          value: 400,
+          name: 'D'
+        },
+        {
+          value: 500,
+          name: 'E',
+          label:{
+              position:'inside'
+        }
+      ],
+      roseType: 'area'
+    }
+  ]
+};
