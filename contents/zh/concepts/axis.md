@@ -61,7 +61,7 @@ option = {
 };
 ```
 
-在二维数据中，轴也可以有多个。ECharts 中一般情况下单个 grid 组件最多只能放两个 x/y 轴，多于两个 x/y 轴需要通过配置 [offset](${optionPath}xAxis.offset) 属性防止同个位置多个轴的重叠。两个 x 轴显示在上下，两个 y 轴显示在左右两侧。
+在二维数据中，轴也可以有多个。ECharts 中一般情况下单个 grid 组件最多只能放两个 x/y 轴，多于两个 x/y 轴需要通过配置 [offset](${optionPath}xAxis.offset) 属性防止同个位置多个轴的重叠。x 轴可以显示在顶部和底部，y 轴可以显示在左侧和右侧。
 
 ```js
 option = {
