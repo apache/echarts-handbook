@@ -113,15 +113,18 @@ function onPointDragging(dataIndex) {
       }
     ]
   });
+  updatePosition();
 }
 ```
 
 In the code above, API [convertFromPixel](api.html#echartsInstance.convertFromPixel) is used, which is the reversed process of [convertToPixel](api.html#echartsInstance.convertToPixel). `myChart.convertFromPixel('grid', this.position)` converts a pixel coordinate to data item in [grid (cartesian)](${optionPath}grid).
 
-Finally, add those code to make graphic elements responsive to change of canvas size.
+The transparent drag handles use pixel coordinates. If the axes are auto-scaled after a data update, recalculate every handle position after updating the series; otherwise, the handles remain at their old positions while the visible points move. The `updatePosition` function below handles both data updates and canvas resizing.
 
 ```js
-window.addEventListener('resize', function() {
+window.addEventListener('resize', updatePosition);
+
+function updatePosition() {
   // Re-calculate the position of each circle and update chart using `setOption`.
   myChart.setOption({
     graphic: echarts.util.map(data, function(item, dataIndex) {
@@ -130,7 +133,7 @@ window.addEventListener('resize', function() {
       };
     })
   });
-});
+}
 ```
 
 ## Add tooltip component
@@ -236,13 +239,15 @@ myChart.setOption({
     };
   })
 });
-window.addEventListener('resize', function() {
+window.addEventListener('resize', updatePosition);
+
+function updatePosition() {
   myChart.setOption({
     graphic: echarts.util.map(data, function(item, dataIndex) {
       return { position: myChart.convertToPixel('grid', item) };
     })
   });
-});
+}
 function showTooltip(dataIndex) {
   myChart.dispatchAction({
     type: 'showTip',
@@ -263,6 +268,7 @@ function onPointDragging(dataIndex, dx, dy) {
       }
     ]
   });
+  updatePosition();
 }
 ```
 

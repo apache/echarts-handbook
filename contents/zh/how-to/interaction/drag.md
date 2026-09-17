@@ -106,15 +106,18 @@ function onPointDragging(dataIndex) {
       }
     ]
   });
+  updatePosition();
 }
 ```
 
 上面的代码中，使用了 [convertFromPixel](${mainSitePath}/api.html#echartsInstance.convertFromPixel) 这个 API。它是 [convertToPixel](${mainSitePath}/api.html#echartsInstance.convertToPixel) 的逆向过程。`myChart.convertFromPixel('grid', this.position)` 表示把当前像素坐标转换成 [grid](${optionPath}grid) 组件中直角坐标系的 dataItem 值。
 
-最后，为了使 dom 尺寸改变时，图中的元素能自适应得变化，加上这些代码：
+透明拖拽圆点使用的是像素坐标。如果数据更新后坐标轴范围自动变化，需要在更新 series 后重新计算所有拖拽圆点的位置，否则可见的数据点移动了，拖拽圆点却仍停留在旧位置。下面的 `updatePosition` 函数同时用于数据更新和 DOM 尺寸变化：
 
 ```js
-window.addEventListener('resize', function() {
+window.addEventListener('resize', updatePosition);
+
+function updatePosition() {
   // 对每个拖拽圆点重新计算位置，并用 setOption 更新。
   myChart.setOption({
     graphic: echarts.util.map(data, function(item, dataIndex) {
@@ -123,7 +126,7 @@ window.addEventListener('resize', function() {
       };
     })
   });
-});
+}
 ```
 
 ## 添加 tooltip 组件
@@ -229,13 +232,15 @@ myChart.setOption({
     };
   })
 });
-window.addEventListener('resize', function() {
+window.addEventListener('resize', updatePosition);
+
+function updatePosition() {
   myChart.setOption({
     graphic: echarts.util.map(data, function(item, dataIndex) {
       return { position: myChart.convertToPixel('grid', item) };
     })
   });
-});
+}
 function showTooltip(dataIndex) {
   myChart.dispatchAction({
     type: 'showTip',
@@ -256,6 +261,7 @@ function onPointDragging(dataIndex, dx, dy) {
       }
     ]
   });
+  updatePosition();
 }
 ```
 
