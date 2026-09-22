@@ -27,6 +27,28 @@ option = {
 
 In this case, the x-axis is under the category type. Therefore, you should define some corresponding values for `'xAxis'`. Meanwhile, the data type of the y-axis is numerical. The range of the y-axis will be generated automatically by the `data` in `'series'`.
 
+## Horizontal Bar Chart
+
+A horizontal bar chart can be created by using a value axis on the X-axis and a category axis on the Y-axis.
+
+```js live
+option = {
+  xAxis: {
+    type: 'value',
+  },
+  yAxis: {
+    type: 'category',
+    data:  ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+  },
+  series: [
+    {
+      type: 'bar',
+      data: [23, 24, 18, 25, 27, 28, 25]
+    }
+  ]
+};
+```
+
 ## Multi-series Bar Chart
 
 You may use a series to represent a group of related data. To show multiple series in the same chart, you need to add one more array under the `series`.
